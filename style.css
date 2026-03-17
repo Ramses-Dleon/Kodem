@@ -2366,3 +2366,30 @@ nav .nav-btn.active::after {
 .collection-tab-btn.active .tab-count {
     background: rgba(0,0,0,0.3);
 }
+
+/* Deck builder — not-owned indicators */
+.card-item.not-owned {
+    border: 2px solid var(--accent-crimson) !important;
+    opacity: 0.75;
+}
+
+.deck-not-owned-badge {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    font-size: 14px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 4px;
+    padding: 1px 4px;
+    z-index: 1;
+}
+
+.validation-warning {
+    background: rgba(220, 38, 38, 0.15);
+    border: 1px solid var(--accent-crimson);
+    color: var(--accent-crimson);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    margin-top: 8px;
+}

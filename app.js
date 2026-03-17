@@ -1555,9 +1555,11 @@ function renderDeckWorkspace() {
     } else {
         const cards = deck.cards.map(folio => allCards.find(c => c.folio === folio)).filter(Boolean);
         deckCardsEl.innerHTML = cards.map(card => {
+            const inCollection = collection.has(card.folio);
             return `
-                <div class="card-item small" data-folio="${card.folio}">
+                <div class="card-item small ${inCollection ? '' : 'not-owned'}" data-folio="${card.folio}" title="${card.name}${inCollection ? '' : ' ⚠️ No la tienes'}">
                     <img src="${card.image}" alt="${card.name}" loading="lazy" />
+                    ${inCollection ? '' : '<span class="deck-not-owned-badge">⚠️</span>'}
                     <button class="remove-from-deck" data-folio="${card.folio}" style="position: absolute; top: 2px; right: 2px; background: var(--accent-crimson); color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px;">×</button>
                 </div>
             `;
@@ -1633,6 +1635,22 @@ function updateDeckValidation() {
     updateValidationItem('val-equipo', equipo, 0, 10);
 
     document.querySelector('#val-total .count').textContent = total;
+
+    // Not-owned warning
+    const notOwnedCount = cards.filter(c => !collection.has(c.folio)).length;
+    let notOwnedEl = document.getElementById('val-not-owned');
+    if (!notOwnedEl) {
+        notOwnedEl = document.createElement('div');
+        notOwnedEl.id = 'val-not-owned';
+        notOwnedEl.className = 'validation-warning';
+        document.querySelector('#val-total')?.parentElement?.appendChild(notOwnedEl);
+    }
+    if (notOwnedCount > 0) {
+        notOwnedEl.innerHTML = `⚠️ <strong>${notOwnedCount} carta${notOwnedCount > 1 ? 's' : ''}</strong> no está${notOwnedCount > 1 ? 'n' : ''} en tu colección`;
+        notOwnedEl.style.display = '';
+    } else {
+        notOwnedEl.style.display = 'none';
+    }
 
     const energyEl = document.getElementById('energy-distribution');
     energyEl.innerHTML = Object.entries(energyDist)
