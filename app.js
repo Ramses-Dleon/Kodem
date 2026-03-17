@@ -330,6 +330,22 @@ function setupEventListeners() {
     const filterEffectText = document.getElementById('filter-effect-text');
     if (filterEffectText) filterEffectText.addEventListener('input', debounce(() => { currentPage = 1; applyBrowserFilters(); }, 300));
 
+    // Reset filters button
+    const resetBtn = document.getElementById('reset-filters');
+    if (resetBtn) resetBtn.addEventListener('click', () => {
+        document.getElementById('search-input').value = '';
+        document.getElementById('filter-set').value = '';
+        document.getElementById('filter-type').value = '';
+        document.getElementById('filter-energy').value = '';
+        if (document.getElementById('filter-subtype')) document.getElementById('filter-subtype').value = '';
+        if (document.getElementById('filter-rarity')) document.getElementById('filter-rarity').value = '';
+        if (document.getElementById('filter-effect-text')) document.getElementById('filter-effect-text').value = '';
+        document.getElementById('sort-by').value = 'set';
+        currentPage = 1;
+        applyBrowserFilters();
+        showToast('Filtros reiniciados', 'info');
+    });
+
     // Grid size toggle buttons
     document.querySelectorAll('.grid-size-btn').forEach(btn => {
         btn.addEventListener('click', () => {
