@@ -335,7 +335,7 @@ async function importSyncCode() {
                     continue; 
                 }
             }
-            const invalid = folios.length - valid.length;
+            const invalid = folios.filter(f => !validFolios.has(f) && !validFolios.has(f.replace(/[SRU]$/, ''))).length;
             
             const mode = await showChoice(
                 `Código tiene ${valid.length} cartas válidas${invalid ? ` (${invalid} no reconocidas)` : ''}. ¿Qué hacer?`,
