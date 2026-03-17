@@ -767,32 +767,64 @@ select:focus {
 
 @media (max-width: 768px) {
     main {
-        padding: 1rem;
+        padding: 0.75rem;
     }
 
     header {
-        padding: 1rem;
+        padding: 0.5rem 0.75rem;
     }
 
+    header h1 {
+        font-size: 1rem;
+    }
+
+    /* Compact nav: 4 buttons in a row */
+    header nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+        width: 100%;
+    }
+
+    .nav-btn {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.7rem;
+        min-height: 36px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Collapsible filters */
     .controls {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    /* Mobile touch targets — 44px minimum */
     .controls select,
     .controls input[type="text"] {
-        min-height: 44px;
-        padding: 12px;
+        min-height: 38px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        flex: 1 1 48%;
     }
 
+    .controls input[type="text"] {
+        flex: 1 1 100%;
+    }
+
+    /* Compact buttons in collection */
     .btn-primary,
     .btn-secondary,
     .btn-danger {
-        min-height: 44px;
+        min-height: 36px;
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        flex: 1 1 auto;
     }
 
     .card-grid {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.5rem;
     }
 
     /* Modal: single column on mobile */
@@ -1697,4 +1729,55 @@ nav .nav-btn.active::after {
     padding: 24px;
     max-width: 400px;
     width: 100%;
+}
+
+/* Collapsible advanced filters */
+.advanced-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+}
+.advanced-filters select,
+.advanced-filters input[type="text"] {
+    flex: 1 1 48%;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .advanced-filters {
+        display: none;
+    }
+    .advanced-filters.show {
+        display: flex;
+    }
+    .advanced-filters select,
+    .advanced-filters input[type="text"] {
+        flex: 1 1 100%;
+    }
+    /* Compact stats bar */
+    .stats-bar {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+    .stats-bar select {
+        min-height: 36px;
+        font-size: 0.8rem;
+    }
+    /* Grid size buttons smaller */
+    .grid-size-btn {
+        min-height: 36px !important;
+        padding: 4px 8px !important;
+    }
+    /* Reset button compact */
+    #reset-filters {
+        width: auto;
+        min-height: 36px;
+    }
+}
+
+@media (min-width: 769px) {
+    #toggle-filters {
+        display: none;
+    }
 }

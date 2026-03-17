@@ -31,50 +31,48 @@
     <main>
         <!-- Card Browser View -->
         <section id="browser-view" class="view active">
-            <div class="controls">
+            <div class="controls" id="browser-controls">
                 <input type="text" id="search-input" placeholder="Buscar por nombre..." />
+                <button id="toggle-filters" class="btn-secondary" style="flex:0 0 auto;font-size:0.75rem;padding:6px 12px">🔽 Filtros</button>
 
-                <select id="filter-set">
-                    <option value="">Todos los sets</option>
-                </select>
+                <div id="advanced-filters" class="advanced-filters">
+                    <select id="filter-set">
+                        <option value="">Todos los sets</option>
+                    </select>
 
-                <!-- Type filter: dynamically populated from cards.json by JS -->
-                <select id="filter-type">
-                    <option value="">Todos los tipos</option>
-                </select>
+                    <select id="filter-type">
+                        <option value="">Todos los tipos</option>
+                    </select>
 
-                <select id="filter-energy">
-                    <option value="">Todas las energías</option>
-                    <option value="Átlica">💧 Átlica</option>
-                    <option value="Pírica">🔥 Pírica</option>
-                    <option value="Gélida">🧊 Gélida</option>
-                    <option value="Lítica">🪨 Lítica</option>
-                    <option value="Cháaktica">⚡ Cháaktica</option>
-                    <option value="Húumica">🌀 Húumica</option>
-                    <option value="Demótica">🔮 Demótica</option>
-                    <option value="Feral">🐾 Feral</option>
-                </select>
+                    <select id="filter-energy">
+                        <option value="">Todas las energías</option>
+                        <option value="Átlica">💧 Átlica</option>
+                        <option value="Pírica">🔥 Pírica</option>
+                        <option value="Gélida">🧊 Gélida</option>
+                        <option value="Lítica">🪨 Lítica</option>
+                        <option value="Cháaktica">⚡ Cháaktica</option>
+                        <option value="Húumica">🌀 Húumica</option>
+                        <option value="Demótica">🔮 Demótica</option>
+                        <option value="Feral">🐾 Feral</option>
+                    </select>
 
-                <!-- Subtype filter: dynamically populated from cards.json by JS -->
-                <select id="filter-subtype">
-                    <option value="">Todos los subtipos</option>
-                </select>
+                    <select id="filter-subtype">
+                        <option value="">Todos los subtipos</option>
+                    </select>
 
-                <!-- Rarity filter -->
-                <select id="filter-rarity">
-                    <option value="">Todas las rarezas</option>
-                    <option value="Común">Común</option>
-                    <option value="Rara">Rara</option>
-                    <option value="Súper Rara">Súper Rara</option>
-                    <option value="Ultra Rara">Ultra Rara</option>
-                    <option value="Kósmica">Kósmica</option>
-                </select>
+                    <select id="filter-rarity">
+                        <option value="">Todas las rarezas</option>
+                        <option value="Común">Común</option>
+                        <option value="Rara">Rara</option>
+                        <option value="Súper Rara">Súper Rara</option>
+                        <option value="Ultra Rara">Ultra Rara</option>
+                        <option value="Kósmica">Kósmica</option>
+                    </select>
 
-                <!-- Effect/cost text search -->
-                <input type="text" id="filter-effect-text" placeholder="Buscar en efecto/costo..." />
+                    <input type="text" id="filter-effect-text" placeholder="Buscar en efecto/costo..." />
 
-                <!-- Reset filters button -->
-                <button id="reset-filters" style="background:#ef4444;color:#fff;border:none;padding:10px 16px;border-radius:8px;cursor:pointer;font-family:'Cinzel',serif;font-size:0.8rem;min-height:44px;width:100%">🔄 Limpiar Filtros</button>
+                    <button id="reset-filters" class="btn-danger" style="font-size:0.75rem;padding:8px 12px">🔄 Limpiar</button>
+                </div>
             </div>
 
             <div class="stats-bar" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
@@ -110,11 +108,13 @@
                     <option value="missing">Me faltan</option>
                 </select>
 
-                <button id="import-collection" class="btn-secondary" title="Importar JSON">📥 JSON</button>
-                <button id="export-collection" class="btn-secondary" title="Exportar JSON">📤 JSON</button>
-                <button id="sync-export" class="btn-primary" title="Generar código para compartir">🔗 Código</button>
-                <button id="sync-import" class="btn-secondary" title="Importar con código">📥 Código</button>
-                <button id="clear-collection" class="btn-danger">🗑️ Limpiar</button>
+                <div style="display:flex;gap:4px;flex-wrap:wrap;width:100%">
+                    <button id="sync-export" class="btn-primary" title="Generar código">🔗 Código</button>
+                    <button id="sync-import" class="btn-secondary" title="Importar código">📥 Código</button>
+                    <button id="import-collection" class="btn-secondary" title="Importar JSON">📥 JSON</button>
+                    <button id="export-collection" class="btn-secondary" title="Exportar JSON">📤 JSON</button>
+                    <button id="clear-collection" class="btn-danger">🗑️</button>
+                </div>
             </div>
 
             <!-- ===== DASHBOARD TOGGLE ===== -->

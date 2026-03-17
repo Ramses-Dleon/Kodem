@@ -432,6 +432,18 @@ function setupEventListeners() {
     if (filterEffectText) filterEffectText.addEventListener('input', debounce(() => { currentPage = 1; applyBrowserFilters(); }, 300));
 
     // Reset filters button
+    // Toggle advanced filters (mobile)
+    const toggleFiltersBtn = document.getElementById('toggle-filters');
+    if (toggleFiltersBtn) {
+        toggleFiltersBtn.addEventListener('click', () => {
+            const af = document.getElementById('advanced-filters');
+            if (af) {
+                af.classList.toggle('show');
+                toggleFiltersBtn.textContent = af.classList.contains('show') ? '🔼 Filtros' : '🔽 Filtros';
+            }
+        });
+    }
+
     const resetBtn = document.getElementById('reset-filters');
     if (resetBtn) resetBtn.addEventListener('click', () => {
         document.getElementById('search-input').value = '';
