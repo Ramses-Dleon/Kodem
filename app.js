@@ -526,6 +526,14 @@ function setupEventListeners() {
     document.getElementById('save-deck-btn').addEventListener('click', saveCurrentDeck);
     document.getElementById('share-deck-btn').addEventListener('click', shareDeck);
     document.getElementById('export-deck-btn').addEventListener('click', exportDeck);
+    const deckSyncExport = document.getElementById('deck-sync-export');
+    if (deckSyncExport) deckSyncExport.addEventListener('click', generateDeckSyncCode);
+    const deckSyncImport = document.getElementById('deck-sync-import');
+    if (deckSyncImport) deckSyncImport.addEventListener('click', importDeckSyncCode);
+    const deckJsonExport = document.getElementById('deck-json-export');
+    if (deckJsonExport) deckJsonExport.addEventListener('click', exportDeckJSON);
+    const deckJsonImport = document.getElementById('deck-json-import');
+    if (deckJsonImport) deckJsonImport.addEventListener('click', importDeckJSON);
     document.getElementById('delete-deck-btn').addEventListener('click', deleteCurrentDeck);
     document.getElementById('deck-name').addEventListener('input', updateDeckName);
     document.getElementById('deck-search').addEventListener('input', debounce(renderDeckPool, 300));
@@ -1270,6 +1278,87 @@ function exportDeck() {
         showToast('Mazo copiado al portapapeles 📋', 'success');
     }).catch(() => {
         showToast('No se pudo copiar al portapapeles', 'error');
+    });
+}
+
+function exportDeckJSON() {
+    if (!currentDeck) { showToast('Selecciona un mazo primero', 'error'); return; }
+    const deck = decks[currentDeck];
+    const data = { version: 1, name: deck.name, cards: deck.cards, exported: new Date().toISOString().split('T')[0] };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = `kodem-deck-${deck.name.replace(/\s+/g, '-')}.json`; a.click();
+    URL.revokeObjectURL(url);
+    showToast('Mazo exportado como JSON 📄', 'success');
+}
+
+function importDeckJSON() {
+    const input = document.createElement('input');
+    input.type = 'file'; input.accept = '.json';
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            try {
+                const data = JSON.parse(ev.target.result);
+                const name = data.name || file.name.replace('.json', '');
+                const cards = data.cards || [];
+                if (cards.length === 0) { showToast('No hay cartas en el archivo', 'error'); return; }
+                const id = Date.now().toString();
+                decks[id] = { name, cards };
+                currentDeck = id;
+                saveDecks();
+                renderDeckBuilder();
+                showToast(`Mazo "${name}" importado (${cards.length} cartas) ✅`, 'success');
+            } catch (err) { showToast('Error leyendo archivo: ' + err.message, 'error'); }
+        };
+        reader.readAsText(file);
+    };
+    input.click();
+}
+
+function generateDeckSyncCode() {
+    if (!currentDeck) { showToast('Selecciona un mazo primero', 'error'); return; }
+    const deck = decks[currentDeck];
+    const payload = JSON.stringify({ n: deck.name, c: deck.cards });
+    const code = 'KDECK-' + btoa(unescape(encodeURIComponent(payload)));
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(() => {
+            showToast(`Código del mazo copiado (${deck.cards.length} cartas) 📋`, 'success');
+        }).catch(() => promptSyncCode(code));
+    } else { promptSyncCode(code); }
+}
+
+function importDeckSyncCode() {
+    const modal = document.createElement('div');
+    modal.className = 'sync-modal-overlay';
+    modal.innerHTML = `
+        <div class="sync-modal">
+            <h3 style="font-family:'Cinzel',serif;color:#f59e0b;margin-bottom:12px">📥 Importar Mazo</h3>
+            <p style="color:#aaa;font-size:0.85rem;margin-bottom:8px">Pega el código KDECK-... aquí:</p>
+            <textarea id="deck-sync-text" style="width:100%;height:80px;background:#1a1a1a;color:#e0e0e0;border:1px solid #444;border-radius:6px;padding:8px;font-size:0.75rem;resize:none" placeholder="KDECK-..."></textarea>
+            <button id="deck-sync-btn" style="margin-top:8px;background:#f59e0b;color:#000;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;width:100%;font-weight:bold">Importar Mazo</button>
+            <button onclick="this.closest('.sync-modal-overlay').remove()" style="margin-top:6px;background:#333;color:#e0e0e0;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;width:100%">Cancelar</button>
+        </div>
+    `;
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+    document.body.appendChild(modal);
+    document.getElementById('deck-sync-btn').addEventListener('click', () => {
+        const code = document.getElementById('deck-sync-text').value.trim();
+        if (!code.startsWith('KDECK-')) { showToast('Código inválido — debe empezar con KDECK-', 'error'); return; }
+        try {
+            const json = decodeURIComponent(escape(atob(code.substring(6))));
+            const data = JSON.parse(json);
+            const id = Date.now().toString();
+            decks[id] = { name: data.n || 'Mazo Importado', cards: data.c || [] };
+            currentDeck = id;
+            saveDecks();
+            renderDeckBuilder();
+            modal.remove();
+            showToast(`Mazo "${decks[id].name}" importado (${decks[id].cards.length} cartas) ✅`, 'success');
+        } catch (err) { showToast('Error decodificando: ' + err.message, 'error'); }
     });
 }
 
