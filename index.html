@@ -2,8 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Kódem TCG Companion</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='28'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,14 +30,9 @@
                     <option value="">Todos los sets</option>
                 </select>
 
+                <!-- Type filter: dynamically populated from cards.json by JS -->
                 <select id="filter-type">
                     <option value="">Todos los tipos</option>
-                    <option value="Adendei">Adendei</option>
-                    <option value="Protector">Protector</option>
-                    <option value="Rava">Rava</option>
-                    <option value="Ixim">Ixim</option>
-                    <option value="Rot">Rot</option>
-                    <option value="Bio">Bio</option>
                 </select>
 
                 <select id="filter-energy">
@@ -49,12 +47,30 @@
                     <option value="Feral">🐾 Feral</option>
                 </select>
 
+                <!-- Subtype filter: dynamically populated from cards.json by JS -->
+                <select id="filter-subtype">
+                    <option value="">Todos los subtipos</option>
+                </select>
+
+                <!-- Rarity filter -->
+                <select id="filter-rarity">
+                    <option value="">Todas las rarezas</option>
+                    <option value="Común">Común</option>
+                    <option value="Rara">Rara</option>
+                    <option value="Súper Rara">Súper Rara</option>
+                    <option value="Ultra Rara">Ultra Rara</option>
+                    <option value="Kósmica">Kósmica</option>
+                </select>
+
                 <select id="sort-by">
                     <option value="name">Nombre</option>
                     <option value="damage">Daño</option>
                     <option value="rests">Rests</option>
                     <option value="set">Set</option>
                 </select>
+
+                <!-- Effect/cost text search -->
+                <input type="text" id="filter-effect-text" placeholder="Buscar en efecto/costo..." />
             </div>
 
             <div class="stats-bar">
@@ -259,15 +275,30 @@
                             <option value="Demótica">🔮 Demótica</option>
                             <option value="Feral">🐾 Feral</option>
                         </select>
+                        <!-- Type filter: dynamically populated from cards.json by JS -->
                         <select id="deck-filter-type">
                             <option value="">Todos los tipos</option>
-                            <option value="Adendei">Adendei</option>
-                            <option value="Protector">Protector</option>
-                            <option value="Rava">Rava</option>
-                            <option value="Ixim">Ixim</option>
-                            <option value="Rot">Rot</option>
-                            <option value="Bio">Bio</option>
                         </select>
+                        <!-- Subtype filter: dynamically populated from cards.json by JS -->
+                        <select id="deck-filter-subtype">
+                            <option value="">Todos los subtipos</option>
+                        </select>
+                        <!-- Rarity filter -->
+                        <select id="deck-filter-rarity">
+                            <option value="">Todas las rarezas</option>
+                            <option value="Común">Común</option>
+                            <option value="Rara">Rara</option>
+                            <option value="Súper Rara">Súper Rara</option>
+                            <option value="Ultra Rara">Ultra Rara</option>
+                            <option value="Kósmica">Kósmica</option>
+                        </select>
+                        <!-- Effect/cost text search -->
+                        <input type="text" id="deck-filter-effect-text" placeholder="Buscar en efecto/costo..." />
+                        <!-- Owned only toggle -->
+                        <label class="owned-toggle" title="Mostrar solo cartas de tu colección">
+                            <input type="checkbox" id="deck-filter-owned" />
+                            Solo mi colección
+                        </label>
                     </div>
                     <div id="deck-pool-grid" class="card-grid small"></div>
                 </div>

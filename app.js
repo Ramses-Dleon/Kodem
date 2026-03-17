@@ -144,6 +144,8 @@ async function init() {
 
     // Populate filter dropdowns
     populateSetFilter();
+    populateTypeFilter();
+    populateSubtypeFilter();
 
     // Setup event listeners
     setupEventListeners();
@@ -288,6 +290,12 @@ function setupEventListeners() {
     document.getElementById('filter-type').addEventListener('change', applyBrowserFilters);
     document.getElementById('filter-energy').addEventListener('change', applyBrowserFilters);
     document.getElementById('sort-by').addEventListener('change', applyBrowserFilters);
+    const filterSubtype = document.getElementById('filter-subtype');
+    if (filterSubtype) filterSubtype.addEventListener('change', applyBrowserFilters);
+    const filterRarity = document.getElementById('filter-rarity');
+    if (filterRarity) filterRarity.addEventListener('change', applyBrowserFilters);
+    const filterEffectText = document.getElementById('filter-effect-text');
+    if (filterEffectText) filterEffectText.addEventListener('input', debounce(applyBrowserFilters, 300));
 
     // Collection filters — debounce text input
     document.getElementById('collection-search').addEventListener('input', debounce(renderCollection, 300));
@@ -324,6 +332,14 @@ function setupEventListeners() {
     document.getElementById('deck-search').addEventListener('input', debounce(renderDeckPool, 300));
     document.getElementById('deck-filter-energy').addEventListener('change', renderDeckPool);
     document.getElementById('deck-filter-type').addEventListener('change', renderDeckPool);
+    const deckFilterSubtype = document.getElementById('deck-filter-subtype');
+    if (deckFilterSubtype) deckFilterSubtype.addEventListener('change', renderDeckPool);
+    const deckFilterRarity = document.getElementById('deck-filter-rarity');
+    if (deckFilterRarity) deckFilterRarity.addEventListener('change', renderDeckPool);
+    const deckFilterOwned = document.getElementById('deck-filter-owned');
+    if (deckFilterOwned) deckFilterOwned.addEventListener('change', renderDeckPool);
+    const deckFilterEffectText = document.getElementById('deck-filter-effect-text');
+    if (deckFilterEffectText) deckFilterEffectText.addEventListener('input', debounce(renderDeckPool, 300));
 
     // Modal
     document.getElementById('card-modal').addEventListener('click', (e) => {
@@ -370,18 +386,77 @@ function populateSetFilter() {
     });
 }
 
+function populateTypeFilter() {
+    const types = [...new Set(allCards.map(c => c.type).filter(Boolean))].sort();
+    const selects = ['filter-type', 'deck-filter-type'];
+    selects.forEach(selectId => {
+        const select = document.getElementById(selectId);
+        if (!select) return;
+        // Remove all options except the first (All)
+        while (select.options.length > 1) select.remove(1);
+        types.forEach(type => {
+            const option = document.createElement('option');
+            option.value = type;
+            option.textContent = type;
+            select.appendChild(option);
+        });
+    });
+}
+
+function populateSubtypeFilter() {
+    const subtypes = [...new Set(allCards.map(c => c.subtype).filter(Boolean))].sort();
+    const selects = ['filter-subtype', 'deck-filter-subtype'];
+    selects.forEach(selectId => {
+        const select = document.getElementById(selectId);
+        if (!select) return;
+        while (select.options.length > 1) select.remove(1);
+        subtypes.forEach(subtype => {
+            const option = document.createElement('option');
+            option.value = subtype;
+            option.textContent = subtype;
+            select.appendChild(option);
+        });
+    });
+}
+
 function applyBrowserFilters() {
     const search = document.getElementById('search-input').value.toLowerCase();
     const filterSet = document.getElementById('filter-set').value;
     const filterType = document.getElementById('filter-type').value;
     const filterEnergy = document.getElementById('filter-energy').value;
     const sortBy = document.getElementById('sort-by').value;
+    const filterSubtype = (document.getElementById('filter-subtype') || {}).value || '';
+    const filterRarity = (document.getElementById('filter-rarity') || {}).value || '';
+    const filterEffectText = ((document.getElementById('filter-effect-text') || {}).value || '').toLowerCase();
 
     filteredCards = allCards.filter(card => {
         if (search && !card.name.toLowerCase().includes(search)) return false;
         if (filterSet && card.set !== filterSet) return false;
         if (filterType && card.type !== filterType) return false;
         if (filterEnergy && card.energy !== filterEnergy && card.energy2 !== filterEnergy) return false;
+        if (filterSubtype && card.subtype !== filterSubtype) return false;
+        if (filterRarity) {
+            const rarityMap = {
+                'Común': '',
+                'Rara': 'R',
+                'Súper Rara': 'S',
+                'Ultra Rara': 'U',
+                'Kósmica': 'K'
+            };
+            const targetSuffix = rarityMap[filterRarity];
+            if (targetSuffix === undefined) return true; // unknown filter, skip
+            if (targetSuffix === '') {
+                // "Común" = base card (no variant suffix in folio)
+                if (getFolioSuffix(card.folio) !== '') return false;
+            } else {
+                if (!(card.rarity_variants || []).includes(targetSuffix)) return false;
+            }
+        }
+        if (filterEffectText) {
+            const effectText = (card.effect_text || '').toLowerCase();
+            const costText = (card.cost_text || '').toLowerCase();
+            if (!effectText.includes(filterEffectText) && !costText.includes(filterEffectText)) return false;
+        }
         return true;
     });
 
@@ -416,7 +491,7 @@ function createCardElement(card, small = false) {
     const inDeck = currentDeck && decks[currentDeck]?.cards.includes(card.folio) ? 'in-deck' : '';
 
     return `
-        <div class="card-item ${owned} ${inDeck}" data-folio="${card.folio}">
+        <div class="card-item ${owned} ${inDeck}" data-folio="${card.folio}" data-energy="${card.energy || ''}">
             <img src="${card.image}" alt="${card.name}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22280%22%3E%3Crect fill=%22%23333%22 width=%22200%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23666%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
             <div class="card-name">${card.name}</div>
         </div>
@@ -707,10 +782,17 @@ function updateDeckValidation() {
     });
 
     const total = deck.cards.length;
-    const equipo = counts.Ixim + counts.Rot;
+
+    // Bug #1 fix: Espectros count toward Adendei cap (rules §4: total máx 24)
+    const adendeiCount = (counts.Adendei || 0) + (counts.Espectro || 0);
+
+    // Bug #2 fix: Equipo-Ixim and Equipo-Rot count as equipment
+    const equipoIxim = (counts.Ixim || 0) + (counts['Equipo-Ixim'] || 0);
+    const equipoRot = (counts.Rot || 0) + (counts['Equipo-Rot'] || 0);
+    const equipo = equipoIxim + equipoRot;
 
     // Update validation UI
-    updateValidationItem('val-adendei', counts.Adendei, 15, 24);
+    updateValidationItem('val-adendei', adendeiCount, 15, 24);
     updateValidationItem('val-protector', counts.Protector, 1, 2);
     updateValidationItem('val-rava', counts.Rava, 0, 2);
     updateValidationItem('val-bio', counts.Bio, 0, 1);
@@ -778,15 +860,51 @@ function removeFromDeck(folio) {
     renderDeckPool();
 }
 
+// Card types that cannot be included in a constructed deck
+const EXCLUDED_DECK_TYPES = new Set(['Token', 'Art Print', 'Promo', 'Full Art']);
+
 function renderDeckPool() {
     const search = document.getElementById('deck-search').value.toLowerCase();
     const filterEnergy = document.getElementById('deck-filter-energy').value;
     const filterType = document.getElementById('deck-filter-type').value;
+    const filterSubtype = (document.getElementById('deck-filter-subtype') || {}).value || '';
+    const filterRarity = (document.getElementById('deck-filter-rarity') || {}).value || '';
+    const filterEffectText = ((document.getElementById('deck-filter-effect-text') || {}).value || '').toLowerCase();
+    const showOnlyOwned = (document.getElementById('deck-filter-owned') || {}).checked || false;
 
     let cards = allCards.filter(card => {
+        // Bug #3 + #6: Exclude non-playable types and cards with null/missing type
+        if (!card.type) return false;
+        if (EXCLUDED_DECK_TYPES.has(card.type)) return false;
+
         if (search && !card.name.toLowerCase().includes(search)) return false;
         if (filterEnergy && card.energy !== filterEnergy && card.energy2 !== filterEnergy) return false;
         if (filterType && card.type !== filterType) return false;
+        if (filterSubtype && card.subtype !== filterSubtype) return false;
+        if (filterRarity) {
+            const rarityMap = {
+                'Común': '',
+                'Rara': 'R',
+                'Súper Rara': 'S',
+                'Ultra Rara': 'U',
+                'Kósmica': 'K'
+            };
+            const targetSuffix = rarityMap[filterRarity];
+            if (targetSuffix !== undefined) {
+                if (targetSuffix === '') {
+                    if (getFolioSuffix(card.folio) !== '') return false;
+                } else {
+                    if (!(card.rarity_variants || []).includes(targetSuffix)) return false;
+                }
+            }
+        }
+        if (filterEffectText) {
+            const effectText = (card.effect_text || '').toLowerCase();
+            const costText = (card.cost_text || '').toLowerCase();
+            if (!effectText.includes(filterEffectText) && !costText.includes(filterEffectText)) return false;
+        }
+        // "Owned only" toggle: show only cards in collection
+        if (showOnlyOwned && !collection.has(card.folio)) return false;
         return true;
     });
 
