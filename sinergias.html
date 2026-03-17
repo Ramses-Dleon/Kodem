@@ -1,360 +1,330 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mapa de Sinergias — Kódem TCG</title>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --bg:#0f0f0f;--card:#1a1a1a;--border:#2e2e2e;
-      --amber:#f59e0b;--teal:#14b8a6;--text:#e5e7eb;--muted:#6b7280;
-      --atlica:#3b82f6;--huumica:#a855f7;--demotica:#9ca3af;
-      --chaaktica:#eab308;--gelida:#06b6d4;--litica:#b45309;
-      --pirica:#ef4444;--feral:#22c55e;
-    }
-    html,body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
-    header{padding:.9rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1.2rem;background:#111;position:sticky;top:0;z-index:100}
-    .back-link{color:var(--amber);text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:.3rem;white-space:nowrap;transition:opacity .2s;flex-shrink:0}
-    .back-link:hover{opacity:.7}
-    .hd-title{font-size:1.1rem;font-weight:700}
-    .hd-sub{font-size:.73rem;color:var(--muted)}
-    .page{max-width:1050px;margin:0 auto;padding:1.2rem 1rem 3rem}
-    .hint{text-align:center;font-size:.75rem;color:var(--muted);margin:0 0 1rem}
-    .hint span{background:#1c1c1c;border:1px solid #2e2e2e;padding:.28rem .75rem;border-radius:20px}
-    .map-wrap{position:relative;width:100%;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1.2rem}
-    .map-inner{position:relative;width:100%;padding-bottom:82%}
-    #msvg{position:absolute;inset:0;width:100%;height:100%}
-    .enode{position:absolute;transform:translate(-50%,-50%);z-index:10;cursor:pointer;user-select:none}
-    .ncircle{width:80px;height:80px;border-radius:50%;background:#111;border:2.5px solid currentColor;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform .22s,box-shadow .22s,opacity .2s}
-    .nemoji{font-size:1.45rem;line-height:1;pointer-events:none}
-    .nname{font-size:.47rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:currentColor;pointer-events:none;text-align:center}
-    .nrole{position:absolute;top:calc(100% + 5px);left:50%;transform:translateX(-50%);font-size:.57rem;color:var(--muted);white-space:nowrap;pointer-events:none}
-    .enode:hover .ncircle,.enode.is-active .ncircle{transform:scale(1.2);box-shadow:0 0 22px 5px currentColor}
-    .enode.is-dimmed .ncircle,.enode.is-dimmed .nrole{opacity:.1}
-    .en-atlica{color:var(--atlica)}.en-huumica{color:var(--huumica)}.en-demotica{color:var(--demotica)}
-    .en-chaaktica{color:var(--chaaktica)}.en-gelida{color:var(--gelida)}.en-litica{color:var(--litica)}
-    .en-pirica{color:var(--pirica)}.en-feral{color:var(--feral)}
-    .cpath{fill:none;stroke-width:2.3;stroke-linecap:round;opacity:.6;stroke-dasharray:10 5;animation:fdash 1.6s linear infinite;transition:opacity .2s,stroke-width .2s}
-    .cpath.is-dimmed{opacity:.05!important;animation:none}
-    .cpath.is-hl{opacity:1!important;stroke-width:3.5}
-    .spath{fill:none;stroke:var(--teal);stroke-width:2.1;stroke-linecap:round;stroke-dasharray:7 5;opacity:.5;animation:gpulse 2.2s ease-in-out infinite;transition:opacity .2s,stroke-width .2s}
-    .spath.is-dimmed{opacity:.04!important;animation:none}
-    .spath.is-hl{opacity:1!important;stroke-width:3.5;filter:drop-shadow(0 0 7px #14b8a6)}
-    @keyframes fdash{to{stroke-dashoffset:-30}}
-    @keyframes gpulse{0%,100%{filter:drop-shadow(0 0 2px #14b8a6);opacity:.5}50%{filter:drop-shadow(0 0 9px #14b8a6);opacity:.9}}
-    #dpanel{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.5rem;display:none;margin-bottom:1.2rem;position:relative;animation:sdown .22s ease}
-    @keyframes sdown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-    #dpanel.vis{display:block}
-    .pclose{position:absolute;top:.7rem;right:.9rem;background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;transition:color .2s;line-height:1}
-    .pclose:hover{color:var(--text)}
-    .phdr{display:flex;align-items:center;gap:.85rem;margin-bottom:.9rem}
-    .pem{font-size:2.1rem}.ptitle{font-size:1.15rem;font-weight:700}.prole{font-size:.73rem;color:var(--muted);margin-top:1px}
-    .pkeys{font-size:.73rem;margin-top:2px}
-    .pdesc{font-size:.83rem;color:#c4c8d0;line-height:1.6;margin-bottom:1rem}
-    .pgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
-    .psec h4{font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.4rem}
-    .psec ul{list-style:none;display:flex;flex-direction:column;gap:.28rem}
-    .psec li{font-size:.79rem;display:flex;align-items:flex-start;gap:.3rem;line-height:1.4}
-    .chip{display:inline-flex;align-items:center;gap:.28rem;font-size:.7rem;padding:.18rem .5rem;border-radius:20px;border:1px solid;margin:.18rem .18rem 0 0;font-weight:600}
-    .cc{color:var(--amber);border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.08)}
-    .cs{color:var(--teal);border-color:rgba(20,184,166,.35);background:rgba(20,184,166,.08)}
-    .cb{color:#f87171;border-color:rgba(248,113,113,.35);background:rgba(248,113,113,.08)}
-    .legend{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.85rem 1.2rem;display:flex;flex-wrap:wrap;gap:1.1rem;align-items:center;font-size:.79rem}
-    .li{display:flex;align-items:center;gap:.5rem}
-    .ls{width:36px;height:3px;background:linear-gradient(90deg,var(--amber),#fbbf24);border-radius:2px;flex-shrink:0}
-    .ld{width:36px;height:0;border-top:2.5px dashed var(--teal);flex-shrink:0}
-    @media(max-width:520px){
-      .map-inner{padding-bottom:130%}
-      .ncircle{width:60px;height:60px}
-      .nemoji{font-size:1.1rem}.nname{font-size:.4rem}.nrole{font-size:.5rem}
-      .pgrid{grid-template-columns:1fr}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mapa de Sinergias — Kódem TCG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f0f0f;color:#e0e0e0;font-family:'Outfit',sans-serif;min-height:100vh;overflow-x:hidden}
+header{background:#1a1a1a;padding:12px 20px;display:flex;align-items:center;gap:16px;border-bottom:1px solid #333}
+header a{color:#f59e0b;text-decoration:none;font-size:14px}
+header h1{font-family:'Cinzel',serif;font-size:1.2rem;color:#fff}
+header small{color:#888;font-size:0.8rem}
+.layout{display:flex;flex-direction:column;align-items:center;padding:16px}
+.hint{text-align:center;color:#888;font-size:0.8rem;margin-bottom:12px;background:#1a1a1a;padding:6px 16px;border-radius:20px;display:inline-block}
+.map-wrap{position:relative;width:100%;max-width:900px;background:#141414;border-radius:16px;border:1px solid #2a2a2a}
+.map-wrap svg{width:100%;height:auto;display:block}
+/* nodes */
+.node-circle{cursor:pointer;transition:filter .2s}
+.node-group:hover .node-circle,.node-group.active .node-circle{filter:drop-shadow(0 0 18px currentColor)}
+.node-label{font-family:'Cinzel',serif;fill:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;pointer-events:none}
+.node-role{font-family:'Outfit',sans-serif;fill:#aaa;font-size:9px;pointer-events:none}
+.node-emoji{pointer-events:none;user-select:none}
+/* arrows */
+.arrow-counter{fill:none;stroke-width:3;opacity:0.7;transition:opacity .2s}
+.arrow-synergy{fill:none;stroke:#f59e0b;stroke-width:2.5;stroke-dasharray:10 6;opacity:0.5;transition:opacity .2s}
+.arrow-label{font-family:'Outfit',sans-serif;font-size:9px;fill:#e0e0e0;pointer-events:none;paint-order:stroke;stroke:#0f0f0f;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round;font-weight:500}
+.arrow-synergy-label{font-family:'Outfit',sans-serif;font-size:9px;fill:#fbbf24;pointer-events:none;paint-order:stroke;stroke:#0f0f0f;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round;font-weight:500}
+/* highlight */
+.node-group.dimmed{opacity:0.12}
+.arrow-counter.dimmed,.arrow-synergy.dimmed{opacity:0.05}
+.arrow-counter.highlight{opacity:1;stroke-width:4}
+.arrow-synergy.highlight{opacity:1;stroke-width:3.5}
+/* panel */
+#detail-panel{display:none;background:#1a1a1a;border:1px solid #333;border-radius:12px;padding:20px;margin-top:16px;width:100%;max-width:900px}
+#detail-panel.open{display:block}
+#detail-panel h2{font-family:'Cinzel',serif;font-size:1.1rem;margin-bottom:8px}
+#detail-panel .role{color:#888;font-size:0.85rem;margin-bottom:12px}
+#detail-panel .desc{font-size:0.9rem;line-height:1.5;margin-bottom:12px}
+#detail-panel .connections{font-size:0.85rem}
+#detail-panel .conn-item{padding:4px 0;border-bottom:1px solid #222}
+#detail-panel .conn-counter{color:#ef4444}
+#detail-panel .conn-synergy{color:#f59e0b}
+/* legend */
+.legend{display:flex;gap:24px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:#aaa}
+.legend-line{width:40px;height:3px;border-radius:2px}
+.legend-counter{background:linear-gradient(90deg,#ef4444,#f59e0b)}
+.legend-synergy{background:#f59e0b;background:repeating-linear-gradient(90deg,#f59e0b 0,#f59e0b 8px,transparent 8px,transparent 14px)}
+/* responsive */
+@media(max-width:600px){
+  header h1{font-size:1rem}
+  .node-label{font-size:9px}
+  .node-role{font-size:7px}
+  .arrow-label,.arrow-synergy-label{font-size:7px}
+}
+/* animation */
+@keyframes dash{to{stroke-dashoffset:-32}}
+.arrow-counter{animation:dash 2s linear infinite}
+.arrow-counter{stroke-dasharray:16 8}
+</style>
 </head>
 <body>
 <header>
-  <a class="back-link" href="index.html">&#8592; Volver</a>
-  <div><div class="hd-title">&#9889; Mapa de Sinergias</div><div class="hd-sub">Kódem TCG &mdash; 8 Energías</div></div>
+  <a href="index.html">← Volver</a>
+  <div><h1>⚡ Mapa de Sinergias</h1><small>Kódem TCG — 8 Energías</small></div>
 </header>
-<div class="page">
-  <div class="hint"><span>Hover para ver conexiones &nbsp;·&nbsp; Clic para ficha completa</span></div>
+
+<div class="layout">
+  <div class="hint">Hover: resalta conexiones · Clic: ficha completa</div>
+
   <div class="map-wrap">
-    <div class="map-inner" id="mi">
-      <svg id="msvg" viewBox="0 0 1000 820" preserveAspectRatio="xMidYMid meet">
-        <defs id="defs"></defs>
-      </svg>
-    </div>
+    <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="g-atlica"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.08"/></radialGradient>
+        <radialGradient id="g-pirica"><stop offset="0%" stop-color="#ef4444" stop-opacity="0.3"/><stop offset="100%" stop-color="#ef4444" stop-opacity="0.08"/></radialGradient>
+        <radialGradient id="g-gelida"><stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0.08"/></radialGradient>
+        <radialGradient id="g-litica"><stop offset="0%" stop-color="#b45309" stop-opacity="0.3"/><stop offset="100%" stop-color="#b45309" stop-opacity="0.08"/></radialGradient>
+        <radialGradient id="g-chaaktica"><stop offset="0%" stop-color="#eab308" stop-opacity="0.3"/><stop offset="100%" stop-color="#eab308" stop-opacity="0.08"/></radialGradient>
+        <radialGradient id="g-huumica"><stop offset="0%" stop-color="#a855f7" stop-opacity="0.3"/><stop offset="100%" stop-color="#a855f7" stop-opacity="0.08"/></radialGradient>
+        <radialGradient id="g-demotica"><stop offset="0%" stop-color="#9ca3af" stop-opacity="0.3"/><stop offset="100%" stop-color="#9ca3af" stop-opacity="0.08"/></radialGradient>
+        <radialGradient id="g-feral"><stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/><stop offset="100%" stop-color="#22c55e" stop-opacity="0.08"/></radialGradient>
+        <!-- arrow markers -->
+        <marker id="ah-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="#ef4444"/></marker>
+        <marker id="ah-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="#3b82f6"/></marker>
+        <marker id="ah-cyan" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="#06b6d4"/></marker>
+        <marker id="ah-brown" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="#b45309"/></marker>
+        <marker id="ah-yellow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="#eab308"/></marker>
+        <marker id="ah-purple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="#a855f7"/></marker>
+        <marker id="ah-gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="#9ca3af"/></marker>
+        <marker id="ah-green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="#22c55e"/></marker>
+      </defs>
+
+      <!-- COUNTER ARROWS (solid, colored by attacker) -->
+      <!-- Feral → Feral (self-loop, compact arc above node) -->
+      <path class="arrow-counter" data-from="feral" data-to="feral" stroke="#22c55e" marker-end="url(#ah-green)"
+            d="M220,165 C240,80 310,80 260,160"/>
+      <text class="arrow-label" x="255" y="95" fill="#22c55e">Auto-buff ↻</text>
+
+      <!-- Húumica → Demótica -->
+      <path class="arrow-counter" data-from="huumica" data-to="demotica" stroke="#a855f7" marker-end="url(#ah-purple)"
+            d="M645,210 Q720,360 660,470"/>
+      <text class="arrow-label" x="700" y="350">Escala &gt; Control</text>
+
+      <!-- Demótica → Feral -->
+      <path class="arrow-counter" data-from="demotica" data-to="feral" stroke="#9ca3af" marker-end="url(#ah-gray)"
+            d="M615,500 Q400,420 240,260"/>
+      <text class="arrow-label" x="410" y="390">Manipula buffs</text>
+
+      <!-- Pírica → Feral -->
+      <path class="arrow-counter" data-from="pirica" data-to="feral" stroke="#ef4444" marker-end="url(#ah-red)"
+            d="M130,480 Q150,380 175,280"/>
+      <text class="arrow-label" x="108" y="380">Quema &gt; Buff</text>
+
+      <!-- Cháaktica → Lítica -->
+      <path class="arrow-counter" data-from="chaaktica" data-to="litica" stroke="#eab308" marker-end="url(#ah-yellow)"
+            d="M580,650 Q420,680 280,640"/>
+      <text class="arrow-label" x="410" y="695">Burst &gt; Tanque</text>
+
+      <!-- Lítica → Átlica -->
+      <path class="arrow-counter" data-from="litica" data-to="atlica" stroke="#b45309" marker-end="url(#ah-brown)"
+            d="M235,590 Q280,400 370,170"/>
+      <text class="arrow-label" x="260" y="390">Resiste curaciones</text>
+
+      <!-- Gélida → Cháaktica -->
+      <path class="arrow-counter" data-from="gelida" data-to="chaaktica" stroke="#06b6d4" marker-end="url(#ah-cyan)"
+            d="M445,730 Q520,720 565,680"/>
+      <text class="arrow-label" x="480" y="745">Congela velocidad</text>
+
+      <!-- Átlica → Pírica -->
+      <path class="arrow-counter" data-from="atlica" data-to="pirica" stroke="#3b82f6" marker-end="url(#ah-blue)"
+            d="M365,155 Q200,280 140,440"/>
+      <text class="arrow-label" x="210" y="300">Cura &gt; Daño</text>
+
+      <!-- SYNERGY LINES (dashed, gold) -->
+      <path class="arrow-synergy" data-a="pirica" data-b="chaaktica"
+            d="M165,500 Q400,550 560,640"/>
+      <text class="arrow-synergy-label" x="350" y="540">🔥⚡ Aggro imparable</text>
+
+      <path class="arrow-synergy" data-a="feral" data-b="chaaktica"
+            d="M230,260 Q400,500 555,630"/>
+      <text class="arrow-synergy-label" x="370" y="460">🐾⚡ Buff + velocidad</text>
+
+      <path class="arrow-synergy" data-a="demotica" data-b="feral"
+            d="M615,480 Q400,300 240,240"/>
+      <text class="arrow-synergy-label" x="430" y="330">🔮🐾 Control + auto-buff</text>
+
+      <path class="arrow-synergy" data-a="demotica" data-b="atlica"
+            d="M630,470 Q530,300 420,160"/>
+      <text class="arrow-synergy-label" x="550" y="290">🔮💧 Posición + defensa</text>
+
+      <!-- NODES -->
+      <!-- Átlica (top center) -->
+      <g class="node-group" data-id="atlica">
+        <circle cx="400" cy="120" r="60" fill="url(#g-atlica)" stroke="#3b82f6" stroke-width="2.5" class="node-circle" style="color:#3b82f6"/>
+        <text class="node-emoji" x="400" y="115" text-anchor="middle" dominant-baseline="middle" font-size="28">💧</text>
+        <text class="node-label" x="400" y="148" text-anchor="middle">ÁTLICA</text>
+        <text class="node-role" x="400" y="195" text-anchor="middle">Defensiva</text>
+      </g>
+      <!-- Húumica (top right) -->
+      <g class="node-group" data-id="huumica">
+        <circle cx="640" cy="200" r="60" fill="url(#g-huumica)" stroke="#a855f7" stroke-width="2.5" class="node-circle" style="color:#a855f7"/>
+        <text class="node-emoji" x="640" y="195" text-anchor="middle" dominant-baseline="middle" font-size="28">🌀</text>
+        <text class="node-label" x="640" y="228" text-anchor="middle">HÚUMICA</text>
+        <text class="node-role" x="640" y="275" text-anchor="middle">Progresiva</text>
+      </g>
+      <!-- Demótica (right) -->
+      <g class="node-group" data-id="demotica">
+        <circle cx="680" cy="500" r="60" fill="url(#g-demotica)" stroke="#9ca3af" stroke-width="2.5" class="node-circle" style="color:#9ca3af"/>
+        <text class="node-emoji" x="680" y="495" text-anchor="middle" dominant-baseline="middle" font-size="28">🔮</text>
+        <text class="node-label" x="680" y="528" text-anchor="middle">DEMÓTICA</text>
+        <text class="node-role" x="680" y="575" text-anchor="middle">Posicional</text>
+      </g>
+      <!-- Cháaktica (bottom right) -->
+      <g class="node-group" data-id="chaaktica">
+        <circle cx="590" cy="650" r="60" fill="url(#g-chaaktica)" stroke="#eab308" stroke-width="2.5" class="node-circle" style="color:#eab308"/>
+        <text class="node-emoji" x="590" y="645" text-anchor="middle" dominant-baseline="middle" font-size="28">⚡</text>
+        <text class="node-label" x="590" y="678" text-anchor="middle">CHÁAKTICA</text>
+        <text class="node-role" x="590" y="725" text-anchor="middle">Velocidad</text>
+      </g>
+      <!-- Gélida (bottom center) -->
+      <g class="node-group" data-id="gelida">
+        <circle cx="400" cy="730" r="60" fill="url(#g-gelida)" stroke="#06b6d4" stroke-width="2.5" class="node-circle" style="color:#06b6d4"/>
+        <text class="node-emoji" x="400" y="725" text-anchor="middle" dominant-baseline="middle" font-size="28">🧊</text>
+        <text class="node-label" x="400" y="758" text-anchor="middle">GÉLIDA</text>
+        <text class="node-role" x="400" y="790" text-anchor="middle">Control</text>
+      </g>
+      <!-- Lítica (bottom left) -->
+      <g class="node-group" data-id="litica">
+        <circle cx="210" cy="630" r="60" fill="url(#g-litica)" stroke="#b45309" stroke-width="2.5" class="node-circle" style="color:#b45309"/>
+        <text class="node-emoji" x="210" y="625" text-anchor="middle" dominant-baseline="middle" font-size="28">🪨</text>
+        <text class="node-label" x="210" y="658" text-anchor="middle">LÍTICA</text>
+        <text class="node-role" x="210" y="705" text-anchor="middle">Tanque</text>
+      </g>
+      <!-- Pírica (left) -->
+      <g class="node-group" data-id="pirica">
+        <circle cx="120" cy="460" r="60" fill="url(#g-pirica)" stroke="#ef4444" stroke-width="2.5" class="node-circle" style="color:#ef4444"/>
+        <text class="node-emoji" x="120" y="455" text-anchor="middle" dominant-baseline="middle" font-size="28">🔥</text>
+        <text class="node-label" x="120" y="488" text-anchor="middle">PÍRICA</text>
+        <text class="node-role" x="120" y="535" text-anchor="middle">Agresiva</text>
+      </g>
+      <!-- Feral (top left) -->
+      <g class="node-group" data-id="feral">
+        <circle cx="200" cy="220" r="60" fill="url(#g-feral)" stroke="#22c55e" stroke-width="2.5" class="node-circle" style="color:#22c55e"/>
+        <text class="node-emoji" x="200" y="215" text-anchor="middle" dominant-baseline="middle" font-size="28">🐾</text>
+        <text class="node-label" x="200" y="248" text-anchor="middle">FERAL</text>
+        <text class="node-role" x="200" y="295" text-anchor="middle">Auto-buff</text>
+      </g>
+    </svg>
   </div>
-  <div id="dpanel">
-    <button class="pclose" id="pclose">&#10005;</button>
-    <div id="pc"></div>
-  </div>
+
   <div class="legend">
-    <div class="li"><div class="ls"></div><span><strong>Contador</strong> &mdash; flecha animada (quién vence a quién)</span></div>
-    <div class="li"><div class="ld"></div><span><strong>Sinergia</strong> &mdash; línea brillante (combo poderoso)</span></div>
-    <div class="li" style="color:var(--muted)">Hover: resalta conexiones &nbsp;|&nbsp; Clic: abre ficha</div>
+    <div class="legend-item"><div class="legend-line legend-counter"></div> Contador — quién vence a quién</div>
+    <div class="legend-item"><div class="legend-line legend-synergy"></div> Sinergia — combo poderoso</div>
+    <div class="legend-item" style="color:#666">Hover: resalta | Clic: ficha</div>
   </div>
+
+  <div id="detail-panel"></div>
 </div>
+
 <script>
 (function(){
-var E=[
-  {id:'atlica',    e:'💧',n:'ÁTLICA',    c:'#3b82f6',r:'Defensiva',  k:'Curar · Proteger · Desviar',
-   d:'La energía del agua y la defensa. Sus cartas curan aliados, bloquean daño y desvían ataques. Neutraliza estrategias de daño progresivo con recuperación constante. Vulnerable al fuego que quema antes de que la cura surta efecto.'},
-  {id:'huumica',   e:'🌀',n:'HÚUMICA',   c:'#a855f7',r:'Progresiva', k:'Escalar · Potencia creciente',
-   d:'Energía de acumulación. Empieza débil pero escala exponencialmente cada turno. En partidas largas supera cualquier barrera defensiva. Vulnerable al reposicionamiento Demótico que resetea su progreso.'},
-  {id:'demotica',  e:'🔮',n:'DEMÓTICA',  c:'#9ca3af',r:'Posicional', k:'Reordenar · Cambiar cartas',
-   d:'El maestro del tablero. Mueve, reordena e intercambia cartas. Interrumpe combos y resetea escalados. Controla el ritmo del juego, pero si el rival ya tiene demasiada ventaja sus herramientas no alcanzan.'},
-  {id:'chaaktica', e:'⚡',n:'CHÁAKTICA', c:'#eab308',r:'Velocidad',  k:'0-1 descanso · Imparable',
-   d:'La energía del rayo. Sus cartas requieren cero o un descanso y atacan antes de que el rival responda. Rompe sinergias rivales actuando primero. Combinada con daño directo es devastadora.'},
-  {id:'gelida',    e:'🧊',n:'GÉLIDA',    c:'#06b6d4',r:'Control',    k:'+Descansos rival · Ralentizar',
-   d:'Energía de hielo y control. Añade descansos extra al campo rival, ralentizando sus acciones. Efectiva contra arquetipos lentos que necesitan muchos turnos. Débil ante estrategias de velocidad que actúan antes de que el frío surta efecto.'},
-  {id:'litica',    e:'🪨',n:'LÍTICA',    c:'#b45309',r:'Tanque',     k:'Daño alto · Descansos altos',
-   d:'El tanque definitivo. Valores de ataque y resistencia extremos, pero requiere varios descansos para actuar. Un solo golpe puede one-shot cualquier rival. Vulnerabilidad crítica: si se le añaden descansos extra, nunca actúa.'},
-  {id:'pirica',    e:'🔥',n:'PÍRICA',    c:'#ef4444',r:'Agresiva',   k:'Quemar · Escalar · Daño directo',
-   d:'La energía del fuego puro. Aplica Quemadura que inflige daño pasivo y cancela curaciones. Escala con cada carta jugada. Neutraliza arquetipos curativos. Con velocidad Cháaktica se vuelve una máquina aggro imparable.'},
-  {id:'feral',     e:'🐾',n:'FERAL',     c:'#22c55e',r:'Auto-buff',  k:'Se potencia sola · Ignora restricciones',
-   d:'La energía salvaje. Sus cartas se potencian autónomamente sin combos externos. Ignora restricciones de campo. No tiene un counter directo en el ciclo. Combina excepcionalmente bien con control y velocidad.'}
-];
-
-var C=[
-  {f:'atlica',    t:'huumica',   l:'Cura/protege vs daño progresivo'},
-  {f:'huumica',   t:'demotica',  l:'Escala supera reposicionamiento'},
-  {f:'demotica',  t:'chaaktica', l:'Reordena campo, rompe sinergias'},
-  {f:'chaaktica', t:'gelida',    l:'Velocidad supera control lento'},
-  {f:'gelida',    t:'litica',    l:'+Descansos anula tanques lentos'},
-  {f:'litica',    t:'pirica',    l:'Daño masivo one-shots'},
-  {f:'pirica',    t:'atlica',    l:'Quemar neutraliza curación pasiva'},
-  {f:'feral',     t:'feral',     l:'Auto-buff ignora restricciones', self:true}
-];
-
-var S=[
-  {a:'pirica',   b:'chaaktica', l:'🔥⚡ Aggro imparable'},
-  {a:'feral',    b:'chaaktica', l:'🐾⚡ Buff + velocidad'},
-  {a:'demotica', b:'feral',     l:'🔮🐾 Control + auto-buff'},
-  {a:'demotica', b:'atlica',    l:'🔮💧 Posición + defensa'}
-];
-
-var POS={
-  atlica:   {x:500,y:75},huumica:{x:790,y:185},demotica:{x:920,y:420},
-  chaaktica:{x:790,y:655},gelida:{x:500,y:760},litica:{x:210,y:655},
-  pirica:   {x:80,y:420},feral:{x:210,y:185}
+var DATA={
+  atlica:{e:'💧',n:'Átlica',c:'#3b82f6',role:'Defensiva',desc:'Curación, protección, resistencia. Los Adendei Átlicos son los médicos del campo — curan aliados y absorben daño. Contrarrestan a Pírica apagando sus quemaduras.'},
+  huumica:{e:'🌀',n:'Húumica',c:'#a855f7',role:'Progresiva',desc:'Escalado y evolución. Empiezan débiles pero crecen cada turno. Contrarrestan a Demótica porque no puedes controlar lo que escala más rápido que tú.'},
+  demotica:{e:'🔮',n:'Demótica',c:'#9ca3af',role:'Posicional',desc:'Control de campo y manipulación. Mueven cartas, niegan efectos, cambian posiciones. Contrarrestan a Feral manipulando sus buffs en su contra.'},
+  chaaktica:{e:'⚡',n:'Cháaktica',c:'#eab308',role:'Velocidad',desc:'Ataques rápidos y burst damage. Golpean antes de que el rival pueda reaccionar. Contrarrestan a Lítica porque la velocidad supera a la resistencia bruta.'},
+  gelida:{e:'🧊',n:'Gélida',c:'#06b6d4',role:'Control',desc:'Congelamiento y ralentización. Ponen descansos extra, congelan ataques. Contrarrestan a Cháaktica frenando su velocidad.'},
+  litica:{e:'🪨',n:'Lítica',c:'#b45309',role:'Tanque',desc:'Alta vida y resistencia pura. Aguantan todo el daño y siguen en pie. Contrarrestan a Átlica porque no necesitan curarse si no pueden ser derribados.'},
+  pirica:{e:'🔥',n:'Pírica',c:'#ef4444',role:'Agresiva',desc:'Daño directo y quemaduras. Eliminan amenazas rápidamente con daño masivo. Contrarrestan a Feral quemándolos más rápido de lo que se buffean.'},
+  feral:{e:'🐾',n:'Feral',c:'#22c55e',role:'Auto-buff',desc:'Crecimiento propio y feralización. Se fortalecen a sí mismos acumulando poder. Se counter a sí mismos: Feral vs Feral es puro espejo de quién escala mejor.'}
 };
-var R=50;
 
-function ecol(id){return E.find(function(x){return x.id===id}).c}
+var COUNTERS=[
+  {f:'feral',t:'feral',l:'Auto-buff (espejo)'},
+  {f:'huumica',t:'demotica',l:'Escala > Control'},
+  {f:'demotica',t:'feral',l:'Manipula buffs'},
+  {f:'pirica',t:'feral',l:'Quema > Buff'},
+  {f:'chaaktica',t:'litica',l:'Burst > Tanque'},
+  {f:'litica',t:'atlica',l:'Resiste curaciones'},
+  {f:'gelida',t:'chaaktica',l:'Congela velocidad'},
+  {f:'atlica',t:'pirica',l:'Cura > Daño'}
+];
 
-// markers
-var dfs=document.getElementById('defs');
-E.forEach(function(e){
-  var m=document.createElementNS('http://www.w3.org/2000/svg','marker');
-  m.setAttribute('id','a-'+e.id);m.setAttribute('markerWidth','9');m.setAttribute('markerHeight','9');
-  m.setAttribute('refX','8');m.setAttribute('refY','3');m.setAttribute('orient','auto');
-  var p=document.createElementNS('http://www.w3.org/2000/svg','path');
-  p.setAttribute('d','M0,0 L0,6 L9,3 Z');p.setAttribute('fill',e.c);
-  m.appendChild(p);dfs.appendChild(m);
-});
+var SYNERGIES=[
+  {a:'pirica',b:'chaaktica',l:'🔥⚡ Aggro imparable'},
+  {a:'feral',b:'chaaktica',l:'🐾⚡ Buff + velocidad'},
+  {a:'demotica',b:'feral',l:'🔮🐾 Control + auto-buff'},
+  {a:'demotica',b:'atlica',l:'🔮💧 Posición + defensa'}
+];
 
-var svg=document.getElementById('msvg');
-
-function ep(f,t,r){var dx=t.x-f.x,dy=t.y-f.y,d=Math.sqrt(dx*dx+dy*dy);return{x:f.x+dx/d*r,y:f.y+dy/d*r}}
-function qp(p1,p2,k){
-  k=k||0.18;var mx=(p1.x+p2.x)/2,my=(p1.y+p2.y)/2,dx=p2.x-p1.x,dy=p2.y-p1.y;
-  return 'M'+p1.x+' '+p1.y+' Q'+(mx-dy*k)+' '+(my+dx*k)+' '+p2.x+' '+p2.y;
-}
-
-// build paths
-C.forEach(function(c,i){
-  var el=document.createElementNS('http://www.w3.org/2000/svg','path');
-  el.setAttribute('class','cpath');el.setAttribute('stroke',ecol(c.f));
-  el.setAttribute('data-f',c.f);el.setAttribute('data-t',c.t);el.setAttribute('data-l',c.l);
-  el.id='cp'+i;
-  if(c.self){
-    var p=POS.feral;
-    el.setAttribute('d','M'+(p.x-R)+' '+(p.y-13)+' C'+(p.x-R-55)+' '+(p.y-60)+' '+(p.x-R-55)+' '+(p.y+60)+' '+(p.x-R)+' '+(p.y+13));
-    el.setAttribute('marker-end','url(#a-feral)');
-  } else {
-    var fp=POS[c.f],tp=POS[c.t];
-    var s=ep(fp,tp,R+5),e2=ep(tp,fp,R+16);
-    el.setAttribute('d',qp(s,e2,0.18));
-    el.setAttribute('marker-end','url(#a-'+c.f+')');
-  }
-  svg.appendChild(el);
-});
-
-S.forEach(function(s,i){
-  var el=document.createElementNS('http://www.w3.org/2000/svg','path');
-  el.setAttribute('class','spath');el.setAttribute('data-a',s.a);el.setAttribute('data-b',s.b);
-  el.setAttribute('data-l',s.l);el.id='sp'+i;
-  var fp=POS[s.a],tp=POS[s.b];
-  var p1=ep(fp,tp,R+5),p2=ep(tp,fp,R+5);
-  el.setAttribute('d',qp(p1,p2,-0.2));
-  svg.appendChild(el);
-});
-
-// build nodes
-var mi=document.getElementById('mi');
-E.forEach(function(e){
-  var p=POS[e.id];
-  var nd=document.createElement('div');
-  nd.className='enode en-'+e.id;nd.id='n-'+e.id;nd.setAttribute('data-id',e.id);
-  nd.style.left=(p.x/1000*100)+'%';nd.style.top=(p.y/820*100)+'%';
-  nd.innerHTML='<div class="ncircle"><span class="nemoji">'+e.e+'</span><span class="nname">'+e.n+'</span></div><span class="nrole">'+e.r+'</span>';
-  mi.appendChild(nd);
-});
-
-// ─── INTERACTION
+var nodes=document.querySelectorAll('.node-group');
+var counterPaths=document.querySelectorAll('.arrow-counter');
+var synergyPaths=document.querySelectorAll('.arrow-synergy');
+var panel=document.getElementById('detail-panel');
 var activeId=null;
 
-function connIds(id){
-  var s={};s[id]=true;
-  C.forEach(function(c){
-    if(c.f===id&&c.t)s[c.t]=true;
-    if(c.t===id&&!c.self)s[c.f]=true;
-  });
-  S.forEach(function(s2){
-    if(s2.a===id)s[s2.b]=true;
-    if(s2.b===id)s[s2.a]=true;
-  });
-  return s;
+function connectedIds(id){
+  var ids=new Set();
+  COUNTERS.forEach(function(c){if(c.f===id)ids.add(c.t);if(c.t===id)ids.add(c.f)});
+  SYNERGIES.forEach(function(s){if(s.a===id)ids.add(s.b);if(s.b===id)ids.add(s.a)});
+  ids.add(id);
+  return ids;
 }
 
-function applyHL(id){
-  var ci=connIds(id);
-  document.querySelectorAll('.enode').forEach(function(n){
-    var nid=n.getAttribute('data-id');
-    n.classList.remove('is-active','is-dimmed');
-    if(nid===id)n.classList.add('is-active');
-    else if(!ci[nid])n.classList.add('is-dimmed');
+function highlight(id){
+  var conn=connectedIds(id);
+  nodes.forEach(function(n){n.classList.toggle('dimmed',!conn.has(n.getAttribute('data-id')))});
+  counterPaths.forEach(function(p){
+    var f=p.getAttribute('data-from'),t=p.getAttribute('data-to');
+    p.classList.toggle('dimmed',f!==id&&t!==id);
+    p.classList.toggle('highlight',f===id||t===id);
   });
-  svg.querySelectorAll('.cpath').forEach(function(p){
-    var f=p.getAttribute('data-f'),t=p.getAttribute('data-t');
-    p.classList.remove('is-dimmed','is-hl');
-    if(f===id||t===id)p.classList.add('is-hl');else p.classList.add('is-dimmed');
-  });
-  svg.querySelectorAll('.spath').forEach(function(p){
+  synergyPaths.forEach(function(p){
     var a=p.getAttribute('data-a'),b=p.getAttribute('data-b');
-    p.classList.remove('is-dimmed','is-hl');
-    if(a===id||b===id)p.classList.add('is-hl');else p.classList.add('is-dimmed');
+    p.classList.toggle('dimmed',a!==id&&b!==id);
+    p.classList.toggle('highlight',a===id||b===id);
   });
 }
 
-function clearHL(){
-  document.querySelectorAll('.enode').forEach(function(n){n.classList.remove('is-active','is-dimmed')});
-  svg.querySelectorAll('.cpath,.spath').forEach(function(p){p.classList.remove('is-dimmed','is-hl')});
+function clearHighlight(){
+  nodes.forEach(function(n){n.classList.remove('dimmed','active')});
+  counterPaths.forEach(function(p){p.classList.remove('dimmed','highlight')});
+  synergyPaths.forEach(function(p){p.classList.remove('dimmed','highlight')});
 }
 
-function ei(id){return E.find(function(x){return x.id===id})}
-
-function renderPanel(id){
-  var en=ei(id);
-  var beats=C.filter(function(c){return c.f===id&&!c.self}).map(function(c){return{en:ei(c.t),l:c.l}});
-  var beatenBy=C.filter(function(c){return c.t===id&&!c.self}).map(function(c){return{en:ei(c.f),l:c.l}});
-  var synList=S.filter(function(s){return s.a===id||s.b===id});
-
-  var synHtml=synList.map(function(s){
-    var partner=s.a===id?ei(s.b):ei(s.a);
-    return '<span class="chip cs">'+partner.e+' '+partner.n+' — '+s.l+'</span>';
-  }).join('');
-
-  var winsHtml=beats.length?beats.map(function(x){
-    return '<li><span style="color:'+x.en.c+'">'+x.en.e+' '+x.en.n+'</span> — '+x.l+'</li>';
-  }).join(''):'<li style="color:var(--muted)">Sin counter directo</li>';
-
-  var lossesHtml=beatenBy.length?beatenBy.map(function(x){
-    return '<li><span style="color:'+x.en.c+'">'+x.en.e+' '+x.en.n+'</span> — '+x.l+'</li>';
-  }).join(''):'<li style="color:var(--muted)">No tiene counter</li>';
-
-  document.getElementById('pc').innerHTML=
-    '<div class="phdr">'+
-      '<span class="pem">'+en.e+'</span>'+
-      '<div><div class="ptitle" style="color:'+en.c+'">'+en.n+'</div>'+
-           '<div class="prole">'+en.r+'</div>'+
-           '<div class="pkeys" style="color:'+en.c+'">'+en.k+'</div></div>'+
-    '</div>'+
-    '<div class="pdesc">'+en.d+'</div>'+
-    (synList.length?'<div style="margin-bottom:.8rem"><div class="psec"><h4>Sinergias</h4></div>'+synHtml+'</div>':'')+
-    '<div class="pgrid">'+
-      '<div class="psec"><h4>&#9660; Vence a</h4><ul>'+winsHtml+'</ul></div>'+
-      '<div class="psec"><h4>&#9650; Pierde contra</h4><ul>'+lossesHtml+'</ul></div>'+
-      '<div class="psec"><h4>Rol en el meta</h4><ul>'+
-        '<li>'+en.r+': '+en.k+'</li>'+
-        (id==='feral'?'<li style="color:var(--teal)">Sin counter en el ciclo principal</li>':'')+
-      '</ul></div>'+
-    '</div>';
-
-  var dp=document.getElementById('dpanel');
-  dp.classList.add('vis');
-  dp.scrollIntoView({behavior:'smooth',block:'nearest'});
+function showPanel(id){
+  var d=DATA[id];if(!d)return;
+  var html='<h2 style="color:'+d.c+'">'+d.e+' '+d.n+'</h2>';
+  html+='<div class="role">'+d.role+'</div>';
+  html+='<div class="desc">'+d.desc+'</div>';
+  html+='<div class="connections"><strong>Conexiones:</strong>';
+  COUNTERS.forEach(function(c){
+    if(c.f===id)html+='<div class="conn-item"><span class="conn-counter">⚔️ Counters:</span> '+DATA[c.t].e+' '+DATA[c.t].n+' — '+c.l+'</div>';
+    if(c.t===id&&c.f!==id)html+='<div class="conn-item"><span class="conn-counter">🛡️ Countered by:</span> '+DATA[c.f].e+' '+DATA[c.f].n+' — '+c.l+'</div>';
+  });
+  SYNERGIES.forEach(function(s){
+    var other=s.a===id?s.b:s.b===id?s.a:null;
+    if(other)html+='<div class="conn-item"><span class="conn-synergy">✨ Sinergia:</span> '+DATA[other].e+' '+DATA[other].n+' — '+s.l+'</div>';
+  });
+  html+='</div>';
+  panel.innerHTML=html;
+  panel.classList.add('open');
 }
 
-// Node events
-document.querySelectorAll('.enode').forEach(function(nd){
-  var id=nd.getAttribute('data-id');
-
-  nd.addEventListener('mouseenter',function(){
-    if(!activeId)applyHL(id);
-  });
-  nd.addEventListener('mouseleave',function(){
-    if(!activeId)clearHL();
-  });
-  nd.addEventListener('click',function(ev){
-    ev.stopPropagation();
-    if(activeId===id){
-      activeId=null;clearHL();
-      document.getElementById('dpanel').classList.remove('vis');
-    } else {
-      activeId=id;applyHL(id);renderPanel(id);
-    }
+nodes.forEach(function(n){
+  n.addEventListener('mouseenter',function(){if(!activeId)highlight(n.getAttribute('data-id'))});
+  n.addEventListener('mouseleave',function(){if(!activeId)clearHighlight()});
+  n.addEventListener('click',function(e){
+    e.stopPropagation();
+    var id=n.getAttribute('data-id');
+    if(activeId===id){activeId=null;clearHighlight();panel.classList.remove('open');return}
+    activeId=id;
+    clearHighlight();
+    highlight(id);
+    n.classList.add('active');
+    showPanel(id);
   });
 });
 
-// Close panel
-document.getElementById('pclose').addEventListener('click',function(){
-  activeId=null;clearHL();
-  document.getElementById('dpanel').classList.remove('vis');
-});
-
-// Click outside
-document.addEventListener('click',function(ev){
-  if(!ev.target.closest('.enode')&&!ev.target.closest('#dpanel')){
-    activeId=null;clearHL();
-    document.getElementById('dpanel').classList.remove('vis');
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.node-group')&&!e.target.closest('#detail-panel')){
+    activeId=null;clearHighlight();panel.classList.remove('open');
   }
 });
-
-// SVG path hover tooltip
-svg.addEventListener('mousemove',function(ev){
-  var t=ev.target;
-  if(t.classList.contains('cpath')||t.classList.contains('spath')){
-    var label=t.getAttribute('data-l');
-    var isS=t.classList.contains('spath');
-    var fromId=t.getAttribute('data-f')||t.getAttribute('data-a');
-    var toId=t.getAttribute('data-t')||t.getAttribute('data-b');
-    var fromE=fromId?ei(fromId):null;
-    var toE=toId&&toId!==fromId?ei(toId):null;
-    var prefix=isS?'SINERGIA':'COUNTER';
-    var names=fromE?(fromE.e+' '+(toE?'+ '+toE.e:'')):'';
-    // no floating tooltip to avoid positioning headaches — just use title
-  }
-});
-
-// Add SVG title tooltips for accessibility
-svg.querySelectorAll('.cpath').forEach(function(p){
-  var t=document.createElementNS('http://www.w3.org/2000/svg','title');
-  var f=p.getAttribute('data-f'),to=p.getAttribute('data-t'),l=p.getAttribute('data-l');
-  var fe=ei(f),te=to&&to!==f?ei(to):null;
-  t.textContent=(fe?fe.e+' '+fe.n:f)+' → '+(te?te.e+' '+te.n:f)+': '+l;
-  p.insertBefore(t,p.firstChild);
-});
-svg.querySelectorAll('.spath').forEach(function(p){
-  var t=document.createElementNS('http://www.w3.org/2000/svg','title');
-  var a=p.getAttribute('data-a'),b=p.getAttribute('data-b'),l=p.getAttribute('data-l');
-  var ae=ei(a),be=ei(b);
-  t.textContent='SINERGIA: '+ae.e+' '+ae.n+' + '+be.e+' '+be.n+' — '+l;
-  p.insertBefore(t,p.firstChild);
-});
-
 })();
 </script>
 </body>
