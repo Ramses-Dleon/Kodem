@@ -1138,6 +1138,9 @@ async function clearCollection() {
     if (confirmed) {
         collection.clear();
         saveCollection();
+        // Reset filter to "all" so user doesn't see 609 "missing" cards
+        const filterEl = document.getElementById('collection-filter');
+        if (filterEl) filterEl.value = 'all';
         renderCollection();
         showToast('Colección limpiada 🗑️', 'info');
     }
