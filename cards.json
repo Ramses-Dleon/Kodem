@@ -1595,7 +1595,9 @@
     "energy": "Cháaktica",
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: Daña 3 ptos. a 1 carta en Zona Principal. Hasta que este Protector vuelva a estar disponible, si 1 Adendei-Cháaktico aliado ataca a la carta frente a él, no recibirá descanso al final del turno. Costo: Esta carta sólo podrá vincularse con Adendei-Cháaktico.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-002",
@@ -1604,7 +1606,9 @@
     "energy": "Cháaktica",
     "damage": 2,
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si 1 Adendei Catrín es colocado en el campo, no recibirá descanso al atacar o usar Activa en este o en tu siguiente turno.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-003",
@@ -1613,7 +1617,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si 1 Adendei aliado o 1 carta rival es vivificada, daña 2 ptos. a 1 carta rival en Zona Principal.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-004",
@@ -1622,7 +1628,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa-Rápida: Si el Adendei equipado será dañado por 1 ataque o efecto, reduce el daño recibido en 2 ptos. y actualiza todos sus descansos. Costo: Solo puedes usar este efecto una vez por juego. Este efecto no puede ser copiado ni negado.",
+    "effect_type": "Activa-Rápida"
   },
   {
     "folio": "FYTE-005",
@@ -1631,7 +1639,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Puedes enviar este equipo a Extinción. Si este equipo es enviado a Extinción, vivifica 1 Adendei al fondo del Mazo. Costo: Si esta carta es enviada a Extinción, daña 3 ptos. a 1 carta aliada. Esta carta no puede ser vivificada ni puede vivificar a 1 carta que ya haya sido vivificada.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-006",
@@ -1640,7 +1650,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa-Rápida: Si el rival declara 4 ptos. o más de daño, redistribuye como quieras el total del daño declarado entre todas tus cartas, dañando al menos 1 pto. a cada una. Costo: Daña 2 ptos. al Protector aliado. Puedes equipar esta carta a 1 Protector o a 1 Adendei.",
+    "effect_type": "Activa-Rápida"
   },
   {
     "folio": "FYTE-007",
@@ -1649,7 +1661,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si esta carta es enviada a Extinción, cura 2 ptos. hasta a 3 cartas aliadas y usa 1 de los siguientes efectos: - Envía 1 Adendei de Extinción al fondo del Mazo. - Envía 1 Ixim o Rot de Extinción a la Zona de Equipo. - Envía 1 Protector de Extinción a Zona de Protector como disponible.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-008",
@@ -1658,7 +1672,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva-Rápida: Si esta carta es revelada puedes enviarla a Extinción. Si esta carta es enviada a Extinción, remueve todas las marcas en tu campo y cura 1 pto. hasta 3 cartas aliadas.",
+    "effect_type": "Pasiva-Rápida"
   },
   {
     "folio": "FYTE-009",
@@ -1667,7 +1683,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si 2 Adendei aliados han sido vivificados, aún si esta carta no estaba en el campo, el Adendei equipado está protegido de efectos rivales. Costo: Este Ixim no puede ser protegido.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-010",
@@ -1676,7 +1694,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Puedes enviar 1 Adendei Catrín aliado al fondo del Mazo. Mientras esta carta esté en el campo, los Adendei Catrín están protegidos de marcas y de efectos de cartas tomadas. Costo: No puedes usar efectos de cartas tomadas. Daña 2 ptos. al Protector aliado si envías a 1 Adendei al fondo del Mazo con esta Pasiva.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-011",
@@ -1685,7 +1705,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Si esta carta es enviada a Extinción, daña de 1 a 3 ptos. a 1 carta en Zona Principal y seleciona 1 carta rival en campo o Extinción; esa carta no puede ser vivificada. Costo: Solo puedes usar este efecto una vez por juego. Este efecto no puede ser copiado ni negado.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-012",
@@ -1694,7 +1716,9 @@
     "energy": "Demótica",
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Daña a 2 Adendei rivales la misma cantidad de ptos. de daño que el Adendei vinculado. Costo: Solo se puede vincular a Adendei Catrín en su Zona Principal original. Daña 2, 3 o 4 ptos. al Adendei vinculado si tiene 4, 5, 6 o más ptos. de daño, respectivamente.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-013",
@@ -1703,7 +1727,9 @@
     "energy": "Demótica",
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Cura 1 pto. al Adendei vinculado. Selecciona 1 carta rival revelada en Zona Principal, la siguiente vez que este Protector esté disponible, envía la carta selecionada a Extinción. Costo: Las cartas equipadas u ocultas no podrán ser enviadas a Extinción por este efecto. Esta carta solo puede actualizar 1 descanso por turno.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-014",
@@ -1712,7 +1738,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Daña 3 ptos. a 1 carta rival. Costo: Los Adendei y Protectores no pueden ser dañados por este efecto.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-015",
@@ -1721,7 +1749,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Si el Adendei equipado es atacado, envenena a la carta atacante. Costo: Esta carta no puede regresar a la Zona de Equipo.",
+    "effect_type": "Activa-Rápida"
   },
   {
     "folio": "FYTE-016",
@@ -1730,7 +1760,9 @@
     "energy": "Demótica",
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Protege a este Protector hasta que vuelva a estar disponible y usa 1 de los siguientes efectos: -Daña 3 ptos. a 2 cartas rivales. -Cura 2 ptos. hasta a 3 Adendei aliados. -Envía 1 carta no poseída en Zona Principal al fondo del Mazo. Costo: Debes tener 7 o más cartas en Extinción o 1 Protector y 3 o más cartas en tu Extinción para usar esta Activa. Esta Activa no puede ser copiada.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-017",
@@ -1739,7 +1771,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "El Adendei equipado daña 1 pto. adicional a 1 carta en Zona Principal por cada Adendei en el campo de su misma energía. Costo: El Adendei equipado recibe 2 descansos al usar esta Activa. Este efecto no puede ser copiado.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-018",
@@ -1748,7 +1782,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Selecciona 1 carta rival en Zona Principal; si la carta equipada es enviada a Extinción, envía la carta rival seleccionada a Extinción. Costo: Esta carta solo puede equiparse a Adendei en su Zona Principal original. Solo puedes usar este efecto una vez por juego.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-019",
@@ -1757,7 +1793,9 @@
     "energy": "Pírica",
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Usa 1 de los siguientes efectos: -Oculta 1 carta en el campo. -Selecciona 1 energía; cambia la energía de todas las carta aliadas o rivales a la energía seleccionada hasta que este Protector esté disponible. -Escala 1 pto. 1 Adendei aliado.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-020",
@@ -1766,7 +1804,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Da 3 descansos al Protector rival. Selecciona 1 subtipo de Adendei o 1 tipo de carta no Adendei en Extinción rival, la carta equipada estará protegida de ataques y efectos de cartas rivales del mismo tipo o subtipo seleccionado, hasta que el Protector rival esté disponible. Costo: Solo puedes usar este efecto una vez por juego.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-021",
@@ -1775,7 +1815,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa-Rápida: Si el Adendei equipado está disponible, coloca 1 carta de tu Mazo en el tope.\nCosto: El Adendei equipado recibe 2 descansos y solo podrá actualizar 1 descanso por turno. El Adendei equipado no podrá atacar ni usar Activas.",
+    "effect_type": "Activa-Rápida"
   },
   {
     "folio": "FYTE-022",
@@ -1784,7 +1826,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa-Rápida: Desvía el ataque de 1 jugador rival a la carta equipada. La carta equipada se cura 1 pto.\nCosto: El Protector aliado recibe 1 descanso para usar esta Activa-Rápida. Esta Activa-Rápida no puede usarse si el Protector está en descanso.",
+    "effect_type": "Activa-Rápida"
   },
   {
     "folio": "FYTE-023",
@@ -2035,7 +2079,9 @@
     "energy": "Feral",
     "damage": 1,
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa-Rápida: Puedes mostrar sin revelar 1 carta del campo, Mazo o la Zona de Equipo del rival.\nCosto: El Protector aliado recibe 1 descanso si usas esta Activa. Solo puedes usar esta Activa si tu Protector está disponible. No se puede usar el efecto de la carta mostrada por el uso de esta Activa.",
+    "effect_type": "Activa-Rápida"
   },
   {
     "folio": "FYTE-046",
@@ -2044,7 +2090,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 2 o más Adendei \"Ariam\" en tu Extinción.",
+    "effect_type": "Requisito"
   },
   {
     "folio": "FYTE-047",
@@ -2053,7 +2101,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 1 o más Adendei \"Aki\" en tu Extinción.",
+    "effect_type": "Requisito"
   },
   {
     "folio": "FYTE-048",
@@ -2062,7 +2112,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 1 o más Rava en tu Extinción.\nPasiva: Copia la Pasiva y costo de 1 Rava en Extinción.\nCosto: Este Espectro no puede atacar. Esta Pasiva, la Pasiva copiada y la Pasiva de la carta poseída no pueden ser negadas.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-049",
@@ -2071,7 +2123,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 3 o más Adendei \"Yakerr\" en tu Extinción.",
+    "effect_type": "Requisito"
   },
   {
     "folio": "FYTE-050",
@@ -2080,7 +2134,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 3 o más Adendei \"Zaykan\" en tu Extinción.",
+    "effect_type": "Requisito"
   },
   {
     "folio": "FYTE-051",
@@ -2089,7 +2145,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 2 o más Adendei \"Xilan\" en tu Extinción.",
+    "effect_type": "Requisito"
   },
   {
     "folio": "FYTE-052",
@@ -2098,7 +2156,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 2 o más Adendei \"Nánuk\" en tu Extinción.",
+    "effect_type": "Requisito"
   },
   {
     "folio": "FYTE-053",
@@ -2107,7 +2167,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si 1 o más cartas aliadas son enviadas a Extinción, por cada carta aliada enviada a Extinción cura 2 ptos. a 1 Protector aliado o 1 pto. a 1 Adendei aliado con 2 o menos ptos. de daño en su estadística.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-054",
@@ -2116,7 +2178,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 2 o más cartas de equipo en tu Extinción.\nPasiva: En Previa puedes equipar 1 Ixim o Rot de tu Zona de Equipo o Extinción a 1 Adendei aliado.\nCosto: Solo puedes usar este efecto una vez por juego.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-055",
@@ -2125,7 +2189,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: La carta equipada no puede ser dañada por cartas Espectro ni Tokens. Si esta carta es enviada a Extinción, envía 1 Espectro rival al fondo del Mazo o 1 Token a Extinción.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-056",
@@ -2134,7 +2200,9 @@
     "energy": "Lítica",
     "damage": 1,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Los Adendei Catrín aliados pueden dañar 2 ptos. a 1 carta rival en Zona Principal al atacar o usar Activa.\nCosto: Los Adendei Catrín aliados se dañan 2 ptos. al atacar o usar Activa si se usa esta Pasiva. Esta Pasiva no puede ser negada.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-057",
@@ -2143,7 +2211,9 @@
     "energy": "Átlica",
     "damage": 2,
     "rests": 2,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: Puedes negar la Pasiva de 1 carta mientras esta carta esté en el campo.\nCosto: Mientras haya una Pasiva negada por esta carta, no puedes volver a usar su Activa.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-058",
@@ -2152,7 +2222,9 @@
     "energy": "Feral",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si 1 Adendei aliado es enviado a Extinción, daña 2 ptos. a 1 carta rival en Zona Principal.\nCosto: Debes tener 2 Adendei Equino en tu campo y 1 Adendei-Equino en Extinción para usar su Pasiva.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-059",
@@ -2161,7 +2233,9 @@
     "energy": "Feral",
     "damage": 1,
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si el Protector aliado es vinculado, daña 1 pto. a 1 carta rival. Si 1 jugador rival vincula su Protector, daña 1 pto. a 1 Protector rival.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-060",
@@ -2170,7 +2244,9 @@
     "energy": "Feral",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: El Protector rival recibe 1 descanso.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-061",
@@ -2179,7 +2255,9 @@
     "energy": "Feral",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: La carta atacada recibe 1 descanso.\nPasiva: Si esta carta es enviada a Extinción, daña 2 ptos. a 1 carta rival.\nCosto: Debes tener 2 Adendei \"Xakros\" o \"Yimsah\" en tu campo para usar su Activa.",
+    "effect_type": "Activa/Pasiva"
   },
   {
     "folio": "FYTE-062",
@@ -2188,7 +2266,9 @@
     "energy": "Feral",
     "damage": 1,
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: Daña 1 pto. al Protector rival si la carta atacada está en 1 descanso o 2 ptos. si está en 2 descansos.\nCosto: Debes tener 2 Adendei \"Xakros\" o \"Zagal\" en tu campo para usar su Activa.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-063",
@@ -2197,7 +2277,9 @@
     "energy": "Feral",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si la vida de 1 carta es reducida a 0 ptos. por ataque de 1 Adendei Equino, daña 1 pto. a 1 Adendei rival y daña 1 pto. al Protector rival.\nCosto: Debes de tener 2 Adendei Equino en tu campo o Extinción para usar esta Pasiva.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-064",
@@ -2206,7 +2288,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Al final de tu turno, daña a 1 Adendei rival de 1 a 6 ptos. de acuerdo al número total de Adendei Equino aliados revelados durante este turno:\n- 1 Adendei-Equino revelado: 1 pto. de daño.\n- 2 Adendei-Equino revelados: 3 ptos. de daño.\n- 3 Adendei-Equino revelados: 6 ptos. de daño.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-065",
@@ -2215,7 +2299,9 @@
     "energy": "Feral",
     "damage": 2,
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: Ataca adicionalmente a 1 o 2 cartas rivales en Zona Principal si hay respectivamente 1 o 2 Adendei Equino rivales en el campo.\nCosto: Esta Activa no puede ser copiada.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-066",
@@ -2224,7 +2310,9 @@
     "energy": "Feral",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: Daña 1 pto. adicional por cada Adendei Equino rival en Extinción.\nCosto: Esta carta no puede ser curada ni protegida.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-067",
@@ -2233,7 +2321,9 @@
     "energy": "Feral",
     "damage": 1,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: Daña 3 ptos. a 1 Adendei rival y 3 ptos. a 1 carta no Adendei revelada en Zona Principal.\nCosto: Debes tener 3 Adendei-Equino en Extinción para usar esta Activa. Esta carta no puede ser curada o protegida. Este efecto no puede ser copiado.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-068",
@@ -2242,7 +2332,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 2 o más Adendei Equino con el mismo nombre en tu Extinción.\nCosto: Si esta carta ataca, recibe 1 descanso adicional al final del turno.",
+    "effect_type": "Requisito"
   },
   {
     "folio": "FYTE-069",
@@ -2251,7 +2343,9 @@
     "energy": "Feral",
     "damage": 1,
     "rests": 2,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si este Adendei es enviado a Extinción, selecciona 1 Adendei Catrín en Zona Principal, ese Adendei no puede ser atacado por Adendei no Catrín, mientras esté en el campo.\nCosto: Solo puedes usar esta Pasiva una vez por juego. El Adendei seleccionado no se considera protegido.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-070",
@@ -2260,7 +2354,9 @@
     "energy": "Feral",
     "damage": 1,
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si esta carta está en Extinción, los Adendei Catrín aliados en Zona Principal no pueden tener sus efectos negados por efectos de cartas rivales.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-071",
@@ -2269,7 +2365,9 @@
     "energy": "Demótica",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si esta carta es enviada a Extinción, puedes intercambiar 1 Adendei rival en Extinción por 1 carta rival en Zona Principal, la carta conservará los mismos ptos. de vida que tenía la carta intercambiada (máximo 6 ptos.).",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-072",
@@ -2278,7 +2376,9 @@
     "energy": "Demótica",
     "damage": 2,
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: Si hay 2 o más Tokens en el campo, daña 2 ptos. a 1 Adendei rival y envía 1 Token a Extinción.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-073",
@@ -2287,7 +2387,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 2 o más Adendei-Titán con el mismo nombre en tu Extinción. Costo: Si esta carta ataca o usa Activa, recibe 1 descanso adicional al final del turno.",
+    "effect_type": "Requisito"
   },
   {
     "folio": "FYTE-074",
@@ -2296,7 +2398,9 @@
     "energy": "Átlica",
     "damage": 2,
     "rests": 2,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: Puedes intercambiar 1 Adendei Resurrecto, de tu Extinción por 1 Adendei, Rava o Espectro aliado en su Zona Principal original. Costo: Debes tener 2 o más Adendei Resurrecto en tu Extinción para usar esta Activa. Esta Activa no puede ser copiada.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-075",
@@ -2305,7 +2409,9 @@
     "energy": "Feral",
     "damage": 1,
     "rests": 2,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: Intercambia 1 Espectro aliado de tu campo o Mazo por 1 Adendei o Espectro de tu Extinción que no haya sido vivificado. Costo: Si intercambiaste por un Espectro en tu campo, la carta llegará con 6 ptos. de vida.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-076",
@@ -2314,7 +2420,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Declara 1 tipo de energía y revela 1 carta rival en Zona Principal, si esa carta es de la energía declarada, daña 2 ptos. a esa carta.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-077",
@@ -2323,7 +2431,9 @@
     "energy": "Pírica",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si esta carta es vivificada, todos los Adendei \"Ariam\" aliados podrán dañar 1 pto. adicional al atacar y no podrán curar por sus propios efectos por el resto del juego. Costo: Solo puedes usar este efecto una vez por juego. Esta Pasiva no puede ser negada.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-078",
@@ -2332,7 +2442,9 @@
     "energy": "Cháaktica",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si esta carta es vivificada, puedes usar 1 Activa-Rápida adicional en turno rival durante el resto del juego. Costo: No podrás usar Activas-Rápidas en tu turno durante el resto del juego.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-079",
@@ -2341,7 +2453,9 @@
     "energy": "Demótica",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si esta carta es vivificada, cambia 1 Protector por su Protector suplente.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-080",
@@ -2350,7 +2464,9 @@
     "energy": "Lítica",
     "damage": 1,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si esta carta es vivificada, desciende 3 ptos. a 1 carta rival o 1 pto. a 3 cartas rivales. Costo: Solo puedes usar este efecto una vez por juego.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-081",
@@ -2359,7 +2475,9 @@
     "energy": "Gélida",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si esta carta es vivificada, actualiza todos los descansos de tus cartas aliadas y cambia la estadística de descanso de 1 carta rival en Zona Principal a 2 descansos.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-082",
@@ -2368,7 +2486,9 @@
     "energy": "Pírica",
     "damage": 2,
     "rests": 1,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Si esta carta es vivificada, todos los Adendei con 1 pto. o menos de daño podrán atacar al Protector por el resto del juego.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-083",
@@ -2377,7 +2497,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Activa: Usa 1 de los siguientes efectos: -Usa la misma Activa y costo que el Protector rival. -Cura 1 pto. a 3 cartas en tu campo. Costo: Si esta carta usa la misma Activa que el Protector rival, daña 1 pto. a 3 cartas en tu campo.",
+    "effect_type": "Activa"
   },
   {
     "folio": "FYTE-084",
@@ -2386,7 +2508,9 @@
     "energy": "Gélida",
     "damage": 0,
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Puedes dar 1 descanso a 1 carta rival que no sea Gélida. Los Adendei-Gélido pueden atacar a todas las cartas rivales en descanso en Zona Principal. Costo: El Protector aliado recibe 1 descanso, para que esta carta pueda dar 1 descanso a 1 carta rival.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-ST1",
@@ -2395,7 +2519,9 @@
     "energy": "Feral",
     "damage": "?",
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Requisito: 1 o más Rava en tu Extinción. Pasiva: Copia la Pasiva y costo de 1 Rava en Extinción. Costo: Este Espectro no puede atacar. Esta Pasiva, la Pasiva copiada y la Pasiva de la carta poseída no pueden ser negadas.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "FYTE-ST2",
@@ -2404,7 +2530,9 @@
     "energy": "Gélida",
     "damage": 0,
     "rests": 0,
-    "set": "FYTE"
+    "set": "FYTE",
+    "effect_text": "Pasiva: Puedes dar 1 descanso a 1 carta rival que no sea Gélida. Los Adendei-Gélido pueden atacar a todas las cartas rivales en descanso en Zona Principal. Costo: El Protector aliado recibe 1 descanso, para que esta carta pueda dar 1 descanso a 1 carta rival.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "ICOS-001",
@@ -4119,7 +4247,7 @@
     "effect_type": null,
     "effect_text": null,
     "cost_text": null,
-    "flavor_text": null,
+    "flavor_text": "ESPECIAL",
     "species": null,
     "artist": "Mike.rev_art",
     "rarity_variants": []
@@ -8601,7 +8729,9 @@
     "energy": "Lítica",
     "damage": 0,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Daña 4 ptos. a 1 carta rival en Zona Principal. Costo: Debes tener 2 Rot en Extinción para usar su Activa.",
+    "effect_type": "Activa"
   },
   {
     "folio": "TCOO-023",
@@ -8610,7 +8740,9 @@
     "energy": "Demótica",
     "damage": 1,
     "rests": 2,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Si esta carta tiene 3 o menos ptos. de vida, puedes enviar esta carta a Extinción y colocar en tu Zona Principal cualquier carta suplente de tu Mazo.",
+    "effect_type": "Activa"
   },
   {
     "folio": "TCOO-024",
@@ -8619,7 +8751,9 @@
     "energy": "Feral",
     "damage": 2,
     "rests": 2,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si 1 Adendei-Feral Titán aliado es revelado, feraliza a 1 Adendei rival.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-025",
@@ -8628,7 +8762,9 @@
     "energy": "Pírica",
     "damage": 0,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Los Adendei quemados serán dañados 1 pto. adicional al atacar o usar Activa.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-026",
@@ -8637,7 +8773,9 @@
     "energy": "Húumica",
     "damage": 2,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Esta carta escala 2 ptos. al ser revelada. Costo: Debes tener 2 Ixim en Extinción para usar esta Pasiva. Sólo puedes usar este efecto una vez mientras esta carta esté en el campo.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-027",
@@ -8646,7 +8784,9 @@
     "energy": "Lítica",
     "damage": 1,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Daña 1 pto. por cada carta rival boca abajo en el campo.",
+    "effect_type": "Activa"
   },
   {
     "folio": "TCOO-028",
@@ -8655,7 +8795,9 @@
     "energy": "Feral",
     "damage": 2,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si 1 Adendei aliado deja el campo, cura 1 pto. a los Adendei aliados.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-029",
@@ -8664,7 +8806,9 @@
     "energy": "Gélida",
     "damage": 2,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si 1 Adendei-Gélido Titán aliado es revelado, actualiza 1 descanso de 1 carta en Zona Principal.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-030",
@@ -8673,7 +8817,9 @@
     "energy": "Gélida",
     "damage": 1,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: El Protector aliado no puede ser dañado mientras esté en descanso.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-031",
@@ -8682,7 +8828,9 @@
     "energy": "Húumica",
     "damage": 0,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si esta carta es curada, esta carta escala 1 pto. Costo: Sólo puedes usar este efecto una vez por turno.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-032",
@@ -8691,7 +8839,9 @@
     "energy": "Cháaktica",
     "damage": 0,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa-Rápida: Si esta carta es atacada, daña 3 ptos. al Adendei atacante.",
+    "effect_type": "Activa-Rápida"
   },
   {
     "folio": "TCOO-033",
@@ -8718,7 +8868,9 @@
     "energy": "Átlica",
     "damage": 2,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Copia cualquier efecto y costo de 1 Adendei-Átlico Titán en tu Extinción.",
+    "effect_type": "Activa"
   },
   {
     "folio": "TCOO-036",
@@ -8727,7 +8879,9 @@
     "energy": "Átlica",
     "damage": 1,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Si esta carta ataca, daña 1 pto. adicional a todos los Adendei-Átlico en el campo.",
+    "effect_type": "Activa"
   },
   {
     "folio": "TCOO-037",
@@ -8736,7 +8890,9 @@
     "energy": "Cháaktica",
     "damage": 2,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Esta carta puede atacar a 2 Adendei rivales, añadiendo 1 descanso a esta carta en el Fin de Turno.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-038",
@@ -8745,7 +8901,9 @@
     "energy": "Lítica",
     "damage": 2,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa-Rápida: Puedes desviar 1 pto. de daño de cada carta aliada atacada a esta carta.",
+    "effect_type": "Activa-Rápida"
   },
   {
     "folio": "TCOO-039",
@@ -8754,7 +8912,9 @@
     "energy": "Pírica",
     "damage": 1,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si esta carta es tomada del Mazo, puedes mostrarla y quemar 1 carta rival.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-040",
@@ -8763,7 +8923,9 @@
     "energy": "Átlica",
     "damage": 4,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Costo: Esta carta siempre estará abismada.",
+    "effect_type": "Costo"
   },
   {
     "folio": "TCOO-041",
@@ -8772,7 +8934,9 @@
     "energy": "Pírica",
     "damage": 5,
     "rests": 2,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Costo: Esta carta sólo puede atacar si los Adendei aliados son Adendei Abisales o Adendei-Átlicos.",
+    "effect_type": "Costo"
   },
   {
     "folio": "TCOO-042",
@@ -8781,7 +8945,9 @@
     "energy": "Cháaktica",
     "damage": 2,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa-Rápida: Si esta carta es atacada, envenena a 1 carta en Zona Principal.",
+    "effect_type": "Activa-Rápida"
   },
   {
     "folio": "TCOO-043",
@@ -8790,7 +8956,9 @@
     "energy": "Cháaktica",
     "damage": 2,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa-Rápida: Si 1 carta aliada es atacada, desvía el ataque a esta carta.",
+    "effect_type": "Activa-Rápida"
   },
   {
     "folio": "TCOO-044",
@@ -8799,7 +8967,9 @@
     "energy": "Lítica",
     "damage": 2,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Cambia de lugar 2 cartas en Zona Principal.",
+    "effect_type": "Activa"
   },
   {
     "folio": "TCOO-045",
@@ -8808,7 +8978,9 @@
     "energy": "Húumica",
     "damage": 1,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si un equipo en el campo es regresado a Zona de Equipo, esta carta escala 1 pto.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-046",
@@ -8817,7 +8989,9 @@
     "energy": "Feral",
     "damage": 1,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si este Adendei está protegido, no puede ser atacado.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-047",
@@ -8826,7 +9000,9 @@
     "energy": "Lítica",
     "damage": 1,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si este Adendei está protegido, puedes equipar 1 Ixim o Rot a esta carta en Previa.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-048",
@@ -8835,7 +9011,9 @@
     "energy": "Pírica",
     "damage": 1,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si este Adendei está protegido, puede atacar a todos los Adendei rivales.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-049",
@@ -8844,7 +9022,9 @@
     "energy": "Átlica",
     "damage": 2,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si este Adendei fue vinculado con 1 Protector \"Karin\", puedes cambiar a tu Protector por tu Protector suplente.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-050",
@@ -8853,7 +9033,9 @@
     "energy": "Cháaktica",
     "damage": 2,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si esta carta es tomada del Mazo, puedes mostrarla y negar el efecto de 1 carta en el campo hasta Fin del Turno.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-051",
@@ -8862,7 +9044,9 @@
     "energy": "Cháaktica",
     "damage": 2,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si esta carta es tomada del Mazo, puedes mostrarla y actualizar 1 descanso de hasta 2 cartas aliadas.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-052",
@@ -8871,7 +9055,9 @@
     "energy": "Pírica",
     "damage": 1,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Si todos los Adendei rivales tienen 5 o más ptos. de vida, quema a todos los Adendei rivales.",
+    "effect_type": "Activa"
   },
   {
     "folio": "TCOO-053",
@@ -8880,7 +9066,9 @@
     "energy": "Pírica",
     "damage": 3,
     "rests": 2,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Esta carta no puede ser atacada por un Adendei quemado.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-054",
@@ -8889,7 +9077,9 @@
     "energy": "Gélida",
     "damage": 2,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si esta carta es tomada del Mazo, puedes mostrarla y dar 1 descanso hasta a 2 Adendei rivales.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-055",
@@ -8898,7 +9088,9 @@
     "energy": "Gélida",
     "damage": 2,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Los Adendei Abisales, reciben un descanso adicional en Fin de Turno, si atacaron o usaron Activa. Esta carta no puede ser atacada por Adendei Abisales.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-056",
@@ -8907,7 +9099,9 @@
     "energy": "Átlica",
     "damage": 1,
     "rests": 1,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Esta carta daña 1 pto. adicional a 1 Adendei rival por cada Adendei Abisal en Zona Principal. Pasiva: Todos los Adendei-Átlico aliados en Zona Principal y Adendei-Átlico en tu Extinción son considerados Adendei Abisal.",
+    "effect_type": "Activa/Pasiva"
   },
   {
     "folio": "TCOO-057",
@@ -8916,7 +9110,9 @@
     "energy": "Húumica",
     "damage": 1,
     "rests": 0,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Las cartas en Zona Principal no podrán ser quemadas o recibir descansos por efectos.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-058",
@@ -8925,7 +9121,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Si hay 1 Adendei-Átlico o Adendei Abisal en el campo; cura 1 pto. hasta a 3 Adendei aliados y daña 1 pto. a 1 Adendei rival por cada Adendei aliado curado por este efecto.",
+    "effect_type": "Activa"
   },
   {
     "folio": "TCOO-059",
@@ -8934,7 +9132,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Los Adendei-Pírico no pueden ser enviados a Extinción hasta que esta carta esté disponible.\nCosto: Daña 1 pto. a todos los Adendei-Pírico.",
+    "effect_type": "Activa"
   },
   {
     "folio": "TCOO-060",
@@ -8943,7 +9143,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Activa: Usa 1 de los siguientes efectos.\n- Regresa todas las cartas en Zona Principal a su Zona Principal original.\n- Si tu rival no tiene 1 Token en Zona Principal, regresa 1 Adendei rival al tope de su Mazo y coloca 1 Token con el mismo tipo de Energía, 2 ptos. de daño y 0 descansos.\n- Cura 3 ptos. a 1 carta en el campo.",
+    "effect_type": "Activa"
   },
   {
     "folio": "TCOO-061",
@@ -8952,7 +9154,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Si 1 Adendei-Pírico es revelado, quema 1 Adendei rival.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-062",
@@ -8961,7 +9165,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva-Rápida: Si 1 Adendei aliado es enviado a Extinción, puedes cambiar a tu Protector por tu Protector suplente.\nCosto: Debes tener 5 cartas o más en Extinción para usar esta Pasiva-Rápida.",
+    "effect_type": "Pasiva-Rápida"
   },
   {
     "folio": "TCOO-063",
@@ -8970,7 +9176,9 @@
     "energy": null,
     "damage": null,
     "rests": null,
-    "set": "TCOO"
+    "set": "TCOO",
+    "effect_text": "Pasiva: Los Adendei no-Abisales, no podrán escoger la carta que atacarán.\nCosto: Si no tienes ningún Adendei Abisal en tu Zona Principal, envía esta carta a Extinción.",
+    "effect_type": "Pasiva"
   },
   {
     "folio": "TCOO-064",
