@@ -244,6 +244,107 @@ function exportCollection() {
     URL.revokeObjectURL(url);
 }
 
+// ==================== SYNC CODE ====================
+function generateSyncCode() {
+    if (collection.size === 0) {
+        showToast('Tu colección está vacía', 'error');
+        return;
+    }
+    // Compress: join folios with comma, encode to base64, add prefix
+    const folios = [...collection].sort().join(',');
+    const encoded = btoa(unescape(encodeURIComponent(folios)));
+    // Create a shorter hash for display
+    const code = 'KDM-' + encoded;
+    
+    // Copy to clipboard
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(() => {
+            showToast(`Código copiado (${collection.size} cartas) 📋`, 'success');
+        }).catch(() => {
+            promptSyncCode(code);
+        });
+    } else {
+        promptSyncCode(code);
+    }
+}
+
+function promptSyncCode(code) {
+    // Fallback: show in a textarea for manual copy
+    const modal = document.createElement('div');
+    modal.className = 'sync-modal-overlay';
+    modal.innerHTML = `
+        <div class="sync-modal">
+            <h3 style="font-family:'Cinzel',serif;color:#f59e0b;margin-bottom:12px">📋 Tu Código de Colección</h3>
+            <p style="color:#aaa;font-size:0.85rem;margin-bottom:8px">Copia este código y pégalo en otro dispositivo:</p>
+            <textarea id="sync-code-text" style="width:100%;height:80px;background:#1a1a1a;color:#e0e0e0;border:1px solid #444;border-radius:6px;padding:8px;font-size:0.75rem;resize:none" readonly>${code}</textarea>
+            <button onclick="document.getElementById('sync-code-text').select();document.execCommand('copy');this.textContent='✅ Copiado'" style="margin-top:8px;background:#f59e0b;color:#000;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;width:100%;font-weight:bold">Copiar</button>
+            <button onclick="this.closest('.sync-modal-overlay').remove()" style="margin-top:6px;background:#333;color:#e0e0e0;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;width:100%">Cerrar</button>
+        </div>
+    `;
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+    document.body.appendChild(modal);
+}
+
+async function importSyncCode() {
+    const modal = document.createElement('div');
+    modal.className = 'sync-modal-overlay';
+    modal.innerHTML = `
+        <div class="sync-modal">
+            <h3 style="font-family:'Cinzel',serif;color:#f59e0b;margin-bottom:12px">📥 Importar Colección</h3>
+            <p style="color:#aaa;font-size:0.85rem;margin-bottom:8px">Pega tu código KDM-... aquí:</p>
+            <textarea id="sync-import-text" style="width:100%;height:80px;background:#1a1a1a;color:#e0e0e0;border:1px solid #444;border-radius:6px;padding:8px;font-size:0.75rem;resize:none" placeholder="KDM-..."></textarea>
+            <button id="sync-import-btn" style="margin-top:8px;background:#f59e0b;color:#000;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;width:100%;font-weight:bold">Importar</button>
+            <button onclick="this.closest('.sync-modal-overlay').remove()" style="margin-top:6px;background:#333;color:#e0e0e0;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;width:100%">Cancelar</button>
+        </div>
+    `;
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+    document.body.appendChild(modal);
+    
+    document.getElementById('sync-import-btn').addEventListener('click', async () => {
+        const code = document.getElementById('sync-import-text').value.trim();
+        if (!code.startsWith('KDM-')) {
+            showToast('Código inválido — debe empezar con KDM-', 'error');
+            return;
+        }
+        try {
+            const encoded = code.substring(4); // Remove KDM- prefix
+            const foliosStr = decodeURIComponent(escape(atob(encoded)));
+            const folios = foliosStr.split(',').filter(f => f.length > 0);
+            
+            if (folios.length === 0) {
+                showToast('Código vacío', 'error');
+                return;
+            }
+            
+            // Validate folios against allCards
+            const validFolios = new Set(allCards.map(c => c.folio));
+            const valid = folios.filter(f => validFolios.has(f));
+            const invalid = folios.length - valid.length;
+            
+            const mode = await showChoice(
+                `Código tiene ${valid.length} cartas válidas${invalid ? ` (${invalid} no reconocidas)` : ''}. ¿Qué hacer?`,
+                [
+                    { label: '🔄 Reemplazar colección', key: 'replace', className: 'btn-danger' },
+                    { label: '➕ Agregar a existente', key: 'merge', className: 'btn-primary' },
+                ]
+            );
+            if (!mode) return;
+            
+            if (mode === 'replace') {
+                collection = new Set(valid);
+            } else {
+                valid.forEach(f => collection.add(f));
+            }
+            saveCollection();
+            renderCollection();
+            modal.remove();
+            showToast(`Colección actualizada: ${collection.size} cartas ✅`, 'success');
+        } catch (err) {
+            showToast('Error decodificando: ' + err.message, 'error');
+        }
+    });
+}
+
 function importCollection() {
     const input = document.createElement('input');
     input.type = 'file';
@@ -360,6 +461,10 @@ function setupEventListeners() {
     document.getElementById('clear-collection').addEventListener('click', clearCollection);
     document.getElementById('import-collection').addEventListener('click', importCollection);
     document.getElementById('export-collection').addEventListener('click', exportCollection);
+    const syncExportBtn = document.getElementById('sync-export');
+    if (syncExportBtn) syncExportBtn.addEventListener('click', generateSyncCode);
+    const syncImportBtn = document.getElementById('sync-import');
+    if (syncImportBtn) syncImportBtn.addEventListener('click', importSyncCode);
 
     // Collection sort
     const collectionSort = document.getElementById('collection-sort');

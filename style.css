@@ -1678,3 +1678,23 @@ nav .nav-btn.active::after {
     background: #d97706;
     border-radius: 1px;
 }
+
+/* Sync Modal */
+.sync-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 16px;
+}
+.sync-modal {
+    background: #1e1e1e;
+    border: 1px solid #f59e0b;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 400px;
+    width: 100%;
+}
