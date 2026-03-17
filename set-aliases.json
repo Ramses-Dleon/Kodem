@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "description": "Mapeo bidireccional de códigos de set Kódem TCG (ES ↔ EN) + metadata",
+  "sets": [
+    {
+      "code": "LGRO",
+      "name_es": "La Guerra Roja",
+      "name_en": "The Red War",
+      "aliases": ["LGRO", "TRWA"],
+      "type": "booster",
+      "base_cards": 78,
+      "total_images": 108
+    },
+    {
+      "code": "FYTE",
+      "name_es": "Fuerza y Templanza",
+      "name_en": "Strength and Temperance",
+      "aliases": ["FYTE"],
+      "type": "booster",
+      "base_cards": 84,
+      "total_images": 137
+    },
+    {
+      "code": "TCOO",
+      "name_es": "Titanes de la Corteza — Ojos del Océano",
+      "name_en": "Titans of the Cortex — Eyes of the Ocean",
+      "aliases": ["TCOO"],
+      "type": "booster",
+      "base_cards": 84,
+      "total_images": 133
+    },
+    {
+      "code": "KPRC",
+      "name_es": "Kódem Primera Colección",
+      "name_en": "Kódem First Collection",
+      "aliases": ["KPRC"],
+      "type": "booster",
+      "base_cards": 72,
+      "total_images": 72
+    },
+    {
+      "code": "TCDE",
+      "name_es": "Titanes de la Corteza — Mazo de Inicio",
+      "name_en": "Titans of the Cortex — Starter Deck",
+      "aliases": ["TCDE"],
+      "type": "starter_deck",
+      "base_cards": 26,
+      "total_images": 26
+    },
+    {
+      "code": "RAMI",
+      "name_es": "Raíces Místicas",
+      "name_en": "Mystical Roots",
+      "aliases": ["RAMI"],
+      "type": "structure_deck",
+      "base_cards": 26,
+      "total_images": 36
+    },
+    {
+      "code": "DOOC",
+      "name_es": "Ojos del Océano",
+      "name_en": "Eyes of the Ocean",
+      "aliases": ["DOOC"],
+      "type": "structure_deck",
+      "base_cards": 26,
+      "total_images": 36
+    },
+    {
+      "code": "IDRMA",
+      "name_es": "Intro Deck Raíces Místicas — Átlica",
+      "name_en": "Intro Deck Mystical Roots — Atlic",
+      "aliases": ["IDRMA"],
+      "type": "intro_deck",
+      "base_cards": 23,
+      "total_images": 23
+    },
+    {
+      "code": "IDRMG",
+      "name_es": "Intro Deck Raíces Místicas — Gélida",
+      "name_en": "Intro Deck Mystical Roots — Gelid",
+      "aliases": ["IDRMG"],
+      "type": "intro_deck",
+      "base_cards": 23,
+      "total_images": 23
+    },
+    {
+      "code": "IDRMP",
+      "name_es": "Intro Deck Raíces Místicas — Pírica",
+      "name_en": "Intro Deck Mystical Roots — Pyric",
+      "aliases": ["IDRMP"],
+      "type": "intro_deck",
+      "base_cards": 23,
+      "total_images": 23
+    },
+    {
+      "code": "CAMP",
+      "name_es": "Campeonato",
+      "name_en": "Championship",
+      "aliases": ["CAMP"],
+      "type": "special",
+      "base_cards": 26,
+      "total_images": 26
+    },
+    {
+      "code": "MFT",
+      "name_es": "Mini Flores y Tumbas",
+      "name_en": "Mini Flowers and Tombs",
+      "aliases": ["MFT", "CMFT", "FAFT", "RMFT"],
+      "type": "mini_expansion",
+      "base_cards": 15,
+      "total_images": 15
+    },
+    {
+      "code": "MINICONJ",
+      "name_es": "Mini Conjuntos",
+      "name_en": "Mini Sets",
+      "aliases": ["MINICONJ", "EXPN", "ICOS", "IOSC", "KPRF", "ODEM", "PASE", "XPIX"],
+      "type": "mini_expansion",
+      "base_cards": 23,
+      "total_images": 23
+    },
+    {
+      "code": "ISPMR",
+      "name_es": "Sobre Promo Raíces Místicas",
+      "name_en": "Promo Pack Mystical Roots",
+      "aliases": ["ISPMR"],
+      "type": "promo",
+      "base_cards": 20,
+      "total_images": 20
+    },
+    {
+      "code": "MLBU",
+      "name_es": "Mega Lata Búho",
+      "name_en": "Mega Tin Owl",
+      "aliases": ["MLBU"],
+      "type": "tin",
+      "base_cards": 10,
+      "total_images": 20
+    },
+    {
+      "code": "EXPO",
+      "name_es": "Expo",
+      "name_en": "Expo",
+      "aliases": ["EXPO"],
+      "type": "promo",
+      "base_cards": 8,
+      "total_images": 8
+    },
+    {
+      "code": "HOLY",
+      "name_es": "Festividades",
+      "name_en": "Holidays",
+      "aliases": ["HOLY", "ANIV", "DMUE", "INMX", "KSPC", "NAVD", "NYPR", "SNVL"],
+      "type": "promo",
+      "base_cards": 9,
+      "total_images": 9
+    },
+    {
+      "code": "UNIQUE",
+      "name_es": "Únicas / Promos",
+      "name_en": "Unique / Promos",
+      "aliases": ["UNIQUE", "PKMR", "PRKD", "TKD", "PRT", "IKMR", "IKRW", "RAGEK", "CDC", "KEXC", "PATREON", "TDMR"],
+      "type": "promo",
+      "base_cards": 48,
+      "total_images": 48
+    }
+  ],
+  "_alias_lookup": {
+    "TRWA": "LGRO"
+  }
+}

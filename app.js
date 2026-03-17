@@ -4,9 +4,35 @@ let filteredCards = [];
 let collection = new Set(); // Set of folio IDs
 let decks = {}; // { deckId: { name, cards: [folio] } }
 let currentDeck = null;
+let setAliases = {}; // { alias: canonicalCode } e.g. { "TRWA": "LGRO" }
+let setMetadata = []; // Full set info from set-aliases.json
 
 // ==================== INITIALIZATION ====================
 async function init() {
+    // Load set aliases first
+    try {
+        const aliasResp = await fetch('set-aliases.json');
+        if (aliasResp.ok) {
+            const aliasData = await aliasResp.json();
+            setMetadata = aliasData.sets || [];
+            // Build alias lookup: every alias → canonical code
+            for (const set of setMetadata) {
+                for (const alias of (set.aliases || [])) {
+                    setAliases[alias.toUpperCase()] = set.code;
+                }
+            }
+            // Add explicit alias_lookup entries
+            if (aliasData._alias_lookup) {
+                for (const [alias, code] of Object.entries(aliasData._alias_lookup)) {
+                    setAliases[alias.toUpperCase()] = code;
+                }
+            }
+            console.log(`Loaded ${Object.keys(setAliases).length} set aliases`);
+        }
+    } catch (e) {
+        console.log('No set-aliases.json found');
+    }
+
     // Load cards
     try {
         const response = await fetch('cards.json');
@@ -45,9 +71,9 @@ async function loadCollection() {
             if (resp.ok) {
                 const data = await resp.json();
                 if (data.cards && Array.isArray(data.cards)) {
-                    collection = new Set(data.cards);
+                    collection = new Set(data.cards.map(c => resolveFolio(c)));
                     saveCollection();
-                    console.log(`Auto-imported ${data.cards.length} cards from collection.json`);
+                    console.log(`Auto-imported ${collection.size} cards from collection.json`);
                 }
             }
         } catch (e) {
@@ -58,6 +84,23 @@ async function loadCollection() {
 
 function saveCollection() {
     localStorage.setItem('kodem_collection', JSON.stringify([...collection]));
+}
+
+// Resolve a folio like "TRWA-042" → "LGRO-042" using set aliases
+function resolveFolio(folio) {
+    if (!folio || typeof folio !== 'string') return folio;
+    const match = folio.match(/^([A-Za-z]+)-(.+)$/);
+    if (!match) return folio;
+    const setCode = match[1].toUpperCase();
+    const cardNum = match[2];
+    const canonical = setAliases[setCode] || setCode;
+    return `${canonical}-${cardNum}`;
+}
+
+// Get set info (names, type) for a code or alias
+function getSetInfo(codeOrAlias) {
+    const canonical = setAliases[(codeOrAlias || '').toUpperCase()] || codeOrAlias;
+    return setMetadata.find(s => s.code === canonical) || null;
 }
 
 function exportCollection() {
@@ -101,10 +144,12 @@ function importCollection() {
                     `Se encontraron ${cards.length} cartas.\n\nOK = Reemplazar colección\nCancelar = Agregar a existente`
                 ) ? 'replace' : 'merge';
                 
+                // Resolve aliases (e.g. TRWA-042 → LGRO-042)
+                const resolvedCards = cards.map(c => resolveFolio(c));
                 if (mode === 'replace') {
-                    collection = new Set(cards);
+                    collection = new Set(resolvedCards);
                 } else {
-                    cards.forEach(c => collection.add(c));
+                    resolvedCards.forEach(c => collection.add(c));
                 }
                 saveCollection();
                 renderCollection();
