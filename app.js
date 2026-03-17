@@ -622,6 +622,15 @@ function setupEventListeners() {
 }
 
 // ==================== GRID SIZE ====================
+// Deck builder mobile tab switching
+function switchDeckTab(tab) {
+    const layout = document.querySelector('.deck-builder-layout');
+    if (layout) layout.dataset.activeTab = tab;
+    document.querySelectorAll('.deck-tab-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.deckTab === tab);
+    });
+}
+
 function applyGridSize(size) {
     gridSize = size;
     localStorage.setItem('kodem_grid_size', size);
@@ -727,7 +736,7 @@ function applyBrowserFilters() {
     const filterEffectText = ((document.getElementById('filter-effect-text') || {}).value || '').toLowerCase();
 
     filteredCards = allCards.filter(card => {
-        if (search && !card.name.toLowerCase().includes(search)) return false;
+        if (search && !card.name.toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search)) return false;
         if (filterSet && card.set !== filterSet) return false;
         if (filterType && card.type !== filterType) return false;
         if (filterEnergy && card.energy !== filterEnergy && card.energy2 !== filterEnergy) return false;
@@ -1803,7 +1812,7 @@ function renderDeckPool() {
         if (!card.type) return false;
         if (EXCLUDED_DECK_TYPES.has(card.type)) return false;
 
-        if (search && !card.name.toLowerCase().includes(search)) return false;
+        if (search && !card.name.toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search)) return false;
         if (filterEnergy && card.energy !== filterEnergy && card.energy2 !== filterEnergy) return false;
         if (filterType && card.type !== filterType) return false;
         if (filterSubtype && card.subtype !== filterSubtype) return false;

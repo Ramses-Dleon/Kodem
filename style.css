@@ -2162,3 +2162,67 @@ nav .nav-btn.active::after {
         display: inline-flex !important;
     }
 }
+
+/* Deck builder mobile tabs */
+.deck-mobile-tabs {
+    display: none !important;
+    gap: 0;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .deck-mobile-tabs {
+        display: flex !important;
+    }
+    
+    .deck-tab-btn {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid var(--border);
+        background: var(--bg-card);
+        color: var(--text-secondary);
+        font-family: 'Cinzel', serif;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.2s;
+        min-height: 44px;
+    }
+    
+    .deck-tab-btn:first-child {
+        border-radius: 8px 0 0 8px;
+    }
+    
+    .deck-tab-btn:last-child {
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .deck-tab-btn.active {
+        background: var(--accent-amber);
+        color: #000;
+        border-color: var(--accent-amber);
+    }
+    
+    /* Hide inactive tab content */
+    .deck-builder-layout[data-active-tab="pool"] .deck-workspace,
+    .deck-builder-layout[data-active-tab="pool"] .deck-list-sidebar {
+        display: none;
+    }
+    
+    .deck-builder-layout[data-active-tab="workspace"] .card-pool {
+        display: none;
+    }
+    
+    /* When pool is visible, give it full height */
+    .deck-builder-layout[data-active-tab="pool"] .card-pool {
+        max-height: none;
+    }
+    
+    .deck-builder-layout[data-active-tab="workspace"] .deck-list-sidebar {
+        max-height: 150px;
+    }
+    
+    .deck-builder-layout[data-active-tab="workspace"] .deck-workspace {
+        max-height: none;
+    }
+}

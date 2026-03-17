@@ -260,6 +260,11 @@
 
         <!-- Deck Builder View -->
         <section id="deck-builder-view" class="view">
+            <!-- Mobile tab switcher for deck builder -->
+            <div class="deck-mobile-tabs mobile-only">
+                <button class="deck-tab-btn active" data-deck-tab="workspace" onclick="switchDeckTab('workspace')">🃏 Mi Mazo</button>
+                <button class="deck-tab-btn" data-deck-tab="pool" onclick="switchDeckTab('pool')">📚 Cartas</button>
+            </div>
             <div class="deck-builder-layout">
                 <aside class="deck-list-sidebar">
                     <h3>Mis Mazos</h3>
