@@ -2314,3 +2314,55 @@ nav .nav-btn.active::after {
     border-top: none;
     margin: 8px 0;
 }
+
+/* Collection / Want List tabs */
+.collection-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 12px;
+}
+
+.collection-tab-btn {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.collection-tab-btn:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.collection-tab-btn:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.collection-tab-btn.active {
+    background: var(--accent-amber);
+    color: #000;
+    border-color: var(--accent-amber);
+}
+
+.tab-count {
+    background: rgba(0,0,0,0.2);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.collection-tab-btn.active .tab-count {
+    background: rgba(0,0,0,0.3);
+}

@@ -622,6 +622,21 @@ function setupEventListeners() {
 }
 
 // ==================== GRID SIZE ====================
+// Collection / Want List tab switching
+function switchCollectionTab(tab) {
+    currentCollectionTab = tab;
+    collectionPage = 1;
+    document.querySelectorAll('.collection-tab-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.tab === tab);
+    });
+    // Show/hide dashboard only for collection tab
+    const dashboard = document.getElementById('collection-dashboard');
+    if (dashboard) dashboard.style.display = tab === 'collection' ? '' : 'none';
+    const toggleDash = document.getElementById('toggle-dashboard');
+    if (toggleDash) toggleDash.style.display = tab === 'collection' ? '' : 'none';
+    renderCollection();
+}
+
 // Deck builder mobile tab switching
 function switchDeckTab(tab) {
     const layout = document.querySelector('.deck-builder-layout');

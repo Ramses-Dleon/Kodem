@@ -109,6 +109,11 @@
 
         <!-- Collection View -->
         <section id="collection-view" class="view">
+            <!-- Collection / Want List tabs -->
+            <div class="collection-tabs">
+                <button class="collection-tab-btn active" data-tab="collection" onclick="switchCollectionTab('collection')">📦 Mi Colección <span class="tab-count">0</span></button>
+                <button class="collection-tab-btn" data-tab="wantlist" onclick="switchCollectionTab('wantlist')">🎯 Want List <span class="tab-count">0</span></button>
+            </div>
             <div class="controls">
                 <input type="text" id="collection-search" placeholder="Buscar en mi colección..." />
 
