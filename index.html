@@ -118,7 +118,7 @@
                     <option value="missing">❌ Me faltan</option>
                 </select>
 
-                <button id="toggle-collection-filters" class="btn-secondary" style="flex:0 0 auto;font-size:0.75rem;padding:6px 12px">🔽 Filtros</button>
+                <button id="toggle-collection-filters" class="btn-secondary mobile-only" style="flex:0 0 auto;font-size:0.75rem;padding:6px 12px">🔽 Filtros</button>
 
                 <div id="collection-advanced-filters" class="advanced-filters">
                     <select id="collection-filter-set">
@@ -157,10 +157,10 @@
                 </div>
 
                 <div style="display:flex;gap:4px;flex-wrap:wrap;width:100%">
-                    <button id="sync-export" class="btn-primary" title="Generar código">🔗 Código</button>
-                    <button id="sync-import" class="btn-secondary" title="Importar código">📥 Código</button>
-                    <button id="import-collection" class="btn-secondary" title="Importar JSON">📥 JSON</button>
-                    <button id="export-collection" class="btn-secondary" title="Exportar JSON">📤 JSON</button>
+                    <button id="sync-export" class="btn-primary" title="Generar código de colección">🔗 Exportar Código</button>
+                    <button id="sync-import" class="btn-secondary" title="Importar código de colección">📥 Importar Código</button>
+                    <button id="export-collection" class="btn-primary" title="Exportar colección como JSON">📤 Exportar JSON</button>
+                    <button id="import-collection" class="btn-secondary" title="Importar colección desde JSON">📥 Importar JSON</button>
                     <button id="clear-collection" class="btn-danger">🗑️</button>
                 </div>
             </div>
@@ -274,10 +274,10 @@
                             <button id="save-deck-btn" class="btn-primary">Guardar</button>
                             <button id="share-deck-btn" class="btn-secondary">🔗 URL</button>
                             <button id="export-deck-btn" class="btn-secondary">📋 Texto</button>
-                            <button id="deck-sync-export" class="btn-primary">🔗 Código</button>
-                            <button id="deck-sync-import" class="btn-secondary">📥 Código</button>
-                            <button id="deck-json-export" class="btn-secondary">📤 JSON</button>
-                            <button id="deck-json-import" class="btn-secondary">📥 JSON</button>
+                            <button id="deck-sync-export" class="btn-primary">🔗 Exportar Código</button>
+                            <button id="deck-sync-import" class="btn-secondary">📥 Importar Código</button>
+                            <button id="deck-json-export" class="btn-primary">📤 Exportar JSON</button>
+                            <button id="deck-json-import" class="btn-secondary">📥 Importar JSON</button>
                             <button id="delete-deck-btn" class="btn-danger">Eliminar</button>
                         </div>
                     </div>
