@@ -318,7 +318,13 @@ async function importSyncCode() {
             
             // Validate folios against allCards
             const validFolios = new Set(allCards.map(c => c.folio));
-            const valid = folios.filter(f => validFolios.has(f));
+            // Accept foils/variants with S suffix — map to base folio if base exists
+            const valid = folios.filter(f => {
+                if (validFolios.has(f)) return true;
+                // Try stripping trailing S (foil variant)
+                if (f.endsWith('S') && validFolios.has(f.slice(0, -1))) return true;
+                return false;
+            });
             const invalid = folios.length - valid.length;
             
             const mode = await showChoice(
