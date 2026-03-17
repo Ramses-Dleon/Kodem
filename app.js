@@ -185,6 +185,14 @@ async function init() {
 
     // Auto-import deck from URL hash if present
     importDeckFromHash();
+
+    // Route to view based on URL hash (from sinergias nav links)
+    const hash = window.location.hash;
+    if (hash === '#collection') {
+        switchView('collection');
+    } else if (hash === '#deck-builder') {
+        switchView('deck-builder');
+    }
 }
 
 // ==================== STORAGE ====================
