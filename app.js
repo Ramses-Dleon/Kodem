@@ -352,9 +352,13 @@ async function importSyncCode() {
                 valid.forEach(f => collection.add(f));
             }
             saveCollection();
-            renderCollection();
             modal.remove();
-            showToast(`Colección actualizada: ${collection.size} cartas ✅`, 'success');
+            // Force full re-render: switch to collection view and refresh dashboard
+            switchView('collection');
+            setTimeout(() => {
+                renderCollection();
+                showToast(`Colección actualizada: ${collection.size} cartas ✅`, 'success');
+            }, 300);
         } catch (err) {
             showToast('Error decodificando: ' + err.message, 'error');
         }
@@ -398,8 +402,11 @@ function importCollection() {
                     resolvedCards.forEach(c => collection.add(c));
                 }
                 saveCollection();
-                renderCollection();
-                showToast(`Colección actualizada: ${collection.size} cartas ✅`, 'success');
+                switchView('collection');
+                setTimeout(() => {
+                    renderCollection();
+                    showToast(`Colección actualizada: ${collection.size} cartas ✅`, 'success');
+                }, 300);
             } catch (err) {
                 showToast('Error leyendo archivo: ' + err.message, 'error');
             }
