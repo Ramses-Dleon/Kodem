@@ -404,52 +404,13 @@ function renderCollection() {
         el.addEventListener('click', () => openCardModal(cards[idx]));
     });
 
-    // Update stats
-    updateCollectionStats();
+    // Update dashboard
+    renderDashboard();
 }
 
+// updateCollectionStats is now handled by renderDashboard()
 function updateCollectionStats() {
-    const total = allCards.length;
-    const owned = collection.size;
-    const percent = total > 0 ? Math.round((owned / total) * 100) : 0;
-
-    document.getElementById('total-owned').textContent = `${owned} / ${total}`;
-    document.getElementById('completion-percent').textContent = `${percent}%`;
-
-    // Stats by type
-    const byType = {};
-    const bySet = {};
-
-    allCards.forEach(card => {
-        if (!byType[card.type]) byType[card.type] = { total: 0, owned: 0 };
-        if (!bySet[card.set]) bySet[card.set] = { total: 0, owned: 0 };
-
-        byType[card.type].total++;
-        bySet[card.set].total++;
-
-        if (collection.has(card.folio)) {
-            byType[card.type].owned++;
-            bySet[card.set].owned++;
-        }
-    });
-
-    const typeStatsEl = document.getElementById('stats-by-type');
-    typeStatsEl.innerHTML = '<h4 style="grid-column: 1/-1; margin-bottom: 0.5rem;">Por Tipo</h4>' +
-        Object.entries(byType).map(([type, stats]) => `
-            <div class="stat-item">
-                <strong>${type}</strong>
-                <span>${stats.owned} / ${stats.total}</span>
-            </div>
-        `).join('');
-
-    const setStatsEl = document.getElementById('stats-by-set');
-    setStatsEl.innerHTML = '<h4 style="grid-column: 1/-1; margin-bottom: 0.5rem;">Por Set</h4>' +
-        Object.entries(bySet).map(([set, stats]) => `
-            <div class="stat-item">
-                <strong>${set}</strong>
-                <span>${stats.owned} / ${stats.total}</span>
-            </div>
-        `).join('');
+    renderDashboard();
 }
 
 // ==================== DECK BUILDER ====================
@@ -715,6 +676,312 @@ function renderDeckPool() {
             addToDeck(cards[idx].folio);
         });
     });
+}
+
+// ==================== COLLECTION DASHBOARD ====================
+
+// Rarity config: folio suffix → display info
+const RARITY_CONFIG = [
+    { suffix: 'R',  label: 'Rara',       emoji: '💎', color: '#60a5fa' },
+    { suffix: 'S',  label: 'Súper Rara', emoji: '⭐', color: '#a78bfa' },
+    { suffix: 'U',  label: 'Ultra Rara', emoji: '🌟', color: '#f59e0b' },
+    { suffix: 'K',  label: 'Kósmica',    emoji: '👑', color: '#f97316' },
+    { suffix: 'UV', label: 'UV',         emoji: '✨', color: '#34d399' },
+];
+
+/**
+ * Determine if a folio is a base card or a variant.
+ * Returns '' for base, or the suffix string (R, S, U, K, UV).
+ */
+function getFolioSuffix(folio) {
+    if (!folio) return '';
+    const m = folio.match(/^[A-Z0-9]+-\d+([A-Z]*)$/);
+    if (!m) return '';
+    return m[1]; // '' = base, 'R' = Rara, etc.
+}
+
+/**
+ * Compute set-level completion data using setMetadata and cards.json.
+ * Returns array of { code, name, total, owned, missing[] }
+ * sorted by pct desc.
+ */
+function computeSetStats() {
+    // Build per-set data from cards.json (base cards only)
+    const setData = {}; // code → { total, ownedSet: Set of folios, cards: [] }
+
+    for (const card of allCards) {
+        const code = card.set;
+        if (!setData[code]) {
+            setData[code] = { total: 0, ownedFolios: new Set(), cards: [] };
+        }
+        setData[code].total++;
+        setData[code].cards.push(card);
+        if (collection.has(card.folio)) {
+            setData[code].ownedFolios.add(card.folio);
+        }
+    }
+
+    // Build result with display names from setMetadata
+    const result = [];
+    for (const [code, data] of Object.entries(setData)) {
+        const meta = setMetadata.find(s => s.code === code);
+        const name = meta ? (meta.name_es || meta.name_en || code) : code;
+        const owned = data.ownedFolios.size;
+        const total = data.total;
+        const missing = data.cards
+            .filter(c => !collection.has(c.folio))
+            .map(c => c.folio);
+
+        result.push({ code, name, total, owned, missing });
+    }
+
+    result.sort((a, b) => {
+        const pa = a.total > 0 ? a.owned / a.total : 0;
+        const pb = b.total > 0 ? b.owned / b.total : 0;
+        return pb - pa;
+    });
+
+    return result;
+}
+
+/** Render the circular progress ring in the hero section */
+function renderHeroRing(pct) {
+    const circumference = 2 * Math.PI * 50; // 314.16
+    const offset = circumference - (pct / 100) * circumference;
+    const fill = document.getElementById('hero-ring-fill');
+    if (fill) {
+        fill.style.strokeDashoffset = offset;
+        // Color based on pct
+        if (pct >= 100) fill.style.stroke = '#10b981';
+        else if (pct >= 50) fill.style.stroke = '#f59e0b';
+        else fill.style.stroke = '#ef4444';
+    }
+    const heroLbl = document.getElementById('hero-pct');
+    if (heroLbl) heroLbl.textContent = pct + '%';
+}
+
+/** Render set completion horizontal bars */
+function renderSetCompletionChart(setStats) {
+    const container = document.getElementById('set-completion-chart');
+    if (!container) return;
+
+    const complete = setStats.filter(s => s.total > 0 && s.owned === s.total);
+    const inProgress = setStats.filter(s => s.total > 0 && s.owned > 0 && s.owned < s.total);
+    const notStarted = setStats.filter(s => s.total > 0 && s.owned === 0);
+
+    let html = '';
+
+    function renderGroup(label, sets) {
+        if (sets.length === 0) return '';
+        let g = `<div class="set-group-header">${label}</div>`;
+        for (const s of sets) {
+            const pct = Math.round((s.owned / s.total) * 100);
+            let fillClass = pct >= 100 ? 'complete' : pct >= 50 ? 'good' : 'poor';
+            g += `
+                <div class="set-bar-row">
+                    <div class="set-bar-name" title="${s.name} (${s.code})">${s.name}</div>
+                    <div class="set-bar-track">
+                        <div class="set-bar-fill ${fillClass}" style="width:${pct}%"></div>
+                    </div>
+                    <div class="set-bar-count">${s.owned}/${s.total}</div>
+                </div>`;
+        }
+        return g;
+    }
+
+    html += renderGroup('Sets Completos ✅', complete);
+    html += renderGroup('En Progreso 🔄', inProgress);
+    html += renderGroup('Sin Iniciar ❌', notStarted);
+
+    container.innerHTML = html || '<p class="empty-state">No hay datos de sets</p>';
+}
+
+/** Render rarity donut chart (pure CSS conic-gradient) */
+function renderRarityDonut() {
+    const donut = document.getElementById('rarity-donut');
+    const legend = document.getElementById('rarity-legend');
+    if (!donut || !legend) return;
+
+    // Count variants in the collection by suffix
+    const counts = {};
+    for (const rc of RARITY_CONFIG) counts[rc.suffix] = 0;
+
+    for (const folio of collection) {
+        const suffix = getFolioSuffix(folio);
+        if (suffix && counts.hasOwnProperty(suffix)) {
+            counts[suffix]++;
+        }
+    }
+
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+
+    if (total === 0) {
+        donut.style.background = 'var(--bg-darker)';
+        legend.innerHTML = '<p style="color:var(--text-secondary);font-size:0.85rem">Sin variantes en colección</p>';
+        return;
+    }
+
+    // Build conic-gradient segments
+    let gradientParts = [];
+    let currentAngle = 0;
+    let legendHtml = '';
+
+    for (const rc of RARITY_CONFIG) {
+        const count = counts[rc.suffix];
+        if (count === 0) continue;
+        const deg = (count / total) * 360;
+        gradientParts.push(`${rc.color} ${currentAngle.toFixed(1)}deg ${(currentAngle + deg).toFixed(1)}deg`);
+        currentAngle += deg;
+
+        const pct = ((count / total) * 100).toFixed(1);
+        legendHtml += `
+            <div class="rarity-legend-item">
+                <div class="rarity-legend-dot" style="background:${rc.color}"></div>
+                <span class="rarity-legend-name">${rc.emoji} ${rc.label}</span>
+                <span class="rarity-legend-count">${count} <small style="color:var(--text-secondary)">(${pct}%)</small></span>
+            </div>`;
+    }
+
+    donut.style.background = `conic-gradient(${gradientParts.join(', ')})`;
+    legend.innerHTML = legendHtml;
+}
+
+/** Render missing cards accordion per set */
+function renderMissingCardsAccordion(setStats) {
+    const container = document.getElementById('missing-cards-accordion');
+    if (!container) return;
+
+    // Only show sets that have cards
+    const setsWithCards = setStats.filter(s => s.total > 0);
+    // Sort: sets with missing cards first (most missing first), then complete sets
+    const withMissing = setsWithCards.filter(s => s.missing.length > 0)
+        .sort((a, b) => b.missing.length - a.missing.length);
+    const complete = setsWithCards.filter(s => s.missing.length === 0);
+
+    const all = [...withMissing, ...complete];
+
+    let html = '';
+    for (const s of all) {
+        const missingCount = s.missing.length;
+        const badgeClass = missingCount === 0 ? 'zero' : '';
+        const badgeText = missingCount === 0 ? '¡Completo! ✅' : `${missingCount} faltantes`;
+
+        const chipsHtml = missingCount === 0
+            ? '<span class="missing-empty">¡Tienes todas las cartas de este set! 🎉</span>'
+            : s.missing.map(f => `<span class="missing-card-chip">${f}</span>`).join('');
+
+        html += `
+            <div class="missing-set-section" data-set="${s.code}">
+                <div class="missing-set-header" onclick="toggleMissingSet(this)">
+                    <span class="missing-set-title">Te faltan ${missingCount} cartas de ${s.name} (${s.code})</span>
+                    <div style="display:flex;align-items:center;gap:0.5rem">
+                        <span class="missing-set-badge ${badgeClass}">${badgeText}</span>
+                        <span class="missing-set-chevron">▼</span>
+                    </div>
+                </div>
+                <div class="missing-set-body">
+                    <div class="missing-cards-grid">${chipsHtml}</div>
+                </div>
+            </div>`;
+    }
+
+    container.innerHTML = html || '<p class="empty-state">Sin datos disponibles</p>';
+}
+
+function toggleMissingSet(headerEl) {
+    const section = headerEl.closest('.missing-set-section');
+    if (section) section.classList.toggle('open');
+}
+
+/** Update quick stat cards */
+function renderQuickStats(setStats) {
+    // Complete sets (from cards.json sets only)
+    const completeSets = setStats.filter(s => s.total > 0 && s.owned === s.total);
+    const incompleteSets = setStats.filter(s => s.total > 0 && s.owned > 0 && s.owned < s.total);
+    const withMissing = setStats.filter(s => s.total > 0 && s.owned < s.total);
+
+    const qsComplete = document.getElementById('qs-complete-sets');
+    if (qsComplete) qsComplete.textContent = completeSets.length;
+
+    const qsBest = document.getElementById('qs-best-incomplete');
+    if (qsBest) {
+        if (incompleteSets.length > 0) {
+            const best = incompleteSets[0]; // already sorted by pct desc
+            const pct = Math.round((best.owned / best.total) * 100);
+            qsBest.textContent = `${best.code} (${pct}%)`;
+        } else {
+            qsBest.textContent = '—';
+        }
+    }
+
+    const qsMissing = document.getElementById('qs-most-missing');
+    if (qsMissing) {
+        if (withMissing.length > 0) {
+            const worst = withMissing.reduce((a, b) => b.missing.length > a.missing.length ? b : a);
+            qsMissing.textContent = `${worst.code} (${worst.missing.length})`;
+        } else {
+            qsMissing.textContent = '—';
+        }
+    }
+
+    const qsDate = document.getElementById('qs-last-updated');
+    if (qsDate) {
+        const today = new Date();
+        qsDate.textContent = today.toLocaleDateString('es-MX', { day: '2-digit', month: 'short', year: 'numeric' });
+    }
+}
+
+/** Main function: render the full dashboard */
+function renderDashboard() {
+    const setStats = computeSetStats();
+
+    // Count base vs variant in collection
+    let baseOwned = 0;
+    let variantOwned = 0;
+    for (const folio of collection) {
+        const suffix = getFolioSuffix(folio);
+        if (suffix === '') baseOwned++;
+        else variantOwned++;
+    }
+
+    // Total base cards in cards.json
+    const totalBase = allCards.length;
+
+    // Total variants from cards.json rarity_variants field
+    // Each card can have variants (R, S, U, K) — count them
+    let totalVariants = 0;
+    for (const card of allCards) {
+        const rv = card.rarity_variants || [];
+        totalVariants += rv.length;
+    }
+    // Also count UV cards (folio ends in UV) in cards.json
+    for (const card of allCards) {
+        if (getFolioSuffix(card.folio) === 'UV') totalVariants++;
+    }
+
+    const totalAll = collection.size;
+    const totalCards = totalBase + totalVariants;
+    const pctAll = totalCards > 0 ? Math.round((totalAll / totalCards) * 100) : 0;
+    const pctBase = totalBase > 0 ? Math.round((baseOwned / totalBase) * 100) : 0;
+
+    // Hero stats
+    const heroEl = document.getElementById('total-owned');
+    if (heroEl) heroEl.textContent = `${totalAll} / ${totalCards}`;
+
+    const baseEl = document.getElementById('base-owned');
+    if (baseEl) baseEl.textContent = `${baseOwned} / ${totalBase}`;
+
+    const varEl = document.getElementById('variants-owned');
+    if (varEl) varEl.textContent = `${variantOwned} / ${totalVariants}`;
+
+    const pctEl = document.getElementById('completion-percent');
+    if (pctEl) pctEl.textContent = `${pctBase}%`;
+
+    renderHeroRing(pctBase);
+    renderQuickStats(setStats);
+    renderSetCompletionChart(setStats);
+    renderRarityDonut();
+    renderMissingCardsAccordion(setStats);
 }
 
 // ==================== START APP ====================

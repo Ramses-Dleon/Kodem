@@ -38,13 +38,14 @@
 
                 <select id="filter-energy">
                     <option value="">Todas las energías</option>
+                    <option value="Átlica">Átlica</option>
+                    <option value="Pírica">Pírica</option>
+                    <option value="Gélida">Gélida</option>
                     <option value="Lítica">Lítica</option>
-                    <option value="Verdante">Verdante</option>
-                    <option value="Acuática">Acuática</option>
-                    <option value="Flamígera">Flamígera</option>
-                    <option value="Umbría">Umbría</option>
-                    <option value="Aérea">Aérea</option>
-                    <option value="Mecánica">Mecánica</option>
+                    <option value="Cháaktica">Cháaktica</option>
+                    <option value="Húumica">Húumica</option>
+                    <option value="Demótica">Demótica</option>
+                    <option value="Feral">Feral</option>
                 </select>
 
                 <select id="sort-by">
@@ -78,20 +79,92 @@
                 <button id="clear-collection" class="btn-danger">🗑️ Limpiar</button>
             </div>
 
-            <div class="collection-stats">
-                <div class="stat-card">
-                    <h3 id="total-owned">0</h3>
-                    <p>Total de cartas</p>
-                </div>
-                <div class="stat-card">
-                    <h3 id="completion-percent">0%</h3>
-                    <p>Completado</p>
-                </div>
-                <div id="stats-by-type" class="stats-grid"></div>
-                <div id="stats-by-set" class="stats-grid"></div>
-            </div>
+            <!-- ===== COLLECTION DASHBOARD ===== -->
+            <div id="collection-dashboard">
 
-            <div id="collection-grid" class="card-grid"></div>
+                <!-- 1. HERO STATS BAR -->
+                <div class="dashboard-hero">
+                    <div class="hero-progress-ring">
+                        <svg viewBox="0 0 120 120" class="progress-ring-svg">
+                            <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                            <circle class="ring-fill" id="hero-ring-fill" cx="60" cy="60" r="50"/>
+                        </svg>
+                        <div class="ring-label">
+                            <span id="hero-pct">0%</span>
+                            <small>completado</small>
+                        </div>
+                    </div>
+                    <div class="hero-stats-grid">
+                        <div class="hero-stat-item">
+                            <span class="hero-stat-value" id="total-owned">0/0</span>
+                            <span class="hero-stat-label">Cartas totales</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="hero-stat-value" id="base-owned">0/0</span>
+                            <span class="hero-stat-label">Cartas base</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="hero-stat-value" id="variants-owned">0/0</span>
+                            <span class="hero-stat-label">Foils / Variantes</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="hero-stat-value" id="completion-percent">0%</span>
+                            <span class="hero-stat-label">Base completado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. QUICK STATS CARDS -->
+                <div class="quick-stats-row">
+                    <div class="quick-stat-card">
+                        <div class="qs-icon">✅</div>
+                        <div class="qs-value" id="qs-complete-sets">0</div>
+                        <div class="qs-label">Sets completos</div>
+                    </div>
+                    <div class="quick-stat-card">
+                        <div class="qs-icon">📈</div>
+                        <div class="qs-value" id="qs-best-incomplete">—</div>
+                        <div class="qs-label">Más completo (sin 100%)</div>
+                    </div>
+                    <div class="quick-stat-card">
+                        <div class="qs-icon">📉</div>
+                        <div class="qs-value" id="qs-most-missing">—</div>
+                        <div class="qs-label">Más cartas faltantes</div>
+                    </div>
+                    <div class="quick-stat-card">
+                        <div class="qs-icon">🕐</div>
+                        <div class="qs-value" id="qs-last-updated">—</div>
+                        <div class="qs-label">Última actualización</div>
+                    </div>
+                </div>
+
+                <!-- 3. SET COMPLETION CHART -->
+                <div class="dashboard-section">
+                    <h3 class="dashboard-section-title">📊 Progreso por Set</h3>
+                    <div id="set-completion-chart"></div>
+                </div>
+
+                <!-- 4. RARITY BREAKDOWN -->
+                <div class="dashboard-section rarity-section">
+                    <h3 class="dashboard-section-title">💠 Rareza de Variantes</h3>
+                    <div class="rarity-layout">
+                        <div class="rarity-donut-wrap">
+                            <div class="rarity-donut" id="rarity-donut"></div>
+                        </div>
+                        <div class="rarity-legend" id="rarity-legend"></div>
+                    </div>
+                </div>
+
+                <!-- 5. MISSING CARDS LIST -->
+                <div class="dashboard-section">
+                    <h3 class="dashboard-section-title">🔍 Cartas Faltantes por Set</h3>
+                    <div id="missing-cards-accordion"></div>
+                </div>
+
+            </div>
+            <!-- ===== END DASHBOARD ===== -->
+
+            <div id="collection-grid" class="card-grid" style="margin-top: 2rem;"></div>
         </section>
 
         <!-- Deck Builder View -->
@@ -173,13 +246,14 @@
                         <input type="text" id="deck-search" placeholder="Buscar carta..." />
                         <select id="deck-filter-energy">
                             <option value="">Todas las energías</option>
+                            <option value="Átlica">Átlica</option>
+                            <option value="Pírica">Pírica</option>
+                            <option value="Gélida">Gélida</option>
                             <option value="Lítica">Lítica</option>
-                            <option value="Verdante">Verdante</option>
-                            <option value="Acuática">Acuática</option>
-                            <option value="Flamígera">Flamígera</option>
-                            <option value="Umbría">Umbría</option>
-                            <option value="Aérea">Aérea</option>
-                            <option value="Mecánica">Mecánica</option>
+                            <option value="Cháaktica">Cháaktica</option>
+                            <option value="Húumica">Húumica</option>
+                            <option value="Demótica">Demótica</option>
+                            <option value="Feral">Feral</option>
                         </select>
                         <select id="deck-filter-type">
                             <option value="">Todos los tipos</option>
