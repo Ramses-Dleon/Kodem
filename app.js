@@ -20,7 +20,7 @@ async function init() {
     }
 
     // Load from localStorage
-    loadCollection();
+    await loadCollection();
     loadDecks();
 
     // Populate filter dropdowns
@@ -34,15 +34,88 @@ async function init() {
 }
 
 // ==================== STORAGE ====================
-function loadCollection() {
+async function loadCollection() {
     const stored = localStorage.getItem('kodem_collection');
     if (stored) {
         collection = new Set(JSON.parse(stored));
+    } else {
+        // Auto-load from collection.json if no localStorage yet
+        try {
+            const resp = await fetch('collection.json');
+            if (resp.ok) {
+                const data = await resp.json();
+                if (data.cards && Array.isArray(data.cards)) {
+                    collection = new Set(data.cards);
+                    saveCollection();
+                    console.log(`Auto-imported ${data.cards.length} cards from collection.json`);
+                }
+            }
+        } catch (e) {
+            console.log('No collection.json to auto-import');
+        }
     }
 }
 
 function saveCollection() {
     localStorage.setItem('kodem_collection', JSON.stringify([...collection]));
+}
+
+function exportCollection() {
+    const data = {
+        version: 1,
+        exported: new Date().toISOString().split('T')[0],
+        total: collection.size,
+        cards: [...collection].sort()
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `kodem-coleccion-${data.exported}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function importCollection() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            try {
+                const data = JSON.parse(ev.target.result);
+                let cards = [];
+                if (Array.isArray(data)) {
+                    cards = data;
+                } else if (data.cards && Array.isArray(data.cards)) {
+                    cards = data.cards;
+                }
+                if (cards.length === 0) {
+                    alert('No se encontraron cartas en el archivo');
+                    return;
+                }
+                const mode = confirm(
+                    `Se encontraron ${cards.length} cartas.\n\nOK = Reemplazar colección\nCancelar = Agregar a existente`
+                ) ? 'replace' : 'merge';
+                
+                if (mode === 'replace') {
+                    collection = new Set(cards);
+                } else {
+                    cards.forEach(c => collection.add(c));
+                }
+                saveCollection();
+                renderCollection();
+                alert(`Colección actualizada: ${collection.size} cartas`);
+            } catch (err) {
+                alert('Error leyendo archivo: ' + err.message);
+            }
+        };
+        reader.readAsText(file);
+    };
+    input.click();
 }
 
 function loadDecks() {
@@ -77,6 +150,8 @@ function setupEventListeners() {
     document.getElementById('collection-search').addEventListener('input', renderCollection);
     document.getElementById('collection-filter').addEventListener('change', renderCollection);
     document.getElementById('clear-collection').addEventListener('click', clearCollection);
+    document.getElementById('import-collection').addEventListener('click', importCollection);
+    document.getElementById('export-collection').addEventListener('click', exportCollection);
 
     // Deck builder
     document.getElementById('new-deck-btn').addEventListener('click', createNewDeck);
