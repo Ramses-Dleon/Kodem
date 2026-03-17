@@ -35,6 +35,7 @@
             <button class="nav-btn" data-view="collection">Mi Colección</button>
             <button class="nav-btn" data-view="deck-builder">Constructor de Mazos</button>
             <a href="sinergias.html" class="nav-btn">⚡ Sinergias</a>
+            <button class="nav-btn" data-view="contact">💬 Contacto</button>
         </nav>
     </header>
 
@@ -422,7 +423,6 @@
                 </div>
             </div>
         </section>
-    </main>
 
     <!-- Card Detail Modal -->
     <div id="card-modal" class="modal">
@@ -494,6 +494,53 @@
 
     <!-- Toast notification container -->
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+        <!-- Contact View -->
+        <section id="contact-view" class="view">
+            <div style="max-width:600px;margin:0 auto;padding:16px">
+                <h2 style="font-family:'Cinzel',serif;color:var(--accent-amber);margin-bottom:8px">💬 Contacto</h2>
+                <p style="color:var(--text-secondary);margin-bottom:24px;font-size:0.9rem">
+                    ¿Encontraste un error en alguna carta? ¿Tienes una idea para mejorar la app?
+                    ¡Queremos escucharte! Este proyecto es de fans para fans.
+                </p>
+
+                <div style="display:flex;flex-direction:column;gap:16px">
+                    <!-- Bug Report -->
+                    <a href="mailto:logos.dleon@gmail.com?subject=%F0%9F%90%9B%20Bug%20Report%20%E2%80%94%20K%C3%B3dem%20Companion&body=%F0%9F%90%9B%20Reporte%20de%20error%0A%0ACarta%20(folio)%3A%20%0ADescripci%C3%B3n%20del%20error%3A%20%0AQu%C3%A9%20deber%C3%ADa%20decir%3A%20%0A" class="contact-card" style="display:block;text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all 0.2s">
+                        <div style="font-size:1.5rem;margin-bottom:8px">🐛</div>
+                        <div style="font-family:'Cinzel',serif;color:var(--text-primary);font-size:1rem;margin-bottom:4px">Reportar un error</div>
+                        <div style="color:var(--text-secondary);font-size:0.8rem">Datos incorrectos en una carta, imagen equivocada, bug en la app</div>
+                    </a>
+
+                    <!-- Feature Request -->
+                    <a href="mailto:logos.dleon@gmail.com?subject=%F0%9F%92%A1%20Sugerencia%20%E2%80%94%20K%C3%B3dem%20Companion&body=%F0%9F%92%A1%20Mi%20sugerencia%0A%0ADescripci%C3%B3n%3A%20%0APor%20qu%C3%A9%20ser%C3%ADa%20%C3%BAtil%3A%20%0A" class="contact-card" style="display:block;text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all 0.2s">
+                        <div style="font-size:1.5rem;margin-bottom:8px">💡</div>
+                        <div style="font-family:'Cinzel',serif;color:var(--text-primary);font-size:1rem;margin-bottom:4px">Sugerir una mejora</div>
+                        <div style="color:var(--text-secondary);font-size:0.8rem">Nuevas funciones, filtros, herramientas que te gustaría ver</div>
+                    </a>
+
+                    <!-- Card Data -->
+                    <a href="mailto:logos.dleon@gmail.com?subject=%F0%9F%83%8F%20Datos%20de%20carta%20%E2%80%94%20K%C3%B3dem%20Companion&body=%F0%9F%83%8F%20Datos%20de%20carta%20nueva%2Fcorrecci%C3%B3n%0A%0ACarta%20(folio)%3A%20%0ASet%3A%20%0ACorrecci%C3%B3n%2Fdatos%3A%20%0A" class="contact-card" style="display:block;text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all 0.2s">
+                        <div style="font-size:1.5rem;margin-bottom:8px">🃏</div>
+                        <div style="font-family:'Cinzel',serif;color:var(--text-primary);font-size:1rem;margin-bottom:4px">Corregir datos de carta</div>
+                        <div style="color:var(--text-secondary);font-size:0.8rem">Texto de efecto, energía, daño, nombre — si tienes la carta física</div>
+                    </a>
+
+                    <!-- General -->
+                    <a href="mailto:logos.dleon@gmail.com?subject=%E2%9C%89%EF%B8%8F%20Mensaje%20%E2%80%94%20K%C3%B3dem%20Companion&body=" class="contact-card" style="display:block;text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all 0.2s">
+                        <div style="font-size:1.5rem;margin-bottom:8px">✉️</div>
+                        <div style="font-family:'Cinzel',serif;color:var(--text-primary);font-size:1rem;margin-bottom:4px">Mensaje general</div>
+                        <div style="color:var(--text-secondary);font-size:0.8rem">Cualquier otra cosa — feedback, saludo, o propuesta de colaboración</div>
+                    </a>
+                </div>
+
+                <p style="color:var(--text-secondary);font-size:0.75rem;margin-top:24px;text-align:center">
+                    Los mensajes llegan directo al creador de esta herramienta. También puedes abrir un <a href="https://github.com/Ramses-Dleon/Kodem/issues" target="_blank" rel="noopener" style="color:var(--accent-amber)">Issue en GitHub</a>.
+                </p>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer disclaimer -->
     <footer style="text-align:center;padding:24px 16px 32px;color:#666;font-size:0.75rem;border-top:1px solid #333;margin-top:40px">

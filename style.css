@@ -2393,3 +2393,10 @@ nav .nav-btn.active::after {
     font-size: 0.8rem;
     margin-top: 8px;
 }
+
+/* Contact cards */
+.contact-card:hover {
+    border-color: var(--accent-amber) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}

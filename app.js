@@ -707,10 +707,12 @@ function switchView(view) {
     const viewMap = {
         'browser': 'browser-view',
         'collection': 'collection-view',
-        'deck-builder': 'deck-builder-view'
+        'deck-builder': 'deck-builder-view',
+        'contact': 'contact-view'
     };
 
-    document.getElementById(viewMap[view]).classList.add('active');
+    const el = document.getElementById(viewMap[view]);
+    if (el) el.classList.add('active');
 
     if (view === 'browser') renderBrowserPage();
     else if (view === 'collection') renderCollection();
