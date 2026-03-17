@@ -493,6 +493,22 @@ function setupEventListeners() {
     // Collection filters
     document.getElementById('collection-search').addEventListener('input', debounce(renderCollection, 300));
     document.getElementById('collection-filter').addEventListener('change', renderCollection);
+
+    // Collection advanced filters
+    const toggleColFilters = document.getElementById('toggle-collection-filters');
+    if (toggleColFilters) {
+        toggleColFilters.addEventListener('click', () => {
+            const af = document.getElementById('collection-advanced-filters');
+            if (af) {
+                af.classList.toggle('show');
+                toggleColFilters.textContent = af.classList.contains('show') ? '🔼 Filtros' : '🔽 Filtros';
+            }
+        });
+    }
+    ['collection-filter-set', 'collection-filter-type', 'collection-filter-energy', 'collection-filter-rarity', 'collection-sort'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('change', renderCollection);
+    });
     document.getElementById('clear-collection').addEventListener('click', clearCollection);
     document.getElementById('import-collection').addEventListener('click', importCollection);
     document.getElementById('export-collection').addEventListener('click', exportCollection);
@@ -647,18 +663,21 @@ function getSetDisplayName(code) {
 
 function populateSetFilter() {
     const sets = [...new Set(allCards.map(c => c.set))].sort();
-    const select = document.getElementById('filter-set');
-    sets.forEach(set => {
-        const option = document.createElement('option');
-        option.value = set;
-        option.textContent = getSetDisplayName(set);
-        select.appendChild(option);
+    ['filter-set', 'collection-filter-set'].forEach(selectId => {
+        const select = document.getElementById(selectId);
+        if (!select) return;
+        sets.forEach(set => {
+            const option = document.createElement('option');
+            option.value = set;
+            option.textContent = getSetDisplayName(set);
+            select.appendChild(option);
+        });
     });
 }
 
 function populateTypeFilter() {
     const types = [...new Set(allCards.map(c => c.type).filter(Boolean))].sort();
-    const selects = ['filter-type', 'deck-filter-type'];
+    const selects = ['filter-type', 'deck-filter-type', 'collection-filter-type'];
     selects.forEach(selectId => {
         const select = document.getElementById(selectId);
         if (!select) return;
@@ -1127,7 +1146,15 @@ async function clearCollection() {
 function renderCollection() {
     const search = document.getElementById('collection-search').value.toLowerCase();
     const filter = document.getElementById('collection-filter').value;
-    const sort = currentCollectionSort;
+    const sortEl = document.getElementById('collection-sort');
+    const sort = sortEl ? sortEl.value : currentCollectionSort;
+    currentCollectionSort = sort;
+
+    // Advanced filters
+    const filterSet = (document.getElementById('collection-filter-set')?.value || '');
+    const filterType = (document.getElementById('collection-filter-type')?.value || '');
+    const filterEnergy = (document.getElementById('collection-filter-energy')?.value || '');
+    const filterRarity = (document.getElementById('collection-filter-rarity')?.value || '');
 
     // Update tab count badges
     const ownedTabBtn = document.querySelector('.collection-tab-btn[data-tab="collection"]');
@@ -1140,15 +1167,23 @@ function renderCollection() {
     if (currentCollectionTab === 'wantlist') {
         cards = allCards.filter(card => {
             if (!wantList.has(card.folio)) return false;
-            if (search && !card.name.toLowerCase().includes(search)) return false;
+            if (search && !(card.name || '').toLowerCase().includes(search)) return false;
+            if (filterSet && card.set !== filterSet) return false;
+            if (filterType && card.type !== filterType) return false;
+            if (filterEnergy && card.energy !== filterEnergy) return false;
+            if (filterRarity && card.rarity !== filterRarity) return false;
             return true;
         });
     } else {
         cards = allCards.filter(card => {
-            if (search && !card.name.toLowerCase().includes(search)) return false;
+            if (search && !(card.name || '').toLowerCase().includes(search)) return false;
             const isOwned = collection.has(card.folio);
             if (filter === 'owned' && !isOwned) return false;
             if (filter === 'missing' && isOwned) return false;
+            if (filterSet && card.set !== filterSet) return false;
+            if (filterType && card.type !== filterType) return false;
+            if (filterEnergy && card.energy !== filterEnergy) return false;
+            if (filterRarity && card.rarity !== filterRarity) return false;
             return true;
         });
     }

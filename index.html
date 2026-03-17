@@ -118,6 +118,44 @@
                     <option value="missing">Me faltan</option>
                 </select>
 
+                <button id="toggle-collection-filters" class="btn-secondary" style="flex:0 0 auto;font-size:0.75rem;padding:6px 12px">🔽 Filtros</button>
+
+                <div id="collection-advanced-filters" class="advanced-filters">
+                    <select id="collection-filter-set">
+                        <option value="">Todos los sets</option>
+                    </select>
+                    <select id="collection-filter-type">
+                        <option value="">Todos los tipos</option>
+                    </select>
+                    <select id="collection-filter-energy">
+                        <option value="">Todas las energías</option>
+                        <option value="Átlica">💧 Átlica</option>
+                        <option value="Pírica">🔥 Pírica</option>
+                        <option value="Gélida">🧊 Gélida</option>
+                        <option value="Lítica">🪨 Lítica</option>
+                        <option value="Cháaktica">⚡ Cháaktica</option>
+                        <option value="Húumica">🌀 Húumica</option>
+                        <option value="Demótica">🔮 Demótica</option>
+                        <option value="Feral">🐾 Feral</option>
+                    </select>
+                    <select id="collection-filter-rarity">
+                        <option value="">Todas las rarezas</option>
+                        <option value="Común">Común</option>
+                        <option value="Rara">Rara</option>
+                        <option value="Súper Rara">Súper Rara</option>
+                        <option value="Ultra Rara">Ultra Rara</option>
+                        <option value="Kósmica">Kósmica</option>
+                    </select>
+                    <select id="collection-sort">
+                        <option value="set">Ordenar: Set</option>
+                        <option value="name-az">Nombre A-Z</option>
+                        <option value="name-za">Nombre Z-A</option>
+                        <option value="damage-desc">Daño ↓</option>
+                        <option value="energy">Energía</option>
+                        <option value="rarity">Rareza</option>
+                    </select>
+                </div>
+
                 <div style="display:flex;gap:4px;flex-wrap:wrap;width:100%">
                     <button id="sync-export" class="btn-primary" title="Generar código">🔗 Código</button>
                     <button id="sync-import" class="btn-secondary" title="Importar código">📥 Código</button>
