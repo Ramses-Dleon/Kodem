@@ -1,3 +1,32 @@
+/**
+ * Kódem TCG Companion — app.js
+ * 
+ * Single-page application for browsing, collecting, and deck-building
+ * with the Kódem Trading Card Game (609 cards, 22 sets).
+ * 
+ * Architecture:
+ *   - Pure vanilla JS, no framework, no build step
+ *   - State lives in module-level variables + localStorage
+ *   - Views: Browser (default), Collection, Deck Builder
+ *   - Data: cards.json (static), collection/decks/wantlist (localStorage)
+ * 
+ * Key localStorage keys:
+ *   kodem_collection    — Set of owned folio IDs (JSON array)
+ *   kodem_wantlist      — Set of wanted folio IDs (JSON array)
+ *   kodem_decks         — Map of deck objects { name, cards[] }
+ *   kodem_theme         — "dark" | "light"
+ *   kodem_grid_size     — "small" | "medium" | "large"
+ *   kodem_collection_order — Sort preference for collection view
+ * 
+ * Sync codes:
+ *   KDM-xxx    — base64-encoded collection folios
+ *   KDECK-xxx  — base64-encoded deck folios
+ * 
+ * @author Ramsés D'León
+ * @version 0.9.0
+ * @see https://github.com/Ramses-Dleon/Kodem
+ */
+
 // ==================== STATE ====================
 let allCards = [];
 let filteredCards = [];

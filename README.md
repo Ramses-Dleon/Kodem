@@ -1,60 +1,93 @@
-# Kódem TCG Companion
+# 🜂 Kódem TCG Companion
 
-A single-page web application for managing your Kódem Trading Card Game collection and building decks.
+> La primera herramienta digital para **Kódem TCG** — el juego de cartas coleccionable mexicano inspirado en la naturaleza, alebrijes y fauna endémica.
 
-## Features
+**[🌐 Abrir la App](https://ramses-dleon.github.io/Kodem/)** · **[⚡ Sinergias](https://ramses-dleon.github.io/Kodem/sinergias.html)** · **[🎴 Sitio Oficial](https://kodem-tcg.com)**
 
-### Card Browser
-- Browse all 786 cards with images
-- Filter by set, type, energy, and subtype
-- Search by name
-- Sort by name, damage, rests, or set
-- Click any card for detailed view with full stats and artwork
+![Status](https://img.shields.io/badge/cartas-609-f59e0b?style=flat-square) ![Sets](https://img.shields.io/badge/sets-22-0d6efd?style=flat-square) ![License](https://img.shields.io/badge/fan--made-no%20oficial-dc2626?style=flat-square)
 
-### My Collection
-- Track which cards you own
-- Collection statistics (total owned, completion percentage)
-- Stats breakdown by type and set
-- Filter to show only owned or missing cards
-- Persistent storage using localStorage
+---
 
-### Deck Builder
-- Create, save, and manage multiple decks
-- Automatic deck validation for Formato Estándar:
-  - 15-24 Adendei
-  - 1-2 Protector
-  - 0-2 Rava
-  - 0-1 Bio
-  - 0-10 Equipo total (Ixim + Rot)
-  - Only 1 copy per card
-- Visual deck composition with energy distribution
-- Calculate average damage and rests
-- Export deck as text list
-- Persistent storage using localStorage
+## ✨ Features
 
-## Setup
+### 🔍 Explorador de Cartas
+- **609 cartas** de 22 sets con imágenes de alta calidad
+- Filtros: set, tipo, energía, rareza, subtipo, texto de efecto
+- Búsqueda por nombre Y texto de efecto
+- Ordenar por nombre, daño, rests o set
+- Grid con 3 tamaños (S/M/L)
+- Modal detallado con stats, efecto, lore colapsable
 
-1. Copy or symlink the `kodem-cartas` directory into this folder:
-   ```bash
-   ln -s ~/workspace/kodem-cartas ./kodem-cartas
-   ```
+### 📦 Mi Colección
+- Tracker de colección con estadísticas (total, %, sets completos)
+- Dashboard con anillo de progreso y breakdown por set
+- Filtros: todas / en colección / me faltan
+- Paginación (50 por página)
+- **🎯 Want List** — tab dedicada para cartas que buscas
+- Importar/exportar colección vía **códigos sync** (`KDM-xxx`)
+- Export/import JSON para backup completo
 
-2. Copy the generated `all-cards.json` from `~/workspace/kodem-cartas/data/` to this directory as `cards.json`:
-   ```bash
-   cp ~/workspace/kodem-cartas/data/all-cards.json ./cards.json
-   ```
+### 🏗️ Constructor de Mazos
+- Crear, guardar y gestionar múltiples mazos
+- **Validación automática** (Formato Estándar):
+  - 15-24 Adendei, 1-2 Protector, 0-2 Rava, 0-1 Bio, 0-10 Equipo
+  - 1 copia por carta
+- Gráficas: distribución de energía, histograma de daño
+- Promedio de daño y rests
+- **⚠️ Indicador de cartas no-owned** (borde rojo + badge)
+- Filtro "Solo mi colección" en el pool
+- Tabs mobile: Mi Mazo / Cartas Disponibles
+- Compartir mazos vía **códigos sync** (`KDECK-xxx`) o URL directa
+- Export JSON
 
-3. Open `index.html` in a web browser, or serve with a simple HTTP server:
-   ```bash
-   python3 -m http.server 8000
-   # or
-   npx serve
-   ```
+### ⚡ Mapa de Sinergias
+- Diagrama visual de las 8 energías y sus interacciones
+- Fortalezas y debilidades de cada energía
+- Combos recomendados con cartas ejemplo
+- Fully responsive, mismo sistema de temas
 
-## Card Data Schema
+### 🎨 Diseño
+- **Dark mode** "Cosmic Night" (default) + **Light mode** "Ancient Parchment"
+- Estética Mesoamericana: tipografías Cinzel + Outfit
+- Paleta de colores por energía (8 colores temáticos)
+- Mobile-first: touch targets 44px, collapsible filters
+- SVG favicon con glifo alquímico 🜂
 
-The app expects `cards.json` with the following structure:
+---
 
+## 🚀 Uso
+
+### Online
+Abre **https://ramses-dleon.github.io/Kodem/** — no necesitas instalar nada.
+
+### Local
+```bash
+git clone https://github.com/Ramses-Dleon/Kodem.git
+cd Kodem
+python3 -m http.server 8787
+# Abre http://localhost:8787
+```
+
+No requiere build tools, npm, ni dependencias. HTML + CSS + JS puro.
+
+---
+
+## 📊 Datos
+
+| Campo | Cobertura |
+|-------|-----------|
+| Folio | 609/609 (100%) |
+| Nombre | 609/609 (100%) |
+| Tipo | 609/609 (100%) |
+| Energía | 552/609 (97%) — nulls intencionales en Ixim/Rot/Bio/Protector |
+| Daño | 584/609 (96%) |
+| Texto de efecto | 535 con texto, 74 vacíos confirmados, 0 sin revisar |
+| Imagen | 608/609 (99.8%) — solo KPRC-064 sin imagen |
+
+### Sets incluidos (22)
+LGRO, TCOO, FYTE, KPRC, TCDE, DOOC, RAMI, MLBU, CMFT, CAMP, SPMR, RMFT, INMX, 1DRMA, 1DRMG, 1DRMP, IDRMA, IDRMG, IDRMP, ISPMR, LGROK, MINICONJ
+
+### Schema de `cards.json`
 ```json
 {
   "folio": "LGRO-001",
@@ -67,37 +100,76 @@ The app expects `cards.json` with the following structure:
   "damage": 2,
   "rests": 2,
   "effect_type": "Pasiva",
-  "effect_text": "...",
+  "effect_text": "Si esta carta es revelada...",
   "cost_text": null,
-  "flavor_text": "...",
+  "flavor_text": "El portal se cerró tras de sí...",
   "species": "Cyclura lewisi",
   "artist": "Attoz",
   "rarity_variants": ["K", "R", "S", "U"],
-  "image": "kodem-cartas/LGRO/LGRO-001.webp"
+  "image": "images/LGRO/LGRO-001.webp"
 }
 ```
 
-## Technology
+---
 
-- Pure HTML/CSS/JavaScript (no build tools required)
-- Dark theme with Mexican TCG aesthetic
-- Responsive design (works on mobile)
-- Lazy-loaded images for performance
-- localStorage for persistence
+## 🔄 Sync Codes
 
-## Deck Format Rules (Formato Estándar)
+Toda la data vive en tu navegador (`localStorage`). Para compartir:
 
-- **Adendei**: 15-24 cards (main creatures)
-- **Protector**: 1-2 cards
-- **Rava**: 0-2 cards (spells)
-- **Bio**: 0-1 card (field card)
-- **Equipo** (Ixim + Rot): 0-10 total (equipment)
-- **Duplicates**: Only 1 copy of each card allowed
+- **Colección**: `KDM-xxx` — codifica tus folios en base64 comprimido
+- **Mazos**: `KDECK-xxx` — codifica las cartas del mazo
+- **URL directa**: `#deck=FOLIO1,FOLIO2,...` abre el deck builder con esas cartas
 
-## Browser Compatibility
+No hay servidor, no hay cuentas, no hay tracking. Tu data es tuya.
 
-Works in all modern browsers that support:
-- ES6+ JavaScript
-- CSS Grid
-- localStorage
-- Fetch API
+---
+
+## 🎮 Sobre Kódem TCG
+
+**Kódem** es un juego de cartas coleccionable mexicano creado por Alan y publicado por **Adendei Entretenimiento S.A. de C.V.** Las criaturas del juego (_Adendei_) son guardianes de la naturaleza inspirados en flora y fauna endémica mexicana, alebrijes y mitología.
+
+**Mecánica única**: El deck NO se baraja. Tú decides el orden de tus cartas, lo que permite una planificación estratégica imposible en otros TCGs.
+
+**Formato Estándar**: 15-24 Adendei + 1-2 Protector + 0-2 Rava + 0-1 Bio + 0-10 Equipo. Victoria: enviar 10 cartas rivales a Extinción.
+
+**8 Energías**: Átlica 💧 · Pírica 🔥 · Gélida ❄️ · Lítica 🪨 · Cháaktica ⚡ · Húumica 🍄 · Demótica 💀 · Feral 🐾
+
+### Links oficiales
+- 🌐 [kodem-tcg.com](https://kodem-tcg.com)
+- 📷 [@kodem_tcg](https://instagram.com/kodem_tcg)
+- 💬 [Discord](https://discord.gg/AUJxEGWMbF)
+- 🎥 [El Kanal de Kalan](https://www.youtube.com/@ElKanaldeKalan) (fan)
+
+---
+
+## 🛠️ Tech Stack
+
+| Componente | Tecnología |
+|-----------|-----------|
+| Frontend | HTML5 + CSS3 + Vanilla JS |
+| Fuentes | Google Fonts (Cinzel + Outfit) |
+| Imágenes | WebP, lazy-loaded |
+| Storage | localStorage (client-side) |
+| Hosting | GitHub Pages |
+| Build | Ninguno — zero dependencies |
+
+---
+
+## 📝 Contribuir
+
+Este es un proyecto fan-made en desarrollo. Si juegas Kódem y quieres ayudar:
+
+1. **Reportar errores** en las cartas (texto, energía, imagen)
+2. **Sugerir features** via Issues
+3. **Datos de cartas nuevas** cuando salgan expansiones
+4. **Correcciones de reglas** si algo no cuadra con el rulebook oficial
+
+---
+
+## ⚖️ Disclaimer
+
+Este es un proyecto **fan-made, no oficial**. Kódem TCG © [Adendei Entretenimiento S.A. de C.V.](https://kodem-tcg.com) Todas las imágenes y nombres de cartas son propiedad de sus respectivos dueños. Este proyecto no está afiliado ni respaldado por Adendei Entretenimiento.
+
+---
+
+Hecho con 🔥 por un fan de Kódem TCG
