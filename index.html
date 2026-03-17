@@ -81,11 +81,26 @@
                 <input type="text" id="filter-effect-text" placeholder="Buscar en efecto/costo..." />
             </div>
 
-            <div class="stats-bar">
+            <div class="stats-bar" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
                 <span id="card-count">0 cartas</span>
+                <select id="sort-by" style="background:#2a2a2a;color:#e0e0e0;border:1px solid #444;padding:6px 10px;border-radius:6px;font-size:0.85rem;min-height:44px">
+                    <option value="set">Ordenar: Set</option>
+                    <option value="name-az">Nombre A-Z</option>
+                    <option value="name-za">Nombre Z-A</option>
+                    <option value="damage-desc">Daño ↓</option>
+                    <option value="damage-asc">Daño ↑</option>
+                    <option value="energy">Energía</option>
+                    <option value="rarity">Rareza</option>
+                </select>
             </div>
 
+            <div style="display:flex;gap:6px;margin-bottom:8px">
+                <button class="grid-size-btn" data-size="small" title="Pequeño" style="background:#2a2a2a;border:1px solid #444;color:#e0e0e0;padding:6px 10px;border-radius:6px;cursor:pointer;min-height:44px">▪▪▪</button>
+                <button class="grid-size-btn active" data-size="medium" title="Mediano" style="background:#2a2a2a;border:1px solid #444;color:#e0e0e0;padding:6px 10px;border-radius:6px;cursor:pointer;min-height:44px">▪▪</button>
+                <button class="grid-size-btn" data-size="large" title="Grande" style="background:#2a2a2a;border:1px solid #444;color:#e0e0e0;padding:6px 10px;border-radius:6px;cursor:pointer;min-height:44px">▪</button>
+            </div>
             <div id="card-grid" class="card-grid"></div>
+            <div id="pagination-controls" style="display:flex;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap"></div>
         </section>
 
         <!-- Collection View -->
@@ -399,6 +414,12 @@
 
     <!-- Toast notification container -->
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Footer disclaimer -->
+    <footer style="text-align:center;padding:24px 16px 32px;color:#666;font-size:0.75rem;border-top:1px solid #333;margin-top:40px">
+        <p>Fan-made companion app. Kódem TCG © Adendei Entretenimiento S.A. de C.V.</p>
+        <p style="margin-top:4px">Este sitio no está afiliado con Adendei Entretenimiento.</p>
+    </footer>
 
     <!-- Confirm/Choice modal (injected dynamically by JS) -->
     <script src="app.js"></script>
