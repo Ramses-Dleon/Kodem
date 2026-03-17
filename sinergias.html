@@ -96,8 +96,8 @@ header small{color:#888;font-size:0.8rem}
       <!-- COUNTER ARROWS (solid, colored by attacker) -->
       <!-- Feral → Feral (self-loop, compact arc above node) -->
       <path class="arrow-counter" data-from="feral" data-to="feral" stroke="#22c55e" marker-end="url(#ah-green)"
-            d="M220,165 C240,80 310,80 260,160"/>
-      <text class="arrow-label" x="255" y="95" fill="#22c55e">Auto-buff ↻</text>
+            d="M250,178 C270,100 340,100 290,175"/>
+      <text class="arrow-label" x="285" y="110" fill="#22c55e">Auto-buff ↻</text>
 
       <!-- Húumica → Demótica -->
       <path class="arrow-counter" data-from="huumica" data-to="demotica" stroke="#a855f7" marker-end="url(#ah-purple)"
@@ -106,13 +106,13 @@ header small{color:#888;font-size:0.8rem}
 
       <!-- Demótica → Feral -->
       <path class="arrow-counter" data-from="demotica" data-to="feral" stroke="#9ca3af" marker-end="url(#ah-gray)"
-            d="M615,500 Q400,420 240,260"/>
-      <text class="arrow-label" x="410" y="390">Manipula buffs</text>
+            d="M620,490 Q440,350 285,265"/>
+      <text class="arrow-label" x="460" y="350">Manipula buffs</text>
 
       <!-- Pírica → Feral -->
       <path class="arrow-counter" data-from="pirica" data-to="feral" stroke="#ef4444" marker-end="url(#ah-red)"
-            d="M130,480 Q150,380 175,280"/>
-      <text class="arrow-label" x="108" y="380">Quema &gt; Buff</text>
+            d="M135,405 Q160,340 210,285"/>
+      <text class="arrow-label" x="118" y="350">Quema &gt; Buff</text>
 
       <!-- Cháaktica → Lítica -->
       <path class="arrow-counter" data-from="chaaktica" data-to="litica" stroke="#eab308" marker-end="url(#ah-yellow)"
@@ -122,7 +122,7 @@ header small{color:#888;font-size:0.8rem}
       <!-- Lítica → Átlica -->
       <path class="arrow-counter" data-from="litica" data-to="atlica" stroke="#b45309" marker-end="url(#ah-brown)"
             d="M235,590 Q280,400 370,170"/>
-      <text class="arrow-label" x="260" y="390">Resiste curaciones</text>
+      <text class="arrow-label" x="270" y="420">Resiste curaciones</text>
 
       <!-- Gélida → Cháaktica -->
       <path class="arrow-counter" data-from="gelida" data-to="chaaktica" stroke="#06b6d4" marker-end="url(#ah-cyan)"
@@ -131,8 +131,8 @@ header small{color:#888;font-size:0.8rem}
 
       <!-- Átlica → Pírica -->
       <path class="arrow-counter" data-from="atlica" data-to="pirica" stroke="#3b82f6" marker-end="url(#ah-blue)"
-            d="M365,155 Q200,280 140,440"/>
-      <text class="arrow-label" x="210" y="300">Cura &gt; Daño</text>
+            d="M355,165 Q220,290 145,405"/>
+      <text class="arrow-label" x="225" y="275">Cura &gt; Daño</text>
 
       <!-- SYNERGY LINES (dashed, gold) -->
       <path class="arrow-synergy" data-a="pirica" data-b="chaaktica"
@@ -140,12 +140,12 @@ header small{color:#888;font-size:0.8rem}
       <text class="arrow-synergy-label" x="350" y="540">🔥⚡ Aggro imparable</text>
 
       <path class="arrow-synergy" data-a="feral" data-b="chaaktica"
-            d="M230,260 Q400,500 555,630"/>
-      <text class="arrow-synergy-label" x="370" y="460">🐾⚡ Buff + velocidad</text>
+            d="M260,275 Q420,480 555,625"/>
+      <text class="arrow-synergy-label" x="385" y="450">🐾⚡ Buff + velocidad</text>
 
       <path class="arrow-synergy" data-a="demotica" data-b="feral"
-            d="M615,480 Q400,300 240,240"/>
-      <text class="arrow-synergy-label" x="430" y="330">🔮🐾 Control + auto-buff</text>
+            d="M620,475 Q430,310 280,255"/>
+      <text class="arrow-synergy-label" x="450" y="320">🔮🐾 Control + auto-buff</text>
 
       <path class="arrow-synergy" data-a="demotica" data-b="atlica"
             d="M630,470 Q530,300 420,160"/>
@@ -201,12 +201,12 @@ header small{color:#888;font-size:0.8rem}
         <text class="node-label" x="120" y="488" text-anchor="middle">PÍRICA</text>
         <text class="node-role" x="120" y="535" text-anchor="middle">Agresiva</text>
       </g>
-      <!-- Feral (top left) -->
+      <!-- Feral (top left — moved right to avoid clipping) -->
       <g class="node-group" data-id="feral">
-        <circle cx="200" cy="220" r="60" fill="url(#g-feral)" stroke="#22c55e" stroke-width="2.5" class="node-circle" style="color:#22c55e"/>
-        <text class="node-emoji" x="200" y="215" text-anchor="middle" dominant-baseline="middle" font-size="28">🐾</text>
-        <text class="node-label" x="200" y="248" text-anchor="middle">FERAL</text>
-        <text class="node-role" x="200" y="295" text-anchor="middle">Auto-buff</text>
+        <circle cx="230" cy="230" r="55" fill="url(#g-feral)" stroke="#22c55e" stroke-width="2.5" class="node-circle" style="color:#22c55e"/>
+        <text class="node-emoji" x="230" y="225" text-anchor="middle" dominant-baseline="middle" font-size="26">🐾</text>
+        <text class="node-label" x="230" y="253" text-anchor="middle">FERAL</text>
+        <text class="node-role" x="230" y="298" text-anchor="middle">Auto-buff</text>
       </g>
     </svg>
   </div>
