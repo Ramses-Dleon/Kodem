@@ -5,6 +5,7 @@ let collection = new Set(); // Set of folio IDs
 let wantList = new Set(JSON.parse(localStorage.getItem('kodem_wantlist') || '[]'));
 let currentCollectionTab = 'collection';
 let currentCollectionSort = 'set';
+let collectionPage = 1;
 let collectionOrder = JSON.parse(localStorage.getItem('kodem_collection_order') || '[]');
 let decks = {}; // { deckId: { name, cards: [folio] } }
 let currentDeck = null;
@@ -499,8 +500,8 @@ function setupEventListeners() {
     });
 
     // Collection filters
-    document.getElementById('collection-search').addEventListener('input', debounce(renderCollection, 300));
-    document.getElementById('collection-filter').addEventListener('change', renderCollection);
+    document.getElementById('collection-search').addEventListener('input', debounce(() => { collectionPage = 1; renderCollection(); }, 300));
+    document.getElementById('collection-filter').addEventListener('change', () => { collectionPage = 1; renderCollection(); });
 
     // Collection advanced filters
     const toggleColFilters = document.getElementById('toggle-collection-filters');
@@ -515,7 +516,7 @@ function setupEventListeners() {
     }
     ['collection-filter-set', 'collection-filter-type', 'collection-filter-energy', 'collection-filter-rarity', 'collection-sort'].forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.addEventListener('change', renderCollection);
+        if (el) el.addEventListener('change', () => { collectionPage = 1; renderCollection(); });
     });
     document.getElementById('clear-collection').addEventListener('click', clearCollection);
     document.getElementById('import-collection').addEventListener('click', importCollection);
@@ -1202,16 +1203,72 @@ function renderCollection() {
     // Sort
     cards = sortCollectionCards(cards, sort);
 
+    // Pagination
+    const perPage = 50;
+    const totalPages = Math.max(1, Math.ceil(cards.length / perPage));
+    if (collectionPage > totalPages) collectionPage = totalPages;
+    if (collectionPage < 1) collectionPage = 1;
+    const start = (collectionPage - 1) * perPage;
+    const pageCards = cards.slice(start, start + perPage);
+
     const grid = document.getElementById('collection-grid');
-    grid.innerHTML = cards.map(card => createCardElement(card)).join('');
+    grid.innerHTML = pageCards.map(card => createCardElement(card)).join('');
 
     // Add click listeners
     grid.querySelectorAll('.card-item').forEach((el, idx) => {
-        el.addEventListener('click', () => openCardModal(cards[idx], cards, idx));
+        el.addEventListener('click', () => openCardModal(pageCards[idx], cards, start + idx));
     });
+
+    // Counter
+    const counter = document.getElementById('collection-counter');
+    if (counter) {
+        counter.textContent = `Mostrando ${start + 1}–${Math.min(start + perPage, cards.length)} de ${cards.length} cartas`;
+    }
+
+    // Pagination controls
+    renderCollectionPagination(totalPages);
 
     // Update dashboard only when on main collection tab
     if (currentCollectionTab === 'collection') renderDashboard();
+}
+
+function renderCollectionPagination(totalPages) {
+    const container = document.getElementById('collection-pagination');
+    if (!container) return;
+    if (totalPages <= 1) { container.innerHTML = ''; return; }
+
+    let html = '';
+    html += `<button class="page-btn ${collectionPage === 1 ? 'disabled' : ''}" data-colpage="${collectionPage - 1}" ${collectionPage === 1 ? 'disabled' : ''}>‹</button>`;
+
+    const delta = 2;
+    const range = [];
+    for (let p = Math.max(1, collectionPage - delta); p <= Math.min(totalPages, collectionPage + delta); p++) {
+        range.push(p);
+    }
+    if (range[0] > 1) {
+        html += `<button class="page-btn" data-colpage="1">1</button>`;
+        if (range[0] > 2) html += `<span class="page-ellipsis">…</span>`;
+    }
+    for (const p of range) {
+        html += `<button class="page-btn ${p === collectionPage ? 'active' : ''}" data-colpage="${p}">${p}</button>`;
+    }
+    if (range[range.length - 1] < totalPages) {
+        if (range[range.length - 1] < totalPages - 1) html += `<span class="page-ellipsis">…</span>`;
+        html += `<button class="page-btn" data-colpage="${totalPages}">${totalPages}</button>`;
+    }
+    html += `<button class="page-btn ${collectionPage === totalPages ? 'disabled' : ''}" data-colpage="${collectionPage + 1}" ${collectionPage === totalPages ? 'disabled' : ''}>›</button>`;
+
+    container.innerHTML = html;
+    container.querySelectorAll('.page-btn[data-colpage]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const p = parseInt(btn.dataset.colpage);
+            if (p >= 1 && p <= totalPages) {
+                collectionPage = p;
+                renderCollection();
+                document.getElementById('collection-grid').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 }
 
 function sortCollectionCards(cards, sort) {
