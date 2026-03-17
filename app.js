@@ -1947,7 +1947,12 @@ function renderMissingCardsAccordion(setStats) {
 
         const chipsHtml = missingCount === 0
             ? '<span class="missing-empty">¡Tienes todas las cartas de este set! 🎉</span>'
-            : s.missing.map(f => `<span class="missing-card-chip">${f}</span>`).join('');
+            : s.missing.map(f => {
+                const card = allCards.find(c => c.folio === f);
+                const name = card ? card.name : f;
+                const energy = card ? (card.energy || '').toLowerCase() : '';
+                return `<button class="missing-card-chip clickable" data-folio="${f}" data-energy="${energy}" title="${name}">${f}</button>`;
+            }).join('');
 
         html += `
             <div class="missing-set-section" data-set="${s.code}">
@@ -1965,6 +1970,17 @@ function renderMissingCardsAccordion(setStats) {
     }
 
     container.innerHTML = html || '<p class="empty-state">Sin datos disponibles</p>';
+
+    // Click handler for missing card chips → open modal
+    container.querySelectorAll('.missing-card-chip.clickable').forEach(chip => {
+        chip.addEventListener('click', () => {
+            const folio = chip.dataset.folio;
+            const card = allCards.find(c => c.folio === folio);
+            if (card) {
+                openCardModal(card, allCards);
+            }
+        });
+    });
 }
 
 function toggleMissingSet(headerEl) {

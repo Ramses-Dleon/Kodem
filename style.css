@@ -1446,12 +1446,38 @@ img[loading="lazy"] {
 .missing-card-chip {
     background: var(--bg-darker);
     border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    padding: 0.3rem 0.6rem;
     font-size: 0.78rem;
     color: var(--text-secondary);
     font-family: monospace;
 }
+
+.missing-card-chip.clickable {
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.missing-card-chip.clickable:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border-color: var(--accent-amber);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+/* Energy-colored borders on missing chips */
+.missing-card-chip[data-energy="átlica"] { border-color: var(--atlica) }
+.missing-card-chip[data-energy="pírica"] { border-color: var(--pirica) }
+.missing-card-chip[data-energy="gélida"] { border-color: var(--gelida) }
+.missing-card-chip[data-energy="lítica"] { border-color: var(--litica) }
+.missing-card-chip[data-energy="cháaktica"] { border-color: var(--chaaktica) }
+.missing-card-chip[data-energy="húumica"] { border-color: var(--huumica) }
+.missing-card-chip[data-energy="demótica"] { border-color: var(--demotica) }
+.missing-card-chip[data-energy="feral"] { border-color: var(--feral) }
 
 .missing-empty {
     color: var(--success);
