@@ -1155,6 +1155,17 @@ function renderCollection() {
 
     // Sort
     cards = sortCollectionCards(cards, sort);
+
+    const grid = document.getElementById('collection-grid');
+    grid.innerHTML = cards.map(card => createCardElement(card)).join('');
+
+    // Add click listeners
+    grid.querySelectorAll('.card-item').forEach((el, idx) => {
+        el.addEventListener('click', () => openCardModal(cards[idx], cards, idx));
+    });
+
+    // Update dashboard only when on main collection tab
+    if (currentCollectionTab === 'collection') renderDashboard();
 }
 
 function sortCollectionCards(cards, sort) {
@@ -1167,17 +1178,6 @@ function sortCollectionCards(cards, sort) {
         case 'damage-desc': return copy.sort((a, b) => (b.damage || 0) - (a.damage || 0));
         case 'set': default: return copy.sort((a, b) => (a.set || '').localeCompare(b.set || '') || (a.folio || '').localeCompare(b.folio || ''));
     }
-
-    const grid = document.getElementById('collection-grid');
-    grid.innerHTML = cards.map(card => createCardElement(card)).join('');
-
-    // Add click listeners
-    grid.querySelectorAll('.card-item').forEach((el, idx) => {
-        el.addEventListener('click', () => openCardModal(cards[idx], cards, idx));
-    });
-
-    // Update dashboard only when on main collection tab
-    if (currentCollectionTab === 'collection') renderDashboard();
 }
 
 function updateCollectionStats() {
