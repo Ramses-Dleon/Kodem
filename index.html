@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kódem TCG Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎴 Kódem TCG Companion</h1>
+        <nav>
+            <button class="nav-btn active" data-view="browser">Explorar Cartas</button>
+            <button class="nav-btn" data-view="collection">Mi Colección</button>
+            <button class="nav-btn" data-view="deck-builder">Constructor de Mazos</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Card Browser View -->
+        <section id="browser-view" class="view active">
+            <div class="controls">
+                <input type="text" id="search-input" placeholder="Buscar por nombre..." />
+
+                <select id="filter-set">
+                    <option value="">Todos los sets</option>
+                </select>
+
+                <select id="filter-type">
+                    <option value="">Todos los tipos</option>
+                    <option value="Adendei">Adendei</option>
+                    <option value="Protector">Protector</option>
+                    <option value="Rava">Rava</option>
+                    <option value="Ixim">Ixim</option>
+                    <option value="Rot">Rot</option>
+                    <option value="Bio">Bio</option>
+                </select>
+
+                <select id="filter-energy">
+                    <option value="">Todas las energías</option>
+                    <option value="Lítica">Lítica</option>
+                    <option value="Verdante">Verdante</option>
+                    <option value="Acuática">Acuática</option>
+                    <option value="Flamígera">Flamígera</option>
+                    <option value="Umbría">Umbría</option>
+                    <option value="Aérea">Aérea</option>
+                    <option value="Mecánica">Mecánica</option>
+                </select>
+
+                <select id="sort-by">
+                    <option value="name">Nombre</option>
+                    <option value="damage">Daño</option>
+                    <option value="rests">Rests</option>
+                    <option value="set">Set</option>
+                </select>
+            </div>
+
+            <div class="stats-bar">
+                <span id="card-count">0 cartas</span>
+            </div>
+
+            <div id="card-grid" class="card-grid"></div>
+        </section>
+
+        <!-- Collection View -->
+        <section id="collection-view" class="view">
+            <div class="controls">
+                <input type="text" id="collection-search" placeholder="Buscar en mi colección..." />
+
+                <select id="collection-filter">
+                    <option value="all">Todas</option>
+                    <option value="owned">Solo tengo</option>
+                    <option value="missing">Me faltan</option>
+                </select>
+
+                <button id="clear-collection" class="btn-danger">Limpiar Colección</button>
+            </div>
+
+            <div class="collection-stats">
+                <div class="stat-card">
+                    <h3 id="total-owned">0</h3>
+                    <p>Total de cartas</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="completion-percent">0%</h3>
+                    <p>Completado</p>
+                </div>
+                <div id="stats-by-type" class="stats-grid"></div>
+                <div id="stats-by-set" class="stats-grid"></div>
+            </div>
+
+            <div id="collection-grid" class="card-grid"></div>
+        </section>
+
+        <!-- Deck Builder View -->
+        <section id="deck-builder-view" class="view">
+            <div class="deck-builder-layout">
+                <aside class="deck-list-sidebar">
+                    <h3>Mis Mazos</h3>
+                    <div id="saved-decks"></div>
+                    <button id="new-deck-btn" class="btn-primary">+ Nuevo Mazo</button>
+                </aside>
+
+                <div class="deck-workspace">
+                    <div class="deck-header">
+                        <input type="text" id="deck-name" placeholder="Nombre del mazo" />
+                        <div class="deck-actions">
+                            <button id="save-deck-btn" class="btn-primary">Guardar</button>
+                            <button id="export-deck-btn" class="btn-secondary">Exportar</button>
+                            <button id="delete-deck-btn" class="btn-danger">Eliminar</button>
+                        </div>
+                    </div>
+
+                    <div class="deck-validation">
+                        <div class="validation-item" id="val-adendei">
+                            <span class="label">Adendei:</span>
+                            <span class="count">0</span>
+                            <span class="requirement">(15-24)</span>
+                        </div>
+                        <div class="validation-item" id="val-protector">
+                            <span class="label">Protector:</span>
+                            <span class="count">0</span>
+                            <span class="requirement">(1-2)</span>
+                        </div>
+                        <div class="validation-item" id="val-rava">
+                            <span class="label">Rava:</span>
+                            <span class="count">0</span>
+                            <span class="requirement">(0-2)</span>
+                        </div>
+                        <div class="validation-item" id="val-bio">
+                            <span class="label">Bio:</span>
+                            <span class="count">0</span>
+                            <span class="requirement">(0-1)</span>
+                        </div>
+                        <div class="validation-item" id="val-equipo">
+                            <span class="label">Equipo (Ixim+Rot):</span>
+                            <span class="count">0</span>
+                            <span class="requirement">(0-10)</span>
+                        </div>
+                        <div class="validation-item" id="val-total">
+                            <span class="label">Total:</span>
+                            <span class="count">0</span>
+                        </div>
+                    </div>
+
+                    <div class="deck-stats">
+                        <div class="stat">
+                            <strong>Energía:</strong>
+                            <div id="energy-distribution"></div>
+                        </div>
+                        <div class="stat">
+                            <strong>Daño promedio:</strong>
+                            <span id="avg-damage">0</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Rests promedio:</strong>
+                            <span id="avg-rests">0</span>
+                        </div>
+                    </div>
+
+                    <div class="deck-content">
+                        <div class="deck-cards" id="deck-cards">
+                            <p class="empty-state">Agrega cartas a tu mazo desde la galería de abajo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-pool">
+                    <h3>Cartas Disponibles</h3>
+                    <div class="controls">
+                        <input type="text" id="deck-search" placeholder="Buscar carta..." />
+                        <select id="deck-filter-energy">
+                            <option value="">Todas las energías</option>
+                            <option value="Lítica">Lítica</option>
+                            <option value="Verdante">Verdante</option>
+                            <option value="Acuática">Acuática</option>
+                            <option value="Flamígera">Flamígera</option>
+                            <option value="Umbría">Umbría</option>
+                            <option value="Aérea">Aérea</option>
+                            <option value="Mecánica">Mecánica</option>
+                        </select>
+                        <select id="deck-filter-type">
+                            <option value="">Todos los tipos</option>
+                            <option value="Adendei">Adendei</option>
+                            <option value="Protector">Protector</option>
+                            <option value="Rava">Rava</option>
+                            <option value="Ixim">Ixim</option>
+                            <option value="Rot">Rot</option>
+                            <option value="Bio">Bio</option>
+                        </select>
+                    </div>
+                    <div id="deck-pool-grid" class="card-grid small"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Card Detail Modal -->
+    <div id="card-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-card-image" src="" alt="" />
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-card-name"></h2>
+                    <div class="modal-meta">
+                        <span id="modal-card-folio"></span>
+                        <span id="modal-card-set"></span>
+                        <span id="modal-card-rarity"></span>
+                    </div>
+                    <div class="modal-type">
+                        <strong>Tipo:</strong> <span id="modal-card-type"></span>
+                    </div>
+                    <div class="modal-energy">
+                        <strong>Energía:</strong> <span id="modal-card-energy"></span>
+                    </div>
+                    <div class="modal-stats">
+                        <div><strong>Daño:</strong> <span id="modal-card-damage"></span></div>
+                        <div><strong>Rests:</strong> <span id="modal-card-rests"></span></div>
+                    </div>
+                    <div class="modal-effect">
+                        <strong><span id="modal-effect-type"></span>:</strong>
+                        <p id="modal-effect-text"></p>
+                    </div>
+                    <div class="modal-cost" id="modal-cost-section">
+                        <strong>Costo:</strong> <span id="modal-cost-text"></span>
+                    </div>
+                    <div class="modal-flavor">
+                        <em id="modal-flavor-text"></em>
+                    </div>
+                    <div class="modal-species">
+                        <strong>Especie:</strong> <span id="modal-species"></span>
+                    </div>
+                    <div class="modal-artist">
+                        <strong>Artista:</strong> <span id="modal-artist"></span>
+                    </div>
+                    <button id="modal-toggle-owned" class="btn-primary"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

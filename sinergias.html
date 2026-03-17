@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kódem TCG — Mapa de Sinergias</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0f;
+    color: #e0e0e0;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #f59e0b, #ef4444, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+  }
+
+  /* ── WHEEL LAYOUT ── */
+  .wheel-container {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    margin: 0 auto 40px;
+  }
+
+  @media (max-width: 740px) {
+    .wheel-container { width: 95vw; height: 95vw; }
+  }
+
+  .energy-node {
+    position: absolute;
+    width: 120px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    cursor: default;
+    transition: transform 0.2s;
+    z-index: 2;
+  }
+
+  .energy-node:hover { transform: translate(-50%, -50%) scale(1.08); }
+
+  .energy-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 6px;
+    box-shadow: 0 0 20px var(--glow), 0 0 40px var(--glow);
+    border: 3px solid var(--border);
+    transition: box-shadow 0.2s;
+  }
+
+  .energy-node:hover .energy-icon {
+    box-shadow: 0 0 30px var(--glow), 0 0 60px var(--glow);
+  }
+
+  .energy-name {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text);
+    text-shadow: 0 0 10px var(--glow);
+  }
+
+  .energy-archetype {
+    font-size: 0.65rem;
+    color: #999;
+    margin-top: 2px;
+  }
+
+  /* ── ARROWS SVG ── */
+  .arrows-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .arrow-counter { stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); opacity: 0.7; }
+  .arrow-synergy { stroke-width: 2; fill: none; stroke-dasharray: 8 4; opacity: 0.5; }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+
+  .legend-line {
+    width: 40px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  .legend-line.solid { background: #ef4444; }
+  .legend-line.dashed {
+    background: repeating-linear-gradient(90deg, #06b6d4 0, #06b6d4 8px, transparent 8px, transparent 12px);
+  }
+
+  /* ── MATCHUP TABLE ── */
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0 16px;
+    color: #f0f0f0;
+  }
+
+  .matchup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .matchup-card {
+    background: #14141f;
+    border: 1px solid #2a2a3a;
+    border-radius: 12px;
+    padding: 16px;
+    border-left: 4px solid var(--accent);
+  }
+
+  .matchup-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .matchup-emoji { font-size: 1.4rem; }
+
+  .matchup-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent);
+  }
+
+  .matchup-list { list-style: none; }
+
+  .matchup-list li {
+    padding: 3px 0;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .matchup-list .result {
+    font-weight: 700;
+    min-width: 18px;
+  }
+
+  .win { color: #22c55e; }
+  .even { color: #eab308; }
+  .lose { color: #ef4444; }
+
+  /* ── GOLDEN RULE ── */
+  .golden-rule {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 1px solid #f59e0b44;
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .golden-rule h3 {
+    font-size: 1.1rem;
+    color: #f59e0b;
+    margin-bottom: 12px;
+  }
+
+  .cycle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.8;
+  }
+
+  .cycle .arrow { color: #666; margin: 0 4px; }
+
+  footer {
+    color: #555;
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: auto;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>🎴 Kódem TCG — Mapa de Sinergias</h1>
+<p class="subtitle">Contrarresta · Sinergia · Matchups por Energía</p>
+
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-line solid"></div>
+    <span>Contrarresta (A → B = A gana a B)</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-line dashed"></div>
+    <span>Sinergia de deck (combinan bien)</span>
+  </div>
+</div>
+
+<div class="wheel-container">
+  <svg class="arrows-svg" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#ef4444" opacity="0.8"/>
+      </marker>
+      <marker id="arrowhead-syn" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto">
+        <polygon points="0 0, 6 2.5, 0 5" fill="#06b6d4" opacity="0.6"/>
+      </marker>
+    </defs>
+
+    <!-- Counter arrows (solid red) — offset from center to avoid overlap -->
+    <!-- PIR → ATL (Fire beats Water's healing) -->
+    <path class="arrow-counter" stroke="#ef4444" d="M 490,130 Q 420,80 290,115" />
+    <!-- GEL → LIT (Ice freezes Rock) -->
+    <path class="arrow-counter" stroke="#00bcd4" d="M 200,130 Q 120,220 120,330" />
+    <!-- CHA → GEL (Speed beats Control) -->
+    <path class="arrow-counter" stroke="#fdd835" d="M 505,360 Q 460,220 270,130" />
+    <!-- LIT → PIR (Rock one-shots Fire) -->
+    <path class="arrow-counter" stroke="#8d6e63" d="M 135,400 Q 220,250 460,165" />
+    <!-- ATL → HUU (Water heals vs Progressive) -->
+    <path class="arrow-counter" stroke="#1e88e5" d="M 250,560 Q 330,620 430,570" />
+    <!-- HUU → DEM (Scale beats Reposition) -->
+    <path class="arrow-counter" stroke="#ab47bc" d="M 560,530 Q 620,440 580,350" />
+    <!-- DEM → CHA (Reposition breaks Speed) -->
+    <path class="arrow-counter" stroke="#546e7a" d="M 590,310 Q 580,280 540,310" />
+
+    <!-- Synergy arrows (dashed teal) -->
+    <!-- PIR + CHA -->
+    <path class="arrow-synergy" stroke="#06b6d4" d="M 500,180 Q 560,260 520,340" marker-end="url(#arrowhead-syn)" />
+    <!-- GEL + ATL -->
+    <path class="arrow-synergy" stroke="#06b6d4" d="M 230,145 Q 180,250 210,520" marker-end="url(#arrowhead-syn)" />
+    <!-- LIT + HUU -->
+    <path class="arrow-synergy" stroke="#06b6d4" d="M 150,420 Q 280,580 480,550" marker-end="url(#arrowhead-syn)" />
+    <!-- DEM + FER -->
+    <path class="arrow-synergy" stroke="#06b6d4" d="M 580,360 Q 500,500 400,510" marker-end="url(#arrowhead-syn)" />
+  </svg>
+
+  <!-- 8 energy nodes positioned in a circle -->
+  <!-- Top: ATL, top-right: PIR, right: CHA, bottom-right: DEM, bottom: HUU, bottom-left: FER, left: LIT, top-left: GEL -->
+
+  <div class="energy-node" style="top: 8%; left: 50%; --glow: #1e88e555; --border: #1e88e5; --text: #60a5fa;">
+    <div class="energy-icon" style="background: radial-gradient(circle, #1e88e5, #0d47a1);">💧</div>
+    <div class="energy-name">ÁTLICA</div>
+    <div class="energy-archetype">Defensiva · Curar</div>
+  </div>
+
+  <div class="energy-node" style="top: 15%; left: 82%; --glow: #e5393555; --border: #e53935; --text: #f87171;">
+    <div class="energy-icon" style="background: radial-gradient(circle, #e53935, #b71c1c);">🔥</div>
+    <div class="energy-name">PÍRICA</div>
+    <div class="energy-archetype">Agresiva · Quemar</div>
+  </div>
+
+  <div class="energy-node" style="top: 48%; left: 95%; --glow: #fdd83555; --border: #fdd835; --text: #fde047;">
+    <div class="energy-icon" style="background: radial-gradient(circle, #fdd835, #f9a825);">⚡</div>
+    <div class="energy-name">CHÁAKTICA</div>
+    <div class="energy-archetype">Velocidad · Imparable</div>
+  </div>
+
+  <div class="energy-node" style="top: 82%; left: 85%; --glow: #546e7a55; --border: #546e7a; --text: #94a3b8;">
+    <div class="energy-icon" style="background: radial-gradient(circle, #546e7a, #263238);">🔮</div>
+    <div class="energy-name">DEMÓTICA</div>
+    <div class="energy-archetype">Posicional · Reordena</div>
+  </div>
+
+  <div class="energy-node" style="top: 92%; left: 50%; --glow: #ab47bc55; --border: #ab47bc; --text: #c084fc;">
+    <div class="energy-icon" style="background: radial-gradient(circle, #ab47bc, #6a1b9a);">🌀</div>
+    <div class="energy-name">HÚUMICA</div>
+    <div class="energy-archetype">Progresiva · Escalar</div>
+  </div>
+
+  <div class="energy-node" style="top: 78%; left: 15%; --glow: #ff8f0055; --border: #ff8f00; --text: #fb923c;">
+    <div class="energy-icon" style="background: radial-gradient(circle, #ff8f00, #e65100);">🐾</div>
+    <div class="energy-name">FERAL</div>
+    <div class="energy-archetype">Auto-buff · Salvaje</div>
+  </div>
+
+  <div class="energy-node" style="top: 48%; left: 5%; --glow: #8d6e6355; --border: #8d6e63; --text: #d4a574;">
+    <div class="energy-icon" style="background: radial-gradient(circle, #8d6e63, #4e342e);">🪨</div>
+    <div class="energy-name">LÍTICA</div>
+    <div class="energy-archetype">Tanque · Daño alto</div>
+  </div>
+
+  <div class="energy-node" style="top: 15%; left: 18%; --glow: #00bcd455; --border: #00bcd4; --text: #22d3ee;">
+    <div class="energy-icon" style="background: radial-gradient(circle, #00bcd4, #006064);">🧊</div>
+    <div class="energy-name">GÉLIDA</div>
+    <div class="energy-archetype">Control · +Descansos</div>
+  </div>
+</div>
+
+<!-- MATCHUP CARDS -->
+<div class="section-title">⚔️ Matchups Detallados</div>
+<div class="matchup-grid">
+
+  <div class="matchup-card" style="--accent: #fde047;">
+    <div class="matchup-header">
+      <span class="matchup-emoji">⚡</span>
+      <span class="matchup-title">CHÁAKTICA vs...</span>
+    </div>
+    <ul class="matchup-list">
+      <li><span class="result win">✅</span> <b>Gélida</b> — Velocidad supera su control lento</li>
+      <li><span class="result win">✅</span> <b>Lítica</b> — 3 golpes antes de que se levanten</li>
+      <li><span class="result even">⚖️</span> <b>Pírica</b> — Parejo, quemadura castiga tu ritmo</li>
+      <li><span class="result even">⚖️</span> <b>Húumica</b> — Ganas rápido o te superan al escalar</li>
+      <li><span class="result lose">❌</span> <b>Demótica</b> — Reordenan tu campo, rompen tempo</li>
+      <li><span class="result lose">❌</span> <b>Átlica</b> — Curan todo, necesitas splash Pírica</li>
+    </ul>
+  </div>
+
+  <div class="matchup-card" style="--accent: #f87171;">
+    <div class="matchup-header">
+      <span class="matchup-emoji">🔥</span>
+      <span class="matchup-title">PÍRICA vs...</span>
+    </div>
+    <ul class="matchup-list">
+      <li><span class="result win">✅</span> <b>Átlica</b> — Quemadura neutraliza curación pasiva</li>
+      <li><span class="result win">✅</span> <b>Húumica</b> — Los quemas antes de que escalen</li>
+      <li><span class="result even">⚖️</span> <b>Cháaktica</b> — 50/50, depende del ritmo</li>
+      <li><span class="result lose">❌</span> <b>Lítica</b> — Un golpe de 5 te elimina primero</li>
+      <li><span class="result lose">❌</span> <b>Gélida</b> — Descansos extra = menos quemadura</li>
+    </ul>
+  </div>
+
+  <div class="matchup-card" style="--accent: #22d3ee;">
+    <div class="matchup-header">
+      <span class="matchup-emoji">🧊</span>
+      <span class="matchup-title">GÉLIDA vs...</span>
+    </div>
+    <ul class="matchup-list">
+      <li><span class="result win">✅</span> <b>Lítica</b> — +Descansos congela sus tanques lentos</li>
+      <li><span class="result win">✅</span> <b>Pírica</b> — Cartas descansando no activan quemadura</li>
+      <li><span class="result even">⚖️</span> <b>Demótica</b> — Ambos controlan, gana quien posicione</li>
+      <li><span class="result lose">❌</span> <b>Cháaktica</b> — Muy rápidos, tus descansos no alcanzan</li>
+      <li><span class="result lose">❌</span> <b>Feral</b> — Se auto-buffea sin importar descansos</li>
+    </ul>
+  </div>
+
+  <div class="matchup-card" style="--accent: #d4a574;">
+    <div class="matchup-header">
+      <span class="matchup-emoji">🪨</span>
+      <span class="matchup-title">LÍTICA vs...</span>
+    </div>
+    <ul class="matchup-list">
+      <li><span class="result win">✅</span> <b>Pírica</b> — 1 golpe de 4-5 elimina antes de que quemadura importe</li>
+      <li><span class="result win">✅</span> <b>Feral</b> — Daño bruto supera auto-buffs</li>
+      <li><span class="result even">⚖️</span> <b>Húumica</b> — Carrera de escalada</li>
+      <li><span class="result lose">❌</span> <b>Gélida</b> — Te congelan y nunca te levantas</li>
+      <li><span class="result lose">❌</span> <b>Cháaktica</b> — 3 golpes rápidos antes de tu turno</li>
+    </ul>
+  </div>
+</div>
+
+<!-- GOLDEN RULE -->
+<div class="golden-rule">
+  <h3>💡 Regla de Oro del Meta</h3>
+  <div class="cycle">
+    <span style="color:#fde047;">Velocidad</span>
+    <span class="arrow">›</span>
+    <span style="color:#22d3ee;">Control</span>
+    <span class="arrow">›</span>
+    <span style="color:#d4a574;">Fuerza</span>
+    <span class="arrow">›</span>
+    <span style="color:#f87171;">Agresión</span>
+    <span class="arrow">›</span>
+    <span style="color:#fde047;">Velocidad</span>
+  </div>
+  <p style="color:#888; font-size:0.8rem; margin-top:12px;">
+    ⚡ Cháak › 🧊 Gélida › 🪨 Lítica › 🔥 Pírica › ⚡ Cháak
+  </p>
+  <p style="color:#666; font-size:0.75rem; margin-top:8px;">
+    Tu combo ideal: <b style="color:#fde047;">⚡</b> + <b style="color:#f87171;">🔥</b> (Cháaktica/Pírica) — velocidad + agresión. Talón de Aquiles: Demótica o Átlica puro.
+  </p>
+</div>
+
+<footer>
+  Kódem TCG © Adendei Entretenimiento · Análisis por Logos 🜂
+</footer>
+
+</body>
+</html>
