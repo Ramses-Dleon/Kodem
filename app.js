@@ -492,13 +492,18 @@ function switchView(view) {
 }
 
 // ==================== BROWSER VIEW ====================
+function getSetDisplayName(code) {
+    const meta = setMetadata.find(s => s.code === code);
+    return meta ? `${code} — ${meta.name_es}` : code;
+}
+
 function populateSetFilter() {
     const sets = [...new Set(allCards.map(c => c.set))].sort();
     const select = document.getElementById('filter-set');
     sets.forEach(set => {
         const option = document.createElement('option');
         option.value = set;
-        option.textContent = set;
+        option.textContent = getSetDisplayName(set);
         select.appendChild(option);
     });
 }

@@ -6,7 +6,10 @@
       "code": "LGRO",
       "name_es": "La Guerra Roja",
       "name_en": "The Red War",
-      "aliases": ["LGRO", "TRWA"],
+      "aliases": [
+        "LGRO",
+        "TRWA"
+      ],
       "type": "booster",
       "base_cards": 78,
       "total_images": 108
@@ -15,7 +18,9 @@
       "code": "FYTE",
       "name_es": "Fuerza y Templanza",
       "name_en": "Strength and Temperance",
-      "aliases": ["FYTE"],
+      "aliases": [
+        "FYTE"
+      ],
       "type": "booster",
       "base_cards": 84,
       "total_images": 137
@@ -24,7 +29,9 @@
       "code": "TCOO",
       "name_es": "Titanes de la Corteza — Ojos del Océano",
       "name_en": "Titans of the Cortex — Eyes of the Ocean",
-      "aliases": ["TCOO"],
+      "aliases": [
+        "TCOO"
+      ],
       "type": "booster",
       "base_cards": 84,
       "total_images": 133
@@ -33,7 +40,9 @@
       "code": "KPRC",
       "name_es": "Kódem Primera Colección",
       "name_en": "Kódem First Collection",
-      "aliases": ["KPRC"],
+      "aliases": [
+        "KPRC"
+      ],
       "type": "booster",
       "base_cards": 72,
       "total_images": 72
@@ -42,7 +51,9 @@
       "code": "TCDE",
       "name_es": "Titanes de la Corteza — Mazo de Inicio",
       "name_en": "Titans of the Cortex — Starter Deck",
-      "aliases": ["TCDE"],
+      "aliases": [
+        "TCDE"
+      ],
       "type": "starter_deck",
       "base_cards": 26,
       "total_images": 26
@@ -51,7 +62,9 @@
       "code": "RAMI",
       "name_es": "Raíces Místicas",
       "name_en": "Mystical Roots",
-      "aliases": ["RAMI"],
+      "aliases": [
+        "RAMI"
+      ],
       "type": "structure_deck",
       "base_cards": 26,
       "total_images": 36
@@ -60,7 +73,9 @@
       "code": "DOOC",
       "name_es": "Ojos del Océano",
       "name_en": "Eyes of the Ocean",
-      "aliases": ["DOOC"],
+      "aliases": [
+        "DOOC"
+      ],
       "type": "structure_deck",
       "base_cards": 26,
       "total_images": 36
@@ -69,7 +84,9 @@
       "code": "IDRMA",
       "name_es": "Intro Deck Raíces Místicas — Átlica",
       "name_en": "Intro Deck Mystical Roots — Atlic",
-      "aliases": ["IDRMA"],
+      "aliases": [
+        "IDRMA"
+      ],
       "type": "intro_deck",
       "base_cards": 23,
       "total_images": 23
@@ -78,7 +95,9 @@
       "code": "IDRMG",
       "name_es": "Intro Deck Raíces Místicas — Gélida",
       "name_en": "Intro Deck Mystical Roots — Gelid",
-      "aliases": ["IDRMG"],
+      "aliases": [
+        "IDRMG"
+      ],
       "type": "intro_deck",
       "base_cards": 23,
       "total_images": 23
@@ -87,7 +106,9 @@
       "code": "IDRMP",
       "name_es": "Intro Deck Raíces Místicas — Pírica",
       "name_en": "Intro Deck Mystical Roots — Pyric",
-      "aliases": ["IDRMP"],
+      "aliases": [
+        "IDRMP"
+      ],
       "type": "intro_deck",
       "base_cards": 23,
       "total_images": 23
@@ -96,7 +117,9 @@
       "code": "CAMP",
       "name_es": "Campeonato",
       "name_en": "Championship",
-      "aliases": ["CAMP"],
+      "aliases": [
+        "CAMP"
+      ],
       "type": "special",
       "base_cards": 26,
       "total_images": 26
@@ -105,7 +128,12 @@
       "code": "MFT",
       "name_es": "Mini Flores y Tumbas",
       "name_en": "Mini Flowers and Tombs",
-      "aliases": ["MFT", "CMFT", "FAFT", "RMFT"],
+      "aliases": [
+        "MFT",
+        "CMFT",
+        "FAFT",
+        "RMFT"
+      ],
       "type": "mini_expansion",
       "base_cards": 15,
       "total_images": 15
@@ -114,7 +142,16 @@
       "code": "MINICONJ",
       "name_es": "Mini Conjuntos",
       "name_en": "Mini Sets",
-      "aliases": ["MINICONJ", "EXPN", "ICOS", "IOSC", "KPRF", "ODEM", "PASE", "XPIX"],
+      "aliases": [
+        "MINICONJ",
+        "EXPN",
+        "ICOS",
+        "IOSC",
+        "KPRF",
+        "ODEM",
+        "PASE",
+        "XPIX"
+      ],
       "type": "mini_expansion",
       "base_cards": 23,
       "total_images": 23
@@ -123,7 +160,9 @@
       "code": "ISPMR",
       "name_es": "Sobre Promo Raíces Místicas",
       "name_en": "Promo Pack Mystical Roots",
-      "aliases": ["ISPMR"],
+      "aliases": [
+        "ISPMR"
+      ],
       "type": "promo",
       "base_cards": 20,
       "total_images": 20
@@ -132,7 +171,9 @@
       "code": "MLBU",
       "name_es": "Mega Lata Búho",
       "name_en": "Mega Tin Owl",
-      "aliases": ["MLBU"],
+      "aliases": [
+        "MLBU"
+      ],
       "type": "tin",
       "base_cards": 10,
       "total_images": 20
@@ -141,7 +182,9 @@
       "code": "EXPO",
       "name_es": "Expo",
       "name_en": "Expo",
-      "aliases": ["EXPO"],
+      "aliases": [
+        "EXPO"
+      ],
       "type": "promo",
       "base_cards": 8,
       "total_images": 8
@@ -150,7 +193,16 @@
       "code": "HOLY",
       "name_es": "Festividades",
       "name_en": "Holidays",
-      "aliases": ["HOLY", "ANIV", "DMUE", "INMX", "KSPC", "NAVD", "NYPR", "SNVL"],
+      "aliases": [
+        "HOLY",
+        "ANIV",
+        "DMUE",
+        "INMX",
+        "KSPC",
+        "NAVD",
+        "NYPR",
+        "SNVL"
+      ],
       "type": "promo",
       "base_cards": 9,
       "total_images": 9
@@ -159,10 +211,66 @@
       "code": "UNIQUE",
       "name_es": "Únicas / Promos",
       "name_en": "Unique / Promos",
-      "aliases": ["UNIQUE", "PKMR", "PRKD", "TKD", "PRT", "IKMR", "IKRW", "RAGEK", "CDC", "KEXC", "PATREON", "TDMR"],
+      "aliases": [
+        "UNIQUE",
+        "PKMR",
+        "PRKD",
+        "TKD",
+        "PRT",
+        "IKMR",
+        "IKRW",
+        "RAGEK",
+        "CDC",
+        "KEXC",
+        "PATREON",
+        "TDMR"
+      ],
       "type": "promo",
       "base_cards": 48,
       "total_images": 48
+    },
+    {
+      "code": "1DRMA",
+      "name_es": "Impresiones del Reino Maya — Alebrijes",
+      "name_en": "Kingdom Maya Prints — Alebrijes",
+      "aliases": [
+        "1DRMA",
+        "IDRMA"
+      ],
+      "type": "promo",
+      "base_cards": 8
+    },
+    {
+      "code": "1DRMG",
+      "name_es": "Impresiones del Reino Maya — Guardianes",
+      "name_en": "Kingdom Maya Prints — Guardians",
+      "aliases": [
+        "1DRMG",
+        "IDRMG"
+      ],
+      "type": "promo",
+      "base_cards": 5
+    },
+    {
+      "code": "1DRMP",
+      "name_es": "Impresiones del Reino Maya — Protectores",
+      "name_en": "Kingdom Maya Prints — Protectors",
+      "aliases": [
+        "1DRMP",
+        "IDRMP"
+      ],
+      "type": "promo",
+      "base_cards": 6
+    },
+    {
+      "code": "ILRM",
+      "name_es": "Impresiones Legendarias del Reino Maya",
+      "name_en": "Legendary Kingdom Maya Prints",
+      "aliases": [
+        "ILRM"
+      ],
+      "type": "promo",
+      "base_cards": 3
     }
   ],
   "_alias_lookup": {
