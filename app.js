@@ -1262,7 +1262,11 @@ function importDeckFromHash() {
     saveDecks();
 
     showToast(`Mazo importado desde URL: ${folios.length} cartas`, 'success');
-    switchView('deck-builder');
+    // Use setTimeout to ensure DOM is ready after init
+    setTimeout(() => {
+        switchView('deck-builder');
+        renderDeckBuilder();
+    }, 100);
 }
 
 async function deleteCurrentDeck() {

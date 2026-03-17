@@ -703,9 +703,11 @@ select:focus {
 
 .modal.active {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal-content {
@@ -997,25 +999,32 @@ select:focus {
         margin: 0 auto;
     }
 
-    /* Nav buttons: sit outside is hidden on small screens — put them inside */
-    .modal-nav-prev {
-        left: 0;
-        top: auto;
-        bottom: -48px;
+    /* Nav buttons: inside modal on mobile */
+    .modal-nav-prev,
+    .modal-nav-next {
+        position: static;
         transform: none;
         border-radius: 8px;
+        min-height: 44px;
+        min-width: 60px;
     }
 
-    .modal-nav-next {
-        right: 0;
-        top: auto;
-        bottom: -48px;
-        transform: none;
-        border-radius: 8px;
+    .modal-content {
+        max-width: 100%;
+        margin: 0.5rem;
+        max-height: none;
+    }
+
+    .modal-nav-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        gap: 1rem;
     }
 
     .modal.active {
-        padding-bottom: 4rem;
+        padding: 0;
+        align-items: flex-start;
     }
 
     .deck-stats {
@@ -1934,5 +1943,70 @@ nav .nav-btn.active::after {
 @media (min-width: 769px) {
     #toggle-filters {
         display: none;
+    }
+}
+
+/* Modal nav container — always inside modal */
+.modal-nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.modal-nav-container .modal-nav-btn {
+    position: static;
+    transform: none;
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    min-height: 44px;
+    transition: all 0.2s;
+}
+
+.modal-nav-container .modal-nav-btn:hover:not(:disabled) {
+    background: var(--accent-amber);
+    color: var(--bg-dark);
+}
+
+.modal-nav-container .modal-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Deck builder mobile improvements */
+@media (max-width: 768px) {
+    .deck-current-cards {
+        max-height: 250px;
+        overflow-y: auto;
+    }
+    
+    .deck-pool .controls {
+        display: none;
+    }
+    
+    .deck-pool .controls.show {
+        display: flex;
+    }
+    
+    .deck-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    
+    .deck-actions button {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        min-height: 32px;
+    }
+    
+    #deck-pool-grid {
+        max-height: 400px;
+        overflow-y: auto;
     }
 }
