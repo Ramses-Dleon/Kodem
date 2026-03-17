@@ -1,427 +1,361 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kódem TCG — Mapa de Sinergias</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: #0a0a0f;
-    color: #e0e0e0;
-    font-family: 'Inter', system-ui, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 2rem;
-    font-weight: 900;
-    text-align: center;
-    margin-bottom: 8px;
-    background: linear-gradient(135deg, #f59e0b, #ef4444, #06b6d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .subtitle {
-    text-align: center;
-    color: #888;
-    font-size: 0.85rem;
-    margin-bottom: 30px;
-  }
-
-  /* ── WHEEL LAYOUT ── */
-  .wheel-container {
-    position: relative;
-    width: 700px;
-    height: 700px;
-    margin: 0 auto 40px;
-  }
-
-  @media (max-width: 740px) {
-    .wheel-container { width: 95vw; height: 95vw; }
-  }
-
-  .energy-node {
-    position: absolute;
-    width: 120px;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    cursor: default;
-    transition: transform 0.2s;
-    z-index: 2;
-  }
-
-  .energy-node:hover { transform: translate(-50%, -50%) scale(1.08); }
-
-  .energy-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    margin: 0 auto 6px;
-    box-shadow: 0 0 20px var(--glow), 0 0 40px var(--glow);
-    border: 3px solid var(--border);
-    transition: box-shadow 0.2s;
-  }
-
-  .energy-node:hover .energy-icon {
-    box-shadow: 0 0 30px var(--glow), 0 0 60px var(--glow);
-  }
-
-  .energy-name {
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--text);
-    text-shadow: 0 0 10px var(--glow);
-  }
-
-  .energy-archetype {
-    font-size: 0.65rem;
-    color: #999;
-    margin-top: 2px;
-  }
-
-  /* ── ARROWS SVG ── */
-  .arrows-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-
-  .arrow-counter { stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); opacity: 0.7; }
-  .arrow-synergy { stroke-width: 2; fill: none; stroke-dasharray: 8 4; opacity: 0.5; }
-
-  /* ── LEGEND ── */
-  .legend {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-  }
-
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.8rem;
-    color: #aaa;
-  }
-
-  .legend-line {
-    width: 40px;
-    height: 3px;
-    border-radius: 2px;
-  }
-
-  .legend-line.solid { background: #ef4444; }
-  .legend-line.dashed {
-    background: repeating-linear-gradient(90deg, #06b6d4 0, #06b6d4 8px, transparent 8px, transparent 12px);
-  }
-
-  /* ── MATCHUP TABLE ── */
-  .section-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-align: center;
-    margin: 20px 0 16px;
-    color: #f0f0f0;
-  }
-
-  .matchup-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px;
-    max-width: 900px;
-    width: 100%;
-    margin-bottom: 40px;
-  }
-
-  .matchup-card {
-    background: #14141f;
-    border: 1px solid #2a2a3a;
-    border-radius: 12px;
-    padding: 16px;
-    border-left: 4px solid var(--accent);
-  }
-
-  .matchup-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-
-  .matchup-emoji { font-size: 1.4rem; }
-
-  .matchup-title {
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: var(--accent);
-  }
-
-  .matchup-list { list-style: none; }
-
-  .matchup-list li {
-    padding: 3px 0;
-    font-size: 0.8rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
-  .matchup-list .result {
-    font-weight: 700;
-    min-width: 18px;
-  }
-
-  .win { color: #22c55e; }
-  .even { color: #eab308; }
-  .lose { color: #ef4444; }
-
-  /* ── GOLDEN RULE ── */
-  .golden-rule {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    border: 1px solid #f59e0b44;
-    border-radius: 16px;
-    padding: 24px;
-    max-width: 700px;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .golden-rule h3 {
-    font-size: 1.1rem;
-    color: #f59e0b;
-    margin-bottom: 12px;
-  }
-
-  .cycle {
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 1.8;
-  }
-
-  .cycle .arrow { color: #666; margin: 0 4px; }
-
-  footer {
-    color: #555;
-    font-size: 0.7rem;
-    text-align: center;
-    margin-top: auto;
-    padding: 20px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa de Sinergias — Kódem TCG</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0f0f0f;--card:#1a1a1a;--border:#2e2e2e;
+      --amber:#f59e0b;--teal:#14b8a6;--text:#e5e7eb;--muted:#6b7280;
+      --atlica:#3b82f6;--huumica:#a855f7;--demotica:#9ca3af;
+      --chaaktica:#eab308;--gelida:#06b6d4;--litica:#b45309;
+      --pirica:#ef4444;--feral:#22c55e;
+    }
+    html,body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
+    header{padding:.9rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1.2rem;background:#111;position:sticky;top:0;z-index:100}
+    .back-link{color:var(--amber);text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:.3rem;white-space:nowrap;transition:opacity .2s;flex-shrink:0}
+    .back-link:hover{opacity:.7}
+    .hd-title{font-size:1.1rem;font-weight:700}
+    .hd-sub{font-size:.73rem;color:var(--muted)}
+    .page{max-width:1050px;margin:0 auto;padding:1.2rem 1rem 3rem}
+    .hint{text-align:center;font-size:.75rem;color:var(--muted);margin:0 0 1rem}
+    .hint span{background:#1c1c1c;border:1px solid #2e2e2e;padding:.28rem .75rem;border-radius:20px}
+    .map-wrap{position:relative;width:100%;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1.2rem}
+    .map-inner{position:relative;width:100%;padding-bottom:82%}
+    #map-svg{position:absolute;inset:0;width:100%;height:100%}
+    .enode{position:absolute;transform:translate(-50%,-50%);z-index:10;cursor:pointer;user-select:none}
+    .ncircle{width:80px;height:80px;border-radius:50%;background:#111;border:2.5px solid currentColor;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform .22s,box-shadow .22s,opacity .2s}
+    .nemoji{font-size:1.45rem;line-height:1;pointer-events:none}
+    .nname{font-size:.47rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:currentColor;pointer-events:none;text-align:center}
+    .nrole{position:absolute;top:calc(100% + 5px);left:50%;transform:translateX(-50%);font-size:.57rem;color:var(--muted);white-space:nowrap;pointer-events:none}
+    .enode:hover .ncircle,.enode.is-active .ncircle{transform:scale(1.2);box-shadow:0 0 22px 5px currentColor}
+    .enode.is-dimmed .ncircle,.enode.is-dimmed .nrole{opacity:.1}
+    .en-atlica{color:var(--atlica)}.en-huumica{color:var(--huumica)}.en-demotica{color:var(--demotica)}
+    .en-chaaktica{color:var(--chaaktica)}.en-gelida{color:var(--gelida)}.en-litica{color:var(--litica)}
+    .en-pirica{color:var(--pirica)}.en-feral{color:var(--feral)}
+    .cpath{fill:none;stroke-width:2.3;stroke-linecap:round;opacity:.6;stroke-dasharray:10 5;animation:fdash 1.6s linear infinite;transition:opacity .2s,stroke-width .2s}
+    .cpath.is-dimmed{opacity:.05!important;animation:none}
+    .cpath.is-hl{opacity:1!important;stroke-width:3.5}
+    .spath{fill:none;stroke:var(--teal);stroke-width:2.1;stroke-linecap:round;stroke-dasharray:7 5;opacity:.5;animation:gpulse 2.2s ease-in-out infinite;transition:opacity .2s,stroke-width .2s}
+    .spath.is-dimmed{opacity:.04!important;animation:none}
+    .spath.is-hl{opacity:1!important;stroke-width:3.5;filter:drop-shadow(0 0 7px #14b8a6)}
+    @keyframes fdash{to{stroke-dashoffset:-30}}
+    @keyframes gpulse{0%,100%{filter:drop-shadow(0 0 2px #14b8a6);opacity:.5}50%{filter:drop-shadow(0 0 9px #14b8a6);opacity:.9}}
+    #dpanel{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.5rem;display:none;margin-bottom:1.2rem;position:relative;animation:sdown .22s ease}
+    @keyframes sdown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+    #dpanel.vis{display:block}
+    .pclose{position:absolute;top:.7rem;right:.9rem;background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;transition:color .2s;line-height:1}
+    .pclose:hover{color:var(--text)}
+    .phdr{display:flex;align-items:center;gap:.85rem;margin-bottom:.9rem}
+    .pem{font-size:2.1rem}.ptitle{font-size:1.15rem;font-weight:700}.prole{font-size:.73rem;color:var(--muted);margin-top:1px}
+    .pkeys{font-size:.73rem;margin-top:2px}
+    .pdesc{font-size:.83rem;color:#c4c8d0;line-height:1.6;margin-bottom:1rem}
+    .pgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+    .psec h4{font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.4rem}
+    .psec ul{list-style:none;display:flex;flex-direction:column;gap:.28rem}
+    .psec li{font-size:.79rem;display:flex;align-items:flex-start;gap:.3rem;line-height:1.4}
+    .chip{display:inline-flex;align-items:center;gap:.28rem;font-size:.7rem;padding:.18rem .5rem;border-radius:20px;border:1px solid;margin:.18rem .18rem 0 0;font-weight:600}
+    .cc{color:var(--amber);border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.08)}
+    .cs{color:var(--teal);border-color:rgba(20,184,166,.35);background:rgba(20,184,166,.08)}
+    .cb{color:#f87171;border-color:rgba(248,113,113,.35);background:rgba(248,113,113,.08)}
+    .legend{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.85rem 1.2rem;display:flex;flex-wrap:wrap;gap:1.1rem;align-items:center;font-size:.79rem}
+    .li{display:flex;align-items:center;gap:.5rem}
+    .ls{width:36px;height:3px;background:linear-gradient(90deg,var(--amber),#fbbf24);border-radius:2px;flex-shrink:0}
+    .ld{width:36px;height:0;border-top:2.5px dashed var(--teal);flex-shrink:0}
+    @media(max-width:520px){
+      .map-inner{padding-bottom:130%}
+      .ncircle{width:60px;height:60px}
+      .nemoji{font-size:1.1rem}.nname{font-size:.4rem}.nrole{font-size:.5rem}
+      .pgrid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-
-<h1>🎴 Kódem TCG — Mapa de Sinergias</h1>
-<p class="subtitle">Contrarresta · Sinergia · Matchups por Energía</p>
-
-<div class="legend">
-  <div class="legend-item">
-    <div class="legend-line solid"></div>
-    <span>Contrarresta (A → B = A gana a B)</span>
+<header>
+  <a class="back-link" href="index.html">&#8592; Volver</a>
+  <div><div class="hd-title">&#9889; Mapa de Sinergias</div><div class="hd-sub">Kódem TCG &mdash; 8 Energías</div></div>
+</header>
+<div class="page">
+  <div class="hint"><span>Hover para ver conexiones &nbsp;·&nbsp; Clic para ficha completa</span></div>
+  <div class="map-wrap">
+    <div class="map-inner" id="mi">
+      <svg id="msvg" viewBox="0 0 1000 820" preserveAspectRatio="xMidYMid meet">
+        <defs id="defs"></defs>
+      </svg>
+    </div>
   </div>
-  <div class="legend-item">
-    <div class="legend-line dashed"></div>
-    <span>Sinergia de deck (combinan bien)</span>
+  <div id="dpanel">
+    <button class="pclose" id="pclose">&#10005;</button>
+    <div id="pc"></div>
+  </div>
+  <div class="legend">
+    <div class="li"><div class="ls"></div><span><strong>Contador</strong> &mdash; flecha animada (quién vence a quién)</span></div>
+    <div class="li"><div class="ld"></div><span><strong>Sinergia</strong> &mdash; línea brillante (combo poderoso)</span></div>
+    <div class="li" style="color:var(--muted)">Hover: resalta conexiones &nbsp;|&nbsp; Clic: abre ficha</div>
   </div>
 </div>
+<script>
+(function(){
+var E=[
+  {id:'atlica',    e:'💧',n:'ÁTLICA',    c:'#3b82f6',r:'Defensiva',  k:'Curar · Proteger · Desviar',
+   d:'La energía del agua y la defensa. Sus cartas curan aliados, bloquean daño y desvían ataques. Neutraliza estrategias de daño progresivo con recuperación constante. Vulnerable al fuego que quema antes de que la cura surta efecto.'},
+  {id:'huumica',   e:'🌀',n:'HÚUMICA',   c:'#a855f7',r:'Progresiva', k:'Escalar · Potencia creciente',
+   d:'Energía de acumulación. Empieza débil pero escala exponencialmente cada turno. En partidas largas supera cualquier barrera defensiva. Vulnerable al reposicionamiento Demótico que resetea su progreso.'},
+  {id:'demotica',  e:'🔮',n:'DEMÓTICA',  c:'#9ca3af',r:'Posicional', k:'Reordenar · Cambiar cartas',
+   d:'El maestro del tablero. Mueve, reordena e intercambia cartas. Interrumpe combos y resetea escalados. Controla el ritmo del juego, pero si el rival ya tiene demasiada ventaja sus herramientas no alcanzan.'},
+  {id:'chaaktica', e:'⚡',n:'CHÁAKTICA', c:'#eab308',r:'Velocidad',  k:'0-1 descanso · Imparable',
+   d:'La energía del rayo. Sus cartas requieren cero o un descanso y atacan antes de que el rival responda. Rompe sinergias rivales actuando primero. Combinada con daño directo es devastadora.'},
+  {id:'gelida',    e:'🧊',n:'GÉLIDA',    c:'#06b6d4',r:'Control',    k:'+Descansos rival · Ralentizar',
+   d:'Energía de hielo y control. Añade descansos extra al campo rival, ralentizando sus acciones. Efectiva contra arquetipos lentos que necesitan muchos turnos. Débil ante estrategias de velocidad que actúan antes de que el frío surta efecto.'},
+  {id:'litica',    e:'🪨',n:'LÍTICA',    c:'#b45309',r:'Tanque',     k:'Daño alto · Descansos altos',
+   d:'El tanque definitivo. Valores de ataque y resistencia extremos, pero requiere varios descansos para actuar. Un solo golpe puede one-shot cualquier rival. Vulnerabilidad crítica: si se le añaden descansos extra, nunca actúa.'},
+  {id:'pirica',    e:'🔥',n:'PÍRICA',    c:'#ef4444',r:'Agresiva',   k:'Quemar · Escalar · Daño directo',
+   d:'La energía del fuego puro. Aplica Quemadura que inflige daño pasivo y cancela curaciones. Escala con cada carta jugada. Neutraliza arquetipos curativos. Con velocidad Cháaktica se vuelve una máquina aggro imparable.'},
+  {id:'feral',     e:'🐾',n:'FERAL',     c:'#22c55e',r:'Auto-buff',  k:'Se potencia sola · Ignora restricciones',
+   d:'La energía salvaje. Sus cartas se potencian autónomamente sin combos externos. Ignora restricciones de campo. No tiene un counter directo en el ciclo. Combina excepcionalmente bien con control y velocidad.'}
+];
 
-<div class="wheel-container">
-  <svg class="arrows-svg" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-        <polygon points="0 0, 8 3, 0 6" fill="#ef4444" opacity="0.8"/>
-      </marker>
-      <marker id="arrowhead-syn" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto">
-        <polygon points="0 0, 6 2.5, 0 5" fill="#06b6d4" opacity="0.6"/>
-      </marker>
-    </defs>
+var C=[
+  {f:'atlica',    t:'huumica',   l:'Cura/protege vs daño progresivo'},
+  {f:'huumica',   t:'demotica',  l:'Escala supera reposicionamiento'},
+  {f:'demotica',  t:'chaaktica', l:'Reordena campo, rompe sinergias'},
+  {f:'chaaktica', t:'gelida',    l:'Velocidad supera control lento'},
+  {f:'gelida',    t:'litica',    l:'+Descansos anula tanques lentos'},
+  {f:'litica',    t:'pirica',    l:'Daño masivo one-shots'},
+  {f:'pirica',    t:'atlica',    l:'Quemar neutraliza curación pasiva'},
+  {f:'feral',     t:'feral',     l:'Auto-buff ignora restricciones', self:true}
+];
 
-    <!-- Counter arrows (solid red) — offset from center to avoid overlap -->
-    <!-- PIR → ATL (Fire beats Water's healing) -->
-    <path class="arrow-counter" stroke="#ef4444" d="M 490,130 Q 420,80 290,115" />
-    <!-- GEL → LIT (Ice freezes Rock) -->
-    <path class="arrow-counter" stroke="#00bcd4" d="M 200,130 Q 120,220 120,330" />
-    <!-- CHA → GEL (Speed beats Control) -->
-    <path class="arrow-counter" stroke="#fdd835" d="M 505,360 Q 460,220 270,130" />
-    <!-- LIT → PIR (Rock one-shots Fire) -->
-    <path class="arrow-counter" stroke="#8d6e63" d="M 135,400 Q 220,250 460,165" />
-    <!-- ATL → HUU (Water heals vs Progressive) -->
-    <path class="arrow-counter" stroke="#1e88e5" d="M 250,560 Q 330,620 430,570" />
-    <!-- HUU → DEM (Scale beats Reposition) -->
-    <path class="arrow-counter" stroke="#ab47bc" d="M 560,530 Q 620,440 580,350" />
-    <!-- DEM → CHA (Reposition breaks Speed) -->
-    <path class="arrow-counter" stroke="#546e7a" d="M 590,310 Q 580,280 540,310" />
+var S=[
+  {a:'pirica',   b:'chaaktica', l:'🔥⚡ Aggro imparable'},
+  {a:'feral',    b:'chaaktica', l:'🐾⚡ Buff + velocidad'},
+  {a:'demotica', b:'feral',     l:'🔮🐾 Control + auto-buff'},
+  {a:'demotica', b:'atlica',    l:'🔮💧 Posición + defensa'}
+];
 
-    <!-- Synergy arrows (dashed teal) -->
-    <!-- PIR + CHA -->
-    <path class="arrow-synergy" stroke="#06b6d4" d="M 500,180 Q 560,260 520,340" marker-end="url(#arrowhead-syn)" />
-    <!-- GEL + ATL -->
-    <path class="arrow-synergy" stroke="#06b6d4" d="M 230,145 Q 180,250 210,520" marker-end="url(#arrowhead-syn)" />
-    <!-- LIT + HUU -->
-    <path class="arrow-synergy" stroke="#06b6d4" d="M 150,420 Q 280,580 480,550" marker-end="url(#arrowhead-syn)" />
-    <!-- DEM + FER -->
-    <path class="arrow-synergy" stroke="#06b6d4" d="M 580,360 Q 500,500 400,510" marker-end="url(#arrowhead-syn)" />
-  </svg>
+var POS={
+  atlica:   {x:500,y:75},huumica:{x:790,y:185},demotica:{x:920,y:420},
+  chaaktica:{x:790,y:655},gelida:{x:500,y:760},litica:{x:210,y:655},
+  pirica:   {x:80,y:420},feral:{x:210,y:185}
+};
+var R=50;
 
-  <!-- 8 energy nodes positioned in a circle -->
-  <!-- Top: ATL, top-right: PIR, right: CHA, bottom-right: DEM, bottom: HUU, bottom-left: FER, left: LIT, top-left: GEL -->
+function ecol(id){return E.find(function(x){return x.id===id}).c}
 
-  <div class="energy-node" style="top: 8%; left: 50%; --glow: #1e88e555; --border: #1e88e5; --text: #60a5fa;">
-    <div class="energy-icon" style="background: radial-gradient(circle, #1e88e5, #0d47a1);">💧</div>
-    <div class="energy-name">ÁTLICA</div>
-    <div class="energy-archetype">Defensiva · Curar</div>
-  </div>
+// markers
+var dfs=document.getElementById('defs');
+E.forEach(function(e){
+  var m=document.createElementNS('http://www.w3.org/2000/svg','marker');
+  m.setAttribute('id','a-'+e.id);m.setAttribute('markerWidth','9');m.setAttribute('markerHeight','9');
+  m.setAttribute('refX','8');m.setAttribute('refY','3');m.setAttribute('orient','auto');
+  var p=document.createElementNS('http://www.w3.org/2000/svg','path');
+  p.setAttribute('d','M0,0 L0,6 L9,3 Z');p.setAttribute('fill',e.c);
+  m.appendChild(p);dfs.appendChild(m);
+});
 
-  <div class="energy-node" style="top: 15%; left: 82%; --glow: #e5393555; --border: #e53935; --text: #f87171;">
-    <div class="energy-icon" style="background: radial-gradient(circle, #e53935, #b71c1c);">🔥</div>
-    <div class="energy-name">PÍRICA</div>
-    <div class="energy-archetype">Agresiva · Quemar</div>
-  </div>
+var svg=document.getElementById('msvg');
 
-  <div class="energy-node" style="top: 48%; left: 95%; --glow: #fdd83555; --border: #fdd835; --text: #fde047;">
-    <div class="energy-icon" style="background: radial-gradient(circle, #fdd835, #f9a825);">⚡</div>
-    <div class="energy-name">CHÁAKTICA</div>
-    <div class="energy-archetype">Velocidad · Imparable</div>
-  </div>
+function ep(f,t,r){var dx=t.x-f.x,dy=t.y-f.y,d=Math.sqrt(dx*dx+dy*dy);return{x:f.x+dx/d*r,y:f.y+dy/d*r}}
+function qp(p1,p2,k){
+  k=k||0.18;var mx=(p1.x+p2.x)/2,my=(p1.y+p2.y)/2,dx=p2.x-p1.x,dy=p2.y-p1.y;
+  return 'M'+p1.x+' '+p1.y+' Q'+(mx-dy*k)+' '+(my+dx*k)+' '+p2.x+' '+p2.y;
+}
 
-  <div class="energy-node" style="top: 82%; left: 85%; --glow: #546e7a55; --border: #546e7a; --text: #94a3b8;">
-    <div class="energy-icon" style="background: radial-gradient(circle, #546e7a, #263238);">🔮</div>
-    <div class="energy-name">DEMÓTICA</div>
-    <div class="energy-archetype">Posicional · Reordena</div>
-  </div>
+// build paths
+C.forEach(function(c,i){
+  var el=document.createElementNS('http://www.w3.org/2000/svg','path');
+  el.setAttribute('class','cpath');el.setAttribute('stroke',ecol(c.f));
+  el.setAttribute('data-f',c.f);el.setAttribute('data-t',c.t);el.setAttribute('data-l',c.l);
+  el.id='cp'+i;
+  if(c.self){
+    var p=POS.feral;
+    el.setAttribute('d','M'+(p.x-R)+' '+(p.y-13)+' C'+(p.x-R-55)+' '+(p.y-60)+' '+(p.x-R-55)+' '+(p.y+60)+' '+(p.x-R)+' '+(p.y+13));
+    el.setAttribute('marker-end','url(#a-feral)');
+  } else {
+    var fp=POS[c.f],tp=POS[c.t];
+    var s=ep(fp,tp,R+5),e2=ep(tp,fp,R+16);
+    el.setAttribute('d',qp(s,e2,0.18));
+    el.setAttribute('marker-end','url(#a-'+c.f+')');
+  }
+  svg.appendChild(el);
+});
 
-  <div class="energy-node" style="top: 92%; left: 50%; --glow: #ab47bc55; --border: #ab47bc; --text: #c084fc;">
-    <div class="energy-icon" style="background: radial-gradient(circle, #ab47bc, #6a1b9a);">🌀</div>
-    <div class="energy-name">HÚUMICA</div>
-    <div class="energy-archetype">Progresiva · Escalar</div>
-  </div>
+S.forEach(function(s,i){
+  var el=document.createElementNS('http://www.w3.org/2000/svg','path');
+  el.setAttribute('class','spath');el.setAttribute('data-a',s.a);el.setAttribute('data-b',s.b);
+  el.setAttribute('data-l',s.l);el.id='sp'+i;
+  var fp=POS[s.a],tp=POS[s.b];
+  var p1=ep(fp,tp,R+5),p2=ep(tp,fp,R+5);
+  el.setAttribute('d',qp(p1,p2,-0.2));
+  svg.appendChild(el);
+});
 
-  <div class="energy-node" style="top: 78%; left: 15%; --glow: #ff8f0055; --border: #ff8f00; --text: #fb923c;">
-    <div class="energy-icon" style="background: radial-gradient(circle, #ff8f00, #e65100);">🐾</div>
-    <div class="energy-name">FERAL</div>
-    <div class="energy-archetype">Auto-buff · Salvaje</div>
-  </div>
+// build nodes
+var mi=document.getElementById('mi');
+E.forEach(function(e){
+  var p=POS[e.id];
+  var nd=document.createElement('div');
+  nd.className='enode en-'+e.id;nd.id='n-'+e.id;nd.setAttribute('data-id',e.id);
+  nd.style.left=(p.x/1000*100)+'%';nd.style.top=(p.y/820*100)+'%';
+  nd.innerHTML='<div class="ncircle"><span class="nemoji">'+e.e+'</span><span class="nname">'+e.n+'</span></div><span class="nrole">'+e.r+'</span>';
+  mi.appendChild(nd);
+});
 
-  <div class="energy-node" style="top: 48%; left: 5%; --glow: #8d6e6355; --border: #8d6e63; --text: #d4a574;">
-    <div class="energy-icon" style="background: radial-gradient(circle, #8d6e63, #4e342e);">🪨</div>
-    <div class="energy-name">LÍTICA</div>
-    <div class="energy-archetype">Tanque · Daño alto</div>
-  </div>
+// ─── INTERACTION
+var activeId=null;
 
-  <div class="energy-node" style="top: 15%; left: 18%; --glow: #00bcd455; --border: #00bcd4; --text: #22d3ee;">
-    <div class="energy-icon" style="background: radial-gradient(circle, #00bcd4, #006064);">🧊</div>
-    <div class="energy-name">GÉLIDA</div>
-    <div class="energy-archetype">Control · +Descansos</div>
-  </div>
-</div>
+function connIds(id){
+  var s={};s[id]=true;
+  C.forEach(function(c){
+    if(c.f===id&&c.t)s[c.t]=true;
+    if(c.t===id&&!c.self)s[c.f]=true;
+  });
+  S.forEach(function(s2){
+    if(s2.a===id)s[s2.b]=true;
+    if(s2.b===id)s[s2.a]=true;
+  });
+  return s;
+}
 
-<!-- MATCHUP CARDS -->
-<div class="section-title">⚔️ Matchups Detallados</div>
-<div class="matchup-grid">
+function applyHL(id){
+  var ci=connIds(id);
+  document.querySelectorAll('.enode').forEach(function(n){
+    var nid=n.getAttribute('data-id');
+    n.classList.remove('is-active','is-dimmed');
+    if(nid===id)n.classList.add('is-active');
+    else if(!ci[nid])n.classList.add('is-dimmed');
+  });
+  svg.querySelectorAll('.cpath').forEach(function(p){
+    var f=p.getAttribute('data-f'),t=p.getAttribute('data-t');
+    p.classList.remove('is-dimmed','is-hl');
+    if(f===id||t===id)p.classList.add('is-hl');else p.classList.add('is-dimmed');
+  });
+  svg.querySelectorAll('.spath').forEach(function(p){
+    var a=p.getAttribute('data-a'),b=p.getAttribute('data-b');
+    p.classList.remove('is-dimmed','is-hl');
+    if(a===id||b===id)p.classList.add('is-hl');else p.classList.add('is-dimmed');
+  });
+}
 
-  <div class="matchup-card" style="--accent: #fde047;">
-    <div class="matchup-header">
-      <span class="matchup-emoji">⚡</span>
-      <span class="matchup-title">CHÁAKTICA vs...</span>
-    </div>
-    <ul class="matchup-list">
-      <li><span class="result win">✅</span> <b>Gélida</b> — Velocidad supera su control lento</li>
-      <li><span class="result win">✅</span> <b>Lítica</b> — 3 golpes antes de que se levanten</li>
-      <li><span class="result even">⚖️</span> <b>Pírica</b> — Parejo, quemadura castiga tu ritmo</li>
-      <li><span class="result even">⚖️</span> <b>Húumica</b> — Ganas rápido o te superan al escalar</li>
-      <li><span class="result lose">❌</span> <b>Demótica</b> — Reordenan tu campo, rompen tempo</li>
-      <li><span class="result lose">❌</span> <b>Átlica</b> — Curan todo, necesitas splash Pírica</li>
-    </ul>
-  </div>
+function clearHL(){
+  document.querySelectorAll('.enode').forEach(function(n){n.classList.remove('is-active','is-dimmed')});
+  svg.querySelectorAll('.cpath,.spath').forEach(function(p){p.classList.remove('is-dimmed','is-hl')});
+}
 
-  <div class="matchup-card" style="--accent: #f87171;">
-    <div class="matchup-header">
-      <span class="matchup-emoji">🔥</span>
-      <span class="matchup-title">PÍRICA vs...</span>
-    </div>
-    <ul class="matchup-list">
-      <li><span class="result win">✅</span> <b>Átlica</b> — Quemadura neutraliza curación pasiva</li>
-      <li><span class="result win">✅</span> <b>Húumica</b> — Los quemas antes de que escalen</li>
-      <li><span class="result even">⚖️</span> <b>Cháaktica</b> — 50/50, depende del ritmo</li>
-      <li><span class="result lose">❌</span> <b>Lítica</b> — Un golpe de 5 te elimina primero</li>
-      <li><span class="result lose">❌</span> <b>Gélida</b> — Descansos extra = menos quemadura</li>
-    </ul>
-  </div>
+function ei(id){return E.find(function(x){return x.id===id})}
 
-  <div class="matchup-card" style="--accent: #22d3ee;">
-    <div class="matchup-header">
-      <span class="matchup-emoji">🧊</span>
-      <span class="matchup-title">GÉLIDA vs...</span>
-    </div>
-    <ul class="matchup-list">
-      <li><span class="result win">✅</span> <b>Lítica</b> — +Descansos congela sus tanques lentos</li>
-      <li><span class="result win">✅</span> <b>Pírica</b> — Cartas descansando no activan quemadura</li>
-      <li><span class="result even">⚖️</span> <b>Demótica</b> — Ambos controlan, gana quien posicione</li>
-      <li><span class="result lose">❌</span> <b>Cháaktica</b> — Muy rápidos, tus descansos no alcanzan</li>
-      <li><span class="result lose">❌</span> <b>Feral</b> — Se auto-buffea sin importar descansos</li>
-    </ul>
-  </div>
+function renderPanel(id){
+  var en=ei(id);
+  var beats=C.filter(function(c){return c.f===id&&!c.self}).map(function(c){return{en:ei(c.t),l:c.l}});
+  var beatenBy=C.filter(function(c){return c.t===id&&!c.self}).map(function(c){return{en:ei(c.f),l:c.l}});
+  var synList=S.filter(function(s){return s.a===id||s.b===id});
 
-  <div class="matchup-card" style="--accent: #d4a574;">
-    <div class="matchup-header">
-      <span class="matchup-emoji">🪨</span>
-      <span class="matchup-title">LÍTICA vs...</span>
-    </div>
-    <ul class="matchup-list">
-      <li><span class="result win">✅</span> <b>Pírica</b> — 1 golpe de 4-5 elimina antes de que quemadura importe</li>
-      <li><span class="result win">✅</span> <b>Feral</b> — Daño bruto supera auto-buffs</li>
-      <li><span class="result even">⚖️</span> <b>Húumica</b> — Carrera de escalada</li>
-      <li><span class="result lose">❌</span> <b>Gélida</b> — Te congelan y nunca te levantas</li>
-      <li><span class="result lose">❌</span> <b>Cháaktica</b> — 3 golpes rápidos antes de tu turno</li>
-    </ul>
-  </div>
-</div>
+  var synHtml=synList.map(function(s){
+    var partner=s.a===id?ei(s.b):ei(s.a);
+    return '<span class="chip cs">'+partner.e+' '+partner.n+' — '+s.l+'</span>';
+  }).join('');
 
-<!-- GOLDEN RULE -->
-<div class="golden-rule">
-  <h3>💡 Regla de Oro del Meta</h3>
-  <div class="cycle">
-    <span style="color:#fde047;">Velocidad</span>
-    <span class="arrow">›</span>
-    <span style="color:#22d3ee;">Control</span>
-    <span class="arrow">›</span>
-    <span style="color:#d4a574;">Fuerza</span>
-    <span class="arrow">›</span>
-    <span style="color:#f87171;">Agresión</span>
-    <span class="arrow">›</span>
-    <span style="color:#fde047;">Velocidad</span>
-  </div>
-  <p style="color:#888; font-size:0.8rem; margin-top:12px;">
-    ⚡ Cháak › 🧊 Gélida › 🪨 Lítica › 🔥 Pírica › ⚡ Cháak
-  </p>
-  <p style="color:#666; font-size:0.75rem; margin-top:8px;">
-    Tu combo ideal: <b style="color:#fde047;">⚡</b> + <b style="color:#f87171;">🔥</b> (Cháaktica/Pírica) — velocidad + agresión. Talón de Aquiles: Demótica o Átlica puro.
-  </p>
-</div>
+  var winsHtml=beats.length?beats.map(function(x){
+    return '<li><span style="color:'+x.en.c+'">'+x.en.e+' '+x.en.n+'</span> — '+x.l+'</li>';
+  }).join(''):'<li style="color:var(--muted)">Sin counter directo</li>';
 
-<footer>
-  Kódem TCG © Adendei Entretenimiento · Análisis por Logos 🜂
-</footer>
+  var lossesHtml=beatenBy.length?beatenBy.map(function(x){
+    return '<li><span style="color:'+x.en.c+'">'+x.en.e+' '+x.en.n+'</span> — '+x.l+'</li>';
+  }).join(''):'<li style="color:var(--muted)">No tiene counter</li>';
 
+  document.getElementById('pc').innerHTML=
+    '<div class="phdr">'+
+      '<span class="pem">'+en.e+'</span>'+
+      '<div><div class="ptitle" style="color:'+en.c+'">'+en.n+'</div>'+
+           '<div class="prole">'+en.r+'</div>'+
+           '<div class="pkeys" style="color:'+en.c+'">'+en.k+'</div></div>'+
+    '</div>'+
+    '<div class="pdesc">'+en.d+'</div>'+
+    (synList.length?'<div style="margin-bottom:.8rem"><div class="psec"><h4>Sinergias</h4></div>'+synHtml+'</div>':'')+
+    '<div class="pgrid">'+
+      '<div class="psec"><h4>&#9660; Vence a</h4><ul>'+winsHtml+'</ul></div>'+
+      '<div class="psec"><h4>&#9650; Pierde contra</h4><ul>'+lossesHtml+'</ul></div>'+
+      '<div class="psec"><h4>Rol en el meta</h4><ul>'+
+        '<li>'+en.r+': '+en.k+'</li>'+
+        (id==='feral'?'<li style="color:var(--teal)">Sin counter en el ciclo principal</li>':'')+
+      '</ul></div>'+
+    '</div>';
+
+  var dp=document.getElementById('dpanel');
+  dp.classList.add('vis');
+  dp.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// Node events
+document.querySelectorAll('.enode').forEach(function(nd){
+  var id=nd.getAttribute('data-id');
+
+  nd.addEventListener('mouseenter',function(){
+    if(!activeId)applyHL(id);
+  });
+  nd.addEventListener('mouseleave',function(){
+    if(!activeId)clearHL();
+  });
+  nd.addEventListener('click',function(ev){
+    ev.stopPropagation();
+    if(activeId===id){
+      activeId=null;clearHL();
+      document.getElementById('dpanel').classList.remove('vis');
+    } else {
+      activeId=id;applyHL(id);renderPanel(id);
+    }
+  });
+});
+
+// Close panel
+document.getElementById('pclose').addEventListener('click',function(){
+  activeId=null;clearHL();
+  document.getElementById('dpanel').classList.remove('vis');
+});
+
+// Click outside
+document.addEventListener('click',function(ev){
+  if(!ev.target.closest('.enode')&&!ev.target.closest('#dpanel')){
+    activeId=null;clearHL();
+    document.getElementById('dpanel').classList.remove('vis');
+  }
+});
+
+// SVG path hover tooltip
+svg.addEventListener('mousemove',function(ev){
+  var t=ev.target;
+  if(t.classList.contains('cpath')||t.classList.contains('spath')){
+    var label=t.getAttribute('data-l');
+    var isS=t.classList.contains('spath');
+    var fromId=t.getAttribute('data-f')||t.getAttribute('data-a');
+    var toId=t.getAttribute('data-t')||t.getAttribute('data-b');
+    var fromE=fromId?ei(fromId):null;
+    var toE=toId&&toId!==fromId?ei(toId):null;
+    var prefix=isS?'SINERGIA':'COUNTER';
+    var names=fromE?(fromE.e+' '+(toE?'+ '+toE.e:'')):'';
+    // no floating tooltip to avoid positioning headaches — just use title
+  }
+});
+
+// Add SVG title tooltips for accessibility
+svg.querySelectorAll('.cpath').forEach(function(p){
+  var t=document.createElementNS('http://www.w3.org/2000/svg','title');
+  var f=p.getAttribute('data-f'),to=p.getAttribute('data-t'),l=p.getAttribute('data-l');
+  var fe=ei(f),te=to&&to!==f?ei(to):null;
+  t.textContent=(fe?fe.e+' '+fe.n:f)+' → '+(te?te.e+' '+te.n:f)+': '+l;
+  p.insertBefore(t,p.firstChild);
+});
+svg.querySelectorAll('.spath').forEach(function(p){
+  var t=document.createElementNS('http://www.w3.org/2000/svg','title');
+  var a=p.getAttribute('data-a'),b=p.getAttribute('data-b'),l=p.getAttribute('data-l');
+  var ae=ei(a),be=ei(b);
+  t.textContent='SINERGIA: '+ae.e+' '+ae.n+' + '+be.e+' '+be.n+' — '+l;
+  p.insertBefore(t,p.firstChild);
+});
+
+})();
+</script>
 </body>
 </html>
