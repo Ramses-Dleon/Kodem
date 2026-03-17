@@ -318,13 +318,23 @@ async function importSyncCode() {
             
             // Validate folios against allCards
             const validFolios = new Set(allCards.map(c => c.folio));
-            // Accept foils/variants with S suffix — map to base folio if base exists
-            const valid = folios.filter(f => {
-                if (validFolios.has(f)) return true;
-                // Try stripping trailing S (foil variant)
-                if (f.endsWith('S') && validFolios.has(f.slice(0, -1))) return true;
-                return false;
-            });
+            // Accept foils/variants: store both original AND base folio
+            const valid = [];
+            const seen = new Set();
+            for (const f of folios) {
+                if (validFolios.has(f)) { 
+                    if (!seen.has(f)) { valid.push(f); seen.add(f); }
+                    continue; 
+                }
+                // Strip trailing rarity suffix (S=Súper, R=Rara, U=Ultra)
+                const base = f.replace(/[SRU]$/, '');
+                if (base !== f && validFolios.has(base)) { 
+                    // Add base folio (so dashboard counts it) + original (so we know variant)
+                    if (!seen.has(base)) { valid.push(base); seen.add(base); }
+                    if (!seen.has(f)) { valid.push(f); seen.add(f); }
+                    continue; 
+                }
+            }
             const invalid = folios.length - valid.length;
             
             const mode = await showChoice(
@@ -1997,3 +2007,36 @@ function renderDashboard() {
 
 // ==================== START APP ====================
 init();
+
+// ==================== THEME TOGGLE ====================
+(function initTheme() {
+    const STORAGE_KEY = 'kodem_theme';
+    const htmlEl = document.documentElement;
+    const toggleBtn = document.getElementById('theme-toggle');
+
+    // Apply saved theme on load (before paint)
+    const savedTheme = localStorage.getItem(STORAGE_KEY);
+    if (savedTheme === 'light') {
+        htmlEl.setAttribute('data-theme', 'light');
+        if (toggleBtn) toggleBtn.textContent = '☀️';
+    } else {
+        htmlEl.removeAttribute('data-theme');
+        if (toggleBtn) toggleBtn.textContent = '🌙';
+    }
+
+    // Toggle handler
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function () {
+            const isLight = htmlEl.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                htmlEl.removeAttribute('data-theme');
+                toggleBtn.textContent = '🌙';
+                localStorage.setItem(STORAGE_KEY, 'dark');
+            } else {
+                htmlEl.setAttribute('data-theme', 'light');
+                toggleBtn.textContent = '☀️';
+                localStorage.setItem(STORAGE_KEY, 'light');
+            }
+        });
+    }
+})();

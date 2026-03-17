@@ -1,19 +1,38 @@
+/* ============================================================
+   KÓDEM TCG — THEME SYSTEM
+   Dark mode (default): Cosmic Night — deep indigo-blacks
+   Light mode:          Ancient Parchment — warm cream tones
+   Toggle: data-theme="light" on <html>
+   ============================================================ */
+
 :root {
-    --bg-dark: #1a1a1a;
-    --bg-darker: #0f0f0f;
-    --bg-card: #252525;
-    --bg-hover: #2f2f2f;
-    --text-primary: #e8e8e8;
-    --text-secondary: #b0b0b0;
-    --accent-amber: #f59e0b;
-    --accent-teal: #14b8a6;
+    /* ---- Surfaces (Dark: Cosmic Night) ---- */
+    --bg-darker: #0c0d10;
+    --bg-dark:   #131520;
+    --bg-card:   #1c1f2e;
+    --bg-hover:  #252840;
+
+    /* ---- Text ---- */
+    --text-primary:   #e8e8ef;
+    --text-secondary: #8b8fa8;
+
+    /* ---- Borders ---- */
+    --border: #2e3147;
+
+    /* ---- Brand Accents (same in both modes) ---- */
+    --accent-amber:   #f59e0b;
+    --accent-teal:    #14b8a6;
     --accent-crimson: #dc2626;
-    --border: #3a3a3a;
+
+    /* ---- Semantic ---- */
     --success: #10b981;
     --warning: #f59e0b;
-    --danger: #ef4444;
+    --danger:  #ef4444;
 
-    /* Energy colors */
+    /* ---- Theme toggle icon ---- */
+    --theme-toggle-icon: "🌙";
+
+    /* ---- Energy colors (same in both modes — they're identity colors) ---- */
     --atlica:    #3b82f6;
     --pirica:    #ef4444;
     --gelida:    #06b6d4;
@@ -23,7 +42,7 @@
     --demotica:  #9ca3af;
     --feral:     #22c55e;
 
-    /* Energy RGB values for rgba() glow effects */
+    /* ---- Energy RGB values for rgba() glow effects ---- */
     --atlica-rgb:    59, 130, 246;
     --pirica-rgb:    239, 68, 68;
     --gelida-rgb:    6, 182, 212;
@@ -35,11 +54,147 @@
     --default-rgb:   245, 158, 11;
 }
 
+/* ============================================================
+   LIGHT MODE — Ancient Parchment
+   ============================================================ */
+[data-theme="light"] {
+    /* ---- Surfaces ---- */
+    --bg-darker: #f0ede8;
+    --bg-dark:   #e8e4dc;
+    --bg-card:   #faf9f7;
+    --bg-hover:  #ede9e0;
+
+    /* ---- Text ---- */
+    --text-primary:   #1a1820;
+    --text-secondary: #5a566b;
+
+    /* ---- Borders ---- */
+    --border: #d4cfc4;
+
+    /* ---- Accents stay the same (brand identity) ---- */
+    --accent-amber:   #d97706;
+    --accent-teal:    #0d9488;
+    --accent-crimson: #b91c1c;
+
+    /* ---- Semantic ---- */
+    --success: #059669;
+    --warning: #d97706;
+    --danger:  #dc2626;
+
+    --theme-toggle-icon: "☀️";
+}
+
+/* Smooth theme transitions */
+*, *::before, *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Override the broad transition above to not affect transforms (perf) */
+.card-item,
+.nav-btn,
+.btn-primary,
+.btn-secondary,
+.btn-danger,
+.modal-nav-btn {
+    transition: all 0.2s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ============================================================
+   THEME TOGGLE BUTTON
+   ============================================================ */
+#theme-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    min-height: 36px;
+    min-width: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+#theme-toggle:hover {
+    background: var(--bg-hover);
+    border-color: var(--accent-amber);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.25);
+}
+
+/* Light mode adjustments for selects/inputs */
+[data-theme="light"] input[type="text"],
+[data-theme="light"] select {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border-color: var(--border);
+}
+
+[data-theme="light"] .stats-bar {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .sort-by-select {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+
+/* Inline style override for sort select in light mode */
+[data-theme="light"] #sort-by {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+
+/* Grid size buttons in light mode */
+[data-theme="light"] .grid-size-btn {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+
+[data-theme="light"] .grid-size-btn:hover,
+[data-theme="light"] .grid-size-btn.active {
+    background: var(--accent-amber) !important;
+    color: white !important;
+    border-color: var(--accent-amber) !important;
+}
+
+/* Sync modal in light mode */
+[data-theme="light"] .sync-modal {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+/* Footer links light mode */
+[data-theme="light"] footer {
+    border-top-color: var(--border);
+    color: var(--text-secondary);
+}
+
+/* Card image background in light mode */
+[data-theme="light"] .card-item img {
+    background: var(--bg-hover);
+}
+
+/* Modal backdrop in light mode */
+[data-theme="light"] .modal {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+/* Body background uses var(--bg-darker) — already set in main body rule */
 
 body {
     font-family: 'Outfit', system-ui, sans-serif;

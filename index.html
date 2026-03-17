@@ -8,6 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Apply saved theme before paint to avoid flash -->
+    <script>
+        (function() {
+            var t = localStorage.getItem('kodem_theme');
+            if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        })();
+    </script>
     <!-- SEO -->
     <meta name="description" content="Kódem TCG Companion — Base de datos de 609 cartas, constructor de mazos, tracker de colección y mapa de sinergias para el juego de cartas coleccionable mexicano.">
     <meta name="keywords" content="Kódem, TCG, cartas coleccionables, deck builder, Adendei, juego de mesa, México">
@@ -19,7 +26,10 @@
 </head>
 <body>
     <header>
-        <h1>🎴 Kódem TCG Companion</h1>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem">
+            <h1 style="margin-bottom:0">🎴 Kódem TCG Companion</h1>
+            <button id="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro/oscuro">🌙</button>
+        </div>
         <nav>
             <button class="nav-btn active" data-view="browser">Explorar Cartas</button>
             <button class="nav-btn" data-view="collection">Mi Colección</button>
