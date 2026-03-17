@@ -1002,6 +1002,18 @@ function renderCollection() {
 
     // Sort
     cards = sortCollectionCards(cards, sort);
+}
+
+function sortCollectionCards(cards, sort) {
+    const copy = [...cards];
+    switch (sort) {
+        case 'name-az': return copy.sort((a, b) => (a.name || '').localeCompare(b.name || '', 'es'));
+        case 'name-za': return copy.sort((a, b) => (b.name || '').localeCompare(a.name || '', 'es'));
+        case 'energy': return copy.sort((a, b) => (a.energy || '').localeCompare(b.energy || ''));
+        case 'rarity': return copy.sort((a, b) => (a.rarity || '').localeCompare(b.rarity || ''));
+        case 'damage-desc': return copy.sort((a, b) => (b.damage || 0) - (a.damage || 0));
+        case 'set': default: return copy.sort((a, b) => (a.set || '').localeCompare(b.set || '') || (a.folio || '').localeCompare(b.folio || ''));
+    }
 
     const grid = document.getElementById('collection-grid');
     grid.innerHTML = cards.map(card => createCardElement(card)).join('');
