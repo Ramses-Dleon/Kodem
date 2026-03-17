@@ -428,22 +428,39 @@
                     <img id="modal-card-image" src="" alt="" />
                 </div>
                 <div class="modal-info">
+                    <!-- 1. Name + compact meta -->
                     <h2 id="modal-card-name"></h2>
                     <div class="modal-meta">
                         <span id="modal-card-folio"></span>
                         <span id="modal-card-set"></span>
                         <span id="modal-card-rarity"></span>
                     </div>
-                    <div class="modal-type">
-                        <strong>Tipo:</strong> <span id="modal-card-type"></span>
+
+                    <!-- 2. Action buttons (PRIORITY — no scroll needed) -->
+                    <div class="modal-actions">
+                        <button id="modal-toggle-owned" class="btn-primary"></button>
+                        <button id="modal-toggle-wanted" class="btn-want">🎯 Want List</button>
                     </div>
-                    <div class="modal-energy">
-                        <strong>Energía:</strong> <span id="modal-card-energy"></span>
+
+                    <!-- 3. Navigation -->
+                    <div class="modal-nav-container">
+                        <button id="modal-prev-btn" class="modal-nav-btn modal-nav-prev" title="Carta anterior (←)">← Anterior</button>
+                        <button id="modal-next-btn" class="modal-nav-btn modal-nav-next" title="Siguiente carta (→)">Siguiente →</button>
                     </div>
-                    <div class="modal-stats">
-                        <div><strong>Daño:</strong> <span id="modal-card-damage"></span></div>
-                        <div><strong>Rests:</strong> <span id="modal-card-rests"></span></div>
+
+                    <!-- 4. Game stats (compact) -->
+                    <div class="modal-game-stats">
+                        <div class="modal-stat-row">
+                            <span class="stat-chip"><strong>Tipo:</strong> <span id="modal-card-type"></span></span>
+                            <span class="stat-chip"><strong>Energía:</strong> <span id="modal-card-energy"></span></span>
+                        </div>
+                        <div class="modal-stat-row">
+                            <span class="stat-chip"><strong>Daño:</strong> <span id="modal-card-damage"></span></span>
+                            <span class="stat-chip"><strong>Rests:</strong> <span id="modal-card-rests"></span></span>
+                        </div>
                     </div>
+
+                    <!-- 5. Effect + Cost (game-relevant) -->
                     <div class="modal-effect">
                         <strong><span id="modal-effect-type"></span>:</strong>
                         <p id="modal-effect-text"></p>
@@ -451,22 +468,21 @@
                     <div class="modal-cost" id="modal-cost-section">
                         <strong>Costo:</strong> <span id="modal-cost-text"></span>
                     </div>
-                    <div class="modal-flavor">
-                        <em id="modal-flavor-text"></em>
-                    </div>
-                    <div class="modal-species">
-                        <strong>Especie:</strong> <span id="modal-species"></span>
-                    </div>
-                    <div class="modal-artist">
-                        <strong>Artista:</strong> <span id="modal-artist"></span>
-                    </div>
-                    <button id="modal-toggle-owned" class="btn-primary"></button>
+
+                    <!-- 6. Lore section (collapsible on mobile) -->
+                    <details class="modal-lore">
+                        <summary>🔍 Lore y detalles</summary>
+                        <div class="modal-flavor">
+                            <em id="modal-flavor-text"></em>
+                        </div>
+                        <div class="modal-species">
+                            <strong>Especie:</strong> <span id="modal-species"></span>
+                        </div>
+                        <div class="modal-artist">
+                            <strong>Artista:</strong> <span id="modal-artist"></span>
+                        </div>
+                    </details>
                 </div>
-            </div>
-            <!-- Prev / Next navigation -->
-            <div class="modal-nav-container">
-                <button id="modal-prev-btn" class="modal-nav-btn modal-nav-prev" title="Carta anterior (←)">← Anterior</button>
-                <button id="modal-next-btn" class="modal-nav-btn modal-nav-next" title="Siguiente carta (→)">Siguiente →</button>
             </div>
         </div>
     </div>
