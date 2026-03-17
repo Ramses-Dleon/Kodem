@@ -1,5 +1,16 @@
 [
   {
+    "folio": "009066Esp",
+    "name": "Nok",
+    "set": "UNIQUE",
+    "type": "Rava",
+    "energy": "Gélida",
+    "damage": 0,
+    "rests": 0,
+    "effect_type": "Pasiva / Costo",
+    "effect_text": "Pasiva: Increases attack 1 pt to Gelid-Adendei while this card is on the field. If an ally Gelid-Adendei attacked, heal 1 pt to an ally Gelid-Adendei. Costo: If this card is sent to Extinction, damage 1 pt to all Gelid-Adendei on field."
+  },
+  {
     "folio": "1DRMA-002",
     "name": "Ariam, Balance",
     "set": "1DRMA",
@@ -169,8 +180,8 @@
     "subtype": "Guardián",
     "energy": "Feral",
     "energy2": null,
-    "damage": null,
-    "rests": null,
+    "damage": 2,
+    "rests": 1,
     "effect_type": "Pasiva",
     "effect_text": "Si un Adendei aliado deja el campo, cura 1 pto. a los Adendei aliados.",
     "cost_text": null,
@@ -358,6 +369,17 @@
     "species": "Dasypus novemcinctus",
     "artist": "Desire OB",
     "rarity_variants": []
+  },
+  {
+    "folio": "Beta-001",
+    "name": "Ariam, Dualidad",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Pírica",
+    "damage": 4,
+    "rests": 2,
+    "effect_type": "Costo",
+    "effect_text": "Costo: Antes de atacar, esta carta quita 1 pto. de vida a los Adendei aliados."
   },
   {
     "folio": "CAMP-0001",
@@ -632,6 +654,17 @@
     "rarity_variants": []
   },
   {
+    "folio": "CDC-001",
+    "name": "Zaykan, Bosque Sombrío",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Lítica",
+    "damage": 1,
+    "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si 1 Adendei Abisal aliado o 1 Adendei Infectado aliado ataca, daña 1 pto. a 1 Adendei rival."
+  },
+  {
     "folio": "CMFT-001",
     "name": "Ariam, Nigromante",
     "set": "MFT",
@@ -691,7 +724,7 @@
     "set": "MFT",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -720,6 +753,17 @@
     "species": "Archaeopteryx",
     "artist": "edgaritual_re",
     "rarity_variants": []
+  },
+  {
+    "folio": "DMRTS-2022-01",
+    "name": "Ariam, Balance",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Átlica",
+    "damage": 1,
+    "rests": 0,
+    "effect_type": "Activa",
+    "effect_text": "Active: If this card attacks, heal 1 pt to an ally card."
   },
   {
     "folio": "DMUE-001",
@@ -825,7 +869,7 @@
     "set": "DOOC",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -845,7 +889,7 @@
     "set": "DOOC",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -1035,7 +1079,7 @@
     "set": "DOOC",
     "type": "Bio",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -1053,7 +1097,7 @@
     "set": "DOOC",
     "type": "Bio",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -1228,6 +1272,17 @@
     "rarity_variants": []
   },
   {
+    "folio": "Demo-001",
+    "name": "Mizthe, Cruce",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Feral",
+    "damage": 1,
+    "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si un Adendei en el campo es enviado a Extinción, esta carta se cura 1 pto."
+  },
+  {
     "folio": "EXPN-0001",
     "name": "Expulsión de Energía Í.C.A.R.O.",
     "set": "MINICONJ",
@@ -1393,14 +1448,14 @@
     "folio": "EXPO-0008",
     "name": "Zaykan, Bosque Sombrío",
     "set": "EXPO",
-    "type": null,
+    "type": "Adendei",
     "subtype": null,
-    "energy": null,
+    "energy": "Lítica",
     "energy2": null,
-    "damage": null,
-    "rests": null,
-    "effect_type": null,
-    "effect_text": null,
+    "damage": 1,
+    "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Si 1 Adendei Abisal aliado o 1 Adendei Infectado aliado ataca, daña 1 pto. a 1 Adendei rival.",
     "cost_text": null,
     "flavor_text": null,
     "species": null,
@@ -1738,6 +1793,8 @@
     "energy": "Feral",
     "damage": null,
     "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Envenena 1 carta y 1 Adendei rival (ambos en Zona Principal). Los Espectros aliados no envían cartas a Extinción para poseer hasta que este Protector esté disponible.",
     "set": "FYTE"
   },
   {
@@ -1747,6 +1804,8 @@
     "energy": "Húumica",
     "damage": 2,
     "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Si esta carta es vivificada, nombra 2 cartas; las cartas nombradas no podrán ser vivificadas por el resto del juego.",
     "set": "FYTE"
   },
   {
@@ -1756,6 +1815,8 @@
     "energy": "Gélida",
     "damage": 3,
     "rests": 2,
+    "effect_type": "Activa",
+    "effect_text": "Puedes actualizar todos los descansos de tus Adendei-Gélido aliados. Costo: Esta carta se daña 1 pto. para usar su Activa. Esta carta no puede ser curada ni protegida.",
     "set": "FYTE"
   },
   {
@@ -1765,6 +1826,8 @@
     "energy": "Húumica",
     "damage": 2,
     "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Los Adendei Catrín en tu Zona Principal, no pueden recibir daño por efectos o ser enviados a Extinción por efectos de cartas que no sean Adendei Catrín.",
     "set": "FYTE"
   },
   {
@@ -1774,6 +1837,8 @@
     "energy": "Húumica",
     "damage": 2,
     "rests": 1,
+    "effect_type": "Activa",
+    "effect_text": "Si esta carta ataca a 1 carta revelada en Zona Principal que no sea Adendei, daña 4 ptos. adicionales a 1 carta en Zona Principal. Costo: Esta carta no puede ser equipada, protegida o curada.",
     "set": "FYTE"
   },
   {
@@ -1783,6 +1848,8 @@
     "energy": "Átlica",
     "damage": 2,
     "rests": 2,
+    "effect_type": "Activa",
+    "effect_text": "Cura 3 ptos. a 1 Adendei Catrín aliado. Costo: Esta carta no puede ser curada ni protegida.",
     "set": "FYTE"
   },
   {
@@ -1792,6 +1859,8 @@
     "energy": "Pírica",
     "damage": 2,
     "rests": 2,
+    "effect_type": "Activa",
+    "effect_text": "Daña 1 pto. a 1 carta revelada en Zona Principal por cada carta Pírica o \"Ariam\" en tu Extinción. Costo: Solo puedes usar su Activa si las cartas en tu Zona Principal están quemadas, son Píricas o son \"Ariam\". Esta Activa no puede ser negada.",
     "set": "FYTE"
   },
   {
@@ -1801,6 +1870,8 @@
     "energy": "Átlica",
     "damage": 2,
     "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Si esta carta es tomada del Mazo, protege 1 carta en el campo hasta el fin del siguiente turno.",
     "set": "FYTE"
   },
   {
@@ -1810,6 +1881,8 @@
     "energy": "Gélida",
     "damage": 1,
     "rests": 2,
+    "effect_type": "Pasiva",
+    "effect_text": "Los Adendei Catrín reciben 1 descanso menos al atacar o usar Activa.",
     "set": "FYTE"
   },
   {
@@ -1819,6 +1892,8 @@
     "energy": "Húumica",
     "damage": 2,
     "rests": 2,
+    "effect_type": "Activa",
+    "effect_text": "Muestra las 3 cartas del tope del Mazo rival; estas no cambian de orden y se colocan de nuevo en el tope del Mazo. No se podrán usar efectos de cartas tomadas por el resto del turno.",
     "set": "FYTE"
   },
   {
@@ -1828,6 +1903,8 @@
     "energy": "Gélida",
     "damage": 2,
     "rests": 0,
+    "effect_type": "Activa",
+    "effect_text": "Puedes selecionar 1 Adendei aliado, ese Adendei se considerará Adendei Catrín mientras esté en el campo. Costo: Envía esta carta a Extinción para usar su Activa. Solo puedes usar esta Activa una vez por juego.",
     "set": "FYTE"
   },
   {
@@ -1837,6 +1914,8 @@
     "energy": "Húumica-Gélida-Átlica",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Si 1 Adendei-Húumico, Gélido o Átlico aliado ataca, daña adicionalmente 1 pto. por cada energía Húumica, Gélida o Átlica en su propia estadística.",
     "set": "FYTE"
   },
   {
@@ -1846,6 +1925,8 @@
     "energy": "Pírica-Lítica-Cháaktica",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Si 1 Adendei-Pírico, Lítico o Cháaktico aliado ataca, daña adicionalmente 1 pto. por cada energía Pírica, Lítica o Cháaktica en su propia estadística.",
     "set": "FYTE"
   },
   {
@@ -1855,6 +1936,8 @@
     "energy": "Átlica",
     "damage": 1,
     "rests": 2,
+    "effect_type": "Activa",
+    "effect_text": "Elige 1 de los siguientes efectos: -Protege 1 carta en el campo hasta que esta carta esté disponible. -Cura 2 ptos. a 1 carta aliada.",
     "set": "FYTE"
   },
   {
@@ -1864,6 +1947,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Si el efecto o ataque de 1 carta aliada es negado, puedes mostrar esta carta desde Zona de Equipo y enviar 1 carta en Zona Principal al fondo del Mazo; si la carta es aliada, puedes reemplazar con cualquier carta de tu Mazo. Costo: Solo puedes usar este efecto una vez por juego. Esta Pasiva no puede ser negada.",
     "set": "FYTE"
   },
   {
@@ -1873,6 +1958,8 @@
     "energy": "Húumica",
     "damage": 2,
     "rests": 0,
+    "effect_type": "Pasiva-Rápida",
+    "effect_text": "Si el rival usa 1 efecto de 1 carta tomada, coloca esa carta en la Zona Principal rival enviando 1 Adendei de la Zona Principal rival al fondo del Mazo. Costo: Solo puedes usar este efecto si esta carta está en Extinción y tu Protector está disponible. Tu Protector recibe 1 descanso al final del turno si usaste esta Pasiva.",
     "set": "FYTE"
   },
   {
@@ -1882,6 +1969,8 @@
     "energy": "Lítica",
     "damage": 1,
     "rests": 0,
+    "effect_type": "Activa",
+    "effect_text": "Envenena a 1 carta rival en Zona Principal. Costo: Debes tener 4 o más Adendei en Extinción para usar su Activa.",
     "set": "FYTE"
   },
   {
@@ -1891,6 +1980,8 @@
     "energy": "Átlica",
     "damage": 1,
     "rests": 0,
+    "effect_type": "Pasiva-Rápida",
+    "effect_text": "Si esta carta es enviada a Extinción, vivifica 1 Ixim de tu Extinción a la Zona de Equipo.",
     "set": "FYTE"
   },
   {
@@ -1900,6 +1991,8 @@
     "energy": "Feral",
     "damage": 2,
     "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Si esta carta es vivificada, equipa 1 Ixim o Rot de tu Zona de Equipos que no tenga un efecto de protección o negación a 1 Adendei aliado; ese equipo no podrá cambiar de lugar, regresar a Zona de Equipo o ser enviado a Extinción por el resto del juego. Costo: Si no puedes reemplazar con 1 Adendei compatible, envía el equipo y 1 Adendei de los tomados a Extinción.",
     "set": "FYTE"
   },
   {
@@ -1909,6 +2002,8 @@
     "energy": "Gélida",
     "damage": 4,
     "rests": 0,
+    "effect_type": null,
+    "effect_text": "Costo: Esta carta solo puede atacar si tus Adendei aliados están en descanso y son Adendei Catrín o Adendei-Gélido.",
     "set": "FYTE"
   },
   {
@@ -1918,6 +2013,8 @@
     "energy": "Cháaktica",
     "damage": 1,
     "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Los Adendei Catrín aliados con 2 ptos. o menos de daño podrán declarar ataque 2 veces en Batalla. Costo: Los Adendei Catrín aliados solo podrán usar su Activa y/o la de su Rot equipado una vez por turno. El segundo ataque no detona ninguna Pasiva aliada.",
     "set": "FYTE"
   },
   {
@@ -1927,6 +2024,8 @@
     "energy": "Pírica",
     "damage": 1,
     "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Los Adendei Catrín aliados con 1 pto. de daño pueden quemar 1 carta rival al atacar. Si 1 Adendei Catrín o Pírico es enviado a Extinción, daña 1 pto. a todas las cartas quemadas. Costo: Quema 1 carta aliada para quemar 1 carta rival por esta Pasiva.",
     "set": "FYTE"
   },
   {
@@ -2441,7 +2540,7 @@
     "subtype": null,
     "energy": "Cháaktica",
     "energy2": null,
-    "damage": null,
+    "damage": 2,
     "rests": 2,
     "effect_type": "Activa",
     "effect_text": "La carta atacada recibe 2 descansos.",
@@ -2693,8 +2792,8 @@
     "subtype": "Guardián",
     "energy": "Gélida",
     "energy2": null,
-    "damage": null,
-    "rests": null,
+    "damage": 1,
+    "rests": 1,
     "effect_type": "Pasiva",
     "effect_text": "Si esta carta fue atacada, una carta en el campo recibe 1 descanso.",
     "cost_text": null,
@@ -2819,8 +2918,8 @@
     "subtype": "Kósmico",
     "energy": "Gélida",
     "energy2": null,
-    "damage": null,
-    "rests": null,
+    "damage": 2,
+    "rests": 1,
     "effect_type": "Pasiva",
     "effect_text": "Si esta carta es revelada, una carta rival recibe 2 descansos. Esa carta tiene su pasiva negada hasta volver a estar disponible.",
     "cost_text": null,
@@ -3172,6 +3271,28 @@
     "rarity_variants": []
   },
   {
+    "folio": "IKMR-001",
+    "name": "Aki, Lava Veins",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Pírica",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: You can skip your turn before attacking and in your next turn, this card can attack 2 rival cards or attack with double damage to 1 rival card."
+  },
+  {
+    "folio": "IKRW-001",
+    "name": "Jane, Maneuver",
+    "set": "UNIQUE",
+    "type": "Protector",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Active: Heal all the life of the linked Adendei. If that Adendei is sent to Extinction, an ally Adendei scales 1 pt and heal 1 pt to all cards in your Main Zone."
+  },
+  {
     "folio": "ILRM-001",
     "name": "Adendei",
     "set": "ILRM",
@@ -3249,7 +3370,7 @@
     "set": "HOLY",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -3622,12 +3743,34 @@
     "_note": "Art print - no card data"
   },
   {
+    "folio": "KDMOLE-01-2022",
+    "name": "Ilith, Fuego Primo",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "Pírica",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
+  },
+  {
+    "folio": "KEXC-001",
+    "name": "Zaren, The Beginning of a Journey",
+    "set": "UNIQUE",
+    "type": "Protector",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Active: If there is not an ally Adendei with 6 life pts, heal to 6 pts all your ally Adendei."
+  },
+  {
     "folio": "KPRC-0001",
     "name": "Cretus, Portadora de Estrellas",
     "set": "KPRC",
     "type": "Rot",
     "subtype": null,
-    "energy": null,
+    "energy": "Pírica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -3645,7 +3788,7 @@
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Húumica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -3663,7 +3806,7 @@
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Húumica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -3681,7 +3824,7 @@
     "set": "KPRC",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Feral",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -3843,7 +3986,7 @@
     "set": "KPRC",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -3969,7 +4112,7 @@
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -3987,7 +4130,7 @@
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Gélida",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4023,7 +4166,7 @@
     "set": "KPRC",
     "type": "Adendei",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4077,7 +4220,7 @@
     "set": "KPRC",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4095,7 +4238,7 @@
     "set": "KPRC",
     "type": "Bio",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4149,7 +4292,7 @@
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4293,7 +4436,7 @@
     "set": "KPRC",
     "type": "Rot",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4347,7 +4490,7 @@
     "set": "KPRC",
     "type": "Bio",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4383,7 +4526,7 @@
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4475,7 +4618,7 @@
     "set": "KPRC",
     "type": "Bio",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4493,7 +4636,7 @@
     "set": "KPRC",
     "type": "Bio",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4511,7 +4654,7 @@
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4529,7 +4672,7 @@
     "set": "KPRC",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4565,7 +4708,7 @@
     "set": "KPRC",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4583,7 +4726,7 @@
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4619,7 +4762,7 @@
     "set": "KPRC",
     "type": "Rava",
     "subtype": null,
-    "energy": null,
+    "energy": "Gélida",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4655,7 +4798,7 @@
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4727,7 +4870,7 @@
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Húumica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4759,11 +4902,11 @@
   },
   {
     "folio": "KPRC-067",
-    "name": null,
+    "name": "Ariam, Axolospectre",
     "set": "KPRC",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Húumica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -4855,11 +4998,11 @@
     "subtype": null,
     "energy": "Húumica",
     "energy2": null,
-    "damage": null,
-    "rests": null,
+    "damage": 3,
+    "rests": 0,
     "effect_type": null,
     "effect_text": null,
-    "cost_text": null,
+    "cost_text": "Daña 1 pto. a todas las cartas en tu Zona Principal. Esta carta no puede atacar con daño aumentado ni escalar.",
     "flavor_text": null,
     "species": null,
     "artist": "cabritosentado",
@@ -5111,7 +5254,7 @@
     "set": "LGRO",
     "type": "Bio",
     "subtype": null,
-    "energy": null,
+    "energy": "Gélida",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -5253,7 +5396,7 @@
     "set": "LGRO",
     "type": "Rot",
     "subtype": null,
-    "energy": null,
+    "energy": "Lítica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -5313,7 +5456,7 @@
     "set": "LGRO",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Feral",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -5331,7 +5474,7 @@
     "set": "LGRO",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Átlica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -6574,8 +6717,8 @@
     "energy2": null,
     "damage": 3,
     "rests": 0,
-    "effect_type": null,
-    "effect_text": null,
+    "effect_type": "Costo",
+    "effect_text": "Daña 1 pto. a todas las cartas en tu Zona Principal. Esta carta no puede atacar con daño aumentado ni escalar.",
     "cost_text": "Costo: Daña 1 pto. a todas las cartas en tu Zona Principal. Esta carta no puede atacar con daño aumentado ni escalar.",
     "flavor_text": null,
     "species": "Ambystoma mexicanum",
@@ -6619,6 +6762,28 @@
     "rarity_variants": []
   },
   {
+    "folio": "MLHRCN-001",
+    "name": "Yogg, Darkness",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Átlica",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Quick-Activa",
+    "effect_text": "Quick-Active: If this card is attacked, abyss the attacking Adendei."
+  },
+  {
+    "folio": "MegaXP-01",
+    "name": "Ariam, Jugada Maestra",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Átlica",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Los Adendei aliados equipados no pueden ser dañados por efectos."
+  },
+  {
     "folio": "NAVD-001",
     "name": "Ariam, Regalo Navideño",
     "set": "HOLY",
@@ -6642,7 +6807,7 @@
     "set": "HOLY",
     "type": "Protector",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -6768,7 +6933,7 @@
     "set": "MINICONJ",
     "type": "Rot",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -6851,6 +7016,259 @@
     "species": "Architeuthis dux",
     "artist": "AbuShield",
     "rarity_variants": []
+  },
+  {
+    "folio": "PATREON-001",
+    "name": "Shugg, Serpiente Voraz",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
+  },
+  {
+    "folio": "PATREON-002",
+    "name": "Kópit, Protector Celeste",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
+  },
+  {
+    "folio": "PKMR-001",
+    "name": "Terna Tiniebla",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Feral",
+    "damage": 1,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: This card damages 1 additional pt for each Equine Adendei on the field."
+  },
+  {
+    "folio": "PKMR-002",
+    "name": "Jane, Sabotage",
+    "set": "UNIQUE",
+    "type": "Protector",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Active: Select a rival Adendei; that Adendei can't attack until this Protector is available. This Protector can only be linked with an Adendei in delay."
+  },
+  {
+    "folio": "PKMR-003",
+    "name": "New Humanity Citadel",
+    "set": "UNIQUE",
+    "type": "Bio",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: At the end of each turn, you can damage 1 pt to all equipped Adendei."
+  },
+  {
+    "folio": "PKMR-004",
+    "name": "Jokokan, Cortex Guardian",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Lítica",
+    "damage": 4,
+    "rests": 1,
+    "effect_type": "Costo",
+    "effect_text": "Cost: After attacking, this card descends 1 pt and it is damaged 1 pt."
+  },
+  {
+    "folio": "PKMR-005",
+    "name": "Ariam, Balance",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Átlica",
+    "damage": 1,
+    "rests": 0,
+    "effect_type": "Activa",
+    "effect_text": "Active: If this card attacks, heal 1 pt to an ally card."
+  },
+  {
+    "folio": "PKMR-006",
+    "name": "Sun and Moon",
+    "set": "UNIQUE",
+    "type": "Bio",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: Feral-Adendei damage 1 additional pt the turn they are revealed."
+  },
+  {
+    "folio": "PKMR-007",
+    "name": "The Fall of Hope",
+    "set": "UNIQUE",
+    "type": "Bio",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: At the end of rival turn, heal 1 pt to an equipped ally Adendei."
+  },
+  {
+    "folio": "PKMR-008",
+    "name": "Mizthe, Ancestral",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Feral",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: If an ally Adendei leaves the field, heal 1 pt to all ally Adendei."
+  },
+  {
+    "folio": "PKMR-009",
+    "name": "Naywa, Morpheic Power",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Pírica",
+    "damage": 1,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: This card can attack the rival Protector."
+  },
+  {
+    "folio": "PRKD-2022-01",
+    "name": "The Fall of Hope",
+    "set": "UNIQUE",
+    "type": "Bio",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: At the end of rival turn, heal 1 pt to an equipped ally Adendei."
+  },
+  {
+    "folio": "PRKD-2022-02",
+    "name": "Zaykan, Citadel",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Átlica",
+    "damage": 1,
+    "rests": 0,
+    "effect_type": "Activa",
+    "effect_text": "Active: If this card attacks, damage 1 additional pt to all other Atlic-Adendei on the field."
+  },
+  {
+    "folio": "PRKD-2022-03",
+    "name": "Zenam, Vigilance",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Cháaktica",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: If this card was abyssed in this turn, send to Extinction an Abyssal Adendei on the field."
+  },
+  {
+    "folio": "PRKD-2022-04",
+    "name": "Karus, Double Pinch",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Cháaktica",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: This card can attack 2 rival Adendei, adding 1 delay to this card at the end of the turn."
+  },
+  {
+    "folio": "PRKD-2022-05",
+    "name": "Yokoa Temple",
+    "set": "UNIQUE",
+    "type": "Bio",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: If a Protector is linked, damage 1 pt to a rival card."
+  },
+  {
+    "folio": "PRKD-2022-06",
+    "name": "Aki, Lava Veins",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Pírica",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Passive: You can skip your turn before attacking and in your next turn, this card can attack 2 rival cards or attack with double damage to 1 rival card."
+  },
+  {
+    "folio": "PRKD-2022-07",
+    "name": "Ambition",
+    "set": "UNIQUE",
+    "type": "Rot",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Active: The equipped card damages 1 additional pt to a rival Adendei."
+  },
+  {
+    "folio": "PRKD-2022-08",
+    "name": "Bóras, Kosmic Power",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Gélida",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Activa",
+    "effect_text": "Active: This card damages 1 additional pt for each rival card in delay."
+  },
+  {
+    "folio": "PRT-2022-06",
+    "name": "Zaykan, Luz Celeste",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Átlica",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Daña 1 pto. adicional si ataca a la carta frente a ella."
+  },
+  {
+    "folio": "PRT-2022-07",
+    "name": "Xilan, Calma",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Húumica",
+    "damage": 1,
+    "rests": 1,
+    "effect_type": "Activa / Costo",
+    "effect_text": "Activa: Esta carta puede escalar 1-5 ptos. una vez mientras esté en el campo. Costo: Para usar su Activa, daña los mismos ptos. escalados a todos los Adendei en tu campo."
+  },
+  {
+    "folio": "PromoSigned-001",
+    "name": "Nok",
+    "set": "UNIQUE",
+    "type": "Rava",
+    "energy": "Gélida",
+    "damage": 0,
+    "rests": 0,
+    "effect_type": "Pasiva / Costo",
+    "effect_text": "Passive: Increases attack 1 pt to Gelid-Adendei while this card is on the field. If an ally Gelid-Adendei attacked, heal 1 pt to an ally Gelid-Adendei. Cost: If this card is sent to Extinction, damage 1 pt to all Gelid-Adendei on field."
+  },
+  {
+    "folio": "RAGEK-001",
+    "name": "Ilith, Canto Sagrado",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
   },
   {
     "folio": "RAMI-001",
@@ -7467,6 +7885,17 @@
     "rarity_variants": []
   },
   {
+    "folio": "TC24-001",
+    "name": "Zaykan, Fractura",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Lítica",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Cambia de lugar 2 cartas en Zona Principal."
+  },
+  {
     "folio": "TCDE-001",
     "name": "Dragel, Redirección",
     "set": "TCDE",
@@ -7634,7 +8063,7 @@
     "set": "TCDE",
     "type": "Bio",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -7652,7 +8081,7 @@
     "set": "TCDE",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -7670,7 +8099,7 @@
     "set": "TCDE",
     "type": "Ixim",
     "subtype": null,
-    "energy": null,
+    "energy": "Demótica",
     "energy2": null,
     "damage": null,
     "rests": null,
@@ -7886,12 +8315,12 @@
     "set": "TCDE",
     "type": "Adendei",
     "subtype": "Titán",
-    "energy": "Chaáktica",
+    "energy": "Cháaktica",
     "energy2": null,
     "damage": 3,
     "rests": 1,
-    "effect_type": null,
-    "effect_text": null,
+    "effect_type": "Costo",
+    "effect_text": "Esta carta no puede atacar al Protector rival.",
     "cost_text": "Esta carta no puede atacar al Protector rival.",
     "flavor_text": null,
     "species": "Utahraptor",
@@ -7941,6 +8370,8 @@
     "energy": "Átlica",
     "damage": 2,
     "rests": 2,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si \"Consejo de Hielo\" está en el campo, esta carta puede atacar a todos los Adendei rivales.",
     "set": "TCOO"
   },
   {
@@ -7950,6 +8381,8 @@
     "energy": "Húumica",
     "damage": 4,
     "rests": 1,
+    "effect_type": null,
+    "effect_text": "Costo: Esta carta no puede escalar, ser curada ni protegida.",
     "set": "TCOO"
   },
   {
@@ -7959,6 +8392,8 @@
     "energy": "Pírica",
     "damage": 2,
     "rests": 2,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si 1 Adendei-Pírico Titán aliado es revelado, quema 1 carta en Zona Principal.",
     "set": "TCOO"
   },
   {
@@ -7968,6 +8403,8 @@
     "energy": "Átlica",
     "damage": 2,
     "rests": 1,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Regresa las estadísticas de todas las cartas en el campo a su valor original.",
     "set": "TCOO"
   },
   {
@@ -7977,6 +8414,8 @@
     "energy": "Demótica",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Devuelve las cartas en tu Zona Principal al fondo del Mazo. Costo: No puedes atacar, vincular ni usar otros efectos en el turno que usas esta Pasiva. Este efecto sólo se puede usar una vez por juego.",
     "set": "TCOO"
   },
   {
@@ -7986,6 +8425,8 @@
     "energy": "Cháaktica",
     "damage": 2,
     "rests": 2,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si 1 Adendei-Chaáktico Titán aliado es revelado, el efecto de ese Adendei se considera efecto rápido durante este turno.",
     "set": "TCOO"
   },
   {
@@ -7995,6 +8436,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Puedes copiar y usar la misma Activa y Costo de cualquier Adendei en el campo.",
     "set": "TCOO"
   },
   {
@@ -8004,6 +8447,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Equipa 2 Ixim de tu Extinción a Adendei aliados. Costo: Si al final de tu siguiente turno tienes 1 o más Ixim en tu Zona Principal, envía 1 de ellos a Extinción.",
     "set": "TCOO"
   },
   {
@@ -8013,6 +8458,8 @@
     "energy": "Pírica",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si esta carta daña y envía a Extinción a un Protector rival, ¡GANAS EL JUEGO!.",
     "set": "TCOO"
   },
   {
@@ -8022,6 +8469,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Daña 6 ptos. a 1 Adendei rival y daña 2 ptos. a 2 Adendei aliados.",
     "set": "TCOO"
   },
   {
@@ -8031,6 +8480,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Ninguna carta en el campo puede recibir 5 o más ptos. de daño por ataque o efecto en un solo turno.",
     "set": "TCOO"
   },
   {
@@ -8040,6 +8491,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Los Adendei con 3 o más ptos. de daño, dañan 1 pto. menos al atacar. Costo: Esta carta no puede ser enviada a Extinción. Los Adendei aliados sólo pueden ser curados por efectos de Adendei.",
     "set": "TCOO"
   },
   {
@@ -8049,6 +8502,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Los Adendei aliados con 1 pto. o menos de daño; aumentan 1 pto. de daño al atacar y, si tienen 0 descansos, reciben 1 descanso adicional al declarar ataque o Activa.",
     "set": "TCOO"
   },
   {
@@ -8058,6 +8513,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Selecciona 1 carta de tu rival. Esa carta tendrá su Pasiva negada mientras esté en el campo. Costo: Debes enviar esta carta a Extinción para usar su Pasiva.",
     "set": "TCOO"
   },
   {
@@ -8067,6 +8524,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si durante este turno 1 Adendei o Rava fue cambiado de la Zona Principal rival a tu Zona Principal, puedes mostrar esta carta desde la Zona de Equipo; daña 3 ptos. a 1 Adendei rival y regresa 1 carta en Zona Principal al fondo del Mazo. Costo: Sólo puedes usar este efecto si las cartas fueron cambiadas por efecto de 1 Adendei rival. Sólo puedes usar este efecto una vez por juego.",
     "set": "TCOO"
   },
   {
@@ -8076,6 +8535,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: El Adendei equipado está protegido de ataques y efectos rivales hasta el fin del siguiente turno en que esta carta es equipada.",
     "set": "TCOO"
   },
   {
@@ -8085,6 +8546,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Quema 1 carta y daña 1 pto. a todas las cartas rivales quemadas. El Adendei equipado puede atacar con 1 pto. de daño adicional. Costo: Esta carta sólo puede ser equipada a un Adendei \"Draxes\".",
     "set": "TCOO"
   },
   {
@@ -8094,6 +8557,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Daña 2 ptos. a una carta en Zona Principal. Costo: Esta Activa sólo puede ser usada si la carta equipada tiene 1 pto. o menos daño.",
     "set": "TCOO"
   },
   {
@@ -8103,6 +8568,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Activa-Rápida",
+    "effect_text": "Activa-Rápida: Si 1 Adendei-Pírico aliado es atacado, quema a 1 Adendei rival. Costo: Esta carta sólo puede ser equipada a 1 Adendei-Pírico.",
     "set": "TCOO"
   },
   {
@@ -8112,6 +8579,8 @@
     "energy": "Átlica",
     "damage": 2,
     "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si 1 Adendei-Átlico aliado es revelado, cura 1 pto. a todos tus Adendei en tu Zona Principal.",
     "set": "TCOO"
   },
   {
@@ -8121,6 +8590,8 @@
     "energy": "Átlica",
     "damage": 1,
     "rests": 1,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Cura 3 ptos. a 1 Adendei-Átlico Titán aliado.",
     "set": "TCOO"
   },
   {
@@ -8508,6 +8979,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si todas las cartas aliadas están disponibles, la carta equipada puede atacar con doble daño a 1 carta en Zona Principal. Costo: Si esta Pasiva fue usada, la carta equipada recibe 1 descanso adicional en Fin de Turno.",
     "set": "TCOO"
   },
   {
@@ -8517,6 +8990,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si 1 Adendei aliado fue dañado con 4 o más ptos., cura 2 ptos. a 1 Adendei aliado.",
     "set": "TCOO"
   },
   {
@@ -8526,6 +9001,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Los Adendei-Cháaktico aliados no pueden ser dañados con 3 o más ptos. Costo: Esta carta sólo puede ser equipada a Adendei-Cháaktico.",
     "set": "TCOO"
   },
   {
@@ -8535,6 +9012,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Quema 1 carta y regresa 1 equipo en el campo a la Zona de Equipo.",
     "set": "TCOO"
   },
   {
@@ -8544,6 +9023,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Puedes enviar esta carta a Extinción y regresa 1 Bio o Protector de Extinción a su respectiva Zona. Costo: Sólo puedes usar esta Activa una vez por juego.",
     "set": "TCOO"
   },
   {
@@ -8553,6 +9034,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": "Activa-Rápida",
+    "effect_text": "Activa-Rápida: Todas las cartas rivales reciben 1 descanso. Costo: Envía la carta equipada a Extinción y regresa este Rot a la Zona de Equipo para usar este efecto. Tu Protector debe estar disponible para usar este efecto y recibe 3 descansos en Fin de Turno.",
     "set": "TCOO"
   },
   {
@@ -8562,6 +9045,8 @@
     "energy": "Cháaktica-Átlica",
     "damage": 1,
     "rests": 0,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Si hay 1 Adendei abismado y 1 Adendei-Átlico aliados en Zona Principal, esta carta puede dañar 3 ptos. adicionales. Costo: Si esta carta usó su Activa, recibe 2 descansos en Fin de Turno.",
     "set": "TCOO"
   },
   {
@@ -8571,6 +9056,8 @@
     "energy": "Demótica",
     "damage": 1,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Coloca cualquier Adendei Abisal de tu Mazo o tu Extinción en lugar de esta carta. Costo: Envía esta carta a Extinción para usar su Pasiva.",
     "set": "TCOO"
   },
   {
@@ -8580,6 +9067,8 @@
     "energy": "Feral",
     "damage": 1,
     "rests": 1,
+    "effect_type": "Activa-Rápida",
+    "effect_text": "Activa-Rápida: Coloca 1 Adendei-Feral boca abajo.",
     "set": "TCOO"
   },
   {
@@ -8589,6 +9078,8 @@
     "energy": "Pírica",
     "damage": 1,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si tu Bio es enviado a Extinción, daña 1 pto. a 1 carta rival en Zona Principal por cada Adendei Abisal en tu Extinción.",
     "set": "TCOO"
   },
   {
@@ -8598,6 +9089,8 @@
     "energy": "Átlica",
     "damage": 2,
     "rests": 1,
+    "effect_type": "Pasiva-Rápida",
+    "effect_text": "Pasiva-Rápida: Si esta carta es revelada, abisma 1 Adendei en Zona Principal.",
     "set": "TCOO"
   },
   {
@@ -8607,6 +9100,8 @@
     "energy": "Átlica",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Los Adendei-Átlico aliados no pueden recibir marcas ni daño por efecto. Si 1 Adendei-Átlico aliado ataca, cura 1 pto. a 1 carta aliada.",
     "set": "TCOO"
   },
   {
@@ -8616,6 +9111,8 @@
     "energy": "Pírica",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Los Adendei rivales no podrán remover la marca de quemadura al ser curados. Los Adendei-Pírico aliados dañan 1 pto. adicional si atacan a cartas quemadas.",
     "set": "TCOO"
   },
   {
@@ -8625,6 +9122,8 @@
     "energy": "Gélida",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Los Adendei rivales reciben 1 descanso adicional al atacar o usar Activa por primera vez después de que esta carta es revelada. Los Adendei-Gélido aliados dañan 1 pto. adicional si atacan a 1 carta en descanso.",
     "set": "TCOO"
   },
   {
@@ -8634,6 +9133,8 @@
     "energy": "Lítica",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Aumenta 1 pto. de daño a los Adendei-Lítico. Si 1 Adendei-Lítico aliado atacó, cura 1 pto. a 1 Adendei-Lítico aliado. Costo: Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Lítico en el campo.",
     "set": "TCOO"
   },
   {
@@ -8643,6 +9144,8 @@
     "energy": "Húumica",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Aumenta 1 pto. de daño a los Adendei-Húumico. Si 1 Adendei-Húumico aliado atacó, cura 1 pto. a 1 Adendei-Húumico aliado. Costo: Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Húumico en el campo.",
     "set": "TCOO"
   },
   {
@@ -8652,6 +9155,8 @@
     "energy": "Cháaktica",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Aumenta 1 pto. de daño a los Adendei-Cháaktico. Si 1 Adendei-Cháaktico aliado atacó, cura 1 pto. a 1 Adendei-Cháaktico aliado. Costo: Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Cháaktico en el campo.",
     "set": "TCOO"
   },
   {
@@ -8661,6 +9166,8 @@
     "energy": "Demótica",
     "damage": 0,
     "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Revela 1 carta de tu Mazo y colócala fuera del juego. Si tu Protector está disponible, puedes regresar 1 Adendei en tu Zona Principal al fondo de tu Mazo y colocar la carta fuera del juego en su lugar con 6 ptos. de vida (aún si esta carta ya no está en el campo). Costo: Tu Protector recibe 3 descansos y regresa esta carta al fondo del Mazo para usar su Pasiva.",
     "set": "TCOO"
   },
   {
@@ -8670,6 +9177,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": null,
+    "effect_text": null,
     "set": "TCOO"
   },
   {
@@ -8679,6 +9188,8 @@
     "energy": null,
     "damage": null,
     "rests": null,
+    "effect_type": null,
+    "effect_text": null,
     "set": "TCOO"
   },
   {
@@ -8688,7 +9199,119 @@
     "energy": "Pírica",
     "damage": 2,
     "rests": 1,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Envía 1 carta de tu Zona de Equipo a Extinción para dañar 6 ptos. a 1 Adendei rival.",
     "set": "TCOO"
+  },
+  {
+    "folio": "TDMR-KDM",
+    "name": "Ariam, Modo Catrín",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Pírica",
+    "damage": 4,
+    "rests": 2,
+    "effect_type": "Costo",
+    "effect_text": "Costo: Antes de atacar, daña 1 pto. a los Adendei aliados."
+  },
+  {
+    "folio": "TKD-2022-001",
+    "name": "1st Place",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
+  },
+  {
+    "folio": "TKD-2022-002",
+    "name": "1st Place",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
+  },
+  {
+    "folio": "TKD-2022-003",
+    "name": "1st Place",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
+  },
+  {
+    "folio": "TKD-2022-007",
+    "name": "1st Place",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
+  },
+  {
+    "folio": "TKD-2022-008",
+    "name": "1st Place",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
+  },
+  {
+    "folio": "TKD-2022-1ST",
+    "name": "1st Place",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
+  },
+  {
+    "folio": "TKD-2022-2ND",
+    "name": "2nd Place",
+    "set": "UNIQUE",
+    "type": "Token",
+    "energy": "",
+    "damage": null,
+    "rests": null,
+    "effect_type": "",
+    "effect_text": ""
+  },
+  {
+    "folio": "TalentLand-001",
+    "name": "Ariam, Carga Pírica",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Pírica",
+    "damage": 2,
+    "rests": 0,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Si esta carta ataca, la carta atacada no puede ser curada hasta el final de tu siguiente turno."
+  },
+  {
+    "folio": "TheGatheringMizthe",
+    "name": "Mizthe, Ancestral",
+    "set": "UNIQUE",
+    "type": "Adendei",
+    "energy": "Feral",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si un Adendei aliado deja el campo, cura 1 pto. a los Adendei aliados."
   },
   {
     "folio": "XPIX-001",
