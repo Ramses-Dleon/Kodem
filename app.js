@@ -7,6 +7,99 @@ let currentDeck = null;
 let setAliases = {}; // { alias: canonicalCode } e.g. { "TRWA": "LGRO" }
 let setMetadata = []; // Full set info from set-aliases.json
 
+// ==================== UI UTILITIES ====================
+
+/**
+ * Debounce — waits `waitMs` after the last call before executing fn.
+ */
+function debounce(fn, waitMs = 300) {
+    let timer;
+    return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(this, args), waitMs);
+    };
+}
+
+/**
+ * Show a non-blocking toast notification.
+ * @param {string} message
+ * @param {'success'|'error'|'info'|''} type
+ * @param {number} durationMs
+ */
+function showToast(message, type = '', durationMs = 3000) {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    const toast = document.createElement('div');
+    toast.className = `toast${type ? ' ' + type : ''}`;
+    toast.textContent = message;
+    container.appendChild(toast);
+
+    // Trigger slide-in transition on next frame
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => toast.classList.add('show'));
+    });
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+        toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+    }, durationMs);
+}
+
+/**
+ * Show a promise-based confirm dialog.
+ * Resolves to true (confirmed) or false (cancelled).
+ */
+function showConfirm(message) {
+    return new Promise((resolve) => {
+        const overlay = document.createElement('div');
+        overlay.className = 'confirm-dialog-overlay';
+        overlay.innerHTML = `
+            <div class="confirm-dialog" role="alertdialog" aria-modal="true">
+                <p>${message}</p>
+                <div class="confirm-dialog-actions">
+                    <button class="btn-danger" id="confirm-yes">Confirmar</button>
+                    <button class="btn-secondary" id="confirm-no">Cancelar</button>
+                </div>
+            </div>`;
+        document.body.appendChild(overlay);
+
+        const cleanup = (result) => { overlay.remove(); resolve(result); };
+        overlay.querySelector('#confirm-yes').addEventListener('click', () => cleanup(true));
+        overlay.querySelector('#confirm-no').addEventListener('click', () => cleanup(false));
+        overlay.querySelector('#confirm-no').focus();
+    });
+}
+
+/**
+ * Show a promise-based choice dialog with named options.
+ * Resolves to the chosen option key, or null if no option selected.
+ * @param {string} message
+ * @param {Array<{label:string, key:string, className:string}>} options
+ */
+function showChoice(message, options) {
+    return new Promise((resolve) => {
+        const overlay = document.createElement('div');
+        overlay.className = 'confirm-dialog-overlay';
+        const btns = options.map(o =>
+            `<button class="${o.className}" data-key="${o.key}">${o.label}</button>`
+        ).join('');
+        overlay.innerHTML = `
+            <div class="confirm-dialog" role="alertdialog" aria-modal="true">
+                <p>${message}</p>
+                <div class="confirm-dialog-actions">${btns}</div>
+            </div>`;
+        document.body.appendChild(overlay);
+
+        overlay.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                overlay.remove();
+                resolve(btn.dataset.key);
+            });
+        });
+        overlay.querySelector('button').focus();
+    });
+}
+
 // ==================== INITIALIZATION ====================
 async function init() {
     // Load set aliases first
@@ -127,7 +220,7 @@ function importCollection() {
         const file = e.target.files[0];
         if (!file) return;
         const reader = new FileReader();
-        reader.onload = (ev) => {
+        reader.onload = async (ev) => {
             try {
                 const data = JSON.parse(ev.target.result);
                 let cards = [];
@@ -137,13 +230,18 @@ function importCollection() {
                     cards = data.cards;
                 }
                 if (cards.length === 0) {
-                    alert('No se encontraron cartas en el archivo');
+                    showToast('No se encontraron cartas en el archivo', 'error');
                     return;
                 }
-                const mode = confirm(
-                    `Se encontraron ${cards.length} cartas.\n\nOK = Reemplazar colección\nCancelar = Agregar a existente`
-                ) ? 'replace' : 'merge';
-                
+                const mode = await showChoice(
+                    `Se encontraron ${cards.length} cartas. ¿Qué deseas hacer?`,
+                    [
+                        { label: '🔄 Reemplazar colección', key: 'replace', className: 'btn-danger' },
+                        { label: '➕ Agregar a existente',  key: 'merge',   className: 'btn-primary' },
+                    ]
+                );
+                if (!mode) return;
+
                 // Resolve aliases (e.g. TRWA-042 → LGRO-042)
                 const resolvedCards = cards.map(c => resolveFolio(c));
                 if (mode === 'replace') {
@@ -153,9 +251,9 @@ function importCollection() {
                 }
                 saveCollection();
                 renderCollection();
-                alert(`Colección actualizada: ${collection.size} cartas`);
+                showToast(`Colección actualizada: ${collection.size} cartas ✅`, 'success');
             } catch (err) {
-                alert('Error leyendo archivo: ' + err.message);
+                showToast('Error leyendo archivo: ' + err.message, 'error');
             }
         };
         reader.readAsText(file);
@@ -184,19 +282,38 @@ function setupEventListeners() {
         });
     });
 
-    // Browser filters
-    document.getElementById('search-input').addEventListener('input', applyBrowserFilters);
+    // Browser filters — debounce text input, instant on selects
+    document.getElementById('search-input').addEventListener('input', debounce(applyBrowserFilters, 300));
     document.getElementById('filter-set').addEventListener('change', applyBrowserFilters);
     document.getElementById('filter-type').addEventListener('change', applyBrowserFilters);
     document.getElementById('filter-energy').addEventListener('change', applyBrowserFilters);
     document.getElementById('sort-by').addEventListener('change', applyBrowserFilters);
 
-    // Collection filters
-    document.getElementById('collection-search').addEventListener('input', renderCollection);
+    // Collection filters — debounce text input
+    document.getElementById('collection-search').addEventListener('input', debounce(renderCollection, 300));
     document.getElementById('collection-filter').addEventListener('change', renderCollection);
     document.getElementById('clear-collection').addEventListener('click', clearCollection);
     document.getElementById('import-collection').addEventListener('click', importCollection);
     document.getElementById('export-collection').addEventListener('click', exportCollection);
+
+    // Dashboard toggle (Fix 4)
+    const toggleDashBtn = document.getElementById('toggle-dashboard');
+    if (toggleDashBtn) {
+        // Restore saved state
+        const savedHidden = localStorage.getItem('kodem_dashboard_hidden') === 'true';
+        const dash = document.getElementById('collection-dashboard');
+        if (savedHidden && dash) {
+            dash.style.display = 'none';
+            toggleDashBtn.textContent = '📊 Ver Dashboard';
+        }
+        toggleDashBtn.addEventListener('click', () => {
+            const dashEl = document.getElementById('collection-dashboard');
+            const isHidden = dashEl.style.display === 'none';
+            dashEl.style.display = isHidden ? '' : 'none';
+            toggleDashBtn.textContent = isHidden ? '📊 Ocultar Dashboard' : '📊 Ver Dashboard';
+            localStorage.setItem('kodem_dashboard_hidden', !isHidden);
+        });
+    }
 
     // Deck builder
     document.getElementById('new-deck-btn').addEventListener('click', createNewDeck);
@@ -204,7 +321,7 @@ function setupEventListeners() {
     document.getElementById('export-deck-btn').addEventListener('click', exportDeck);
     document.getElementById('delete-deck-btn').addEventListener('click', deleteCurrentDeck);
     document.getElementById('deck-name').addEventListener('input', updateDeckName);
-    document.getElementById('deck-search').addEventListener('input', renderDeckPool);
+    document.getElementById('deck-search').addEventListener('input', debounce(renderDeckPool, 300));
     document.getElementById('deck-filter-energy').addEventListener('change', renderDeckPool);
     document.getElementById('deck-filter-type').addEventListener('change', renderDeckPool);
 
@@ -374,11 +491,13 @@ function toggleOwned(folio) {
     saveCollection();
 }
 
-function clearCollection() {
-    if (confirm('¿Estás seguro de que quieres limpiar toda tu colección?')) {
+async function clearCollection() {
+    const confirmed = await showConfirm('¿Estás seguro de que quieres limpiar toda tu colección?');
+    if (confirmed) {
         collection.clear();
         saveCollection();
         renderCollection();
+        showToast('Colección limpiada 🗑️', 'info');
     }
 }
 
@@ -430,23 +549,26 @@ function createNewDeck() {
 
 function saveCurrentDeck() {
     if (!currentDeck) {
-        alert('No hay mazo seleccionado');
+        showToast('No hay mazo seleccionado', 'error');
         return;
     }
 
     saveDecks();
-    alert('Mazo guardado correctamente');
+    showToast('Mazo guardado correctamente ✅', 'success');
     renderDeckList();
 }
 
-function deleteCurrentDeck() {
+async function deleteCurrentDeck() {
     if (!currentDeck) return;
 
-    if (confirm(`¿Eliminar el mazo "${decks[currentDeck].name}"?`)) {
+    const confirmed = await showConfirm(`¿Eliminar el mazo "${decks[currentDeck].name}"?`);
+    if (confirmed) {
+        const name = decks[currentDeck].name;
         delete decks[currentDeck];
         currentDeck = null;
         saveDecks();
         renderDeckBuilder();
+        showToast(`Mazo "${name}" eliminado`, 'info');
     }
 }
 
@@ -470,10 +592,9 @@ function exportDeck() {
 
     // Copy to clipboard
     navigator.clipboard.writeText(text).then(() => {
-        alert('Mazo copiado al portapapeles');
+        showToast('Mazo copiado al portapapeles 📋', 'success');
     }).catch(() => {
-        // Fallback: show in alert
-        prompt('Copia este texto:', text);
+        showToast('No se pudo copiar al portapapeles', 'error');
     });
 }
 
@@ -628,7 +749,7 @@ function updateValidationItem(id, count, min, max) {
 
 function addToDeck(folio) {
     if (!currentDeck) {
-        alert('Selecciona o crea un mazo primero');
+        showToast('Selecciona o crea un mazo primero', 'error');
         return;
     }
 
@@ -636,11 +757,13 @@ function addToDeck(folio) {
 
     // Check if already in deck
     if (deck.cards.includes(folio)) {
-        alert('Esta carta ya está en el mazo. Solo se permite 1 copia de cada carta.');
+        showToast('Esta carta ya está en el mazo. Solo se permite 1 copia de cada carta.', 'error');
         return;
     }
 
     deck.cards.push(folio);
+    const card = allCards.find(c => c.folio === folio);
+    if (card) showToast(`${card.name} añadida al mazo`, 'success', 1500);
     renderDeckWorkspace();
     renderDeckPool();
 }

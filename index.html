@@ -13,6 +13,7 @@
             <button class="nav-btn active" data-view="browser">Explorar Cartas</button>
             <button class="nav-btn" data-view="collection">Mi Colección</button>
             <button class="nav-btn" data-view="deck-builder">Constructor de Mazos</button>
+            <a href="sinergias.html" class="nav-btn">⚡ Sinergias</a>
         </nav>
     </header>
 
@@ -38,14 +39,14 @@
 
                 <select id="filter-energy">
                     <option value="">Todas las energías</option>
-                    <option value="Átlica">Átlica</option>
-                    <option value="Pírica">Pírica</option>
-                    <option value="Gélida">Gélida</option>
-                    <option value="Lítica">Lítica</option>
-                    <option value="Cháaktica">Cháaktica</option>
-                    <option value="Húumica">Húumica</option>
-                    <option value="Demótica">Demótica</option>
-                    <option value="Feral">Feral</option>
+                    <option value="Átlica">💧 Átlica</option>
+                    <option value="Pírica">🔥 Pírica</option>
+                    <option value="Gélida">🧊 Gélida</option>
+                    <option value="Lítica">🪨 Lítica</option>
+                    <option value="Cháaktica">⚡ Cháaktica</option>
+                    <option value="Húumica">🌀 Húumica</option>
+                    <option value="Demótica">🔮 Demótica</option>
+                    <option value="Feral">🐾 Feral</option>
                 </select>
 
                 <select id="sort-by">
@@ -78,6 +79,9 @@
                 <button id="export-collection" class="btn-secondary" title="Exportar JSON">📤 Exportar</button>
                 <button id="clear-collection" class="btn-danger">🗑️ Limpiar</button>
             </div>
+
+            <!-- ===== DASHBOARD TOGGLE ===== -->
+            <button id="toggle-dashboard" class="btn-secondary" style="margin-bottom:1rem">📊 Ocultar Dashboard</button>
 
             <!-- ===== COLLECTION DASHBOARD ===== -->
             <div id="collection-dashboard">
@@ -246,14 +250,14 @@
                         <input type="text" id="deck-search" placeholder="Buscar carta..." />
                         <select id="deck-filter-energy">
                             <option value="">Todas las energías</option>
-                            <option value="Átlica">Átlica</option>
-                            <option value="Pírica">Pírica</option>
-                            <option value="Gélida">Gélida</option>
-                            <option value="Lítica">Lítica</option>
-                            <option value="Cháaktica">Cháaktica</option>
-                            <option value="Húumica">Húumica</option>
-                            <option value="Demótica">Demótica</option>
-                            <option value="Feral">Feral</option>
+                            <option value="Átlica">💧 Átlica</option>
+                            <option value="Pírica">🔥 Pírica</option>
+                            <option value="Gélida">🧊 Gélida</option>
+                            <option value="Lítica">🪨 Lítica</option>
+                            <option value="Cháaktica">⚡ Cháaktica</option>
+                            <option value="Húumica">🌀 Húumica</option>
+                            <option value="Demótica">🔮 Demótica</option>
+                            <option value="Feral">🐾 Feral</option>
                         </select>
                         <select id="deck-filter-type">
                             <option value="">Todos los tipos</option>
@@ -318,6 +322,10 @@
         </div>
     </div>
 
+    <!-- Toast notification container -->
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Confirm/Choice modal (injected dynamically by JS) -->
     <script src="app.js"></script>
 </body>
 </html>
