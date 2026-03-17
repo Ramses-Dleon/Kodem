@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- SEO -->
+    <meta name="description" content="Kódem TCG Companion — Base de datos de 609 cartas, constructor de mazos, tracker de colección y mapa de sinergias para el juego de cartas coleccionable mexicano.">
+    <meta name="keywords" content="Kódem, TCG, cartas coleccionables, deck builder, Adendei, juego de mesa, México">
+    <meta property="og:title" content="Kódem TCG Companion">
+    <meta property="og:description" content="La primera y única base de datos completa, deck builder y collection tracker para Kódem TCG.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ramses-dleon.github.io/Kodem/">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
     <header>
@@ -201,6 +209,7 @@
                         <input type="text" id="deck-name" placeholder="Nombre del mazo" />
                         <div class="deck-actions">
                             <button id="save-deck-btn" class="btn-primary">Guardar</button>
+                            <button id="share-deck-btn" class="btn-secondary">🔗 Compartir</button>
                             <button id="export-deck-btn" class="btn-secondary">Exportar</button>
                             <button id="delete-deck-btn" class="btn-danger">Eliminar</button>
                         </div>
@@ -235,6 +244,38 @@
                         <div class="validation-item" id="val-total">
                             <span class="label">Total:</span>
                             <span class="count">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Deck Stats Summary Bar -->
+                    <div class="deck-stats-summary" id="deck-stats-summary">
+                        <div class="dss-item">
+                            <span class="dss-label">Cartas</span>
+                            <span class="dss-value" id="dss-total">0</span>
+                        </div>
+                        <div class="dss-item">
+                            <span class="dss-label">Daño prom.</span>
+                            <span class="dss-value" id="dss-avg-damage">—</span>
+                        </div>
+                        <div class="dss-item dss-energy-dots">
+                            <span class="dss-label">Energías</span>
+                            <div id="dss-energy-dots"></div>
+                        </div>
+                        <div class="dss-item">
+                            <span class="dss-label">Subtipo común</span>
+                            <span class="dss-value" id="dss-subtype">—</span>
+                        </div>
+                    </div>
+
+                    <!-- Energy Distribution Chart -->
+                    <div class="deck-charts" id="deck-charts">
+                        <div class="deck-chart-section">
+                            <h4 class="deck-chart-title">⚡ Distribución de Energía</h4>
+                            <div id="energy-chart-bars"></div>
+                        </div>
+                        <div class="deck-chart-section">
+                            <h4 class="deck-chart-title">⚔️ Distribución de Daño</h4>
+                            <div id="damage-histogram"></div>
                         </div>
                     </div>
 
@@ -310,6 +351,9 @@
     <div id="card-modal" class="modal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
+            <!-- Prev / Next navigation -->
+            <button id="modal-prev-btn" class="modal-nav-btn modal-nav-prev" title="Carta anterior (←)">&#8592;</button>
+            <button id="modal-next-btn" class="modal-nav-btn modal-nav-next" title="Siguiente carta (→)">&#8594;</button>
             <div class="modal-body">
                 <div class="modal-image">
                     <img id="modal-card-image" src="" alt="" />

@@ -4,15 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Mapa de Sinergias — Kódem TCG</title>
+<!-- SEO -->
+<meta name="description" content="Mapa de Sinergias de Kódem TCG — Visualiza las relaciones y combos entre todas las energías: Átlica, Pírica, Gélida, Lítica, Cháaktica, Húumica, Demótica y Feral.">
+<meta name="keywords" content="Kódem, TCG, sinergias, mapa, energías, deck builder, cartas coleccionables, México">
+<meta property="og:title" content="Mapa de Sinergias — Kódem TCG">
+<meta property="og:description" content="Explora las sinergias y contadores entre energías del juego de cartas coleccionable Kódem TCG.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ramses-dleon.github.io/Kodem/sinergias.html">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0f0f0f;color:#e0e0e0;font-family:'Outfit',sans-serif;min-height:100vh;overflow-x:hidden}
-header{background:#1a1a1a;padding:12px 20px;display:flex;align-items:center;gap:16px;border-bottom:1px solid #333}
-header a{color:#f59e0b;text-decoration:none;font-size:14px}
-header h1{font-family:'Cinzel',serif;font-size:1.2rem;color:#fff}
-header small{color:#888;font-size:0.8rem}
+header{background:#1a1a1a;padding:12px 20px;display:flex;align-items:center;gap:16px;border-bottom:2px solid #f59e0b;flex-wrap:wrap}
+header h1{font-family:'Cinzel',serif;font-size:1.1rem;color:#fff;margin-right:auto}
+header nav{display:flex;gap:8px;flex-wrap:wrap}
+.nav-btn{background:#2a2a2a;color:#e0e0e0;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:'Cinzel',serif;font-size:0.8rem;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;transition:background .2s}
+.nav-btn:hover{background:#333}
+.nav-btn.active{background:#f59e0b;color:#000;font-weight:700}
 .layout{display:flex;flex-direction:column;align-items:center;padding:16px}
 .hint{text-align:center;color:#888;font-size:0.8rem;margin-bottom:12px;background:#1a1a1a;padding:6px 16px;border-radius:20px;display:inline-block}
 .map-wrap{position:relative;width:100%;max-width:900px;background:#141414;border-radius:16px;border:1px solid #2a2a2a}
@@ -64,8 +74,13 @@ header small{color:#888;font-size:0.8rem}
 </head>
 <body>
 <header>
-  <a href="index.html">← Volver</a>
-  <div><h1>⚡ Mapa de Sinergias</h1><small>Kódem TCG — 8 Energías</small></div>
+  <h1>🎴 Kódem TCG Companion</h1>
+  <nav>
+    <a href="index.html" class="nav-btn">Explorar Cartas</a>
+    <a href="index.html#collection" class="nav-btn">Mi Colección</a>
+    <a href="index.html#deck-builder" class="nav-btn">Constructor de Mazos</a>
+    <a href="sinergias.html" class="nav-btn active">⚡ Sinergias</a>
+  </nav>
 </header>
 
 <div class="layout">
