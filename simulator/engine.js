@@ -34,6 +34,12 @@ function clone(obj) {
 
 function makeFieldCard(folio, pos) {
   const cardData = getCard(folio);
+  // Safely parse damage — some cards have damage:"?" (Espectro) or null (Bio)
+  function safeDamage(val) {
+    if (val === null || val === undefined) return 0;
+    const n = Number(val);
+    return isNaN(n) ? 0 : n;
+  }
   return {
     pos,
     folio,
@@ -47,7 +53,7 @@ function makeFieldCard(folio, pos) {
     attackedThisTurn: false,
     usedActivaThisTurn: false,
     startsRest: 0,        // rests at start of turn (for end-of-turn update)
-    _damage: cardData ? (cardData.damage || 0) : 0,
+    _damage: cardData ? safeDamage(cardData.damage) : 0,
     _rests:  cardData ? (cardData.rests  || 0) : 0,
     _type:   cardData ? cardData.type : 'Adendei',
     _name:   cardData ? cardData.name : folio,
@@ -100,6 +106,54 @@ function checkVictory(state) {
 
 function opponent(playerKey) {
   return playerKey === 'p1' ? 'p2' : 'p1';
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SWEEP DEAD — remove 0-HP cards from field, send to extinction, trigger replacement
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Scan field for any card with hp <= 0. For each:
+ *  - Add folio (and equips) to extinction
+ *  - Remove from field
+ *  - Trigger replacement
+ * Also checks victory after each death.
+ * Returns { newState, events }.
+ */
+function sweepDead(state, playerKey) {
+  let s = clone(state);
+  const events = [];
+
+  // Process both players each sweep call (effects can damage either side)
+  for (const pk of [playerKey, opponent(playerKey)]) {
+    let changed = true;
+    while (changed) {
+      changed = false;
+      const dead = s[pk].field.filter(fc => fc.hp <= 0);
+      for (const fc of dead) {
+        changed = true;
+        // Add to extinction (folio + equip folios)
+        s[pk].extinction = [...s[pk].extinction, fc.folio];
+        for (const eq of fc.equips) {
+          s[pk].extinction = [...s[pk].extinction, eq.folio];
+        }
+        events.push(`DEATH: ${pk}:${fc.pos} (${fc.folio}) → extinction (swept)`);
+        // Trigger replacement (removes dead card from field internally)
+        const repResult = triggerReplacement(s, pk, fc.pos);
+        s = repResult.newState;
+        events.push(...repResult.events);
+        // Check victory after each death
+        const vic = checkVictory(s);
+        if (vic) {
+          s.winner = vic;
+          events.push(`VICTORY: ${vic} wins!`);
+          return { newState: s, events };
+        }
+      }
+    }
+  }
+
+  return { newState: s, events };
 }
 
 // Compute effective damage for a field card (base + bonuses)
@@ -265,6 +319,74 @@ function resolveEffect(state, effectText, sourceKey, sourcePos, opts) {
       const idx = s[oppKey].field.findIndex(fc => fc.pos === t.pos);
       s[oppKey].field[idx] = { ...s[oppKey].field[idx], marks: [...s[oppKey].field[idx].marks, 'envenenar'] };
       events.push(`EFFECT: Poison mark → ${oppKey}:${t.pos}`);
+    }
+    return { newState: s, events };
+  }
+
+  // ── "el ataque de esta carta no puede ser negado" → flag unnegatable ──
+  if (text.includes('no puede ser negado')) {
+    // Find source card and flag it
+    const srcIdx = s[sourceKey].field.findIndex(fc => fc.pos === sourcePos);
+    if (srcIdx !== -1) {
+      s[sourceKey].field[srcIdx] = { ...s[sourceKey].field[srcIdx], unnegatable: true };
+      events.push(`EFFECT: ${sourceKey}:${sourcePos} attack is unnegatable`);
+    }
+    return { newState: s, events };
+  }
+
+  // ── "si [X] adendei [energy] aliado atacó" → conditional trigger (Rhymir pattern) ──
+  const adendeiAttackedMatch = text.match(/si\s+(?:\d+\s+)?adendei\s+(?:\w+\s+)?aliado\s+atac[oó]/i);
+  if (adendeiAttackedMatch) {
+    // Check if an allied Adendei attacked this turn
+    const allied = s[sourceKey];
+    const attacked = allied.field.some(fc => fc.attackedThisTurn && fc.hp > 0);
+    if (attacked) {
+      // The condition is met — apply any bonus damage or effect in remaining text
+      const bonusDmg = text.match(/\+(\d+)\s+pto[^s]/);
+      if (bonusDmg) {
+        const srcIdx = s[sourceKey].field.findIndex(fc => fc.pos === sourcePos);
+        if (srcIdx !== -1) {
+          s[sourceKey].field[srcIdx]._damageBonus = (s[sourceKey].field[srcIdx]._damageBonus || 0) + parseInt(bonusDmg[1]);
+          events.push(`EFFECT: Rhymir conditional +${bonusDmg[1]} damage (allied attacked)`);
+        }
+      }
+    }
+    return { newState: s, events };
+  }
+
+  // ── "si la carta equipada atacó a una carta en descanso" → Embestida bonus ──
+  if (text.includes('carta equipada atacó') && text.includes('descanso')) {
+    // This is handled at equip-time in the attack block; log as resolved here
+    events.push(`EFFECT: Embestida conditional — evaluated at attack time`);
+    return { newState: s, events };
+  }
+
+  // ── "si esta carta es enviada a extinción" → register death trigger ──
+  if (text.includes('enviada a extinción') || text.includes('enviada a extincion')) {
+    // Register as a deathTrigger on the source card so Post phase can fire it
+    const srcIdx = s[sourceKey].field.findIndex(fc => fc.pos === sourcePos);
+    if (srcIdx !== -1) {
+      s[sourceKey].field[srcIdx] = {
+        ...s[sourceKey].field[srcIdx],
+        deathTrigger: effectText,
+      };
+      events.push(`EFFECT: Death trigger registered on ${sourceKey}:${sourcePos}`);
+    }
+    return { newState: s, events };
+  }
+
+  // ── "protector rival recibe X descanso" ──
+  const protRestMatch = text.match(/protector\s+rival\s+recibe\s+(\d+)\s+descanso/);
+  if (protRestMatch) {
+    const rests = parseInt(protRestMatch[1]);
+    if (s[oppKey].protector.hp > 0) {
+      const newR = Math.min(PROTECTOR_RESTS, s[oppKey].protector.rests + rests);
+      s[oppKey].protector = {
+        ...s[oppKey].protector,
+        rests: newR,
+        available: newR === 0,
+      };
+      events.push(`EFFECT: ${oppKey} protector +${rests} rests`);
     }
     return { newState: s, events };
   }
@@ -671,7 +793,7 @@ function applyAction(state, action, playerKey) {
 
       // Apply quemar mark damage (1 dmg when attacks)
       if (attacker.marks.includes('quemar')) {
-        const newHp = Math.max(0, attacker.hp - 1);
+        const newHp = Math.max(0, player.field[attackerIdx].hp - 1);
         player.field[attackerIdx] = { ...player.field[attackerIdx], hp: newHp };
         events.push(`MARK_QUEMAR: ${playerKey}:${action.attackerPos} takes 1 self-damage`);
       }
@@ -719,27 +841,23 @@ function applyAction(state, action, playerKey) {
           let newHp = Math.max(0, target.hp - damage);
           opp.field[targetIdx] = { ...target, hp: newHp };
           events.push(`ATTACK: ${playerKey}:${action.attackerPos}(${attacker._name}) → ${oppKey}:${action.targetPos}(${target._name}) for ${damage}. HP: ${target.hp} → ${newHp}`);
-          if (newHp <= 0) {
-            // Send to extinction
-            opp.extinction = [...opp.extinction, target.folio];
-            // Also send its equips
-            for (const eq of target.equips) {
-              opp.extinction = [...opp.extinction, eq.folio];
-            }
-            events.push(`DEATH: ${oppKey}:${action.targetPos} (${target.folio}) → extinction`);
-            // Trigger replacement
-            const repResult = triggerReplacement(s, oppKey, action.targetPos);
-            s = repResult.newState;
-            events.push(...repResult.events);
-          }
         }
       }
 
+      // Sweep dead cards from both sides (handles attacker quemar death + target death)
+      {
+        const sweepResult = sweepDead(s, playerKey);
+        s = sweepResult.newState;
+        events.push(...sweepResult.events);
+      }
+
       // Check victory
-      const vic = checkVictory(s);
-      if (vic) {
-        s.winner = vic;
-        events.push(`VICTORY: ${vic} wins!`);
+      if (!s.winner) {
+        const vic = checkVictory(s);
+        if (vic) {
+          s.winner = vic;
+          events.push(`VICTORY: ${vic} wins!`);
+        }
       }
       break;
     }
@@ -762,13 +880,28 @@ function applyAction(state, action, playerKey) {
       events.push(...effectResult.events);
 
       // Apply rests to attacker (unless Rot Activa)
-      const isRotActiva = player.field[idx] && player.field[idx].equips.some(eq => {
-        const ec = getCard(eq.folio);
-        return ec && ec.type === 'Rot';
-      });
+      const isRotActiva = s[playerKey].field.find(fc2 => fc2.pos === action.pos) &&
+        s[playerKey].field.find(fc2 => fc2.pos === action.pos).equips.some(eq => {
+          const ec = getCard(eq.folio);
+          return ec && ec.type === 'Rot';
+        });
       if (!isRotActiva && cardData._rests) {
-        const r = Math.min(ADENDEI_MAX_RESTS, (player.field[idx].rests || 0) + cardData._rests);
-        player.field[idx] = { ...player.field[idx], rests: r, available: r === 0 };
+        const fIdx2 = s[playerKey].field.findIndex(fc2 => fc2.pos === action.pos);
+        if (fIdx2 !== -1) {
+          const r = Math.min(ADENDEI_MAX_RESTS, (s[playerKey].field[fIdx2].rests || 0) + cardData._rests);
+          s[playerKey].field[fIdx2] = { ...s[playerKey].field[fIdx2], rests: r, available: r === 0 };
+        }
+      }
+
+      // Sweep any cards killed by the effect
+      {
+        const sweepResult = sweepDead(s, playerKey);
+        s = sweepResult.newState;
+        events.push(...sweepResult.events);
+        if (!s.winner) {
+          const vic = checkVictory(s);
+          if (vic) { s.winner = vic; events.push(`VICTORY: ${vic} wins!`); }
+        }
       }
       break;
     }
@@ -784,9 +917,20 @@ function applyAction(state, action, playerKey) {
       player.field[idx] = { ...fc, usedActivaThisTurn: true };
       events.push(`ACTIVA_RAPIDA: ${playerKey}:${action.pos} uses ${cardData.name}`);
 
-      const effectResult = resolveEffect(s, cardData.effect_text, playerKey, action.pos, action.opts || {});
-      s = effectResult.newState;
-      events.push(...effectResult.events);
+      const effectResult2 = resolveEffect(s, cardData.effect_text, playerKey, action.pos, action.opts || {});
+      s = effectResult2.newState;
+      events.push(...effectResult2.events);
+
+      // Sweep any cards killed by the rapid effect
+      {
+        const sweepResult = sweepDead(s, playerKey);
+        s = sweepResult.newState;
+        events.push(...sweepResult.events);
+        if (!s.winner) {
+          const vic = checkVictory(s);
+          if (vic) { s.winner = vic; events.push(`VICTORY: ${vic} wins!`); }
+        }
+      }
 
       s.pendingActivaRapida = null;
       break;
@@ -855,6 +999,11 @@ function applyAction(state, action, playerKey) {
 /**
  * When a field slot is emptied, draw tercia and set pendingReplacement.
  * If mazo is empty, no replacement needed.
+ *
+ * Rule §13.1: No duplicate folios — a card whose folio is already on the field
+ * or in extinction cannot be placed. Try the next card in tercia; if none fit,
+ * return all drawn cards to the bottom of mazo and retry (max 2 retries →
+ * 3rd failure = the player loses the ability to replace this slot).
  */
 function triggerReplacement(state, playerKey, pos) {
   const s = clone(state);
@@ -868,26 +1017,138 @@ function triggerReplacement(state, playerKey, pos) {
     return { newState: s, events };
   }
 
-  // Remove the dead card from field (keep slot with hp=0 for reference)
+  // Remove the dead card from field
   const deadIdx = player.field.findIndex(fc => fc.pos === pos);
   if (deadIdx !== -1) {
     player.field = player.field.filter((_, i) => i !== deadIdx);
   }
 
-  const tercia = player.mazo.slice(0, FIELD_SIZE);
-  if (tercia.length === 1) {
-    // Only 1 card — auto-place
-    const newCard = makeFieldCard(tercia[0], pos);
-    player.mazo = player.mazo.slice(1);
-    player.field = [...player.field, newCard];
-    events.push(`AUTO_REPLACE: ${playerKey}:${pos} ← ${tercia[0]}`);
-  } else if (tercia.length > 1) {
-    s.pendingReplacement = {
-      playerKey,
-      pos,
-      tercia,
-    };
-    events.push(`TERCIA: ${playerKey}:${pos} draws [${tercia.join(', ')}]`);
+  // Helper: set of folios currently forbidden (already on field or in extinction)
+  function forbiddenFolios() {
+    const onField = new Set(player.field.filter(fc => fc.hp > 0).map(fc => fc.folio));
+    const inExt = new Set(player.extinction);
+    return { onField, inExt };
+  }
+
+  const MAX_RETRIES = 2;
+  let attempt = 0;
+
+  while (attempt <= MAX_RETRIES) {
+    if (player.mazo.length === 0) {
+      events.push(`NO_REPLACE: ${playerKey}:${pos} — mazo empty after retries`);
+      return { newState: s, events };
+    }
+
+    const tercia = player.mazo.slice(0, FIELD_SIZE);
+    const { onField, inExt } = forbiddenFolios();
+
+    // Find first card in tercia that is not a duplicate
+    const validIdx = tercia.findIndex(f => !onField.has(f) && !inExt.has(f));
+
+    if (validIdx !== -1) {
+      // We have a valid card to place
+      const chosen = tercia[validIdx];
+      // Remove entire tercia window from mazo, return the others to bottom
+      player.mazo = player.mazo.slice(tercia.length);
+      const others = tercia.filter((_, i) => i !== validIdx);
+      player.mazo = [...player.mazo, ...others];
+
+      if (tercia.length === 1) {
+        // Only 1 card available — auto-place (no choice)
+        const newCard = makeFieldCard(chosen, pos);
+        player.field = [...player.field, newCard];
+        events.push(`AUTO_REPLACE: ${playerKey}:${pos} ← ${chosen}`);
+      } else {
+        // Multiple cards — set pending so strategy can pick
+        // Build the pending tercia as only the valid non-duplicate options
+        const validTercia = tercia.filter(f => !onField.has(f) && !inExt.has(f));
+        // Return the duplicates immediately to bottom of mazo
+        const dupeFolios = tercia.filter(f => onField.has(f) || inExt.has(f));
+        // Undo the others we already returned above, redo properly:
+        // (already pushed others=non-chosen remaining; now also push dupes)
+        // Actually let's redo: remove all tercia from mazo, return non-valid to bottom
+        // We already did player.mazo = player.mazo.slice(tercia.length) above,
+        // and pushed `others` (all but chosen). But chosen hasn't been placed yet
+        // (pendingReplacement path). Let's rebuild:
+        // Reset: put everything back, redo cleanly
+        player.mazo = [chosen, ...others, ...player.mazo]; // undo our slice+push
+        // Now cleanly: remove tercia from mazo top
+        player.mazo = player.mazo.slice(tercia.length);
+        // Return duplicates to mazo bottom (they can't be placed)
+        player.mazo = [...player.mazo, ...dupeFolios];
+        // The valid choices go to pendingReplacement
+        s.pendingReplacement = {
+          playerKey,
+          pos,
+          tercia: validTercia,
+        };
+        events.push(`TERCIA: ${playerKey}:${pos} draws [${validTercia.join(', ')}] (${dupeFolios.length} dupes returned)`);
+      }
+      return { newState: s, events };
+    }
+
+    // All cards in this tercia are duplicates — return them to bottom and retry
+    events.push(`TERCIA_RETRY: ${playerKey}:${pos} attempt ${attempt + 1} — all [${tercia.join(', ')}] are dupes`);
+    player.mazo = player.mazo.slice(tercia.length);
+    player.mazo = [...player.mazo, ...tercia];
+    attempt++;
+  }
+
+  // Max retries exceeded — slot remains empty (player forfeits replacement)
+  events.push(`NO_REPLACE: ${playerKey}:${pos} — max retries exceeded, slot lost`);
+  return { newState: s, events };
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PASIVA RESOLUTION (Post phase §5.3)
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Scan all revealed cards for Pasiva conditions met during the batalla phase.
+ * Called after batalla resolves, before advancing to post.
+ *
+ * Key patterns:
+ *  - "si 1 adendei aliado es enviado a extinción" → fired if ally died this turn
+ *  - "si vida de carta reducida a 0 por ataque"   → fired when any card died via attack
+ *  - deathTrigger registered cards (Therz, Yimsah)
+ */
+function resolvePostPasivas(state, extinctionsThisTurn) {
+  let s = clone(state);
+  const events = [];
+
+  for (const pk of ['p1', 'p2']) {
+    const oppKey = opponent(pk);
+    for (let i = 0; i < s[pk].field.length; i++) {
+      const fc = s[pk].field[i];
+      if (!fc.revealed || fc.hp <= 0) continue;
+      const cardData = getCard(fc.folio);
+      if (!cardData || !cardData.effect_type) continue;
+      if (!cardData.effect_type.includes('Pasiva')) continue;
+
+      const effectText = cardData.effect_text || '';
+      const text = effectText.toLowerCase();
+
+      // Pattern: "si 1 adendei aliado es enviado a extinción"
+      const allyDied = extinctionsThisTurn[pk] && extinctionsThisTurn[pk].length > 0;
+      if (allyDied && (text.includes('aliado') && text.includes('extinción') || text.includes('aliado') && text.includes('extincion'))) {
+        const result = resolveEffect(s, effectText, pk, fc.pos, {});
+        s = result.newState;
+        events.push(`PASIVA: ${pk}:${fc.pos} (${fc.folio}) triggered — ally to extinction`);
+        events.push(...result.events);
+        continue;
+      }
+
+      // Pattern: "si vida de carta reducida a 0 por ataque"
+      const anyDied = (extinctionsThisTurn.p1 && extinctionsThisTurn.p1.length > 0) ||
+                      (extinctionsThisTurn.p2 && extinctionsThisTurn.p2.length > 0);
+      if (anyDied && text.includes('reducida a 0')) {
+        const result = resolveEffect(s, effectText, pk, fc.pos, {});
+        s = result.newState;
+        events.push(`PASIVA: ${pk}:${fc.pos} (${fc.folio}) triggered — card reduced to 0`);
+        events.push(...result.events);
+        continue;
+      }
+    }
   }
 
   return { newState: s, events };
@@ -912,6 +1173,16 @@ function advancePhase(state) {
   }
 
   s.phase = PHASES[nextIdx];
+
+  // At start of 'post' phase: sweep any 0-HP cards that weren't caught during batalla
+  if (s.phase === 'post' && !s.winner) {
+    for (const pk of ['p1', 'p2']) {
+      const sweepResult = sweepDead(s, pk);
+      s = sweepResult.newState;
+      if (s.winner) break;
+    }
+  }
+
   return s;
 }
 
@@ -930,6 +1201,15 @@ function advancePhase(state) {
  */
 function endOfTurn(state) {
   let s = clone(state);
+
+  // Final sweep: remove any 0-HP cards that somehow survived to end of turn
+  if (!s.winner) {
+    for (const pk of ['p1', 'p2']) {
+      const sweepResult = sweepDead(s, pk);
+      s = sweepResult.newState;
+      if (s.winner) return s;
+    }
+  }
 
   for (const pk of ['p1', 'p2']) {
     const player = s[pk];
@@ -1018,6 +1298,10 @@ function runTurn(state, decideP1, decideP2) {
   const turnLog = [];
   const decide = { p1: decideP1, p2: decideP2 };
 
+  // Track extinctions that happen during batalla for Pasiva triggers
+  const extinctionsThisTurn = { p1: [], p2: [] };
+  const extBefore = { p1: s.p1.extinction.length, p2: s.p2.extinction.length };
+
   // Safety: limit iterations per turn to prevent infinite loops
   let iterations = 0;
   const MAX_ITER = 200;
@@ -1084,6 +1368,19 @@ function runTurn(state, decideP1, decideP2) {
     })();
 
     if (shouldAdvance) {
+      // Before advancing FROM batalla phase, resolve Post Pasivas
+      if (s.phase === 'batalla') {
+        // Compute which folios went to extinction during batalla
+        extinctionsThisTurn.p1 = s.p1.extinction.slice(extBefore.p1);
+        extinctionsThisTurn.p2 = s.p2.extinction.slice(extBefore.p2);
+        if (extinctionsThisTurn.p1.length > 0 || extinctionsThisTurn.p2.length > 0) {
+          const pasivaResult = resolvePostPasivas(s, extinctionsThisTurn);
+          s = pasivaResult.newState;
+          if (pasivaResult.events.length > 0) {
+            turnLog.push({ phase: 'batalla->post:pasiva', player: 'engine', action: { type: 'pasiva' }, events: pasivaResult.events });
+          }
+        }
+      }
       s = advancePhase(s);
     }
   }
