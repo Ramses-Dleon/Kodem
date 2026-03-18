@@ -2213,9 +2213,11 @@ nav .nav-btn.active::after {
         display: none;
     }
     
-    /* When pool is visible, give it full height */
+    /* When pool is visible, give it full height and allow scrolling */
     .deck-builder-layout[data-active-tab="pool"] .card-pool {
         max-height: none;
+        overflow-y: visible;
+        overflow-x: hidden;
     }
     
     .deck-builder-layout[data-active-tab="workspace"] .deck-list-sidebar {
@@ -3037,8 +3039,9 @@ nav .nav-btn.active::after {
     box-sizing: border-box;
 }
 
-/* Card grid in pool: prevent overflow */
+/* Card grid in pool: prevent horizontal overflow only */
 #deck-pool-grid {
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
