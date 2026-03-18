@@ -2955,3 +2955,47 @@ nav .nav-btn.active::after {
         grid-column: span 2;
     }
 }
+
+/* Fix mobile overflow — deck pool, filters, global */
+@media (max-width: 768px) {
+    body, html {
+        overflow-x: hidden;
+    }
+
+    main {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    .card-pool {
+        overflow-x: hidden;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .card-pool .controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+    
+    .card-pool .controls input[type="text"] {
+        grid-column: 1 / -1;
+    }
+
+    .card-pool select {
+        width: 100%;
+        min-width: 0;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.5rem;
+    }
+    
+    /* Deck builder overall */
+    #deck-builder-view {
+        overflow-x: hidden;
+    }
+    
+    .deck-builder-layout {
+        overflow-x: hidden;
+    }
+}
