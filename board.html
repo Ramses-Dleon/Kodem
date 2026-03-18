@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kódem — Tablero en Vivo</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    background: #0a0a12; color: #e0e0e0; 
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh; padding: 12px;
+  }
+  h1 { font-size: 1.3rem; color: #f59e0b; text-align: center; margin-bottom: 6px; }
+  .turn-info {
+    background: #1a1a2e; border: 1px solid #f59e0b; border-radius: 8px;
+    padding: 6px 14px; margin-bottom: 10px; font-size: 0.85rem; text-align: center;
+    max-width: 960px; margin-left: auto; margin-right: auto;
+  }
+  .board { display: flex; flex-direction: column; gap: 10px; max-width: 960px; margin: 0 auto; }
+  .player-side {
+    background: #12121e; border-radius: 12px; padding: 14px; border: 2px solid #333;
+  }
+  .player-side.alpha { border-color: #f59e0b44; }
+  .player-side.beta { border-color: #8b5cf644; }
+  .player-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .player-name { font-weight: bold; font-size: 1rem; }
+  .alpha-n { color: #f59e0b; }
+  .beta-n { color: #8b5cf6; }
+  .ext-count { background: #dc2626; color: white; border-radius: 12px; padding: 2px 10px; font-size: 0.8rem; font-weight: bold; }
+  .field-row { display: flex; gap: 12px; align-items: flex-start; justify-content: center; flex-wrap: wrap; }
+  .card-slot { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .zone-label { font-size: 0.6rem; color: #888; text-transform: uppercase; text-align: center; margin-bottom: 2px; }
+  
+  /* Card frame */
+  .card-frame {
+    width: 140px; height: 196px; border-radius: 8px; position: relative;
+    overflow: visible; border: 3px solid #333; background: #111; cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card-frame:hover { box-shadow: 0 0 16px rgba(245,158,11,0.4); z-index: 5; }
+  .card-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 5px; }
+  
+  /* Rest rotations */
+  .rest-1 { transform: rotate(90deg); margin: 28px 0; }
+  .rest-2 { transform: rotate(180deg); }
+  .rest-3 { transform: rotate(180deg); }
+  .rest-3 img { display: none; }
+  .rest-3::after { content: '🎴'; font-size: 2.5rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.4; }
+  .rest-1:hover { transform: rotate(90deg) scale(1.05); }
+  .rest-2:hover { transform: rotate(180deg) scale(1.05); }
+  .rest-3:hover { transform: rotate(180deg) scale(1.05); }
+  
+  /* Hidden cards */
+  .card-frame.hidden-card {
+    background: linear-gradient(135deg, #0d1b2a, #1b2838); border-color: #444;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card-back { font-size: 2.5rem; opacity: 0.3; }
+  
+  /* Energy borders */
+  .e-chaak { border-color: #facc15; }
+  .e-piric { border-color: #ef4444; }
+  .e-feral { border-color: #a855f7; }
+  .e-demo { border-color: #6b7280; }
+  .e-gelid { border-color: #38bdf8; }
+  .e-huumic { border-color: #22c55e; }
+  .e-litic { border-color: #d97706; }
+  .e-atlic { border-color: #3b82f6; }
+  
+  /* Dice overlay */
+  .dice {
+    position: absolute; top: -8px; right: -8px; z-index: 2;
+    width: 28px; height: 28px; border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  }
+  .dice.blue { background: #3b82f6; color: white; }
+  .dice.red { background: #dc2626; color: white; }
+  
+  /* HP bar */
+  .hp-bar { position: absolute; bottom: 3px; left: 4px; right: 4px; display: flex; gap: 2px; z-index: 2; }
+  .hp { flex: 1; height: 5px; border-radius: 2px; background: #22c55e; }
+  .hp.lost { background: #dc262633; }
+  .hp.crit { background: #dc2626; animation: pulse 1s infinite; }
+  @keyframes pulse { 50% { opacity: 0.5; } }
+  
+  /* Rest dots */
+  .rest-dots { position: absolute; top: -8px; left: -4px; display: flex; gap: 3px; z-index: 3; }
+  .rdot { width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 0 4px #f59e0b88; }
+  
+  /* Equipment chips (clickable) */
+  .equip-under { display: flex; gap: 3px; justify-content: center; flex-wrap: wrap; }
+  .equip-chip {
+    font-size: 0.6rem; background: #1a1a2e; border: 1px solid; border-radius: 4px;
+    padding: 3px 8px; color: #ccc; cursor: pointer; transition: all 0.2s; white-space: nowrap;
+  }
+  .equip-chip:hover { transform: scale(1.1); box-shadow: 0 0 8px rgba(245,158,11,0.5); z-index: 10; }
+  .equip-chip.rot { border-color: #d97706; color: #fbbf24; }
+  .equip-chip.ixim { border-color: #22c55e; color: #86efac; }
+  .equip-chip.bio { border-color: #3b82f6; color: #93c5fd; }
+  .equip-chip.dead { opacity: 0.3; text-decoration: line-through; cursor: default; }
+  
+  /* Side zones */
+  .side-zone { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 100px; }
+  .prot-frame { width: 100px; height: 140px; }
+  
+  /* Extinction */
+  .ext-cards { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+  .ext-mini { width: 70px; height: 98px; border-color: #dc262666; opacity: 0.6; }
+  .ext-mini img { filter: grayscale(0.5); }
+  .ext-skull { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 1.5rem; text-shadow: 0 0 8px black; }
+  .ext-label { font-size: 0.5rem; color: #f87171; text-align: center; }
+  
+  /* Bottom info row */
+  .bottom-row { display: flex; gap: 6px; justify-content: center; align-items: center; margin-top: 8px; flex-wrap: wrap; }
+  .info-chip {
+    font-size: 0.6rem; background: #1a1a2e; border: 1px solid #333;
+    border-radius: 4px; padding: 3px 8px; color: #888; cursor: pointer; transition: all 0.2s;
+  }
+  .info-chip:hover { transform: scale(1.05); box-shadow: 0 0 6px rgba(245,158,11,0.3); }
+  .info-chip.bio { border-color: #3b82f6; color: #93c5fd; }
+  .info-chip.dead { opacity: 0.3; text-decoration: line-through; cursor: default; }
+  .info-chip.dead:hover { transform: none; box-shadow: none; }
+  .mazo-chip { cursor: default; }
+  .mazo-chip:hover { transform: none; box-shadow: none; }
+  
+  .divider { height: 2px; background: linear-gradient(90deg, transparent, #f59e0b33, transparent); margin: 2px 0; }
+
+  /* ===== POPUP MODAL ===== */
+  .card-popup-overlay {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center;
+  }
+  .card-popup-overlay.active { display: flex; }
+  .card-popup {
+    background: #1a1a2e; border: 2px solid #f59e0b; border-radius: 12px;
+    max-width: 420px; width: 90%; max-height: 90vh; overflow-y: auto;
+    padding: 0; position: relative;
+  }
+  .popup-close {
+    position: absolute; top: 8px; right: 12px; font-size: 1.5rem; color: #888;
+    cursor: pointer; z-index: 5; background: #1a1a2e; border-radius: 50%;
+    width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+    border: 1px solid #333;
+  }
+  .popup-close:hover { color: #f59e0b; border-color: #f59e0b; }
+  .popup-img-wrap {
+    width: 100%; display: flex; justify-content: center; padding: 16px 16px 8px;
+    background: linear-gradient(180deg, #0d0d15, #1a1a2e);
+  }
+  .popup-img-wrap img { max-width: 200px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+  .popup-body { padding: 12px 16px 16px; }
+  .popup-name { font-size: 1.1rem; font-weight: bold; color: #f59e0b; margin-bottom: 4px; }
+  .popup-folio { font-size: 0.75rem; color: #666; margin-bottom: 8px; }
+  .popup-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .popup-tag {
+    font-size: 0.7rem; padding: 2px 8px; border-radius: 4px;
+    border: 1px solid #444; color: #ccc; background: #0d0d15;
+  }
+  .popup-tag.energy { font-weight: bold; }
+  .popup-stats { display: flex; gap: 16px; margin-bottom: 8px; }
+  .popup-stat { font-size: 0.85rem; font-weight: bold; }
+  .popup-effect-type { font-size: 0.7rem; color: #f59e0b; font-weight: bold; margin-bottom: 4px; }
+  .popup-effect { font-size: 0.8rem; color: #ddd; line-height: 1.4; margin-bottom: 6px; }
+  .popup-cost { font-size: 0.75rem; color: #f87171; line-height: 1.3; padding: 6px; background: #dc262615; border-radius: 4px; border: 1px solid #dc262633; }
+  .popup-cost-label { font-size: 0.65rem; color: #dc2626; font-weight: bold; margin-bottom: 2px; }
+  .popup-flavor { font-size: 0.7rem; color: #666; font-style: italic; margin-top: 8px; }
+  .popup-artist { font-size: 0.6rem; color: #555; margin-top: 4px; }
+
+  /* Status badge in popup */
+  .popup-status { margin-top: 8px; padding: 6px; border-radius: 4px; font-size: 0.75rem; }
+  .popup-status.alive { background: #22c55e15; border: 1px solid #22c55e33; color: #86efac; }
+  .popup-status.dead { background: #dc262615; border: 1px solid #dc262633; color: #f87171; }
+  .popup-status.hidden { background: #f59e0b15; border: 1px solid #f59e0b33; color: #fbbf24; }
+</style>
+</head>
+<body>
+
+<h1>🎴 Kódem TCG — Partida en Vivo</h1>
+<div class="turn-info">
+  Turno <strong>10</strong> completado — Siguiente: <span style="color:#8b5cf6">Logos (Beta 🐾👻)</span> ·
+  Extinción: Alpha 0/10 · Beta 3/10
+</div>
+
+<div class="board">
+  <!-- ALPHA -->
+  <div class="player-side alpha">
+    <div class="player-header">
+      <span class="player-name alpha-n">⚡🔥 Ramsés — Alpha-Kodem</span>
+      <span class="ext-count">💀 0/10</span>
+    </div>
+    <div class="field-row">
+      <!-- Protector -->
+      <div class="side-zone">
+        <div class="zone-label">Protector</div>
+        <div class="card-frame prot-frame hidden-card rest-3" onclick="showCard('LGRO-067','hidden',12,3)">
+          <span class="card-back">🛡️</span>
+          <div class="dice red">12</div>
+          <div class="rest-dots"><div class="rdot"></div><div class="rdot"></div><div class="rdot"></div></div>
+        </div>
+        <div style="font-size:0.55rem;color:#666">Yanzi, Precisión</div>
+      </div>
+      
+      <!-- Pos 1: Balim -->
+      <div class="card-slot">
+        <div class="zone-label">Pos 1</div>
+        <div class="card-frame e-chaak" onclick="showCard('MLBU-006','alive',4,0)">
+          <img src="images/MLBU-006.webp" alt="Balim">
+          <div class="dice blue">4</div>
+          <div class="hp-bar"><div class="hp"></div><div class="hp"></div><div class="hp"></div><div class="hp"></div><div class="hp lost"></div><div class="hp lost"></div></div>
+        </div>
+      </div>
+      
+      <!-- Pos 2: Tzun -->
+      <div class="card-slot">
+        <div class="zone-label">Pos 2</div>
+        <div class="card-frame e-chaak" onclick="showCard('LGRO-034','alive',3,0)">
+          <img src="images/LGRO-034.webp" alt="Tzun">
+          <div class="dice blue">3</div>
+          <div class="hp-bar"><div class="hp"></div><div class="hp"></div><div class="hp"></div><div class="hp lost"></div><div class="hp lost"></div></div>
+        </div>
+      </div>
+      
+      <!-- Pos 3: Yakerr -->
+      <div class="card-slot">
+        <div class="zone-label">Pos 3</div>
+        <div class="card-frame e-chaak" onclick="showCard('YAKERR','alive',3,0)">
+          <img src="images/LGRO-006.webp" alt="Yakerr">
+          <div class="dice blue">3</div>
+          <div class="hp-bar"><div class="hp"></div><div class="hp"></div><div class="hp"></div><div class="hp lost"></div><div class="hp lost"></div><div class="hp lost"></div></div>
+        </div>
+        <div class="equip-under">
+          <div class="equip-chip ixim" onclick="showCard('LGRO-036','equip');event.stopPropagation()">🌽 Embestida Pétrea</div>
+        </div>
+      </div>
+      
+      <!-- Extinction -->
+      <div class="side-zone">
+        <div class="zone-label">Extinción</div>
+        <div style="font-size:2.5rem;color:#222;margin:16px 0">☠️</div>
+        <div style="font-size:0.6rem;color:#444">Vacía</div>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <div class="info-chip bio" onclick="showCard('TCOO-061','equip')">🌿 Caldera Submarina</div>
+      <div class="info-chip" style="border-color:#d97706;color:#fbbf24" onclick="showCard('LGRO-014','equip')">🪨 Develación</div>
+      <div class="info-chip" style="border-color:#d97706;color:#fbbf24" onclick="showCard('LGRO-040','equip')">🪨 Guerrero Pírico</div>
+      <div class="info-chip" style="border-color:#22c55e;color:#86efac" onclick="showCard('LGRO-035','equip')">🌽 Pétalos de Fuego</div>
+      <div class="info-chip mazo-chip">📦 Mazo: 16</div>
+    </div>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <!-- BETA -->
+  <div class="player-side beta">
+    <div class="player-header">
+      <span class="player-name beta-n">🐾👻 Logos — Beta-Kodem</span>
+      <span class="ext-count">💀 3/10</span>
+    </div>
+    <div class="field-row">
+      <!-- Protector -->
+      <div class="side-zone">
+        <div class="zone-label">Protector</div>
+        <div class="card-frame prot-frame hidden-card rest-3" onclick="showCard('FYTE-023','hidden',12,3)">
+          <span class="card-back">🛡️</span>
+          <div class="dice red">12</div>
+          <div class="rest-dots"><div class="rdot"></div><div class="rdot"></div><div class="rdot"></div></div>
+        </div>
+        <div style="font-size:0.55rem;color:#666">Tlahuelpuchi</div>
+      </div>
+      
+      <!-- Pos 1: Zagal -->
+      <div class="card-slot">
+        <div class="zone-label">Pos 1</div>
+        <div class="card-frame e-feral" onclick="showCard('FYTE-059','alive',6,0)">
+          <img src="images/FYTE-059.webp" alt="Zagal">
+          <div class="dice blue">6</div>
+          <div class="hp-bar"><div class="hp"></div><div class="hp"></div><div class="hp"></div><div class="hp"></div><div class="hp"></div><div class="hp"></div></div>
+        </div>
+        <div class="equip-under">
+          <div class="equip-chip rot" onclick="showCard('LGRO-022','equip');event.stopPropagation()">🪨 Armaduras ÍCARO</div>
+        </div>
+      </div>
+      
+      <!-- Pos 2: Zagal y Yimsah (hidden) -->
+      <div class="card-slot">
+        <div class="zone-label">Pos 2</div>
+        <div class="card-frame hidden-card" onclick="showCard('FYTE-063','hidden',6,0)">
+          <span class="card-back">🎴</span>
+          <div class="dice blue">6</div>
+        </div>
+        <div style="font-size:0.5rem;color:#555">Oculta</div>
+      </div>
+      
+      <!-- Pos 3: Xakros -->
+      <div class="card-slot">
+        <div class="zone-label">Pos 3</div>
+        <div class="card-frame e-feral" onclick="showCard('FYTE-060','alive',2,0)">
+          <img src="images/FYTE-060.webp" alt="Xakros">
+          <div class="dice blue">2</div>
+          <div class="hp-bar"><div class="hp crit"></div><div class="hp crit"></div><div class="hp lost"></div><div class="hp lost"></div><div class="hp lost"></div><div class="hp lost"></div></div>
+        </div>
+        <div class="equip-under">
+          <div class="equip-chip rot" onclick="showCard('LGRO-039','equip');event.stopPropagation()">🪨 Conquista Feroz</div>
+        </div>
+      </div>
+      
+      <!-- Extinction -->
+      <div class="side-zone">
+        <div class="zone-label">Extinción</div>
+        <div class="ext-cards">
+          <div class="card-frame ext-mini" style="cursor:pointer" onclick="showCard('DOOC-020','dead')">
+            <img src="images/DOOC-020.webp" alt="Dagg"><div class="ext-skull">💀</div>
+          </div>
+          <div class="ext-label">Dagg</div>
+          <div class="card-frame ext-mini" style="cursor:pointer" onclick="showCard('DOOC-006','dead')">
+            <img src="images/DOOC-006.webp" alt="Necroalga"><div class="ext-skull">💀</div>
+          </div>
+          <div class="ext-label">Necroalga</div>
+          <div class="card-frame ext-mini" style="cursor:pointer" onclick="showCard('FYTE-058','dead')">
+            <img src="images/FYTE-058.webp" alt="Yimsah"><div class="ext-skull">💀</div>
+          </div>
+          <div class="ext-label">Yimsah</div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <div class="info-chip bio" onclick="showCard('DOOC-017','equip')">🌿 Zona Feral (revelada)</div>
+      <div class="info-chip dead">🪨 Prot. Selectiva ❌</div>
+      <div class="info-chip mazo-chip">📦 Mazo: 12</div>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP OVERLAY -->
+<div class="card-popup-overlay" id="popupOverlay" onclick="closePopup()">
+  <div class="card-popup" onclick="event.stopPropagation()">
+    <div class="popup-close" onclick="closePopup()">✕</div>
+    <div class="popup-img-wrap"><img id="popupImg" src="" alt=""></div>
+    <div class="popup-body">
+      <div class="popup-name" id="popupName"></div>
+      <div class="popup-folio" id="popupFolio"></div>
+      <div class="popup-meta" id="popupMeta"></div>
+      <div class="popup-stats" id="popupStats"></div>
+      <div class="popup-effect-type" id="popupEffectType"></div>
+      <div class="popup-effect" id="popupEffect"></div>
+      <div id="popupCostWrap" style="display:none">
+        <div class="popup-cost"><div class="popup-cost-label">⚠️ Costo</div><span id="popupCost"></span></div>
+      </div>
+      <div class="popup-status" id="popupStatus"></div>
+      <div class="popup-flavor" id="popupFlavor"></div>
+      <div class="popup-artist" id="popupArtist"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+let CARDS = {};
+
+// Load cards.json
+fetch('cards.json').then(r=>r.json()).then(data=>{
+  data.forEach(c=>CARDS[c.folio]=c);
+  console.log('Cards loaded:',data.length);
+}).catch(e=>console.error('Failed to load cards:',e));
+
+const ENERGY_EMOJI = {
+  'Cháaktica':'⚡','Pírica':'🔥','Feral':'🐾','Demótica':'👻',
+  'Gélida':'❄️','Húumica':'🌿','Lítica':'🪨','Átlica':'💧'
+};
+const TYPE_EMOJI = {
+  'Adendei':'🦎','Rava':'👑','Espectro':'👻','Protector':'🛡️',
+  'Ixim':'🌽','Rot':'🪨','Bio':'🌿'
+};
+
+function showCard(folio, status, currentHP, currentRests) {
+  const card = CARDS[folio];
+  if (!card) { console.warn('Card not found:',folio); return; }
+  
+  document.getElementById('popupImg').src = card.image || '';
+  document.getElementById('popupName').textContent = card.name || folio;
+  document.getElementById('popupFolio').textContent = `${card.folio} · ${card.set}`;
+  
+  // Meta tags
+  const meta = document.getElementById('popupMeta');
+  meta.innerHTML = '';
+  if (card.type) {
+    const t = document.createElement('span');
+    t.className = 'popup-tag';
+    t.textContent = (TYPE_EMOJI[card.type]||'') + ' ' + card.type;
+    meta.appendChild(t);
+  }
+  if (card.energy) {
+    const e = document.createElement('span');
+    e.className = 'popup-tag energy';
+    e.textContent = (ENERGY_EMOJI[card.energy]||'') + ' ' + card.energy;
+    e.style.borderColor = getEnergyColor(card.energy);
+    e.style.color = getEnergyColor(card.energy);
+    meta.appendChild(e);
+  }
+  if (card.energy2) {
+    const e2 = document.createElement('span');
+    e2.className = 'popup-tag energy';
+    e2.textContent = (ENERGY_EMOJI[card.energy2]||'') + ' ' + card.energy2;
+    e2.style.borderColor = getEnergyColor(card.energy2);
+    e2.style.color = getEnergyColor(card.energy2);
+    meta.appendChild(e2);
+  }
+  
+  // Stats
+  const stats = document.getElementById('popupStats');
+  stats.innerHTML = '';
+  if (card.damage !== null && card.damage !== undefined) {
+    stats.innerHTML += `<span class="popup-stat">⚔️ ${card.damage}</span>`;
+  }
+  if (card.rests !== null && card.rests !== undefined) {
+    stats.innerHTML += `<span class="popup-stat">💤 ${card.rests}</span>`;
+  }
+  if (currentHP !== undefined) {
+    stats.innerHTML += `<span class="popup-stat" style="color:#22c55e">❤️ ${currentHP} PV</span>`;
+  }
+  
+  // Effect
+  const et = document.getElementById('popupEffectType');
+  et.textContent = card.effect_type || '';
+  et.style.display = card.effect_type ? 'block' : 'none';
+  
+  document.getElementById('popupEffect').textContent = card.effect_text || '';
+  
+  // Cost
+  const costWrap = document.getElementById('popupCostWrap');
+  if (card.cost_text) {
+    costWrap.style.display = 'block';
+    document.getElementById('popupCost').textContent = card.cost_text;
+  } else {
+    costWrap.style.display = 'none';
+  }
+  
+  // Status badge
+  const statusEl = document.getElementById('popupStatus');
+  if (status === 'dead') {
+    statusEl.className = 'popup-status dead';
+    statusEl.textContent = '💀 En Extinción';
+  } else if (status === 'hidden') {
+    statusEl.className = 'popup-status hidden';
+    let txt = '🎴 Oculta';
+    if (currentRests) txt += ` · ${currentRests} descanso${currentRests>1?'s':''}`;
+    statusEl.textContent = txt;
+  } else if (status === 'alive') {
+    statusEl.className = 'popup-status alive';
+    let txt = '✅ En campo';
+    if (currentRests) txt += ` · ${currentRests} descanso${currentRests>1?'s':''}`;
+    else txt += ' · Disponible';
+    statusEl.textContent = txt;
+  } else {
+    statusEl.className = 'popup-status';
+    statusEl.textContent = '🔧 Equipo';
+  }
+  
+  // Flavor & artist
+  document.getElementById('popupFlavor').textContent = card.flavor_text || '';
+  document.getElementById('popupArtist').textContent = card.artist ? '🎨 ' + card.artist : '';
+  
+  document.getElementById('popupOverlay').classList.add('active');
+}
+
+function closePopup() {
+  document.getElementById('popupOverlay').classList.remove('active');
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+
+function getEnergyColor(energy) {
+  const map = {
+    'Cháaktica':'#facc15','Pírica':'#ef4444','Feral':'#a855f7','Demótica':'#6b7280',
+    'Gélida':'#38bdf8','Húumica':'#22c55e','Lítica':'#d97706','Átlica':'#3b82f6'
+  };
+  return map[energy] || '#888';
+}
+</script>
+
+</body>
+</html>
