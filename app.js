@@ -1634,7 +1634,8 @@ function renderDeckWorkspace() {
             const isFirst = i === 0;
             const isLast = i + 3 >= mazoCards.length;
             html += `<div class="tercia-row" data-tercia="${terciaNum}">`;
-            html += `<div class="tercia-label">Tercia ${terciaNum}</div>`;
+            html += `<div class="tercia-header" onclick="toggleTercia(${terciaNum})"><span class="tercia-label-text">T${terciaNum}</span><span class="tercia-collapse-icon" id="tercia-icon-${terciaNum}">▼</span></div>`;
+            html += `<div class="tercia-body" id="tercia-body-${terciaNum}">`;
             html += `<div class="tercia-cards-row">`;
             terciaCards.forEach((card, j) => {
                 const globalIdx = i + j;
@@ -1659,6 +1660,7 @@ function renderDeckWorkspace() {
             html += `<button class="tercia-move-btn" data-tdir="up" data-tidx="${i}" title="Subir tercia" ${isFirst ? 'disabled' : ''}>⬆️</button>`;
             html += `<button class="tercia-move-btn" data-tdir="down" data-tidx="${i}" title="Bajar tercia" ${isLast ? 'disabled' : ''}>⬇️</button>`;
             html += `</div>`;
+            html += `</div>`; // tercia-body
             html += `</div>`; // tercia-row
         }
         html += '</div>'; // tercia-grid
@@ -1724,6 +1726,21 @@ function renderDeckWorkspace() {
     });
 
     updateDeckValidation();
+}
+
+// ── Collapse/expand individual tercias ──
+
+function toggleTercia(num) {
+    const body = document.getElementById('tercia-body-' + num);
+    const icon = document.getElementById('tercia-icon-' + num);
+    if (!body) return;
+    if (body.style.display === 'none') {
+        body.style.display = '';
+        if (icon) icon.textContent = '▼';
+    } else {
+        body.style.display = 'none';
+        if (icon) icon.textContent = '▶';
+    }
 }
 
 // ── Collapse/expand deck sections ──
