@@ -2873,14 +2873,12 @@ nav .nav-btn.active::after {
         border-radius: 6px;
     }
 
-    /* Turn flow: 2 column for phases */
+    /* Turn flow: single column always */
     .turn-flow {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
     }
-
-    .turn-arrow { display: none; }
 
     .turn-phase {
         padding: 20px;
