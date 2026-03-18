@@ -222,6 +222,8 @@ async function init() {
         switchView('collection');
     } else if (hash === '#deck-builder') {
         switchView('deck-builder');
+    } else if (hash === '#contact') {
+        switchView('contact');
     }
 }
 
