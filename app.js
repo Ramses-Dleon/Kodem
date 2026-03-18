@@ -1065,6 +1065,10 @@ function openCardModal(card, cardList, cardIndex) {
 
     // --- Image ---
     const imgEl = document.getElementById('modal-card-image');
+    imgEl.onerror = function() {
+        this.onerror = null;
+        this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='560' viewBox='0 0 400 560'%3E%3Crect fill='%231a1a2e' width='400' height='560' rx='12'/%3E%3Ctext x='200' y='240' fill='%23666' font-family='Cinzel,serif' font-size='20' text-anchor='middle'%3E🃏%3C/text%3E%3Ctext x='200' y='280' fill='%23888' font-family='Outfit,sans-serif' font-size='14' text-anchor='middle'%3EImagen no disponible%3C/text%3E%3Ctext x='200' y='310' fill='%23555' font-family='Outfit,sans-serif' font-size='12' text-anchor='middle'%3E" + (card.folio || '') + "%3C/text%3E%3C/svg%3E";
+    };
     imgEl.src = card.image;
     imgEl.alt = card.name;
 
