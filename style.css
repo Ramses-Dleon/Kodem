@@ -632,6 +632,7 @@ select:focus {
     display: flex;
     align-items: center;
     gap: 8px;
+    max-width: 480px;
 }
 
 .tercia-label {
@@ -648,15 +649,15 @@ select:focus {
 
 .tercia-cards-row {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
     flex: 1;
-    justify-content: center;
+    max-width: 380px;
 }
 .tercia-cards-row .card-item {
-    width: 100px;
-    min-width: 100px;
-    max-width: 100px;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .tercia-card-slot {
@@ -725,13 +726,47 @@ select:focus {
 /* Support grid (Protector, Bio, Equips) — always 3 columns */
 .support-grid {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+    max-width: 380px;
 }
 .support-grid .card-item {
-    width: 100px;
-    min-width: 100px;
-    max-width: 100px;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* ── Mobile overrides for tercia layout ── */
+@media (max-width: 768px) {
+    /* Hide vertical label; show tercia name as small text above the row via data attribute */
+    .tercia-label {
+        display: none;
+    }
+    .tercia-row::before {
+        content: attr(data-tercia);
+        display: block;
+        width: 100%;
+        font-size: 0.6rem;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+    }
+    /* Make .tercia-row wrap so the ::before label sits above the card row */
+    .tercia-row {
+        flex-wrap: wrap;
+    }
+
+    /* Larger tap targets for reorder buttons */
+    .reorder-btn {
+        width: 32px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+    .tercia-move-btn {
+        width: 36px;
+        height: 36px;
+    }
 }
 
 .support-type-badge {
