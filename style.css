@@ -2999,3 +2999,46 @@ nav .nav-btn.active::after {
         overflow-x: hidden;
     }
 }
+
+/* Fix deck pool controls overflow on ALL screen sizes */
+.card-pool .controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.card-pool .controls input[type="text"] {
+    grid-column: 1 / -1;
+}
+
+.card-pool .controls .owned-toggle {
+    grid-column: 1 / -1;
+}
+
+.card-pool .controls select {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Desktop: 3 columns for pool filters */
+@media (min-width: 769px) {
+    .card-pool .controls {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Deck builder: prevent horizontal overflow globally */
+.deck-builder-layout,
+.deck-workspace,
+.card-pool {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Card grid in pool: prevent overflow */
+#deck-pool-grid {
+    max-width: 100%;
+    overflow: hidden;
+}
