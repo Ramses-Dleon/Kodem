@@ -1543,15 +1543,26 @@ function importDeckSyncCode() {
         const code = document.getElementById('deck-sync-text').value.trim();
         if (!code.startsWith('KDECK-')) { showToast('Código inválido — debe empezar con KDECK-', 'error'); return; }
         try {
-            const json = decodeURIComponent(escape(atob(code.substring(6))));
-            const data = JSON.parse(json);
+            const decoded = decodeURIComponent(escape(atob(code.substring(6))));
+            let name = 'Mazo Importado';
+            let cards = [];
+            // Try JSON format first {n:"name", c:[folios]}
+            try {
+                const data = JSON.parse(decoded);
+                name = data.n || name;
+                cards = data.c || [];
+            } catch (_) {
+                // Fallback: comma-separated folios
+                cards = decoded.split(',').map(f => f.trim()).filter(Boolean);
+            }
+            if (cards.length === 0) { showToast('Código vacío — no tiene cartas', 'error'); return; }
             const id = Date.now().toString();
-            decks[id] = { name: data.n || 'Mazo Importado', cards: data.c || [] };
+            decks[id] = { name, cards };
             currentDeck = id;
             saveDecks();
             renderDeckBuilder();
             modal.remove();
-            showToast(`Mazo "${decks[id].name}" importado (${decks[id].cards.length} cartas) ✅`, 'success');
+            showToast(`Mazo "${name}" importado (${cards.length} cartas) ✅`, 'success');
         } catch (err) { showToast('Error decodificando: ' + err.message, 'error'); }
     });
 }
