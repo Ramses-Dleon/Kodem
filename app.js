@@ -224,6 +224,8 @@ async function init() {
         switchView('deck-builder');
     } else if (hash === '#sinergias') {
         switchView('sinergias');
+    } else if (hash === '#guide') {
+        switchView('guide');
     } else if (hash === '#contact') {
         switchView('contact');
     }
@@ -713,6 +715,7 @@ function switchView(view) {
         'collection': 'collection-view',
         'deck-builder': 'deck-builder-view',
         'sinergias': 'sinergias-view',
+        'guide': 'guide-view',
         'contact': 'contact-view'
     };
 

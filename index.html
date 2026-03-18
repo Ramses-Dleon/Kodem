@@ -35,6 +35,7 @@
             <button class="nav-btn" data-view="collection">Mi Colección</button>
             <button class="nav-btn" data-view="deck-builder">Constructor de Mazos</button>
             <button class="nav-btn" data-view="sinergias">⚡ Sinergias</button>
+            <button class="nav-btn" data-view="guide">📖 Guía</button>
             <button class="nav-btn" data-view="contact">💬 Contacto</button>
         </nav>
     </header>
@@ -604,6 +605,199 @@
                 </div>
 
                 <div id="detail-panel"></div>
+            </div>
+        </section>
+
+        <!-- Guide View -->
+        <section id="guide-view" class="view">
+            <div class="guide-container">
+
+                <h2 class="guide-title">📖 Guía Rápida de Kódem TCG</h2>
+                <p class="guide-subtitle">Todo lo que necesitas para jugar. Sin rollo.</p>
+
+                <!-- SECTION 1: TABLERO -->
+                <div class="guide-section">
+                    <h3>🗺️ El Tablero (Ecosistema)</h3>
+                    <div class="board-diagram">
+                        <div class="board-zone zone-mazo">
+                            <span class="zone-icon">📚</span>
+                            <span class="zone-name">Mazo</span>
+                            <span class="zone-desc">Adendei + Rava + Espectros en TU orden</span>
+                        </div>
+                        <div class="board-zone zone-principal">
+                            <span class="zone-icon">⚔️</span>
+                            <span class="zone-name">Zona Principal</span>
+                            <span class="zone-desc">3 cartas activas — aquí se pelea</span>
+                            <div class="zone-slots">
+                                <div class="slot">🂠</div>
+                                <div class="slot">🂠</div>
+                                <div class="slot">🂠</div>
+                            </div>
+                        </div>
+                        <div class="board-zone zone-protector">
+                            <span class="zone-icon">🛡️</span>
+                            <span class="zone-name">Protector</span>
+                            <span class="zone-desc">12 PV, 3 rests. Vínculo Odémico</span>
+                        </div>
+                        <div class="board-row">
+                            <div class="board-zone zone-equipo">
+                                <span class="zone-icon">🌽💀</span>
+                                <span class="zone-name">Equipos</span>
+                                <span class="zone-desc">Ixim + Rot</span>
+                            </div>
+                            <div class="board-zone zone-bio">
+                                <span class="zone-icon">🌿</span>
+                                <span class="zone-name">Bio</span>
+                                <span class="zone-desc">Lugar de poder</span>
+                            </div>
+                            <div class="board-zone zone-extincion">
+                                <span class="zone-icon">💀</span>
+                                <span class="zone-name">Extinción</span>
+                                <span class="zone-desc">10 aquí = pierdes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: FLUJO DEL TURNO -->
+                <div class="guide-section">
+                    <h3>🔄 Fases del Turno</h3>
+                    <div class="turn-flow">
+                        <div class="turn-phase">
+                            <div class="phase-num">1</div>
+                            <div class="phase-info">
+                                <strong>Fase Previa</strong>
+                                <ul>
+                                    <li>Revelar cartas</li>
+                                    <li>Declarar Pasivas</li>
+                                    <li>Enviar Bio a Extinción (turbo: -1 rest a todas)</li>
+                                    <li>Revivir Rava (pagando 2 cartas)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="turn-arrow">▼</div>
+                        <div class="turn-phase phase-battle">
+                            <div class="phase-num">2</div>
+                            <div class="phase-info">
+                                <strong>Fase de Batalla</strong>
+                                <ul>
+                                    <li>1 carta ataca O usa Activa</li>
+                                    <li>O usa Vínculo Odémico (efecto del Protector)</li>
+                                    <li>Rival puede usar Activa-Rápida como respuesta</li>
+                                    <li>Rot equipado = Activa gratis (no genera rests extra)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="turn-arrow">▼</div>
+                        <div class="turn-phase">
+                            <div class="phase-num">3</div>
+                            <div class="phase-info">
+                                <strong>Fase Post</strong>
+                                <ul>
+                                    <li>Cartas con 0 PV → Extinción</li>
+                                    <li>Reemplazo: toma 3, elige 1, 2 al fondo</li>
+                                    <li>Resolver Pasivas pendientes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="turn-arrow">▼</div>
+                        <div class="turn-phase">
+                            <div class="phase-num">4</div>
+                            <div class="phase-info">
+                                <strong>Fase de Equipo</strong>
+                                <ul>
+                                    <li>Equipar 1 Ixim/Rot a carta que atacó</li>
+                                    <li>Máx: 1 Ixim + 1 Rot (o 2 ocultos mismo tipo)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="turn-arrow">▼</div>
+                        <div class="turn-phase">
+                            <div class="phase-num">5</div>
+                            <div class="phase-info">
+                                <strong>Fin de Turno</strong>
+                                <ul>
+                                    <li>Daño de Veneno ☠️</li>
+                                    <li>Actualizar descansos: -1 si no atacó, entra a rests si atacó</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: TIPOS DE CARTA -->
+                <div class="guide-section">
+                    <h3>🃏 Tipos de Carta</h3>
+                    <div class="card-types-grid">
+                        <div class="type-card"><span class="type-icon">⚔️</span><strong>Adendei</strong><br>Criaturas. 6 PV. Atacan y usan efectos.</div>
+                        <div class="type-card"><span class="type-icon">🛡️</span><strong>Protector</strong><br>12 PV, 3 rests. Vínculo = usar su efecto.</div>
+                        <div class="type-card"><span class="type-icon">🐉</span><strong>Rava</strong><br>Dragones. 6 PV. Pasivas neutrales (ambos jugadores).</div>
+                        <div class="type-card"><span class="type-icon">🌿</span><strong>Bio</strong><br>Terreno. Pasiva neutral. Destruir = -1 rest a todas.</div>
+                        <div class="type-card"><span class="type-icon">🌽</span><strong>Ixim</strong><br>Equipo vegetal. Siempre Pasivo.</div>
+                        <div class="type-card"><span class="type-icon">💀</span><strong>Rot</strong><br>Equipo mineral. Siempre Activo. Sin rests extra.</div>
+                        <div class="type-card"><span class="type-icon">👻</span><strong>Espectro</strong><br>Fantasmas. Requisito para entrar. Pueden poseer.</div>
+                        <div class="type-card"><span class="type-icon">🎭</span><strong>Token</strong><br>Invocados. 6 PV. NO cuentan para victoria.</div>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: ENERGÍAS -->
+                <div class="guide-section">
+                    <h3>⚡ Las 8 Energías</h3>
+                    <div class="energy-guide-grid">
+                        <div class="energy-chip" style="border-color:var(--atlica)"><span>💧</span> Átlica — Defensiva, curación</div>
+                        <div class="energy-chip" style="border-color:var(--pirica)"><span>🔥</span> Pírica — Agresiva, quemadura</div>
+                        <div class="energy-chip" style="border-color:var(--gelida)"><span>🧊</span> Gélida — Control, congela</div>
+                        <div class="energy-chip" style="border-color:var(--litica)"><span>🪨</span> Lítica — Tanque, alto daño</div>
+                        <div class="energy-chip" style="border-color:var(--chaaktica)"><span>⚡</span> Cháaktica — Velocidad, imparable</div>
+                        <div class="energy-chip" style="border-color:var(--huumica)"><span>🌀</span> Húumica — Progresiva, escala</div>
+                        <div class="energy-chip" style="border-color:var(--demotica)"><span>🔮</span> Demótica — Posicional, manipula</div>
+                        <div class="energy-chip" style="border-color:var(--feral)"><span>🐾</span> Feral — Auto-buff, comodín</div>
+                    </div>
+                </div>
+
+                <!-- SECTION 5: MARCAS -->
+                <div class="guide-section">
+                    <h3>🏷️ Marcas (Status)</h3>
+                    <div class="marks-grid">
+                        <div class="mark-card mark-burn">🔥 <strong>Quemar</strong> — 1 dmg cada vez que ataca/usa Activa</div>
+                        <div class="mark-card mark-poison">☠️ <strong>Envenenar</strong> — 1 dmg al final de tu turno</div>
+                        <div class="mark-card mark-abyss">🌀 <strong>Abismar</strong> — ataca al azar (dado)</div>
+                    </div>
+                    <p class="guide-note">Máx 1 de cada tipo por carta. Se quitan con curación o efectos.</p>
+                </div>
+
+                <!-- SECTION 6: TOP 10 REGLAS -->
+                <div class="guide-section">
+                    <h3>🎯 Top 10 — Regla 80/20</h3>
+                    <ol class="top-rules">
+                        <li><strong>TÚ ordenas tu mazo.</strong> No se baraja. Es tu superpoder.</li>
+                        <li><strong>Victoria = 10 en Extinción rival.</strong> Tokens no cuentan.</li>
+                        <li><strong>1 ataque/Activa por turno.</strong> Rot + Adendei = combo (cuenta como 1).</li>
+                        <li><strong>Descansos = tempo.</strong> 0 rests ataca cada turno. 2 rests = cada 3.</li>
+                        <li><strong>Reemplazo: toma 3, elige 1.</strong> Diseña tu mazo en tercias.</li>
+                        <li><strong>Bio a Extinción = turbo.</strong> -1 rest a TODAS tus cartas.</li>
+                        <li><strong>Vínculo Odémico = sin ataque.</strong> Solo si el efecto vale más.</li>
+                        <li><strong>Oculta ≠ inútil.</strong> Cartas ocultas son invisibles a efectos por tipo.</li>
+                        <li><strong>Pasivas son gratis.</strong> Múltiples por turno, sin descansos.</li>
+                        <li><strong>Extinción es pública.</strong> Cuenta cartas rivales siempre.</li>
+                    </ol>
+                </div>
+
+                <!-- SECTION 7: FORMATO -->
+                <div class="guide-section">
+                    <h3>📋 Formato Estándar</h3>
+                    <div class="format-grid">
+                        <div class="format-item">⚔️ <strong>15-24</strong> Adendei</div>
+                        <div class="format-item">🛡️ <strong>1-2</strong> Protector</div>
+                        <div class="format-item">🐉 <strong>0-2</strong> Rava</div>
+                        <div class="format-item">🌿 <strong>0-1</strong> Bio</div>
+                        <div class="format-item">🌽 <strong>0-5</strong> Ixim</div>
+                        <div class="format-item">💀 <strong>0-5</strong> Rot</div>
+                        <div class="format-item format-rule">📏 1 copia de cada carta</div>
+                        <div class="format-item format-rule">🏆 10 en Extinción = Victoria</div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
