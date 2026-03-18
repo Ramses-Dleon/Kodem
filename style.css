@@ -2827,11 +2827,23 @@ nav .nav-btn.active::after {
 /* Guide desktop improvements */
 @media (min-width: 769px) {
     .guide-container {
-        max-width: 900px;
-        padding: 32px;
+        max-width: 1100px;
+        padding: 40px 48px;
     }
 
     .guide-title { font-size: 1.6rem; }
+
+    /* More breathing room between sections */
+    .guide-section {
+        margin-bottom: 48px;
+    }
+
+    .guide-section h3 {
+        margin-top: 8px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        font-size: 1.1rem;
+    }
 
     .board-diagram {
         display: grid;
@@ -2851,26 +2863,55 @@ nav .nav-btn.active::after {
         flex-direction: row;
     }
 
+    /* Bigger card slots on desktop */
     .slot {
-        width: 50px;
-        height: 70px;
+        width: 72px;
+        height: 100px;
+        font-size: 1.8rem;
+        border-radius: 6px;
     }
 
     /* Turn flow: 2 column for phases */
     .turn-flow {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 12px;
+        gap: 16px;
     }
 
     .turn-arrow { display: none; }
 
     .turn-phase {
-        padding: 16px;
+        padding: 20px;
+        gap: 16px;
     }
 
+    /* Larger phase number circles */
+    .phase-num {
+        min-width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .phase-info strong {
+        font-size: 1rem;
+    }
+
+    .phase-info ul {
+        font-size: 0.85rem;
+        margin-top: 8px;
+    }
+
+    .phase-info li {
+        margin-bottom: 5px;
+    }
+
+    /* Fase de Batalla stands out more */
     .phase-battle {
         grid-column: 1 / -1;
+        border-width: 2px;
+        border-color: var(--accent-amber);
+        background: rgba(245, 158, 11, 0.08);
+        box-shadow: 0 0 16px rgba(245, 158, 11, 0.18), inset 0 0 24px rgba(245, 158, 11, 0.04);
     }
 
     /* Card types: 4 columns */
