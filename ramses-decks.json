@@ -1,6 +1,6 @@
 {
   "alpha": {
-    "name": "Alpha ⚡🔥",
+    "name": "#2 Alpha ⚡🔥",
     "mazo": [
       "DOOC-024",
       "RAMI-016",
@@ -31,7 +31,7 @@
     ]
   },
   "beta": {
-    "name": "Beta 🐾👻",
+    "name": "#1 Beta 🐾👻",
     "mazo": [
       "FYTE-041",
       "FYTE-058",
@@ -60,7 +60,7 @@
     ]
   },
   "gamma": {
-    "name": "Gamma 🛡️💎",
+    "name": "#11 Gamma 🛡️💎",
     "mazo": [
       "1DRMA-002",
       "IDRMG-002",
@@ -93,7 +93,7 @@
     ]
   },
   "delta": {
-    "name": "Delta ⚖️🌿",
+    "name": "#5 Delta ⚖️🌿",
     "mazo": [
       "IDRMG-006",
       "LGRO-008",
@@ -126,7 +126,7 @@
     ]
   },
   "gamma_own": {
-    "name": "Gamma-Own 🛡️",
+    "name": "#12 Gamma-Own 🛡️",
     "mazo": [
       "FYTE-025",
       "LGRO-066",
@@ -159,7 +159,7 @@
     ]
   },
   "gamma_idr": {
-    "name": "Gamma-IDR 🛡️💎",
+    "name": "#7 Gamma-IDR 🛡️💎",
     "mazo": [
       "FYTE-042",
       "TCOO-020",
@@ -192,7 +192,7 @@
     ]
   },
   "delta_own": {
-    "name": "Delta-Own ⚖️",
+    "name": "#8 Delta-Own ⚖️",
     "mazo": [
       "LGRO-062",
       "LGRO-047",
@@ -225,7 +225,7 @@
     ]
   },
   "delta_idr": {
-    "name": "Delta-IDR ⚖️🌿",
+    "name": "#6 Delta-IDR ⚖️🌿",
     "mazo": [
       "LGRO-012",
       "IDRMP-003",
@@ -258,7 +258,7 @@
     ]
   },
   "dream_1": {
-    "name": "Dream 1 - Aggro ⚡🔥",
+    "name": "#3 Dream 1 - Aggro ⚡🔥",
     "mazo": [
       "LGRO-065",
       "MLBU-002",
@@ -291,7 +291,7 @@
     ]
   },
   "dream_2": {
-    "name": "Dream 2 - Death 🐾👻",
+    "name": "#4 Dream 2 - Death 🐾👻",
     "mazo": [
       "1DRMA-018",
       "FYTE-058",
@@ -324,7 +324,7 @@
     ]
   },
   "dream_3": {
-    "name": "Dream 3 - Heal 🛡️💎",
+    "name": "#9 Dream 3 - Heal 🛡️💎",
     "mazo": [
       "TCOO-040",
       "IDRMA-001",
@@ -357,7 +357,7 @@
     ]
   },
   "dream_4": {
-    "name": "Dream 4 - Tank 🗿🌿",
+    "name": "#10 Dream 4 - Tank 🗿🌿",
     "mazo": [
       "TCOO-002",
       "LGRO-047",
