@@ -453,12 +453,20 @@ select:focus {
 
 .deck-builder-layout {
     display: grid;
-    grid-template-columns: 200px 1fr 300px;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "sidebar workspace"
+        "pool pool";
     gap: 1rem;
     min-height: 80vh;
     max-width: 100%;
     overflow-x: hidden;
 }
+
+.deck-list-sidebar { grid-area: sidebar; }
+.deck-workspace { grid-area: workspace; }
+.card-pool { grid-area: pool; }
 
 .deck-list-sidebar {
     background: var(--bg-card);
@@ -820,7 +828,7 @@ select:focus {
     border-radius: 8px;
     border: 2px solid var(--border);
     overflow-y: auto;
-    max-height: 80vh;
+    max-height: 60vh;
     position: relative;
 }
 
@@ -1108,11 +1116,18 @@ select:focus {
 @media (max-width: 1200px) {
     .deck-builder-layout {
         grid-template-columns: 1fr;
+        grid-template-areas:
+            "sidebar"
+            "workspace"
+            "pool";
     }
 
-    .deck-list-sidebar,
+    .deck-list-sidebar {
+        max-height: 300px;
+        overflow-y: auto;
+    }
     .card-pool {
-        max-height: 400px;
+        max-height: 50vh;
         overflow-y: auto;
     }
 }
@@ -3214,10 +3229,13 @@ nav .nav-btn.active::after {
     box-sizing: border-box;
 }
 
-/* Desktop: 3 columns for pool filters */
+/* Desktop: filters in a single row when pool is full-width */
 @media (min-width: 769px) {
     .card-pool .controls {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .card-pool .controls input[type="text"]:first-child {
+        grid-column: 1 / -1;
     }
 }
 
