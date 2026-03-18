@@ -833,6 +833,16 @@ select:focus {
         font-size: 0.6rem;
     }
 
+    /* Move tercia buttons below cards instead of right side */
+    .tercia-body {
+        flex-wrap: wrap;
+    }
+    .tercia-row-btns {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+
     /* Larger tap targets for reorder buttons */
     .reorder-btn {
         width: 32px;
