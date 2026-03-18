@@ -1626,8 +1626,8 @@ function renderDeckWorkspace() {
 
     // ── Mazo section: grouped in tercias of 3 ──
     if (mazoCards.length > 0) {
-        html += '<div class="deck-section-label">📦 Mazo <span class="deck-section-count">' + mazoCards.length + ' cartas</span></div>';
-        html += '<div class="tercia-grid">';
+        html += '<div class="deck-section-label" onclick="toggleDeckSection(\'mazo\')">📦 Mazo <span class="deck-section-count">' + mazoCards.length + ' cartas</span> <span class="collapse-icon" id="mazo-collapse">▼</span></div>';
+        html += '<div class="tercia-grid" id="mazo-section">';
         for (let i = 0; i < mazoCards.length; i += 3) {
             const terciaNum = Math.floor(i / 3) + 1;
             const terciaCards = mazoCards.slice(i, i + 3);
@@ -1666,8 +1666,8 @@ function renderDeckWorkspace() {
 
     // ── Support section: Protector, Bio, Equips ──
     if (supportCards.length > 0) {
-        html += '<div class="deck-section-label" style="margin-top:12px;">🛡️ Soporte <span class="deck-section-count">' + supportCards.length + ' cartas</span></div>';
-        html += '<div class="support-grid">';
+        html += '<div class="deck-section-label" style="margin-top:12px;" onclick="toggleDeckSection(\'soporte\')">🛡️ Soporte <span class="deck-section-count">' + supportCards.length + ' cartas</span> <span class="collapse-icon" id="soporte-collapse">▼</span></div>';
+        html += '<div class="support-grid" id="soporte-section">';
         supportCards.forEach(card => {
             const inCollection = collection.has(card.folio);
             const typeLabel = card.type === 'Ixim' ? '🌽' : card.type === 'Rot' ? '🪨' : card.type === 'Protector' ? '🛡️' : card.type === 'Bio' ? '🌿' : '';
@@ -1724,6 +1724,21 @@ function renderDeckWorkspace() {
     });
 
     updateDeckValidation();
+}
+
+// ── Collapse/expand deck sections ──
+
+function toggleDeckSection(section) {
+    const el = document.getElementById(section + '-section');
+    const icon = document.getElementById(section + '-collapse');
+    if (!el) return;
+    if (el.style.display === 'none') {
+        el.style.display = '';
+        if (icon) icon.textContent = '▼';
+    } else {
+        el.style.display = 'none';
+        if (icon) icon.textContent = '▶';
+    }
 }
 
 // ── Reorder helpers ──

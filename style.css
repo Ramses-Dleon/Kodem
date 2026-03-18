@@ -615,9 +615,25 @@ select:focus {
     font-size: 0.85rem;
     font-weight: bold;
     color: var(--accent-amber);
-    padding: 4px 0;
+    padding: 6px 8px;
     border-bottom: 1px solid var(--border);
     margin-bottom: 4px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.15s;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.deck-section-label:hover {
+    background: var(--bg-hover, #1a1a2e);
+}
+.collapse-icon {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-left: auto;
+    transition: transform 0.2s;
 }
 .deck-section-count {
     font-weight: normal;
