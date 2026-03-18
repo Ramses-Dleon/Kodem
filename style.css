@@ -2575,6 +2575,8 @@ nav .nav-btn.active::after {
     .node-label { font-size: 9px }
     .node-role { font-size: 7px }
     .arrow-label, .arrow-synergy-label { font-size: 7px }
+    .sinergias-legend { gap: 12px }
+}
 
 /* ==================== GUIDE VIEW ==================== */
 .guide-container {
@@ -2820,4 +2822,95 @@ nav .nav-btn.active::after {
 .format-rule {
     border-color: var(--accent-amber);
     background: rgba(245, 158, 11, 0.05);
+}
+
+/* Guide desktop improvements */
+@media (min-width: 769px) {
+    .guide-container {
+        max-width: 900px;
+        padding: 32px;
+    }
+
+    .guide-title { font-size: 1.6rem; }
+
+    .board-diagram {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .board-row {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .board-zone {
+        padding: 16px 20px;
+    }
+
+    .zone-slots {
+        flex-direction: row;
+    }
+
+    .slot {
+        width: 50px;
+        height: 70px;
+    }
+
+    /* Turn flow: 2 column for phases */
+    .turn-flow {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .turn-arrow { display: none; }
+
+    .turn-phase {
+        padding: 16px;
+    }
+
+    .phase-battle {
+        grid-column: 1 / -1;
+    }
+
+    /* Card types: 4 columns */
+    .card-types-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .type-card {
+        padding: 16px;
+    }
+
+    /* Energy: 4 columns */
+    .energy-guide-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Marks: horizontal */
+    .marks-grid {
+        flex-direction: row;
+    }
+
+    .mark-card { flex: 1; }
+
+    /* Top rules: 2 columns */
+    .top-rules {
+        columns: 2;
+        column-gap: 32px;
+    }
+
+    .top-rules li {
+        break-inside: avoid;
+        padding: 8px 0;
+    }
+
+    /* Format: 4 columns */
+    .format-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .format-rule {
+        grid-column: span 2;
+    }
 }
