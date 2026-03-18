@@ -1728,6 +1728,31 @@ function renderDeckWorkspace() {
     updateDeckValidation();
 }
 
+// ── Collapse/expand pool filters ──
+
+function togglePoolFilters() {
+    const el = document.getElementById('pool-filters');
+    const icon = document.getElementById('pool-filter-icon');
+    if (!el) return;
+    if (el.style.display === 'none') {
+        el.style.display = '';
+        if (icon) icon.textContent = '▼';
+    } else {
+        el.style.display = 'none';
+        if (icon) icon.textContent = '▶ Filtros';
+    }
+}
+
+// Auto-collapse pool filters on mobile
+if (window.innerWidth <= 768) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const el = document.getElementById('pool-filters');
+        const icon = document.getElementById('pool-filter-icon');
+        if (el) el.style.display = 'none';
+        if (icon) icon.textContent = '▶ Filtros';
+    });
+}
+
 // ── Collapse/expand individual tercias ──
 
 function toggleTercia(num) {

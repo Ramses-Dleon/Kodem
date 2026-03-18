@@ -384,8 +384,8 @@
                 </div>
 
                 <div class="card-pool">
-                    <h3>Cartas Disponibles</h3>
-                    <div class="controls">
+                    <h3 class="pool-header" onclick="togglePoolFilters()">Cartas Disponibles <span class="pool-filter-icon" id="pool-filter-icon">▼</span></h3>
+                    <div class="controls" id="pool-filters">
                         <input type="text" id="deck-search" placeholder="Buscar carta..." />
                         <select id="deck-filter-energy">
                             <option value="">Todas las energías</option>

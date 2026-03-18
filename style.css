@@ -861,7 +861,7 @@ select:focus {
     border-radius: 8px;
     border: 2px solid var(--border);
     overflow-y: auto;
-    max-height: 60vh;
+    max-height: 70vh;
     position: relative;
 }
 
@@ -884,6 +884,17 @@ select:focus {
     z-index: 11;
     background: var(--bg-card);
     padding: 4px 0 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pool-filter-icon {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-family: system-ui, sans-serif;
+    font-weight: normal;
 }
 
 .btn-primary,
