@@ -153,42 +153,6 @@ No hay servidor, no hay cuentas, no hay tracking. Tu data es tuya.
 
 ---
 
-## 🃏 Deck Destacado: Logos Alpha-Kodem
-
-Deck Cháaktico-Pírico (25 cartas) — optimizado para agresión rápida con sinergia ⚡🔥:
-
-| # | Carta | Folio | Energía |
-|---|-------|-------|---------|
-| 1 | Ariam, Carga Pírica | LGRO-078 | 🔥 Pírica |
-| 2 | Balim, Pezuñas | MLBU-006 | ⚡ Cháaktica |
-| 3 | Caldera Submarina | TCOO-061 | 🌿 Bio |
-| 4 | Cretus, Promesa | LGRO-010 | 🔥 Pírica |
-| 5 | Develación | LGRO-014 | 🪨 Rot |
-| 6 | Dragel, Redirección | TCDE-001 | ⚡ Cháaktica |
-| 7 | Draxes, Ancestral | TCOO-084 | 🔥 Pírica |
-| 8 | Draxes, Planeo Pírico | DOOC-001 | 🔥 Pírica |
-| 9 | Embestida Pétrea | LGRO-036 | 🌽 Ixim |
-| 10 | Guerrero Pírico | LGRO-040 | 🪨 Rot |
-| 11 | Karus, Pinchazo | TCOO-037 | ⚡ Cháaktica |
-| 12 | Kephir, Lanzallamas | LGRO-045 | 🔥 Pírica |
-| 13 | Ketzz, Saliva de Fuego | MLBU-002 | 🔥 Pírica |
-| 14 | Kitse, Cola de Fuego | LGRO-044 | 🔥 Pírica |
-| 15 | Ozom, Ejército | LGRO-026 | 🔥 Pírica |
-| 16 | Pétalos de Fuego | LGRO-035 | 🌽 Ixim |
-| 17 | Rhymir, Devorador | TCOO-043 | ⚡ Cháaktica |
-| 18 | Rhymir, Rayo Doble | DOOC-024 | ⚡ Cháaktica |
-| 19 | Ruk, Trueno Nocturno | LGRO-016 | 🐉⚡ Rava |
-| 20 | Tzun, Heraldo | LGRO-034 | ⚡ Cháaktica |
-| 21 | Yakerr, Relámpago | RAMI-016 | ⚡ Cháaktica |
-| 22 | Yakerr, Trote | LGRO-006 | ⚡ Cháaktica |
-| 23 | Yailok, Contacto | TCOO-050 | ⚡ Cháaktica |
-| 24 | Yanzi, Precisión | LGRO-067 | 🛡️ Protector |
-| 25 | Zenam, Chispazo | DOOC-002 | ⚡ Cháaktica |
-
-**Código**: `KDECK-TEdSTy0wMzQsTEdSTy0wMDYsVENPTy0wNTAsUkFNSS0wMTYsTUxCVS0wMDYsRE9PQy0wMDIsVENERS0wMDEsVENPTy0wMzcsVENPTy0wNDMsRE9PQy0wMjQsTEdSTy0wNDUsTEdSTy0wNzgsTUxCVS0wMDIsTEdSTy0wNDQsTEdSTy0wMTAsRE9PQy0wMDEsVENPTy0wODQsTEdSTy0wMjYsTEdSTy0wMTYsTEdSTy0wNjcsVENPTy0wNjEsTEdSTy0wMzUsTEdSTy0wMzYsTEdSTy0wMTQsTEdSTy0wNDA=`
-
----
-
 ## 🛠️ Tech Stack
 
 | Componente | Tecnología |
