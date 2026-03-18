@@ -787,6 +787,13 @@ select:focus {
         width: 36px;
         height: 36px;
     }
+
+    /* Support grid: 3 columns filling full width on mobile */
+    .support-grid {
+        max-width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
 }
 
 .support-type-badge {
