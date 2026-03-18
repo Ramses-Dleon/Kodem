@@ -640,7 +640,6 @@ select:focus {
     display: flex;
     align-items: center;
     gap: 8px;
-    max-width: 480px;
 }
 
 .tercia-label {
@@ -658,14 +657,12 @@ select:focus {
 .tercia-cards-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 10px;
     flex: 1;
-    max-width: 380px;
 }
 .tercia-cards-row .card-item {
     width: 100%;
     min-width: 0;
-    max-width: 100%;
 }
 
 .tercia-card-slot {
@@ -735,13 +732,12 @@ select:focus {
 .support-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    max-width: 380px;
+    gap: 10px;
+    max-width: 50%;
 }
 .support-grid .card-item {
     width: 100%;
     min-width: 0;
-    max-width: 100%;
 }
 
 /* ── Mobile overrides for tercia layout ── */
