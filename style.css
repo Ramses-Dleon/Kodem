@@ -647,10 +647,16 @@ select:focus {
 }
 
 .tercia-cards-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
     gap: 8px;
     flex: 1;
     justify-content: center;
+}
+.tercia-cards-row .card-item {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
 }
 
 .tercia-card-slot {
@@ -716,11 +722,16 @@ select:focus {
     cursor: not-allowed;
 }
 
-/* Support grid (Protector, Bio, Equips) */
+/* Support grid (Protector, Bio, Equips) — always 3 columns */
 .support-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
     gap: 8px;
-    flex-wrap: wrap;
+}
+.support-grid .card-item {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
 }
 
 .support-type-badge {
