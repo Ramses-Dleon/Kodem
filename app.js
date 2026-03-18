@@ -222,6 +222,8 @@ async function init() {
         switchView('collection');
     } else if (hash === '#deck-builder') {
         switchView('deck-builder');
+    } else if (hash === '#sinergias') {
+        switchView('sinergias');
     } else if (hash === '#contact') {
         switchView('contact');
     }
@@ -710,6 +712,7 @@ function switchView(view) {
         'browser': 'browser-view',
         'collection': 'collection-view',
         'deck-builder': 'deck-builder-view',
+        'sinergias': 'sinergias-view',
         'contact': 'contact-view'
     };
 
@@ -719,6 +722,7 @@ function switchView(view) {
     if (view === 'browser') renderBrowserPage();
     else if (view === 'collection') renderCollection();
     else if (view === 'deck-builder') renderDeckBuilder();
+    else if (view === 'sinergias') initSinergias();
 }
 
 // ==================== BROWSER VIEW ====================
@@ -2245,3 +2249,118 @@ init();
         });
     }
 })();
+
+// ==================== SINERGIAS MAP ====================
+let _sinergiasInited = false;
+function initSinergias() {
+    if (_sinergiasInited) return;
+    _sinergiasInited = true;
+
+    var DATA = {
+        atlica:{e:'💧',n:'Átlica',c:'var(--atlica)',role:'Defensiva',desc:'Curación, protección, resistencia. Los Adendei Átlicos son los médicos del campo — curan aliados y absorben daño. Contrarrestan a Pírica apagando sus quemaduras.'},
+        huumica:{e:'🌀',n:'Húumica',c:'var(--huumica)',role:'Progresiva',desc:'Escalado y evolución. Empiezan débiles pero crecen cada turno. Contrarrestan a Demótica porque no puedes controlar lo que escala más rápido que tú.'},
+        demotica:{e:'🔮',n:'Demótica',c:'var(--demotica)',role:'Posicional',desc:'Control de campo y manipulación. Mueven cartas, niegan efectos, cambian posiciones. Contrarrestan a Feral manipulando sus buffs en su contra.'},
+        chaaktica:{e:'⚡',n:'Cháaktica',c:'var(--chaaktica)',role:'Velocidad',desc:'Ataques rápidos y burst damage. Golpean antes de que el rival pueda reaccionar. Contrarrestan a Lítica porque la velocidad supera a la resistencia bruta.'},
+        gelida:{e:'🧊',n:'Gélida',c:'var(--gelida)',role:'Control',desc:'Congelamiento y ralentización. Ponen descansos extra, congelan ataques. Contrarrestan a Cháaktica frenando su velocidad.'},
+        litica:{e:'🪨',n:'Lítica',c:'var(--litica)',role:'Tanque',desc:'Alta vida y resistencia pura. Aguantan todo el daño y siguen en pie. Contrarrestan a Átlica porque no necesitan curarse si no pueden ser derribados.'},
+        pirica:{e:'🔥',n:'Pírica',c:'var(--pirica)',role:'Agresiva',desc:'Daño directo y quemaduras. Eliminan amenazas rápidamente con daño masivo. Contrarrestan a Feral quemándolos más rápido de lo que se buffean.'},
+        feral:{e:'🐾',n:'Feral',c:'var(--feral)',role:'Auto-buff',desc:'Crecimiento propio y feralización. Se fortalecen a sí mismos acumulando poder. Se counter a sí mismos: Feral vs Feral es puro espejo de quién escala mejor.'}
+    };
+
+    var COLORS = {atlica:'#3b82f6',huumica:'#a855f7',demotica:'#9ca3af',chaaktica:'#eab308',gelida:'#06b6d4',litica:'#b45309',pirica:'#ef4444',feral:'#22c55e'};
+
+    var COUNTERS = [
+        {f:'feral',t:'feral',l:'Auto-buff (espejo)'},
+        {f:'huumica',t:'demotica',l:'Escala > Control'},
+        {f:'demotica',t:'feral',l:'Manipula buffs'},
+        {f:'pirica',t:'feral',l:'Quema > Buff'},
+        {f:'chaaktica',t:'litica',l:'Burst > Tanque'},
+        {f:'litica',t:'atlica',l:'Resiste curaciones'},
+        {f:'gelida',t:'chaaktica',l:'Congela velocidad'},
+        {f:'atlica',t:'pirica',l:'Cura > Daño'}
+    ];
+
+    var SYNERGIES = [
+        {a:'pirica',b:'chaaktica',l:'🔥⚡ Aggro imparable'},
+        {a:'feral',b:'chaaktica',l:'🐾⚡ Buff + velocidad'},
+        {a:'demotica',b:'feral',l:'🔮🐾 Control + auto-buff'},
+        {a:'demotica',b:'atlica',l:'🔮💧 Posición + defensa'}
+    ];
+
+    var container = document.getElementById('sinergias-view');
+    var nodes = container.querySelectorAll('.node-group');
+    var counterPaths = container.querySelectorAll('.arrow-counter');
+    var synergyPaths = container.querySelectorAll('.arrow-synergy');
+    var panel = document.getElementById('detail-panel');
+    var activeId = null;
+
+    function connectedIds(id) {
+        var ids = new Set();
+        COUNTERS.forEach(function(c){if(c.f===id)ids.add(c.t);if(c.t===id)ids.add(c.f)});
+        SYNERGIES.forEach(function(s){if(s.a===id)ids.add(s.b);if(s.b===id)ids.add(s.a)});
+        ids.add(id);
+        return ids;
+    }
+
+    function highlight(id) {
+        var conn = connectedIds(id);
+        nodes.forEach(function(n){n.classList.toggle('dimmed',!conn.has(n.getAttribute('data-id')))});
+        counterPaths.forEach(function(p){
+            var f=p.getAttribute('data-from'),t=p.getAttribute('data-to');
+            p.classList.toggle('dimmed',f!==id&&t!==id);
+            p.classList.toggle('highlight',f===id||t===id);
+        });
+        synergyPaths.forEach(function(p){
+            var a=p.getAttribute('data-a'),b=p.getAttribute('data-b');
+            p.classList.toggle('dimmed',a!==id&&b!==id);
+            p.classList.toggle('highlight',a===id||b===id);
+        });
+    }
+
+    function clearHighlight() {
+        nodes.forEach(function(n){n.classList.remove('dimmed','active')});
+        counterPaths.forEach(function(p){p.classList.remove('dimmed','highlight')});
+        synergyPaths.forEach(function(p){p.classList.remove('dimmed','highlight')});
+    }
+
+    function showPanel(id) {
+        var d = DATA[id]; if(!d) return;
+        var color = COLORS[id]||'#fff';
+        var html = '<h2 style="color:'+color+'">'+d.e+' '+d.n+'</h2>';
+        html += '<div class="role">'+d.role+'</div>';
+        html += '<div class="desc">'+d.desc+'</div>';
+        html += '<div class="connections"><strong>Conexiones:</strong>';
+        COUNTERS.forEach(function(c){
+            if(c.f===id) html += '<div class="conn-item"><span class="conn-counter">⚔️ Counters:</span> '+DATA[c.t].e+' '+DATA[c.t].n+' — '+c.l+'</div>';
+            if(c.t===id&&c.f!==id) html += '<div class="conn-item"><span class="conn-counter">🛡️ Countered by:</span> '+DATA[c.f].e+' '+DATA[c.f].n+' — '+c.l+'</div>';
+        });
+        SYNERGIES.forEach(function(s){
+            var other = s.a===id ? s.b : s.b===id ? s.a : null;
+            if(other) html += '<div class="conn-item"><span class="conn-synergy">✨ Sinergia:</span> '+DATA[other].e+' '+DATA[other].n+' — '+s.l+'</div>';
+        });
+        html += '</div>';
+        panel.innerHTML = html;
+        panel.classList.add('open');
+    }
+
+    nodes.forEach(function(n){
+        n.addEventListener('mouseenter',function(){if(!activeId)highlight(n.getAttribute('data-id'))});
+        n.addEventListener('mouseleave',function(){if(!activeId)clearHighlight()});
+        n.addEventListener('click',function(e){
+            e.stopPropagation();
+            var id = n.getAttribute('data-id');
+            if(activeId===id){activeId=null;clearHighlight();panel.classList.remove('open');return}
+            activeId = id;
+            clearHighlight();
+            highlight(id);
+            n.classList.add('active');
+            showPanel(id);
+        });
+    });
+
+    container.addEventListener('click',function(e){
+        if(!e.target.closest('.node-group')&&!e.target.closest('#detail-panel')){
+            activeId=null;clearHighlight();panel.classList.remove('open');
+        }
+    });
+}

@@ -2400,3 +2400,178 @@ nav .nav-btn.active::after {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
 }
+   SINERGIAS-SPECIFIC STYLES
+   Uses CSS vars from style.css for theme consistency
+   ============================================================ */
+
+.sinergias-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.sinergias-hint {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    background: var(--bg-dark);
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid var(--border);
+}
+
+.map-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.map-wrap svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* SVG nodes */
+.node-circle { cursor: pointer; transition: filter .2s }
+.node-group:hover .node-circle,
+.node-group.active .node-circle { filter: drop-shadow(0 0 18px currentColor) }
+.node-label {
+    font-family: 'Cinzel', serif;
+    fill: var(--text-primary);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+.node-role {
+    font-family: 'Outfit', sans-serif;
+    fill: var(--text-secondary);
+    font-size: 9px;
+    pointer-events: none;
+}
+.node-emoji { pointer-events: none; user-select: none }
+
+/* SVG arrows */
+.arrow-counter {
+    fill: none;
+    stroke-width: 3;
+    opacity: 0.7;
+    transition: opacity .2s;
+    stroke-dasharray: 16 8;
+    animation: dash 2s linear infinite;
+}
+.arrow-synergy {
+    fill: none;
+    stroke: var(--accent-amber);
+    stroke-width: 2.5;
+    stroke-dasharray: 10 6;
+    opacity: 0.5;
+    transition: opacity .2s;
+}
+.arrow-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 9px;
+    fill: var(--text-primary);
+    pointer-events: none;
+    paint-order: stroke;
+    stroke: var(--bg-card);
+    stroke-width: 4px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    font-weight: 600;
+}
+.arrow-synergy-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 9px;
+    fill: var(--accent-amber);
+    pointer-events: none;
+    paint-order: stroke;
+    stroke: var(--bg-card);
+    stroke-width: 4px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    font-weight: 600;
+}
+
+/* Highlight states */
+.node-group.dimmed { opacity: 0.12 }
+.arrow-counter.dimmed, .arrow-synergy.dimmed { opacity: 0.05 }
+.arrow-counter.highlight { opacity: 1; stroke-width: 4 }
+.arrow-synergy.highlight { opacity: 1; stroke-width: 3.5 }
+
+/* Detail panel */
+#detail-panel {
+    display: none;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 900px;
+}
+#detail-panel.open { display: block }
+#detail-panel h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+#detail-panel .role {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+#detail-panel .desc {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+#detail-panel .connections { font-size: 0.85rem }
+#detail-panel .conn-item {
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+}
+#detail-panel .conn-counter { color: var(--danger) }
+#detail-panel .conn-synergy { color: var(--accent-amber) }
+
+/* Legend */
+.sinergias-legend {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+.legend-line { width: 40px; height: 3px; border-radius: 2px }
+.legend-counter { background: linear-gradient(90deg, var(--danger), var(--accent-amber)) }
+.legend-synergy {
+    background: repeating-linear-gradient(90deg, var(--accent-amber) 0, var(--accent-amber) 8px, transparent 8px, transparent 14px);
+}
+
+@keyframes dash { to { stroke-dashoffset: -32 } }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .node-label { font-size: 9px }
+    .node-role { font-size: 7px }
+    .arrow-label, .arrow-synergy-label { font-size: 7px }

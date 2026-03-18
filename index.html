@@ -34,7 +34,7 @@
             <button class="nav-btn active" data-view="browser">Explorar Cartas</button>
             <button class="nav-btn" data-view="collection">Mi Colección</button>
             <button class="nav-btn" data-view="deck-builder">Constructor de Mazos</button>
-            <a href="sinergias.html" class="nav-btn">⚡ Sinergias</a>
+            <button class="nav-btn" data-view="sinergias">⚡ Sinergias</button>
             <button class="nav-btn" data-view="contact">💬 Contacto</button>
         </nav>
     </header>
@@ -494,6 +494,118 @@
 
     <!-- Toast notification container -->
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+        <!-- Sinergias View -->
+        <section id="sinergias-view" class="view">
+            <div class="sinergias-layout">
+                <div class="sinergias-hint">Hover: resalta conexiones · Clic: ficha completa</div>
+
+                <div class="map-wrap">
+                    <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="g-atlica"><stop offset="0%" stop-color="var(--atlica)" stop-opacity="0.3"/><stop offset="100%" stop-color="var(--atlica)" stop-opacity="0.08"/></radialGradient>
+                            <radialGradient id="g-pirica"><stop offset="0%" stop-color="var(--pirica)" stop-opacity="0.3"/><stop offset="100%" stop-color="var(--pirica)" stop-opacity="0.08"/></radialGradient>
+                            <radialGradient id="g-gelida"><stop offset="0%" stop-color="var(--gelida)" stop-opacity="0.3"/><stop offset="100%" stop-color="var(--gelida)" stop-opacity="0.08"/></radialGradient>
+                            <radialGradient id="g-litica"><stop offset="0%" stop-color="var(--litica)" stop-opacity="0.3"/><stop offset="100%" stop-color="var(--litica)" stop-opacity="0.08"/></radialGradient>
+                            <radialGradient id="g-chaaktica"><stop offset="0%" stop-color="var(--chaaktica)" stop-opacity="0.3"/><stop offset="100%" stop-color="var(--chaaktica)" stop-opacity="0.08"/></radialGradient>
+                            <radialGradient id="g-huumica"><stop offset="0%" stop-color="var(--huumica)" stop-opacity="0.3"/><stop offset="100%" stop-color="var(--huumica)" stop-opacity="0.08"/></radialGradient>
+                            <radialGradient id="g-demotica"><stop offset="0%" stop-color="var(--demotica)" stop-opacity="0.3"/><stop offset="100%" stop-color="var(--demotica)" stop-opacity="0.08"/></radialGradient>
+                            <radialGradient id="g-feral"><stop offset="0%" stop-color="var(--feral)" stop-opacity="0.3"/><stop offset="100%" stop-color="var(--feral)" stop-opacity="0.08"/></radialGradient>
+                            <marker id="ah-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="var(--pirica)"/></marker>
+                            <marker id="ah-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="var(--atlica)"/></marker>
+                            <marker id="ah-cyan" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="var(--gelida)"/></marker>
+                            <marker id="ah-brown" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="var(--litica)"/></marker>
+                            <marker id="ah-yellow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="var(--chaaktica)"/></marker>
+                            <marker id="ah-purple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="var(--huumica)"/></marker>
+                            <marker id="ah-gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="var(--demotica)"/></marker>
+                            <marker id="ah-green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4Z" fill="var(--feral)"/></marker>
+                        </defs>
+                        <!-- COUNTER ARROWS -->
+                        <path class="arrow-counter" data-from="feral" data-to="feral" stroke="var(--feral)" marker-end="url(#ah-green)" d="M250,178 C270,100 340,100 290,175"/>
+                        <text class="arrow-label" x="285" y="110" fill="var(--feral)">Auto-buff ↻</text>
+                        <path class="arrow-counter" data-from="huumica" data-to="demotica" stroke="var(--huumica)" marker-end="url(#ah-purple)" d="M645,210 Q720,360 660,470"/>
+                        <text class="arrow-label" x="700" y="350">Escala &gt; Control</text>
+                        <path class="arrow-counter" data-from="demotica" data-to="feral" stroke="var(--demotica)" marker-end="url(#ah-gray)" d="M620,490 Q440,350 285,265"/>
+                        <text class="arrow-label" x="460" y="350">Manipula buffs</text>
+                        <path class="arrow-counter" data-from="pirica" data-to="feral" stroke="var(--pirica)" marker-end="url(#ah-red)" d="M135,405 Q160,340 210,285"/>
+                        <text class="arrow-label" x="118" y="350">Quema &gt; Buff</text>
+                        <path class="arrow-counter" data-from="chaaktica" data-to="litica" stroke="var(--chaaktica)" marker-end="url(#ah-yellow)" d="M580,650 Q420,680 280,640"/>
+                        <text class="arrow-label" x="410" y="695">Burst &gt; Tanque</text>
+                        <path class="arrow-counter" data-from="litica" data-to="atlica" stroke="var(--litica)" marker-end="url(#ah-brown)" d="M235,590 Q280,400 370,170"/>
+                        <text class="arrow-label" x="270" y="420">Resiste curaciones</text>
+                        <path class="arrow-counter" data-from="gelida" data-to="chaaktica" stroke="var(--gelida)" marker-end="url(#ah-cyan)" d="M445,730 Q520,720 565,680"/>
+                        <text class="arrow-label" x="480" y="745">Congela velocidad</text>
+                        <path class="arrow-counter" data-from="atlica" data-to="pirica" stroke="var(--atlica)" marker-end="url(#ah-blue)" d="M355,165 Q220,290 145,405"/>
+                        <text class="arrow-label" x="225" y="275">Cura &gt; Daño</text>
+                        <!-- SYNERGY LINES -->
+                        <path class="arrow-synergy" data-a="pirica" data-b="chaaktica" d="M165,500 Q400,550 560,640"/>
+                        <text class="arrow-synergy-label" x="350" y="540">🔥⚡ Aggro imparable</text>
+                        <path class="arrow-synergy" data-a="feral" data-b="chaaktica" d="M260,275 Q420,480 555,625"/>
+                        <text class="arrow-synergy-label" x="385" y="450">🐾⚡ Buff + velocidad</text>
+                        <path class="arrow-synergy" data-a="demotica" data-b="feral" d="M620,475 Q430,310 280,255"/>
+                        <text class="arrow-synergy-label" x="450" y="320">🔮🐾 Control + auto-buff</text>
+                        <path class="arrow-synergy" data-a="demotica" data-b="atlica" d="M630,470 Q530,300 420,160"/>
+                        <text class="arrow-synergy-label" x="550" y="290">🔮💧 Posición + defensa</text>
+                        <!-- NODES -->
+                        <g class="node-group" data-id="atlica">
+                            <circle cx="400" cy="120" r="60" fill="url(#g-atlica)" stroke="var(--atlica)" stroke-width="2.5" class="node-circle" style="color:var(--atlica)"/>
+                            <text class="node-emoji" x="400" y="115" text-anchor="middle" dominant-baseline="middle" font-size="28">💧</text>
+                            <text class="node-label" x="400" y="148" text-anchor="middle">ÁTLICA</text>
+                            <text class="node-role" x="400" y="195" text-anchor="middle">Defensiva</text>
+                        </g>
+                        <g class="node-group" data-id="huumica">
+                            <circle cx="640" cy="200" r="60" fill="url(#g-huumica)" stroke="var(--huumica)" stroke-width="2.5" class="node-circle" style="color:var(--huumica)"/>
+                            <text class="node-emoji" x="640" y="195" text-anchor="middle" dominant-baseline="middle" font-size="28">🌀</text>
+                            <text class="node-label" x="640" y="228" text-anchor="middle">HÚUMICA</text>
+                            <text class="node-role" x="640" y="275" text-anchor="middle">Progresiva</text>
+                        </g>
+                        <g class="node-group" data-id="demotica">
+                            <circle cx="680" cy="500" r="60" fill="url(#g-demotica)" stroke="var(--demotica)" stroke-width="2.5" class="node-circle" style="color:var(--demotica)"/>
+                            <text class="node-emoji" x="680" y="495" text-anchor="middle" dominant-baseline="middle" font-size="28">🔮</text>
+                            <text class="node-label" x="680" y="528" text-anchor="middle">DEMÓTICA</text>
+                            <text class="node-role" x="680" y="575" text-anchor="middle">Posicional</text>
+                        </g>
+                        <g class="node-group" data-id="chaaktica">
+                            <circle cx="590" cy="650" r="60" fill="url(#g-chaaktica)" stroke="var(--chaaktica)" stroke-width="2.5" class="node-circle" style="color:var(--chaaktica)"/>
+                            <text class="node-emoji" x="590" y="645" text-anchor="middle" dominant-baseline="middle" font-size="28">⚡</text>
+                            <text class="node-label" x="590" y="678" text-anchor="middle">CHÁAKTICA</text>
+                            <text class="node-role" x="590" y="725" text-anchor="middle">Velocidad</text>
+                        </g>
+                        <g class="node-group" data-id="gelida">
+                            <circle cx="400" cy="730" r="60" fill="url(#g-gelida)" stroke="var(--gelida)" stroke-width="2.5" class="node-circle" style="color:var(--gelida)"/>
+                            <text class="node-emoji" x="400" y="725" text-anchor="middle" dominant-baseline="middle" font-size="28">🧊</text>
+                            <text class="node-label" x="400" y="758" text-anchor="middle">GÉLIDA</text>
+                            <text class="node-role" x="400" y="790" text-anchor="middle">Control</text>
+                        </g>
+                        <g class="node-group" data-id="litica">
+                            <circle cx="210" cy="630" r="60" fill="url(#g-litica)" stroke="var(--litica)" stroke-width="2.5" class="node-circle" style="color:var(--litica)"/>
+                            <text class="node-emoji" x="210" y="625" text-anchor="middle" dominant-baseline="middle" font-size="28">🪨</text>
+                            <text class="node-label" x="210" y="658" text-anchor="middle">LÍTICA</text>
+                            <text class="node-role" x="210" y="705" text-anchor="middle">Tanque</text>
+                        </g>
+                        <g class="node-group" data-id="pirica">
+                            <circle cx="120" cy="460" r="60" fill="url(#g-pirica)" stroke="var(--pirica)" stroke-width="2.5" class="node-circle" style="color:var(--pirica)"/>
+                            <text class="node-emoji" x="120" y="455" text-anchor="middle" dominant-baseline="middle" font-size="28">🔥</text>
+                            <text class="node-label" x="120" y="488" text-anchor="middle">PÍRICA</text>
+                            <text class="node-role" x="120" y="535" text-anchor="middle">Agresiva</text>
+                        </g>
+                        <g class="node-group" data-id="feral">
+                            <circle cx="230" cy="230" r="55" fill="url(#g-feral)" stroke="var(--feral)" stroke-width="2.5" class="node-circle" style="color:var(--feral)"/>
+                            <text class="node-emoji" x="230" y="225" text-anchor="middle" dominant-baseline="middle" font-size="26">🐾</text>
+                            <text class="node-label" x="230" y="253" text-anchor="middle">FERAL</text>
+                            <text class="node-role" x="230" y="298" text-anchor="middle">Auto-buff</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="sinergias-legend">
+                    <div class="legend-item"><div class="legend-line legend-counter"></div> Contador — quién vence a quién</div>
+                    <div class="legend-item"><div class="legend-line legend-synergy"></div> Sinergia — combo poderoso</div>
+                </div>
+
+                <div id="detail-panel"></div>
+            </div>
+        </section>
 
         <!-- Contact View -->
         <section id="contact-view" class="view">
