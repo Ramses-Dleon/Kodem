@@ -1607,32 +1607,181 @@ function renderDeckWorkspace() {
     const deckCardsEl = document.getElementById('deck-cards');
     if (deck.cards.length === 0) {
         deckCardsEl.innerHTML = '<p class="empty-state">Agrega cartas a tu mazo desde la galería de abajo</p>';
-    } else {
-        const cards = deck.cards.map(folio => allCards.find(c => c.folio === folio)).filter(Boolean);
-        deckCardsEl.innerHTML = cards.map(card => {
-            const inCollection = collection.has(card.folio);
-            return `
-                <div class="card-item small ${inCollection ? '' : 'not-owned'}" data-folio="${card.folio}" title="${card.name}${inCollection ? '' : ' ⚠️ No la tienes'}">
-                    <img src="${card.image}" alt="${card.name}" loading="lazy" />
-                    ${inCollection ? '' : '<span class="deck-not-owned-badge">⚠️</span>'}
-                    <button class="remove-from-deck" data-folio="${card.folio}" style="position: absolute; top: 2px; right: 2px; background: var(--accent-crimson); color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px;">×</button>
-                </div>
-            `;
-        }).join('');
-
-        deckCardsEl.querySelectorAll('.remove-from-deck').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                removeFromDeck(btn.dataset.folio);
-            });
-        });
-
-        deckCardsEl.querySelectorAll('.card-item').forEach((el, idx) => {
-            el.addEventListener('click', () => openCardModal(cards[idx], cards, idx));
-        });
+        updateDeckValidation();
+        return;
     }
 
+    const cards = deck.cards.map(folio => allCards.find(c => c.folio === folio)).filter(Boolean);
+
+    // Separate by type: mazo (Adendei/Rava/Espectro) vs support (Protector/Bio/Ixim/Rot)
+    const mazoTypes = new Set(['Adendei', 'Rava', 'Espectro']);
+    const mazoCards = [];
+    const supportCards = [];
+    cards.forEach(card => {
+        if (mazoTypes.has(card.type)) mazoCards.push(card);
+        else supportCards.push(card);
+    });
+
+    let html = '';
+
+    // ── Mazo section: grouped in tercias of 3 ──
+    if (mazoCards.length > 0) {
+        html += '<div class="deck-section-label">📦 Mazo <span class="deck-section-count">' + mazoCards.length + ' cartas</span></div>';
+        html += '<div class="tercia-grid">';
+        for (let i = 0; i < mazoCards.length; i += 3) {
+            const terciaNum = Math.floor(i / 3) + 1;
+            const terciaCards = mazoCards.slice(i, i + 3);
+            const isFirst = i === 0;
+            const isLast = i + 3 >= mazoCards.length;
+            html += `<div class="tercia-row" data-tercia="${terciaNum}">`;
+            html += `<div class="tercia-label">Tercia ${terciaNum}</div>`;
+            html += `<div class="tercia-cards-row">`;
+            terciaCards.forEach((card, j) => {
+                const globalIdx = i + j;
+                const inCollection = collection.has(card.folio);
+                html += `
+                    <div class="tercia-card-slot">
+                        <div class="card-item small ${inCollection ? '' : 'not-owned'}" data-folio="${card.folio}" data-deck-idx="${globalIdx}" title="${card.name}${inCollection ? '' : ' ⚠️ No la tienes'}">
+                            <img src="${card.image}" alt="${card.name}" loading="lazy" />
+                            ${inCollection ? '' : '<span class="deck-not-owned-badge">⚠️</span>'}
+                            <button class="remove-from-deck" data-folio="${card.folio}" style="position:absolute;top:2px;right:2px;background:var(--accent-crimson);color:white;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:12px;">×</button>
+                        </div>
+                        <div class="card-reorder-btns">
+                            <button class="reorder-btn" data-dir="up" data-idx="${globalIdx}" title="Mover arriba" ${globalIdx === 0 ? 'disabled' : ''}>▲</button>
+                            <button class="reorder-btn" data-dir="down" data-idx="${globalIdx}" title="Mover abajo" ${globalIdx >= mazoCards.length - 1 ? 'disabled' : ''}>▼</button>
+                        </div>
+                    </div>`;
+            });
+            html += `</div>`; // tercia-cards-row
+
+            // Tercia row move buttons
+            html += `<div class="tercia-row-btns">`;
+            html += `<button class="tercia-move-btn" data-tdir="up" data-tidx="${i}" title="Subir tercia" ${isFirst ? 'disabled' : ''}>⬆️</button>`;
+            html += `<button class="tercia-move-btn" data-tdir="down" data-tidx="${i}" title="Bajar tercia" ${isLast ? 'disabled' : ''}>⬇️</button>`;
+            html += `</div>`;
+            html += `</div>`; // tercia-row
+        }
+        html += '</div>'; // tercia-grid
+    }
+
+    // ── Support section: Protector, Bio, Equips ──
+    if (supportCards.length > 0) {
+        html += '<div class="deck-section-label" style="margin-top:12px;">🛡️ Soporte <span class="deck-section-count">' + supportCards.length + ' cartas</span></div>';
+        html += '<div class="support-grid">';
+        supportCards.forEach(card => {
+            const inCollection = collection.has(card.folio);
+            const typeLabel = card.type === 'Ixim' ? '🌽' : card.type === 'Rot' ? '🪨' : card.type === 'Protector' ? '🛡️' : card.type === 'Bio' ? '🌿' : '';
+            html += `
+                <div class="card-item small ${inCollection ? '' : 'not-owned'}" data-folio="${card.folio}" title="${typeLabel} ${card.name}${inCollection ? '' : ' ⚠️ No la tienes'}">
+                    <img src="${card.image}" alt="${card.name}" loading="lazy" />
+                    ${inCollection ? '' : '<span class="deck-not-owned-badge">⚠️</span>'}
+                    <span class="support-type-badge">${typeLabel}</span>
+                    <button class="remove-from-deck" data-folio="${card.folio}" style="position:absolute;top:2px;right:2px;background:var(--accent-crimson);color:white;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:12px;">×</button>
+                </div>`;
+        });
+        html += '</div>';
+    }
+
+    deckCardsEl.innerHTML = html;
+
+    // ── Event listeners ──
+
+    // Remove card
+    deckCardsEl.querySelectorAll('.remove-from-deck').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            removeFromDeck(btn.dataset.folio);
+        });
+    });
+
+    // Open modal
+    deckCardsEl.querySelectorAll('.card-item').forEach((el) => {
+        el.addEventListener('click', () => {
+            const folio = el.dataset.folio;
+            const card = allCards.find(c => c.folio === folio);
+            if (card) openCardModal(card, cards, cards.indexOf(card));
+        });
+    });
+
+    // Individual card reorder (▲/▼)
+    deckCardsEl.querySelectorAll('.reorder-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const idx = parseInt(btn.dataset.idx);
+            const dir = btn.dataset.dir;
+            reorderDeckCard(idx, dir);
+        });
+    });
+
+    // Tercia row move (⬆️/⬇️ — moves 3 cards at once)
+    deckCardsEl.querySelectorAll('.tercia-move-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const startIdx = parseInt(btn.dataset.tidx);
+            const dir = btn.dataset.tdir;
+            reorderTercia(startIdx, dir);
+        });
+    });
+
     updateDeckValidation();
+}
+
+// ── Reorder helpers ──
+
+function reorderDeckCard(idx, dir) {
+    if (!currentDeck) return;
+    const deck = decks[currentDeck];
+    const cards = deck.cards;
+    // Find boundaries of mazo cards (Adendei/Rava/Espectro)
+    const mazoTypes = new Set(['Adendei', 'Rava', 'Espectro']);
+    const mazoFolios = cards.filter(f => {
+        const c = allCards.find(x => x.folio === f);
+        return c && mazoTypes.has(c.type);
+    });
+    // idx is relative to mazo cards
+    if (dir === 'up' && idx > 0) {
+        // Find actual positions in deck.cards array
+        const posA = cards.indexOf(mazoFolios[idx]);
+        const posB = cards.indexOf(mazoFolios[idx - 1]);
+        [cards[posA], cards[posB]] = [cards[posB], cards[posA]];
+    } else if (dir === 'down' && idx < mazoFolios.length - 1) {
+        const posA = cards.indexOf(mazoFolios[idx]);
+        const posB = cards.indexOf(mazoFolios[idx + 1]);
+        [cards[posA], cards[posB]] = [cards[posB], cards[posA]];
+    }
+    saveDecks();
+    renderDeckWorkspace();
+}
+
+function reorderTercia(startIdx, dir) {
+    if (!currentDeck) return;
+    const deck = decks[currentDeck];
+    const cards = deck.cards;
+    const mazoTypes = new Set(['Adendei', 'Rava', 'Espectro']);
+    const mazoFolios = cards.filter(f => {
+        const c = allCards.find(x => x.folio === f);
+        return c && mazoTypes.has(c.type);
+    });
+    
+    const terciaSize = Math.min(3, mazoFolios.length - startIdx);
+    
+    if (dir === 'up' && startIdx >= 3) {
+        // Swap this tercia with the one above (swap 3 cards with 3 cards)
+        for (let i = 0; i < terciaSize; i++) {
+            const posA = cards.indexOf(mazoFolios[startIdx + i]);
+            const posB = cards.indexOf(mazoFolios[startIdx - 3 + i]);
+            [cards[posA], cards[posB]] = [cards[posB], cards[posA]];
+        }
+    } else if (dir === 'down' && startIdx + 3 < mazoFolios.length) {
+        const nextSize = Math.min(3, mazoFolios.length - startIdx - 3);
+        for (let i = 0; i < Math.min(terciaSize, nextSize); i++) {
+            const posA = cards.indexOf(mazoFolios[startIdx + i]);
+            const posB = cards.indexOf(mazoFolios[startIdx + 3 + i]);
+            [cards[posA], cards[posB]] = [cards[posB], cards[posA]];
+        }
+    }
+    saveDecks();
+    renderDeckWorkspace();
 }
 
 function updateDeckValidation() {
