@@ -1251,7 +1251,13 @@ function renderCollection() {
             if (filterSet && card.set !== filterSet) return false;
             if (filterType && card.type !== filterType) return false;
             if (filterEnergy && card.energy !== filterEnergy) return false;
-            if (filterRarity && card.rarity !== filterRarity) return false;
+            if (filterRarity) {
+                const rarityMap = { 'Común': '', 'Rara': 'R', 'Súper Rara': 'S', 'Ultra Rara': 'U', 'Kósmica': 'K' };
+                const targetSuffix = rarityMap[filterRarity];
+                if (targetSuffix === undefined) { /* unknown rarity, skip */ }
+                else if (targetSuffix === '') { if (getFolioSuffix(card.folio) !== '') return false; }
+                else { if (!(card.rarity_variants || []).includes(targetSuffix)) return false; }
+            }
             return true;
         });
     } else {
@@ -1263,7 +1269,13 @@ function renderCollection() {
             if (filterSet && card.set !== filterSet) return false;
             if (filterType && card.type !== filterType) return false;
             if (filterEnergy && card.energy !== filterEnergy) return false;
-            if (filterRarity && card.rarity !== filterRarity) return false;
+            if (filterRarity) {
+                const rarityMap = { 'Común': '', 'Rara': 'R', 'Súper Rara': 'S', 'Ultra Rara': 'U', 'Kósmica': 'K' };
+                const targetSuffix = rarityMap[filterRarity];
+                if (targetSuffix === undefined) { /* unknown rarity, skip */ }
+                else if (targetSuffix === '') { if (getFolioSuffix(card.folio) !== '') return false; }
+                else { if (!(card.rarity_variants || []).includes(targetSuffix)) return false; }
+            }
             return true;
         });
     }
