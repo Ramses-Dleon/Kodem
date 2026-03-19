@@ -1579,19 +1579,46 @@ function renderDeckBuilder() {
 
 function renderDeckList() {
     const container = document.getElementById('saved-decks');
+    const deckEntries = Object.entries(decks);
 
-    container.innerHTML = Object.entries(decks).map(([id, deck]) => `
+    container.innerHTML = deckEntries.map(([id, deck], idx) => `
         <div class="deck-item ${currentDeck === id ? 'active' : ''}" data-deck-id="${id}">
-            ${deck.name} (${deck.cards.length})
+            <span class="deck-item-name">${deck.name} (${deck.cards.length})</span>
+            <span class="deck-item-arrows">
+                <button class="deck-order-btn" data-dir="up" data-id="${id}" title="Subir" ${idx === 0 ? 'disabled' : ''}>▲</button>
+                <button class="deck-order-btn" data-dir="down" data-id="${id}" title="Bajar" ${idx === deckEntries.length - 1 ? 'disabled' : ''}>▼</button>
+            </span>
         </div>
     `).join('');
 
-    container.querySelectorAll('.deck-item').forEach(el => {
+    container.querySelectorAll('.deck-item-name').forEach(el => {
         el.addEventListener('click', () => {
-            currentDeck = el.dataset.deckId;
+            currentDeck = el.parentElement.dataset.deckId;
             renderDeckBuilder();
         });
     });
+
+    container.querySelectorAll('.deck-order-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            reorderDeckList(btn.dataset.id, btn.dataset.dir);
+        });
+    });
+}
+
+function reorderDeckList(deckId, dir) {
+    const keys = Object.keys(decks);
+    const idx = keys.indexOf(deckId);
+    if (dir === 'up' && idx > 0) {
+        [keys[idx], keys[idx - 1]] = [keys[idx - 1], keys[idx]];
+    } else if (dir === 'down' && idx < keys.length - 1) {
+        [keys[idx], keys[idx + 1]] = [keys[idx + 1], keys[idx]];
+    } else return;
+    const reordered = {};
+    keys.forEach(k => { reordered[k] = decks[k]; });
+    decks = reordered;
+    saveDecks();
+    renderDeckList();
 }
 
 function renderDeckWorkspace() {

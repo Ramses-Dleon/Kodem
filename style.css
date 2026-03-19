@@ -490,11 +490,49 @@ select:focus {
 
 .deck-item {
     background: var(--bg-darker);
-    padding: 0.75rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s;
     border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.deck-item-name {
+    flex: 1;
+    font-size: 0.85rem;
+}
+
+.deck-item-arrows {
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.deck-order-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    width: 22px;
+    height: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.55rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+}
+.deck-order-btn:hover:not(:disabled) {
+    border-color: var(--accent-amber);
+    color: var(--accent-amber);
+}
+.deck-order-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
 }
 
 .deck-item:hover {
