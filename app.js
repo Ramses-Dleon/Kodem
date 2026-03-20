@@ -274,19 +274,28 @@ function getSetInfo(codeOrAlias) {
 }
 
 function exportCollection() {
+    const exported = new Date().toISOString().split('T')[0];
     const data = {
-        version: 1,
-        exported: new Date().toISOString().split('T')[0],
-        total: collection.size,
-        cards: [...collection].sort()
+        version: 2,
+        exported,
+        collection: {
+            total: collection.size,
+            cards: [...collection].sort()
+        },
+        wantList: {
+            total: wantList.size,
+            cards: [...wantList].sort()
+        },
+        decks: decks
     };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `kodem-coleccion-${data.exported}.json`;
+    a.download = `kodem-backup-${exported}.json`;
     a.click();
     URL.revokeObjectURL(url);
+    showToast(`Backup exportado: ${collection.size} colección, ${wantList.size} want list, ${Object.keys(decks).length} mazos ✅`, 'success');
 }
 
 // ==================== SYNC CODE ====================
@@ -421,37 +430,88 @@ function importCollection() {
         reader.onload = async (ev) => {
             try {
                 const data = JSON.parse(ev.target.result);
-                let cards = [];
-                if (Array.isArray(data)) {
-                    cards = data;
-                } else if (data.cards && Array.isArray(data.cards)) {
-                    cards = data.cards;
-                }
-                if (cards.length === 0) {
-                    showToast('No se encontraron cartas en el archivo', 'error');
-                    return;
-                }
-                const mode = await showChoice(
-                    `Se encontraron ${cards.length} cartas. ¿Qué deseas hacer?`,
-                    [
-                        { label: '🔄 Reemplazar colección', key: 'replace', className: 'btn-danger' },
-                        { label: '➕ Agregar a existente',  key: 'merge',   className: 'btn-primary' },
-                    ]
-                );
-                if (!mode) return;
 
-                const resolvedCards = cards.map(c => resolveFolio(c));
-                if (mode === 'replace') {
-                    collection = new Set(resolvedCards);
-                } else {
-                    resolvedCards.forEach(c => collection.add(c));
-                }
-                saveCollection();
-                switchView('collection');
-                setTimeout(() => {
+                // Detect format: v2 (full backup) vs v1/legacy (collection only)
+                const isV2 = data.version >= 2 && data.collection;
+
+                if (isV2) {
+                    // ---- V2: Full backup (collection + want list + decks) ----
+                    const collCards = (data.collection.cards || []).map(c => resolveFolio(c));
+                    const wantCards = (data.wantList && data.wantList.cards || []).map(c => resolveFolio(c));
+                    const importDecks = data.decks || {};
+
+                    const parts = [];
+                    if (collCards.length) parts.push(collCards.length + ' colección');
+                    if (wantCards.length) parts.push(wantCards.length + ' want list');
+                    if (Object.keys(importDecks).length) parts.push(Object.keys(importDecks).length + ' mazos');
+
+                    const mode = await showChoice(
+                        `Backup encontrado: ${parts.join(', ')}. ¿Qué deseas hacer?`,
+                        [
+                            { label: '🔄 Reemplazar todo', key: 'replace', className: 'btn-danger' },
+                            { label: '➕ Agregar a existente', key: 'merge', className: 'btn-primary' }
+                        ]
+                    );
+                    if (!mode) return;
+
+                    if (mode === 'replace') {
+                        collection = new Set(collCards);
+                        collectionOrder = [...collCards];
+                        wantList = new Set(wantCards);
+                        decks = importDecks;
+                    } else {
+                        collCards.forEach(c => {
+                            if (!collection.has(c)) { collection.add(c); collectionOrder.push(c); }
+                        });
+                        wantCards.forEach(c => wantList.add(c));
+                        for (const [name, deck] of Object.entries(importDecks)) {
+                            if (!decks[name]) decks[name] = deck;
+                        }
+                    }
+
+                    saveCollection();
+                    saveWantList();
+                    saveDecks();
                     renderCollection();
-                    showToast(`Colección actualizada: ${collection.size} cartas ✅`, 'success');
-                }, 300);
+                    showToast(`Backup restaurado: ${collection.size} colección, ${wantList.size} want list, ${Object.keys(decks).length} mazos ✅`, 'success');
+
+                } else {
+                    // ---- V1 / Legacy: collection only ----
+                    let cards = [];
+                    if (Array.isArray(data)) {
+                        cards = data;
+                    } else if (data.cards && Array.isArray(data.cards)) {
+                        cards = data.cards;
+                    }
+                    if (cards.length === 0) {
+                        showToast('No se encontraron cartas en el archivo', 'error');
+                        return;
+                    }
+                    const mode = await showChoice(
+                        `Se encontraron ${cards.length} cartas. ¿Qué deseas hacer?`,
+                        [
+                            { label: '🔄 Reemplazar colección', key: 'replace', className: 'btn-danger' },
+                            { label: '➕ Agregar a existente',  key: 'merge',   className: 'btn-primary' },
+                        ]
+                    );
+                    if (!mode) return;
+
+                    const resolvedCards = cards.map(c => resolveFolio(c));
+                    if (mode === 'replace') {
+                        collection = new Set(resolvedCards);
+                        collectionOrder = [...resolvedCards];
+                    } else {
+                        resolvedCards.forEach(c => {
+                            if (!collection.has(c)) { collection.add(c); collectionOrder.push(c); }
+                        });
+                    }
+                    saveCollection();
+                    switchView('collection');
+                    setTimeout(() => {
+                        renderCollection();
+                        showToast(`Colección actualizada: ${collection.size} cartas ✅`, 'success');
+                    }, 300);
+                }
             } catch (err) {
                 showToast('Error leyendo archivo: ' + err.message, 'error');
             }
@@ -1000,10 +1060,14 @@ function createCardElement(card, small = false) {
     `;
 }
 
+function saveWantList() {
+    localStorage.setItem('kodem_wantlist', JSON.stringify([...wantList]));
+}
+
 function toggleWanted(folio) {
     if (wantList.has(folio)) wantList.delete(folio);
     else wantList.add(folio);
-    localStorage.setItem('kodem_wantlist', JSON.stringify([...wantList]));
+    saveWantList();
 }
 
 function handleWantBtnClick(btnEl, folio) {
