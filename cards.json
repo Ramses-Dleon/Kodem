@@ -11376,21 +11376,6 @@
     "rarity_variants": []
   },
   {
-    "folio": "CONJ-COMIC004-ODEM-002",
-    "name": "Ariam, Encuentro",
-    "set": "RAMI",
-    "type": "Adendei",
-    "energy": "Atlica",
-    "damage": 2,
-    "rests": 1,
-    "effect_type": "Pasiva",
-    "effect_text": "Pasiva: Si esta carta es enviada a Extincion, cura 6 puntos a tu Protector.",
-    "image": "images/ODEM-002.webp",
-    "artist": "offWorldAngel",
-    "rarity": "Super Rara",
-    "rarity_variants": []
-  },
-  {
     "folio": "CONJ-EXPN-001",
     "name": "Expulsion de Energia I.C.A.R.O.",
     "set": "CONJ",
@@ -11448,36 +11433,6 @@
     "image": "images/KPRF-001.webp",
     "artist": "Chosen_Juan",
     "rarity": "Super Rara",
-    "rarity_variants": []
-  },
-  {
-    "folio": "CONJ-KPRF-002",
-    "name": "Proliferacion",
-    "set": "CONJ",
-    "type": "Ixim",
-    "energy": "Atlica",
-    "damage": 2,
-    "rests": 1,
-    "effect_type": "Pasiva",
-    "effect_text": "Pasiva: Si el Protector equipado es vinculado, se cura 2 puntos.  Solo puedes equipar esta carta a un Protector.",
-    "image": "images/KPRF-002.webp",
-    "artist": "Chosen_Juan",
-    "rarity": "Comun",
-    "rarity_variants": []
-  },
-  {
-    "folio": "CONJ-KPRF-003",
-    "name": "Ariam, Jugada Maestra",
-    "set": "CONJ",
-    "type": "Adendei",
-    "energy": "Atlica",
-    "damage": 2,
-    "rests": 1,
-    "effect_type": "Pasiva",
-    "effect_text": "Activa: Daña 1 punto a todas las cartas rivales en descanso en Zona Principal.  Pasiva: Si un Adendei rival es revelado, recibe 1 descanso.",
-    "image": "images/KPRF-003.webp",
-    "artist": "Edgardo Bautista",
-    "rarity": "Comun",
     "rarity_variants": []
   },
   {
