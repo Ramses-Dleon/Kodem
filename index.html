@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Kódem TCG Companion</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='28'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E">
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#c9a96e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -22,7 +28,7 @@
     <meta property="og:title" content="Kódem TCG Companion">
     <meta property="og:description" content="La primera y única base de datos completa, deck builder y collection tracker para Kódem TCG.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ramses-dleon.github.io/Kodem/">
+    <meta property="og:url" content="https://ramses-dleon.github.io/Kodem">
     <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -30,7 +36,6 @@
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem">
             <h1 style="margin-bottom:0">🎴 Kódem TCG Companion</h1>
             <div style="display:flex;align-items:center;gap:8px">
-                
                 <button id="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro/oscuro">🌙</button>
             </div>
         </div>
@@ -880,6 +885,12 @@
 
     <!-- Confirm/Choice modal (injected dynamically by JS) -->
     <script src="app.js?v=20260320"></script>
+    <!-- PWA Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').catch(e => console.warn('SW registration failed:', e));
+      }
+    </script>
 </body>
 </html>
 <!-- rebuild -->
