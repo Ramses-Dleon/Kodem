@@ -2512,7 +2512,16 @@ function renderMissingCardsAccordion(setStats) {
                 const card = allCards.find(c => c.folio === f);
                 const name = card ? card.name : f;
                 const energy = card ? (card.energy || '').toLowerCase() : '';
-                return `<button class="missing-card-chip clickable" data-folio="${f}" data-energy="${energy}" title="${name}">${f}</button>`;
+                const isWanted = wantList.has(f);
+                let borderStyle = '';
+                if (isWanted) {
+                    const suffix = getFolioSuffix(f);
+                    const rc = RARITY_CONFIG.find(r => r.suffix === suffix);
+                    const rarityColor = rc ? rc.color : '#22c55e'; // green for common
+                    borderStyle = `border:2px solid ${rarityColor}`;
+                }
+                const wantClass = isWanted ? ' wanted' : '';
+                return `<button class="missing-card-chip clickable${wantClass}" data-folio="${f}" data-energy="${energy}" title="${name}${isWanted ? ' 🎯' : ''}" style="${borderStyle}">${f}</button>`;
             }).join('');
 
         html += `
@@ -2547,6 +2556,14 @@ function renderMissingCardsAccordion(setStats) {
 function toggleMissingSet(headerEl) {
     const section = headerEl.closest('.missing-set-section');
     if (section) section.classList.toggle('open');
+}
+
+function toggleDashboardSection(titleEl) {
+    const body = titleEl.nextElementSibling;
+    if (!body) return;
+    const collapsed = body.classList.toggle('collapsed');
+    const chevron = titleEl.querySelector('.section-chevron');
+    if (chevron) chevron.textContent = collapsed ? '▶' : '▼';
 }
 
 function renderQuickStats(setStats) {
@@ -2632,8 +2649,9 @@ function renderDashboard() {
     for (const [name, folios] of Object.entries(byName)) {
         if (folios.some(f => collection.has(f))) ownedUnique++;
     }
+    const pctUniqueVal = totalUnique > 0 ? Math.round((ownedUnique / totalUnique) * 100) : 0;
     const uniqueEl = document.getElementById('unique-owned');
-    if (uniqueEl) uniqueEl.textContent = `${ownedUnique} / ${totalUnique}`;
+    if (uniqueEl) uniqueEl.textContent = `${ownedUnique} / ${totalUnique} (${pctUniqueVal}%)`;
 
     // Update hero ring to use unique % (more meaningful)
     const pctUnique = totalUnique > 0 ? Math.round((ownedUnique / totalUnique) * 100) : 0;
