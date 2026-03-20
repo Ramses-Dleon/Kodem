@@ -622,29 +622,61 @@ function setupEventListeners() {
     const syncImportBtn = document.getElementById('sync-import');
     if (syncImportBtn) syncImportBtn.addEventListener('click', importSyncCode);
 
-    // Server sync button
-    const updateBtn = document.getElementById('update-btn');
+    // Server sync button (Vercel personal version only)
+    const updateBtn = document.getElementById('sync-btn');
     if (updateBtn) updateBtn.addEventListener('click', async () => {
-        updateBtn.textContent = '⏳';
+        updateBtn.textContent = '⏳ Sync...';
         try {
-            const resp = await fetch('collection.json?t=' + Date.now());
-            if (!resp.ok) throw new Error('No collection.json on server');
-            const data = await resp.json();
-            if (data.cards && Array.isArray(data.cards)) {
-                const serverCards = new Set(data.cards.map(c => resolveFolio(c)));
-                const merged = new Set([...collection, ...serverCards]);
-                const added = merged.size - collection.size;
-                collection = merged;
-                saveCollection();
-                renderCollection();
-                updateBtn.textContent = '✅';
-                setTimeout(() => { updateBtn.textContent = '🔄'; }, 2000);
-                if (added > 0) alert(`Sincronizado: +${added} cartas del servidor (total: ${collection.size})`);
-                else alert(`Colección sincronizada (${collection.size} cartas, sin cambios)`);
+            let addedColl = 0, addedWant = 0;
+
+            // Sync collection
+            const collResp = await fetch('collection.json?t=' + Date.now());
+            if (collResp.ok) {
+                const data = await collResp.json();
+                if (data.cards && Array.isArray(data.cards)) {
+                    const serverCards = new Set(data.cards.map(c => resolveFolio(c)));
+                    const merged = new Set([...collection, ...serverCards]);
+                    addedColl = merged.size - collection.size;
+                    collection = merged;
+                    collectionOrder = [...collection];
+                    saveCollection();
+                }
             }
+
+            // Sync want list
+            try {
+                const wantResp = await fetch('wantlist.json?t=' + Date.now());
+                console.log('Want list fetch status:', wantResp.status);
+                if (wantResp.ok) {
+                    const data = await wantResp.json();
+                    console.log('Want list data:', data);
+                    if (data.cards && Array.isArray(data.cards)) {
+                        const resolved = data.cards.map(c => resolveFolio(c));
+                        console.log('Resolved want list:', resolved);
+                        const serverWant = new Set(resolved);
+                        const prevSize = wantList.size;
+                        wantList = serverWant;
+                        addedWant = wantList.size - prevSize;
+                        saveWantList();
+                        console.log('Want list saved, size:', wantList.size);
+                    }
+                }
+            } catch (wantErr) {
+                console.error('Want list sync error:', wantErr);
+            }
+
+            renderCollection();
+            updateBtn.textContent = '✅ Sync';
+            setTimeout(() => { updateBtn.textContent = '🔄 Sync'; }, 2000);
+
+            const parts = [];
+            if (addedColl > 0) parts.push(`+${addedColl} colección`);
+            parts.push(`${wantList.size} want list`);
+            showToast(`Sync: ${collection.size} colección, ${parts.join(', ')} ✅`, 'success');
+
         } catch (e) {
-            updateBtn.textContent = '❌';
-            setTimeout(() => { updateBtn.textContent = '🔄'; }, 2000);
+            updateBtn.textContent = '❌ Sync';
+            setTimeout(() => { updateBtn.textContent = '🔄 Sync'; }, 2000);
             console.error('Sync error:', e);
         }
     });
@@ -1244,6 +1276,35 @@ function openCardModal(card, cardList, cardIndex) {
         wantBtn.textContent = isWanted ? '🎯 Quitar de Want List' : '🎯 Agregar a Want List';
         wantBtn.dataset.folio = card.folio;
         wantBtn.className = isWanted ? 'btn-want active' : 'btn-want';
+    }
+
+    // --- Variants (same name, different sets) ---
+    const variantsSection = document.getElementById('modal-variants-section');
+    const variantsGrid = document.getElementById('modal-variants-grid');
+    if (variantsSection && variantsGrid) {
+        const variants = allCards.filter(c => c.name === card.name && c.folio !== card.folio);
+        if (variants.length > 0) {
+            variantsSection.style.display = 'block';
+            variantsGrid.innerHTML = variants.map(v => {
+                const isOwned = collection.has(v.folio);
+                const classes = ['variant-thumb'];
+                if (isOwned) classes.push('owned');
+                return `<div class="${classes.join(' ')}" data-folio="${v.folio}" title="${v.folio} · ${getSetInfo(v.set)?.name_es || v.set}${isOwned ? ' ✅' : ''}">
+                    <img src="${v.image}" alt="${v.name}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2264%22 height=%2290%22%3E%3Crect fill=%22%231a1a2e%22 width=%2264%22 height=%2290%22/%3E%3Ctext x=%2232%22 y=%2250%22 fill=%22%23666%22 font-size=%228%22 text-anchor=%22middle%22%3E🃏%3C/text%3E%3C/svg%3E'" />
+                    <span class="variant-folio">${v.folio}</span>
+                </div>`;
+            }).join('');
+            // Click handler: open that variant in the modal
+            variantsGrid.querySelectorAll('.variant-thumb').forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    const v = allCards.find(c => c.folio === thumb.dataset.folio);
+                    if (v) openCardModal(v, _modalCardList, _modalCardIndex);
+                });
+            });
+        } else {
+            variantsSection.style.display = 'none';
+            variantsGrid.innerHTML = '';
+        }
     }
 
     // --- Nav buttons ---
