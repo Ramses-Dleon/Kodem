@@ -84,9 +84,9 @@
     --theme-toggle-icon: "☀️";
 }
 
-/* Smooth theme transitions */
-*, *::before, *::after {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+/* Smooth theme transitions - scoped to transitioning class to avoid perf issues */
+.theme-transitioning, .theme-transitioning *, .theme-transitioning *::before, .theme-transitioning *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 /* Override the broad transition above to not affect transforms (perf) */
@@ -197,7 +197,7 @@
 /* Body background uses var(--bg-darker) — already set in main body rule */
 
 body {
-    font-family: 'Outfit', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
     background: var(--bg-darker);
     color: var(--text-primary);
     line-height: 1.6;
@@ -218,7 +218,7 @@ header h1 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: var(--accent-amber);
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
 }
 
 nav {
@@ -236,7 +236,7 @@ nav {
     border-radius: 4px;
     transition: all 0.2s;
     font-size: 0.9rem;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     min-height: 44px;
     display: inline-flex;
     align-items: center;
@@ -401,7 +401,7 @@ select:focus {
     padding: 0.5rem;
     font-size: 0.85rem;
     font-weight: 500;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     text-align: center;
     border-top: 1px solid var(--border);
 }
@@ -478,7 +478,7 @@ select:focus {
 .deck-list-sidebar h3 {
     margin-bottom: 1rem;
     color: var(--accent-amber);
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
 }
 
 #saved-decks {
@@ -935,7 +935,7 @@ select:focus {
 }
 
 .card-grid-empty .empty-msg {
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     font-size: 0.95rem;
     color: var(--text-secondary);
 }
@@ -968,7 +968,7 @@ select:focus {
 .card-pool h3 {
     margin-bottom: 0.5rem;
     color: var(--accent-teal);
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     position: sticky;
     top: 0;
     z-index: 11;
@@ -1107,13 +1107,13 @@ select:focus {
 }
 
 .modal-nav-prev {
-    left: -50px;
-    border-radius: 8px 0 0 8px;
+    left: 10px;
+    border-radius: 8px;
 }
 
 .modal-nav-next {
-    right: -50px;
-    border-radius: 0 8px 8px 0;
+    right: 10px;
+    border-radius: 8px;
 }
 
 .modal-nav-btn:hover:not(:disabled) {
@@ -1163,7 +1163,7 @@ select:focus {
 .modal-info h2 {
     color: var(--accent-amber);
     font-size: 1.35rem;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     line-height: 1.3;
 }
 
@@ -1290,7 +1290,7 @@ select:focus {
     .nav-btn {
         padding: 0.4rem 0.5rem;
         font-size: 0.7rem;
-        min-height: 36px;
+        min-height: 44px;
         justify-content: center;
         text-align: center;
     }
@@ -1330,7 +1330,13 @@ select:focus {
 
     /* Modal: single column on mobile */
     .modal-content {
-        max-width: 500px;
+        max-width: 100%;
+        margin: 0;
+        max-height: none;
+        border-radius: 0;
+        border: none;
+        border-left: 4px solid var(--accent-amber);
+        min-height: 100%;
     }
 
     .modal-body {
@@ -1351,16 +1357,6 @@ select:focus {
         border-radius: 8px;
         min-height: 44px;
         min-width: 60px;
-    }
-
-    .modal-content {
-        max-width: 100%;
-        margin: 0;
-        max-height: none;
-        border-radius: 0;
-        border: none;
-        border-left: 4px solid var(--accent-amber);
-        min-height: 100%;
     }
 
     .modal-nav-container {
@@ -1583,7 +1579,7 @@ img[loading="lazy"] {
     margin-bottom: 1.25rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
 }
 
 /* ---- Set Completion Chart ---- */
@@ -1800,7 +1796,7 @@ img[loading="lazy"] {
 .missing-card-chip.clickable {
     cursor: pointer;
     transition: all 0.2s;
-    min-height: 32px;
+    min-height: 40px;
     display: inline-flex;
     align-items: center;
 }
@@ -1977,7 +1973,7 @@ img[loading="lazy"] {
     letter-spacing: 0.06em;
     color: var(--text-secondary);
     margin-bottom: 0.75rem;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
 }
 
 /* Energy bar rows */
@@ -2244,7 +2240,7 @@ img[loading="lazy"] {
     width: 100%;
     padding: 3rem 2rem;
     color: var(--text-secondary);
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     font-size: 0.95rem;
     opacity: 0.75;
     letter-spacing: 0.03em;
@@ -2284,6 +2280,18 @@ nav .nav-btn.active::after {
     padding: 24px;
     max-width: 400px;
     width: 100%;
+}
+
+.sync-textarea {
+    width: 100%;
+    height: 80px;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 0.75rem;
+    resize: none;
 }
 
 /* Collapsible advanced filters */
@@ -2411,7 +2419,7 @@ nav .nav-btn.active::after {
     border-radius: 6px;
     cursor: pointer;
     font-size: 0.85rem;
-    min-height: 36px;
+    min-height: 44px;
     transition: all 0.2s;
 }
 
@@ -2467,8 +2475,8 @@ nav .nav-btn.active::after {
     position: absolute;
     top: 4px;
     left: 4px;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     border: none;
     background: rgba(0, 0, 0, 0.6);
@@ -2503,6 +2511,10 @@ nav .nav-btn.active::after {
     .mobile-only {
         display: inline-flex !important;
     }
+
+    select, input[type="text"] {
+        min-height: 44px;
+    }
 }
 
 /* Deck builder mobile tabs */
@@ -2523,7 +2535,7 @@ nav .nav-btn.active::after {
         border: 1px solid var(--border);
         background: var(--bg-card);
         color: var(--text-secondary);
-        font-family: 'Cinzel', serif;
+        font-family: 'Cinzel', 'Times New Roman', serif;
         font-size: 0.8rem;
         text-transform: uppercase;
         cursor: pointer;
@@ -2672,7 +2684,7 @@ nav .nav-btn.active::after {
     border: 1px solid var(--border);
     background: var(--bg-card);
     color: var(--text-secondary);
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     font-size: 0.8rem;
     text-transform: uppercase;
     cursor: pointer;
@@ -2790,7 +2802,7 @@ nav .nav-btn.active::after {
 .node-group:hover .node-circle,
 .node-group.active .node-circle { filter: drop-shadow(0 0 18px currentColor) }
 .node-label {
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     fill: var(--text-primary);
     font-size: 11px;
     font-weight: 700;
@@ -2867,7 +2879,7 @@ nav .nav-btn.active::after {
 }
 #detail-panel.open { display: block }
 #detail-panel h2 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     font-size: 1.1rem;
     margin-bottom: 8px;
 }
@@ -2930,7 +2942,7 @@ nav .nav-btn.active::after {
 }
 
 .guide-title {
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     color: var(--accent-amber);
     font-size: 1.3rem;
     margin-bottom: 4px;
@@ -2947,7 +2959,7 @@ nav .nav-btn.active::after {
 }
 
 .guide-section h3 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     color: var(--text-primary);
     font-size: 1rem;
     margin-bottom: 12px;
@@ -2974,7 +2986,7 @@ nav .nav-btn.active::after {
 }
 
 .zone-icon { font-size: 1.2rem; }
-.zone-name { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--text-primary); font-weight: 700; }
+.zone-name { font-family: 'Cinzel', 'Times New Roman', serif; font-size: 0.85rem; color: var(--text-primary); font-weight: 700; }
 .zone-desc { font-size: 0.75rem; color: var(--text-secondary); flex-basis: 100%; }
 
 .zone-slots {
@@ -3035,14 +3047,14 @@ nav .nav-btn.active::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     font-weight: 700;
     font-size: 0.8rem;
     flex-shrink: 0;
 }
 
 .phase-info strong {
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Times New Roman', serif;
     font-size: 0.85rem;
     color: var(--text-primary);
 }
@@ -3478,4 +3490,23 @@ nav .nav-btn.active::after {
 .hero-stat-item.highlight .hero-stat-label {
     color: #f59e0b;
     opacity: 0.85;
+}
+
+/* Collapsible dashboard sections */
+.dashboard-section-title.collapsible {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashboard-section-title.collapsible:hover {
+    opacity: 0.8;
+}
+.section-chevron {
+    font-size: 0.8em;
+    transition: transform 0.2s;
+}
+.collapsible-body.collapsed {
+    display: none;
 }

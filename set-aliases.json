@@ -144,6 +144,7 @@
       "name_en": "Mini Sets",
       "aliases": [
         "MINICONJ",
+        "CONJ",
         "EXPN",
         "ICOS",
         "IOSC",
@@ -195,6 +196,7 @@
       "name_en": "Holidays",
       "aliases": [
         "HOLY",
+        "HOL",
         "ANIV",
         "DMUE",
         "INMX",

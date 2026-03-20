@@ -27,6 +27,14 @@
  * @see https://github.com/Ramses-Dleon/Kodem
  */
 
+// ==================== HTML ESCAPING ====================
+/**
+ * Escape HTML special characters to prevent XSS.
+ */
+function escHtml(s) {
+    return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
+}
+
 // ==================== STATE ====================
 let allCards = [];
 let filteredCards = [];
@@ -255,10 +263,24 @@ async function loadCollection() {
 }
 
 function saveCollection() {
-    localStorage.setItem('kodem_collection', JSON.stringify([...collection]));
+    try {
+        localStorage.setItem('kodem_collection', JSON.stringify([...collection]));
+    } catch(e) {
+        if(e.name==='QuotaExceededError') showToast('⚠️ Almacenamiento lleno','error');
+    }
 }
 
 function resolveFolio(folio) {
+    // Direct exact-match lookups for compound folios
+    const FOLIO_MAP = {
+        'INMX-001': 'HOL-INMX-001', 'INMX-002': 'HOL-INMX-002',
+        'KPRF-001': 'CONJ-KPRF-001', 'KPRF-002': 'CONJ-KPRF-002', 'KPRF-003': 'CONJ-KPRF-003', 'KPRF-004': 'CONJ-KPRF-004',
+        'ODEM-001': 'CONJ-COMIC004-ODEM-001', 'ODEM-002': 'CONJ-COMIC004-ODEM-002',
+        'NAVD-001': 'HOL-NAVD-001', 'NYPR-001': 'HOL-NYPR-001',
+        'SNVL-001': 'HOL-SNVL-001', 'SNVL-002': 'HOL-SNVL-002',
+    };
+    if (FOLIO_MAP[folio]) return FOLIO_MAP[folio];
+
     if (!folio || typeof folio !== 'string') return folio;
     const match = folio.match(/^([A-Za-z]+)-(.+)$/);
     if (!match) return folio;
@@ -330,7 +352,7 @@ function promptSyncCode(code) {
         <div class="sync-modal">
             <h3 style="font-family:'Cinzel',serif;color:#f59e0b;margin-bottom:12px">📋 Tu Código de Colección</h3>
             <p style="color:#aaa;font-size:0.85rem;margin-bottom:8px">Copia este código y pégalo en otro dispositivo:</p>
-            <textarea id="sync-code-text" style="width:100%;height:80px;background:#1a1a1a;color:#e0e0e0;border:1px solid #444;border-radius:6px;padding:8px;font-size:0.75rem;resize:none" readonly>${code}</textarea>
+            <textarea id="sync-code-text" class="sync-textarea" readonly>${code}</textarea>
             <button onclick="document.getElementById('sync-code-text').select();document.execCommand('copy');this.textContent='✅ Copiado'" style="margin-top:8px;background:#f59e0b;color:#000;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;width:100%;font-weight:bold">Copiar</button>
             <button onclick="this.closest('.sync-modal-overlay').remove()" style="margin-top:6px;background:#333;color:#e0e0e0;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;width:100%">Cerrar</button>
         </div>
@@ -346,7 +368,7 @@ async function importSyncCode() {
         <div class="sync-modal">
             <h3 style="font-family:'Cinzel',serif;color:#f59e0b;margin-bottom:12px">📥 Importar Colección</h3>
             <p style="color:#aaa;font-size:0.85rem;margin-bottom:8px">Pega tu código KDM-... aquí:</p>
-            <textarea id="sync-import-text" style="width:100%;height:80px;background:#1a1a1a;color:#e0e0e0;border:1px solid #444;border-radius:6px;padding:8px;font-size:0.75rem;resize:none" placeholder="KDM-..."></textarea>
+            <textarea id="sync-import-text" class="sync-textarea" placeholder="KDM-..."></textarea>
             <button id="sync-import-btn" style="margin-top:8px;background:#f59e0b;color:#000;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;width:100%;font-weight:bold">Importar</button>
             <button onclick="this.closest('.sync-modal-overlay').remove()" style="margin-top:6px;background:#333;color:#e0e0e0;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;width:100%">Cancelar</button>
         </div>
@@ -380,8 +402,8 @@ async function importSyncCode() {
                     if (!seen.has(f)) { valid.push(f); seen.add(f); }
                     continue; 
                 }
-                // Strip trailing rarity suffix (S=Súper, R=Rara, U=Ultra)
-                const base = f.replace(/[SRU]$/, '');
+                // Strip trailing rarity suffix (S=Súper, R=Rara, U=Ultra, UV, ST, K)
+                const base = f.replace(/(?:UV|ST\d*|[SRUK])$/, '');
                 if (base !== f && validFolios.has(base)) { 
                     // Add base folio (so dashboard counts it) + original (so we know variant)
                     if (!seen.has(base)) { valid.push(base); seen.add(base); }
@@ -389,7 +411,7 @@ async function importSyncCode() {
                     continue; 
                 }
             }
-            const invalid = folios.filter(f => !validFolios.has(f) && !validFolios.has(f.replace(/[SRU]$/, ''))).length;
+            const invalid = folios.filter(f => !validFolios.has(f) && !validFolios.has(f.replace(/(?:UV|ST\d*|[SRUK])$/, ''))).length;
             
             const mode = await showChoice(
                 `Código tiene ${valid.length} cartas válidas${invalid ? ` (${invalid} no reconocidas)` : ''}. ¿Qué hacer?`,
@@ -472,6 +494,7 @@ function importCollection() {
                     saveCollection();
                     saveWantList();
                     saveDecks();
+                    switchView('collection');
                     renderCollection();
                     showToast(`Backup restaurado: ${collection.size} colección, ${wantList.size} want list, ${Object.keys(decks).length} mazos ✅`, 'success');
 
@@ -522,14 +545,23 @@ function importCollection() {
 }
 
 function loadDecks() {
-    const stored = localStorage.getItem('kodem_decks');
-    if (stored) {
-        decks = JSON.parse(stored);
+    try {
+        const stored = localStorage.getItem('kodem_decks');
+        if (stored) {
+            decks = JSON.parse(stored);
+        }
+    } catch(e) {
+        console.warn('Decks corrupted, resetting', e);
+        decks = {};
     }
 }
 
 function saveDecks() {
-    localStorage.setItem('kodem_decks', JSON.stringify(decks));
+    try {
+        localStorage.setItem('kodem_decks', JSON.stringify(decks));
+    } catch(e) {
+        if(e.name==='QuotaExceededError') showToast('⚠️ Almacenamiento lleno','error');
+    }
 }
 
 // ==================== NAVIGATION ====================
@@ -627,16 +659,18 @@ function setupEventListeners() {
     if (updateBtn) updateBtn.addEventListener('click', async () => {
         updateBtn.textContent = '⏳ Sync...';
         try {
-            let addedColl = 0, addedWant = 0;
+            let collAdded = 0, wantAdded = 0;
+            let collOk = false, wantOk = false;
 
             // Sync collection
             const collResp = await fetch('collection.json?t=' + Date.now());
             if (collResp.ok) {
+                collOk = true;
                 const data = await collResp.json();
                 if (data.cards && Array.isArray(data.cards)) {
                     const serverCards = new Set(data.cards.map(c => resolveFolio(c)));
                     const merged = new Set([...collection, ...serverCards]);
-                    addedColl = merged.size - collection.size;
+                    collAdded = merged.size - collection.size;
                     collection = merged;
                     collectionOrder = [...collection];
                     saveCollection();
@@ -648,6 +682,7 @@ function setupEventListeners() {
                 const wantResp = await fetch('wantlist.json?t=' + Date.now());
                 console.log('Want list fetch status:', wantResp.status);
                 if (wantResp.ok) {
+                    wantOk = true;
                     const data = await wantResp.json();
                     console.log('Want list data:', data);
                     if (data.cards && Array.isArray(data.cards)) {
@@ -655,8 +690,8 @@ function setupEventListeners() {
                         console.log('Resolved want list:', resolved);
                         const serverWant = new Set(resolved);
                         const prevSize = wantList.size;
-                        wantList = serverWant;
-                        addedWant = wantList.size - prevSize;
+                        serverWant.forEach(f => wantList.add(f));
+                        wantAdded = wantList.size - prevSize;
                         saveWantList();
                         console.log('Want list saved, size:', wantList.size);
                     }
@@ -670,9 +705,9 @@ function setupEventListeners() {
             setTimeout(() => { updateBtn.textContent = '🔄 Sync'; }, 2000);
 
             const parts = [];
-            if (addedColl > 0) parts.push(`+${addedColl} colección`);
-            parts.push(`${wantList.size} want list`);
-            showToast(`Sync: ${collection.size} colección, ${parts.join(', ')} ✅`, 'success');
+            if (collOk) parts.push(`${collAdded} colección`);
+            if (wantOk) parts.push(`${wantAdded} want list`);
+            showToast(parts.length ? `Sync: ${parts.join(', ')} ✅` : '⚠️ No se pudo conectar', parts.length ? 'success' : 'error');
 
         } catch (e) {
             updateBtn.textContent = '❌ Sync';
@@ -697,10 +732,6 @@ function setupEventListeners() {
             renderCollection();
         });
     });
-
-    // Bulk add
-    const bulkAddBtn = document.getElementById('bulk-add-btn');
-    if (bulkAddBtn) bulkAddBtn.addEventListener('click', bulkAddToCollection);
 
     // Modal want-list toggle
     const modalWantBtn = document.getElementById('modal-toggle-wanted');
@@ -786,7 +817,12 @@ function switchCollectionTab(tab) {
     });
     // Show/hide dashboard only for collection tab
     const dashboard = document.getElementById('collection-dashboard');
-    if (dashboard) dashboard.style.display = tab === 'collection' ? '' : 'none';
+    if (tab === 'collection') {
+        const hidden = localStorage.getItem('kodem_dashboard_hidden') === 'true';
+        if (dashboard) dashboard.style.display = hidden ? 'none' : '';
+    } else {
+        if (dashboard) dashboard.style.display = 'none';
+    }
     const toggleDash = document.getElementById('toggle-dashboard');
     if (toggleDash) toggleDash.style.display = tab === 'collection' ? '' : 'none';
     renderCollection();
@@ -944,6 +980,7 @@ function applyBrowserFilters() {
         if (sortBy === 'rests') return (b.rests || 0) - (a.rests || 0);
         if (sortBy === 'set') return a.set.localeCompare(b.set);
         if (sortBy === 'energy') return (a.energy || '').localeCompare(b.energy || '', 'es');
+        if (sortBy === 'rarity') return (getFolioSuffix(a.folio) || '').localeCompare(getFolioSuffix(b.folio) || '');
         return 0;
     });
 
@@ -988,7 +1025,17 @@ function renderBrowserPage() {
             grid.querySelectorAll('.card-item').forEach((el, idx) => {
                 // Pass full filteredCards list + absolute index for ← → navigation
                 const absIdx = start + idx;
-                el.addEventListener('click', () => openCardModal(filteredCards[absIdx], filteredCards, absIdx));
+                el.addEventListener('click', (e) => {
+                    // Handle want button clicks via delegation
+                    if (e.target.closest('.card-want-btn')) {
+                        e.stopPropagation();
+                        const btn = e.target.closest('.card-want-btn');
+                        const folio = btn.dataset.folio;
+                        handleWantBtnClick(btn, folio);
+                        return;
+                    }
+                    openCardModal(filteredCards[absIdx], filteredCards, absIdx);
+                });
             });
         }
     }
@@ -1062,11 +1109,11 @@ function createCardElement(card, small = false) {
     const wantedClass = isWanted ? 'wanted' : '';
     const inDeck = currentDeck && decks[currentDeck]?.cards.includes(card.folio) ? 'in-deck' : '';
     const effectPreview = (gridSize === 'large' && card.effect_text)
-        ? `<div class="card-effect-preview">${card.effect_text.substring(0, 80)}${card.effect_text.length > 80 ? '…' : ''}</div>`
+        ? `<div class="card-effect-preview">${escHtml(card.effect_text.substring(0, 80))}${card.effect_text.length > 80 ? '…' : ''}</div>`
         : '';
 
     // 🎯 want button (stop propagation so it doesn't open modal)
-    const wantBtn = small ? '' : `<button class="card-want-btn ${isWanted ? 'active' : ''}" data-folio="${card.folio}" title="${isWanted ? 'Quitar de Want List' : 'Agregar a Want List'}" onclick="event.stopPropagation();handleWantBtnClick(this,'${card.folio}')">🎯</button>`;
+    const wantBtn = small ? '' : `<button class="card-want-btn ${isWanted ? 'active' : ''}" data-folio="${escHtml(card.folio)}" title="${isWanted ? 'Quitar de Want List' : 'Agregar a Want List'}">🎯</button>`;
 
     // Rarity badge — based on card.rarity, not suffix
     const RARITY_BADGE = {
@@ -1082,18 +1129,22 @@ function createCardElement(card, small = false) {
     const rarityBadge = badge ? `<span class="rarity-badge" style="background:${badge.color}">${badge.label}</span>` : '';
 
     return `
-        <div class="card-item ${owned} ${wantedClass} ${inDeck}" data-folio="${card.folio}" data-energy="${card.energy || ''}">
-            <img src="${card.image}" alt="${card.name}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22280%22%3E%3Crect fill=%22%23333%22 width=%22200%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23666%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+        <div class="card-item ${owned} ${wantedClass} ${inDeck}" data-folio="${escHtml(card.folio)}" data-energy="${escHtml(card.energy || '')}">
+            <img src="${escHtml(card.image)}" alt="${escHtml(card.name)}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22280%22%3E%3Crect fill=%22%23333%22 width=%22200%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23666%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
             ${rarityBadge}
             ${wantBtn}
-            <div class="card-name">${card.name}</div>
+            <div class="card-name">${escHtml(card.name)}</div>
             ${effectPreview}
         </div>
     `;
 }
 
 function saveWantList() {
-    localStorage.setItem('kodem_wantlist', JSON.stringify([...wantList]));
+    try {
+        localStorage.setItem('kodem_wantlist', JSON.stringify([...wantList]));
+    } catch(e) {
+        if(e.name==='QuotaExceededError') showToast('⚠️ Almacenamiento lleno','error');
+    }
 }
 
 function toggleWanted(folio) {
@@ -1298,7 +1349,10 @@ function openCardModal(card, cardList, cardIndex) {
             variantsGrid.querySelectorAll('.variant-thumb').forEach(thumb => {
                 thumb.addEventListener('click', () => {
                     const v = allCards.find(c => c.folio === thumb.dataset.folio);
-                    if (v) openCardModal(v, _modalCardList, _modalCardIndex);
+                    if (v) {
+                        const varIdx = allCards.findIndex(c => c.folio === v.folio);
+                        openCardModal(v, allCards, varIdx >= 0 ? varIdx : 0);
+                    }
                 });
             });
         } else {
@@ -1409,7 +1463,7 @@ function renderCollection() {
     if (currentCollectionTab === 'wantlist') {
         cards = allCards.filter(card => {
             if (!wantList.has(card.folio)) return false;
-            if (search && !(card.name || '').toLowerCase().includes(search)) return false;
+            if (search && !(card.name || '').toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search)) return false;
             if (filterSet && card.set !== filterSet) return false;
             if (filterType && card.type !== filterType) return false;
             if (filterEnergy && card.energy !== filterEnergy) return false;
@@ -1422,7 +1476,7 @@ function renderCollection() {
         });
     } else {
         cards = allCards.filter(card => {
-            if (search && !(card.name || '').toLowerCase().includes(search)) return false;
+            if (search && !(card.name || '').toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search)) return false;
             const isOwned = collection.has(card.folio);
             if (filter === 'owned' && !isOwned) return false;
             if (filter === 'missing' && isOwned) return false;
@@ -1441,6 +1495,19 @@ function renderCollection() {
     // Sort
     cards = sortCollectionCards(cards, sort);
 
+    // Counter and grid
+    const counter = document.getElementById('collection-counter');
+    const grid = document.getElementById('collection-grid');
+
+    // Empty state guard
+    if (cards.length === 0) {
+        if (counter) counter.textContent = '0 cartas';
+        if (grid) grid.innerHTML = '<div class="empty-state"><span class="empty-state-emoji">🔍</span><p>No se encontraron cartas</p></div>';
+        document.getElementById('collection-pagination').innerHTML = '';
+        if (currentCollectionTab === 'collection') renderDashboard();
+        return;
+    }
+
     // Pagination
     const perPage = 50;
     const totalPages = Math.max(1, Math.ceil(cards.length / perPage));
@@ -1449,7 +1516,6 @@ function renderCollection() {
     const start = (collectionPage - 1) * perPage;
     const pageCards = cards.slice(start, start + perPage);
 
-    const grid = document.getElementById('collection-grid');
     grid.innerHTML = pageCards.map(card => createCardElement(card)).join('');
 
     // Add click listeners
@@ -1458,7 +1524,6 @@ function renderCollection() {
     });
 
     // Counter
-    const counter = document.getElementById('collection-counter');
     if (counter) {
         counter.textContent = `Mostrando ${start + 1}–${Math.min(start + perPage, cards.length)} de ${cards.length} cartas`;
     }
@@ -1595,10 +1660,16 @@ function importDeckFromHash() {
     const folios = folioString.split(',').map(f => f.trim()).filter(Boolean);
     if (folios.length === 0) return;
 
+    // Resolve and validate folios
+    const resolved = folios.map(f => resolveFolio(f)).filter(f => allCards.some(c => c.folio === f));
+    if (resolved.length < folios.length) {
+        showToast(`⚠️ ${folios.length - resolved.length} cartas no reconocidas`, 'warning');
+    }
+
     // Create a new deck with the imported cards
     const id = Date.now().toString();
     const name = 'Mazo Compartido';
-    decks[id] = { name, cards: folios };
+    decks[id] = { name, cards: resolved };
     currentDeck = id;
     saveDecks();
 
@@ -1629,6 +1700,7 @@ function updateDeckName() {
 
     const name = document.getElementById('deck-name').value;
     decks[currentDeck].name = name;
+    saveDecks();
 }
 
 function exportDeck() {
@@ -1674,12 +1746,17 @@ function importDeckJSON() {
                 const name = data.name || file.name.replace('.json', '');
                 const cards = data.cards || [];
                 if (cards.length === 0) { showToast('No hay cartas en el archivo', 'error'); return; }
+                // Resolve and validate folios
+                const resolved = cards.map(f => resolveFolio(f)).filter(f => allCards.some(c => c.folio === f));
+                if (resolved.length < cards.length) {
+                    showToast(`⚠️ ${cards.length - resolved.length} cartas no reconocidas`, 'warning');
+                }
                 const id = Date.now().toString();
-                decks[id] = { name, cards };
+                decks[id] = { name, cards: resolved };
                 currentDeck = id;
                 saveDecks();
                 renderDeckBuilder();
-                showToast(`Mazo "${name}" importado (${cards.length} cartas) ✅`, 'success');
+                showToast(`Mazo "${name}" importado (${resolved.length} cartas) ✅`, 'success');
             } catch (err) { showToast('Error leyendo archivo: ' + err.message, 'error'); }
         };
         reader.readAsText(file);
@@ -1706,7 +1783,7 @@ function importDeckSyncCode() {
         <div class="sync-modal">
             <h3 style="font-family:'Cinzel',serif;color:#f59e0b;margin-bottom:12px">📥 Importar Mazo</h3>
             <p style="color:#aaa;font-size:0.85rem;margin-bottom:8px">Pega el código KDECK-... aquí:</p>
-            <textarea id="deck-sync-text" style="width:100%;height:80px;background:#1a1a1a;color:#e0e0e0;border:1px solid #444;border-radius:6px;padding:8px;font-size:0.75rem;resize:none" placeholder="KDECK-..."></textarea>
+            <textarea id="deck-sync-text" class="sync-textarea" placeholder="KDECK-..."></textarea>
             <button id="deck-sync-btn" style="margin-top:8px;background:#f59e0b;color:#000;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;width:100%;font-weight:bold">Importar Mazo</button>
             <button onclick="this.closest('.sync-modal-overlay').remove()" style="margin-top:6px;background:#333;color:#e0e0e0;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;width:100%">Cancelar</button>
         </div>
@@ -2276,6 +2353,7 @@ function addToDeck(folio) {
     if (card) showToast(`${card.name} añadida al mazo`, 'success', 1500);
     renderDeckWorkspace();
     renderDeckPool();
+    saveDecks();
 }
 
 function removeFromDeck(folio) {
@@ -2286,6 +2364,7 @@ function removeFromDeck(folio) {
 
     renderDeckWorkspace();
     renderDeckPool();
+    saveDecks();
 }
 
 const EXCLUDED_DECK_TYPES = new Set(['Token', 'Art Print', 'Promo', 'Full Art']);
@@ -2493,6 +2572,11 @@ function renderMissingCardsAccordion(setStats) {
     const container = document.getElementById('missing-cards-accordion');
     if (!container) return;
 
+    // Capture currently open sections before rebuilding
+    const openSets = new Set(
+        [...container.querySelectorAll('.missing-set-section.open')].map(el => el.dataset.set)
+    );
+
     const setsWithCards = setStats.filter(s => s.total > 0);
     const withMissing = setsWithCards.filter(s => s.missing.length > 0)
         .sort((a, b) => b.missing.length - a.missing.length);
@@ -2540,6 +2624,12 @@ function renderMissingCardsAccordion(setStats) {
     }
 
     container.innerHTML = html || '<p class="empty-state">Sin datos disponibles</p>';
+
+    // Restore open states
+    openSets.forEach(code => {
+        const section = container.querySelector(`.missing-set-section[data-set="${code}"]`);
+        if (section) section.classList.add('open');
+    });
 
     // Click handler for missing card chips → open modal
     container.querySelectorAll('.missing-card-chip.clickable').forEach(chip => {
@@ -2623,7 +2713,6 @@ function renderDashboard() {
 
     const totalAll = collection.size;
     const totalCards = allCards.length; // 786 = base + variants
-    const pctAll = totalCards > 0 ? Math.round((totalAll / totalCards) * 100) : 0;
     const pctBase = totalBase > 0 ? Math.round((baseOwned / totalBase) * 100) : 0;
 
     const heroEl = document.getElementById('total-owned');
@@ -2686,6 +2775,8 @@ init();
     if (toggleBtn) {
         toggleBtn.addEventListener('click', function () {
             const isLight = htmlEl.getAttribute('data-theme') === 'light';
+            // Add transitioning class for smooth theme change
+            htmlEl.classList.add('theme-transitioning');
             if (isLight) {
                 htmlEl.removeAttribute('data-theme');
                 toggleBtn.textContent = '🌙';
@@ -2695,6 +2786,8 @@ init();
                 toggleBtn.textContent = '☀️';
                 localStorage.setItem(STORAGE_KEY, 'light');
             }
+            // Remove transitioning class after transition completes
+            setTimeout(() => htmlEl.classList.remove('theme-transitioning'), 300);
         });
     }
 })();

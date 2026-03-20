@@ -6,6 +6,7 @@
     <title>Kódem TCG Companion</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='28'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260320">
     <!-- Apply saved theme before paint to avoid flash -->
@@ -29,6 +30,7 @@
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem">
             <h1 style="margin-bottom:0">🎴 Kódem TCG Companion</h1>
             <div style="display:flex;align-items:center;gap:8px">
+                
                 <button id="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro/oscuro">🌙</button>
             </div>
         </div>
@@ -106,9 +108,9 @@
             </div>
 
             <div style="display:flex;gap:6px;margin-bottom:8px">
-                <button class="grid-size-btn" data-size="small" title="Pequeño" style="background:#2a2a2a;border:1px solid #444;color:#e0e0e0;padding:6px 10px;border-radius:6px;cursor:pointer;min-height:44px">▪▪▪</button>
-                <button class="grid-size-btn active" data-size="medium" title="Mediano" style="background:#2a2a2a;border:1px solid #444;color:#e0e0e0;padding:6px 10px;border-radius:6px;cursor:pointer;min-height:44px">▪▪</button>
-                <button class="grid-size-btn" data-size="large" title="Grande" style="background:#2a2a2a;border:1px solid #444;color:#e0e0e0;padding:6px 10px;border-radius:6px;cursor:pointer;min-height:44px">▪</button>
+                <button class="grid-size-btn" data-size="small" title="Pequeño" aria-label="Tamaño de cuadrícula pequeño" style="background:#2a2a2a;border:1px solid #444;color:#e0e0e0;padding:6px 10px;border-radius:6px;cursor:pointer;min-height:44px">▪▪▪</button>
+                <button class="grid-size-btn" data-size="medium" title="Mediano" aria-label="Tamaño de cuadrícula mediano" style="background:#2a2a2a;border:1px solid #444;color:#e0e0e0;padding:6px 10px;border-radius:6px;cursor:pointer;min-height:44px">▪▪</button>
+                <button class="grid-size-btn" data-size="large" title="Grande" aria-label="Tamaño de cuadrícula grande" style="background:#2a2a2a;border:1px solid #444;color:#e0e0e0;padding:6px 10px;border-radius:6px;cursor:pointer;min-height:44px">▪</button>
             </div>
             <div id="card-grid" class="card-grid"></div>
             <div id="pagination-controls" style="display:flex;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap"></div>
@@ -176,7 +178,7 @@
                     <button id="sync-import" class="btn-secondary" title="Importar código de colección">📥 Importar Código</button>
                     <button id="export-collection" class="btn-primary" title="Exportar colección como JSON">📤 Exportar JSON</button>
                     <button id="import-collection" class="btn-secondary" title="Importar colección desde JSON">📥 Importar JSON</button>
-                    <button id="clear-collection" class="btn-danger">🗑️</button>
+                    <button id="clear-collection" class="btn-danger" aria-label="Limpiar colección">🗑️</button>
                 </div>
             </div>
 
@@ -443,7 +445,7 @@
     <!-- Card Detail Modal -->
     <div id="card-modal" class="modal">
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
+            <button class="modal-close" aria-label="Cerrar modal">&times;</button>
             <div class="modal-body">
                 <div class="modal-image">
                     <img id="modal-card-image" src="" alt="" />
@@ -878,7 +880,6 @@
 
     <!-- Confirm/Choice modal (injected dynamically by JS) -->
     <script src="app.js?v=20260320"></script>
-<script src="preload-data.js"></script>
 </body>
 </html>
 <!-- rebuild -->
