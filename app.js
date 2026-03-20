@@ -1123,9 +1123,9 @@ function openCardModal(card, cardList, cardIndex) {
         setName ? `${card.set} · ${setName}` : card.set;
 
     // --- Rarity ---
-    const rv = card.rarity_variants || [];
+    const RARITY_DISPLAY = { 'Comun': 'Común', 'Super Rara': 'Súper Rara', 'Kosmica/Titanica': 'Kósmica/Titánica' };
     document.getElementById('modal-card-rarity').textContent =
-        rv.length > 0 ? rv.join(', ') : 'Común';
+        RARITY_DISPLAY[card.rarity] || card.rarity || 'Común';
 
     // --- Type ---
     document.getElementById('modal-card-type').textContent =
