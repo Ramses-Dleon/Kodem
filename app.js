@@ -798,16 +798,15 @@ function applyBrowserFilters() {
         if (filterEnergy && card.energy !== filterEnergy && card.energy2 !== filterEnergy) return false;
         if (filterSubtype && card.subtype !== filterSubtype) return false;
         if (filterRarity) {
-            const rarityMap = {
-                'Común': '',
-                'Rara': 'R',
-                'Súper Rara': 'S',
-                'Ultra Rara': 'U',
-                'Kósmica': 'K', 'Secreta': 'ST'
+            // Map dropdown display values to card.rarity field values
+            const rarityFieldMap = {
+                'Común': 'Comun', 'Rara': 'Rara', 'Súper Rara': 'Super Rara',
+                'Ultra Rara': 'Ultra Rara', 'Kósmica': 'Kosmica/Titanica',
+                'Secreta': 'Secreta', 'Full Art': 'Full Art', 'Evento': 'Evento'
             };
-            const targetSuffix = rarityMap[filterRarity];
-            if (targetSuffix === undefined) return true;
-            if (getFolioSuffix(card.folio) !== targetSuffix) return false;
+            const targetRarity = rarityFieldMap[filterRarity];
+            if (targetRarity === undefined) return true;
+            if (card.rarity !== targetRarity) return false;
         }
         if (filterEffectText) {
             const effectText = (card.effect_text || '').toLowerCase();
@@ -951,7 +950,7 @@ function createCardElement(card, small = false) {
     const wantBtn = small ? '' : `<button class="card-want-btn ${isWanted ? 'active' : ''}" data-folio="${card.folio}" title="${isWanted ? 'Quitar de Want List' : 'Agregar a Want List'}" onclick="event.stopPropagation();handleWantBtnClick(this,'${card.folio}')">🎯</button>`;
 
     // Rarity badge for variants
-    const RARITY_BADGE = { R: {label:'RARA', color:'#3b82f6'}, S: {label:'SÚPER', color:'#a855f7'}, U: {label:'ULTRA', color:'#f59e0b'}, K: {label:'KÓSMICA', color:'#ef4444'}, ST: {label:'SECRETA', color:'#ec4899'} };
+    const RARITY_BADGE = { R: {label:'RARA', color:'#3b82f6'}, S: {label:'SÚPER', color:'#a855f7'}, U: {label:'ULTRA', color:'#f59e0b'}, K: {label:'KÓSMICA', color:'#ef4444'}, ST: {label:'SECRETA', color:'#ec4899'}, UV: {label:'UV', color:'#06b6d4'} };
     const suffix = card._raritySuffix || getFolioSuffix(card.folio);
     const badge = RARITY_BADGE[suffix];
     const rarityBadge = badge ? `<span class="rarity-badge" style="background:${badge.color}">${badge.label}</span>` : '';
@@ -1256,11 +1255,9 @@ function renderCollection() {
             if (filterType && card.type !== filterType) return false;
             if (filterEnergy && card.energy !== filterEnergy) return false;
             if (filterRarity) {
-                const rarityMap = { 'Común': '', 'Rara': 'R', 'Súper Rara': 'S', 'Ultra Rara': 'U', 'Kósmica': 'K', 'Secreta': 'ST' };
-                const targetSuffix = rarityMap[filterRarity];
-                if (targetSuffix === undefined) { /* unknown rarity, skip */ }
-                else if (targetSuffix === '') { if (getFolioSuffix(card.folio) !== '') return false; }
-                else { if (getFolioSuffix(card.folio) !== targetSuffix) return false; }
+                const rarityFieldMap = { 'Común': 'Comun', 'Rara': 'Rara', 'Súper Rara': 'Super Rara', 'Ultra Rara': 'Ultra Rara', 'Kósmica': 'Kosmica/Titanica', 'Secreta': 'Secreta', 'Full Art': 'Full Art', 'Evento': 'Evento' };
+                const targetRarity = rarityFieldMap[filterRarity];
+                if (targetRarity && card.rarity !== targetRarity) return false;
             }
             return true;
         });
@@ -1274,11 +1271,9 @@ function renderCollection() {
             if (filterType && card.type !== filterType) return false;
             if (filterEnergy && card.energy !== filterEnergy) return false;
             if (filterRarity) {
-                const rarityMap = { 'Común': '', 'Rara': 'R', 'Súper Rara': 'S', 'Ultra Rara': 'U', 'Kósmica': 'K', 'Secreta': 'ST' };
-                const targetSuffix = rarityMap[filterRarity];
-                if (targetSuffix === undefined) { /* unknown rarity, skip */ }
-                else if (targetSuffix === '') { if (getFolioSuffix(card.folio) !== '') return false; }
-                else { if (getFolioSuffix(card.folio) !== targetSuffix) return false; }
+                const rarityFieldMap = { 'Común': 'Comun', 'Rara': 'Rara', 'Súper Rara': 'Super Rara', 'Ultra Rara': 'Ultra Rara', 'Kósmica': 'Kosmica/Titanica', 'Secreta': 'Secreta', 'Full Art': 'Full Art', 'Evento': 'Evento' };
+                const targetRarity = rarityFieldMap[filterRarity];
+                if (targetRarity && card.rarity !== targetRarity) return false;
             }
             return true;
         });
@@ -2154,17 +2149,13 @@ function renderDeckPool() {
         if (filterType && card.type !== filterType) return false;
         if (filterSubtype && card.subtype !== filterSubtype) return false;
         if (filterRarity) {
-            const rarityMap = {
-                'Común': '',
-                'Rara': 'R',
-                'Súper Rara': 'S',
-                'Ultra Rara': 'U',
-                'Kósmica': 'K', 'Secreta': 'ST'
+            const rarityFieldMap = {
+                'Común': 'Comun', 'Rara': 'Rara', 'Súper Rara': 'Super Rara',
+                'Ultra Rara': 'Ultra Rara', 'Kósmica': 'Kosmica/Titanica',
+                'Secreta': 'Secreta', 'Full Art': 'Full Art', 'Evento': 'Evento'
             };
-            const targetSuffix = rarityMap[filterRarity];
-            if (targetSuffix !== undefined) {
-                if (getFolioSuffix(card.folio) !== targetSuffix) return false;
-            }
+            const targetRarity = rarityFieldMap[filterRarity];
+            if (targetRarity && card.rarity !== targetRarity) return false;
         }
         if (filterEffectText) {
             const effectText = (card.effect_text || '').toLowerCase();
