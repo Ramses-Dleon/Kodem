@@ -1303,7 +1303,7 @@ select:focus {
 
     .controls select,
     .controls input[type="text"] {
-        min-height: 38px;
+        min-height: 44px;
         padding: 6px 10px;
         font-size: 0.8rem;
         flex: 1 1 48%;
