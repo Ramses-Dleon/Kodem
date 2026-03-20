@@ -976,10 +976,17 @@ function createCardElement(card, small = false) {
     // 🎯 want button (stop propagation so it doesn't open modal)
     const wantBtn = small ? '' : `<button class="card-want-btn ${isWanted ? 'active' : ''}" data-folio="${card.folio}" title="${isWanted ? 'Quitar de Want List' : 'Agregar a Want List'}" onclick="event.stopPropagation();handleWantBtnClick(this,'${card.folio}')">🎯</button>`;
 
-    // Rarity badge for variants
-    const RARITY_BADGE = { R: {label:'RARA', color:'#3b82f6'}, S: {label:'SÚPER', color:'#a855f7'}, U: {label:'ULTRA', color:'#f59e0b'}, K: {label:'KÓSMICA', color:'#ef4444'}, ST: {label:'SECRETA', color:'#ec4899'}, UV: {label:'UV', color:'#06b6d4'} };
-    const suffix = card._raritySuffix || getFolioSuffix(card.folio);
-    const badge = RARITY_BADGE[suffix];
+    // Rarity badge — based on card.rarity, not suffix
+    const RARITY_BADGE = {
+        'Rara': {label:'RARA', color:'#3b82f6'},
+        'Super Rara': {label:'SÚPER', color:'#a855f7'},
+        'Ultra Rara': {label:'ULTRA', color:'#f59e0b'},
+        'Kosmica/Titanica': {label:'KÓSMICA', color:'#ef4444'},
+        'Secreta': {label:'SECRETA', color:'#ec4899'},
+        'Full Art': {label:'FULL ART', color:'#14b8a6'},
+        'Evento': {label:'EVENTO', color:'#8b5cf6'},
+    };
+    const badge = RARITY_BADGE[card.rarity];
     const rarityBadge = badge ? `<span class="rarity-badge" style="background:${badge.color}">${badge.label}</span>` : '';
 
     return `
