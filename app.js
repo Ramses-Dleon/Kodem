@@ -186,28 +186,9 @@ async function init() {
     try {
         const response = await fetch('cards.json');
         allCards = await response.json();
-        // ── Expand rarity variants into virtual entries ──
-        const variantCards = [];
-        const RARITY_LABELS = { R: 'Rara', S: 'Súper Rara', U: 'Ultra Rara', K: 'Kósmica', ST: 'Secreta' };
-        for (const card of allCards) {
-            if (card.rarity_variants && card.rarity_variants.length > 0) {
-                for (const suffix of card.rarity_variants) {
-                    const parts = card.folio.split('-');
-                    const variantFolio = `${parts[0]}-${parts.slice(1).join('-')}${suffix}`;
-                    variantCards.push({
-                        ...card,
-                        folio: variantFolio,
-                        image: `images/${variantFolio}.webp`,
-                        _baseFolio: card.folio,
-                        _raritySuffix: suffix,
-                        _rarityLabel: RARITY_LABELS[suffix] || suffix,
-                    });
-                }
-            }
-        }
-        allCards = allCards.concat(variantCards);
+        // Variants are already included in cards.json as separate entries
         filteredCards = [...allCards];
-        console.log(`Loaded ${allCards.length} cards (${variantCards.length} rarity variants)`);
+        console.log(`Loaded ${allCards.length} cards`);
     } catch (error) {
         console.error('Error loading cards:', error);
         allCards = [];
@@ -2465,19 +2446,16 @@ function renderDashboard() {
         else variantOwned++;
     }
 
-    const totalBase = allCards.length;
-
+    // Count base vs variant cards directly from allCards
+    let totalBase = 0;
     let totalVariants = 0;
     for (const card of allCards) {
-        const rv = card.rarity_variants || [];
-        totalVariants += rv.length;
-    }
-    for (const card of allCards) {
-        if (getFolioSuffix(card.folio) === 'UV') totalVariants++;
+        if (getFolioSuffix(card.folio) === '') totalBase++;
+        else totalVariants++;
     }
 
     const totalAll = collection.size;
-    const totalCards = totalBase + totalVariants;
+    const totalCards = allCards.length; // 786 = base + variants
     const pctAll = totalCards > 0 ? Math.round((totalAll / totalCards) * 100) : 0;
     const pctBase = totalBase > 0 ? Math.round((baseOwned / totalBase) * 100) : 0;
 
