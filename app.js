@@ -1256,7 +1256,7 @@ function renderCollection() {
                 const targetSuffix = rarityMap[filterRarity];
                 if (targetSuffix === undefined) { /* unknown rarity, skip */ }
                 else if (targetSuffix === '') { if (getFolioSuffix(card.folio) !== '') return false; }
-                else { if (!(card.rarity_variants || []).includes(targetSuffix)) return false; }
+                else { if (getFolioSuffix(card.folio) !== targetSuffix) return false; }
             }
             return true;
         });
@@ -1274,7 +1274,7 @@ function renderCollection() {
                 const targetSuffix = rarityMap[filterRarity];
                 if (targetSuffix === undefined) { /* unknown rarity, skip */ }
                 else if (targetSuffix === '') { if (getFolioSuffix(card.folio) !== '') return false; }
-                else { if (!(card.rarity_variants || []).includes(targetSuffix)) return false; }
+                else { if (getFolioSuffix(card.folio) !== targetSuffix) return false; }
             }
             return true;
         });
