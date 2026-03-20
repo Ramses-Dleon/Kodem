@@ -1687,7 +1687,10 @@
     "set": "FYTE",
     "effect_text": "Activa: Daña 3 ptos. a 1 carta en Zona Principal. Hasta que este Protector vuelva a estar disponible, si 1 Adendei-Cháaktico aliado ataca a la carta frente a él, no recibirá descanso al final del turno. Costo: Esta carta sólo podrá vincularse con Adendei-Cháaktico.",
     "effect_type": "Activa",
-    "image": "images/FYTE-001.webp"
+    "image": "images/FYTE-001.webp",
+    "rarity_variants": [
+      "K"
+    ]
   },
   {
     "folio": "FYTE-002",
@@ -1699,7 +1702,10 @@
     "set": "FYTE",
     "effect_text": "Pasiva: Si 1 Adendei Catrín es colocado en el campo, no recibirá descanso al atacar o usar Activa en este o en tu siguiente turno.",
     "effect_type": "Pasiva",
-    "image": "images/FYTE-002.webp"
+    "image": "images/FYTE-002.webp",
+    "rarity_variants": [
+      "K"
+    ]
   },
   {
     "folio": "FYTE-003",
@@ -1711,7 +1717,10 @@
     "set": "FYTE",
     "effect_text": "Pasiva: Si 1 Adendei aliado o 1 carta rival es vivificada, daña 2 ptos. a 1 carta rival en Zona Principal.",
     "effect_type": "Pasiva",
-    "image": "images/FYTE-003.webp"
+    "image": "images/FYTE-003.webp",
+    "rarity_variants": [
+      "K"
+    ]
   },
   {
     "folio": "FYTE-004",
@@ -9013,7 +9022,10 @@
     "effect_type": "Pasiva",
     "effect_text": "Pasiva: Si \"Consejo de Hielo\" está en el campo, esta carta puede atacar a todos los Adendei rivales.",
     "set": "TCOO",
-    "image": "images/TCOO-001.webp"
+    "image": "images/TCOO-001.webp",
+    "rarity_variants": [
+      "K"
+    ]
   },
   {
     "folio": "TCOO-002",
@@ -9025,7 +9037,10 @@
     "effect_type": null,
     "effect_text": "Costo: Esta carta no puede escalar, ser curada ni protegida.",
     "set": "TCOO",
-    "image": "images/TCOO-002.webp"
+    "image": "images/TCOO-002.webp",
+    "rarity_variants": [
+      "K"
+    ]
   },
   {
     "folio": "TCOO-003",
@@ -9037,7 +9052,10 @@
     "effect_type": "Pasiva",
     "effect_text": "Pasiva: Si 1 Adendei-Pírico Titán aliado es revelado, quema 1 carta en Zona Principal.",
     "set": "TCOO",
-    "image": "images/TCOO-003.webp"
+    "image": "images/TCOO-003.webp",
+    "rarity_variants": [
+      "K"
+    ]
   },
   {
     "folio": "TCOO-004",
@@ -10185,5 +10203,109 @@
     "artist": "Oskar Alvarado",
     "rarity_variants": [],
     "image": "images/XPIX-003.webp"
+  },
+  {
+    "folio": "FYTE-001K",
+    "name": "Yeoce, Poder Ancestral",
+    "set": "FYTE",
+    "type": "Protector",
+    "energy": "",
+    "damage": 0,
+    "rests": 0,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Usa 1 de los siguientes efectos: \n-Oculta 1 carta en el campo. \n-Selecciona 1 energia: cambia la energia de todas las cartas aliadas o rivales a la energia seleccionada hasta que este Protector este disponible. \n-Escala 1 punto 1 Adendei aliado.",
+    "image": "images/FYTE-001K.webp",
+    "rarity_variants": []
+  },
+  {
+    "folio": "FYTE-002K",
+    "name": "Ketzz, Plumas Inmortales",
+    "set": "FYTE",
+    "type": "Adendei",
+    "energy": "Húumica",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Si esta carta es vivificada, nombra 2 cartas; las cartas nombradas no podran ser vivificadas por el resto del juego.",
+    "image": "images/FYTE-002K.webp",
+    "rarity_variants": []
+  },
+  {
+    "folio": "FYTE-003K",
+    "name": "Ariam, Axoloespectro",
+    "set": "FYTE",
+    "type": "Espectro",
+    "energy": "",
+    "damage": 0,
+    "rests": 0,
+    "effect_type": "Ninguno",
+    "effect_text": "Requisito: 1 o mas Rava en tu Extincion. \nPasiva: Copia la Pasiva y costo de 1 Rava en Extincion. \nCosto: Este Espectro no puede atacar. Esta Pasiva, la Pasiva copiada y la Pasiva de la carta poseida no pueden ser negadasa.",
+    "image": "images/FYTE-003K.webp",
+    "rarity_variants": []
+  },
+  {
+    "folio": "LGRO-001K",
+    "name": "Naxi Dequak",
+    "set": "LGRO",
+    "type": "Adendei",
+    "energy": "Átlica",
+    "damage": 1,
+    "rests": 0,
+    "effect_type": "Activa y Pasiva",
+    "effect_text": "Activa: Si esta carta ataca, se cura 1 punto.   \nPasiva: Si esta carta fue atacada, escala 1 punto.",
+    "image": "images/LGRO-001K.webp",
+    "rarity_variants": []
+  },
+  {
+    "folio": "LGRO-002K",
+    "name": "Zaykan, Anulación",
+    "set": "LGRO",
+    "type": "Adendei",
+    "energy": "Lítica",
+    "damage": 1,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Mientras esta carta este en el campo, los efectos de cartas en Zona Principal son negados.",
+    "image": "images/LGRO-002K.webp",
+    "rarity_variants": []
+  },
+  {
+    "folio": "TCOO-001K",
+    "name": "Zinawe, Rey de las Aves",
+    "set": "TCOO",
+    "type": "Adendei",
+    "energy": "Demótica",
+    "damage": 0,
+    "rests": 0,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Devuelve las cartas en tu Zona Principal al fondo del Mazo. \nCosto: No puedes atacar, vincular ni usar otros efectos en el turno que usas esta Pasiva. Este efecto solo se puede usar una vez por juego.",
+    "image": "images/TCOO-001K.webp",
+    "rarity_variants": []
+  },
+  {
+    "folio": "TCOO-002K",
+    "name": "Hypex vs Draxes, Batalla Prehistórica",
+    "set": "TCOO",
+    "type": "Adendei",
+    "energy": "Combinación",
+    "damage": 3,
+    "rests": 2,
+    "effect_type": "Pasiva",
+    "effect_text": "Activa: Usa 1 de los siguientes efectos. \n-Regresa todas las cartas en Zona Principal a su Zona Principal original. \n-Si tu rival no tiene 1 Token en Zona Principal, regresa 1 Adendei rival al tope de su Mazo y coloca 1 Token con el mismo tipo de Energia, 2 puntos de daño y 0 descansos. \n-Cura 3 puntos a 1 carta en el campo.",
+    "image": "images/TCOO-002K.webp",
+    "rarity_variants": []
+  },
+  {
+    "folio": "TCOO-003K",
+    "name": "Zaren, Unión",
+    "set": "TCOO",
+    "type": "Protector",
+    "energy": "",
+    "damage": 0,
+    "rests": 0,
+    "effect_type": "Activa",
+    "effect_text": "Activa: Usa 1 de los siguientes efectos. \n-Regresa todas las cartas en Zona Principal a su Zona Principal original. \n-Si tu rival no tiene 1 Token en Zona Principal, regresa 1 Adendei rival al tope de su Mazo y coloca 1 Token con el mismo tipo de Energia, 2 puntos de daño y 0 descansos. \n-Cura 3 puntos a 1 carta en el campo.",
+    "image": "images/TCOO-003K.webp",
+    "rarity_variants": []
   }
 ]
