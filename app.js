@@ -188,7 +188,7 @@ async function init() {
         allCards = await response.json();
         // ── Expand rarity variants into virtual entries ──
         const variantCards = [];
-        const RARITY_LABELS = { R: 'Rara', S: 'Súper Rara', U: 'Ultra Rara', K: 'Kósmica' };
+        const RARITY_LABELS = { R: 'Rara', S: 'Súper Rara', U: 'Ultra Rara', K: 'Kósmica', ST: 'Secreta' };
         for (const card of allCards) {
             if (card.rarity_variants && card.rarity_variants.length > 0) {
                 for (const suffix of card.rarity_variants) {
@@ -822,7 +822,7 @@ function applyBrowserFilters() {
                 'Rara': 'R',
                 'Súper Rara': 'S',
                 'Ultra Rara': 'U',
-                'Kósmica': 'K'
+                'Kósmica': 'K', 'Secreta': 'ST'
             };
             const targetSuffix = rarityMap[filterRarity];
             if (targetSuffix === undefined) return true;
@@ -970,7 +970,7 @@ function createCardElement(card, small = false) {
     const wantBtn = small ? '' : `<button class="card-want-btn ${isWanted ? 'active' : ''}" data-folio="${card.folio}" title="${isWanted ? 'Quitar de Want List' : 'Agregar a Want List'}" onclick="event.stopPropagation();handleWantBtnClick(this,'${card.folio}')">🎯</button>`;
 
     // Rarity badge for variants
-    const RARITY_BADGE = { R: {label:'RARA', color:'#3b82f6'}, S: {label:'SÚPER', color:'#a855f7'}, U: {label:'ULTRA', color:'#f59e0b'}, K: {label:'KÓSMICA', color:'#ef4444'} };
+    const RARITY_BADGE = { R: {label:'RARA', color:'#3b82f6'}, S: {label:'SÚPER', color:'#a855f7'}, U: {label:'ULTRA', color:'#f59e0b'}, K: {label:'KÓSMICA', color:'#ef4444'}, ST: {label:'SECRETA', color:'#ec4899'} };
     const suffix = card._raritySuffix || getFolioSuffix(card.folio);
     const badge = RARITY_BADGE[suffix];
     const rarityBadge = badge ? `<span class="rarity-badge" style="background:${badge.color}">${badge.label}</span>` : '';
@@ -1275,7 +1275,7 @@ function renderCollection() {
             if (filterType && card.type !== filterType) return false;
             if (filterEnergy && card.energy !== filterEnergy) return false;
             if (filterRarity) {
-                const rarityMap = { 'Común': '', 'Rara': 'R', 'Súper Rara': 'S', 'Ultra Rara': 'U', 'Kósmica': 'K' };
+                const rarityMap = { 'Común': '', 'Rara': 'R', 'Súper Rara': 'S', 'Ultra Rara': 'U', 'Kósmica': 'K', 'Secreta': 'ST' };
                 const targetSuffix = rarityMap[filterRarity];
                 if (targetSuffix === undefined) { /* unknown rarity, skip */ }
                 else if (targetSuffix === '') { if (getFolioSuffix(card.folio) !== '') return false; }
@@ -1293,7 +1293,7 @@ function renderCollection() {
             if (filterType && card.type !== filterType) return false;
             if (filterEnergy && card.energy !== filterEnergy) return false;
             if (filterRarity) {
-                const rarityMap = { 'Común': '', 'Rara': 'R', 'Súper Rara': 'S', 'Ultra Rara': 'U', 'Kósmica': 'K' };
+                const rarityMap = { 'Común': '', 'Rara': 'R', 'Súper Rara': 'S', 'Ultra Rara': 'U', 'Kósmica': 'K', 'Secreta': 'ST' };
                 const targetSuffix = rarityMap[filterRarity];
                 if (targetSuffix === undefined) { /* unknown rarity, skip */ }
                 else if (targetSuffix === '') { if (getFolioSuffix(card.folio) !== '') return false; }
@@ -2178,7 +2178,7 @@ function renderDeckPool() {
                 'Rara': 'R',
                 'Súper Rara': 'S',
                 'Ultra Rara': 'U',
-                'Kósmica': 'K'
+                'Kósmica': 'K', 'Secreta': 'ST'
             };
             const targetSuffix = rarityMap[filterRarity];
             if (targetSuffix !== undefined) {
@@ -2211,11 +2211,15 @@ const RARITY_CONFIG = [
     { suffix: 'S',  label: 'Súper Rara', emoji: '⭐', color: '#a78bfa' },
     { suffix: 'U',  label: 'Ultra Rara', emoji: '🌟', color: '#f59e0b' },
     { suffix: 'K',  label: 'Kósmica',    emoji: '👑', color: '#f97316' },
+    { suffix: 'ST', label: 'Secreta',    emoji: '🔮', color: '#ec4899' },
     { suffix: 'UV', label: 'UV',         emoji: '✨', color: '#34d399' },
 ];
 
 function getFolioSuffix(folio) {
     if (!folio) return '';
+    // Handle special suffixes: ST1, ST2, etc.
+    const st = folio.match(/^[A-Z0-9]+-ST\d+$/);
+    if (st) return 'ST';
     const m = folio.match(/^[A-Z0-9]+-\d+([A-Z]*)$/);
     if (!m) return '';
     return m[1];
