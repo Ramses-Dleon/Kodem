@@ -2,7 +2,7 @@
  * Kódem TCG Companion — app.js
  * 
  * Single-page application for browsing, collecting, and deck-building
- * with the Kódem Trading Card Game (609 cards, 22 sets).
+ * with the Kódem Trading Card Game (786 cards, 22 sets).
  * 
  * Architecture:
  *   - Pure vanilla JS, no framework, no build step
@@ -23,7 +23,7 @@
  *   KDECK-xxx  — base64-encoded deck folios
  * 
  * @author Ramsés D'León
- * @version 0.9.0
+ * @version     3.0.0
  * @see https://github.com/Ramses-Dleon/Kodem
  */
 
@@ -700,6 +700,33 @@ function setupEventListeners() {
                 console.error('Want list sync error:', wantErr);
             }
 
+            // Sync decks
+            let decksOk = false;
+            let decksAdded = 0;
+            try {
+                const decksResp = await fetch('decks.json?t=' + Date.now());
+                if (decksResp.ok) {
+                    decksOk = true;
+                    const serverDecks = await decksResp.json();
+                    for (const [id, deck] of Object.entries(serverDecks)) {
+                        if (!decks[id]) {
+                            decks[id] = deck;
+                            decksAdded++;
+                        } else {
+                            // Merge cards from server into existing deck
+                            const existing = new Set(decks[id].cards);
+                            const before = existing.size;
+                            deck.cards.forEach(c => existing.add(c));
+                            decks[id].cards = [...existing];
+                            if (existing.size > before) decksAdded++;
+                        }
+                    }
+                    if (decksAdded > 0) saveDecks();
+                }
+            } catch (deckErr) {
+                console.error('Decks sync error:', deckErr);
+            }
+
             renderCollection();
             updateBtn.textContent = '✅ Sync';
             setTimeout(() => { updateBtn.textContent = '🔄 Sync'; }, 2000);
@@ -707,6 +734,7 @@ function setupEventListeners() {
             const parts = [];
             if (collOk) parts.push(`${collAdded} colección`);
             if (wantOk) parts.push(`${wantAdded} want list`);
+            if (decksOk) parts.push(`${decksAdded} mazos`);
             showToast(parts.length ? `Sync: ${parts.join(', ')} ✅` : '⚠️ No se pudo conectar', parts.length ? 'success' : 'error');
 
         } catch (e) {
