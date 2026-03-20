@@ -2621,6 +2621,23 @@ function renderDashboard() {
     const pctEl = document.getElementById('completion-percent');
     if (pctEl) pctEl.textContent = `${pctBase}%`;
 
+    // Unique cards: group by name, count how many unique names have at least 1 owned variant
+    const byName = {};
+    for (const card of allCards) {
+        if (!byName[card.name]) byName[card.name] = [];
+        byName[card.name].push(card.folio);
+    }
+    const totalUnique = Object.keys(byName).length;
+    let ownedUnique = 0;
+    for (const [name, folios] of Object.entries(byName)) {
+        if (folios.some(f => collection.has(f))) ownedUnique++;
+    }
+    const uniqueEl = document.getElementById('unique-owned');
+    if (uniqueEl) uniqueEl.textContent = `${ownedUnique} / ${totalUnique}`;
+
+    // Update hero ring to use unique % (more meaningful)
+    const pctUnique = totalUnique > 0 ? Math.round((ownedUnique / totalUnique) * 100) : 0;
+
     renderHeroRing(pctBase);
     renderQuickStats(setStats);
     renderSetCompletionChart(setStats);

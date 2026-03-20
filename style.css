@@ -3469,3 +3469,13 @@ nav .nav-btn.active::after {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* Unique cards highlight */
+.hero-stat-item.highlight .hero-stat-value {
+    color: #f59e0b;
+    font-weight: 700;
+}
+.hero-stat-item.highlight .hero-stat-label {
+    color: #f59e0b;
+    opacity: 0.85;
+}
