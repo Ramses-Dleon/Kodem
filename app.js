@@ -186,8 +186,27 @@ async function init() {
     try {
         const response = await fetch('cards.json');
         allCards = await response.json();
+        // ── Expand rarity variants into virtual entries ──
+        const variantCards = [];
+        const RARITY_LABELS = { R: 'Rara', S: 'Súper Rara', U: 'Ultra Rara', K: 'Kósmica' };
+        for (const card of allCards) {
+            if (card.rarity_variants && card.rarity_variants.length > 0) {
+                for (const suffix of card.rarity_variants) {
+                    const parts = card.folio.split('-');
+                    const variantFolio = `${parts[0]}-${parts.slice(1).join('-')}${suffix}`;
+                    variantCards.push({
+                        ...card,
+                        folio: variantFolio,
+                        _baseFolio: card.folio,
+                        _raritySuffix: suffix,
+                        _rarityLabel: RARITY_LABELS[suffix] || suffix,
+                    });
+                }
+            }
+        }
+        allCards = allCards.concat(variantCards);
         filteredCards = [...allCards];
-        console.log(`Loaded ${allCards.length} cards`);
+        console.log(`Loaded ${allCards.length} cards (${variantCards.length} rarity variants)`);
     } catch (error) {
         console.error('Error loading cards:', error);
         allCards = [];
@@ -806,11 +825,7 @@ function applyBrowserFilters() {
             };
             const targetSuffix = rarityMap[filterRarity];
             if (targetSuffix === undefined) return true;
-            if (targetSuffix === '') {
-                if (getFolioSuffix(card.folio) !== '') return false;
-            } else {
-                if (!(card.rarity_variants || []).includes(targetSuffix)) return false;
-            }
+            if (getFolioSuffix(card.folio) !== targetSuffix) return false;
         }
         if (filterEffectText) {
             const effectText = (card.effect_text || '').toLowerCase();
@@ -953,9 +968,16 @@ function createCardElement(card, small = false) {
     // 🎯 want button (stop propagation so it doesn't open modal)
     const wantBtn = small ? '' : `<button class="card-want-btn ${isWanted ? 'active' : ''}" data-folio="${card.folio}" title="${isWanted ? 'Quitar de Want List' : 'Agregar a Want List'}" onclick="event.stopPropagation();handleWantBtnClick(this,'${card.folio}')">🎯</button>`;
 
+    // Rarity badge for variants
+    const RARITY_BADGE = { R: {label:'RARA', color:'#3b82f6'}, S: {label:'SÚPER', color:'#a855f7'}, U: {label:'ULTRA', color:'#f59e0b'}, K: {label:'KÓSMICA', color:'#ef4444'} };
+    const suffix = card._raritySuffix || getFolioSuffix(card.folio);
+    const badge = RARITY_BADGE[suffix];
+    const rarityBadge = badge ? `<span class="rarity-badge" style="background:${badge.color}">${badge.label}</span>` : '';
+
     return `
         <div class="card-item ${owned} ${wantedClass} ${inDeck}" data-folio="${card.folio}" data-energy="${card.energy || ''}">
             <img src="${card.image}" alt="${card.name}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22280%22%3E%3Crect fill=%22%23333%22 width=%22200%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23666%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+            ${rarityBadge}
             ${wantBtn}
             <div class="card-name">${card.name}</div>
             ${effectPreview}
@@ -2159,11 +2181,7 @@ function renderDeckPool() {
             };
             const targetSuffix = rarityMap[filterRarity];
             if (targetSuffix !== undefined) {
-                if (targetSuffix === '') {
-                    if (getFolioSuffix(card.folio) !== '') return false;
-                } else {
-                    if (!(card.rarity_variants || []).includes(targetSuffix)) return false;
-                }
+                if (getFolioSuffix(card.folio) !== targetSuffix) return false;
             }
         }
         if (filterEffectText) {
