@@ -197,6 +197,7 @@ async function init() {
                     variantCards.push({
                         ...card,
                         folio: variantFolio,
+                        image: `images/${variantFolio}.webp`,
                         _baseFolio: card.folio,
                         _raritySuffix: suffix,
                         _rarityLabel: RARITY_LABELS[suffix] || suffix,
