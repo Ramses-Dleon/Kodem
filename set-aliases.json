@@ -88,8 +88,8 @@
         "IDRMA"
       ],
       "type": "intro_deck",
-      "base_cards": 23,
-      "total_images": 23
+      "base_cards": 22,
+      "total_images": 22
     },
     {
       "code": "IDRMG",
@@ -99,8 +99,8 @@
         "IDRMG"
       ],
       "type": "intro_deck",
-      "base_cards": 23,
-      "total_images": 23
+      "base_cards": 22,
+      "total_images": 22
     },
     {
       "code": "IDRMP",
@@ -110,8 +110,8 @@
         "IDRMP"
       ],
       "type": "intro_deck",
-      "base_cards": 23,
-      "total_images": 23
+      "base_cards": 22,
+      "total_images": 22
     },
     {
       "code": "CAMP",
@@ -228,36 +228,6 @@
       "type": "promo",
       "base_cards": 48,
       "total_images": 48
-    },
-    {
-      "code": "1DRMA",
-      "name_es": "Impresiones del Reino Maya — Alebrijes",
-      "name_en": "Kingdom Maya Prints — Alebrijes",
-      "aliases": [
-        "1DRMA"
-      ],
-      "type": "promo",
-      "base_cards": 8
-    },
-    {
-      "code": "1DRMG",
-      "name_es": "Impresiones del Reino Maya — Guardianes",
-      "name_en": "Kingdom Maya Prints — Guardians",
-      "aliases": [
-        "1DRMG"
-      ],
-      "type": "promo",
-      "base_cards": 5
-    },
-    {
-      "code": "1DRMP",
-      "name_es": "Impresiones del Reino Maya — Protectores",
-      "name_en": "Kingdom Maya Prints — Protectors",
-      "aliases": [
-        "1DRMP"
-      ],
-      "type": "promo",
-      "base_cards": 6
     },
     {
       "code": "ILRM",

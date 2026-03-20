@@ -12,9 +12,9 @@
     "image": "images/009066Esp.webp"
   },
   {
-    "folio": "1DRMA-002",
+    "folio": "IDRMA-002",
     "name": "Ariam, Balance",
-    "set": "1DRMA",
+    "set": "IDRMA",
     "type": "Adendei",
     "subtype": null,
     "energy": "Átlica",
@@ -28,12 +28,12 @@
     "species": "Ambystoma mexicanum",
     "artist": "cripticus",
     "rarity_variants": [],
-    "image": "images/1DRMA-002.webp"
+    "image": "images/IDRMA-002.webp"
   },
   {
-    "folio": "1DRMA-003",
+    "folio": "IDRMA-003",
     "name": "Ulmor, Ataque Fugaz",
-    "set": "1DRMA",
+    "set": "IDRMA",
     "type": "Adendei",
     "subtype": null,
     "energy": "Átlica",
@@ -47,12 +47,12 @@
     "species": "Octopus maya",
     "artist": "Nether_art31",
     "rarity_variants": [],
-    "image": "images/1DRMA-003.webp"
+    "image": "images/IDRMA-003.webp"
   },
   {
-    "folio": "1DRMA-010",
+    "folio": "IDRMA-010",
     "name": "Nánuk, Arquitecto de Poder",
-    "set": "1DRMA",
+    "set": "IDRMA",
     "type": "Adendei",
     "subtype": "Feral",
     "energy": "Feral",
@@ -66,12 +66,12 @@
     "species": "Ursus maritimus",
     "artist": "Edgardo Bautista",
     "rarity_variants": [],
-    "image": "images/1DRMA-010.webp"
+    "image": "images/IDRMA-010.webp"
   },
   {
-    "folio": "1DRMA-012",
+    "folio": "IDRMA-012",
     "name": "Cordyceps, Invasión",
-    "set": "1DRMA",
+    "set": "IDRMA",
     "type": "Adendei",
     "subtype": "Infectado",
     "energy": "Feral",
@@ -85,12 +85,12 @@
     "species": "Ophiocordyceps unilateralis",
     "artist": "AbuShield",
     "rarity_variants": [],
-    "image": "images/1DRMA-012.webp"
+    "image": "images/IDRMA-012.webp"
   },
   {
-    "folio": "1DRMA-016",
+    "folio": "IDRMA-016",
     "name": "Yogg, Oscuridad",
-    "set": "1DRMA",
+    "set": "IDRMA",
     "type": "Adendei",
     "subtype": "Abisal",
     "energy": "Átlica",
@@ -104,12 +104,12 @@
     "species": "Centrophryne spinulosa",
     "artist": "AbuShield",
     "rarity_variants": [],
-    "image": "images/1DRMA-016.webp"
+    "image": "images/IDRMA-016.webp"
   },
   {
-    "folio": "1DRMA-017",
+    "folio": "IDRMA-017",
     "name": "Zenam, Descarga Eléctrica",
-    "set": "1DRMA",
+    "set": "IDRMA",
     "type": "Adendei",
     "subtype": null,
     "energy": "Cháaktica",
@@ -123,12 +123,12 @@
     "species": "Gymnothorax funebris",
     "artist": "AbuShield",
     "rarity_variants": [],
-    "image": "images/1DRMA-017.webp"
+    "image": "images/IDRMA-017.webp"
   },
   {
-    "folio": "1DRMA-018",
+    "folio": "IDRMA-018",
     "name": "Makua, Halcón Marino",
-    "set": "1DRMA",
+    "set": "IDRMA",
     "type": "Adendei",
     "subtype": null,
     "energy": "Feral",
@@ -142,12 +142,12 @@
     "species": "Isurus oxyrinchus",
     "artist": "Edgardo Bautista",
     "rarity_variants": [],
-    "image": "images/1DRMA-018.webp"
+    "image": "images/IDRMA-018.webp"
   },
   {
-    "folio": "1DRMA-020",
+    "folio": "IDRMA-020",
     "name": "Ariam, Dualidad",
-    "set": "1DRMA",
+    "set": "IDRMA",
     "type": "Adendei",
     "subtype": null,
     "energy": "Átlica",
@@ -161,12 +161,12 @@
     "species": "Ambystoma mexicanum",
     "artist": "Mike.rev_art y Fersko0n",
     "rarity_variants": [],
-    "image": "images/1DRMA-020.webp"
+    "image": "images/IDRMA-020.webp"
   },
   {
-    "folio": "1DRMG-013",
+    "folio": "IDRMG-013",
     "name": "Macit, Semilla Dorada",
-    "set": "1DRMG",
+    "set": "IDRMG",
     "type": "Adendei",
     "subtype": "Guardián",
     "energy": "Feral",
@@ -180,12 +180,12 @@
     "species": "Odocoileus virginianus",
     "artist": "capuccino.arts",
     "rarity_variants": [],
-    "image": "images/1DRMG-013.webp"
+    "image": "images/IDRMG-013.webp"
   },
   {
-    "folio": "1DRMG-014",
+    "folio": "IDRMG-014",
     "name": "Mizthe, Ancestral",
-    "set": "1DRMG",
+    "set": "IDRMG",
     "type": "Adendei",
     "subtype": "Guardián",
     "energy": "Feral",
@@ -199,12 +199,12 @@
     "species": null,
     "artist": "varchi_design",
     "rarity_variants": [],
-    "image": "images/1DRMG-014.webp"
+    "image": "images/IDRMG-014.webp"
   },
   {
-    "folio": "1DRMG-016",
+    "folio": "IDRMG-016",
     "name": "Nánuk, Fiereza Kósmica",
-    "set": "1DRMG",
+    "set": "IDRMG",
     "type": "Adendei",
     "subtype": "Kósmico",
     "energy": "Gélida",
@@ -218,12 +218,12 @@
     "species": "Ursus maritimus",
     "artist": "Mike Tn",
     "rarity_variants": [],
-    "image": "images/1DRMG-016.webp"
+    "image": "images/IDRMG-016.webp"
   },
   {
-    "folio": "1DRMG-017",
+    "folio": "IDRMG-017",
     "name": "Bóras, Poder Kósmico",
-    "set": "1DRMG",
+    "set": "IDRMG",
     "type": "Adendei",
     "subtype": "Kósmico",
     "energy": "Gélida",
@@ -237,12 +237,12 @@
     "species": null,
     "artist": "Mike.rev_art",
     "rarity_variants": [],
-    "image": "images/1DRMG-017.webp"
+    "image": "images/IDRMG-017.webp"
   },
   {
-    "folio": "1DRMG-021",
+    "folio": "IDRMG-021",
     "name": "Yakerr, Soledad",
-    "set": "1DRMG",
+    "set": "IDRMG",
     "type": "Adendei",
     "subtype": "Feral",
     "energy": "Feral",
@@ -256,12 +256,12 @@
     "species": "Canis lupus baileyi",
     "artist": "Aureo Oliva",
     "rarity_variants": [],
-    "image": "images/1DRMG-021.webp"
+    "image": "images/IDRMG-021.webp"
   },
   {
-    "folio": "1DRMP-012",
+    "folio": "IDRMP-012",
     "name": "Adasí, Acecho",
-    "set": "1DRMP",
+    "set": "IDRMP",
     "type": "Adendei",
     "subtype": null,
     "energy": "Lítica",
@@ -275,12 +275,12 @@
     "species": "Saguinus oedipus",
     "artist": "Mike Tn",
     "rarity_variants": [],
-    "image": "images/1DRMP-012.webp"
+    "image": "images/IDRMP-012.webp"
   },
   {
-    "folio": "1DRMP-013",
+    "folio": "IDRMP-013",
     "name": "Ozom, Bocanada de Humo",
-    "set": "1DRMP",
+    "set": "IDRMP",
     "type": "Adendei",
     "subtype": null,
     "energy": "Pírica",
@@ -294,12 +294,12 @@
     "species": "Alouatta pigra",
     "artist": "Edgardo Bautista",
     "rarity_variants": [],
-    "image": "images/1DRMP-013.webp"
+    "image": "images/IDRMP-013.webp"
   },
   {
-    "folio": "1DRMP-014",
+    "folio": "IDRMP-014",
     "name": "Cretus, Profecía",
-    "set": "1DRMP",
+    "set": "IDRMP",
     "type": "Adendei",
     "subtype": null,
     "energy": "Pírica",
@@ -313,12 +313,12 @@
     "species": "Bos taurus",
     "artist": "Mike Tn",
     "rarity_variants": [],
-    "image": "images/1DRMP-014.webp"
+    "image": "images/IDRMP-014.webp"
   },
   {
-    "folio": "1DRMP-015",
+    "folio": "IDRMP-015",
     "name": "Naywa, Poder Morféico",
-    "set": "1DRMP",
+    "set": "IDRMP",
     "type": "Adendei",
     "subtype": null,
     "energy": "Pírica",
@@ -332,12 +332,12 @@
     "species": "Didelphis virginiana",
     "artist": "Fersko0n",
     "rarity_variants": [],
-    "image": "images/1DRMP-015.webp"
+    "image": "images/IDRMP-015.webp"
   },
   {
-    "folio": "1DRMP-020",
+    "folio": "IDRMP-020",
     "name": "Uragg, Coloso del Terror",
-    "set": "1DRMP",
+    "set": "IDRMP",
     "type": "Adendei",
     "subtype": "Abisal",
     "energy": "Pírica",
@@ -351,12 +351,12 @@
     "species": "Architeuthis dux",
     "artist": "AbuShield",
     "rarity_variants": [],
-    "image": "images/1DRMP-020.webp"
+    "image": "images/IDRMP-020.webp"
   },
   {
-    "folio": "1DRMP-021",
+    "folio": "IDRMP-021",
     "name": "Shugg, Fuga",
-    "set": "1DRMP",
+    "set": "IDRMP",
     "type": "Adendei",
     "subtype": "Abisal",
     "energy": "Feral",
@@ -370,7 +370,7 @@
     "species": null,
     "artist": "AbuShield",
     "rarity_variants": [],
-    "image": "images/1DRMP-021.webp"
+    "image": "images/IDRMP-021.webp"
   },
   {
     "folio": "ANIV-001",
