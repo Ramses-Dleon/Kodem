@@ -562,6 +562,33 @@ function setupEventListeners() {
     const syncImportBtn = document.getElementById('sync-import');
     if (syncImportBtn) syncImportBtn.addEventListener('click', importSyncCode);
 
+    // Server sync button
+    const updateBtn = document.getElementById('update-btn');
+    if (updateBtn) updateBtn.addEventListener('click', async () => {
+        updateBtn.textContent = '⏳';
+        try {
+            const resp = await fetch('collection.json?t=' + Date.now());
+            if (!resp.ok) throw new Error('No collection.json on server');
+            const data = await resp.json();
+            if (data.cards && Array.isArray(data.cards)) {
+                const serverCards = new Set(data.cards.map(c => resolveFolio(c)));
+                const merged = new Set([...collection, ...serverCards]);
+                const added = merged.size - collection.size;
+                collection = merged;
+                saveCollection();
+                renderCollection();
+                updateBtn.textContent = '✅';
+                setTimeout(() => { updateBtn.textContent = '🔄'; }, 2000);
+                if (added > 0) alert(`Sincronizado: +${added} cartas del servidor (total: ${collection.size})`);
+                else alert(`Colección sincronizada (${collection.size} cartas, sin cambios)`);
+            }
+        } catch (e) {
+            updateBtn.textContent = '❌';
+            setTimeout(() => { updateBtn.textContent = '🔄'; }, 2000);
+            console.error('Sync error:', e);
+        }
+    });
+
     // Collection sort
     const collectionSort = document.getElementById('collection-sort');
     if (collectionSort) collectionSort.addEventListener('change', (e) => {
