@@ -1610,11 +1610,12 @@ img[loading="lazy"] {
 
 .set-bar-row {
     display: grid;
-    grid-template-columns: minmax(120px, 1fr) 1fr 55px;
+    grid-template-columns: auto 1fr 55px;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.3rem;
 }
+
 
 .set-bar-name {
     font-size: 0.75rem;
