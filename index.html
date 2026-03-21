@@ -43,8 +43,8 @@
         </div>
         <nav>
             <button class="nav-btn active" data-view="browser">Explorar Cartas</button>
-            <button class="nav-btn" data-view="collection">Mi Colección</button>
-            <button class="nav-btn" data-view="deck-builder">Constructor de Mazos</button>
+            <button class="nav-btn sync-only" data-view="collection">Mi Colección</button>
+            <button class="nav-btn sync-only" data-view="deck-builder">Constructor de Mazos</button>
             <button class="nav-btn" data-view="sinergias">⚡ Sinergias</button>
             <button class="nav-btn" data-view="guide">📖 Guía</button>
             <button class="nav-btn" data-view="contact">💬 Contacto</button>
@@ -904,6 +904,11 @@
 // Hide sync buttons on public site (GitHub Pages)
 if (location.hostname.includes('github.io')) {
     document.querySelectorAll('.sync-only').forEach(el => el.style.display = 'none');
+    // Hide want buttons and owned indicators on public site
+    const style = document.createElement('style');
+    style.textContent = '.card-want-btn, .collection-stats { display: none !important; } .card-item.owned { border-color: transparent; }';
+    document.head.appendChild(style);
+    window.__PUBLIC_SITE = true;
 }
 </script>
 </body>
