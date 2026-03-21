@@ -1225,11 +1225,19 @@ select:focus {
 }
 
 .modal-cost {
-    background: var(--bg-darker);
-    padding: 0.6rem 0.9rem;
+    background: rgba(245, 158, 11, 0.08);
+    padding: 0.7rem 1rem;
     border-radius: 6px;
     border-left: 3px solid var(--accent-amber);
     font-size: 0.9rem;
+    margin-top: 0.5rem;
+    line-height: 1.55;
+}
+.modal-cost strong {
+    color: #f59e0b;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* ---- Colored effect keywords ---- */
@@ -3403,6 +3411,12 @@ nav .nav-btn.active::after {
 /* cache-bust: 1773870311 */
 
 /* ── Rarity badges ── */
+.cost-badge {
+    font-size: 0.7rem;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+
 .rarity-badge {
     position: absolute;
     top: 6px;

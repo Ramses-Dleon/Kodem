@@ -28,7 +28,7 @@
     <meta property="og:title" content="Kódem TCG Companion">
     <meta property="og:description" content="La primera y única base de datos completa, deck builder y collection tracker para Kódem TCG.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ramses-dleon.github.io/Kodem">
+    <meta property="og:url" content="https://kodem-app.vercel.app">
     <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -36,6 +36,8 @@
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem">
             <h1 style="margin-bottom:0">🎴 Kódem TCG Companion</h1>
             <div style="display:flex;align-items:center;gap:8px">
+                <button id="pull-btn" title="Sincronizar colección desde servidor" aria-label="Sincronizar colección desde servidor (Pull)" style="background:transparent;border:1px solid #f59e0b;color:#f59e0b;border-radius:6px;padding:4px 10px;font-size:0.75rem;cursor:pointer;">⬇️ Pull</button>
+                <button id="push-btn" title="Exportar colección local para enviar a Logos" aria-label="Exportar colección local (Push)" style="background:#f59e0b;border:1px solid #f59e0b;color:#000;border-radius:6px;padding:4px 10px;font-size:0.75rem;cursor:pointer;font-weight:600;">⬆️ Push</button>
                 <button id="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro/oscuro">🌙</button>
             </div>
         </div>
@@ -59,6 +61,10 @@
                 <div id="advanced-filters" class="advanced-filters">
                     <select id="filter-set">
                         <option value="">Todos los sets</option>
+                    </select>
+
+                    <select id="filter-prefix" style="display:none">
+                        <option value="">Sub-set</option>
                     </select>
 
                     <select id="filter-type">
@@ -142,6 +148,9 @@
                 <div id="collection-advanced-filters" class="advanced-filters">
                     <select id="collection-filter-set">
                         <option value="">Todos los sets</option>
+                    </select>
+                    <select id="collection-filter-prefix" style="display:none">
+                        <option value="">Sub-set</option>
                     </select>
                     <select id="collection-filter-type">
                         <option value="">Todos los tipos</option>

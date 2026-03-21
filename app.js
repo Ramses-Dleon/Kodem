@@ -209,6 +209,7 @@ async function init() {
 
     // Populate filter dropdowns
     populateSetFilter();
+    buildPrefixMap();
     populateTypeFilter();
     populateSubtypeFilter();
 
@@ -251,7 +252,7 @@ async function loadCollection() {
             if (resp.ok) {
                 const data = await resp.json();
                 if (data.cards && Array.isArray(data.cards)) {
-                    collection = new Set(data.cards.map(c => resolveFolio(c)));
+                    collection = new Set(data.cards);
                     saveCollection();
                     console.log(`Auto-imported ${collection.size} cards from collection.json`);
                 }
@@ -579,7 +580,8 @@ function setupEventListeners() {
         currentPage = 1;
         applyBrowserFilters();
     }, 300));
-    document.getElementById('filter-set').addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
+    document.getElementById('filter-set').addEventListener('change', () => { currentPage = 1; updatePrefixFilter('filter-set', 'filter-prefix'); applyBrowserFilters(); });
+    document.getElementById('filter-prefix')?.addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
     document.getElementById('filter-type').addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
     document.getElementById('filter-energy').addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
     document.getElementById('sort-by').addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
@@ -608,6 +610,8 @@ function setupEventListeners() {
     if (resetBtn) resetBtn.addEventListener('click', () => {
         document.getElementById('search-input').value = '';
         document.getElementById('filter-set').value = '';
+        const prefixEl = document.getElementById('filter-prefix');
+        if (prefixEl) { prefixEl.value = ''; prefixEl.style.display = 'none'; }
         document.getElementById('filter-type').value = '';
         document.getElementById('filter-energy').value = '';
         if (document.getElementById('filter-subtype')) document.getElementById('filter-subtype').value = '';
@@ -642,9 +646,12 @@ function setupEventListeners() {
             }
         });
     }
-    ['collection-filter-set', 'collection-filter-type', 'collection-filter-energy', 'collection-filter-rarity', 'collection-sort'].forEach(id => {
+    ['collection-filter-set', 'collection-filter-type', 'collection-filter-energy', 'collection-filter-rarity', 'collection-sort', 'collection-filter-prefix'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('change', () => { collectionPage = 1; renderCollection(); });
+    });
+    document.getElementById('collection-filter-set')?.addEventListener('change', () => {
+        updatePrefixFilter('collection-filter-set', 'collection-filter-prefix');
     });
     document.getElementById('clear-collection').addEventListener('click', clearCollection);
     document.getElementById('import-collection').addEventListener('click', importCollection);
@@ -654,94 +661,180 @@ function setupEventListeners() {
     const syncImportBtn = document.getElementById('sync-import');
     if (syncImportBtn) syncImportBtn.addEventListener('click', importSyncCode);
 
-    // Server sync button (Vercel personal version only)
-    const updateBtn = document.getElementById('sync-btn');
-    if (updateBtn) updateBtn.addEventListener('click', async () => {
-        updateBtn.textContent = '⏳ Sync...';
+    // ==================== PULL BUTTON ====================
+    const pullBtn = document.getElementById('pull-btn');
+    if (pullBtn) pullBtn.addEventListener('click', async () => {
+        pullBtn.textContent = '⏳ Pull...';
         try {
-            let collAdded = 0, wantAdded = 0;
-            let collOk = false, wantOk = false;
+            let collOk = false, wantOk = false, decksOk = false;
+            const oldCollSize = collection.size;
+            const oldWantSize = wantList.size;
+            const oldDeckCount = Object.keys(decks).length;
 
-            // Sync collection
+            // Pull collection — REPLACE local with server
             const collResp = await fetch('collection.json?t=' + Date.now());
             if (collResp.ok) {
                 collOk = true;
                 const data = await collResp.json();
                 if (data.cards && Array.isArray(data.cards)) {
-                    const serverCards = new Set(data.cards.map(c => resolveFolio(c)));
-                    const merged = new Set([...collection, ...serverCards]);
-                    collAdded = merged.size - collection.size;
-                    collection = merged;
+                    collection = new Set(data.cards);
                     collectionOrder = [...collection];
                     saveCollection();
                 }
             }
 
-            // Sync want list
+            // Pull want list — REPLACE local with server
             try {
                 const wantResp = await fetch('wantlist.json?t=' + Date.now());
-                console.log('Want list fetch status:', wantResp.status);
                 if (wantResp.ok) {
                     wantOk = true;
                     const data = await wantResp.json();
-                    console.log('Want list data:', data);
                     if (data.cards && Array.isArray(data.cards)) {
-                        const resolved = data.cards.map(c => resolveFolio(c));
-                        console.log('Resolved want list:', resolved);
-                        const serverWant = new Set(resolved);
-                        const prevSize = wantList.size;
-                        serverWant.forEach(f => wantList.add(f));
-                        wantAdded = wantList.size - prevSize;
+                        wantList = new Set(data.cards);
                         saveWantList();
-                        console.log('Want list saved, size:', wantList.size);
                     }
                 }
             } catch (wantErr) {
                 console.error('Want list sync error:', wantErr);
             }
 
-            // Sync decks
-            let decksOk = false;
-            let decksAdded = 0;
+            // Pull decks — REPLACE local with server
             try {
                 const decksResp = await fetch('decks.json?t=' + Date.now());
                 if (decksResp.ok) {
                     decksOk = true;
                     const serverDecks = await decksResp.json();
-                    for (const [id, deck] of Object.entries(serverDecks)) {
-                        if (!decks[id]) {
-                            decks[id] = deck;
-                            decksAdded++;
-                        } else {
-                            // Merge cards from server into existing deck
-                            const existing = new Set(decks[id].cards);
-                            const before = existing.size;
-                            deck.cards.forEach(c => existing.add(c));
-                            decks[id].cards = [...existing];
-                            if (existing.size > before) decksAdded++;
-                        }
-                    }
-                    if (decksAdded > 0) saveDecks();
+                    decks = serverDecks;
+                    saveDecks();
                 }
             } catch (deckErr) {
                 console.error('Decks sync error:', deckErr);
             }
 
             renderCollection();
-            updateBtn.textContent = '✅ Sync';
-            setTimeout(() => { updateBtn.textContent = '🔄 Sync'; }, 2000);
+            pullBtn.textContent = '✅ Pull';
+            setTimeout(() => { pullBtn.textContent = '⬇️ Pull'; }, 2000);
 
-            const parts = [];
-            if (collOk) parts.push(`${collAdded} colección`);
-            if (wantOk) parts.push(`${wantAdded} want list`);
-            if (decksOk) parts.push(`${decksAdded} mazos`);
-            showToast(parts.length ? `Sync: ${parts.join(', ')} ✅` : '⚠️ No se pudo conectar', parts.length ? 'success' : 'error');
+            if (collOk || wantOk || decksOk) {
+                const collDiff = collection.size - oldCollSize;
+                const wantDiff = wantList.size - oldWantSize;
+                const deckDiff = Object.keys(decks).length - oldDeckCount;
+                const msg = `Pull: ${collection.size} colección (${collDiff >= 0 ? '+' : ''}${collDiff}), ${wantList.size} want list (${wantDiff >= 0 ? '+' : ''}${wantDiff}), ${Object.keys(decks).length} mazos (${deckDiff >= 0 ? '+' : ''}${deckDiff}) ✅`;
+                showToast(msg, 'success');
+            } else {
+                showToast('⚠️ No se pudo conectar', 'error');
+            }
 
         } catch (e) {
-            updateBtn.textContent = '❌ Sync';
-            setTimeout(() => { updateBtn.textContent = '🔄 Sync'; }, 2000);
-            console.error('Sync error:', e);
+            pullBtn.textContent = '❌ Pull';
+            setTimeout(() => { pullBtn.textContent = '⬇️ Pull'; }, 2000);
+            console.error('Pull error:', e);
         }
+    });
+
+    // ==================== PUSH BUTTON ====================
+    const pushBtn = document.getElementById('push-btn');
+    if (pushBtn) pushBtn.addEventListener('click', () => {
+        // Generate copy-paste sync messages for Telegram
+        // Compact format: group folios by set prefix (SET:num1,num2,...)
+        function compactFolios(folios) {
+            const sorted = [...folios].sort();
+            const groups = {};
+            const specials = [];
+            for (const f of sorted) {
+                if (f.includes('CONJ') || f.includes('MINICONJ')) {
+                    specials.push(f);
+                } else {
+                    const m = f.match(/^([A-Z]+-?[A-Z]*)-(.+)$/);
+                    if (m) {
+                        (groups[m[1]] = groups[m[1]] || []).push(m[2]);
+                    } else {
+                        specials.push(f);
+                    }
+                }
+            }
+            const lines = [];
+            for (const prefix of Object.keys(groups).sort()) {
+                lines.push(`${prefix}:${groups[prefix].join(',')}`);
+            }
+            if (specials.length) lines.push(`*:${specials.join(',')}`);
+            return lines.join('\n');
+        }
+
+        const collCompact = compactFolios(collection);
+        const wantCompact = compactFolios(wantList);
+
+        // Build deck summaries
+        const deckLines = [];
+        for (const [id, deck] of Object.entries(decks)) {
+            const parts = [];
+            if (deck.mazo && deck.mazo.length) parts.push(`mazo:${deck.mazo.join(',')}`);
+            if (deck.protector) parts.push(`prot:${deck.protector}`);
+            if (deck.bio) parts.push(`bio:${deck.bio}`);
+            if (deck.equips && deck.equips.length) parts.push(`equips:${deck.equips.join(',')}`);
+            // Fallback: if no mazo but has cards[], use that
+            if ((!deck.mazo || !deck.mazo.length) && deck.cards && deck.cards.length) {
+                parts.push(`cards:${deck.cards.join(',')}`);
+            }
+            deckLines.push(`${id}|${deck.name || id}|${parts.join('|')}`);
+        }
+
+        // Build individual messages with prompts
+        const messages = [];
+        messages.push({
+            label: 'Colección',
+            text: `KSYNC collection.json (${collection.size} cartas):\n${collCompact}`
+        });
+        messages.push({
+            label: 'Want List',
+            text: `KSYNC wantlist.json (${wantList.size} cartas):\n${wantCompact}`
+        });
+        messages.push({
+            label: 'Mazos',
+            text: `KSYNC decks.json (${Object.keys(decks).length} mazos):\n${deckLines.join('\n')}`
+        });
+
+        // Show modal with tabs for each message
+        const modal = document.createElement('div');
+        modal.className = 'sync-modal-overlay';
+        modal.innerHTML = `
+            <div class="sync-modal" style="max-width:500px">
+                <h3 style="font-family:'Cinzel',serif;color:#f59e0b;margin-bottom:12px">⬆️ Push a Logos</h3>
+                <p style="color:#aaa;font-size:0.85rem;margin-bottom:12px">Copia y pega en Telegram. Cada botón copia un mensaje listo:</p>
+                <div id="push-buttons" style="display:flex;flex-direction:column;gap:8px"></div>
+                <hr style="border-color:#333;margin:12px 0">
+                <button id="push-copy-all" style="background:#f59e0b;color:#000;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;width:100%;font-weight:bold">📋 Copiar Todo</button>
+                <button onclick="this.closest('.sync-modal-overlay').remove()" style="margin-top:6px;background:#333;color:#e0e0e0;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;width:100%">Cerrar</button>
+            </div>
+        `;
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+        document.body.appendChild(modal);
+
+        const btnContainer = document.getElementById('push-buttons');
+        messages.forEach((msg, i) => {
+            const btn = document.createElement('button');
+            btn.style.cssText = 'background:#1a1a2e;color:#e0e0e0;border:1px solid #333;padding:10px 16px;border-radius:8px;cursor:pointer;text-align:left;font-size:0.9rem';
+            btn.innerHTML = `<strong>${msg.label}</strong> <span style="color:#888;font-size:0.8rem">(click para copiar)</span>`;
+            btn.addEventListener('click', () => {
+                navigator.clipboard.writeText(msg.text).then(() => {
+                    btn.innerHTML = `<strong>✅ ${msg.label}</strong> <span style="color:#4ade80;font-size:0.8rem">copiado</span>`;
+                    setTimeout(() => {
+                        btn.innerHTML = `<strong>${msg.label}</strong> <span style="color:#888;font-size:0.8rem">(click para copiar)</span>`;
+                    }, 2000);
+                });
+            });
+            btnContainer.appendChild(btn);
+        });
+
+        // Copy all in one message
+        document.getElementById('push-copy-all').addEventListener('click', () => {
+            const allText = messages.map(m => m.text).join('\n\n---\n\n');
+            navigator.clipboard.writeText(allText).then(() => {
+                const btn = document.getElementById('push-copy-all');
+                btn.textContent = '✅ Todo copiado';
+                setTimeout(() => { btn.textContent = '📋 Copiar Todo'; }, 2000);
+            });
+        });
     });
 
     // Collection sort
@@ -932,6 +1025,39 @@ function populateSetFilter() {
     });
 }
 
+// Build prefix map: set → {prefix: count}
+const _setPrefixMap = {};
+function buildPrefixMap() {
+    allCards.forEach(c => {
+        const prefix = c.folio.split('-')[0];
+        if (!_setPrefixMap[c.set]) _setPrefixMap[c.set] = {};
+        _setPrefixMap[c.set][prefix] = (_setPrefixMap[c.set][prefix] || 0) + 1;
+    });
+}
+
+function updatePrefixFilter(setSelectId, prefixSelectId) {
+    const setVal = document.getElementById(setSelectId)?.value || '';
+    const prefixSelect = document.getElementById(prefixSelectId);
+    if (!prefixSelect) return;
+
+    // Clear options
+    while (prefixSelect.options.length > 1) prefixSelect.remove(1);
+    prefixSelect.value = '';
+
+    const prefixes = _setPrefixMap[setVal];
+    if (setVal && prefixes && Object.keys(prefixes).length > 1) {
+        Object.entries(prefixes).sort((a,b) => b[1]-a[1]).forEach(([prefix, count]) => {
+            const opt = document.createElement('option');
+            opt.value = prefix;
+            opt.textContent = `${prefix} (${count})`;
+            prefixSelect.appendChild(opt);
+        });
+        prefixSelect.style.display = '';
+    } else {
+        prefixSelect.style.display = 'none';
+    }
+}
+
 function populateTypeFilter() {
     const types = [...new Set(allCards.map(c => c.type).filter(Boolean))].sort();
     const selects = ['filter-type', 'deck-filter-type', 'collection-filter-type'];
@@ -967,6 +1093,7 @@ function populateSubtypeFilter() {
 function applyBrowserFilters() {
     const search = document.getElementById('search-input').value.toLowerCase();
     const filterSet = document.getElementById('filter-set').value;
+    const filterPrefix = (document.getElementById('filter-prefix') || {}).value || '';
     const filterType = document.getElementById('filter-type').value;
     const filterEnergy = document.getElementById('filter-energy').value;
     const sortBy = document.getElementById('sort-by').value;
@@ -975,8 +1102,9 @@ function applyBrowserFilters() {
     const filterEffectText = ((document.getElementById('filter-effect-text') || {}).value || '').toLowerCase();
 
     filteredCards = allCards.filter(card => {
-        if (search && !card.name.toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search)) return false;
+        if (search && !card.name.toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search) && !card.folio.toLowerCase().includes(search)) return false;
         if (filterSet && card.set !== filterSet) return false;
+        if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
         if (filterType && card.type !== filterType) return false;
         if (filterEnergy && card.energy !== filterEnergy && card.energy2 !== filterEnergy) return false;
         if (filterSubtype && card.subtype !== filterSubtype) return false;
@@ -1139,6 +1267,7 @@ function createCardElement(card, small = false) {
     const effectPreview = (gridSize === 'large' && card.effect_text)
         ? `<div class="card-effect-preview">${escHtml(card.effect_text.substring(0, 80))}${card.effect_text.length > 80 ? '…' : ''}</div>`
         : '';
+    const costBadge = card.cost_text ? '<span class="cost-badge" title="Tiene Costo">⚠️</span>' : '';
 
     // 🎯 want button (stop propagation so it doesn't open modal)
     const wantBtn = small ? '' : `<button class="card-want-btn ${isWanted ? 'active' : ''}" data-folio="${escHtml(card.folio)}" title="${isWanted ? 'Quitar de Want List' : 'Agregar a Want List'}">🎯</button>`;
@@ -1161,7 +1290,7 @@ function createCardElement(card, small = false) {
             <img src="${escHtml(card.image)}" alt="${escHtml(card.name)}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22280%22%3E%3Crect fill=%22%23333%22 width=%22200%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23666%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
             ${rarityBadge}
             ${wantBtn}
-            <div class="card-name">${escHtml(card.name)}</div>
+            <div class="card-name">${costBadge}${escHtml(card.name)}</div>
             ${effectPreview}
         </div>
     `;
@@ -1476,6 +1605,7 @@ function renderCollection() {
 
     // Advanced filters
     const filterSet = (document.getElementById('collection-filter-set')?.value || '');
+    const filterPrefix = (document.getElementById('collection-filter-prefix')?.value || '');
     const filterType = (document.getElementById('collection-filter-type')?.value || '');
     const filterEnergy = (document.getElementById('collection-filter-energy')?.value || '');
     const filterRarity = (document.getElementById('collection-filter-rarity')?.value || '');
@@ -1491,8 +1621,9 @@ function renderCollection() {
     if (currentCollectionTab === 'wantlist') {
         cards = allCards.filter(card => {
             if (!wantList.has(card.folio)) return false;
-            if (search && !(card.name || '').toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search)) return false;
+            if (search && !(card.name || '').toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search) && !card.folio.toLowerCase().includes(search)) return false;
             if (filterSet && card.set !== filterSet) return false;
+            if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
             if (filterType && card.type !== filterType) return false;
             if (filterEnergy && card.energy !== filterEnergy) return false;
             if (filterRarity) {
@@ -1504,11 +1635,12 @@ function renderCollection() {
         });
     } else {
         cards = allCards.filter(card => {
-            if (search && !(card.name || '').toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search)) return false;
+            if (search && !(card.name || '').toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search) && !card.folio.toLowerCase().includes(search)) return false;
             const isOwned = collection.has(card.folio);
             if (filter === 'owned' && !isOwned) return false;
             if (filter === 'missing' && isOwned) return false;
             if (filterSet && card.set !== filterSet) return false;
+            if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
             if (filterType && card.type !== filterType) return false;
             if (filterEnergy && card.energy !== filterEnergy) return false;
             if (filterRarity) {
@@ -2410,7 +2542,7 @@ function renderDeckPool() {
         if (!card.type) return false;
         if (EXCLUDED_DECK_TYPES.has(card.type)) return false;
 
-        if (search && !card.name.toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search)) return false;
+        if (search && !card.name.toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search) && !card.folio.toLowerCase().includes(search)) return false;
         if (filterEnergy && card.energy !== filterEnergy && card.energy2 !== filterEnergy) return false;
         if (filterType && card.type !== filterType) return false;
         if (filterSubtype && card.subtype !== filterSubtype) return false;
@@ -2625,13 +2757,20 @@ function renderMissingCardsAccordion(setStats) {
                 const name = card ? card.name : f;
                 const energy = card ? (card.energy || '').toLowerCase() : '';
                 const isWanted = wantList.has(f);
+                // Always show rarity border color on missing cards
                 let borderStyle = '';
-                if (isWanted) {
-                    const suffix = getFolioSuffix(f);
-                    const rc = RARITY_CONFIG.find(r => r.suffix === suffix);
-                    const rarityColor = rc ? rc.color : '#22c55e'; // green for common
-                    borderStyle = `border:2px solid ${rarityColor}`;
-                }
+                const rarityColorMap = {
+                    'Comun': '#9ca3af',        // gray
+                    'Poco Comun': '#22c55e',   // green
+                    'Rara': '#60a5fa',         // blue
+                    'Super Rara': '#a78bfa',   // purple
+                    'Ultra Rara': '#f59e0b',   // orange
+                    'Kodem': '#f97316',        // deep orange
+                    'Secret': '#ec4899',       // pink
+                };
+                const cardRarity = card ? card.rarity : '';
+                const rarityColor = rarityColorMap[cardRarity] || '#4b5563'; // fallback dark gray
+                borderStyle = `border:2px solid ${rarityColor}`;
                 const wantClass = isWanted ? ' wanted' : '';
                 return `<button class="missing-card-chip clickable${wantClass}" data-folio="${f}" data-energy="${energy}" title="${name}${isWanted ? ' 🎯' : ''}" style="${borderStyle}">${f}</button>`;
             }).join('');
