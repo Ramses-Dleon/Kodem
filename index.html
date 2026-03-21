@@ -41,8 +41,8 @@
         </div>
         <nav>
             <button class="nav-btn active" data-view="browser">Explorar Cartas</button>
-            <button class="nav-btn" data-view="collection">Mi Colección</button>
-            <button class="nav-btn" data-view="deck-builder">Constructor de Mazos</button>
+            <button class="nav-btn sync-only" data-view="collection">Mi Colección</button>
+            <button class="nav-btn sync-only" data-view="deck-builder">Constructor de Mazos</button>
             <button class="nav-btn" data-view="sinergias">⚡ Sinergias</button>
             <button class="nav-btn" data-view="guide">📖 Guía</button>
             <button class="nav-btn" data-view="contact">💬 Contacto</button>
@@ -122,7 +122,14 @@
                 <button class="grid-size-btn" data-size="large" title="Grande" aria-label="Tamaño de cuadrícula grande" style="background:#2a2a2a;border:1px solid #444;color:#e0e0e0;padding:6px 10px;border-radius:6px;cursor:pointer;min-height:44px">▪</button>
             </div>
             <div id="card-grid" class="card-grid"></div>
-            <div id="pagination-controls" style="display:flex;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap"></div>
+            <div style="display:flex;justify-content:center;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap">
+                <div id="pagination-controls" style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap"></div>
+                <select id="page-size-select" style="background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);border-radius:6px;padding:4px 8px;font-size:0.8rem;cursor:pointer">
+                    <option value="20">20</option>
+                    <option value="50" selected>50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
         </section>
 
         <!-- Collection View -->
@@ -898,6 +905,17 @@
         navigator.serviceWorker.register('sw.js').catch(e => console.warn('SW registration failed:', e));
       }
     </script>
+<script>
+// Hide sync buttons on public site (GitHub Pages)
+if (location.hostname.includes('github.io')) {
+    document.querySelectorAll('.sync-only').forEach(el => el.style.display = 'none');
+    // Hide want buttons and owned indicators on public site
+    const style = document.createElement('style');
+    style.textContent = '.card-want-btn, .collection-stats { display: none !important; } .card-item.owned { border-color: transparent; }';
+    document.head.appendChild(style);
+    window.__PUBLIC_SITE = true;
+}
+</script>
 </body>
 </html>
 <!-- rebuild -->

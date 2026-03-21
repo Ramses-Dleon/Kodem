@@ -50,7 +50,7 @@ let setAliases = {}; // { alias: canonicalCode } e.g. { "TRWA": "LGRO" }
 let setMetadata = []; // Full set info from set-aliases.json
 
 // ==================== PAGINATION STATE ====================
-const PAGE_SIZE = 50;
+let PAGE_SIZE = 50;
 let currentPage = 1;    // 1-indexed
 let totalFiltered = 0;
 
@@ -592,6 +592,16 @@ function setupEventListeners() {
     if (filterRarity) filterRarity.addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
     const filterEffectText = document.getElementById('filter-effect-text');
     if (filterEffectText) filterEffectText.addEventListener('input', debounce(() => { currentPage = 1; applyBrowserFilters(); }, 300));
+
+    // Page size selector
+    const pageSizeSelect = document.getElementById('page-size-select');
+    if (pageSizeSelect) {
+        pageSizeSelect.addEventListener('change', () => {
+            PAGE_SIZE = parseInt(pageSizeSelect.value, 10);
+            currentPage = 1;
+            renderBrowserPage();
+        });
+    }
 
     // Reset filters button
     // Toggle advanced filters (mobile)
