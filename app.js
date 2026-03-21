@@ -2692,26 +2692,41 @@ function renderSetCompletionChart(setStats) {
     container.innerHTML = html || '<p class="empty-state">No hay datos de sets</p>';
 }
 
+const RARITY_DONUT_CONFIG = [
+    { rarity: 'Comun',            label: 'Común',            emoji: '⚪', color: '#6b7280' },
+    { rarity: 'Rara',             label: 'Rara',             emoji: '💎', color: '#60a5fa' },
+    { rarity: 'Super Rara',       label: 'Súper Rara',       emoji: '⭐', color: '#a78bfa' },
+    { rarity: 'Ultra Rara',       label: 'Ultra Rara',       emoji: '🌟', color: '#f59e0b' },
+    { rarity: 'Kosmica/Titanica', label: 'Kósmica/Titánica', emoji: '👑', color: '#f97316' },
+    { rarity: 'Full Art',         label: 'Full Art',         emoji: '🎨', color: '#34d399' },
+    { rarity: 'Secreta',          label: 'Secreta',          emoji: '🔮', color: '#ec4899' },
+    { rarity: 'Evento',           label: 'Evento',           emoji: '🎪', color: '#fb923c' },
+];
+
 function renderRarityDonut() {
     const donut = document.getElementById('rarity-donut');
     const legend = document.getElementById('rarity-legend');
     if (!donut || !legend) return;
 
+    // Build a folio→rarity lookup
+    const cardRarity = {};
+    for (const card of allCards) cardRarity[card.folio] = card.rarity || 'Comun';
+
+    // Count owned cards by rarity field
     const counts = {};
-    for (const rc of RARITY_CONFIG) counts[rc.suffix] = 0;
+    for (const rc of RARITY_DONUT_CONFIG) counts[rc.rarity] = 0;
 
     for (const folio of collection) {
-        const suffix = getFolioSuffix(folio);
-        if (suffix && counts.hasOwnProperty(suffix)) {
-            counts[suffix]++;
-        }
+        const r = cardRarity[folio] || 'Comun';
+        if (counts.hasOwnProperty(r)) counts[r]++;
+        else counts['Comun']++;
     }
 
     const total = Object.values(counts).reduce((a, b) => a + b, 0);
 
     if (total === 0) {
         donut.style.background = 'var(--bg-darker)';
-        legend.innerHTML = '<p style="color:var(--text-secondary);font-size:0.85rem">Sin variantes en colección</p>';
+        legend.innerHTML = '<p style="color:var(--text-secondary);font-size:0.85rem">Sin cartas en colección</p>';
         return;
     }
 
@@ -2719,8 +2734,8 @@ function renderRarityDonut() {
     let currentAngle = 0;
     let legendHtml = '';
 
-    for (const rc of RARITY_CONFIG) {
-        const count = counts[rc.suffix];
+    for (const rc of RARITY_DONUT_CONFIG) {
+        const count = counts[rc.rarity];
         if (count === 0) continue;
         const deg = (count / total) * 360;
         gradientParts.push(`${rc.color} ${currentAngle.toFixed(1)}deg ${(currentAngle + deg).toFixed(1)}deg`);
