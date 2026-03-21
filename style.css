@@ -2655,7 +2655,7 @@ nav .nav-btn.active::after {
     justify-content: center;
     transition: all 0.2s;
     z-index: 5;
-    opacity: 0;
+    opacity: 0.4;
 }
 
 .card-item:hover .card-want-btn {
