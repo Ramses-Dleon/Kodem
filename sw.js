@@ -1,6 +1,6 @@
 // Kódem TCG Companion — Service Worker
 // Cache version: bump this to force cache refresh on deploy
-const CACHE_NAME = 'kodem-v23';
+const CACHE_NAME = 'kodem-v24';
 
 // Static assets to pre-cache on install
 const PRECACHE_ASSETS = [

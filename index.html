@@ -207,7 +207,7 @@
             <!-- ===== COLLECTION DASHBOARD ===== -->
             <div id="collection-dashboard">
 
-                <!-- 1. HERO STATS BAR -->
+                <!-- ROW 1: CARTAS TOTALES (hero ring + stats) -->
                 <div class="dashboard-hero">
                     <div class="hero-progress-ring">
                         <svg viewBox="0 0 120 120" class="progress-ring-svg">
@@ -236,14 +236,35 @@
                             <span class="hero-stat-value" id="completion-percent">0%</span>
                             <span class="hero-stat-label">Base completado</span>
                         </div>
-                        <div class="hero-stat-item highlight">
-                            <span class="hero-stat-value" id="unique-owned">0/0</span>
-                            <span class="hero-stat-label">Cartas únicas</span>
+                    </div>
+                </div>
+
+                <!-- ROW 2: CARTAS ÚNICAS (pie) + RAREZA (donut) side by side -->
+                <div class="dashboard-duo-row">
+                    <div class="dashboard-section duo-card">
+                        <h3 class="dashboard-section-title">🎴 Cartas Únicas</h3>
+                        <div class="unique-layout">
+                            <div class="unique-donut-wrap">
+                                <div class="unique-donut" id="unique-donut"></div>
+                            </div>
+                            <div class="unique-legend" id="unique-legend">
+                                <div class="unique-big-number" id="unique-owned">0 / 0 (0%)</div>
+                                <div class="unique-sub" id="unique-sub">nombres distintos</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-section duo-card rarity-section">
+                        <h3 class="dashboard-section-title">💠 Rareza en Colección</h3>
+                        <div class="rarity-layout">
+                            <div class="rarity-donut-wrap">
+                                <div class="rarity-donut" id="rarity-donut"></div>
+                            </div>
+                            <div class="rarity-legend" id="rarity-legend"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. QUICK STATS CARDS -->
+                <!-- ROW 3: 4 QUICK STATS CARDS -->
                 <div class="quick-stats-row">
                     <div class="quick-stat-card">
                         <div class="qs-icon">✅</div>
@@ -267,24 +288,13 @@
                     </div>
                 </div>
 
-                <!-- 3. SET COMPLETION CHART -->
+                <!-- ROW 4: SET COMPLETION CHART -->
                 <div class="dashboard-section">
                     <h3 class="dashboard-section-title">📊 Progreso por Set</h3>
                     <div id="set-completion-chart"></div>
                 </div>
 
-                <!-- 4. RARITY BREAKDOWN -->
-                <div class="dashboard-section rarity-section">
-                    <h3 class="dashboard-section-title">💠 Rareza en Colección</h3>
-                    <div class="rarity-layout">
-                        <div class="rarity-donut-wrap">
-                            <div class="rarity-donut" id="rarity-donut"></div>
-                        </div>
-                        <div class="rarity-legend" id="rarity-legend"></div>
-                    </div>
-                </div>
-
-                <!-- 5. MISSING CARDS LIST -->
+                <!-- ROW 5: MISSING CARDS LIST -->
                 <div class="dashboard-section">
                     <h3 class="dashboard-section-title collapsible" onclick="toggleDashboardSection(this)">🔍 Cartas Faltantes por Set <span class="section-chevron">▼</span></h3>
                     <div id="missing-cards-accordion" class="collapsible-body"></div>

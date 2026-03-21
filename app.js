@@ -2935,6 +2935,18 @@ function renderDashboard() {
     const uniqueEl = document.getElementById('unique-owned');
     if (uniqueEl) uniqueEl.textContent = `${ownedUnique} / ${totalUnique} (${pctUniqueVal}%)`;
 
+    // Render unique donut
+    const uniqueDonut = document.getElementById('unique-donut');
+    if (uniqueDonut) {
+        const missingUnique = totalUnique - ownedUnique;
+        if (totalUnique > 0) {
+            const ownedDeg = (ownedUnique / totalUnique) * 360;
+            uniqueDonut.style.background = `conic-gradient(#f59e0b 0deg ${ownedDeg.toFixed(1)}deg, var(--bg-darker) ${ownedDeg.toFixed(1)}deg 360deg)`;
+        }
+    }
+    const uniqueSub = document.getElementById('unique-sub');
+    if (uniqueSub) uniqueSub.textContent = `${totalUnique - ownedUnique} nombres por coleccionar`;
+
     // Update hero ring to use unique % (more meaningful)
     const pctUnique = totalUnique > 0 ? Math.round((ownedUnique / totalUnique) * 100) : 0;
 
