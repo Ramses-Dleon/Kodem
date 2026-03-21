@@ -2672,9 +2672,10 @@ function renderSetCompletionChart(setStats) {
         for (const s of sets) {
             const pct = Math.round((s.owned / s.total) * 100);
             let fillClass = pct >= 100 ? 'complete' : pct >= 50 ? 'good' : 'poor';
+            const displayName = `${s.code} — ${s.name}`;
             g += `
                 <div class="set-bar-row">
-                    <div class="set-bar-name" title="${s.name} (${s.code})">${s.name}</div>
+                    <div class="set-bar-name" title="${displayName}">${displayName}</div>
                     <div class="set-bar-track">
                         <div class="set-bar-fill ${fillClass}" style="width:${pct}%"></div>
                     </div>
