@@ -1277,7 +1277,7 @@ function createCardElement(card, small = false) {
     const effectPreview = (gridSize === 'large' && card.effect_text)
         ? `<div class="card-effect-preview">${escHtml(card.effect_text.substring(0, 80))}${card.effect_text.length > 80 ? '…' : ''}</div>`
         : '';
-    const costBadge = card.cost_text ? '<span class="cost-badge" title="Tiene Costo">⚠️</span>' : '';
+
 
     // 🎯 want button (stop propagation so it doesn't open modal)
     const wantBtn = small ? '' : `<button class="card-want-btn ${isWanted ? 'active' : ''}" data-folio="${escHtml(card.folio)}" title="${isWanted ? 'Quitar de Want List' : 'Agregar a Want List'}">🎯</button>`;
@@ -1300,7 +1300,7 @@ function createCardElement(card, small = false) {
             <img src="${escHtml(card.image)}" alt="${escHtml(card.name)}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22280%22%3E%3Crect fill=%22%23333%22 width=%22200%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23666%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
             ${rarityBadge}
             ${wantBtn}
-            <div class="card-name">${costBadge}${escHtml(card.name)}</div>
+            <div class="card-name">${escHtml(card.name)}</div>
             ${effectPreview}
         </div>
     `;
