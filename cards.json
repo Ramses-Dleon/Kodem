@@ -12155,23 +12155,6 @@
     "cost_text": "Solo puedes usar este efecto una vez por juego"
   },
   {
-    "folio": "DMUE-001",
-    "name": "Mizthe, Dia de Muertos",
-    "set": "KPRC",
-    "type": "Adendei",
-    "energy": "Feral",
-    "damage": 3,
-    "rests": 1,
-    "effect_type": "Pasiva",
-    "effect_text": "Pasiva: Si tienes por lo menos 3 Adendei de la misma energia en Zona de Extincion, este Adendei podra atacar al Protector rival.",
-    "image": "images/DMUE-001.webp",
-    "artist": "edgaritual_re",
-    "rarity": "Comun",
-    "rarity_variants": [],
-    "subtype": "",
-    "cost_text": ""
-  },
-  {
     "folio": "INMX-001",
     "name": "Kopit y Jokokan, Libertad",
     "set": "KPRC",
@@ -12325,16 +12308,16 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-009/066",
+    "folio": "009/066",
     "name": "Nok, Frio Magno",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Rava",
     "energy": "Gelida",
     "damage": 0,
     "rests": 0,
     "effect_type": "Pasiva",
     "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Gélido mientras esta carta esté en campo. Si un Adendei-Gélido aliado atacó, cura 1 punto a un Adendei-Gélido aliado.",
-    "image": "images/009066Esp.webp",
+    "image": "images/009/066.webp",
     "artist": "edgaritual_re",
     "rarity": "Super Rara",
     "rarity_variants": [],
@@ -12342,16 +12325,16 @@
     "cost_text": "Si esta carta es enviada a Extinción, daña 1 punto a todos los Adendei-Gélido en campo."
   },
   {
-    "folio": "UNIQUE-BETA-001",
+    "folio": "BETA-001",
     "name": "Ariam, Dualidad",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Atlica",
     "damage": 2,
     "rests": 1,
     "effect_type": "Activa",
     "effect_text": "Activa: Si esta carta ataca, protege a un Adendei aliado de ataques y efectos hasta el final de tu siguiente turno.",
-    "image": "images/Beta-001.webp",
+    "image": "images/BETA-001.webp",
     "artist": "Mike.rev_art & Fersko0n",
     "rarity": "Comun",
     "rarity_variants": [],
@@ -12359,9 +12342,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-CDC-001",
+    "folio": "CDC-001",
     "name": "Zaykan Bosque Sombrio",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Litica",
     "damage": 1,
@@ -12376,9 +12359,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-DMRTS-2022-01",
+    "folio": "DMRTS-2022-01",
     "name": "Ariam, Balance",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Pirica",
     "damage": 0,
@@ -12393,9 +12376,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-Demo-001",
+    "folio": "Demo-001",
     "name": "Mizthe, Cruce",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Feral",
     "damage": 1,
@@ -12410,9 +12393,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-IKMR-001",
+    "folio": "IKMR-001",
     "name": "Aki, Venas de Lava",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Pirica",
     "damage": 2,
@@ -12427,9 +12410,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-IKMR-001SR",
+    "folio": "IKMR-001SR",
     "name": "Aki, Lava Veins",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Pirica",
     "damage": 2,
@@ -12444,9 +12427,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-IKRW-001",
+    "folio": "IKRW-001",
     "name": "Jane, Maniobra",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Protector",
     "energy": "Pirica",
     "damage": 0,
@@ -12461,9 +12444,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-IKRW-001SR",
+    "folio": "IKRW-001SR",
     "name": "Jane, Maniobra",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Protector",
     "energy": "Pirica",
     "damage": 0,
@@ -12478,9 +12461,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-KDMOLE-01-2022",
+    "folio": "KDMOLE-01-2022",
     "name": "Ilith, Fuego Primo",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Pirica",
     "damage": 1,
@@ -12495,9 +12478,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-KEXC-001",
+    "folio": "KEXC-001",
     "name": "Zaren, El Inicio del Viaje",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Protector",
     "energy": "Atlica",
     "damage": 0,
@@ -12512,9 +12495,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-MLHRCN-001",
+    "folio": "MLHRCN-001",
     "name": "Yogg, Oscuridad",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Atlica",
     "damage": 2,
@@ -12529,9 +12512,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-MegaXP-01",
+    "folio": "MegaXP-01",
     "name": "Ariam, Jugada Maestra",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Atlica",
     "damage": 2,
@@ -12546,9 +12529,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PATREON-001",
+    "folio": "PATREON-001",
     "name": "Shugg, Serpiente Voraz",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Feral",
     "damage": 2,
@@ -12563,16 +12546,16 @@
     "cost_text": "No podrás usar la Pasiva de tu Bio mientras esta carta esté en el campo."
   },
   {
-    "folio": "UNIQUE-PATREON-02",
+    "folio": "PATREON-02",
     "name": "Kopit, Protector Celeste",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Litica",
     "damage": 2,
     "rests": 2,
     "effect_type": "Activa",
     "effect_text": "Activa: Desciende (Disminuye su ataque permanentemente) 1 punto a 1 carta rival.",
-    "image": "images/PATREON-002.webp",
+    "image": "images/PATREON-02.webp",
     "artist": "Kundu del Castillo",
     "rarity": "Full Art",
     "rarity_variants": [],
@@ -12580,9 +12563,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PKMR-001",
+    "folio": "PKMR-001",
     "name": "Terna Tiniebla",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Feral",
     "damage": 1,
@@ -12597,9 +12580,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PKMR-002",
+    "folio": "PKMR-002",
     "name": "Jane, Sabotaje",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Protector",
     "energy": "Pirica",
     "damage": 0,
@@ -12614,9 +12597,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PKMR-003",
+    "folio": "PKMR-003",
     "name": "La Cuspide",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Bio",
     "energy": "",
     "damage": 0,
@@ -12631,9 +12614,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PKMR-004",
+    "folio": "PKMR-004",
     "name": "Jokokan, Guardian de la Corteza",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Pirica",
     "damage": 4,
@@ -12648,9 +12631,9 @@
     "cost_text": "Despues de atacar, esta carta desciende 1 punto y es dañada 1 punto."
   },
   {
-    "folio": "UNIQUE-PKMR-005",
+    "folio": "PKMR-005",
     "name": "Ariam, Balance",
-    "set": "TCOO",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Atlica",
     "damage": 1,
@@ -12665,9 +12648,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PKMR-006",
+    "folio": "PKMR-006",
     "name": "Sol y Luna",
-    "set": "TCOO",
+    "set": "KPRC",
     "type": "Bio",
     "energy": "",
     "damage": 0,
@@ -12682,9 +12665,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PKMR-007",
+    "folio": "PKMR-007",
     "name": "El Hundimiento de la Esperanza",
-    "set": "TCOO",
+    "set": "KPRC",
     "type": "Bio",
     "energy": "",
     "damage": 0,
@@ -12699,9 +12682,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PKMR-008",
+    "folio": "PKMR-008",
     "name": "Mizthe, Ancestral",
-    "set": "TCOO",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Feral",
     "damage": 2,
@@ -12716,9 +12699,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PKMR-009",
+    "folio": "PKMR-009",
     "name": "Naywa, Poder Morfeico",
-    "set": "TCOO",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Pirica",
     "damage": 1,
@@ -12733,9 +12716,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PRKD-2022-01",
+    "folio": "PRKD-2022-01",
     "name": "El Hundimiento de la Esperanza",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Bio",
     "energy": "",
     "damage": 0,
@@ -12750,9 +12733,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PRKD-2022-02",
+    "folio": "PRKD-2022-02",
     "name": "Zaykan, Citadel",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Atlica",
     "damage": 1,
@@ -12767,9 +12750,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PRKD-2022-03",
+    "folio": "PRKD-2022-03",
     "name": "Zenam, Vigilancia",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Chaaktica",
     "damage": 2,
@@ -12784,9 +12767,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PRKD-2022-04",
+    "folio": "PRKD-2022-04",
     "name": "Karus, Pinchazo Doble",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Chaaktica",
     "damage": 2,
@@ -12801,9 +12784,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PRKD-2022-05",
+    "folio": "PRKD-2022-05",
     "name": "Templo Yokoa",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Bio",
     "energy": "",
     "damage": 0,
@@ -12818,9 +12801,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PRKD-2022-06",
+    "folio": "PRKD-2022-06",
     "name": "Aki, Venas de Lava",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Pirica",
     "damage": 2,
@@ -12835,9 +12818,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PRKD-2022-07",
+    "folio": "PRKD-2022-07",
     "name": "Ambicion",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Rot",
     "energy": "",
     "damage": 0,
@@ -12852,9 +12835,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PRKD-2022-08",
+    "folio": "PRKD-2022-08",
     "name": "Boras, Poder Kosmico",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Gelida",
     "damage": 2,
@@ -12869,9 +12852,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PRT-2022-06",
+    "folio": "PRT-2022-06",
     "name": "Zaykan, Luz Celeste",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Atlica",
     "damage": 2,
@@ -12886,9 +12869,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-PRT-2022-07",
+    "folio": "PRT-2022-07",
     "name": "Xilan, Calma",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Huumica",
     "damage": 1,
@@ -12903,9 +12886,9 @@
     "cost_text": "Para usar su Activa, daña los mismos ptos. escalados a todos los Adendei en tu campo."
   },
   {
-    "folio": "UNIQUE-PromoSigned-001",
+    "folio": "PromoSigned-001",
     "name": "Nok, Frio Magno",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Rava",
     "energy": "Gelida",
     "damage": 0,
@@ -12920,16 +12903,16 @@
     "cost_text": "Si esta carta es enviada a Extinción, daña 1 punto a todos los Adendei-Gélido en campo."
   },
   {
-    "folio": "UNIQUE-RAGEK-01",
+    "folio": "RAGEK-01",
     "name": "Ilith, Canto Sagrado",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Pirica",
     "damage": 2,
     "rests": 1,
     "effect_type": "Pasiva",
     "effect_text": "Activa Rápida: Si esta carta es atacada, puede desviar el ataque a otra carta aliada.",
-    "image": "images/RAGEK-001.webp",
+    "image": "images/RAGEK-01.webp",
     "artist": "Fersko0n",
     "rarity": "Full Art",
     "rarity_variants": [],
@@ -12937,9 +12920,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-TC24-001",
+    "folio": "TC24-001",
     "name": "Zaykan, Fractura",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Litica",
     "damage": 2,
@@ -12954,9 +12937,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-TDMR-KDM",
+    "folio": "TDMR-KDM",
     "name": "Ariam, Modo Catrin",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Pirica",
     "damage": 4,
@@ -12971,9 +12954,9 @@
     "cost_text": "Antes de atacar, daña 1 punto a los Adendei aliados."
   },
   {
-    "folio": "UNIQUE-TKD-2022-001",
+    "folio": "TKD-2022-001",
     "name": "Enis, Contemplacion",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Gelida",
     "damage": 1,
@@ -12988,9 +12971,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-TKD-2022-002",
+    "folio": "TKD-2022-002",
     "name": "Xilan, Baculo de Poder",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Huumica",
     "damage": 1,
@@ -13005,9 +12988,9 @@
     "cost_text": "Si esta carta tiene 5 ptos. o más de ataque, se daña 2 ptos. antes de atacar."
   },
   {
-    "folio": "UNIQUE-TKD-2022-003",
+    "folio": "TKD-2022-003",
     "name": "Jane, Sabotaje",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Protector",
     "energy": "Atlica",
     "damage": 0,
@@ -13022,9 +13005,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-TKD-2022-007",
+    "folio": "TKD-2022-007",
     "name": "Navi Dequak",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Atlica",
     "damage": 1,
@@ -13039,9 +13022,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-TKD-2022-008",
+    "folio": "TKD-2022-008",
     "name": "Nozi, Corona Marina",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Rava",
     "energy": "Atlica",
     "damage": 0,
@@ -13056,9 +13039,9 @@
     "cost_text": "Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Átlíco en campo."
   },
   {
-    "folio": "UNIQUE-TKD-2022-1ST",
+    "folio": "TKD-2022-1ST",
     "name": "Ariam, Balance",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Atlica",
     "damage": 1,
@@ -13073,9 +13056,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-TKD-2022-2ND",
+    "folio": "TKD-2022-2ND",
     "name": "Ariam, Balance",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Atlica",
     "damage": 1,
@@ -13090,16 +13073,16 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-TOKEN-KS",
+    "folio": "TOKEN-KS",
     "name": "Token",
-    "set": "TCOO",
+    "set": "KPRC",
     "type": "Token",
     "energy": "",
     "damage": 0,
     "rests": 0,
     "effect_type": "Pasiva",
     "effect_text": "Token Flores Y Tumbas Kickstarter",
-    "image": "images/TOKENKS.webp",
+    "image": "images/TOKEN-KS.webp",
     "artist": "colmillo_azul_studio",
     "rarity": "Comun",
     "rarity_variants": [],
@@ -13107,9 +13090,9 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-TalentLand-001",
+    "folio": "TalentLand-001",
     "name": "Ariam, Carga Pirica",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Pirica",
     "damage": 2,
@@ -13124,16 +13107,16 @@
     "cost_text": ""
   },
   {
-    "folio": "UNIQUE-TheGathering-Mizthe",
+    "folio": "TheGathering-Mizthe",
     "name": "Mizthe, Ancestral",
-    "set": "UNIQUE",
+    "set": "KPRC",
     "type": "Adendei",
     "energy": "Feral",
     "damage": 2,
     "rests": 1,
     "effect_type": "Pasiva",
     "effect_text": "Pasiva: Si un Adendei aliado deja el campo, cura 1 punto a los Adendei aliados.",
-    "image": "images/TheGatheringMizthe.webp",
+    "image": "images/TheGathering-Mizthe.webp",
     "artist": "varchi_design",
     "rarity": "Comun",
     "rarity_variants": [],
