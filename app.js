@@ -928,6 +928,12 @@ function setupEventListeners() {
     if (prevBtn) prevBtn.addEventListener('click', () => navigateModal(-1));
     if (nextBtn) nextBtn.addEventListener('click', () => navigateModal(1));
 
+    // Mobile arrow nav buttons
+    const prevMobile = document.getElementById('modal-prev-mobile');
+    const nextMobile = document.getElementById('modal-next-mobile');
+    if (prevMobile) prevMobile.addEventListener('click', (e) => { e.stopPropagation(); navigateModal(-1); });
+    if (nextMobile) nextMobile.addEventListener('click', (e) => { e.stopPropagation(); navigateModal(1); });
+
     // Keyboard arrow navigation
     document.addEventListener('keydown', (e) => {
         const modal = document.getElementById('card-modal');
@@ -1537,12 +1543,13 @@ function openCardModal(card, cardList, cardIndex) {
 function _updateModalNavButtons() {
     const prevBtn = document.getElementById('modal-prev-btn');
     const nextBtn = document.getElementById('modal-next-btn');
-    if (!prevBtn || !nextBtn) return;
+    const prevMobile = document.getElementById('modal-prev-mobile');
+    const nextMobile = document.getElementById('modal-next-mobile');
     const has = _modalCardList.length > 1;
-    prevBtn.style.display = has ? '' : 'none';
-    nextBtn.style.display = has ? '' : 'none';
-    prevBtn.disabled = _modalCardIndex <= 0;
-    nextBtn.disabled = _modalCardIndex >= _modalCardList.length - 1;
+    if (prevBtn) { prevBtn.style.display = has ? '' : 'none'; prevBtn.disabled = _modalCardIndex <= 0; }
+    if (nextBtn) { nextBtn.style.display = has ? '' : 'none'; nextBtn.disabled = _modalCardIndex >= _modalCardList.length - 1; }
+    if (prevMobile) { prevMobile.style.display = has ? '' : 'none'; prevMobile.disabled = _modalCardIndex <= 0; }
+    if (nextMobile) { nextMobile.style.display = has ? '' : 'none'; nextMobile.disabled = _modalCardIndex >= _modalCardList.length - 1; }
 }
 
 function navigateModal(dir) {
