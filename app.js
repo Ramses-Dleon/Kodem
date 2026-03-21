@@ -1585,6 +1585,44 @@ function closeModal() {
     document.getElementById('card-modal').classList.remove('active');
 }
 
+// Swipe gesture navigation for modal
+(function initModalSwipe() {
+    let startX = 0;
+    let startY = 0;
+    let tracking = false;
+
+    const modal = document.getElementById('card-modal');
+    if (!modal) return;
+
+    modal.addEventListener('touchstart', (e) => {
+        // Only track single-finger swipes
+        if (e.touches.length !== 1) return;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        tracking = true;
+    }, { passive: true });
+
+    modal.addEventListener('touchend', (e) => {
+        if (!tracking) return;
+        tracking = false;
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const dx = endX - startX;
+        const dy = endY - startY;
+
+        // Must be mostly horizontal and at least 60px
+        if (Math.abs(dx) < 60 || Math.abs(dy) > Math.abs(dx) * 0.7) return;
+
+        if (dx < 0) {
+            // Swipe left → next card
+            navigateModal(1);
+        } else {
+            // Swipe right → previous card
+            navigateModal(-1);
+        }
+    }, { passive: true });
+})();
+
 function toggleOwnedFromModal() {
     const folio = document.getElementById('modal-toggle-owned').dataset.folio;
     toggleOwned(folio);
