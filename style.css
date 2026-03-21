@@ -357,21 +357,41 @@ select:focus {
 .card-item[data-energy="Demótica"]  { --card-energy-color: var(--demotica);  --card-energy-rgb: var(--demotica-rgb);  border-left: 3px solid var(--demotica); }
 .card-item[data-energy="Feral"]     { --card-energy-color: var(--feral);     --card-energy-rgb: var(--feral-rgb);     border-left: 3px solid var(--feral); }
 
-.card-item.owned::after {
-    content: '♥';
+/* Owned button on card grid */
+.card-owned-btn {
     position: absolute;
     top: 6px;
     right: 6px;
-    background: rgba(220, 38, 38, 0.75);
-    color: white;
     width: 28px;
     height: 28px;
     border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
+    transition: all 0.2s;
     z-index: 5;
+    opacity: 0.4;
+}
+
+.card-item:hover .card-owned-btn {
+    opacity: 0.7;
+}
+
+.card-owned-btn:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.card-owned-btn.active {
+    opacity: 1;
+    background: rgba(220, 38, 38, 0.75);
+    color: white;
 }
 
 .card-item.in-deck::before {

@@ -1198,6 +1198,14 @@ function renderBrowserPage() {
                 // Pass full filteredCards list + absolute index for ← → navigation
                 const absIdx = start + idx;
                 el.addEventListener('click', (e) => {
+                    // Handle owned button clicks via delegation
+                    if (e.target.closest('.card-owned-btn')) {
+                        e.stopPropagation();
+                        const btn = e.target.closest('.card-owned-btn');
+                        const folio = btn.dataset.folio;
+                        handleOwnedBtnClick(btn, folio);
+                        return;
+                    }
                     // Handle want button clicks via delegation
                     if (e.target.closest('.card-want-btn')) {
                         e.stopPropagation();
@@ -1285,6 +1293,9 @@ function createCardElement(card, small = false) {
         : '';
 
 
+    // ♥ owned button (stop propagation so it doesn't open modal)
+    const ownedBtn = small ? '' : `<button class="card-owned-btn ${owned ? 'active' : ''}" data-folio="${escHtml(card.folio)}" title="${owned ? 'Quitar de Colección' : 'Agregar a Colección'}">♥</button>`;
+
     // 🎯 want button (stop propagation so it doesn't open modal)
     const wantBtn = small ? '' : `<button class="card-want-btn ${isWanted ? 'active' : ''}" data-folio="${escHtml(card.folio)}" title="${isWanted ? 'Quitar de Want List' : 'Agregar a Want List'}">🎯</button>`;
 
@@ -1305,6 +1316,7 @@ function createCardElement(card, small = false) {
         <div class="card-item ${owned} ${wantedClass} ${inDeck}" data-folio="${escHtml(card.folio)}" data-energy="${escHtml(card.energy || '')}">
             <img src="${escHtml(card.image)}" alt="${escHtml(card.name)}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22280%22%3E%3Crect fill=%22%23333%22 width=%22200%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23666%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
             ${rarityBadge}
+            ${ownedBtn}
             ${wantBtn}
             <div class="card-name">${escHtml(card.name)}</div>
             ${effectPreview}
@@ -1324,6 +1336,17 @@ function toggleWanted(folio) {
     if (wantList.has(folio)) wantList.delete(folio);
     else wantList.add(folio);
     saveWantList();
+}
+
+function handleOwnedBtnClick(btnEl, folio) {
+    toggleOwned(folio);
+    const isOwned = collection.has(folio);
+    btnEl.classList.toggle('active', isOwned);
+    btnEl.title = isOwned ? 'Quitar de Colección' : 'Agregar a Colección';
+    // update parent card-item class
+    const cardItem = btnEl.closest('.card-item');
+    if (cardItem) cardItem.classList.toggle('owned', isOwned);
+    if (currentCollectionTab === 'collection') renderCollection();
 }
 
 function handleWantBtnClick(btnEl, folio) {
@@ -1697,7 +1720,21 @@ function renderCollection() {
 
     // Add click listeners
     grid.querySelectorAll('.card-item').forEach((el, idx) => {
-        el.addEventListener('click', () => openCardModal(pageCards[idx], cards, start + idx));
+        el.addEventListener('click', (e) => {
+            if (e.target.closest('.card-owned-btn')) {
+                e.stopPropagation();
+                const btn = e.target.closest('.card-owned-btn');
+                handleOwnedBtnClick(btn, btn.dataset.folio);
+                return;
+            }
+            if (e.target.closest('.card-want-btn')) {
+                e.stopPropagation();
+                const btn = e.target.closest('.card-want-btn');
+                handleWantBtnClick(btn, btn.dataset.folio);
+                return;
+            }
+            openCardModal(pageCards[idx], cards, start + idx);
+        });
     });
 
     // Counter
