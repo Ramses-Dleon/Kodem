@@ -2868,13 +2868,15 @@ function renderMissingCardsAccordion(setStats) {
                 // Always show rarity border color on missing cards
                 let borderStyle = '';
                 const rarityColorMap = {
-                    'Comun': '#9ca3af',        // gray
-                    'Poco Comun': '#22c55e',   // green
-                    'Rara': '#60a5fa',         // blue
-                    'Super Rara': '#a78bfa',   // purple
-                    'Ultra Rara': '#f59e0b',   // orange
-                    'Kodem': '#f97316',        // deep orange
-                    'Secret': '#ec4899',       // pink
+                    'Comun': '#9ca3af',            // gray
+                    'Poco Comun': '#22c55e',       // green
+                    'Rara': '#60a5fa',             // blue
+                    'Super Rara': '#a78bfa',       // purple
+                    'Ultra Rara': '#f59e0b',       // orange
+                    'Kosmica/Titanica': '#f97316', // deep orange
+                    'Secreta': '#ec4899',          // pink
+                    'Full Art': '#34d399',         // emerald
+                    'Evento': '#facc15',           // yellow
                 };
                 const cardRarity = card ? card.rarity : '';
                 const rarityColor = rarityColorMap[cardRarity] || '#4b5563'; // fallback dark gray
