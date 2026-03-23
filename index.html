@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260320">
+    <link rel="stylesheet" href="style.css?v=20260323g">
     <!-- Apply saved theme before paint to avoid flash -->
     <script>
         (function() {
@@ -28,7 +28,7 @@
     <meta property="og:title" content="Kódem TCG Companion">
     <meta property="og:description" content="La primera y única base de datos completa, deck builder y collection tracker para Kódem TCG.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kodem-app.vercel.app">
+    <meta property="og:url" content="https://ramses-dleon.github.io/Kodem">
     <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -171,6 +171,9 @@
                         <option value="Demótica">🔮 Demótica</option>
                         <option value="Feral">🐾 Feral</option>
                     </select>
+                    <select id="collection-filter-subtype">
+                        <option value="">Todos los subtipos</option>
+                    </select>
                     <select id="collection-filter-rarity">
                         <option value="">Todas las rarezas</option>
                         <option value="Común">Común</option>
@@ -182,6 +185,7 @@
                         <option value="Full Art">Full Art</option>
                         <option value="Evento">Evento</option>
                     </select>
+                    <input type="text" id="collection-filter-effect-text" placeholder="Buscar en efecto/costo..." />
                     <select id="collection-sort">
                         <option value="set">Ordenar: Set</option>
                         <option value="name-az">Nombre A-Z</option>
@@ -427,6 +431,9 @@
                     <h3 class="pool-header" onclick="togglePoolFilters()">Cartas Disponibles <span class="pool-filter-icon" id="pool-filter-icon">▼</span></h3>
                     <div class="controls" id="pool-filters">
                         <input type="text" id="deck-search" placeholder="Buscar carta..." />
+                        <select id="deck-filter-set">
+                            <option value="">Todos los sets</option>
+                        </select>
                         <select id="deck-filter-energy">
                             <option value="">Todas las energías</option>
                             <option value="Átlica">💧 Átlica</option>
@@ -909,7 +916,7 @@
     </footer>
 
     <!-- Confirm/Choice modal (injected dynamically by JS) -->
-    <script src="app.js?v=20260320"></script>
+    <script src="app.js?v=20260323k"></script>
     <!-- PWA Service Worker -->
     <script>
       if ('serviceWorker' in navigator) {

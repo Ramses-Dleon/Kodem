@@ -347,15 +347,16 @@ select:focus {
                 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Energy-tinted card borders + RGB glow vars */
-.card-item[data-energy="Átlica"]    { --card-energy-color: var(--atlica);    --card-energy-rgb: var(--atlica-rgb);    border-left: 3px solid var(--atlica); }
-.card-item[data-energy="Pírica"]    { --card-energy-color: var(--pirica);    --card-energy-rgb: var(--pirica-rgb);    border-left: 3px solid var(--pirica); }
-.card-item[data-energy="Gélida"]    { --card-energy-color: var(--gelida);    --card-energy-rgb: var(--gelida-rgb);    border-left: 3px solid var(--gelida); }
-.card-item[data-energy="Lítica"]    { --card-energy-color: var(--litica);    --card-energy-rgb: var(--litica-rgb);    border-left: 3px solid var(--litica); }
-.card-item[data-energy="Cháaktica"] { --card-energy-color: var(--chaaktica); --card-energy-rgb: var(--chaaktica-rgb); border-left: 3px solid var(--chaaktica); }
-.card-item[data-energy="Húumica"]   { --card-energy-color: var(--huumica);   --card-energy-rgb: var(--huumica-rgb);   border-left: 3px solid var(--huumica); }
-.card-item[data-energy="Demótica"]  { --card-energy-color: var(--demotica);  --card-energy-rgb: var(--demotica-rgb);  border-left: 3px solid var(--demotica); }
-.card-item[data-energy="Feral"]     { --card-energy-color: var(--feral);     --card-energy-rgb: var(--feral-rgb);     border-left: 3px solid var(--feral); }
+/* Rarity-tinted card borders */
+.card-item[data-rarity="Comun"]             { border-left: 3px solid #9ca3af; }  /* gray */
+.card-item[data-rarity="Poco Comun"]        { border-left: 3px solid #22c55e; }  /* green */
+.card-item[data-rarity="Rara"]              { border-left: 3px solid #60a5fa; }  /* blue */
+.card-item[data-rarity="Super Rara"]        { border-left: 3px solid #a78bfa; }  /* purple */
+.card-item[data-rarity="Ultra Rara"]        { border-left: 3px solid #f59e0b; }  /* orange */
+.card-item[data-rarity="Kosmica/Titanica"]  { border-left: 3px solid #f97316; }  /* deep orange */
+.card-item[data-rarity="Secreta"]           { border-left: 3px solid #ec4899; }  /* pink */
+.card-item[data-rarity="Full Art"]          { border-left: 3px solid #34d399; }  /* emerald */
+.card-item[data-rarity="Evento"]            { border-left: 3px solid #facc15; }  /* yellow */
 
 /* Owned button on card grid */
 .card-owned-btn {

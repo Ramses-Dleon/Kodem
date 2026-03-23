@@ -34,6 +34,8 @@
 function escHtml(s) {
     return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 }
+/** Normalize string for accent-insensitive comparison (used by energy filters) */
+function norm(s) { return (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
 
 // ==================== STATE ====================
 let allCards = [];
@@ -656,10 +658,12 @@ function setupEventListeners() {
             }
         });
     }
-    ['collection-filter-set', 'collection-filter-type', 'collection-filter-energy', 'collection-filter-rarity', 'collection-sort', 'collection-filter-prefix'].forEach(id => {
+    ['collection-filter-set', 'collection-filter-type', 'collection-filter-energy', 'collection-filter-subtype', 'collection-filter-rarity', 'collection-sort', 'collection-filter-prefix'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('change', () => { collectionPage = 1; renderCollection(); });
     });
+    const collEffText = document.getElementById('collection-filter-effect-text');
+    if (collEffText) collEffText.addEventListener('input', debounce(() => { collectionPage = 1; renderCollection(); }, 300));
     document.getElementById('collection-filter-set')?.addEventListener('change', () => {
         updatePrefixFilter('collection-filter-set', 'collection-filter-prefix');
     });
@@ -902,6 +906,7 @@ function setupEventListeners() {
     document.getElementById('delete-deck-btn').addEventListener('click', deleteCurrentDeck);
     document.getElementById('deck-name').addEventListener('input', updateDeckName);
     document.getElementById('deck-search').addEventListener('input', debounce(renderDeckPool, 300));
+    document.getElementById('deck-filter-set')?.addEventListener('change', renderDeckPool);
     document.getElementById('deck-filter-energy').addEventListener('change', renderDeckPool);
     document.getElementById('deck-filter-type').addEventListener('change', renderDeckPool);
     const deckFilterSubtype = document.getElementById('deck-filter-subtype');
@@ -1029,7 +1034,7 @@ function getSetDisplayName(code) {
 
 function populateSetFilter() {
     const sets = [...new Set(allCards.map(c => c.set))].sort();
-    ['filter-set', 'collection-filter-set'].forEach(selectId => {
+    ['filter-set', 'collection-filter-set', 'deck-filter-set'].forEach(selectId => {
         const select = document.getElementById(selectId);
         if (!select) return;
         sets.forEach(set => {
@@ -1091,16 +1096,30 @@ function populateTypeFilter() {
 }
 
 function populateSubtypeFilter() {
-    const subtypes = [...new Set(allCards.map(c => c.subtype).filter(Boolean))].sort();
-    const selects = ['filter-subtype', 'deck-filter-subtype'];
+    // Extract unique subtype keywords, normalized (accent-insensitive, deduplicated)
+    const subtypeKeywords = new Map(); // norm → display
+    allCards.forEach(c => {
+        if (!c.subtype) return;
+        // Split compound subtypes into individual words, skip "Adendei" (it's the type, not subtype)
+        c.subtype.split(/[\s\/]+/).forEach(word => {
+            if (!word || word === 'Adendei') return;
+            const n = norm(word);
+            // Keep the accented version as display if available
+            if (!subtypeKeywords.has(n) || word.length > subtypeKeywords.get(n).length) {
+                subtypeKeywords.set(n, word);
+            }
+        });
+    });
+    const sortedKeywords = [...subtypeKeywords.entries()].sort((a, b) => a[1].localeCompare(b[1], 'es'));
+    const selects = ['filter-subtype', 'deck-filter-subtype', 'collection-filter-subtype'];
     selects.forEach(selectId => {
         const select = document.getElementById(selectId);
         if (!select) return;
         while (select.options.length > 1) select.remove(1);
-        subtypes.forEach(subtype => {
+        sortedKeywords.forEach(([normKey, display]) => {
             const option = document.createElement('option');
-            option.value = subtype;
-            option.textContent = subtype;
+            option.value = normKey; // normalized value for comparison
+            option.textContent = display;
             select.appendChild(option);
         });
     });
@@ -1113,7 +1132,7 @@ function applyBrowserFilters() {
     const filterType = document.getElementById('filter-type').value;
     const filterEnergy = document.getElementById('filter-energy').value;
     const sortBy = document.getElementById('sort-by').value;
-    const filterSubtype = (document.getElementById('filter-subtype') || {}).value || '';
+    const filterSubtype = (document.getElementById('filter-subtype') || {}).value || ''; // normalized keyword
     const filterRarity = (document.getElementById('filter-rarity') || {}).value || '';
     const filterEffectText = ((document.getElementById('filter-effect-text') || {}).value || '').toLowerCase();
 
@@ -1122,8 +1141,8 @@ function applyBrowserFilters() {
         if (filterSet && card.set !== filterSet) return false;
         if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
         if (filterType && card.type !== filterType) return false;
-        if (filterEnergy && card.energy !== filterEnergy && card.energy2 !== filterEnergy) return false;
-        if (filterSubtype && card.subtype !== filterSubtype) return false;
+        if (filterEnergy && norm(card.energy) !== norm(filterEnergy) && norm(card.energy2) !== norm(filterEnergy)) return false;
+        if (filterSubtype && !norm(card.subtype || '').split(/[\s\/]+/).some(w => norm(w) === filterSubtype)) return false;
         if (filterRarity) {
             // Map dropdown display values to card.rarity field values
             const rarityFieldMap = {
@@ -1313,7 +1332,7 @@ function createCardElement(card, small = false) {
     const rarityBadge = badge ? `<span class="rarity-badge" style="background:${badge.color}">${badge.label}</span>` : '';
 
     return `
-        <div class="card-item ${owned} ${wantedClass} ${inDeck}" data-folio="${escHtml(card.folio)}" data-energy="${escHtml(card.energy || '')}">
+        <div class="card-item ${owned} ${wantedClass} ${inDeck}" data-folio="${escHtml(card.folio)}" data-energy="${escHtml(card.energy || '')}" data-rarity="${escHtml(card.rarity || '')}">
             <img src="${escHtml(card.image)}" alt="${escHtml(card.name)}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22280%22%3E%3Crect fill=%22%23333%22 width=%22200%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23666%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
             ${rarityBadge}
             ${ownedBtn}
@@ -1365,26 +1384,28 @@ function handleWantBtnClick(btnEl, folio) {
 
 /** Energy emoji map */
 const ENERGY_EMOJI = {
-    'Átlica':    '💧',
-    'Pírica':    '🔥',
-    'Gélida':    '❄️',
-    'Lítica':    '🪨',
-    'Cháaktica': '⚡',
-    'Húumica':   '🌿',
-    'Demótica':  '💀',
+    'Átlica':    '💧',  'Atlica':    '💧',
+    'Pírica':    '🔥',  'Pirica':    '🔥',
+    'Gélida':    '❄️',  'Gelida':    '❄️',
+    'Lítica':    '🪨',  'Litica':    '🪨',
+    'Cháaktica': '⚡',  'Chaaktica': '⚡',
+    'Húumica':   '🌿',  'Huumica':   '🌿',
+    'Demótica':  '💀',  'Demotica':  '💀',
     'Feral':     '🐾',
+    'Combinacion': '🔀',
 };
 
-/** CSS color map for energy (matches grid cards) */
+/** CSS color map for energy (matches grid cards) — both accented and plain keys */
 const ENERGY_COLOR = {
-    'Átlica':    'var(--atlica)',
-    'Pírica':    'var(--pirica)',
-    'Gélida':    'var(--gelida)',
-    'Lítica':    'var(--litica)',
-    'Cháaktica': 'var(--chaaktica)',
-    'Húumica':   'var(--huumica)',
-    'Demótica':  'var(--demotica)',
+    'Átlica':    'var(--atlica)',   'Atlica':    'var(--atlica)',
+    'Pírica':    'var(--pirica)',   'Pirica':    'var(--pirica)',
+    'Gélida':    'var(--gelida)',   'Gelida':    'var(--gelida)',
+    'Lítica':    'var(--litica)',   'Litica':    'var(--litica)',
+    'Cháaktica': 'var(--chaaktica)','Chaaktica': 'var(--chaaktica)',
+    'Húumica':   'var(--huumica)',  'Huumica':   'var(--huumica)',
+    'Demótica':  'var(--demotica)', 'Demotica':  'var(--demotica)',
     'Feral':     'var(--feral)',
+    'Combinacion': 'var(--accent-amber)',
 };
 
 /**
@@ -1686,7 +1707,9 @@ function renderCollection() {
     const filterPrefix = (document.getElementById('collection-filter-prefix')?.value || '');
     const filterType = (document.getElementById('collection-filter-type')?.value || '');
     const filterEnergy = (document.getElementById('collection-filter-energy')?.value || '');
+    const filterSubtype = (document.getElementById('collection-filter-subtype')?.value || '');
     const filterRarity = (document.getElementById('collection-filter-rarity')?.value || '');
+    const filterEffectText = (document.getElementById('collection-filter-effect-text')?.value || '').toLowerCase();
 
     // Update tab count badges
     const ownedTabBtn = document.querySelector('.collection-tab-btn[data-tab="collection"]');
@@ -1696,37 +1719,42 @@ function renderCollection() {
 
     let cards;
 
+    // Shared filter logic for collection/wantlist
+    function applyCollectionFilters(card) {
+        if (search && !(card.name || '').toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search) && !card.folio.toLowerCase().includes(search)) return false;
+        if (filterSet && card.set !== filterSet) return false;
+        if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
+        if (filterType && card.type !== filterType) return false;
+        if (filterEnergy && norm(card.energy) !== norm(filterEnergy)) return false;
+        if (filterSubtype) {
+            const sub = norm(card.subtype || '');
+            const kw = norm(filterSubtype);
+            if (!sub.includes(kw)) return false;
+        }
+        if (filterRarity) {
+            const rarityFieldMap = { 'Común': 'Comun', 'Rara': 'Rara', 'Súper Rara': 'Super Rara', 'Ultra Rara': 'Ultra Rara', 'Kósmica': 'Kosmica/Titanica', 'Secreta': 'Secreta', 'Full Art': 'Full Art', 'Evento': 'Evento' };
+            const targetRarity = rarityFieldMap[filterRarity];
+            if (targetRarity && card.rarity !== targetRarity) return false;
+        }
+        if (filterEffectText) {
+            const et = (card.effect_text || '').toLowerCase();
+            const ct = (card.cost_text || '').toLowerCase();
+            if (!et.includes(filterEffectText) && !ct.includes(filterEffectText)) return false;
+        }
+        return true;
+    }
+
     if (currentCollectionTab === 'wantlist') {
         cards = allCards.filter(card => {
             if (!wantList.has(card.folio)) return false;
-            if (search && !(card.name || '').toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search) && !card.folio.toLowerCase().includes(search)) return false;
-            if (filterSet && card.set !== filterSet) return false;
-            if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
-            if (filterType && card.type !== filterType) return false;
-            if (filterEnergy && card.energy !== filterEnergy) return false;
-            if (filterRarity) {
-                const rarityFieldMap = { 'Común': 'Comun', 'Rara': 'Rara', 'Súper Rara': 'Super Rara', 'Ultra Rara': 'Ultra Rara', 'Kósmica': 'Kosmica/Titanica', 'Secreta': 'Secreta', 'Full Art': 'Full Art', 'Evento': 'Evento' };
-                const targetRarity = rarityFieldMap[filterRarity];
-                if (targetRarity && card.rarity !== targetRarity) return false;
-            }
-            return true;
+            return applyCollectionFilters(card);
         });
     } else {
         cards = allCards.filter(card => {
-            if (search && !(card.name || '').toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search) && !card.folio.toLowerCase().includes(search)) return false;
             const isOwned = collection.has(card.folio);
             if (filter === 'owned' && !isOwned) return false;
             if (filter === 'missing' && isOwned) return false;
-            if (filterSet && card.set !== filterSet) return false;
-            if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
-            if (filterType && card.type !== filterType) return false;
-            if (filterEnergy && card.energy !== filterEnergy) return false;
-            if (filterRarity) {
-                const rarityFieldMap = { 'Común': 'Comun', 'Rara': 'Rara', 'Súper Rara': 'Super Rara', 'Ultra Rara': 'Ultra Rara', 'Kósmica': 'Kosmica/Titanica', 'Secreta': 'Secreta', 'Full Art': 'Full Art', 'Evento': 'Evento' };
-                const targetRarity = rarityFieldMap[filterRarity];
-                if (targetRarity && card.rarity !== targetRarity) return false;
-            }
-            return true;
+            return applyCollectionFilters(card);
         });
     }
 
@@ -2168,7 +2196,7 @@ function renderDeckWorkspace() {
                 const inCollection = collection.has(card.folio);
                 html += `
                     <div class="tercia-card-slot">
-                        <div class="card-item small ${inCollection ? '' : 'not-owned'}" data-folio="${card.folio}" data-deck-idx="${globalIdx}" title="${card.name}${inCollection ? '' : ' ⚠️ No la tienes'}">
+                        <div class="card-item small ${inCollection ? '' : 'not-owned'}" data-folio="${card.folio}" data-deck-idx="${globalIdx}" data-rarity="${escHtml(card.rarity || '')}" title="${card.name}${inCollection ? '' : ' ⚠️ No la tienes'}">
                             <img src="${card.image}" alt="${card.name}" loading="lazy" />
                             ${inCollection ? '' : '<span class="deck-not-owned-badge">⚠️</span>'}
                             <button class="remove-from-deck" data-folio="${card.folio}" style="position:absolute;top:2px;right:2px;background:var(--accent-crimson);color:white;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:12px;">×</button>
@@ -2200,7 +2228,7 @@ function renderDeckWorkspace() {
             const inCollection = collection.has(card.folio);
             const typeLabel = card.type === 'Ixim' ? '🌽' : card.type === 'Rot' ? '🪨' : card.type === 'Protector' ? '🛡️' : card.type === 'Bio' ? '🌿' : '';
             html += `
-                <div class="card-item small ${inCollection ? '' : 'not-owned'}" data-folio="${card.folio}" title="${typeLabel} ${card.name}${inCollection ? '' : ' ⚠️ No la tienes'}">
+                <div class="card-item small ${inCollection ? '' : 'not-owned'}" data-folio="${card.folio}" data-rarity="${escHtml(card.rarity || '')}" title="${typeLabel} ${card.name}${inCollection ? '' : ' ⚠️ No la tienes'}">
                     <img src="${card.image}" alt="${card.name}" loading="lazy" />
                     ${inCollection ? '' : '<span class="deck-not-owned-badge">⚠️</span>'}
                     <span class="support-type-badge">${typeLabel}</span>
@@ -2623,6 +2651,7 @@ const EXCLUDED_DECK_TYPES = new Set(['Token', 'Art Print', 'Promo', 'Full Art'])
 
 function renderDeckPool() {
     const search = document.getElementById('deck-search').value.toLowerCase();
+    const filterSet = (document.getElementById('deck-filter-set') || {}).value || '';
     const filterEnergy = document.getElementById('deck-filter-energy').value;
     const filterType = document.getElementById('deck-filter-type').value;
     const filterSubtype = (document.getElementById('deck-filter-subtype') || {}).value || '';
@@ -2635,9 +2664,10 @@ function renderDeckPool() {
         if (EXCLUDED_DECK_TYPES.has(card.type)) return false;
 
         if (search && !card.name.toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search) && !card.folio.toLowerCase().includes(search)) return false;
-        if (filterEnergy && card.energy !== filterEnergy && card.energy2 !== filterEnergy) return false;
+        if (filterSet && card.set !== filterSet) return false;
+        if (filterEnergy && norm(card.energy) !== norm(filterEnergy) && norm(card.energy2) !== norm(filterEnergy)) return false;
         if (filterType && card.type !== filterType) return false;
-        if (filterSubtype && card.subtype !== filterSubtype) return false;
+        if (filterSubtype && !norm(card.subtype || '').split(/[\s\/]+/).some(w => norm(w) === filterSubtype)) return false;
         if (filterRarity) {
             const rarityFieldMap = {
                 'Común': 'Comun', 'Rara': 'Rara', 'Súper Rara': 'Super Rara',
