@@ -1048,8 +1048,8 @@
     "energy": "",
     "damage": 0,
     "rests": 3,
-    "effect_type": "Ninguno",
-    "effect_text": "Activa: Daña 6 puntos a 1 Adendei rival y daña 2 puntos a 2 Adendei aliados.",
+    "effect_type": "Activa",
+    "effect_text": "Activa: Usa 1 de los siguientes efectos: -Oculta 2 cartas en tu campo. -Daña 2 ptos. a 1 carta rival en Zona Principal por cada efecto de carta tomada que el rival use, hasta que este Protector esté disponible.",
     "image": "images/FAFT-001.webp",
     "artist": "Edgardo Bautista",
     "rarity_variants": [],
@@ -3344,7 +3344,7 @@
     "energy": "Pirica",
     "damage": 2,
     "rests": 1,
-    "effect_type": "Pasiva",
+    "effect_type": "Activa-Rápida",
     "effect_text": "Activa Rápida: Si esta carta es atacada, puede desviar el ataque a otra carta aliada.",
     "image": "images/IDRMP-016.webp",
     "artist": "Fersko0n",
@@ -3924,12 +3924,12 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Pasiva",
-    "effect_text": "Pasiva: Si esta carta esta en Extincion, puedes dañar 3 puntos a 1 carta aliada y regresar esta carta a la Zona de Bio.",
+    "effect_text": "Pasiva: Si tu Protector está disponible y esta carta está en Extinción, puedes vivificar esta carta a tu Zona de Bio.",
     "image": "images/KPRC-027.webp",
     "artist": "bd-producciones",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": ""
+    "cost_text": "Costo: Tu Protector recibe 2 descansos. Si no hay un Adendei Titán en tu campo envía esta carta a Extinción. Si esta carta es enviada a Extinción, daña 4 ptos. a tu Protector. \"Rasvel, Congelado\" no puede estar en tu campo."
   },
   {
     "folio": "KPRC-028",
@@ -3976,7 +3976,7 @@
     "damage": 0,
     "rests": 3,
     "effect_type": "Activa",
-    "effect_text": "Activa: Daña 6 puntos a 1 Adendei rival y daña 2 puntos a 2 Adendei aliados.",
+    "effect_text": "Activa: Usa 1 de los siguientes efectos: -Oculta 2 cartas en tu campo. -Daña 2 ptos. a 1 carta rival en Zona Principal por cada efecto de carta tomada que el rival use, hasta que este Protector esté disponible.",
     "image": "images/KPRC-030.webp",
     "artist": "Edgardo Bautista",
     "rarity_variants": [],
@@ -5248,12 +5248,12 @@
     "damage": 3,
     "rests": 2,
     "effect_type": "Pasiva",
-    "effect_text": "Si el Bio aliado es enviado a Extinción, puedes enviar a Extinción 1 Adendei rival.",
+    "effect_text": "Pasiva: Si el Bio aliado es enviado a Extinción, puedes enviar a Extinción 1 Adendei rival.",
     "image": "images/LGRO-033.webp",
     "artist": "varchi_design",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "No puedes atacar en el turno que usaste esta Pasiva."
+    "cost_text": "Costo: No puedes atacar en el turno que usaste esta Pasiva. Solo puedes usar esta Pasiva una vez mientras esta carta esté en el campo."
   },
   {
     "folio": "LGRO-034",
@@ -6898,12 +6898,12 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Pasiva",
-    "effect_text": "Pasiva: Si un ataque fue negado, puedes equipar esta carta a un Adendei aliado. Puedes enviar esta carta a Zona de Extincion y dañar 3 puntos a los Adendei equipados en Zona Principal.",
+    "effect_text": "Pasiva: Si un ataque fue negado, puedes mostrar esta carta desde la Zona de Equipo y dañar 3 ptos. a los Adendei equipados en Zona Principal.",
     "image": "images/TCDE-012.webp",
     "artist": "Francisco K",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": ""
+    "cost_text": "Costo: Envía esta carta a Extinción para utilizar esta Pasiva."
   },
   {
     "folio": "TCDE-013",
@@ -7941,7 +7941,7 @@
     "damage": 2,
     "rests": 1,
     "effect_type": "Pasiva",
-    "effect_text": "Si este Adendei fue vinculado con 1 Protector “Karin”, puedes cambiar a tu Protector por tu Protector suplente.",
+    "effect_text": "Pasiva: Si este Adendei fue vinculado con 1 Protector \"Karyn\", puedes cambiar a tu Protector por tu Protector suplente.",
     "image": "images/TCOO-049.webp",
     "artist": "ikkitouch",
     "rarity_variants": [],
@@ -8349,12 +8349,12 @@
     "damage": 1,
     "rests": 0,
     "effect_type": "Pasiva",
-    "effect_text": "Pasiva: Si tu Bio es enviado a Extincion, daña 1 punto a 1 carta rival en Zona Principal por cada Adendei Abisal en tu Extincion.",
+    "effect_text": "Pasiva: Si tu Bio es enviado a Extinción, daña 1 pto. a 1 carta rival en Zona Principal por cada Adendei Abisal en tu Extinción.",
     "image": "images/TCOO-073.webp",
     "artist": "AbuShield",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": ""
+    "cost_text": "Costo: Solo puedes usar esta pasiva una vez mientras esta carta esté en el campo."
   },
   {
     "folio": "TCOO-074",
@@ -8690,12 +8690,12 @@
     "damage": 3,
     "rests": 2,
     "effect_type": "Pasiva",
-    "effect_text": "Si el Bio aliado es enviado a Extinción, puedes enviar a Extinción 1 Adendei rival.",
+    "effect_text": "Pasiva: Si el Bio aliado es enviado a Extinción, puedes enviar a Extinción 1 Adendei rival.",
     "image": "images/CAMP-001.webp",
     "artist": "varchi_design",
     "rarity_variants": [],
     "rarity": "Super Rara",
-    "cost_text": "No puedes atacar en el turno que usaste esta Pasiva."
+    "cost_text": "Costo: No puedes atacar en el turno que usaste esta Pasiva. Solo puedes usar esta Pasiva una vez mientras esta carta esté en el campo."
   },
   {
     "folio": "CAMP-002",
@@ -11399,7 +11399,7 @@
     "damage": 2,
     "rests": 1,
     "effect_type": "Pasiva",
-    "effect_text": "Si este Adendei fue vinculado con 1 Protector “Karin”, puedes cambiar a tu Protector por tu Protector suplente.",
+    "effect_text": "Pasiva: Si este Adendei fue vinculado con 1 Protector \"Karyn\", puedes cambiar a tu Protector por tu Protector suplente.",
     "image": "images/TCOO-015R.webp",
     "artist": "ikkitouch",
     "rarity_variants": [],
@@ -11535,12 +11535,12 @@
     "damage": 1,
     "rests": 0,
     "effect_type": "Pasiva",
-    "effect_text": "Pasiva: Si tu Bio es enviado a Extincion, daña 1 punto a 1 carta rival en Zona Principal por cada Adendei Abisal en tu Extincion.",
+    "effect_text": "Pasiva: Si tu Bio es enviado a Extinción, daña 1 pto. a 1 carta rival en Zona Principal por cada Adendei Abisal en tu Extinción.",
     "image": "images/TCOO-023R.webp",
     "artist": "AbuShield",
     "rarity_variants": [],
     "rarity": "Rara",
-    "cost_text": ""
+    "cost_text": "Costo: Solo puedes usar esta pasiva una vez mientras esta carta esté en el campo."
   },
   {
     "folio": "TCOO-024R",
@@ -12910,7 +12910,7 @@
     "energy": "Pirica",
     "damage": 2,
     "rests": 1,
-    "effect_type": "Pasiva",
+    "effect_type": "Activa-Rápida",
     "effect_text": "Activa Rápida: Si esta carta es atacada, puede desviar el ataque a otra carta aliada.",
     "image": "https://kodem-tcg.com/assets/UNIQUE/RAGEK-001.webp",
     "artist": "Fersko0n",
