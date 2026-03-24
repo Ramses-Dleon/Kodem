@@ -3,9 +3,9 @@
   "short_name": "Kódem TCG",
   "description": "Colección, mazos y estrategia para Kódem TCG",
   "lang": "es",
-  "start_url": "/Kodem/",
+  "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#1a1a2e",
   "theme_color": "#c9a96e",
   "icons": [
@@ -22,11 +22,7 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": [
-    "games",
-    "entertainment"
-  ],
+  "categories": ["games", "entertainment"],
   "screenshots": [],
-  "prefer_related_applications": false,
-  "scope": "/Kodem/"
+  "prefer_related_applications": false
 }
