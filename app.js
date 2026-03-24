@@ -1141,7 +1141,7 @@ function applyBrowserFilters() {
         if (filterSet && card.set !== filterSet) return false;
         if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
         if (filterType && card.type !== filterType) return false;
-        if (filterEnergy && norm(card.energy) !== norm(filterEnergy) && norm(card.energy2) !== norm(filterEnergy)) return false;
+        if (filterEnergy && !norm(card.energy).split('-').includes(norm(filterEnergy)) && !norm(card.energy2 || '').split('-').includes(norm(filterEnergy))) return false;
         if (filterSubtype && !norm(card.subtype || '').split(/[\s\/]+/).some(w => norm(w) === filterSubtype)) return false;
         if (filterRarity) {
             // Map dropdown display values to card.rarity field values
@@ -1474,7 +1474,7 @@ function openCardModal(card, cardList, cardIndex) {
     imgEl.alt = card.name;
 
     // --- Energy color border on modal-content ---
-    const primaryEnergy = card.energy || '';
+    const primaryEnergy = (card.energy || '').split('-')[0];
     const energyColor = ENERGY_COLOR[primaryEnergy] || 'var(--accent-amber)';
     modalContent.style.borderColor = energyColor;
     modalContent.style.borderLeftWidth = '5px';
@@ -1502,8 +1502,9 @@ function openCardModal(card, cardList, cardIndex) {
     document.getElementById('modal-card-type').textContent =
         card.subtype ? `${card.type} - ${card.subtype}` : card.type;
 
-    // --- Energy with emoji ---
-    const energyParts = [card.energy, card.energy2].filter(Boolean).map(e => {
+    // --- Energy with emoji (supports dual/triple via hyphen-separated values) ---
+    const rawParts = [card.energy, card.energy2].filter(Boolean).flatMap(e => e.split('-'));
+    const energyParts = rawParts.map(e => {
         const em = ENERGY_EMOJI[e] || '';
         return em ? `${em} ${e}` : e;
     });
@@ -1725,7 +1726,7 @@ function renderCollection() {
         if (filterSet && card.set !== filterSet) return false;
         if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
         if (filterType && card.type !== filterType) return false;
-        if (filterEnergy && norm(card.energy) !== norm(filterEnergy)) return false;
+        if (filterEnergy && !norm(card.energy).split('-').includes(norm(filterEnergy))) return false;
         if (filterSubtype) {
             const sub = norm(card.subtype || '');
             const kw = norm(filterSubtype);
@@ -2420,10 +2421,10 @@ function updateDeckValidation() {
         counts[card.type] = (counts[card.type] || 0) + 1;
 
         if (card.energy) {
-            energyDist[card.energy] = (energyDist[card.energy] || 0) + 1;
+            card.energy.split('-').forEach(e => { energyDist[e] = (energyDist[e] || 0) + 1; });
         }
         if (card.energy2) {
-            energyDist[card.energy2] = (energyDist[card.energy2] || 0) + 1;
+            card.energy2.split('-').forEach(e => { energyDist[e] = (energyDist[e] || 0) + 1; });
         }
 
         if (card.damage != null) {
@@ -2665,7 +2666,7 @@ function renderDeckPool() {
 
         if (search && !card.name.toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search) && !card.folio.toLowerCase().includes(search)) return false;
         if (filterSet && card.set !== filterSet) return false;
-        if (filterEnergy && norm(card.energy) !== norm(filterEnergy) && norm(card.energy2) !== norm(filterEnergy)) return false;
+        if (filterEnergy && !norm(card.energy).split('-').includes(norm(filterEnergy)) && !norm(card.energy2 || '').split('-').includes(norm(filterEnergy))) return false;
         if (filterType && card.type !== filterType) return false;
         if (filterSubtype && !norm(card.subtype || '').split(/[\s\/]+/).some(w => norm(w) === filterSubtype)) return false;
         if (filterRarity) {
