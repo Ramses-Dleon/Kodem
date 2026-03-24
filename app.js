@@ -585,7 +585,8 @@ function setupEventListeners() {
     document.getElementById('filter-set').addEventListener('change', () => { currentPage = 1; updatePrefixFilter('filter-set', 'filter-prefix'); applyBrowserFilters(); });
     document.getElementById('filter-prefix')?.addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
     document.getElementById('filter-type').addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
-    document.getElementById('filter-energy').addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
+    document.getElementById('filter-energy').addEventListener('change', () => { currentPage = 1; updateEnergyComboFilter('filter-energy', 'filter-energy-combo'); applyBrowserFilters(); });
+    document.getElementById('filter-energy-combo')?.addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
     document.getElementById('sort-by').addEventListener('change', () => { currentPage = 1; applyBrowserFilters(); });
 
     const filterSubtype = document.getElementById('filter-subtype');
@@ -626,6 +627,8 @@ function setupEventListeners() {
         if (prefixEl) { prefixEl.value = ''; prefixEl.style.display = 'none'; }
         document.getElementById('filter-type').value = '';
         document.getElementById('filter-energy').value = '';
+        const comboEl = document.getElementById('filter-energy-combo');
+        if (comboEl) { comboEl.value = ''; comboEl.style.display = 'none'; }
         if (document.getElementById('filter-subtype')) document.getElementById('filter-subtype').value = '';
         if (document.getElementById('filter-rarity')) document.getElementById('filter-rarity').value = '';
         if (document.getElementById('filter-effect-text')) document.getElementById('filter-effect-text').value = '';
@@ -667,6 +670,10 @@ function setupEventListeners() {
     document.getElementById('collection-filter-set')?.addEventListener('change', () => {
         updatePrefixFilter('collection-filter-set', 'collection-filter-prefix');
     });
+    document.getElementById('collection-filter-energy')?.addEventListener('change', () => {
+        updateEnergyComboFilter('collection-filter-energy', 'collection-filter-energy-combo');
+    });
+    document.getElementById('collection-filter-energy-combo')?.addEventListener('change', () => { collectionPage = 1; renderCollection(); });
     document.getElementById('clear-collection').addEventListener('click', clearCollection);
     document.getElementById('import-collection').addEventListener('click', importCollection);
     document.getElementById('export-collection').addEventListener('click', exportCollection);
@@ -907,7 +914,8 @@ function setupEventListeners() {
     document.getElementById('deck-name').addEventListener('input', updateDeckName);
     document.getElementById('deck-search').addEventListener('input', debounce(renderDeckPool, 300));
     document.getElementById('deck-filter-set')?.addEventListener('change', renderDeckPool);
-    document.getElementById('deck-filter-energy').addEventListener('change', renderDeckPool);
+    document.getElementById('deck-filter-energy').addEventListener('change', () => { updateEnergyComboFilter('deck-filter-energy', 'deck-filter-energy-combo'); renderDeckPool(); });
+    document.getElementById('deck-filter-energy-combo')?.addEventListener('change', renderDeckPool);
     document.getElementById('deck-filter-type').addEventListener('change', renderDeckPool);
     const deckFilterSubtype = document.getElementById('deck-filter-subtype');
     if (deckFilterSubtype) deckFilterSubtype.addEventListener('change', renderDeckPool);
@@ -1079,6 +1087,45 @@ function updatePrefixFilter(setSelectId, prefixSelectId) {
     }
 }
 
+/** Energy emoji lookup for combo labels */
+const ENERGY_EMOJI_SHORT = {
+    'Atlica':'💧','Pirica':'🔥','Gelida':'❄️','Litica':'🪨',
+    'Chaaktica':'⚡','Huumica':'🌿','Demotica':'💀','Feral':'🐾'
+};
+
+/** Build and show/hide the energy combo sub-filter (like prefix for sets) */
+function updateEnergyComboFilter(energySelectId, comboSelectId) {
+    const energyVal = document.getElementById(energySelectId)?.value || '';
+    const comboSelect = document.getElementById(comboSelectId);
+    if (!comboSelect) return;
+
+    // Clear options
+    while (comboSelect.options.length > 1) comboSelect.remove(1);
+    comboSelect.value = '';
+
+    if (energyVal === '__combo__') {
+        // Collect all unique combo energies from cards
+        const combos = {};
+        allCards.forEach(c => {
+            const e = c.energy || '';
+            if (e.includes('-')) {
+                combos[e] = (combos[e] || 0) + 1;
+            }
+        });
+        Object.entries(combos).sort((a,b) => b[1]-a[1]).forEach(([combo, count]) => {
+            const parts = combo.split('-');
+            const emojis = parts.map(p => ENERGY_EMOJI_SHORT[p] || '').join('');
+            const opt = document.createElement('option');
+            opt.value = combo;
+            opt.textContent = `${emojis} ${parts.join(' + ')} (${count})`;
+            comboSelect.appendChild(opt);
+        });
+        comboSelect.style.display = '';
+    } else {
+        comboSelect.style.display = 'none';
+    }
+}
+
 function populateTypeFilter() {
     const types = [...new Set(allCards.map(c => c.type).filter(Boolean))].sort();
     const selects = ['filter-type', 'deck-filter-type', 'collection-filter-type'];
@@ -1131,6 +1178,7 @@ function applyBrowserFilters() {
     const filterPrefix = (document.getElementById('filter-prefix') || {}).value || '';
     const filterType = document.getElementById('filter-type').value;
     const filterEnergy = document.getElementById('filter-energy').value;
+    const filterEnergyCombo = (document.getElementById('filter-energy-combo') || {}).value || '';
     const sortBy = document.getElementById('sort-by').value;
     const filterSubtype = (document.getElementById('filter-subtype') || {}).value || ''; // normalized keyword
     const filterRarity = (document.getElementById('filter-rarity') || {}).value || '';
@@ -1141,7 +1189,10 @@ function applyBrowserFilters() {
         if (filterSet && card.set !== filterSet) return false;
         if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
         if (filterType && card.type !== filterType) return false;
-        if (filterEnergy && !norm(card.energy).split('-').includes(norm(filterEnergy)) && !norm(card.energy2 || '').split('-').includes(norm(filterEnergy))) return false;
+        if (filterEnergy === '__combo__') {
+            if (!(card.energy || '').includes('-')) return false;
+            if (filterEnergyCombo && card.energy !== filterEnergyCombo) return false;
+        } else if (filterEnergy && !norm(card.energy).split('-').includes(norm(filterEnergy)) && !norm(card.energy2 || '').split('-').includes(norm(filterEnergy))) return false;
         if (filterSubtype && !norm(card.subtype || '').split(/[\s\/]+/).some(w => norm(w) === filterSubtype)) return false;
         if (filterRarity) {
             // Map dropdown display values to card.rarity field values
@@ -1708,6 +1759,7 @@ function renderCollection() {
     const filterPrefix = (document.getElementById('collection-filter-prefix')?.value || '');
     const filterType = (document.getElementById('collection-filter-type')?.value || '');
     const filterEnergy = (document.getElementById('collection-filter-energy')?.value || '');
+    const filterEnergyCombo = (document.getElementById('collection-filter-energy-combo')?.value || '');
     const filterSubtype = (document.getElementById('collection-filter-subtype')?.value || '');
     const filterRarity = (document.getElementById('collection-filter-rarity')?.value || '');
     const filterEffectText = (document.getElementById('collection-filter-effect-text')?.value || '').toLowerCase();
@@ -1726,7 +1778,10 @@ function renderCollection() {
         if (filterSet && card.set !== filterSet) return false;
         if (filterPrefix && !card.folio.startsWith(filterPrefix + '-')) return false;
         if (filterType && card.type !== filterType) return false;
-        if (filterEnergy && !norm(card.energy).split('-').includes(norm(filterEnergy))) return false;
+        if (filterEnergy === '__combo__') {
+            if (!(card.energy || '').includes('-')) return false;
+            if (filterEnergyCombo && card.energy !== filterEnergyCombo) return false;
+        } else if (filterEnergy && !norm(card.energy).split('-').includes(norm(filterEnergy))) return false;
         if (filterSubtype) {
             const sub = norm(card.subtype || '');
             const kw = norm(filterSubtype);
@@ -2654,6 +2709,7 @@ function renderDeckPool() {
     const search = document.getElementById('deck-search').value.toLowerCase();
     const filterSet = (document.getElementById('deck-filter-set') || {}).value || '';
     const filterEnergy = document.getElementById('deck-filter-energy').value;
+    const filterEnergyCombo = (document.getElementById('deck-filter-energy-combo') || {}).value || '';
     const filterType = document.getElementById('deck-filter-type').value;
     const filterSubtype = (document.getElementById('deck-filter-subtype') || {}).value || '';
     const filterRarity = (document.getElementById('deck-filter-rarity') || {}).value || '';
@@ -2666,7 +2722,10 @@ function renderDeckPool() {
 
         if (search && !card.name.toLowerCase().includes(search) && !(card.effect_text || '').toLowerCase().includes(search) && !card.folio.toLowerCase().includes(search)) return false;
         if (filterSet && card.set !== filterSet) return false;
-        if (filterEnergy && !norm(card.energy).split('-').includes(norm(filterEnergy)) && !norm(card.energy2 || '').split('-').includes(norm(filterEnergy))) return false;
+        if (filterEnergy === '__combo__') {
+            if (!(card.energy || '').includes('-')) return false;
+            if (filterEnergyCombo && card.energy !== filterEnergyCombo) return false;
+        } else if (filterEnergy && !norm(card.energy).split('-').includes(norm(filterEnergy)) && !norm(card.energy2 || '').split('-').includes(norm(filterEnergy))) return false;
         if (filterType && card.type !== filterType) return false;
         if (filterSubtype && !norm(card.subtype || '').split(/[\s\/]+/).some(w => norm(w) === filterSubtype)) return false;
         if (filterRarity) {
