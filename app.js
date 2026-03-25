@@ -2944,11 +2944,7 @@ function renderMissingCardsAccordion(setStats) {
 
     // "ALL missing" combined section at top
     const allMissing = withMissing.flatMap(s => s.missing)
-        .sort((a, b) => {
-            const na = (allCards.find(c => c.folio === a) || {}).name || a;
-            const nb = (allCards.find(c => c.folio === b) || {}).name || b;
-            return na.localeCompare(nb, 'es');
-        });
+        .sort((a, b) => a.localeCompare(b, 'es'));
     const totalMissingCount = allMissing.length;
     let html = '';
     if (totalMissingCount > 0) {
@@ -2992,11 +2988,7 @@ function renderMissingCardsAccordion(setStats) {
 
         const chipsHtml = missingCount === 0
             ? '<span class="missing-empty">¡Tienes todas las cartas de este set! 🎉</span>'
-            : [...s.missing].sort((a, b) => {
-                const na = (allCards.find(c => c.folio === a) || {}).name || a;
-                const nb = (allCards.find(c => c.folio === b) || {}).name || b;
-                return na.localeCompare(nb, 'es');
-            }).map(f => {
+            : [...s.missing].sort((a, b) => a.localeCompare(b, 'es')).map(f => {
                 const card = allCards.find(c => c.folio === f);
                 const name = card ? card.name : f;
                 const energy = card ? (card.energy || '').toLowerCase() : '';
