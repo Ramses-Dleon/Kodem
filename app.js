@@ -2942,7 +2942,44 @@ function renderMissingCardsAccordion(setStats) {
 
     const all = [...withMissing, ...complete];
 
+    // "ALL missing" combined section at top
+    const allMissing = withMissing.flatMap(s => s.missing);
+    const totalMissingCount = allMissing.length;
     let html = '';
+    if (totalMissingCount > 0) {
+        const allChipsHtml = allMissing.map(f => {
+            const card = allCards.find(c => c.folio === f);
+            const name = card ? card.name : f;
+            const energy = card ? (card.energy || '').toLowerCase() : '';
+            const isWanted = wantList.has(f);
+            let borderStyle = '';
+            const rarityColorMap = {
+                'Comun': '#9ca3af', 'Poco Comun': '#22c55e', 'Rara': '#60a5fa',
+                'Super Rara': '#a78bfa', 'Ultra Rara': '#f59e0b', 'Kosmica/Titanica': '#f97316',
+                'Secreta': '#ec4899', 'Full Art': '#34d399', 'Evento': '#facc15',
+            };
+            const cardRarity = card ? card.rarity : '';
+            const rarityColor = rarityColorMap[cardRarity] || '#4b5563';
+            borderStyle = `border:2px solid ${rarityColor}`;
+            const wantClass = isWanted ? ' wanted' : '';
+            return `<button class="missing-card-chip clickable${wantClass}" data-folio="${f}" data-energy="${energy}" title="${name}${isWanted ? ' 🎯' : ''}" style="${borderStyle}">${f}</button>`;
+        }).join('');
+
+        html += `
+            <div class="missing-set-section" data-set="ALL">
+                <div class="missing-set-header" onclick="toggleMissingSet(this)">
+                    <span class="missing-set-title">📋 TODAS las faltantes (${totalMissingCount} cartas)</span>
+                    <div style="display:flex;align-items:center;gap:0.5rem">
+                        <span class="missing-set-badge">${totalMissingCount} faltantes</span>
+                        <span class="missing-set-chevron">▼</span>
+                    </div>
+                </div>
+                <div class="missing-set-body">
+                    <div class="missing-cards-grid">${allChipsHtml}</div>
+                </div>
+            </div>`;
+    }
+
     for (const s of all) {
         const missingCount = s.missing.length;
         const badgeClass = missingCount === 0 ? 'zero' : '';
