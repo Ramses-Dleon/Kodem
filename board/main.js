@@ -3,7 +3,7 @@
  */
 let CARDS = {};
 let DECKS = {};
-const IMG_BASE = '/images/';
+const IMG_BASE = '../images/';
 const SYNC_API = '';  // disabled — using Vercel static sync
 let LAST_SYNC = null;
 
