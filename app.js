@@ -3323,3 +3323,33 @@ function initSinergias() {
         }
     });
 }
+
+// ── PWA Install Prompt ──
+let _deferredInstallPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  _deferredInstallPrompt = e;
+  const btn = document.getElementById('install-pwa');
+  if (btn) btn.style.display = '';
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('install-pwa');
+  if (btn) {
+    btn.addEventListener('click', async () => {
+      if (!_deferredInstallPrompt) return;
+      _deferredInstallPrompt.prompt();
+      const result = await _deferredInstallPrompt.userChoice;
+      if (result.outcome === 'accepted') {
+        btn.style.display = 'none';
+      }
+      _deferredInstallPrompt = null;
+    });
+  }
+});
+
+window.addEventListener('appinstalled', () => {
+  const btn = document.getElementById('install-pwa');
+  if (btn) btn.style.display = 'none';
+  _deferredInstallPrompt = null;
+});

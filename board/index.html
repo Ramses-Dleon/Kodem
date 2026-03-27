@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kódem — Tablero Interactivo</title>
+<link rel="stylesheet" href="board.css?v=20260326a">
+</head>
+<body>
+<!-- Desktop sidebar (hidden on mobile) -->
+<div class="ctrl-panel desktop-only">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+    <a href="/" style="text-decoration:none;font-size:1.2rem;color:#888;padding:2px 6px;border:1px solid #444;border-radius:6px;line-height:1" title="Volver al inicio">←</a>
+    <h1 style="margin:0;flex:1">🎴 Kódem</h1>
+    <button id="view-toggle" onclick="toggleViewMode()" style="background:transparent;border:1px solid #6b7280;color:#6b7280;border-radius:6px;padding:3px 8px;font-size:0.69rem;cursor:pointer;white-space:nowrap" title="Cambiar vista">📱 Mobile</button>
+  </div>
+  <div class="phase-bar" id="phaseBar"></div>
+  <div class="action-bar" id="actionBar"></div>
+</div>
+<div class="board-layout">
+  <div class="board-main">
+    <div id="turnInfo"></div>
+    <div class="board" id="board"></div>
+    <div class="newgame-overlay" id="newGameOverlay">
+      <div class="newgame-modal">
+        <button class="tercia-close" onclick="closeNewGame()">✕</button>
+        <h2 style="color:#f59e0b;margin:0 0 12px;font-size:1rem">🆕 Nueva Partida</h2>
+        <div class="newgame-row">
+          <div class="newgame-col">
+            <label>🔥 Jugador Alpha</label>
+            <input id="ngAlphaName" placeholder="Nombre" value="Ramsés" style="width:100%;padding:6px;border-radius:4px;border:1px solid #444;background:#111;color:#fff;font-size:0.8rem;margin-bottom:6px">
+            <select id="ngAlphaDeck" style="width:100%;padding:6px;border-radius:4px;border:1px solid #444;background:#111;color:#fff;font-size:0.75rem"></select>
+          </div>
+          <div class="newgame-col">
+            <label>🐾 Jugador Beta</label>
+            <input id="ngBetaName" placeholder="Nombre" value="Logos" style="width:100%;padding:6px;border-radius:4px;border:1px solid #444;background:#111;color:#fff;font-size:0.8rem;margin-bottom:6px">
+            <select id="ngBetaDeck" style="width:100%;padding:6px;border-radius:4px;border:1px solid #444;background:#111;color:#fff;font-size:0.75rem"></select>
+          </div>
+        </div>
+        <button onclick="startNewGame()" style="margin-top:12px;padding:8px 24px;background:#22c55e;color:#fff;border:none;border-radius:6px;font-size:0.85rem;font-weight:bold;cursor:pointer;width:100%">⚔️ Iniciar Partida</button>
+      </div>
+    </div>
+    <div class="tercia-overlay" id="terciaOverlay">
+      <button class="tercia-close" onclick="closeTercia()" title="Cerrar">✕</button>
+      <div class="tercia-title" id="terciaTitle">📥 Elige 1 carta de la Tercia</div>
+      <div class="tercia-cards" id="terciaCards"></div>
+    </div>
+  </div>
+  <div class="log-sidebar">
+    <div class="log-header">📋 Log del Turno</div>
+    <div class="log-panel" id="logPanel" role="log" aria-live="polite"></div>
+    <div class="log-tools" id="logTools"></div>
+  </div>
+</div>
+
+<!-- Mobile bottom bar (hidden on desktop) -->
+<div class="bottom-bar mobile-only">
+  <div class="bottom-bar-inner">
+    <button class="bb-btn" onclick="prevPhase()" title="Fase anterior" aria-label="Fase anterior">◀</button>
+    <div class="bb-context" id="bbContext"></div>
+    <button class="bb-btn" onclick="nextPhase()" title="Siguiente fase" aria-label="Siguiente fase">▶</button>
+    <button class="bb-btn" onclick="toggleLogSheet()" title="Ver log" aria-label="Ver log de partida">📋</button>
+    <button class="bb-btn" onclick="toggleMobileActions()" title="Más acciones" aria-label="Más acciones">⚡</button>
+  </div>
+  <div class="bb-actions" id="bbActions" style="display:none"></div>
+</div>
+
+<!-- Mobile log bottom sheet -->
+<div class="log-sheet" id="logSheet">
+  <div class="log-sheet-header">
+    <span>📋 Log del Turno</span>
+    <button onclick="toggleLogSheet()" style="background:none;border:none;color:#888;font-size:1.2rem;cursor:pointer">✕</button>
+  </div>
+  <div class="log-sheet-body" id="logSheetBody" role="log" aria-live="polite"></div>
+</div>
+
+<div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
+  <div class="popup" onclick="event.stopPropagation()">
+    <button class="popup-close" onclick="closePopup()" aria-label="Cerrar">✕</button>
+    <div class="popup-img"><img id="popupImg" src="" alt="" onerror="this.style.display='none'"></div>
+    <div class="popup-body">
+      <div class="popup-name" id="popupName"></div>
+      <div class="popup-folio" id="popupFolio"></div>
+      <div class="popup-meta" id="popupMeta"></div>
+      <div class="popup-stats" id="popupStats"></div>
+      <div class="popup-effect-type" id="popupEffectType"></div>
+      <div class="popup-effect" id="popupEffect"></div>
+      <div id="popupCostWrap" style="display:none">
+        <div class="popup-cost"><div class="popup-cost-label">⚠️ Costo</div><span id="popupCost"></span></div>
+      </div>
+      <div class="popup-status" id="popupStatus"></div>
+      <div class="popup-actions" id="popupActions"></div>
+    </div>
+  </div>
+</div>
+<script src="game.js?v=20260324g"></script>
+<script src="effects-ui.js?v=20260324e"></script>
+<script src="render.js?v=20260324d"></script>
+<script src="main.js?v=20260324m"></script>
+<script>
+let _viewMode = localStorage.getItem('kodem_view_mode') || 'mobile';
+function applyViewMode() {
+  const vp = document.querySelector('meta[name="viewport"]');
+  const btn = document.getElementById('view-toggle');
+  if (_viewMode === 'desktop') {
+    vp.setAttribute('content', 'width=960');
+    document.body.classList.add('desktop-mode');
+    document.body.classList.remove('mobile-mode');
+    if (btn) { btn.textContent = '🖥️ Desktop'; btn.style.borderColor = '#22c55e'; btn.style.color = '#22c55e'; }
+  } else {
+    vp.setAttribute('content', 'width=device-width, initial-scale=1.0');
+    document.body.classList.remove('desktop-mode');
+    document.body.classList.add('mobile-mode');
+    if (btn) { btn.textContent = '📱 Mobile'; btn.style.borderColor = '#6b7280'; btn.style.color = '#6b7280'; }
+  }
+}
+function toggleViewMode() {
+  _viewMode = _viewMode === 'mobile' ? 'desktop' : 'mobile';
+  localStorage.setItem('kodem_view_mode', _viewMode);
+  applyViewMode();
+  if (typeof renderInteractive === 'function') renderInteractive();
+}
+function toggleLogSheet() {
+  const sheet = document.getElementById('logSheet');
+  const isOpen = sheet.classList.contains('open');
+  if (!isOpen) {
+    document.getElementById('logSheetBody').innerHTML = document.getElementById('logPanel').innerHTML;
+    sheet.classList.add('open');
+  } else {
+    sheet.classList.remove('open');
+  }
+}
+function syncLogSheet() {
+  const sheet = document.getElementById('logSheet');
+  if (sheet && sheet.classList.contains('open')) {
+    document.getElementById('logSheetBody').innerHTML = document.getElementById('logPanel').innerHTML;
+  }
+}
+function toggleMobileActions() {
+  const actions = document.getElementById('bbActions');
+  actions.style.display = actions.style.display === 'none' ? 'flex' : 'none';
+}
+applyViewMode();
+</script>
+</body>
+</html>
