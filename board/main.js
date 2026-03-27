@@ -56,7 +56,8 @@ async function init() {
   // Always populate action buttons
   const bb = document.getElementById('bbActions');
   if (bb) {
-    bb.innerHTML = `<button class="action-btn sync" onclick="syncPush()">📋 Copiar</button>` +
+    bb.innerHTML = `<button class="action-btn" onclick="location.href='../'" style="border-color:#6b7280;color:#6b7280">← Inicio</button>` +
+      `<button class="action-btn sync" onclick="syncPush()">📋 Copiar</button>` +
       `<button class="action-btn sync" onclick="syncPull()">📎 Pegar</button>` +
       `<button class="action-btn" onclick="toggleViewMode()" style="border-color:#6b7280;color:#6b7280">📱/🖥️</button>` +
       `<button class="action-btn sync danger" onclick="resetGame()">🆕 Nueva</button>`;
@@ -193,6 +194,7 @@ function renderMobileActions() {
   const bb = document.getElementById('bbActions');
   if (!bb) return;
   let html = '';
+  html += `<button class="action-btn" onclick="location.href='../'" style="border-color:#6b7280;color:#6b7280">← Inicio</button>`;
   html += `<button class="action-btn sync" onclick="syncPush()">📋 Copiar</button>`;
   html += `<button class="action-btn sync" onclick="syncPull()">📎 Pegar</button>`;
   html += `<button class="action-btn" onclick="toggleViewMode()" style="border-color:#6b7280;color:#6b7280">📱/🖥️</button>`;
