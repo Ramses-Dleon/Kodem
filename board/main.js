@@ -60,7 +60,8 @@ async function init() {
       `<button class="action-btn sync" onclick="syncPush()">📋 Copiar</button>` +
       `<button class="action-btn sync" onclick="syncPull()">📎 Pegar</button>` +
       `<button class="action-btn" onclick="toggleViewMode()" style="border-color:#6b7280;color:#6b7280">📱/🖥️</button>` +
-      `<button class="action-btn sync danger" onclick="resetGame()">🆕 Nueva</button>`;
+      `<button class="action-btn sync danger" onclick="resetGame()">🆕 Nueva</button>` +
+      `<a href="https://ko-fi.com/hule88" target="_blank" rel="noopener" class="action-btn" style="text-decoration:none;border-color:#f59e0b;color:#f59e0b;text-align:center">☕ Apóyanos</a>`;
   }
   if (loadState()) {
     renderInteractive();
@@ -199,6 +200,7 @@ function renderMobileActions() {
   html += `<button class="action-btn sync" onclick="syncPull()">📎 Pegar</button>`;
   html += `<button class="action-btn" onclick="toggleViewMode()" style="border-color:#6b7280;color:#6b7280">📱/🖥️</button>`;
   html += `<button class="action-btn sync danger" onclick="resetGame()">🆕 Nueva</button>`;
+  html += `<a href="https://ko-fi.com/hule88" target="_blank" rel="noopener" class="action-btn" style="text-decoration:none;border-color:#f59e0b;color:#f59e0b;text-align:center">☕ Apóyanos</a>`;
   bb.innerHTML = html;
 }
 
