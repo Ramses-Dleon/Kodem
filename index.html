@@ -938,6 +938,29 @@
         <p>Proyecto no oficial. Kódem TCG © <a href="https://kodem-tcg.com" target="_blank" rel="noopener" style="color:#f59e0b;text-decoration:underline">Adendei Entretenimiento S.A. de C.V.</a></p>
     </footer>
 
+    <!-- View mode toggle (mobile/desktop) -->
+    <button onclick="toggleViewMode()" id="viewToggle" style="position:fixed;bottom:16px;right:16px;background:#222;border:1px solid #444;color:#aaa;width:40px;height:40px;border-radius:20px;font-size:1rem;cursor:pointer;z-index:999;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.4)" title="Cambiar vista móvil/escritorio">📱</button>
+    <script>
+    function toggleViewMode() {
+      const vp = document.querySelector('meta[name="viewport"]');
+      const btn = document.getElementById('viewToggle');
+      if (vp.content.includes('width=device-width')) {
+        vp.content = 'width=1280';
+        btn.textContent = '🖥️';
+        localStorage.setItem('kodem_viewmode', 'desktop');
+      } else {
+        vp.content = 'width=device-width, initial-scale=1.0';
+        btn.textContent = '📱';
+        localStorage.setItem('kodem_viewmode', 'mobile');
+      }
+    }
+    // Restore preference
+    if (localStorage.getItem('kodem_viewmode') === 'desktop') {
+      document.querySelector('meta[name="viewport"]').content = 'width=1280';
+      document.getElementById('viewToggle').textContent = '🖥️';
+    }
+    </script>
+
     <!-- Confirm/Choice modal (injected dynamically by JS) -->
     <script src="app.js?v=20260323k"></script>
     <!-- PWA Service Worker -->
