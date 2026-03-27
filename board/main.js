@@ -53,12 +53,24 @@ async function init() {
   } else {
     DECKS = {};
   }
+  // Always populate action buttons
+  const bb = document.getElementById('bbActions');
+  if (bb) {
+    bb.innerHTML = `<button class="action-btn sync" onclick="syncPush()">📋 Copiar</button>` +
+      `<button class="action-btn sync" onclick="syncPull()">📎 Pegar</button>` +
+      `<button class="action-btn" onclick="toggleViewMode()" style="border-color:#6b7280;color:#6b7280">📱/🖥️</button>` +
+      `<button class="action-btn sync danger" onclick="resetGame()">🆕 Nueva</button>`;
+  }
   if (loadState()) {
     renderInteractive();
     return;
   }
-  const state = await fetch('game-state.json?t=' + Date.now()).then(r => r.json());
-  initGame(state);
+  // No saved game — try game-state.json, else show new game overlay
+  try {
+    const state = await fetch('game-state.json?t=' + Date.now()).then(r => r.json());
+    if (state && state.alpha && state.beta) { initGame(state); return; }
+  } catch(e) {}
+  showNewGameOverlay();
 }
 
 function renderInteractive() {
