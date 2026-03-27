@@ -1,7 +1,7 @@
 {
-  "name": "Kódem TCG Companion",
-  "short_name": "Kódem TCG",
-  "description": "Colección, mazos y estrategia para Kódem TCG",
+  "name": "Códice Kódem",
+  "short_name": "Códice Kódem",
+  "description": "Códice Kódem — Explorador, constructor de mazos y tablero interactivo para Kódem TCG",
   "lang": "es",
   "start_url": "/",
   "display": "standalone",

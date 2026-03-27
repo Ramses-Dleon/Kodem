@@ -1,4 +1,4 @@
-// Kódem TCG Companion — Service Worker
+// Códice Kódem — Service Worker
 // Cache version: bump this to force cache refresh on deploy
 const CACHE_NAME = 'kodem-v40';
 

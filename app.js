@@ -1,5 +1,5 @@
 /**
- * Kódem TCG Companion — app.js
+ * Códice Kódem — app.js
  * 
  * Single-page application for browsing, collecting, and deck-building
  * with the Kódem Trading Card Game (786 cards, 22 sets).
