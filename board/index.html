@@ -24,7 +24,13 @@
     <div class="newgame-overlay" id="newGameOverlay">
       <div class="newgame-modal">
         <button class="tercia-close" onclick="closeNewGame()">✕</button>
-        <h2 style="color:#f59e0b;margin:0 0 12px;font-size:1rem">🆕 Nueva Partida</h2>
+        <h2 style="color:#f59e0b;margin:0 0 12px;font-size:1rem">🆕 Nueva Partida <span onclick="document.getElementById('helpPopup').style.display=document.getElementById('helpPopup').style.display==='block'?'none':'block'" style="cursor:pointer;font-size:0.8rem;color:#888;border:1px solid #555;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-left:4px" title="Ayuda">?</span></h2>
+        <div id="helpPopup" style="display:none;background:#1a1a2e;border:1px solid #f59e0b;border-radius:8px;padding:12px;margin-bottom:10px;font-size:0.75rem;color:#ccc;line-height:1.4">
+          <b style="color:#f59e0b">¿No ves mazos?</b><br>
+          Para jugar necesitas al menos 2 mazos cargados. Ve a la <a href="../" style="color:#f59e0b">app principal</a> → pestaña <b>🃏 Constructor de Mazos</b> → crea un mazo o usa <b>"Importar Código"</b> con un código KDECK.<br><br>
+          Los mazos se guardan en tu navegador y aparecerán automáticamente aquí.
+          <div style="text-align:right;margin-top:6px"><span onclick="document.getElementById('helpPopup').style.display='none'" style="cursor:pointer;color:#f59e0b;font-size:0.7rem">✕ Cerrar</span></div>
+        </div>
         <div class="newgame-row">
           <div class="newgame-col">
             <label>🔥 Jugador Alpha</label>
