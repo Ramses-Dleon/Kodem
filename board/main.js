@@ -70,7 +70,7 @@ async function init() {
     const state = await fetch('game-state.json?t=' + Date.now()).then(r => r.json());
     if (state && state.alpha && state.beta) { initGame(state); return; }
   } catch(e) {}
-  showNewGameOverlay();
+  document.getElementById('newGameOverlay').classList.add('active');
 }
 
 function renderInteractive() {
