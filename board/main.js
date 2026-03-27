@@ -70,6 +70,8 @@ async function init() {
     const state = await fetch('game-state.json?t=' + Date.now()).then(r => r.json());
     if (state && state.alpha && state.beta) { initGame(state); return; }
   } catch(e) {}
+  // Populate deck selects and show new game overlay
+  populateDeckSelects();
   document.getElementById('newGameOverlay').classList.add('active');
 }
 
@@ -621,17 +623,24 @@ function parseDeck(deck) {
 }
 
 /* ─── New Game ─── */
-function resetGame() {
-  if (!confirm('¿Iniciar nueva partida? Se perderá el progreso actual.')) return;
-  // Populate deck selects
+function populateDeckSelects() {
+  // Show all decks that have at least 1 card (relaxed filter for user-built decks)
   const keys = Object.keys(DECKS).filter(k => {
-    const d = parseDeck(DECKS[k]);
-    return d.protector && d.mazo && d.mazo.length > 0;
+    const d = DECKS[k];
+    const cards = d.cards || d.mazo || [];
+    return cards.length > 0;
   });
+  const emptyMsg = keys.length === 0 ? '<option value="">— Crea un mazo en el Constructor —</option>' : '';
   for (const selId of ['ngAlphaDeck', 'ngBetaDeck']) {
     const sel = document.getElementById(selId);
-    sel.innerHTML = keys.map(k => `<option value="${k}">${DECKS[k].name}</option>`).join('');
+    if (!sel) continue;
+    sel.innerHTML = emptyMsg + keys.map(k => `<option value="${k}">${DECKS[k].name}</option>`).join('');
   }
+}
+
+function resetGame() {
+  if (!confirm('¿Iniciar nueva partida? Se perderá el progreso actual.')) return;
+  populateDeckSelects();
   document.getElementById('newGameOverlay').classList.add('active');
 }
 
