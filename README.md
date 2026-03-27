@@ -1,14 +1,14 @@
-# 🎴 Kódem TCG Companion
+# 📜 Códice Kódem
 
 > La primera herramienta digital para **Kódem TCG** — el juego de cartas coleccionable mexicano inspirado en la naturaleza, alebrijes y fauna endémica.
 
-**[🌐 Abrir la App](https://ramses-dleon.github.io/Kodem/)** · **[🎴 Sitio Oficial](https://kodem-tcg.com)**
+**[🌐 Abrir la App](https://ramses-dleon.github.io/Kodem/)** · **[🎮 Tablero](https://ramses-dleon.github.io/Kodem/board/)** · **[🎴 Sitio Oficial](https://kodem-tcg.com)** · **[☕ Apóyanos](https://ko-fi.com/hule88)**
 
-![Cartas](https://img.shields.io/badge/cartas-785-f59e0b?style=flat-square) ![Sets](https://img.shields.io/badge/sets-12-0d6efd?style=flat-square) ![License](https://img.shields.io/badge/fan--made-no%20oficial-dc2626?style=flat-square)
+![Cartas](https://img.shields.io/badge/cartas-785-f59e0b?style=flat-square) ![Sets](https://img.shields.io/badge/sets-12-0d6efd?style=flat-square) ![Tablero](https://img.shields.io/badge/tablero-interactivo-22c55e?style=flat-square) ![License](https://img.shields.io/badge/fan--made-autorizado-22c55e?style=flat-square)
 
 ---
 
-## ✨ Features
+## ✨ Funcionalidades
 
 ### 🔍 Explorador de Cartas
 - **785 cartas** de 12 sets con imágenes oficiales
@@ -22,24 +22,31 @@
 
 ### 📦 Mi Colección
 - ♥ Agregar/quitar de colección directamente en el grid
-- 🎯 Want List directamente en el grid
-- Dashboard completo:
-  - Anillo de progreso + estadísticas generales
-  - Pie chart de cartas únicas (448 nombres distintos)
-  - Donut de distribución por rareza (8 categorías: Común, Rara, Súper Rara, Ultra Rara, Kósmica/Titánica, Full Art, Secreta, Evento)
-  - Quick stats: sets completos, más completo, más faltantes
-  - Barras de progreso por set
-  - Acordeón de cartas faltantes por set
-- Export/import colección vía JSON para backup
-- Todo en localStorage — tu colección es tuya, privada en tu navegador
+- 🎯 Want List para rastrear cartas faltantes
+- Dashboard completo con anillo de progreso, distribución por rareza, barras por set
+- Export/import vía JSON para backup
+- Todo en localStorage — tu colección es privada en tu navegador
 
-### 🏗️ Constructor de Mazos
-- Reglas Kódem v5.0: 15-24 Adendei + Protector + Bio + Ixim/Rot
-- Validación automática de estructura de mazo
+### 🃏 Constructor de Mazos
+- Reglas Kódem v5.0: 15–24 Adendei + Protector + Bio + Ixim/Rot
+- Validación automática de estructura
+- Export/import de mazos vía códigos **KDECK** (compartibles por chat)
 - Guardar y cargar múltiples mazos
 
 ### ⚡ Sinergias
-- Mapa de sinergias por energía y mecánicas de juego
+- Mapa visual de sinergias entre cartas por energía y mecánicas
+
+### 📖 Guía
+- Resumen de reglas con referencia rápida de mecánicas Kódem v5.0
+
+### 🎮 Tablero Interactivo ✨ NUEVO
+- **Practica partidas** directamente en el navegador
+- Fases del turno: Previa → Batalla → Post → Equipo → Fin
+- 3 posiciones de campo por jugador + Protector + Bio + Equipo + Extinción
+- Revelar cartas, equipar Rot/Ixim, resolver combate
+- **Sincronización entre jugadores** vía códigos KBOARD (copia/pega por cualquier chat)
+- Vista desktop y mobile optimizada
+- Usa los mazos que armes en el Constructor (localStorage)
 
 ## 📊 Base de Datos
 
@@ -49,6 +56,7 @@
 | Sets | 12 |
 | Energías | 8 (Átlica, Pírica, Gélida, Lítica, Demótica, Feral, Húumica, Cháaktica) |
 | Rarezas | 8 (Común, Rara, Súper Rara, Ultra Rara, Kósmica/Titánica, Full Art, Secreta, Evento) |
+| Subtipos | 10 (Abisal, Catrín, Equino, Guardián, Guardián Catrín, Infectado, Kósmico, Resurrecto, Titán, Titán Catrín) |
 | Tipos de efecto | 6 |
 | Cartas con Costo | 247 |
 | Nombres únicos | 448 |
@@ -58,18 +66,22 @@ Datos verificados contra [kodem-tcg.com](https://kodem-tcg.com) + cartas física
 ## 🛠️ Tech
 
 - **Vanilla JS** — sin frameworks, sin build step
-- **CSS** custom properties con dark/light mode
-- **Service Worker** para uso offline (PWA)
-- **Sin servidor** — todo corre en el navegador
+- **CSS** custom properties con dark mode
+- **Service Worker** para uso offline (PWA instalable)
+- **Sin servidor** — todo corre en el navegador, sin recopilar datos personales
 
 ## 📱 Responsive
 
-Diseñado mobile-first. Modal con flechas táctiles, grid adaptable, dashboard responsive.
+Diseñado mobile-first. El tablero tiene vista mobile dedicada con botones táctiles optimizados.
 
-## ⚠️ Disclaimer
+## ☕ Apóyanos
 
-Este es un proyecto **fan-made** no oficial. Kódem TCG es propiedad de sus creadores. Las imágenes de las cartas pertenecen a Kódem TCG y sus artistas.
+¿Te gusta la app? [Invítanos un sobre de Kódem en Ko-fi](https://ko-fi.com/hule88) para seguir mejorándola 🃏
+
+## ⚠️ Aviso Legal
+
+Proyecto **fan-made** autorizado por el equipo creador de Kódem. Las imágenes de las cartas pertenecen a Kódem TCG y sus artistas. Kódem TCG © [Adendei Entretenimiento S.A. de C.V.](https://kodem-tcg.com)
 
 ---
 
-Hecho con 🜂 por la comunidad Kódem.
+Hecho con 🔥 por fans de Kódem · [☕ Apóyanos](https://ko-fi.com/hule88)
