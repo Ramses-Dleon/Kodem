@@ -2482,11 +2482,11 @@ function updateDeckValidation() {
             card.energy2.split('-').forEach(e => { energyDist[e] = (energyDist[e] || 0) + 1; });
         }
 
-        if (card.damage != null && (card.type === 'Adendei' || card.type === 'Rava' || card.type === 'Espectro')) {
+        if (card.damage != null && (card.type === 'Adendei' || card.type === 'Rava')) {
             totalDamage += card.damage;
             damageCount++;
         }
-        if (card.rests != null && (card.type === 'Adendei' || card.type === 'Rava' || card.type === 'Espectro')) {
+        if (card.rests != null && (card.type === 'Adendei' || card.type === 'Rava')) {
             totalRests += card.rests;
             restsCount++;
         }
