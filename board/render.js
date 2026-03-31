@@ -208,9 +208,9 @@ function showCard(folio, status, currentHP, currentRests, side, index, mazoSide,
     const hasEmpty = p.field.some(c => !c.folio);
     let btns = '';
     if (hasEmpty) {
-      btns += `<button onclick="closePopup();mazoPlaceInField('${mazoSide}',${mazoIndex})" style="background:#16a34a;color:#fff;border:none;padding:8px 16px;border-radius:6px;font-size:0.85rem;cursor:pointer;margin:4px">⬆️ Colocar en campo</button>`;
+      btns += `<button class="popup-act" style="border-color:#22c55e;color:#22c55e" onclick="closePopup();mazoPlaceInField('${mazoSide}',${mazoIndex})">⬆️ Colocar en campo</button>`;
     }
-    btns += `<button onclick="closePopup();mazoSendToBottom('${mazoSide}',${mazoIndex})" style="background:#f59e0b;color:#000;border:none;padding:8px 16px;border-radius:6px;font-size:0.85rem;cursor:pointer;margin:4px">⬇️ Fondo del mazo</button>`;
+    btns += `<button class="popup-act" style="border-color:#f59e0b;color:#f59e0b" onclick="closePopup();mazoSendToBottom('${mazoSide}',${mazoIndex})">⬇️ Fondo del mazo</button>`;
     actions.innerHTML = btns;
   } else if (side !== undefined && index >= 0) {
     actions.innerHTML = generateCardButtons(folio, side, index, status);
@@ -219,6 +219,21 @@ function showCard(folio, status, currentHP, currentRests, side, index, mazoSide,
   }
 
   document.getElementById('popupOverlay').classList.add('active');
+}
+
+function showBioCard(side) {
+  const p = getPlayer(side);
+  const bio = p.bio;
+  if (!bio || !bio.folio) return;
+  showCard(bio.folio, bio.revealed ? 'alive' : 'equip', bio.hp, bio.rests);
+  const actions = document.getElementById('popupActions');
+  let btns = '';
+
+  if (!bio.revealed) {
+    btns += mkBtn('🌿 Revelar Bio', '#3b82f6', `closePopup();revealBio('${side}')`);
+  }
+  btns += mkBtn('💀 Enviar Bio a Extinción', '#dc2626', `closePopup();sendBioToExtinction('${side}')`);
+  actions.innerHTML = btns;
 }
 
 function showEquipCard(folio, equipSide, equipIndex) {
@@ -234,16 +249,13 @@ function showEquipCard(folio, equipSide, equipIndex) {
     if (!fc || !fc.folio || !fc.revealed || fc.hp <= 0) return;
     const cd = CARDS[fc.folio] || {};
     const en = ENERGY_MAP[fc.energy || cd.energy] || {};
-    btns += `<button onclick="closePopup();doEquipFromPopup('${equipSide}',${equipIndex},${fi})" `
-      + `style="display:flex;align-items:center;gap:6px;background:#1e3a5f;color:#fff;border:1px solid #3b82f6;padding:8px 12px;border-radius:6px;font-size:0.8rem;cursor:pointer;margin:3px;width:100%">`
-      + `<span style="font-size:1.1rem">${en.emoji || '🔧'}</span>`
-      + `<span>Equipar a <strong>Pos${fc.pos || fi+1}</strong> — ${cd.name || fc.folio}</span></button>`;
+    btns += `<button class="popup-act" style="border-color:#3b82f6;color:#3b82f6" onclick="closePopup();doEquipFromPopup('${equipSide}',${equipIndex},${fi})">`
+      + `${en.emoji || '🔧'} Equipar a Pos${fc.pos || fi+1} — ${cd.name || fc.folio}</button>`;
   });
 
   // Extinction button for unequipped cards in equip zone
-  btns += `<button onclick="closePopup();doEquipZoneExtinction('${equipSide}',${equipIndex})" `
-    + `style="display:flex;align-items:center;gap:6px;background:#1e293b;color:#ef4444;border:1px solid #ef4444;padding:8px 12px;border-radius:6px;font-size:0.8rem;cursor:pointer;margin:3px;width:100%">`
-    + `<span>💀 Enviar a Extinción</span></button>`;
+  btns += `<button class="popup-act" style="border-color:#ef4444;color:#ef4444" onclick="closePopup();doEquipZoneExtinction('${equipSide}',${equipIndex})">`
+    + `💀 Enviar a Extinción</button>`;
 
   actions.innerHTML = (btns.includes('Equipar a') ? `<div style="font-size:0.7rem;color:#93c5fd;margin-bottom:4px">🔧 Equipar a:</div>` : '') + btns;
 }
@@ -289,15 +301,48 @@ function showEquippedCard(folio, side, fieldIndex, equipIndex) {
   const equipName = (CARDS[folio] || {}).name || folio;
   const hostName = fc ? (fc.name || fc.folio) : `Pos${fieldIndex+1}`;
 
+  // Check current revealed state
+  const eqObj = fc.equips[equipIndex];
+  const isHidden = eqObj && eqObj.revealed === false;
+
   let btns = '';
-  btns += `<button onclick="closePopup();doUnequip('${side}',${fieldIndex},${equipIndex})" `
-    + `style="display:flex;align-items:center;gap:6px;background:#1e293b;color:#f59e0b;border:1px solid #f59e0b;padding:8px 12px;border-radius:6px;font-size:0.8rem;cursor:pointer;margin:3px;width:100%">`
-    + `<span>↩️ Desequipar de ${hostName}</span></button>`;
-  btns += `<button onclick="closePopup();doEquipExtinction('${side}',${fieldIndex},${equipIndex})" `
-    + `style="display:flex;align-items:center;gap:6px;background:#1e293b;color:#ef4444;border:1px solid #ef4444;padding:8px 12px;border-radius:6px;font-size:0.8rem;cursor:pointer;margin:3px;width:100%">`
-    + `<span>💀 Enviar a Extinción</span></button>`;
+  // Toggle reveal/hide
+  if (isHidden) {
+    btns += `<button class="popup-act" style="border-color:#3b82f6;color:#3b82f6" onclick="closePopup();doToggleEquipReveal('${side}',${fieldIndex},${equipIndex})">👁️ Revelar equipo</button>`;
+  } else {
+    btns += `<button class="popup-act" style="border-color:#9ca3af;color:#9ca3af" onclick="closePopup();doToggleEquipReveal('${side}',${fieldIndex},${equipIndex})">🙈 Ocultar equipo</button>`;
+  }
+  btns += `<button class="popup-act" style="border-color:#f59e0b;color:#f59e0b" onclick="closePopup();doUnequip('${side}',${fieldIndex},${equipIndex})">↩️ Desequipar de ${hostName}</button>`;
+  btns += `<button class="popup-act" style="border-color:#ef4444;color:#ef4444" onclick="closePopup();doEquipExtinction('${side}',${fieldIndex},${equipIndex})">💀 Enviar a Extinción</button>`;
 
   actions.innerHTML = btns;
+}
+
+function doToggleEquipReveal(side, fieldIndex, equipIndex) {
+  pushUndo();
+  const p = getPlayer(side);
+  const fc = p.field[fieldIndex];
+  if (!fc || !fc.equips || !fc.equips[equipIndex]) { warn('Equipo no encontrado'); return; }
+  const eq = fc.equips[equipIndex];
+  const wasHidden = eq.revealed === false;
+  eq.revealed = wasHidden; // false→true
+  if (wasHidden) {
+    // Revealing: check §11 limits (max 1 of same type revealed)
+    const eqType = normalizeEquipType(eq.type);
+    const otherRevealed = fc.equips.filter((e, idx) => idx !== equipIndex && normalizeEquipType(e.type) === eqType && e.revealed !== false);
+    if (otherRevealed.length >= 1) {
+      eq.revealed = false; // revert
+      warn(`§11: Máximo 1 ${eqType} revelado por carta`);
+      return;
+    }
+    eq.revealed = true;
+    logAction(`👁️ ${eq.name} revelado en ${cardName(fc.folio)}`);
+  } else {
+    eq.revealed = false;
+    logAction(`🙈 ${eq.name} ocultado en ${cardName(fc.folio)}`);
+  }
+  saveState();
+  renderInteractive();
 }
 
 function doUnequip(side, fieldIndex, equipIndex) {

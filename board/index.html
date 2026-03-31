@@ -4,19 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kódem — Tablero Interactivo</title>
-<link rel="stylesheet" href="board.css?v=20260326a">
+<link rel="stylesheet" href="board.css?v=20260327a">
 </head>
 <body>
 <!-- Desktop sidebar (hidden on mobile) -->
 <div class="ctrl-panel desktop-only">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-    <a href="../" style="text-decoration:none;font-size:1.2rem;color:#888;padding:2px 6px;border:1px solid #444;border-radius:6px;line-height:1" title="Volver al inicio">🏠</a>
+    <a href="/" style="text-decoration:none;font-size:1.2rem;color:#888;padding:2px 6px;border:1px solid #444;border-radius:6px;line-height:1" title="Volver al inicio">🏠</a>
     <h1 style="margin:0;flex:1">🎴 Kódem</h1>
     <a href="https://ko-fi.com/hule88" target="_blank" rel="noopener" style="text-decoration:none;font-size:0.65rem;color:#f59e0b;padding:2px 8px;border:1px solid #f59e0b33;border-radius:10px;opacity:0.7" title="Apóyanos">☕</a>
     <button id="view-toggle" onclick="toggleViewMode()" style="background:transparent;border:1px solid #6b7280;color:#6b7280;border-radius:6px;padding:3px 8px;font-size:0.69rem;cursor:pointer;white-space:nowrap" title="Cambiar vista">📱 Mobile</button>
   </div>
   <div class="phase-bar" id="phaseBar"></div>
   <div class="action-bar" id="actionBar"></div>
+  <button onclick="toggleInsightsSheet()" id="insightsBtnDesktop" style="margin-top:6px;width:100%;background:#0f2a0f;border:1px solid #166534;color:#4ade80;border-radius:6px;padding:6px 8px;font-size:0.69rem;cursor:pointer;text-align:left;font-family:inherit" title="Top 5 Insights del Knowledge Graph">🔬 Insights KG</button>
 </div>
 <div class="board-layout">
   <div class="board-main">
@@ -28,19 +29,19 @@
         <h2 style="color:#f59e0b;margin:0 0 12px;font-size:1rem">🆕 Nueva Partida <span onclick="document.getElementById('helpPopup').style.display=document.getElementById('helpPopup').style.display==='block'?'none':'block'" style="cursor:pointer;font-size:0.8rem;color:#888;border:1px solid #555;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-left:4px" title="Ayuda">?</span></h2>
         <div id="helpPopup" style="display:none;background:#1a1a2e;border:1px solid #f59e0b;border-radius:8px;padding:12px;margin-bottom:10px;font-size:0.75rem;color:#ccc;line-height:1.4">
           <b style="color:#f59e0b">¿No ves mazos?</b><br>
-          Para jugar necesitas al menos 2 mazos cargados. Ve a la <a href="../" style="color:#f59e0b">app principal</a> → pestaña <b>🃏 Constructor de Mazos</b> → crea un mazo o usa <b>"Importar Código"</b> con un código KDECK.<br><br>
+          Para jugar necesitas al menos 2 mazos cargados. Ve a la <a href="/" style="color:#f59e0b">app principal</a> → pestaña <b>🃏 Constructor de Mazos</b> → crea un mazo o usa <b>"Importar Código"</b> con un código KDECK.<br><br>
           Los mazos se guardan en tu navegador y aparecerán automáticamente aquí.
           <div style="text-align:right;margin-top:6px"><span onclick="document.getElementById('helpPopup').style.display='none'" style="cursor:pointer;color:#f59e0b;font-size:0.7rem">✕ Cerrar</span></div>
         </div>
         <div class="newgame-row">
           <div class="newgame-col">
             <label>🔥 Jugador Alpha</label>
-            <input id="ngAlphaName" placeholder="Nombre" value="Jugador 1" style="width:100%;padding:6px;border-radius:4px;border:1px solid #444;background:#111;color:#fff;font-size:0.8rem;margin-bottom:6px">
+            <input id="ngAlphaName" placeholder="Nombre" value="Ramsés" style="width:100%;padding:6px;border-radius:4px;border:1px solid #444;background:#111;color:#fff;font-size:0.8rem;margin-bottom:6px">
             <select id="ngAlphaDeck" style="width:100%;padding:6px;border-radius:4px;border:1px solid #444;background:#111;color:#fff;font-size:0.75rem"></select>
           </div>
           <div class="newgame-col">
             <label>🐾 Jugador Beta</label>
-            <input id="ngBetaName" placeholder="Nombre" value="Jugador 2" style="width:100%;padding:6px;border-radius:4px;border:1px solid #444;background:#111;color:#fff;font-size:0.8rem;margin-bottom:6px">
+            <input id="ngBetaName" placeholder="Nombre" value="Logos" style="width:100%;padding:6px;border-radius:4px;border:1px solid #444;background:#111;color:#fff;font-size:0.8rem;margin-bottom:6px">
             <select id="ngBetaDeck" style="width:100%;padding:6px;border-radius:4px;border:1px solid #444;background:#111;color:#fff;font-size:0.75rem"></select>
           </div>
         </div>
@@ -67,9 +68,109 @@
     <div class="bb-context" id="bbContext"></div>
     <button class="bb-btn" onclick="nextPhase()" title="Siguiente fase" aria-label="Siguiente fase">▶</button>
     <button class="bb-btn" onclick="toggleLogSheet()" title="Ver log" aria-label="Ver log de partida">📜</button>
+    <button class="bb-btn" id="insightsBtn" onclick="toggleInsightsSheet()" title="Top 5 Insights KG" aria-label="Insights del Knowledge Graph">🔬</button>
     <button class="bb-btn" onclick="toggleMobileActions()" title="Más acciones" aria-label="Más acciones">⚡</button>
   </div>
   <div class="bb-actions" id="bbActions" style="display:none"></div>
+</div>
+
+<!-- KG Insights bottom sheet -->
+<div class="insights-sheet" id="insightsSheet">
+  <div class="insights-sheet-header">
+    <span>🔬 Top 5 Insights del Grafo</span>
+    <button onclick="toggleInsightsSheet()" style="background:none;border:none;color:#888;font-size:1.2rem;cursor:pointer">✕</button>
+  </div>
+  <div class="insights-sheet-body">
+    <p class="insights-subtitle">Sinergias descubiertas por analytics (KG v1.0 · 2026-03-27)</p>
+    <div class="insight-card">
+      <div class="insight-rank">#1</div>
+      <div class="insight-body">
+        <div class="insight-cards-row">
+          <span class="insight-tag atlica">💧 Ariam, Limite <span class="insight-folio">LGRO-003</span></span>
+          <span class="insight-arrow">+</span>
+          <span class="insight-tag gelida">🧊 Kuron, Exhalacion <span class="insight-folio">TCOO-054</span></span>
+        </div>
+        <div class="insight-stats">
+          <span class="insight-lift">Lift <b>75.0</b></span>
+          <span class="insight-wr">WR juntas <b>75%</b></span>
+          <span class="insight-wr-apart">WR separadas <b>0%</b></span>
+          <span class="insight-n">n=8</span>
+        </div>
+        <div class="insight-note">Ariam recicla cartas desde Extinción al Mazo; Kuron convierte esas tomas en descansos rivales. Combinación extrema: 0% de victorias sin ellas juntas.</div>
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-rank">#2</div>
+      <div class="insight-body">
+        <div class="insight-cards-row">
+          <span class="insight-tag litica">🪨 Zaykan, Analisis <span class="insight-folio">IDRMP-003</span></span>
+          <span class="insight-arrow">+</span>
+          <span class="insight-tag atlica">💧 Ariam, Limite <span class="insight-folio">LGRO-003</span></span>
+        </div>
+        <div class="insight-stats">
+          <span class="insight-lift">Lift <b>66.67</b></span>
+          <span class="insight-wr">WR juntas <b>67%</b></span>
+          <span class="insight-wr-apart">WR separadas <b>0%</b></span>
+          <span class="insight-n">n=9</span>
+        </div>
+        <div class="insight-note">Zaykan castiga ataques rivales con daño de rebote (3 DMG + 1 contra-daño). Ariam lo devuelve al mazo si cae. Sinergia defensiva-ofensiva Lítica+Átlica.</div>
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-rank">#3</div>
+      <div class="insight-body">
+        <div class="insight-cards-row">
+          <span class="insight-tag atlica-litica">💧🪨 Retis, Nado Prehistorico <span class="insight-folio">KPRC-033</span></span>
+          <span class="insight-arrow">+</span>
+          <span class="insight-tag atlica">💧 Ariam, Limite <span class="insight-folio">LGRO-003</span></span>
+        </div>
+        <div class="insight-stats">
+          <span class="insight-lift">Lift <b>66.67</b></span>
+          <span class="insight-wr">WR juntas <b>67%</b></span>
+          <span class="insight-wr-apart">WR separadas <b>0%</b></span>
+          <span class="insight-n">n=9</span>
+        </div>
+        <div class="insight-note">Retis (4 DMG, Átlica-Lítica dual) es el atacante pesado que Ariam recupera. Ciclo ofensivo sostenido con energía dual.</div>
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-rank">#4</div>
+      <div class="insight-body">
+        <div class="insight-cards-row">
+          <span class="insight-tag atlica">💧 Ariam, Limite <span class="insight-folio">LGRO-003</span></span>
+          <span class="insight-arrow">+</span>
+          <span class="insight-tag feral">🐾 Yakerr, Debilidad <span class="insight-folio">LGRO-004</span></span>
+        </div>
+        <div class="insight-stats">
+          <span class="insight-lift">Lift <b>66.67</b></span>
+          <span class="insight-wr">WR juntas <b>67%</b></span>
+          <span class="insight-wr-apart">WR separadas <b>0%</b></span>
+          <span class="insight-n">n=9</span>
+        </div>
+        <div class="insight-note">Yakerr sacrifica 2 ptos. al Protector aliado tras atacar — Ariam compensa recuperando cartas. Dupla del mismo set LGRO: presión constante.</div>
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-rank">#5</div>
+      <div class="insight-body">
+        <div class="insight-cards-row">
+          <span class="insight-tag atlica">💧 Ariam, Limite <span class="insight-folio">LGRO-003</span></span>
+          <span class="insight-arrow">+</span>
+          <span class="insight-tag litica">🪨 Retis, Superficie <span class="insight-folio">TCDE-019</span></span>
+        </div>
+        <div class="insight-stats">
+          <span class="insight-lift">Lift <b>66.67</b></span>
+          <span class="insight-wr">WR juntas <b>67%</b></span>
+          <span class="insight-wr-apart">WR separadas <b>0%</b></span>
+          <span class="insight-n">n=9</span>
+        </div>
+        <div class="insight-note">Retis Superficie sondea 3 cartas del mazo para infligir daño variable. Ariam devuelve las cartas usadas al ciclo. Combo de información + daño Lítico.</div>
+      </div>
+    </div>
+    <div class="insights-footer">
+      <span>📊 KG v1.0 · 841 nodos · 3,514 edges · 1,966 analytics</span>
+    </div>
+  </div>
 </div>
 
 <!-- Mobile log bottom sheet -->
@@ -100,10 +201,10 @@
     </div>
   </div>
 </div>
-<script src="game.js?v=20260327a"></script>
-<script src="effects-ui.js?v=20260327a"></script>
-<script src="render.js?v=20260327a"></script>
-<script src="main.js?v=20260327a"></script>
+<script src="game.js?v=20260324g"></script>
+<script src="effects-ui.js?v=20260324e"></script>
+<script src="render.js?v=20260324d"></script>
+<script src="main.js?v=20260324m"></script>
 <script>
 let _viewMode = localStorage.getItem('kodem_view_mode') || 'mobile';
 function applyViewMode() {
@@ -146,6 +247,23 @@ function syncLogSheet() {
 function toggleMobileActions() {
   const actions = document.getElementById('bbActions');
   actions.style.display = actions.style.display === 'none' ? 'flex' : 'none';
+}
+function toggleInsightsSheet() {
+  const sheet = document.getElementById('insightsSheet');
+  const btn = document.getElementById('insightsBtn');
+  const btnD = document.getElementById('insightsBtnDesktop');
+  const isOpen = sheet.classList.contains('open');
+  // Close log sheet if open
+  document.getElementById('logSheet').classList.remove('open');
+  if (!isOpen) {
+    sheet.classList.add('open');
+    if (btn) { btn.style.borderColor = '#22c55e'; btn.style.color = '#22c55e'; }
+    if (btnD) { btnD.style.background = '#165a1a'; btnD.style.borderColor = '#22c55e'; }
+  } else {
+    sheet.classList.remove('open');
+    if (btn) { btn.style.borderColor = ''; btn.style.color = ''; }
+    if (btnD) { btnD.style.background = '#0f2a0f'; btnD.style.borderColor = '#166534'; }
+  }
 }
 applyViewMode();
 </script>

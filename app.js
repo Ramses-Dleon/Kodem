@@ -2221,7 +2221,16 @@ function renderDeckWorkspace() {
         return;
     }
 
-    const cards = deck.cards.map(folio => allCards.find(c => c.folio === folio)).filter(Boolean);
+    // Build full card list: mazo cards + structured slots (protector, suplente, bio, rava, equips)
+    const allFolios = [...deck.cards];
+    // Add structured slots that live outside deck.cards
+    for (const slot of [deck.protector, deck.protector_suplente, deck.bio, deck.rava]) {
+        if (slot && !allFolios.includes(slot)) allFolios.push(slot);
+    }
+    for (const eq of (deck.equips || [])) {
+        if (eq && !allFolios.includes(eq)) allFolios.push(eq);
+    }
+    const cards = allFolios.map(folio => allCards.find(c => c.folio === folio)).filter(Boolean);
 
     // Separate by type: mazo (Adendei/Rava/Espectro) vs support (Protector/Bio/Ixim/Rot)
     const mazoTypes = new Set(['Adendei', 'Rava', 'Espectro']);
@@ -2455,7 +2464,15 @@ function updateDeckValidation() {
     if (!currentDeck) return;
 
     const deck = decks[currentDeck];
-    const cards = deck.cards.map(folio => allCards.find(c => c.folio === folio)).filter(Boolean);
+    // Include structured slots (protector, suplente, bio, rava, equips) for validation counts
+    const allFolios = [...deck.cards];
+    for (const slot of [deck.protector, deck.protector_suplente, deck.bio, deck.rava]) {
+        if (slot && !allFolios.includes(slot)) allFolios.push(slot);
+    }
+    for (const eq of (deck.equips || [])) {
+        if (eq && !allFolios.includes(eq)) allFolios.push(eq);
+    }
+    const cards = allFolios.map(folio => allCards.find(c => c.folio === folio)).filter(Boolean);
 
     const counts = {
         Adendei: 0,

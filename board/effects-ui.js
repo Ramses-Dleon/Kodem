@@ -235,9 +235,11 @@ function generateCardButtons(folio, side, index, status) {
     btns += mkBtn('❤️ +1 PV', '#22c55e', `manualDamage('${side}',${index},1);closePopup()`);
   }
 
-  // ── Extinción ──
-  if (fc && fc.hp <= 0) {
-    btns += secHeader('Extinción');
+  // ── Mover ──
+  if (fc && fc.folio) {
+    btns += secHeader('Mover');
+    btns += mkBtn('📦⬆️ Tope del Mazo', '#6366f1', `sendToMazoTop('${side}',${index});closePopup()`);
+    btns += mkBtn('📦⬇️ Fondo del Mazo', '#6366f1', `sendToMazoBottom('${side}',${index});closePopup()`);
     btns += mkBtn('💀 Enviar a Extinción', '#dc2626', `sendToExtinction('${side}',${index});closePopup()`);
   }
 
@@ -275,6 +277,14 @@ function generateProtButtons(side, status) {
     if (!prot.revealed) {
       btns += mkBtn('👁️ Revelar', '#3b82f6', `revealProtector('${side}');closePopup()`);
     }
+    
+    // §6.3: Vínculo Odémico — only in Batalla, not attacked, not used
+    if (PHASE === 'batalla' && !HAS_ATTACKED && !VINCULO_USED && prot && prot.revealed && (prot.rests || 0) === 0) {
+      btns += mkBtn('🔗 Vínculo Odémico', '#8b5cf6', `closePopup();startVinculo('${side}')`, true);
+    } else if (PHASE === 'batalla' && prot && prot.revealed && (prot.rests || 0) > 0) {
+      btns += `<div style="font-size:0.6rem;color:#a78bfa;margin:4px 0">🔗 Vínculo no disponible (${prot.rests} descansos)</div>`;
+    }
+
     btns += mkBtn('💚 Curar +1', '#22c55e', `manualProtDamage('${side}',1);closePopup()`);
     btns += mkBtn('💔 -1 PV', '#ef4444', `manualProtDamage('${side}',-1);closePopup()`);
   }
@@ -284,6 +294,10 @@ function generateProtButtons(side, status) {
   if (prot && prot.rests > 0) {
     btns += mkBtn('✅ -1 Descanso', '#22c55e', `adjustProtRest('${side}',-1);closePopup()`);
   }
+
+  // Extinción — both sides (manual, for effect resolution)
+  btns += secHeader('Extinción');
+  btns += mkBtn('💀 Enviar Protector a Extinción', '#dc2626', `sendProtToExtinction('${side}');closePopup()`);
   
   return btns;
 }
@@ -291,7 +305,7 @@ function generateProtButtons(side, status) {
 // Helper
 function mkBtn(label, color, onclick, primary) {
   if (primary) {
-    return `<button class="popup-act popup-act-primary" style="background:${color};color:#fff;border-color:${color};font-size:1.1rem;padding:12px 16px;margin-bottom:8px" onclick="${onclick}">${label}</button>`;
+    return `<button class="popup-act popup-act-primary" style="border-color:${color};color:${color};background:${color}18" onclick="${onclick}">${label}</button>`;
   }
   return `<button class="popup-act" style="border-color:${color};color:${color}" onclick="${onclick}">${label}</button>`;
 }
@@ -301,7 +315,7 @@ function manualAddRest(side, index) {
   const card = getPlayer(side).field[index];
   if (!card || !card.folio) return;
   pushUndo();
-  const maxRest = 3; // §6.1: max for ZP
+  const maxRest = 2; // Adendei max 2 descansos
   card.rests = Math.min(maxRest, (card.rests || 0) + 1);
   logAction(`💤 ${cardName(card.folio)} +1 descanso (${card.rests})`);
   saveState();

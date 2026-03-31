@@ -1,1 +1,213 @@
-{}
+{
+  "turn": 20,
+  "phase": "end",
+  "activePlayer": "beta",
+  "alpha": {
+    "name": "Stone v2",
+    "deck": "Stone v2 Litica Tank",
+    "emoji": "🪨",
+    "color": "#795548",
+    "extinction": 10,
+    "extinctionCards": [
+      {
+        "folio": "TCOO-038"
+      },
+      {
+        "folio": "TCDE-023"
+      },
+      {
+        "folio": "DOOC-003"
+      },
+      {
+        "folio": "RAMI-008"
+      },
+      {
+        "folio": "LGRO-071"
+      },
+      {
+        "folio": "RAMI-010"
+      },
+      {
+        "folio": "IDRMA-008"
+      },
+      {
+        "folio": "TCOO-022"
+      },
+      {
+        "folio": "LGRO-002"
+      },
+      {
+        "folio": "IDRMP-012"
+      }
+    ],
+    "mazo": 4,
+    "mazoCards": [
+      "TCDE-004",
+      "TCDE-015",
+      "LGRO-001",
+      "TCOO-044"
+    ],
+    "protector": {
+      "folio": "LGRO-012R",
+      "hp": 12,
+      "rests": 3,
+      "revealed": true
+    },
+    "bio": {
+      "folio": "TCDE-021",
+      "revealed": true
+    },
+    "field": [
+      {
+        "folio": "LGRO-033",
+        "hp": 6,
+        "rests": 0,
+        "revealed": true,
+        "equips": []
+      },
+      {
+        "folio": "RAMI-015",
+        "hp": 6,
+        "rests": 0,
+        "revealed": true,
+        "equips": []
+      },
+      {
+        "folio": "TCOO-047",
+        "hp": 6,
+        "rests": 0,
+        "revealed": true,
+        "equips": []
+      }
+    ],
+    "equipZone": [
+      {
+        "folio": "LGRO-024"
+      },
+      {
+        "folio": "LGRO-038"
+      },
+      {
+        "folio": "IDRMG-019"
+      },
+      {
+        "folio": "FYTE-020"
+      },
+      {
+        "folio": "FYTE-055"
+      }
+    ]
+  },
+  "beta": {
+    "name": "AriamBurn v2",
+    "deck": "AriamBurn v2",
+    "emoji": "🔥",
+    "color": "#F44336",
+    "extinction": 5,
+    "extinctionCards": [
+      {
+        "folio": "LGRO-006"
+      },
+      {
+        "folio": "LGRO-006R"
+      },
+      {
+        "folio": "TCOO-021"
+      },
+      {
+        "folio": "LGRO-061"
+      },
+      {
+        "folio": "LGRO-074"
+      }
+    ],
+    "mazo": 4,
+    "mazoCards": [
+      "IDRMP-016",
+      "LGRO-040",
+      "LGRO-030",
+      "LGRO-036"
+    ],
+    "protector": {
+      "folio": "FYTE-001",
+      "hp": 12,
+      "rests": 3,
+      "revealed": true
+    },
+    "bio": {
+      "folio": "TCOO-016",
+      "revealed": true
+    },
+    "field": [
+      {
+        "folio": "TCOO-013",
+        "hp": 3,
+        "rests": 0,
+        "revealed": true,
+        "equips": []
+      },
+      {
+        "folio": "TCOO-014",
+        "hp": 6,
+        "rests": 0,
+        "revealed": true,
+        "equips": []
+      }
+    ],
+    "equipZone": [
+      {
+        "folio": "FYTE-003"
+      },
+      {
+        "folio": "LGRO-037"
+      },
+      {
+        "folio": "LGRO-023"
+      },
+      {
+        "folio": "FYTE-009"
+      },
+      {
+        "folio": "TCOO-036"
+      }
+    ]
+  },
+  "gameLog": [
+    {
+      "turn": 0,
+      "msg": "Showcase 14: Stone v2 vs AriamBurn v2"
+    },
+    {
+      "turn": 2,
+      "msg": "Caldera burns all. Voracidad saves Maquemura. Zoadon absorbs 3 desvios"
+    },
+    {
+      "turn": 4,
+      "msg": "TARUS CLEANUP: remove all marks T4. All burns/poisons cleared!"
+    },
+    {
+      "turn": 7,
+      "msg": "Ozom killed, returns abismado (1st time)"
+    },
+    {
+      "turn": 10,
+      "msg": "Kitse MASS BURN again. No Tarus to clean = doom"
+    },
+    {
+      "turn": 12,
+      "msg": "Greah Mazo Petreo enters but needs 2 Rot ext. ICARO sacrificed for 2nd Rot"
+    },
+    {
+      "turn": 15,
+      "msg": "Greah 4dmg unnegable kills Ozom (returns again). Greah killed by JG"
+    },
+    {
+      "turn": 17,
+      "msg": "Cisma chips JG Protector twice (12->10PV)"
+    },
+    {
+      "turn": 20,
+      "msg": "ARIAMBURN WINS T20. Adasi Acecho death AoE kills Calisto. Stone 10/10 vs 5/10"
+    }
+  ]
+}

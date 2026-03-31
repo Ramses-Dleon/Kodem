@@ -282,13 +282,19 @@ function canEquip(side, eqIndex) {
   
   // §11: Max 1 Ixim + 1 Rot
   if (!target.equips) target.equips = [];
-  const existing = target.equips.map(e => normalizeEquipType(getCardData(e.folio).type || e.type));
-  if (eqType === 'Ixim' && existing.filter(t => t === 'Ixim').length >= 1) {
-    warn('§11: Máximo 1 Ixim revelado por carta');
+  const existing = target.equips.map(e => ({
+    type: normalizeEquipType(getCardData(e.folio).type || e.type),
+    revealed: e.revealed !== false // default true for legacy
+  }));
+  const sameTypeRevealed = existing.filter(e => e.type === eqType && e.revealed);
+  const sameTypeHidden = existing.filter(e => e.type === eqType && !e.revealed);
+  // §11: Max 1 Ixim + 1 Rot revealed, OR 2 same type hidden
+  if (sameTypeRevealed.length >= 1) {
+    warn(`§11: Máximo 1 ${eqType} revelado por carta`);
     return false;
   }
-  if (eqType === 'Rot' && existing.filter(t => t === 'Rot').length >= 1) {
-    warn('§11: Máximo 1 Rot revelado por carta');
+  if (sameTypeHidden.length >= 2) {
+    warn(`§11: Máximo 2 ${eqType} ocultos por carta`);
     return false;
   }
   
@@ -526,6 +532,21 @@ function sendToExtinction(side, index) {
   renderInteractive();
 }
 
+function sendBioToExtinction(side) {
+  const p = getPlayer(side);
+  const bio = p.bio;
+  if (!bio || !bio.folio) { warn('No hay Bio'); return; }
+  if (!confirm(`¿Enviar Bio ${bio.name || bio.folio} a Extinción?`)) return;
+  pushUndo();
+  p.extinctionCards.push({ folio: bio.folio, name: bio.name || cardName(bio.folio) });
+  p.extinction++;
+  logAction(`💀 Bio ${bio.name || cardName(bio.folio)} → Extinción (${p.extinction}/10)`);
+  bio.folio = null; bio.name = null; bio.revealed = false; bio.hp = 0;
+  if (checkVictory(side)) return;
+  saveState();
+  renderInteractive();
+}
+
 function revealBio(side) {
   const p = getPlayer(side);
   if (!p.bio || !p.bio.folio || p.bio.revealed) return;
@@ -640,7 +661,7 @@ function startEquip(side) {
   renderInteractive();
 }
 
-function selectEquipCard(eqIndex) {
+function selectEquipCard(eqIndex, forceRevealed) {
   if (ACTION_MODE !== 'equip-select') return;
   if (!canEquip(TURN_PLAYER, eqIndex)) return;
   
@@ -650,12 +671,36 @@ function selectEquipCard(eqIndex) {
   const eqData = getCardData(eq.folio);
   const eqType = normalizeEquipType(eqData.type || eq.type);
   
+  // §5.4: equip revealed or hidden — ask if not forced
+  let revealed;
+  if (forceRevealed !== undefined) {
+    revealed = forceRevealed;
+  } else {
+    revealed = confirm(`¿Equipar ${eq.name || eqData.name} REVELADO?\n\n• OK = Revelado (efecto activo)\n• Cancelar = Oculto (sin efecto, permite 2 del mismo tipo)`);
+  }
+  
+  // Re-validate for hidden: can have 2 same type hidden
   if (!target.equips) target.equips = [];
-  target.equips.push({ folio: eq.folio, name: eq.name || eqData.name, type: eqType });
+  if (!revealed) {
+    const sameHidden = target.equips.filter(e => normalizeEquipType(getCardData(e.folio).type || e.type) === eqType && e.revealed === false);
+    if (sameHidden.length >= 2) {
+      warn(`§11: Máximo 2 ${eqType} ocultos por carta`);
+      return;
+    }
+    // Can't mix revealed + hidden same type
+    const sameRevealed = target.equips.filter(e => normalizeEquipType(getCardData(e.folio).type || e.type) === eqType && e.revealed !== false);
+    if (sameRevealed.length > 0) {
+      warn(`§11: No puedes equipar ${eqType} oculto si ya tiene uno revelado`);
+      return;
+    }
+  }
+  
+  target.equips.push({ folio: eq.folio, name: eq.name || eqData.name, type: eqType, revealed: revealed });
   p.equipZone.splice(eqIndex, 1);
   HAS_EQUIPPED = true;
   
-  logAction(`🔧 ${eq.name || eqData.name} (${eqType}) equipado a ${cardName(target.folio)}`);
+  const estado = revealed ? 'revelado' : 'oculto';
+  logAction(`🔧 ${eq.name || eqData.name} (${eqType}) equipado ${estado} a ${cardName(target.folio)}`);
   clearSelection();
   saveState();
   renderInteractive();
@@ -679,11 +724,15 @@ function manualEquipTarget(side, fieldIndex) {
   const eqData = getCardData(eq.folio);
   const eqType = normalizeEquipType(eqData.type || eq.type);
 
+  // §5.4: ask revealed or hidden
+  const revealed = confirm(`¿Equipar ${eq.name || eqData.name} REVELADO?\n\n• OK = Revelado (efecto activo)\n• Cancelar = Oculto (sin efecto)`);
+
   if (!card.equips) card.equips = [];
-  card.equips.push({ folio: eq.folio, name: eq.name || eqData.name, type: eqType });
+  card.equips.push({ folio: eq.folio, name: eq.name || eqData.name, type: eqType, revealed: revealed });
   p.equipZone.splice(MANUAL_EQUIP.eqIndex, 1);
 
-  logAction(`🔧 ${eq.name || eqData.name} (${eqType}) equipado manualmente a ${cardName(card.folio)}`);
+  const estado = revealed ? 'revelado' : 'oculto';
+  logAction(`🔧 ${eq.name || eqData.name} (${eqType}) equipado ${estado} manualmente a ${cardName(card.folio)}`);
   MANUAL_EQUIP = null;
   clearSelection();
   saveState();
@@ -721,7 +770,11 @@ function resolveVinculo(side, index) {
   VINCULO_LINKED_INDEX = index; // Track which Adendei was linked
   HAS_ATTACKED = true; // §6.3: Can't attack after vinculo
   
+  // §6.3: Protector recibe 3 descansos al usar Vínculo
+  prot.rests = 3;
+  
   logAction(`🔗 Vínculo Odémico: ${prot.name} ↔ ${cardName(card.folio)} — efecto del Protector aplicado`);
+  logAction(`🛡️ Protector recibe 3 descansos`);
   logAction(`📢 Aplicar efecto del Protector manualmente`);
   
   clearSelection();
@@ -956,14 +1009,129 @@ function manualProtDamage(side, amount) {
   renderInteractive();
 }
 
+function sendProtToExtinction(side) {
+  const p = getPlayer(side);
+  const prot = p.protector;
+  if (!prot || !prot.folio) { warn('No hay Protector'); return; }
+  if (!confirm(`¿Enviar Protector ${prot.name || prot.folio} a Extinción?\n\n§2.2: Protector muere → va a Extinción + 3 cartas del tope del Mazo a Extinción. Suplente entra con 12 PV.`)) return;
+  pushUndo();
+
+  // Protector → Extinción
+  p.extinctionCards.push({ folio: prot.folio, name: prot.name || cardName(prot.folio) });
+  p.extinction++;
+  logAction(`💀 Protector ${prot.name || cardName(prot.folio)} → Extinción`);
+
+  // §2.2: 3 cards from top of Mazo → Extinción
+  if (p.mazoCards && p.mazoCards.length > 0) {
+    const toExtinct = Math.min(3, p.mazoCards.length);
+    for (let i = 0; i < toExtinct; i++) {
+      const f = p.mazoCards.shift();
+      const cd = CARDS[f] || {};
+      p.extinctionCards.push({ folio: f, name: cd.name || f });
+      p.extinction++;
+      logAction(`💀 ${cd.name || f} (Mazo) → Extinción (penalización Protector)`);
+    }
+    p.mazo = p.mazoCards.length;
+  }
+
+  // Suplente entra con 12 PV y mismos descansos
+  const prevRests = prot.rests || 0;
+  if (p.mazoCards && p.mazoCards.length > 0) {
+    const suplente = p.mazoCards.shift();
+    const sd = CARDS[suplente] || {};
+    prot.folio = suplente;
+    prot.name = sd.name || suplente;
+    prot.hp = 12;
+    prot.rests = prevRests;
+    prot.revealed = false;
+    p.mazo = p.mazoCards.length;
+    logAction(`🛡️ Suplente: ${sd.name || suplente} entra con 12 PV y ${prevRests}R`);
+  } else {
+    // No suplente available
+    prot.folio = null;
+    prot.name = null;
+    prot.hp = 0;
+    logAction(`⚠️ No hay suplente disponible en el Mazo`);
+  }
+
+  if (checkVictory(side)) return;
+  saveState();
+  renderInteractive();
+}
+
 function adjustProtRest(side, delta) {
   pushUndo();
   const prot = getPlayer(side).protector;
   if (!prot) return;
   const prev = prot.rests;
-  prot.rests = Math.max(0, prot.rests + delta);
+  prot.rests = Math.min(3, Math.max(0, prot.rests + delta)); // Protector max 3 descansos
   logAction(`🛡️ Protector ${prot.name} ${delta > 0 ? '+' : ''}${delta}R (${prev}→${prot.rests}R)`);
   if (prot.rests === 0 && prev > 0) logAction(`✅ Protector disponible`);
+  saveState();
+  renderInteractive();
+}
+
+function sendToMazoTop(side, index) {
+  const p = getPlayer(side);
+  const card = p.field[index];
+  if (!card || !card.folio) return;
+  if (!confirm(`¿Regresar ${cardName(card.folio)} al TOPE del Mazo?`)) return;
+  pushUndo();
+  const folio = card.folio;
+  const name = card.name || cardName(folio);
+  // Equips go to equip zone
+  if (card.equips && card.equips.length > 0) {
+    card.equips.forEach(eq => {
+      p.equipZone.push({ folio: eq.folio, name: eq.name, type: eq.type, revealed: eq.revealed });
+      logAction(`↩️ ${eq.name} → Zona de Equipo`);
+    });
+  }
+  if (!p.mazoCards) p.mazoCards = [];
+  p.mazoCards.unshift(folio);
+  p.mazo = p.mazoCards.length;
+  card.folio = null; card.name = null; card.revealed = false;
+  card.hp = 0; card.rests = 0; card.equips = [];
+  card.burned = false; card.poisoned = false; card.abyssed = false;
+  logAction(`📦 ${name} → Tope del Mazo`);
+  // Mark slot for replacement
+  if (side === TURN_PLAYER) {
+    startReplacement(side, index);
+  } else {
+    card.needsReplacement = true;
+    logAction(`⏳ ${p.name} elegirá reemplazo al inicio de su turno`);
+  }
+  saveState();
+  renderInteractive();
+}
+
+function sendToMazoBottom(side, index) {
+  const p = getPlayer(side);
+  const card = p.field[index];
+  if (!card || !card.folio) return;
+  if (!confirm(`¿Regresar ${cardName(card.folio)} al FONDO del Mazo?`)) return;
+  pushUndo();
+  const folio = card.folio;
+  const name = card.name || cardName(folio);
+  // Equips go to equip zone
+  if (card.equips && card.equips.length > 0) {
+    card.equips.forEach(eq => {
+      p.equipZone.push({ folio: eq.folio, name: eq.name, type: eq.type, revealed: eq.revealed });
+      logAction(`↩️ ${eq.name} → Zona de Equipo`);
+    });
+  }
+  if (!p.mazoCards) p.mazoCards = [];
+  p.mazoCards.push(folio);
+  p.mazo = p.mazoCards.length;
+  card.folio = null; card.name = null; card.revealed = false;
+  card.hp = 0; card.rests = 0; card.equips = [];
+  card.burned = false; card.poisoned = false; card.abyssed = false;
+  logAction(`📦 ${name} → Fondo del Mazo`);
+  if (side === TURN_PLAYER) {
+    startReplacement(side, index);
+  } else {
+    card.needsReplacement = true;
+    logAction(`⏳ ${p.name} elegirá reemplazo al inicio de su turno`);
+  }
   saveState();
   renderInteractive();
 }

@@ -3,7 +3,7 @@
  */
 let CARDS = {};
 let DECKS = {};
-const IMG_BASE = '../images/';
+const IMG_BASE = '/images/';
 const SYNC_API = '';  // disabled — using Vercel static sync
 let LAST_SYNC = null;
 
@@ -53,28 +53,27 @@ async function init() {
   } else {
     DECKS = {};
   }
-  // Always populate action buttons
-  const bb = document.getElementById('bbActions');
-  if (bb) {
-    bb.innerHTML = `<button class="action-btn" onclick="location.href='../'" style="border-color:#6b7280;color:#6b7280">🏠 Inicio</button>` +
-      `<button class="action-btn sync" onclick="syncPush()">📋 Copiar</button>` +
-      `<button class="action-btn sync" onclick="syncPull()">📎 Pegar</button>` +
-      `<button class="action-btn" onclick="toggleViewMode()" style="border-color:#6b7280;color:#6b7280">📱/🖥️</button>` +
-      `<button class="action-btn sync danger" onclick="resetGame()">🆕 Nueva</button>` +
-      `<a href="https://ko-fi.com/hule88" target="_blank" rel="noopener" class="action-btn" style="text-decoration:none;border-color:#f59e0b;color:#f59e0b;text-align:center">☕ Apóyanos</a>`;
-  }
   if (loadState()) {
+    // Check if server has a newer turn — auto-sync if so
+    try {
+      const apiRes = await fetch('/api/board-pull?t=' + Date.now()).catch(() => null);
+      if (apiRes && apiRes.ok) {
+        const serverData = await apiRes.json();
+        if (serverData && !serverData.error && !serverData.fallback && serverData.t > GAME.turn) {
+          console.log(`Server has turn ${serverData.t}, local has ${GAME.turn} — auto-syncing`);
+          localStorage.removeItem('kodem_board_state');
+          const imported = serverData.v ? compactImport(serverData) : serverData;
+          initGame(imported);
+          logAction(`📥 Auto-sync: servidor tenía turno ${serverData.t} (local: ${GAME.turn})`);
+          return;
+        }
+      }
+    } catch(e) { console.log('Auto-sync check failed:', e); }
     renderInteractive();
     return;
   }
-  // No saved game — try game-state.json, else show new game overlay
-  try {
-    const state = await fetch('game-state.json?t=' + Date.now()).then(r => r.json());
-    if (state && state.alpha && state.beta) { initGame(state); return; }
-  } catch(e) {}
-  // Populate deck selects and show new game overlay
-  populateDeckSelects();
-  document.getElementById('newGameOverlay').classList.add('active');
+  const state = await fetch('game-state.json?t=' + Date.now()).then(r => r.json());
+  initGame(state);
 }
 
 function renderInteractive() {
@@ -195,12 +194,13 @@ function renderMobileActions() {
   const bb = document.getElementById('bbActions');
   if (!bb) return;
   let html = '';
-  html += `<button class="action-btn" onclick="location.href='../'" style="border-color:#6b7280;color:#6b7280">🏠 Inicio</button>`;
+  html += `<button class="action-btn sync" onclick="syncFromServer()">☁️ Cargar</button>`;
+  html += `<button class="action-btn sync" onclick="pushToServer()">🚀 Subir</button>`;
   html += `<button class="action-btn sync" onclick="syncPush()">📋 Copiar</button>`;
   html += `<button class="action-btn sync" onclick="syncPull()">📎 Pegar</button>`;
+  html += `<button class="action-btn" onclick="location.href='/'" style="border-color:#6b7280;color:#6b7280">🏠 Inicio</button>`;
   html += `<button class="action-btn" onclick="toggleViewMode()" style="border-color:#6b7280;color:#6b7280">📱/🖥️</button>`;
   html += `<button class="action-btn sync danger" onclick="resetGame()">🆕 Nueva</button>`;
-  html += `<a href="https://ko-fi.com/hule88" target="_blank" rel="noopener" class="action-btn" style="text-decoration:none;border-color:#f59e0b;color:#f59e0b;text-align:center">☕ Apóyanos</a>`;
   bb.innerHTML = html;
 }
 
@@ -284,6 +284,8 @@ function renderActionBar() {
 
   // Sync + view toggle: render into logTools (right panel bottom) in landscape, or into actionBar in portrait
   const syncHtml =
+    `<button class="action-btn sync server" onclick="syncFromServer()" title="Cargar del servidor">☁️</button>` +
+    `<button class="action-btn sync push" onclick="pushToServer()" title="Subir al servidor">🚀</button>` +
     `<button class="action-btn sync clip" onclick="syncPush()" title="Copiar estado">📋</button>` +
     `<button class="action-btn sync clip" onclick="syncPull()" title="Pegar estado">📎</button>` +
     `<button class="action-btn sync danger" onclick="resetGame()" title="Nueva partida">🆕</button>`;
@@ -395,9 +397,16 @@ function renderPlayerSide(side, position) {
       card.equips.forEach((eq, eqi) => {
         const et = normalizeEquipType(eq.type);
         const cls = et === 'Rot' ? 'rot' : 'ixim';
-        html += `<div class="equip-peek ${cls}" onclick="showEquippedCard('${eq.folio}','${side}',${i},${eqi});event.stopPropagation()">`;
-        html += `<img src="${IMG_BASE}${eq.folio}.webp" alt="${eq.name}">`;
-        html += `<div class="equip-peek-label">${et==='Rot'?'🪨':'🌽'} ${eq.name}</div></div>`;
+        const isHidden = eq.revealed === false;
+        const hiddenCls = isHidden ? ' equip-hidden' : '';
+        html += `<div class="equip-peek ${cls}${hiddenCls}" onclick="showEquippedCard('${eq.folio}','${side}',${i},${eqi});event.stopPropagation()">`;
+        if (isHidden) {
+          html += `<div class="equip-hidden-back">${et==='Rot'?'🪨':'🌽'}</div>`;
+          html += `<div class="equip-peek-label" style="opacity:0.6">${et==='Rot'?'🪨':'🌽'} Oculto</div></div>`;
+        } else {
+          html += `<img src="${IMG_BASE}${eq.folio}.webp" alt="${eq.name}">`;
+          html += `<div class="equip-peek-label">${et==='Rot'?'🪨':'🌽'} ${eq.name}</div></div>`;
+        }
       });
     }
 
@@ -528,7 +537,7 @@ function buildAuxZones(p, side) {
   html += `<div id="bio-${side}" style="display:none">`;
   if (p.bio) {
     html += '<div class="bio-wrapper">';
-    html += `<div class="equip-zone-card bio-card" onclick="showCard('${p.bio.folio}','equip')">`;
+    html += `<div class="equip-zone-card bio-card" onclick="showBioCard('${side}')">`;
     if (p.bio.revealed) {
       html += `<img src="${IMG_BASE}${p.bio.folio}.webp" alt="${p.bio.name}">`;
     } else {
@@ -627,24 +636,17 @@ function parseDeck(deck) {
 }
 
 /* ─── New Game ─── */
-function populateDeckSelects() {
-  // Show all decks that have at least 1 card (relaxed filter for user-built decks)
-  const keys = Object.keys(DECKS).filter(k => {
-    const d = DECKS[k];
-    const cards = d.cards || d.mazo || [];
-    return cards.length > 0;
-  });
-  const emptyMsg = keys.length === 0 ? '<option value="">— Crea un mazo en el Constructor —</option>' : '';
-  for (const selId of ['ngAlphaDeck', 'ngBetaDeck']) {
-    const sel = document.getElementById(selId);
-    if (!sel) continue;
-    sel.innerHTML = emptyMsg + keys.map(k => `<option value="${k}">${DECKS[k].name}</option>`).join('');
-  }
-}
-
 function resetGame() {
   if (!confirm('¿Iniciar nueva partida? Se perderá el progreso actual.')) return;
-  populateDeckSelects();
+  // Populate deck selects
+  const keys = Object.keys(DECKS).filter(k => {
+    const d = parseDeck(DECKS[k]);
+    return d.protector && d.mazo && d.mazo.length > 0;
+  });
+  for (const selId of ['ngAlphaDeck', 'ngBetaDeck']) {
+    const sel = document.getElementById(selId);
+    sel.innerHTML = keys.map(k => `<option value="${k}">${DECKS[k].name}</option>`).join('');
+  }
   document.getElementById('newGameOverlay').classList.add('active');
 }
 
@@ -738,7 +740,68 @@ async function syncPull() {
   renderInteractive();
 }
 
-// API sync removed (public version — clipboard only)
+async function syncFromServer() {
+  // Pull from board API first, fall back to static file
+  try {
+    let state;
+    let source = '';
+    const apiRes = await fetch('/api/board-pull?t=' + Date.now()).catch(err => {
+      console.error('Board pull fetch failed:', err);
+      return null;
+    });
+    if (apiRes && apiRes.ok) {
+      const data = await apiRes.json();
+      console.log('Board pull response:', JSON.stringify(data).slice(0, 200));
+      if (data && !data.error && !data.fallback) {
+        try {
+          state = data.v ? compactImport(data) : data;
+          source = 'API (turno ' + (state.turn || '?') + ')';
+        } catch(importErr) {
+          console.error('compactImport failed:', importErr);
+          alert('Error al importar estado: ' + importErr.message);
+          state = null;
+        }
+      } else {
+        console.log('Board pull returned fallback/error:', data.error || data.fallback);
+      }
+    }
+    if (!state) {
+      // Fallback to static game-state.json
+      const res = await fetch('game-state.json?t=' + Date.now());
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      state = await res.json();
+      source = 'archivo (turno ' + (state.turn || '?') + ')';
+    }
+    if (!state.alpha || !state.beta) { alert('Estado inválido — no tiene alpha/beta'); return; }
+    // Clear saved local state so server state takes over
+    localStorage.removeItem('kodem_board_state');
+    initGame(state);
+    logAction('📥 Estado cargado: ' + source);
+    alert('✅ Estado cargado: ' + source);
+  } catch(e) {
+    console.error('syncFromServer error:', e);
+    alert('❌ Error: ' + e.message);
+  }
+  renderInteractive();
+}
+
+async function pushToServer() {
+  try {
+    const compact = compactExport();
+    const res = await fetch('/api/board-push', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(compact)
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Push failed');
+    logAction('📤 Estado subido al servidor (turno ' + (data.turn || '?') + ')');
+    alert('✅ Estado subido (turno ' + (data.turn || '?') + ')');
+  } catch(e) {
+    alert('❌ Error al subir: ' + e.message);
+    logAction('❌ Push falló: ' + e.message);
+  }
+}
 
 function exportState() {
   return {

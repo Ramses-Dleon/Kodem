@@ -1,6 +1,6 @@
 // Códice Kódem — Service Worker
 // Cache version: bump this to force cache refresh on deploy
-const CACHE_NAME = 'kodem-v40';
+const CACHE_NAME = 'kodem-v42';
 
 // Static assets to pre-cache on install
 const PRECACHE_ASSETS = [
@@ -16,6 +16,7 @@ const PRECACHE_ASSETS = [
 // JSON data files — network-first (personal/dynamic data)
 const NETWORK_FIRST_PATTERNS = [
   /\/cards\.json(\?.*)?$/,
+  /\/decks\.json(\?.*)?$/,
   /\/collection\.json(\?.*)?$/,
   /\/wantlist\.json(\?.*)?$/,
   /\/decks\.json(\?.*)?$/,
