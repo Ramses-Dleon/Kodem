@@ -2166,7 +2166,7 @@ function renderDeckList() {
 
     container.innerHTML = deckEntries.map(([id, deck], idx) => `
         <div class="deck-item ${currentDeck === id ? 'active' : ''}" data-deck-id="${id}">
-            <span class="deck-item-name">${deck.name} (${deck.cards.length})</span>
+            <span class="deck-item-name">${deck.name} (${deck.cards.length})${deck.stats ? ` · ${deck.stats.wr}% WR` : ''}</span>
             <span class="deck-item-arrows">
                 <button class="deck-order-btn" data-dir="up" data-id="${id}" title="Subir" ${idx === 0 ? 'disabled' : ''}>▲</button>
                 <button class="deck-order-btn" data-dir="down" data-id="${id}" title="Bajar" ${idx === deckEntries.length - 1 ? 'disabled' : ''}>▼</button>
