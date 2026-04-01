@@ -203,7 +203,7 @@ function renderMobileActions() {
   let html = '';
   html += `<button class="action-btn sync" onclick="syncPush()">📋 Copiar</button>`;
   html += `<button class="action-btn sync" onclick="syncPull()">📎 Pegar</button>`;
-  html += `<button class="action-btn" onclick="location.href='/'" style="border-color:#6b7280;color:#6b7280">🏠 Inicio</button>`;
+  html += `<button class="action-btn" onclick="location.href='../'" style="border-color:#6b7280;color:#6b7280">🏠 Inicio</button>`;
   html += `<button class="action-btn" onclick="toggleViewMode()" style="border-color:#6b7280;color:#6b7280">📱/🖥️</button>`;
   html += `<button class="action-btn sync danger" onclick="resetGame()">🆕 Nueva</button>`;
   bb.innerHTML = html;
