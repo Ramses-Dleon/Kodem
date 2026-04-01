@@ -2167,7 +2167,8 @@ function importDeckSyncCode() {
             saveDecks();
             renderDeckBuilder();
             modal.remove();
-            showToast(`Mazo "${name}" importado (${cards.length} cartas) ✅`, 'success');
+            const totalImported = cards.length + (newDeck.protector ? 1 : 0) + (newDeck.protector_suplente ? 1 : 0) + (newDeck.bio ? 1 : 0) + (newDeck.rava ? 1 : 0) + (newDeck.equips ? newDeck.equips.length : 0);
+            showToast(`Mazo "${name}" importado (${totalImported} cartas) ✅`, 'success');
         } catch (err) { showToast('Error decodificando: ' + err.message, 'error'); }
     });
 }
