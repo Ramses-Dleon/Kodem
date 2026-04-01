@@ -2103,11 +2103,19 @@ function importDeckJSON() {
 function generateDeckSyncCode() {
     if (!currentDeck) { showToast('Selecciona un mazo primero', 'error'); return; }
     const deck = decks[currentDeck];
-    const payload = JSON.stringify({ n: deck.name, c: deck.cards });
+    const data = { n: deck.name, c: deck.cards };
+    // Include support slots if present
+    if (deck.protector) data.p = deck.protector;
+    if (deck.protector_suplente) data.ps = deck.protector_suplente;
+    if (deck.bio) data.b = deck.bio;
+    if (deck.rava) data.r = deck.rava;
+    if (deck.equips && deck.equips.length) data.e = deck.equips;
+    const payload = JSON.stringify(data);
+    const totalCards = deck.cards.length + (data.p ? 1 : 0) + (data.ps ? 1 : 0) + (data.b ? 1 : 0) + (data.r ? 1 : 0) + (data.e ? data.e.length : 0);
     const code = 'KDECK-' + btoa(unescape(encodeURIComponent(payload)));
     if (navigator.clipboard) {
         navigator.clipboard.writeText(code).then(() => {
-            showToast(`Código del mazo copiado (${deck.cards.length} cartas) 📋`, 'success');
+            showToast(`Código del mazo copiado (${totalCards} cartas) 📋`, 'success');
         }).catch(() => promptSyncCode(code));
     } else { promptSyncCode(code); }
 }
@@ -2144,7 +2152,17 @@ function importDeckSyncCode() {
             }
             if (cards.length === 0) { showToast('Código vacío — no tiene cartas', 'error'); return; }
             const id = Date.now().toString();
-            decks[id] = { name, cards };
+            const newDeck = { name, cards };
+            // Import support slots if present (KDECK v2 format)
+            try {
+                const data = JSON.parse(decodeURIComponent(escape(atob(code.substring(6)))));
+                if (data.p) newDeck.protector = data.p;
+                if (data.ps) newDeck.protector_suplente = data.ps;
+                if (data.b) newDeck.bio = data.b;
+                if (data.r) newDeck.rava = data.r;
+                if (data.e && Array.isArray(data.e)) newDeck.equips = data.e;
+            } catch (_) { /* old format, no support slots */ }
+            decks[id] = newDeck;
             currentDeck = id;
             saveDecks();
             renderDeckBuilder();
