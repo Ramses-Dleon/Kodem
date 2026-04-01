@@ -2943,6 +2943,24 @@ function renderRarityDonut() {
     legend.innerHTML = legendHtml;
 }
 
+/** Sort missing card folios: by rarity then folio, except KPRC (folio only) */
+function sortMissingFolios(folios, setCode) {
+    const RARITY_ORDER = {
+        'Comun': 0, 'Rara': 1, 'Super Rara': 2, 'Ultra Rara': 3,
+        'Kosmica/Titanica': 4, 'Full Art': 5, 'Secreta': 6, 'Evento': 7
+    };
+    return [...folios].sort((a, b) => {
+        if (setCode !== 'KPRC') {
+            const cardA = allCards.find(c => c.folio === a);
+            const cardB = allCards.find(c => c.folio === b);
+            const rA = RARITY_ORDER[cardA?.rarity] ?? 99;
+            const rB = RARITY_ORDER[cardB?.rarity] ?? 99;
+            if (rA !== rB) return rA - rB;
+        }
+        return a.localeCompare(b, 'es');
+    });
+}
+
 function renderMissingCardsAccordion(setStats) {
     const container = document.getElementById('missing-cards-accordion');
     if (!container) return;
@@ -2959,9 +2977,8 @@ function renderMissingCardsAccordion(setStats) {
 
     const all = [...withMissing, ...complete];
 
-    // "ALL missing" combined section at top
-    const allMissing = withMissing.flatMap(s => s.missing)
-        .sort((a, b) => a.localeCompare(b, 'es'));
+    // "ALL missing" combined section at top — sorted by rarity then folio
+    const allMissing = sortMissingFolios(withMissing.flatMap(s => s.missing), 'ALL');
     const totalMissingCount = allMissing.length;
     let html = '';
     if (totalMissingCount > 0) {
@@ -3005,7 +3022,7 @@ function renderMissingCardsAccordion(setStats) {
 
         const chipsHtml = missingCount === 0
             ? '<span class="missing-empty">¡Tienes todas las cartas de este set! 🎉</span>'
-            : [...s.missing].sort((a, b) => a.localeCompare(b, 'es')).map(f => {
+            : sortMissingFolios(s.missing, s.code).map(f => {
                 const card = allCards.find(c => c.folio === f);
                 const name = card ? card.name : f;
                 const energy = card ? (card.energy || '').toLowerCase() : '';
