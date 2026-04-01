@@ -2733,7 +2733,23 @@ function removeFromDeck(folio) {
     if (!currentDeck) return;
 
     const deck = decks[currentDeck];
-    deck.cards = deck.cards.filter(f => f !== folio);
+
+    // Check if folio is in the main cards array (Adendei)
+    if (deck.cards.includes(folio)) {
+        deck.cards = deck.cards.filter(f => f !== folio);
+    }
+    // Check support slots
+    else if (deck.protector === folio) {
+        delete deck.protector;
+    } else if (deck.protector_suplente === folio) {
+        delete deck.protector_suplente;
+    } else if (deck.bio === folio) {
+        delete deck.bio;
+    } else if (deck.rava === folio) {
+        delete deck.rava;
+    } else if (deck.equips && deck.equips.includes(folio)) {
+        deck.equips = deck.equips.filter(f => f !== folio);
+    }
 
     renderDeckWorkspace();
     renderDeckPool();

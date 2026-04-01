@@ -1523,11 +1523,15 @@ select:focus {
 /* Remove-from-deck button min touch target on mobile */
 @media (max-width: 768px) {
     .remove-from-deck {
-        min-width: 44px !important;
-        min-height: 44px !important;
-        width: 44px !important;
-        height: 44px !important;
-        font-size: 1.2rem !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 1rem !important;
+    }
+    /* Prevent support-grid cards from clipping the remove button */
+    .support-grid .card-item {
+        overflow: visible;
     }
 }
 
