@@ -1,6 +1,6 @@
 // Códice Kódem — Service Worker
 // Cache version: bump this to force cache refresh on deploy
-const CACHE_NAME = 'kodem-v45';
+const CACHE_NAME = 'kodem-v46';
 
 // Static assets to pre-cache on install
 // Use relative paths for GitHub Pages compatibility
