@@ -1,0 +1,1100 @@
+{
+  "E-Feral": {
+    "name": "🐾 Feral Core v8",
+    "cards": [
+      "FYTE-063",
+      "IDRMA-022",
+      "IDRMA-010",
+      "IDRMP-022",
+      "DOOC-014",
+      "FYTE-061",
+      "LGRO-043",
+      "DOOC-015",
+      "FYTE-058",
+      "TCOO-028",
+      "RMFT-002",
+      "FYTE-066",
+      "TCOO-024",
+      "TCOO-081",
+      "FYTE-065",
+      "FYTE-060",
+      "FYTE-041",
+      "IDRMA-018"
+    ],
+    "version": "v8",
+    "equips": [
+      "DOOC-006",
+      "TCOO-016",
+      "LGRO-035",
+      "IDRMG-008",
+      "LGRO-036",
+      "LGRO-038",
+      "TCOO-069",
+      "LGRO-025",
+      "LGRO-014",
+      "FYTE-014"
+    ],
+    "bio": "DOOC-017",
+    "protector": "FYTE-016",
+    "protector_suplente": "FYTE-001",
+    "stats": {
+      "wr": 95,
+      "record": "58-3-19",
+      "rank": 1,
+      "mvp": "Ketzz, Ponzoña Ancestral",
+      "games": 80,
+      "method": "440-game round-robin (4 seeds × home/away)",
+      "date": "2026-03-30"
+    }
+  },
+  "E-Huumica": {
+    "cards": [
+      "LGRO-065",
+      "TCOO-041",
+      "IDRMP-004",
+      "TCOO-001U",
+      "MLBU-004U",
+      "DOOC-003",
+      "RAMI-011",
+      "TCOO-026",
+      "TCDE-018",
+      "TCDE-016",
+      "FYTE-039",
+      "TCOO-042",
+      "TCOO-057",
+      "LGRO-050",
+      "LGRO-062",
+      "FYTE-038"
+    ],
+    "protector": "FYTE-016",
+    "protector_suplente": "FYTE-001",
+    "bio": "RAMI-020",
+    "rava": "TCOO-079",
+    "equips": [
+      "TCOO-016",
+      "DOOC-005",
+      "DOOC-006",
+      "IDRMA-015",
+      "LGRO-038",
+      "LGRO-025",
+      "TCOO-069"
+    ],
+    "name": "🦕 Huúmica Splash v3",
+    "stats": {
+      "wr": 82,
+      "record": "47-10-23",
+      "rank": 2,
+      "mvp": "Ketzz, Ponzoña Ancestral",
+      "games": 80,
+      "method": "440-game round-robin (4 seeds × home/away)",
+      "date": "2026-03-30"
+    }
+  },
+  "E-Chaaktica": {
+    "name": "⚡ Cháaktica Pura v1",
+    "cards": [
+      "TCOO-037",
+      "IDRMP-005",
+      "MLBU-004S",
+      "TCOO-080",
+      "LGRO-034",
+      "TCOO-006",
+      "TCOO-050",
+      "RAMI-016",
+      "TCOO-051",
+      "LGRO-065",
+      "LGRO-006",
+      "DOOC-002",
+      "TCDE-001",
+      "LGRO-030",
+      "TCDE-024",
+      "MLBU-005S",
+      "IDRMA-009",
+      "TCOO-043",
+      "FYTE-078"
+    ],
+    "protector": "DOOC-018",
+    "rava": "TCOO-080",
+    "equips": [
+      "TCOO-066",
+      "DOOC-006",
+      "LGRO-036",
+      "TCDE-013",
+      "IDRMA-015",
+      "LGRO-038",
+      "TCOO-069"
+    ],
+    "bio": "FYTE-003",
+    "protector_suplente": "FYTE-016",
+    "stats": {
+      "wr": 38,
+      "record": "29-47-4",
+      "rank": 9,
+      "mvp": "Abisales, Destruccion",
+      "games": 80,
+      "method": "440-game round-robin (4 seeds × home/away)",
+      "date": "2026-03-30"
+    }
+  },
+  "E-Litica": {
+    "name": "🪨 Lítica Rebuild v2",
+    "cards": [
+      "IDRMP-004",
+      "TCOO-040",
+      "LGRO-012",
+      "TCOO-078",
+      "DOOC-012",
+      "IDRMP-003",
+      "LGRO-033",
+      "TCDE-023",
+      "RAMI-015",
+      "IDRMP-006",
+      "INMX-001",
+      "LGRO-071",
+      "TCOO-038",
+      "LGRO-001",
+      "LGRO-002",
+      "TCDE-004",
+      "TCOO-044",
+      "FYTE-039",
+      "RAMI-017"
+    ],
+    "protector": "DOOC-018",
+    "bio": "LGRO-055",
+    "equips": [
+      "LGRO-036",
+      "DOOC-006",
+      "TCOO-016",
+      "FYTE-014",
+      "DOOC-008",
+      "IDRMA-015",
+      "LGRO-038"
+    ],
+    "protector_suplente": "LGRO-017",
+    "stats": {
+      "wr": 66.7,
+      "record": "64-32-0",
+      "rank": 1,
+      "mvp": "Nepthis, Entre las Sombras",
+      "games": 96,
+      "method": "936-game mega round-robin (4 seeds × home/away × 12 opponents)",
+      "date": "2026-03-31"
+    }
+  },
+  "E-Gelida": {
+    "cards": [
+      "LGRO-065",
+      "TCOO-041",
+      "FYTE-042",
+      "IDRMP-004",
+      "TCOO-040",
+      "FYTE-039",
+      "TCOO-042",
+      "IDRMG-017",
+      "IDRMG-018",
+      "LGRO-075",
+      "TCOO-054",
+      "IDRMG-003",
+      "CMFT-005",
+      "IDRMG-016",
+      "TCOO-030",
+      "MLBU-008"
+    ],
+    "protector": "LGRO-018",
+    "protector_suplente": "IDRMG-010",
+    "bio": "DOOC-016",
+    "rava": "IDRMG-001",
+    "equips": [
+      "TCOO-016",
+      "TCOO-065",
+      "TCOO-069",
+      "LGRO-038",
+      "DOOC-006",
+      "DOOC-008",
+      "LGRO-025"
+    ],
+    "name": "❄️ Gélida Splash v3",
+    "stats": {
+      "wr": 50,
+      "record": "32-32-16",
+      "rank": 8,
+      "mvp": "Ketzz, Ponzoña Ancestral",
+      "games": 80,
+      "method": "440-game round-robin (4 seeds × home/away)",
+      "date": "2026-03-30"
+    }
+  },
+  "T-AriamBurn": {
+    "name": "🔥 AriamBurn v3",
+    "cards": [
+      "LGRO-010",
+      "KPRC-095",
+      "IDRMA-020",
+      "MLBU-002",
+      "DOOC-001",
+      "IDRMA-010",
+      "TCOO-041",
+      "LGRO-044",
+      "IDRMP-013",
+      "LGRO-078",
+      "LGRO-026",
+      "TCOO-084",
+      "IDRMP-001",
+      "TCOO-053",
+      "FYTE-029",
+      "IDRMP-002",
+      "LGRO-045",
+      "CMFT-003",
+      "LGRO-070"
+    ],
+    "version": "v8",
+    "equips": [
+      "LGRO-035",
+      "DOOC-006",
+      "LGRO-036",
+      "TCOO-019",
+      "TCOO-017",
+      "LGRO-040",
+      "IDRMA-015",
+      "TCOO-067"
+    ],
+    "bio": "TCOO-061",
+    "protector": "TCOO-059",
+    "protector_suplente": "FYTE-001",
+    "stats": {
+      "wr": 41,
+      "record": "33-47-0",
+      "rank": 7,
+      "mvp": "Draxes, Planeo Pirico",
+      "games": 80,
+      "method": "440-game round-robin (4 seeds × home/away)",
+      "date": "2026-03-30"
+    }
+  },
+  "W-Espectros": {
+    "cards": [
+      "LGRO-065",
+      "TCOO-041",
+      "TCOO-040",
+      "FYTE-042",
+      "IDRMP-002",
+      "KPRC-095",
+      "LGRO-078",
+      "ODEM-001",
+      "IDRMA-020",
+      "CMFT-001",
+      "LGRO-066",
+      "FYTE-077",
+      "LGRO-027",
+      "FYTE-073",
+      "FYTE-068",
+      "FYTE-046"
+    ],
+    "protector": "LGRO-023",
+    "protector_suplente": "FYTE-023",
+    "bio": "FYTE-053",
+    "rava": null,
+    "equips": [
+      "FYTE-055",
+      "DOOC-006",
+      "LGRO-036",
+      "LGRO-014",
+      "IDRMA-015",
+      "LGRO-038",
+      "TCOO-069"
+    ],
+    "name": "👻 Espectros v2",
+    "stats": {
+      "wr": 15,
+      "record": "12-68-0",
+      "rank": 11,
+      "mvp": "Mizthe, Dia de Muertos",
+      "games": 80,
+      "method": "440-game round-robin (4 seeds × home/away)",
+      "date": "2026-03-30"
+    }
+  },
+  "E-Atlica": {
+    "cards": [
+      "LGRO-065",
+      "TCOO-041",
+      "FYTE-042",
+      "TCOO-040",
+      "IDRMP-004",
+      "FYTE-039",
+      "TCOO-042",
+      "ODEM-001",
+      "KPRC-017",
+      "TCOO-020",
+      "IDRMA-020",
+      "LGRO-074",
+      "TCOO-074",
+      "IDRMA-016",
+      "IDRMA-003",
+      "CMFT-001"
+    ],
+    "protector": "FYTE-012",
+    "protector_suplente": "TCOO-058",
+    "bio": "RAMI-020",
+    "rava": null,
+    "equips": [
+      "TCOO-016",
+      "DOOC-005",
+      "DOOC-006",
+      "IDRMA-015",
+      "LGRO-038",
+      "TCOO-069",
+      "LGRO-039"
+    ],
+    "name": "🌊 Atlica Splash v4",
+    "stats": {
+      "wr": 52,
+      "record": "36-33-11",
+      "rank": 6,
+      "mvp": "Shugg, Acecho Submarino",
+      "games": 80,
+      "method": "440-game round-robin (4 seeds × home/away)",
+      "date": "2026-03-30"
+    }
+  },
+  "N-Pirica": {
+    "name": "🔥 Pírica Diversa v1",
+    "cards": [
+      "CAMP-011UV",
+      "LGRO-027",
+      "FYTE-029",
+      "LGRO-010",
+      "TCOO-084",
+      "MLBU-004S",
+      "LGRO-006R",
+      "LGRO-045",
+      "DOOC-001",
+      "TCOO-041",
+      "IDRMP-002",
+      "TCOO-033",
+      "KPRC-095",
+      "LGRO-078",
+      "TCOO-053",
+      "IDRMP-016",
+      "FYTE-077",
+      "CMFT-003",
+      "TCOO-076"
+    ],
+    "protector": "DOOC-018",
+    "rava": "TCOO-076",
+    "equips": [
+      "LGRO-035",
+      "DOOC-006",
+      "LGRO-036",
+      "TCOO-019",
+      "LGRO-040",
+      "IDRMA-015",
+      "LGRO-038",
+      "TCOO-067"
+    ],
+    "bio": "TCOO-013",
+    "protector_suplente": "TCOO-059",
+    "stats": {
+      "wr": 17,
+      "record": "14-66-0",
+      "rank": 10,
+      "mvp": "Chapalab, Primer Feral",
+      "games": 80,
+      "method": "440-game round-robin (4 seeds × home/away)",
+      "date": "2026-03-30"
+    }
+  },
+  "KG-Best": {
+    "name": "🧠 KG-Optimal v1",
+    "cards": [
+      "FYTE-020R",
+      "LGRO-071",
+      "FYTE-039",
+      "TCOO-078",
+      "RAMI-015",
+      "FYTE-056",
+      "TCOO-038",
+      "IDRMP-003",
+      "LGRO-033",
+      "IDRMP-004",
+      "TCDE-004",
+      "CAMP-015UV",
+      "IDRMP-006",
+      "INMX-001",
+      "IDRMP-012",
+      "TCDE-023",
+      "DOOC-012",
+      "FYTE-080",
+      "IDRMA-008"
+    ],
+    "protector": "DOOC-018",
+    "rava": "TCOO-078",
+    "equips": [
+      "LGRO-036",
+      "DOOC-006",
+      "IDRMG-009",
+      "FYTE-014",
+      "DOOC-008",
+      "IDRMA-015",
+      "LGRO-038"
+    ],
+    "bio": "RAMI-020",
+    "protector_suplente": "IDRMA-007",
+    "stats": {
+      "wr": 63,
+      "record": "46-27-7",
+      "rank": 3,
+      "mvp": "Zaykan, Emboscada",
+      "games": 80,
+      "method": "440-game round-robin (4 seeds × home/away)",
+      "date": "2026-03-30"
+    }
+  },
+  "TEST-Mechanic": {
+    "name": "🧪 TEST-Mechanic",
+    "cards": [
+      "FYTE-039",
+      "LGRO-069",
+      "TCOO-042",
+      "IDRMA-016",
+      "TCOO-074",
+      "IDRMP-021",
+      "LGRO-044",
+      "IDRMP-015",
+      "IDRMP-020",
+      "FYTE-082",
+      "FYTE-040",
+      "FYTE-061",
+      "FYTE-046",
+      "LGRO-002",
+      "LGRO-073",
+      "FYTE-077",
+      "FYTE-024",
+      "TCOO-030"
+    ],
+    "protector": "FYTE-023",
+    "protector_suplente": "LGRO-023",
+    "equips": [
+      "DOOC-008",
+      "DOOC-007",
+      "TCOO-019",
+      "TCOO-067",
+      "LGRO-035",
+      "DOOC-006",
+      "TCOO-016"
+    ],
+    "bio": "FYTE-011",
+    "version": 1,
+    "stats": {
+      "wr": 70,
+      "record": "42-18-20",
+      "rank": 4,
+      "mvp": "Yogg, Surgimiento",
+      "games": 80,
+      "method": "440-game round-robin (4 seeds × home/away)",
+      "date": "2026-03-30"
+    }
+  },
+  "KG-Feral-v2": {
+    "name": "🐾 Feral v2 (KG-optimized)",
+    "cards": [
+      "FYTE-063",
+      "IDRMA-022",
+      "IDRMA-010",
+      "IDRMP-022",
+      "DOOC-014",
+      "FYTE-061",
+      "LGRO-043",
+      "DOOC-015",
+      "FYTE-058",
+      "TCOO-028",
+      "RMFT-002",
+      "FYTE-066",
+      "TCOO-024",
+      "TCOO-081",
+      "FYTE-065",
+      "FYTE-060",
+      "LGRO-070",
+      "LGRO-010"
+    ],
+    "equips": [
+      "DOOC-006",
+      "TCOO-016",
+      "LGRO-035",
+      "IDRMG-008",
+      "LGRO-036",
+      "LGRO-038",
+      "TCOO-069",
+      "FYTE-014",
+      "IDRMA-015",
+      "DOOC-005"
+    ],
+    "protector": "FYTE-016",
+    "bio": "DOOC-017",
+    "version": "v1",
+    "stats": {
+      "method": "KG synergy/dead-weight swap from E-Feral",
+      "date": "2026-03-31"
+    }
+  },
+  "KG-Feral-Counter": {
+    "name": "⚔️ Feral Counter (anti-Huumica)",
+    "cards": [
+      "FYTE-063",
+      "IDRMA-022",
+      "IDRMA-010",
+      "DOOC-014",
+      "FYTE-061",
+      "LGRO-043",
+      "DOOC-015",
+      "FYTE-058",
+      "RMFT-002",
+      "FYTE-066",
+      "FYTE-065",
+      "FYTE-060",
+      "FYTE-041",
+      "IDRMA-018",
+      "TCOO-024",
+      "TCOO-028",
+      "TCOO-081",
+      "LGRO-070"
+    ],
+    "equips": [
+      "DOOC-006",
+      "TCOO-016",
+      "LGRO-035",
+      "IDRMG-008",
+      "LGRO-036",
+      "LGRO-038",
+      "TCOO-069",
+      "LGRO-025",
+      "LGRO-014",
+      "FYTE-014"
+    ],
+    "protector": "FYTE-016",
+    "bio": "DOOC-017",
+    "version": "v1",
+    "stats": {
+      "method": "KG hard_counters targeting E-Huumica cards",
+      "date": "2026-03-31"
+    }
+  },
+  "KG-Huumica-v2": {
+    "name": "🐍 Huumica v2 (KG-optimized)",
+    "cards": [
+      "LGRO-065",
+      "TCOO-041",
+      "IDRMP-004",
+      "TCOO-001U",
+      "MLBU-004U",
+      "DOOC-003",
+      "RAMI-011",
+      "TCOO-026",
+      "TCDE-018",
+      "TCDE-016",
+      "FYTE-039",
+      "TCOO-042",
+      "LGRO-050",
+      "LGRO-062",
+      "FYTE-038",
+      "TCDE-023",
+      "TCOO-033"
+    ],
+    "equips": [
+      "TCOO-016",
+      "DOOC-005",
+      "DOOC-006",
+      "IDRMA-015",
+      "LGRO-038",
+      "TCOO-069",
+      "LGRO-035"
+    ],
+    "protector": "FYTE-016",
+    "bio": "RAMI-020",
+    "version": "v1",
+    "stats": {
+      "method": "KG synergy/dead-weight swap from E-Huumica",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-01": {
+    "name": "Coverage Test 1",
+    "cards": [
+      "CAMP-008UV",
+      "CAMP-009UV",
+      "CAMP-018",
+      "CAMP-024",
+      "CMFT-002",
+      "DOOC-002S",
+      "DOOC-003S",
+      "DOOC-004",
+      "DOOC-009",
+      "DOOC-009S",
+      "DOOC-010",
+      "DOOC-011",
+      "DOOC-013",
+      "DOOC-020",
+      "DOOC-021",
+      "DOOC-022"
+    ],
+    "equips": [
+      "CMFT-004",
+      "DOOC-001S",
+      "FYTE-002R",
+      "FYTE-003U",
+      "FYTE-004",
+      "FYTE-004R",
+      "FYTE-005"
+    ],
+    "protector": "FYTE-001",
+    "bio": "TCOO-012",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-02": {
+    "name": "Coverage Test 2",
+    "cards": [
+      "DOOC-023",
+      "DOOC-024",
+      "DOOC-025",
+      "DOOC-026",
+      "FAFT-002",
+      "FAFT-003",
+      "FAFT-005",
+      "FAFT-006",
+      "FYTE-007S",
+      "FYTE-008R",
+      "FYTE-009R",
+      "FYTE-012R",
+      "FYTE-016S",
+      "FYTE-019R",
+      "FYTE-022R",
+      "FYTE-025"
+    ],
+    "equips": [
+      "FYTE-006",
+      "FYTE-006S",
+      "FYTE-008",
+      "FYTE-009",
+      "FYTE-015",
+      "FYTE-017",
+      "FYTE-018"
+    ],
+    "protector": "KPRC-019",
+    "bio": "LGRO-051",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-03": {
+    "name": "Coverage Test 3",
+    "cards": [
+      "FYTE-026",
+      "FYTE-027",
+      "FYTE-028",
+      "FYTE-031",
+      "FYTE-032",
+      "FYTE-033",
+      "FYTE-036",
+      "FYTE-043",
+      "FYTE-044",
+      "FYTE-045",
+      "FYTE-057",
+      "FYTE-059",
+      "FYTE-062",
+      "FYTE-067",
+      "FYTE-069",
+      "FYTE-070"
+    ],
+    "equips": [
+      "FYTE-020",
+      "FYTE-021",
+      "FYTE-022",
+      "FYTE-037",
+      "IDRMA-005",
+      "IDRMA-011",
+      "IDRMA-014"
+    ],
+    "protector": "IDRMG-010",
+    "bio": "LGRO-010R",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-04": {
+    "name": "Coverage Test 4",
+    "cards": [
+      "FYTE-071",
+      "FYTE-072",
+      "FYTE-074",
+      "FYTE-075",
+      "FYTE-079",
+      "FYTE-081",
+      "ICOS-001",
+      "IDRMA-002",
+      "IDRMA-004",
+      "IDRMA-012",
+      "IDRMA-013",
+      "IDRMA-017",
+      "IDRMA-019",
+      "IDRMG-002",
+      "IDRMG-004",
+      "IDRMG-005"
+    ],
+    "equips": [
+      "IDRMG-019",
+      "IDRMG-020",
+      "IDRMP-007",
+      "IDRMP-017",
+      "IDRMP-018",
+      "IDRMP-019",
+      "KPRC-025"
+    ],
+    "protector": "LGRO-019",
+    "bio": "FYTE-011",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-05": {
+    "name": "Coverage Test 5",
+    "cards": [
+      "IDRMG-006",
+      "IDRMG-007",
+      "IDRMG-013",
+      "IDRMG-014",
+      "IDRMG-015",
+      "IDRMG-021",
+      "IDRMG-022",
+      "IDRMP-011",
+      "IDRMP-014",
+      "KPRC-014",
+      "KPRC-016",
+      "KPRC-096",
+      "KPRF-0003",
+      "LGRO-001U",
+      "LGRO-002S",
+      "LGRO-003"
+    ],
+    "equips": [
+      "KPRF-0002",
+      "LGRO-001R",
+      "LGRO-002R",
+      "LGRO-006U",
+      "LGRO-008R",
+      "LGRO-009R",
+      "LGRO-020"
+    ],
+    "protector": "TCOO-004R",
+    "bio": "IDRMG-012",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-06": {
+    "name": "Coverage Test 6",
+    "cards": [
+      "LGRO-003R",
+      "LGRO-003S",
+      "LGRO-004",
+      "LGRO-005",
+      "LGRO-005R",
+      "LGRO-005U",
+      "LGRO-007R",
+      "LGRO-008",
+      "LGRO-008U",
+      "LGRO-009",
+      "LGRO-011",
+      "LGRO-011R",
+      "LGRO-013",
+      "LGRO-013R",
+      "LGRO-014R",
+      "LGRO-015"
+    ],
+    "equips": [
+      "LGRO-021",
+      "LGRO-022",
+      "LGRO-024",
+      "LGRO-037",
+      "LGRO-041",
+      "LGRO-052",
+      "RAMI-007S"
+    ],
+    "protector": "DOOC-018",
+    "bio": "TCDE-010",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-07": {
+    "name": "Coverage Test 7",
+    "cards": [
+      "LGRO-015R",
+      "LGRO-016R",
+      "LGRO-028",
+      "LGRO-029",
+      "LGRO-031",
+      "LGRO-032",
+      "LGRO-042",
+      "LGRO-046",
+      "LGRO-048",
+      "LGRO-049",
+      "LGRO-053",
+      "LGRO-054",
+      "LGRO-056",
+      "LGRO-059",
+      "LGRO-061",
+      "LGRO-063"
+    ],
+    "equips": [
+      "RAMI-008S",
+      "RAMI-021",
+      "RAMI-022",
+      "RAMI-023",
+      "RAMI-024",
+      "TCDE-011",
+      "TCDE-012"
+    ],
+    "protector": "FYTE-016",
+    "bio": "IDRMP-010",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-08": {
+    "name": "Coverage Test 8",
+    "cards": [
+      "LGRO-064",
+      "LGRO-068",
+      "LGRO-072",
+      "LGRO-076",
+      "LGRO-077",
+      "MLBU-003",
+      "MLBU-003S",
+      "MLBU-003U",
+      "MLBU-005",
+      "MLBU-006",
+      "MLBU-009",
+      "MLBU-010",
+      "ODEM-002",
+      "RAMI-001",
+      "RAMI-001S",
+      "RAMI-002"
+    ],
+    "equips": [
+      "TCDE-014",
+      "TCOO-005R",
+      "TCOO-005S",
+      "TCOO-014",
+      "TCOO-015",
+      "TCOO-018",
+      "TCOO-021R"
+    ],
+    "protector": "IDRMP-008",
+    "bio": "RAMI-020",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-09": {
+    "name": "Coverage Test 9",
+    "cards": [
+      "RAMI-002S",
+      "RAMI-003",
+      "RAMI-004",
+      "RAMI-005",
+      "RAMI-006",
+      "RAMI-007",
+      "RAMI-008",
+      "RAMI-009",
+      "RAMI-010",
+      "RAMI-012",
+      "RAMI-013",
+      "RAMI-014",
+      "RAMI-018",
+      "RMFT-001",
+      "RMFT-003",
+      "SNVL-001"
+    ],
+    "equips": [
+      "TCOO-064",
+      "DOOC-006",
+      "TCOO-016",
+      "LGRO-035",
+      "IDRMG-008",
+      "LGRO-036",
+      "LGRO-038"
+    ],
+    "protector": "TCOO-059",
+    "bio": "RAMI-019",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-10": {
+    "name": "Coverage Test 10",
+    "cards": [
+      "TCDE-002",
+      "TCDE-003",
+      "TCDE-005",
+      "TCDE-006",
+      "TCDE-007",
+      "TCDE-008",
+      "TCDE-015",
+      "TCDE-017",
+      "TCDE-019",
+      "TCDE-020",
+      "TCDE-022",
+      "TCDE-025",
+      "TCOO-001",
+      "TCOO-001R",
+      "TCOO-002S",
+      "TCOO-003"
+    ],
+    "equips": [
+      "TCOO-069",
+      "LGRO-025",
+      "LGRO-014",
+      "FYTE-014",
+      "DOOC-005",
+      "IDRMA-015",
+      "TCOO-066"
+    ],
+    "protector": "FYTE-023",
+    "bio": "TCOO-013",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-11": {
+    "name": "Coverage Test 11",
+    "cards": [
+      "TCOO-003S",
+      "TCOO-004",
+      "TCOO-004S",
+      "TCOO-004U",
+      "TCOO-005",
+      "TCOO-006S",
+      "TCOO-009R",
+      "TCOO-009S",
+      "TCOO-010R",
+      "TCOO-010S",
+      "TCOO-011R",
+      "TCOO-012R",
+      "TCOO-013R",
+      "TCOO-014R",
+      "TCOO-015R",
+      "TCOO-021"
+    ],
+    "equips": [
+      "TCDE-013",
+      "DOOC-008",
+      "TCOO-065",
+      "TCOO-019",
+      "TCOO-017",
+      "LGRO-040",
+      "TCOO-067"
+    ],
+    "protector": "TCDE-026",
+    "bio": "LGRO-055",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-12": {
+    "name": "Coverage Test 12",
+    "cards": [
+      "TCOO-022",
+      "TCOO-022R",
+      "TCOO-023",
+      "TCOO-023R",
+      "TCOO-025",
+      "TCOO-027",
+      "TCOO-029",
+      "TCOO-031",
+      "TCOO-032",
+      "TCOO-034",
+      "TCOO-035",
+      "TCOO-036",
+      "TCOO-039",
+      "TCOO-045",
+      "TCOO-046",
+      "TCOO-047"
+    ],
+    "equips": [
+      "FYTE-055",
+      "LGRO-039",
+      "IDRMG-009",
+      "DOOC-007",
+      "CMFT-004",
+      "DOOC-001S",
+      "FYTE-002R"
+    ],
+    "protector": "IDRMG-011",
+    "bio": "TCOO-062",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  },
+  "COV-13": {
+    "name": "Coverage Test 13",
+    "cards": [
+      "TCOO-048",
+      "TCOO-049",
+      "TCOO-052",
+      "TCOO-055",
+      "TCOO-056",
+      "TCOO-070",
+      "TCOO-071",
+      "TCOO-072",
+      "TCOO-073",
+      "XPIX-002",
+      "IDRMA-009",
+      "IDRMG-017",
+      "FYTE-060",
+      "MLBU-008",
+      "TCOO-054"
+    ],
+    "equips": [
+      "FYTE-003U",
+      "FYTE-004",
+      "FYTE-004R",
+      "FYTE-005",
+      "FYTE-006",
+      "FYTE-006S",
+      "FYTE-008"
+    ],
+    "protector": "TCDE-009",
+    "bio": "FYTE-003",
+    "version": "cov",
+    "stats": {
+      "method": "coverage-test",
+      "date": "2026-03-31"
+    }
+  }
+}

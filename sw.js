@@ -1,6 +1,6 @@
 // Códice Kódem — Service Worker
 // Cache version: bump this to force cache refresh on deploy
-const CACHE_NAME = 'kodem-v43';
+const CACHE_NAME = 'kodem-v44';
 
 // Static assets to pre-cache on install
 const PRECACHE_ASSETS = [

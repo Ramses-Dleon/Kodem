@@ -46,12 +46,19 @@ async function init() {
   }
   const cardsData = await fetch('cards.json?v=' + Date.now()).then(r => r.json());
   cardsData.forEach(c => CARDS[c.folio] = c);
-  // Decks from localStorage only (user-built in constructor)
+  // Decks: try localStorage first, fallback to server decks.json
   const localDecks = localStorage.getItem('kodem_decks');
   if (localDecks) {
     try { DECKS = JSON.parse(localDecks); } catch(e) { DECKS = {}; }
-  } else {
-    DECKS = {};
+  }
+  if (!localDecks || Object.keys(DECKS).length === 0) {
+    try {
+      const serverDecks = await fetch('../decks.json?t=' + Date.now()).then(r => r.json());
+      if (serverDecks && typeof serverDecks === 'object') {
+        DECKS = serverDecks;
+        console.log(`Loaded ${Object.keys(DECKS).length} decks from server`);
+      }
+    } catch(e) { console.log('Server decks fallback failed:', e); }
   }
   if (loadState()) {
     // Check if server has a newer turn — auto-sync if so
@@ -194,8 +201,6 @@ function renderMobileActions() {
   const bb = document.getElementById('bbActions');
   if (!bb) return;
   let html = '';
-  html += `<button class="action-btn sync" onclick="syncFromServer()">☁️ Cargar</button>`;
-  html += `<button class="action-btn sync" onclick="pushToServer()">🚀 Subir</button>`;
   html += `<button class="action-btn sync" onclick="syncPush()">📋 Copiar</button>`;
   html += `<button class="action-btn sync" onclick="syncPull()">📎 Pegar</button>`;
   html += `<button class="action-btn" onclick="location.href='/'" style="border-color:#6b7280;color:#6b7280">🏠 Inicio</button>`;
@@ -284,8 +289,6 @@ function renderActionBar() {
 
   // Sync + view toggle: render into logTools (right panel bottom) in landscape, or into actionBar in portrait
   const syncHtml =
-    `<button class="action-btn sync server" onclick="syncFromServer()" title="Cargar del servidor">☁️</button>` +
-    `<button class="action-btn sync push" onclick="pushToServer()" title="Subir al servidor">🚀</button>` +
     `<button class="action-btn sync clip" onclick="syncPush()" title="Copiar estado">📋</button>` +
     `<button class="action-btn sync clip" onclick="syncPull()" title="Pegar estado">📎</button>` +
     `<button class="action-btn sync danger" onclick="resetGame()" title="Nueva partida">🆕</button>`;
