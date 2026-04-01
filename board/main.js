@@ -46,20 +46,10 @@ async function init() {
   }
   const cardsData = await fetch('cards.json?v=' + Date.now()).then(r => r.json());
   cardsData.forEach(c => CARDS[c.folio] = c);
-  // Decks: load from server first, then merge localStorage on top
-  try {
-    const serverDecks = await fetch('../decks.json?t=' + Date.now()).then(r => r.json());
-    if (serverDecks && typeof serverDecks === 'object') {
-      DECKS = serverDecks;
-      console.log(`Loaded ${Object.keys(DECKS).length} decks from server`);
-    }
-  } catch(e) { console.log('Server decks fetch failed:', e); }
+  // Decks: from localStorage only (user-built in Constructor de Mazos)
   const localDecks = localStorage.getItem('kodem_decks');
   if (localDecks) {
-    try {
-      const ld = JSON.parse(localDecks);
-      if (ld && typeof ld === 'object') Object.assign(DECKS, ld);
-    } catch(e) { /* ignore corrupt localStorage */ }
+    try { DECKS = JSON.parse(localDecks); } catch(e) { DECKS = {}; }
   }
   if (loadState()) {
     // Check if server has a newer turn — auto-sync if so
