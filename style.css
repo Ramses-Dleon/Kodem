@@ -1514,6 +1514,12 @@ select:focus {
     }
 }
 
+/* Remove-from-deck button — always on top and tappable */
+.remove-from-deck {
+    z-index: 20;
+    touch-action: manipulation;
+}
+
 /* Remove-from-deck button min touch target on mobile */
 @media (max-width: 768px) {
     .remove-from-deck {

@@ -2315,9 +2315,10 @@ function renderDeckWorkspace() {
         });
     });
 
-    // Open modal
+    // Open modal (skip if tap landed on a remove/reorder button)
     deckCardsEl.querySelectorAll('.card-item').forEach((el) => {
-        el.addEventListener('click', () => {
+        el.addEventListener('click', (e) => {
+            if (e.target.closest('.remove-from-deck, .reorder-btn, .tercia-move-btn')) return;
             const folio = el.dataset.folio;
             const card = allCards.find(c => c.folio === folio);
             if (card) openCardModal(card, cards, cards.indexOf(card));
