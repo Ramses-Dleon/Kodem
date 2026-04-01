@@ -1,16 +1,17 @@
 // Códice Kódem — Service Worker
 // Cache version: bump this to force cache refresh on deploy
-const CACHE_NAME = 'kodem-v44';
+const CACHE_NAME = 'kodem-v45';
 
 // Static assets to pre-cache on install
+// Use relative paths for GitHub Pages compatibility
 const PRECACHE_ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/app.js',
-  '/manifest.json',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
+  './',
+  './index.html',
+  './style.css',
+  './app.js',
+  './manifest.json',
+  './icons/icon-192.png',
+  './icons/icon-512.png'
 ];
 
 // JSON data files — network-first (personal/dynamic data)
