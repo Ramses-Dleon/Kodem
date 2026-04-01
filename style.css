@@ -178,10 +178,10 @@
     color: var(--text-primary);
 }
 
-/* Footer links light mode */
-[data-theme="light"] footer {
-    border-top-color: var(--border);
+/* Footer */
+.site-footer {
     color: var(--text-secondary);
+    border-top: 1px solid var(--border);
 }
 
 /* Card image background in light mode */
@@ -297,9 +297,13 @@ select {
     min-width: 150px;
 }
 
+:focus-visible {
+    outline: 2px solid var(--accent-amber);
+    outline-offset: 2px;
+}
+
 input[type="text"]:focus,
 select:focus {
-    outline: none;
     border-color: var(--accent-teal);
 }
 
@@ -716,7 +720,7 @@ select:focus {
     display: flex;
     align-items: center;
     gap: 8px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .tercia-label {
@@ -905,13 +909,13 @@ select:focus {
 
     /* Larger tap targets for reorder buttons */
     .reorder-btn {
-        width: 32px;
-        height: 28px;
-        font-size: 0.75rem;
+        width: 44px;
+        height: 44px;
+        font-size: 0.85rem;
     }
     .tercia-move-btn {
-        width: 36px;
-        height: 36px;
+        width: 44px;
+        height: 44px;
     }
 
     /* Support grid: 3 columns filling full width on mobile */
@@ -1031,12 +1035,13 @@ select:focus {
 }
 
 .btn-secondary {
-    background: #0d6efd;
+    background: var(--accent-teal);
     color: #fff;
 }
 
 .btn-secondary:hover {
-    background: #0b5ed7;
+    background: var(--accent-teal);
+    filter: brightness(0.85);
 }
 
 .btn-danger {
@@ -1175,7 +1180,6 @@ select:focus {
     cursor: pointer;
     z-index: 10;
     transition: background 0.2s, color 0.2s;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -1532,6 +1536,12 @@ select:focus {
     /* Prevent support-grid cards from clipping the remove button */
     .support-grid .card-item {
         overflow: visible;
+    }
+    /* Touch targets for owned/want buttons */
+    .card-owned-btn, .card-want-btn {
+        width: 36px !important;
+        height: 36px !important;
+        opacity: 0.85 !important;
     }
 }
 

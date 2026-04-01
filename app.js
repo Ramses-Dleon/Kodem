@@ -725,7 +725,13 @@ function setupEventListeners() {
                 if (decksResp.ok) {
                     decksOk = true;
                     const serverDecks = await decksResp.json();
-                    decks = serverDecks;
+                    if (typeof serverDecks === 'object' && serverDecks !== null) {
+                        // Migrate legacy mazo→cards if present
+                        for (const d of Object.values(serverDecks)) {
+                            if (d.mazo && !d.cards) { d.cards = d.mazo; delete d.mazo; }
+                        }
+                        decks = serverDecks;
+                    }
                     saveDecks();
                 }
             } catch (deckErr) {
@@ -789,14 +795,12 @@ function setupEventListeners() {
         const deckLines = [];
         for (const [id, deck] of Object.entries(decks)) {
             const parts = [];
-            if (deck.mazo && deck.mazo.length) parts.push(`mazo:${deck.mazo.join(',')}`);
+            if (deck.cards && deck.cards.length) parts.push(`cards:${deck.cards.join(',')}`);
             if (deck.protector) parts.push(`prot:${deck.protector}`);
+            if (deck.protector_suplente) parts.push(`prot_sup:${deck.protector_suplente}`);
             if (deck.bio) parts.push(`bio:${deck.bio}`);
+            if (deck.rava) parts.push(`rava:${deck.rava}`);
             if (deck.equips && deck.equips.length) parts.push(`equips:${deck.equips.join(',')}`);
-            // Fallback: if no mazo but has cards[], use that
-            if ((!deck.mazo || !deck.mazo.length) && deck.cards && deck.cards.length) {
-                parts.push(`cards:${deck.cards.join(',')}`);
-            }
             deckLines.push(`${id}|${deck.name || id}|${parts.join('|')}`);
         }
 
@@ -1220,7 +1224,7 @@ function applyBrowserFilters() {
         if (sortBy === 'damage-desc' || sortBy === 'damage') return (b.damage || 0) - (a.damage || 0);
         if (sortBy === 'damage-asc') return (a.damage || 0) - (b.damage || 0);
         if (sortBy === 'rests') return (b.rests || 0) - (a.rests || 0);
-        if (sortBy === 'set') return a.set.localeCompare(b.set);
+        if (sortBy === 'set') return a.set.localeCompare(b.set) || a.folio.localeCompare(b.folio);
         if (sortBy === 'energy') return (a.energy || '').localeCompare(b.energy || '', 'es');
         if (sortBy === 'rarity') return (getFolioSuffix(a.folio) || '').localeCompare(getFolioSuffix(b.folio) || '');
         return 0;
@@ -1783,9 +1787,7 @@ function renderCollection() {
             if (filterEnergyCombo && card.energy !== filterEnergyCombo) return false;
         } else if (filterEnergy && !norm(card.energy).split('-').includes(norm(filterEnergy))) return false;
         if (filterSubtype) {
-            const sub = norm(card.subtype || '');
-            const kw = norm(filterSubtype);
-            if (!sub.includes(kw)) return false;
+            if (!norm(card.subtype || '').split(/[\s\/]+/).some(w => norm(w) === norm(filterSubtype))) return false;
         }
         if (filterRarity) {
             const rarityFieldMap = { 'Común': 'Comun', 'Rara': 'Rara', 'Súper Rara': 'Super Rara', 'Ultra Rara': 'Ultra Rara', 'Kósmica': 'Kosmica/Titanica', 'Secreta': 'Secreta', 'Full Art': 'Full Art', 'Evento': 'Evento' };
@@ -1972,7 +1974,17 @@ function shareDeck() {
         return;
     }
 
-    const hash = '#deck=' + deck.cards.join(',');
+    // Use KDECK format for sharing
+    const data = { n: deck.name, c: deck.cards };
+    if (deck.protector) data.p = deck.protector;
+    if (deck.protector_suplente) data.ps = deck.protector_suplente;
+    if (deck.bio) data.b = deck.bio;
+    if (deck.rava) data.r = deck.rava;
+    if (deck.equips && deck.equips.length) data.e = deck.equips;
+    const payload = JSON.stringify(data);
+    const code = 'KDECK-' + btoa(unescape(encodeURIComponent(payload)));
+
+    const hash = '#deck=' + code;
     history.replaceState(null, '', hash);
     const url = window.location.href;
 
@@ -2048,7 +2060,33 @@ function exportDeck() {
         return card ? `1x ${card.name} (${card.folio})` : folio;
     });
 
-    const text = `${deck.name}\n\n${cards.join('\n')}\n\nTotal: ${deck.cards.length} cartas`;
+    // Build support section
+    const supportLines = [];
+    if (deck.protector) {
+        const card = allCards.find(c => c.folio === deck.protector);
+        supportLines.push(`Protector: ${card ? card.name : deck.protector} (${deck.protector})`);
+    }
+    if (deck.protector_suplente) {
+        const card = allCards.find(c => c.folio === deck.protector_suplente);
+        supportLines.push(`Protector Suplente: ${card ? card.name : deck.protector_suplente} (${deck.protector_suplente})`);
+    }
+    if (deck.bio) {
+        const card = allCards.find(c => c.folio === deck.bio);
+        supportLines.push(`Bio: ${card ? card.name : deck.bio} (${deck.bio})`);
+    }
+    if (deck.rava) {
+        const card = allCards.find(c => c.folio === deck.rava);
+        supportLines.push(`Rava: ${card ? card.name : deck.rava} (${deck.rava})`);
+    }
+    if (deck.equips && deck.equips.length > 0) {
+        deck.equips.forEach(folio => {
+            const card = allCards.find(c => c.folio === folio);
+            supportLines.push(`Equipo: ${card ? card.name : folio} (${folio})`);
+        });
+    }
+
+    const supportSection = supportLines.length > 0 ? `\n\nSoporte:\n${supportLines.join('\n')}` : '';
+    const text = `${deck.name}\n\n${cards.join('\n')}${supportSection}\n\nTotal: ${deck.cards.length} cartas`;
 
     navigator.clipboard.writeText(text).then(() => {
         showToast('Mazo copiado al portapapeles 📋', 'success');
@@ -2060,7 +2098,17 @@ function exportDeck() {
 function exportDeckJSON() {
     if (!currentDeck) { showToast('Selecciona un mazo primero', 'error'); return; }
     const deck = decks[currentDeck];
-    const data = { version: 1, name: deck.name, cards: deck.cards, exported: new Date().toISOString().split('T')[0] };
+    const data = {
+        version: 2,
+        name: deck.name,
+        cards: deck.cards,
+        protector: deck.protector || null,
+        protector_suplente: deck.protector_suplente || null,
+        bio: deck.bio || null,
+        rava: deck.rava || null,
+        equips: deck.equips || [],
+        exported: new Date().toISOString().split('T')[0]
+    };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -2088,7 +2136,18 @@ function importDeckJSON() {
                     showToast(`⚠️ ${cards.length - resolved.length} cartas no reconocidas`, 'warning');
                 }
                 const id = Date.now().toString();
-                decks[id] = { name, cards: resolved };
+                const newDeck = { name, cards: resolved };
+
+                // Import support slots if version 2
+                if (data.version === 2) {
+                    if (data.protector) newDeck.protector = data.protector;
+                    if (data.protector_suplente) newDeck.protector_suplente = data.protector_suplente;
+                    if (data.bio) newDeck.bio = data.bio;
+                    if (data.rava) newDeck.rava = data.rava;
+                    if (data.equips) newDeck.equips = data.equips;
+                }
+
+                decks[id] = newDeck;
                 currentDeck = id;
                 saveDecks();
                 renderDeckBuilder();
@@ -2141,9 +2200,10 @@ function importDeckSyncCode() {
             const decoded = decodeURIComponent(escape(atob(code.substring(6))));
             let name = 'Mazo Importado';
             let cards = [];
+            let data = null;
             // Try JSON format first {n:"name", c:[folios]}
             try {
-                const data = JSON.parse(decoded);
+                data = JSON.parse(decoded);
                 name = data.n || name;
                 cards = data.c || [];
             } catch (_) {
@@ -2154,14 +2214,13 @@ function importDeckSyncCode() {
             const id = Date.now().toString();
             const newDeck = { name, cards };
             // Import support slots if present (KDECK v2 format)
-            try {
-                const data = JSON.parse(decodeURIComponent(escape(atob(code.substring(6)))));
+            if (data) {
                 if (data.p) newDeck.protector = data.p;
                 if (data.ps) newDeck.protector_suplente = data.ps;
                 if (data.b) newDeck.bio = data.b;
                 if (data.r) newDeck.rava = data.r;
                 if (data.e && Array.isArray(data.e)) newDeck.equips = data.e;
-            } catch (_) { /* old format, no support slots */ }
+            }
             decks[id] = newDeck;
             currentDeck = id;
             saveDecks();
@@ -2185,7 +2244,7 @@ function renderDeckList() {
 
     container.innerHTML = deckEntries.map(([id, deck], idx) => `
         <div class="deck-item ${currentDeck === id ? 'active' : ''}" data-deck-id="${id}">
-            <span class="deck-item-name">${deck.name} (${deck.cards.length})${deck.stats ? ` · ${deck.stats.wr}% WR` : ''}</span>
+            <span class="deck-item-name">${deck.name} (${(deck.cards?.length || 0) + (deck.protector ? 1 : 0) + (deck.protector_suplente ? 1 : 0) + (deck.bio ? 1 : 0) + (deck.rava ? 1 : 0) + (deck.equips?.length || 0)})${deck.stats ? ` · ${deck.stats.wr}% WR` : ''}</span>
             <span class="deck-item-arrows">
                 <button class="deck-order-btn" data-dir="up" data-id="${id}" title="Subir" ${idx === 0 ? 'disabled' : ''}>▲</button>
                 <button class="deck-order-btn" data-dir="down" data-id="${id}" title="Bajar" ${idx === deckEntries.length - 1 ? 'disabled' : ''}>▼</button>
@@ -2715,15 +2774,99 @@ function addToDeck(folio) {
     }
 
     const deck = decks[currentDeck];
+    const card = allCards.find(c => c.folio === folio);
 
-    if (deck.cards.includes(folio)) {
+    if (!card) {
+        showToast('Carta no encontrada', 'error');
+        return;
+    }
+
+    // Check for duplicates across ALL slots
+    const allFolios = [
+        ...(deck.cards || []),
+        deck.protector,
+        deck.protector_suplente,
+        deck.bio,
+        deck.rava,
+        ...(deck.equips || [])
+    ].filter(Boolean);
+
+    if (allFolios.includes(folio)) {
         showToast('Esta carta ya está en el mazo. Solo se permite 1 copia de cada carta.', 'error');
         return;
     }
 
-    deck.cards.push(folio);
-    const card = allCards.find(c => c.folio === folio);
-    if (card) showToast(`${card.name} añadida al mazo`, 'success', 1500);
+    const cardType = card.type;
+
+    // Route by card type
+    if (cardType === 'Protector') {
+        if (!deck.protector) {
+            deck.protector = folio;
+        } else if (!deck.protector_suplente) {
+            deck.protector_suplente = folio;
+        } else {
+            showToast('Ya tienes 2 Protectores (máximo permitido)', 'error');
+            return;
+        }
+    } else if (cardType === 'Bio') {
+        if (!deck.bio) {
+            deck.bio = folio;
+        } else {
+            showToast('Ya tienes 1 Bio (máximo permitido)', 'error');
+            return;
+        }
+    } else if (cardType === 'Rava') {
+        if (!deck.rava) {
+            deck.rava = folio;
+        } else {
+            showToast('Ya tienes 1 Rava (máximo permitido)', 'error');
+            return;
+        }
+    } else if (cardType === 'Ixim' || cardType === 'Rot') {
+        if (!deck.equips) deck.equips = [];
+
+        const ixCount = deck.equips.filter(f => {
+            const c = allCards.find(x => x.folio === f);
+            return c && c.type === 'Ixim';
+        }).length;
+
+        const rotCount = deck.equips.filter(f => {
+            const c = allCards.find(x => x.folio === f);
+            return c && c.type === 'Rot';
+        }).length;
+
+        if (cardType === 'Ixim' && ixCount >= 5) {
+            showToast('Ya tienes 5 Ixim (máximo permitido)', 'error');
+            return;
+        }
+
+        if (cardType === 'Rot' && rotCount >= 5) {
+            showToast('Ya tienes 5 Rot (máximo permitido)', 'error');
+            return;
+        }
+
+        if (deck.equips.length >= 10) {
+            showToast('Ya tienes 10 equipos en total (máximo permitido)', 'error');
+            return;
+        }
+
+        deck.equips.push(folio);
+    } else if (cardType === 'Adendei' || cardType === 'Espectro') {
+        if (!deck.cards) deck.cards = [];
+
+        if (deck.cards.length >= 24) {
+            showToast('Ya tienes 24 cartas de mazo (máximo permitido)', 'error');
+            return;
+        }
+
+        deck.cards.push(folio);
+    } else {
+        // Unknown type, add to main deck
+        if (!deck.cards) deck.cards = [];
+        deck.cards.push(folio);
+    }
+
+    showToast(`${card.name} añadida al mazo`, 'success', 1500);
     renderDeckWorkspace();
     renderDeckPool();
     saveDecks();
@@ -2734,22 +2877,13 @@ function removeFromDeck(folio) {
 
     const deck = decks[currentDeck];
 
-    // Check if folio is in the main cards array (Adendei)
-    if (deck.cards.includes(folio)) {
-        deck.cards = deck.cards.filter(f => f !== folio);
-    }
-    // Check support slots
-    else if (deck.protector === folio) {
-        delete deck.protector;
-    } else if (deck.protector_suplente === folio) {
-        delete deck.protector_suplente;
-    } else if (deck.bio === folio) {
-        delete deck.bio;
-    } else if (deck.rava === folio) {
-        delete deck.rava;
-    } else if (deck.equips && deck.equips.includes(folio)) {
-        deck.equips = deck.equips.filter(f => f !== folio);
-    }
+    // Clean ALL slots independently
+    deck.cards = deck.cards.filter(f => f !== folio);
+    if (deck.protector === folio) delete deck.protector;
+    if (deck.protector_suplente === folio) delete deck.protector_suplente;
+    if (deck.bio === folio) delete deck.bio;
+    if (deck.rava === folio) delete deck.rava;
+    if (deck.equips) deck.equips = deck.equips.filter(f => f !== folio);
 
     renderDeckWorkspace();
     renderDeckPool();

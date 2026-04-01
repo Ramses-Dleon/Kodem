@@ -1,17 +1,23 @@
 // Códice Kódem — Service Worker
 // Cache version: bump this to force cache refresh on deploy
-const CACHE_NAME = 'kodem-v46';
+const CACHE_NAME = 'kodem-v47';
 
 // Static assets to pre-cache on install
-// Use relative paths for GitHub Pages compatibility
 const PRECACHE_ASSETS = [
-  './',
-  './index.html',
-  './style.css',
-  './app.js',
-  './manifest.json',
-  './icons/icon-192.png',
-  './icons/icon-512.png'
+  '/',
+  '/index.html',
+  '/style.css',
+  '/app.js',
+  '/manifest.json',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
+  '/board/',
+  '/board/index.html',
+  '/board/board.css',
+  '/board/game.js',
+  '/board/effects-ui.js',
+  '/board/render.js',
+  '/board/main.js'
 ];
 
 // JSON data files — network-first (personal/dynamic data)
@@ -20,7 +26,6 @@ const NETWORK_FIRST_PATTERNS = [
   /\/decks\.json(\?.*)?$/,
   /\/collection\.json(\?.*)?$/,
   /\/wantlist\.json(\?.*)?$/,
-  /\/decks\.json(\?.*)?$/,
   /\/set-aliases\.json(\?.*)?$/,
   /\/cards-ocr\.json(\?.*)?$/,
   /\/ocr-progress\.json(\?.*)?$/
