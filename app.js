@@ -2002,26 +2002,66 @@ function importDeckFromHash() {
     const hash = window.location.hash;
     if (!hash.startsWith('#deck=')) return;
 
-    const folioString = hash.slice('#deck='.length);
-    if (!folioString) return;
+    const payload = hash.slice('#deck='.length);
+    if (!payload) return;
 
-    const folios = folioString.split(',').map(f => f.trim()).filter(Boolean);
-    if (folios.length === 0) return;
+    let name = 'Mazo Compartido';
+    let cards = [];
+    let protector = null;
+    let protector_suplente = null;
+    let bio = null;
+    let rava = null;
+    let equips = [];
 
-    // Resolve and validate folios
-    const resolved = folios.map(f => resolveFolio(f)).filter(f => allCards.some(c => c.folio === f));
-    if (resolved.length < folios.length) {
-        showToast(`⚠️ ${folios.length - resolved.length} cartas no reconocidas`, 'warning');
+    // Check if it's KDECK format
+    if (payload.startsWith('KDECK-')) {
+        try {
+            const decoded = decodeURIComponent(atob(payload.substring(6)));
+            const data = JSON.parse(decoded);
+            name = data.n || name;
+            cards = data.c || [];
+            protector = data.p || null;
+            protector_suplente = data.ps || null;
+            bio = data.b || null;
+            rava = data.r || null;
+            equips = data.e || [];
+        } catch (e) {
+            console.error('Failed to parse KDECK:', e);
+            showToast('Código KDECK inválido', 'error');
+            return;
+        }
+    } else {
+        // Legacy format: comma-separated folios
+        const folios = payload.split(',').map(f => f.trim()).filter(Boolean);
+        if (folios.length === 0) return;
+
+        // Resolve and validate folios
+        const resolved = folios.map(f => resolveFolio(f)).filter(f => allCards.some(c => c.folio === f));
+        if (resolved.length < folios.length) {
+            showToast(`⚠️ ${folios.length - resolved.length} cartas no reconocidas`, 'warning');
+        }
+        cards = resolved;
     }
 
-    // Create a new deck with the imported cards
+    if (cards.length === 0) {
+        showToast('El mazo está vacío', 'error');
+        return;
+    }
+
+    // Create a new deck with the imported data
     const id = Date.now().toString();
-    const name = 'Mazo Compartido';
-    decks[id] = { name, cards: resolved };
+    const newDeck = { name, cards };
+    if (protector) newDeck.protector = protector;
+    if (protector_suplente) newDeck.protector_suplente = protector_suplente;
+    if (bio) newDeck.bio = bio;
+    if (rava) newDeck.rava = rava;
+    if (equips && equips.length > 0) newDeck.equips = equips;
+
+    decks[id] = newDeck;
     currentDeck = id;
     saveDecks();
 
-    showToast(`Mazo importado desde URL: ${folios.length} cartas`, 'success');
+    showToast(`Mazo importado desde URL: ${cards.length} cartas`, 'success');
     // Use setTimeout to ensure DOM is ready after init
     setTimeout(() => {
         switchView('deck-builder');
@@ -2197,7 +2237,7 @@ function importDeckSyncCode() {
         const code = document.getElementById('deck-sync-text').value.trim();
         if (!code.startsWith('KDECK-')) { showToast('Código inválido — debe empezar con KDECK-', 'error'); return; }
         try {
-            const decoded = decodeURIComponent(escape(atob(code.substring(6))));
+            const decoded = decodeURIComponent(atob(code.substring(6)));
             let name = 'Mazo Importado';
             let cards = [];
             let data = null;
