@@ -624,15 +624,25 @@ function mazoSendToBottom(side, mazoIndex) {
 function parseDeck(deck) {
   // If already structured (has .mazo), return as-is
   if (deck.mazo && Array.isArray(deck.mazo)) return deck;
-  // Parse flat format: cards[] → mazo/protector/bio/equips by card type
-  const parsed = { name: deck.name, mazo: [], protector: null, bio: null, equips: [] };
+  // Use top-level structured fields if present (decks.json format)
+  const parsed = {
+    name: deck.name,
+    mazo: [],
+    protector: deck.protector || null,
+    protector_suplente: deck.protector_suplente || null,
+    bio: deck.bio || null,
+    rava: deck.rava || null,
+    equips: deck.equips || []
+  };
+  // Parse cards[] → mazo (Adendei only since support is in top-level fields)
   for (const f of (deck.cards || [])) {
     const cd = CARDS[f];
     if (!cd) { parsed.mazo.push(f); continue; }
     const t = (cd.type || '').toLowerCase();
-    if (t === 'protector') parsed.protector = f;
-    else if (t === 'bio') parsed.bio = f;
-    else if (t === 'rot' || t === 'ixim') parsed.equips.push(f);
+    if (!parsed.protector && t === 'protector') parsed.protector = f;
+    else if (!parsed.bio && t === 'bio') parsed.bio = f;
+    else if (parsed.equips.length === 0 && (t === 'rot' || t === 'ixim')) parsed.equips.push(f);
+    else if (t === 'rot' || t === 'ixim') { /* skip dupes if equips from top-level */ }
     else parsed.mazo.push(f);
   }
   return parsed;
