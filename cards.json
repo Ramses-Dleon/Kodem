@@ -12274,7 +12274,7 @@
     "cost_text": ""
   },
   {
-    "folio": "KPRC-064 A",
+    "folio": "KPRC-064A",
     "name": "Mizthe, Custodian of the Underworld",
     "set": "KPRC",
     "type": "Adendei",
@@ -12283,7 +12283,7 @@
     "rests": 0,
     "effect_type": "Activa",
     "effect_text": "Activa: Si tienes 4 Adendeis con la misma energia en tu Extincion, envia 1 de esas cartas al fondo de tu Mazo.",
-    "image": "images/KPRC-064 A.webp",
+    "image": "images/KPRC-064A.webp",
     "artist": "Diego Valdez Art",
     "rarity": "Comun",
     "rarity_variants": [],
@@ -12291,7 +12291,7 @@
     "cost_text": "Envia esta carta a Extincion para usar su Activa."
   },
   {
-    "folio": "KPRC-064 B",
+    "folio": "KPRC-064B",
     "name": "Zaykan, Analisis",
     "set": "KPRC",
     "type": "Adendei",
@@ -12300,7 +12300,7 @@
     "rests": 2,
     "effect_type": "Pasiva",
     "effect_text": "Pasiva: Si esta carta fue atacada, daña 1 punto a una carta rival.",
-    "image": "images/KPRC-064 B.webp",
+    "image": "images/KPRC-064B.webp",
     "artist": "capuccino.arts",
     "rarity": "Comun",
     "rarity_variants": [],
