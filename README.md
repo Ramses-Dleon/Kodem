@@ -6,6 +6,8 @@
 
 ![Cartas](https://img.shields.io/badge/cartas-785-f59e0b?style=flat-square) ![Sets](https://img.shields.io/badge/sets-12-0d6efd?style=flat-square) ![Tablero](https://img.shields.io/badge/tablero-interactivo-22c55e?style=flat-square) ![License](https://img.shields.io/badge/fan--made-autorizado-22c55e?style=flat-square)
 
+> ⚠️ **Nota:** Esta versión (v1.0) es el snapshot final en GitHub Pages. La app está migrando a Vercel con backend (auth con Google, marketplace de precios, sync de colección en la nube). La nueva versión estará en [kodem-app.vercel.app](https://kodem-app.vercel.app).
+
 ---
 
 ## ✨ Funcionalidades
@@ -29,6 +31,7 @@
 
 ### 🃏 Constructor de Mazos
 - Reglas Kódem v5.0: 15–24 Adendei + Protector + Bio + Ixim/Rot
+- Deck format v2: campos separados para cada tipo de carta
 - Validación automática de estructura
 - Export/import de mazos vía códigos **KDECK** (compartibles por chat)
 - Guardar y cargar múltiples mazos
@@ -39,44 +42,112 @@
 ### 📖 Guía
 - Resumen de reglas con referencia rápida de mecánicas Kódem v5.0
 
-### 🎮 Tablero Interactivo ✨ NUEVO
+### 🎮 Tablero Interactivo
 - **Practica partidas** directamente en el navegador
 - Fases del turno: Previa → Batalla → Post → Equipo → Fin
 - 3 posiciones de campo por jugador + Protector + Bio + Equipo + Extinción
 - Revelar cartas, equipar Rot/Ixim, resolver combate
-- **Sincronización entre jugadores** vía códigos KBOARD (copia/pega por cualquier chat)
+- Marcas visuales: 🔥 quemadura, ☠️ veneno, 🌀 abismo
+- Botones de efectos específicos por carta (609 cartas cubiertas)
+- **Sincronización entre jugadores** vía códigos KBOARD
 - Vista desktop y mobile optimizada
-- Usa los mazos que armes en el Constructor (localStorage)
+
+---
 
 ## 📊 Base de Datos
 
 | Stat | Valor |
 |------|-------|
 | Total cartas | 785 |
+| Imágenes | 848 (webp) |
 | Sets | 12 |
 | Energías | 8 (Átlica, Pírica, Gélida, Lítica, Demótica, Feral, Húumica, Cháaktica) |
-| Rarezas | 8 (Común, Rara, Súper Rara, Ultra Rara, Kósmica/Titánica, Full Art, Secreta, Evento) |
-| Subtipos | 10 (Abisal, Catrín, Equino, Guardián, Guardián Catrín, Infectado, Kósmico, Resurrecto, Titán, Titán Catrín) |
-| Tipos de efecto | 6 |
+| Rarezas | 8 (Común 522, Rara 68, Súper Rara 80, Ultra Rara 46, Kósmica/Titánica 8, Full Art 58, Secreta 2, Evento 1) |
+| Tipos | Adendei 506, Protector 60, Rot 52, Ixim 50, Bio 48, Rava 39, Espectro 21, Token 6, Lore 3 |
+| Subtipos | 10 (Abisal, Catrín, Equino, Guardián, Infectado, Kósmico, Resurrecto, Titán...) |
 | Cartas con Costo | 247 |
 | Nombres únicos | 448 |
 
 Datos verificados contra [kodem-tcg.com](https://kodem-tcg.com) + cartas físicas.
 
-## 🛠️ Tech
+---
+
+## 📁 Estructura del Proyecto
+
+```
+Kodem/
+├── index.html          # App principal (982 líneas)
+├── app.js              # Lógica completa (3,599 líneas)
+├── style.css           # Estilos dark/light theme (3,730 líneas)
+├── sw.js               # Service Worker para PWA (153 líneas)
+├── cards.json          # Base de datos de 785 cartas
+├── set-aliases.json    # Nombres completos de sets
+├── sinergias.html      # Mapa de sinergias (standalone)
+├── manifest.json       # PWA manifest
+├── board/              # Tablero interactivo
+│   ├── index.html      # UI del tablero
+│   ├── game.js         # Motor de reglas (~1,395 líneas)
+│   ├── main.js         # UI/render (908 líneas)
+│   ├── render.js       # Renderizado de cartas (421 líneas)
+│   ├── effects-ui.js   # Botones de efectos (412 líneas)
+│   └── board.css       # Estilos del tablero
+├── images/             # 848 imágenes webp (~136MB)
+├── icons/              # PWA icons
+├── docs/               # Documentación
+│   └── reglas.md       # Reglas Kódem v5.0 (510 líneas)
+├── CHANGELOG.md        # Historial de cambios
+├── CONTRIBUTING.md     # Guía para contribuir
+└── LICENSE             # MIT
+```
+
+---
+
+## 🛠️ Tech Stack
 
 - **Vanilla JS** — sin frameworks, sin build step
-- **CSS** custom properties con dark mode
+- **CSS** custom properties con dark/light mode
 - **Service Worker** para uso offline (PWA instalable)
-- **Sin servidor** — todo corre en el navegador, sin recopilar datos personales
+- **Sin servidor** — todo corre en el navegador
+- **localStorage** — colección, mazos, configuración
+- **GitHub Pages** — hosting estático gratuito
+
+### Desarrollo local
+```bash
+git clone https://github.com/Ramses-Dleon/Kodem.git
+cd Kodem
+python3 -m http.server 8787
+# Abrir http://localhost:8787
+```
+
+---
 
 ## 📱 Responsive
 
-Diseñado mobile-first. El tablero tiene vista mobile dedicada con botones táctiles optimizados.
+Diseñado mobile-first. Touch targets ≥44px, filtros colapsables, navegación por gestos en modales. El tablero tiene vista mobile dedicada con botones táctiles optimizados.
+
+---
+
+## 🗺️ Roadmap
+
+La app está migrando a una arquitectura con backend:
+
+- [x] Explorador de cartas (785 cartas, 12 sets)
+- [x] Colección y want list
+- [x] Constructor de mazos con validación
+- [x] Tablero interactivo
+- [x] PWA offline
+- [ ] 🔐 **Login con Google** — tus datos en la nube
+- [ ] 💰 **Marketplace de precios** — la comunidad propone y vota precios de cartas
+- [ ] 📊 **Valuación de colección** — cuánto vale lo que tienes
+- [ ] ☁️ **Sync de colección** — accede desde cualquier dispositivo
+
+---
 
 ## ☕ Apóyanos
 
 ¿Te gusta la app? [Invítanos un sobre de Kódem en Ko-fi](https://ko-fi.com/hule88) para seguir mejorándola 🃏
+
+---
 
 ## ⚠️ Aviso Legal
 
@@ -84,4 +155,4 @@ Proyecto **fan-made** autorizado por el equipo creador de Kódem. Las imágenes 
 
 ---
 
-Hecho con 🔥 por fans de Kódem · [☕ Apóyanos](https://ko-fi.com/hule88)
+Hecho con 🔥 por fans de Kódem · v1.0.0 · [☕ Apóyanos](https://ko-fi.com/hule88)

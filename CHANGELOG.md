@@ -2,6 +2,42 @@
 
 Todos los cambios notables del Kódem TCG Companion.
 
+## [1.0.0] — 2026-04-02 — Snapshot Final (GitHub Pages)
+
+> Última versión estática en GitHub Pages. La app migra a Vercel con backend (auth, marketplace de precios).
+
+### Desde v0.9.0
+- **785 cartas** (+176 desde lanzamiento) de 12 sets verificados
+- **848 imágenes** webp de cartas
+- **Tablero interactivo** — practica partidas en el navegador con fases de turno, combate, equipo, sync KBOARD
+- **Deck format v2** — campos separados: `cards[]`, `protector`, `protector_suplente`, `bio`, `rava`, `equips[]`
+- **KDECK export/import** con soporte completo para support cards
+- **32 bugs corregidos** en auditoría profunda (2026-04-01):
+  - `addToDeck()` enruta por tipo a slots dedicados
+  - `removeFromDeck()` limpia todos los slots independientemente
+  - Exports (texto, JSON, URL, KDECK) incluyen support slots
+  - KSYNC Push serializa correctamente
+  - Touch targets ≥44px en mobile
+  - `:focus-visible` global para accesibilidad
+  - Board: veneno/descansos del rival, tokens, equipo al ocultar
+- **Sort secundario por folio** en ordenar por set
+- **Filtro de subtipo exacto** (ya no matchea parcial)
+- **importDeckFromHash()** soporta formato KDECK con todos los campos
+- **importDeckSyncCode()** fix double-decode base64
+
+### Stats finales v1.0
+| Stat | Valor |
+|------|-------|
+| Cartas | 785 |
+| Imágenes | 848 |
+| Sets | 12 |
+| Commits | 231 |
+| Archivos JS | app.js (3,599 líneas), sw.js (153 líneas) |
+| CSS | style.css (3,730 líneas) |
+| Board | game.js (~1,395), main.js (908), render.js (421), effects-ui.js (412) |
+
+---
+
 ## [0.9.0] — 2026-03-17
 
 ### 🎉 Primera versión pública
