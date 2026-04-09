@@ -1013,7 +1013,8 @@
         "id": "P1-damage-reduce",
         "label": "Activa-Rapida: Reduce daño recibido en 2 y actualiza todos los descansos del equipado",
         "trigger": {
-          "type": "on-equipped-damaged"
+          "type": "on-equipped-damaged",
+          "fast": true
         },
         "prerequisites": [
           {
