@@ -131,7 +131,7 @@
         "id": "P1-vivify-rava",
         "label": "Envía self a mazo, vivifica Rava con 3 vida",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -587,7 +587,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "fast": true
       }
     ],
     "meta": {
@@ -643,7 +644,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "fast": true
       }
     ],
     "meta": {
@@ -2001,7 +2003,7 @@
         "id": "P1-copy-ixim",
         "label": "Si 3+ Ixim en campo/extinción: copia efecto de cualquier Ixim",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -3056,7 +3058,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "fast": true
       }
     ],
     "meta": {
@@ -6118,7 +6121,8 @@
         "restrictions": [],
         "modifiers": {
           "fast": true
-        }
+        },
+        "fast": true
       }
     ],
     "meta": {
@@ -13871,7 +13875,8 @@
         "restrictions": [],
         "modifiers": {
           "fast": true
-        }
+        },
+        "fast": true
       }
     ],
     "meta": {
@@ -14989,7 +14994,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "fast": true
       }
     ],
     "meta": {
@@ -15537,7 +15543,8 @@
           "duration": {
             "type": "turn"
           }
-        }
+        },
+        "fast": true
       }
     ],
     "meta": {
@@ -17516,7 +17523,7 @@
         "id": "P1-reset-scaled",
         "label": "Previa: Envia a Extincion; cartas escaladas regresan a dano original",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -20033,7 +20040,7 @@
         "id": "P1-fist-bump",
         "label": "Pasiva once-per-game: ambos regresan 1 Adendei de Extincion al Mazo",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -20385,7 +20392,7 @@
         "id": "P1-negate-passive",
         "label": "Pasiva-Rapida: Niega Pasiva de 1 carta hasta Fin del Turno rival",
         "trigger": {
-          "type": "on-activate",
+          "type": "while-on-field",
           "fast": true
         },
         "prerequisites": [
@@ -20412,7 +20419,8 @@
           "duration": {
             "type": "next-turn"
           }
-        }
+        },
+        "fast": true
       }
     ],
     "meta": {
@@ -20663,7 +20671,7 @@
         "id": "P1-negate-response-damage",
         "label": "Pasiva reactiva: Ataque negado => dana 3 a Adendei equipados en Zona Principal",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -20737,7 +20745,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "fast": true
       }
     ],
     "meta": {
@@ -21662,7 +21671,8 @@
         "restrictions": [],
         "modifiers": {
           "fast": true
-        }
+        },
+        "fast": true
       }
     ],
     "meta": {
