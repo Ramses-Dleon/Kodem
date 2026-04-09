@@ -1690,7 +1690,7 @@
         "id": "P1-massive-damage",
         "label": "Extingue self y aliado: daña 6 a rival",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-death"
         },
         "prerequisites": [
           {
@@ -1974,8 +1974,9 @@
         ],
         "operation": [
           {
-            "type": "scale",
-            "value": 4
+            "type": "damage-bonus",
+            "value": 4,
+            "duration": "this-attack"
           }
         ],
         "target": {
@@ -2842,7 +2843,7 @@
         "id": "P1-grant-abyss",
         "label": "Aliados en principal pueden abismar al atacar",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -2946,7 +2947,7 @@
         "id": "P1-hide-choice",
         "label": "Opción A: oculta 2 Adendei",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -2978,7 +2979,7 @@
         "id": "P2-protect-choice",
         "label": "Opción B: protege 2 Adendei hasta siguiente turno",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -3204,7 +3205,7 @@
         "id": "P2",
         "label": "Costo: Recibe 1 danio por cada danio al Protector rival",
         "trigger": {
-          "type": "on-damaged"
+          "type": "on-enemy-protector-damaged"
         },
         "prerequisites": [
           {
@@ -4313,7 +4314,7 @@
         "id": "P1",
         "label": "Activa (A): Oculta 2 cartas aliadas",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -4432,7 +4433,10 @@
         "id": "P1",
         "label": "Pasiva: Equino en Extincion -> escalar 1 y copiar efecto",
         "trigger": {
-          "type": "on-bio-extinct"
+          "type": "on-ally-death",
+          "filter": {
+            "subtype": "Equino"
+          }
         },
         "prerequisites": [
           {
@@ -4610,7 +4614,7 @@
         "id": "P1-damage",
         "label": "Activa: Daña 3 a 1 carta en Zona Principal",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -4693,7 +4697,7 @@
         "id": "P1-hide",
         "label": "Opcion A: Oculta 1 carta en el campo",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -4722,7 +4726,7 @@
         "id": "P2-change-energy",
         "label": "Opcion B: Cambia energia de cartas aliadas o rivales hasta Protector disponible",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -4754,7 +4758,7 @@
         "id": "P3-scale",
         "label": "Opcion C: Escala 1 pto. a 1 Adendei aliado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -5224,12 +5228,19 @@
         "id": "P1-protect-self",
         "label": "Activa: Protege al Protector hasta que este disponible",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
             "type": "min-extinction",
             "count": 7
+          },
+          {
+            "type": "min-extinction",
+            "count": 3,
+            "plus": {
+              "has-protector-in-extinction": true
+            }
           }
         ],
         "costs": [
@@ -5260,7 +5271,7 @@
         "id": "P2-damage-rivals",
         "label": "Opcion A: Daña 3 a 2 cartas rivales",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -5294,7 +5305,7 @@
         "id": "P3-heal-allies",
         "label": "Opcion B: Cura 2 a hasta 3 Adendei aliados",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -5331,7 +5342,7 @@
         "id": "P4-return-card",
         "label": "Opcion C: Envia 1 carta no poseida en Zona Principal al fondo del Mazo",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -5379,7 +5390,7 @@
         "id": "P1-link-damage",
         "label": "Activa: Daña a 2 Adendei rivales el mismo valor de daño que el vinculado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -5415,7 +5426,7 @@
         "id": "P2-damage-linked",
         "label": "Costo al vinculado segun sus ptos. de daño (4->2, 5->3, 6+->4)",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -5425,6 +5436,14 @@
         "costs": [
           {
             "type": "none"
+          },
+          {
+            "type": "linked-damage",
+            "value_table": {
+              "4": 2,
+              "5": 3,
+              "6+": 4
+            }
           }
         ],
         "operation": [
@@ -5588,7 +5607,7 @@
         "id": "P2-on-equipped-death",
         "label": "Al ir la equipada a Extincion: envia carta rival seleccionada a Extincion (una vez por juego)",
         "trigger": {
-          "type": "on-equipped-attack"
+          "type": "on-equipped-death"
         },
         "prerequisites": [
           {
@@ -5746,7 +5765,7 @@
         "id": "P1-self-extinct",
         "label": "Activa: Envia este equipo a Extincion (costo activable)",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -6048,12 +6067,16 @@
         "id": "P1-damage-redistribute",
         "label": "Reactiva: Si rival declara 4+ daño, redistribuye el total entre tus cartas",
         "trigger": {
-          "type": "on-damaged"
+          "type": "on-enemy-attack-declared"
         },
         "prerequisites": [
           {
             "type": "total-damage-this-turn",
             "op": ">=",
+            "value": 4
+          },
+          {
+            "type": "enemy-declared-damage-gte",
             "value": 4
           }
         ],
@@ -6073,7 +6096,8 @@
           "count": "all"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "fast": true
       }
     ],
     "meta": {
@@ -6141,7 +6165,7 @@
         "id": "P1-on-negate-ally",
         "label": "Reactiva: Al negar efecto/ataque aliado, envia 1 carta en Zona Principal al fondo del Mazo (una vez por juego)",
         "trigger": {
-          "type": "on-ally-hide"
+          "type": "on-ally-negated"
         },
         "prerequisites": [
           {
@@ -6248,7 +6272,7 @@
         "id": "P1-poison",
         "label": "Activa: Envenena 1 carta y 1 Adendei rival en Zona Principal",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -6691,7 +6715,7 @@
         "id": "P1-vivify-conditional-protection",
         "label": "Pasiva Ixim: si 2 Adendei aliados han sido vivificados, Adendei equipado protegido de efectos rivales",
         "trigger": {
-          "type": "on-equipped-attack"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -7010,7 +7034,7 @@
         "id": "P1-equip-from-ext-or-zone",
         "label": "Activa una vez por juego (Previa): equipa Ixim o Rot desde Zona de Equipo o Extincion a Adendei aliado",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -7398,7 +7422,7 @@
         "id": "P1-possess-aki",
         "label": "Espectro: Poseer — requiere 1 o mas Adendei Aki en Extincion propia",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-place"
         },
         "prerequisites": [
           {
@@ -7583,7 +7607,7 @@
         "id": "P1-possess-yakerr",
         "label": "Espectro: Poseer — requiere 3 o mas Adendei Yakerr en Extincion propia",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-place"
         },
         "prerequisites": [
           {
@@ -7680,7 +7704,7 @@
         "id": "P1-possess-nanuk",
         "label": "Espectro: Poseer — requiere 2 o mas Adendei Nanuk en Extincion propia",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-place"
         },
         "prerequisites": [
           {
@@ -8718,7 +8742,7 @@
             "type": "needs-protector"
           },
           {
-            "type": "self-hidden"
+            "type": "self-in-extinction"
           }
         ],
         "costs": [
@@ -8924,7 +8948,7 @@
         "id": "P1-reveal-conditional",
         "label": "Requiere 2+ Adendei Xilan en Extincion para ser jugado",
         "trigger": {
-          "type": "on-reveal"
+          "type": "on-place"
         },
         "prerequisites": [
           {
@@ -9148,11 +9172,7 @@
         "id": "P2-enemy-link-damage-protector",
         "label": "Pasiva: al vincularse el Protector rival, dana 1 al Protector rival",
         "trigger": {
-          "type": "on-ally-link",
-          "filter": {
-            "card_type": "protector",
-            "owner": "enemy"
-          }
+          "type": "on-enemy-link"
         },
         "prerequisites": [
           {
@@ -10098,12 +10118,7 @@
           }
         ],
         "target": {
-          "type": "ally",
-          "count": 1,
-          "filter": {
-            "card_type": "adendei",
-            "equip_type": "ixim"
-          }
+          "type": "equipped"
         },
         "restrictions": [],
         "modifiers": {}
@@ -10541,17 +10556,13 @@
             "type": "once-per-game"
           }
         ],
-        "costs": [
-          {
-            "type": "cant-return-to-equip"
-          }
-        ],
+        "costs": [],
         "operation": [
           {
             "type": "negate-attack"
           },
           {
-            "type": "equip-from-equip-zone"
+            "type": "return-to-equip-zone"
           }
         ],
         "target": {
@@ -10672,7 +10683,7 @@
         "id": "P1",
         "label": "Activa-Rapida: feraliza Adendei rival mientras en campo",
         "trigger": {
-          "type": "while-on-field",
+          "type": "on-activate",
           "fast": true
         },
         "prerequisites": [
@@ -10709,7 +10720,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "fast": true
       }
     ],
     "meta": {
@@ -11943,8 +11955,7 @@
         "id": "P1-suppress-rival-effects",
         "label": "Activa Rápida: al atacar, rival no puede activar efectos hasta fin de turno",
         "trigger": {
-          "type": "on-attack",
-          "fast": true
+          "type": "on-attack"
         },
         "prerequisites": [
           {
@@ -11992,7 +12003,7 @@
         "id": "P1-previa-sacrifice-scale",
         "label": "Pasiva Ixim: durante Previa, puedes enviar a Extinción para escalar 1 pto a equipada",
         "trigger": {
-          "type": "on-pass-turn"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -12886,10 +12897,8 @@
         ],
         "target": {
           "type": "ally",
-          "count": 1,
-          "filter": {
-            "card_type": "adendei"
-          }
+          "count": "all",
+          "zone": "principal"
         },
         "restrictions": [],
         "modifiers": {}
@@ -12960,8 +12969,8 @@
         "id": "P1-stabilize-swap",
         "label": "Pasiva Ixim: si 2+ cartas cambiadas en Zona Principal, regresa 1 al tope del mazo",
         "trigger": {
-          "type": "on-any-reveal",
-          "note": "triggers on zone principal card change"
+          "type": "on-zone-swap",
+          "note": "triggers when 2+ cards are swapped in Zona Principal"
         },
         "prerequisites": [
           {
@@ -13056,8 +13065,8 @@
         "id": "P1-abyssal-trigger-extinction",
         "label": "Al ser abismada en este turno: envía a Extinción 1 Adendei Abisal en campo",
         "trigger": {
-          "type": "on-any-death",
-          "note": "triggers when self receives abyss mark this turn"
+          "type": "on-self-marked",
+          "mark": "abyss"
         },
         "prerequisites": [
           {
@@ -13269,7 +13278,7 @@
         },
         "prerequisites": [
           {
-            "type": "min-extinction",
+            "type": "min-extinction-count",
             "value": 1
           }
         ],
@@ -13498,9 +13507,8 @@
         },
         "prerequisites": [
           {
-            "type": "needs-mark",
-            "mark": "burn",
-            "zone": "field"
+            "type": "burned-card-on-field",
+            "count": 1
           }
         ],
         "costs": [
@@ -13732,7 +13740,8 @@
         ],
         "operation": [
           {
-            "type": "multi-attack"
+            "type": "multi-attack",
+            "count": "equip-count"
           }
         ],
         "target": {
@@ -13794,7 +13803,8 @@
         "restrictions": [],
         "modifiers": {
           "fast": true
-        }
+        },
+        "fast": true
       },
       {
         "id": "P2-lock-positions",
@@ -13898,7 +13908,7 @@
         "id": "P1-negate-rival-passive",
         "label": "Pasiva: Enviar a Extincion para negar la Pasiva de 1 carta rival mientras este en campo",
         "trigger": {
-          "type": "on-equipped-attack"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -14186,8 +14196,8 @@
         ],
         "operation": [
           {
-            "type": "swap",
-            "attribute": "reset-positions"
+            "type": "reset-field-positions",
+            "zone": "principal"
           }
         ],
         "target": {
@@ -14208,12 +14218,9 @@
         },
         "prerequisites": [
           {
-            "type": "no-own-field",
-            "owner": "enemy",
-            "filter": {
-              "card_type": "token"
-            },
-            "zone": "principal"
+            "type": "rival-token-count",
+            "operator": "eq",
+            "value": 0
           }
         ],
         "costs": [
@@ -14343,7 +14350,7 @@
         "id": "P1-sacrifice-heal-protector",
         "label": "Pasiva: Enviar a Extincion para curar 6 al Protector",
         "trigger": {
-          "type": "on-equipped-attack"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -14447,6 +14454,13 @@
               "card_type": "adendei",
               "subtype": "Titan"
             }
+          },
+          {
+            "type": "protector-available"
+          },
+          {
+            "type": "card-not-on-field",
+            "name": "Rasvel, Congelado"
           }
         ],
         "costs": [
@@ -14478,6 +14492,60 @@
             "target": "protector"
           }
         }
+      },
+      {
+        "id": "P2-enter-field-no-titan-penalty",
+        "trigger": {
+          "type": "on-enter-field"
+        },
+        "prerequisites": [
+          {
+            "type": "no-ally-titan-on-field"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "operation": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "modifiers": {},
+        "costs": [
+          {
+            "type": "none"
+          }
+        ]
+      },
+      {
+        "id": "P3-on-extinction-damage-protector",
+        "trigger": {
+          "type": "on-self-extinct"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "protector"
+          }
+        },
+        "operation": [
+          {
+            "type": "damage",
+            "value": 4
+          }
+        ],
+        "modifiers": {},
+        "costs": [
+          {
+            "type": "none"
+          }
+        ]
       }
     ],
     "meta": {
@@ -14612,6 +14680,10 @@
         "prerequisites": [
           {
             "type": "once-per-field"
+          },
+          {
+            "type": "protector-has-rests",
+            "min": 1
           }
         ],
         "costs": [
@@ -14675,9 +14747,17 @@
           }
         ],
         "target": {
-          "type": "enemy",
-          "zone": "principal",
-          "count": 1
+          "heal_target": {
+            "type": "enemy",
+            "filter": {
+              "card_type": "protector"
+            }
+          },
+          "damage_target": {
+            "type": "any",
+            "zone": "principal",
+            "count": 1
+          }
         },
         "restrictions": [],
         "modifiers": {}
@@ -14719,17 +14799,28 @@
           },
           {
             "type": "heal",
-            "value": 2
+            "value": 2,
+            "target_index": 0
           },
           {
             "type": "heal",
-            "value": 1
+            "value": 1,
+            "target_index": 1
           }
         ],
-        "target": {
-          "type": "ally",
-          "count": 1
-        },
+        "target": [
+          {
+            "type": "ally",
+            "count": 1
+          },
+          {
+            "type": "ally",
+            "count": 1,
+            "filter": {
+              "card_type": "adendei"
+            }
+          }
+        ],
         "restrictions": [],
         "modifiers": {}
       }
@@ -14840,7 +14931,7 @@
         },
         "prerequisites": [
           {
-            "type": "min-ext-type",
+            "type": "min-extinction-count",
             "value": 3,
             "filter": {
               "subtype": "abisal"
@@ -14918,7 +15009,11 @@
         "id": "P1-burn-extra-damage",
         "label": "Aura: Adendei quemados reciben 1 dano adicional al atacar o activar",
         "trigger": {
-          "type": "while-on-field"
+          "type": "on-any-attack-or-activate",
+          "filter": {
+            "has_mark": "burn",
+            "card_type": "adendei"
+          }
         },
         "prerequisites": [
           {
@@ -14947,11 +15042,7 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          },
-          "on_event": [
-            "on-attack",
-            "on-activate"
-          ]
+          }
         }
       }
     ],
@@ -15222,7 +15313,7 @@
         "id": "P1-swap-damage",
         "label": "Al ser movida en el campo: dana 1 a una carta rival en descanso",
         "trigger": {
-          "type": "on-rest-update"
+          "type": "on-self-position-change"
         },
         "prerequisites": [
           {
@@ -15331,7 +15422,8 @@
             "type": "needs-protector"
           },
           {
-            "type": "independent"
+            "type": "protector-available",
+            "require": true
           }
         ],
         "costs": [
@@ -15379,7 +15471,8 @@
         },
         "prerequisites": [
           {
-            "type": "target-has-rests"
+            "type": "self-has-rests",
+            "min": 1
           }
         ],
         "costs": [
@@ -15421,7 +15514,7 @@
         },
         "prerequisites": [
           {
-            "type": "min-ext-same-energy",
+            "type": "min-extinction-count-same-energy",
             "value": 4
           }
         ],
@@ -15474,6 +15567,10 @@
             "mark": "burn",
             "side": "ally",
             "zone": "principal"
+          },
+          {
+            "type": "ally-burned-card-in-principal",
+            "count": 1
           }
         ],
         "costs": [
@@ -15483,20 +15580,32 @@
         ],
         "operation": [
           {
-            "type": "send-extinction"
+            "type": "send-extinction",
+            "target_index": 0
           },
           {
-            "type": "send-extinction"
+            "type": "send-extinction",
+            "target_index": 1
           }
         ],
-        "target": {
-          "type": "both",
-          "count": 1,
-          "zone": "principal",
-          "filter": {
-            "has_mark": "burn"
+        "target": [
+          {
+            "type": "enemy",
+            "count": 1,
+            "zone": "principal",
+            "filter": {
+              "has_mark": "burn"
+            }
+          },
+          {
+            "type": "ally",
+            "count": 1,
+            "zone": "principal",
+            "filter": {
+              "has_mark": "burn"
+            }
           }
-        },
+        ],
         "restrictions": [],
         "modifiers": {}
       }
@@ -15800,7 +15909,7 @@
         "id": "P1-negate-attack",
         "label": "Al atacar aliado: regresa a Zona de Equipo y niega el ataque (una vez por juego)",
         "trigger": {
-          "type": "on-ally-attack"
+          "type": "on-ally-attacked"
         },
         "prerequisites": [
           {
@@ -15809,7 +15918,7 @@
         ],
         "costs": [
           {
-            "type": "cant-return-to-equip"
+            "type": "self-return-to-equip-zone"
           }
         ],
         "operation": [
@@ -15824,7 +15933,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "fast": true
       }
     ],
     "meta": {
@@ -15980,7 +16090,7 @@
         "id": "P1-equip-return-scale",
         "label": "Al regresar un equipo a Zona de Equipo: escala 1",
         "trigger": {
-          "type": "on-ally-equip"
+          "type": "on-equip-returned"
         },
         "prerequisites": [
           {
@@ -16174,7 +16284,9 @@
         ],
         "operation": [
           {
-            "type": "equip-from-equip-zone"
+            "type": "equip-transfer",
+            "from": "ally-adendei-field",
+            "to": "compatible-ally-adendei"
           }
         ],
         "target": {
@@ -16790,7 +16902,10 @@
         "id": "P2-attack-facing-rest",
         "label": "Al atacar a carta frente a ella: esa carta recibe 1 descanso",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-attack",
+          "filter": {
+            "target": "facing"
+          }
         },
         "prerequisites": [
           {
@@ -16924,7 +17039,7 @@
         "id": "P1-negate-on-attack",
         "label": "Si Adendei aliado es atacado: niega el ataque (costo: dano 1 a equipada)",
         "trigger": {
-          "type": "on-ally-attack",
+          "type": "on-ally-attacked",
           "filter": {
             "card_type": "adendei"
           }
@@ -16957,7 +17072,8 @@
           }
         ],
         "modifiers": {},
-        "notes": "Solo equipable a Adendei Zaykan"
+        "notes": "Solo equipable a Adendei Zaykan",
+        "fast": true
       }
     ],
     "meta": {
@@ -17101,7 +17217,7 @@
         "id": "P1-copy-extinction",
         "label": "Pasiva: Copia Activa y Costo de una carta en Extincion (una vez por juego)",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -17124,7 +17240,9 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_game": true
+        }
       }
     ],
     "meta": {
@@ -17695,10 +17813,7 @@
         },
         "prerequisites": [
           {
-            "type": "no-own-field",
-            "filter": {
-              "has_rests": true
-            }
+            "type": "no-ally-in-rest"
           }
         ],
         "costs": [
@@ -17904,7 +18019,10 @@
           }
         ],
         "target": {
-          "type": "equipped"
+          "type": "attacked",
+          "filter": {
+            "has_rests": true
+          }
         },
         "restrictions": [],
         "modifiers": {}
@@ -17979,7 +18097,7 @@
         "id": "P1-ally-attacked-retaliate",
         "label": "Si aliado es atacado: carta rival recibe 1 descanso (costo: equipada recibe 1 descanso)",
         "trigger": {
-          "type": "on-ally-attack",
+          "type": "on-ally-attacked",
           "filter": {
             "card_type": "adendei"
           }
@@ -18010,7 +18128,8 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "notes": "Solo equipable a Adendei Nanuk"
+        "notes": "Solo equipable a Adendei Nanuk",
+        "fast": true
       }
     ],
     "meta": {
@@ -18184,7 +18303,7 @@
         "id": "P1-scale-heal-punish",
         "label": "Si alguna carta escala o es curada: dana 1 a un Adendei rival",
         "trigger": {
-          "type": "on-any-healed"
+          "type": "on-any-healed-or-scaled"
         },
         "prerequisites": [
           {
@@ -19021,6 +19140,9 @@
         "operation": [
           {
             "type": "poison"
+          },
+          {
+            "type": "poison"
           }
         ],
         "target": {
@@ -19155,7 +19277,8 @@
         "id": "P1-hide-and-return",
         "label": "Activa-Rapida (on-equipped-attack): Oculta 1 Adendei o Bio en campo y regresa esta carta a Zona de Equipo",
         "trigger": {
-          "type": "on-equipped-attack"
+          "type": "on-equipped-attack",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -19231,7 +19354,7 @@
         ],
         "operation": [
           {
-            "type": "damage",
+            "type": "set-damage-stat",
             "value": 2
           },
           {
@@ -19384,7 +19507,7 @@
         "id": "P1-sacrifice-linked-vivify-rava",
         "label": "Activa: Envia Adendei vinculado a Extincion y regresa 1 Rava de Extincion a Zona Principal",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -19760,7 +19883,10 @@
         "id": "P1-counter-negate-passive",
         "label": "Reactiva: Si Pasiva aliada es negada, dana 2 ptos. a 1 Adendei rival (costo: auto-dano 1)",
         "trigger": {
-          "type": "on-ally-damaged"
+          "type": "on-ally-passive-negated",
+          "filter": {
+            "owner": "ally"
+          }
         },
         "prerequisites": [
           {
@@ -19876,7 +20002,7 @@
         "id": "P1-scale-on-descend",
         "label": "Reactiva (once-per-turn): Si cualquier carta desciende, esta carta escala 1 pto. permanentemente",
         "trigger": {
-          "type": "on-any-death"
+          "type": "on-any-descend"
         },
         "prerequisites": [
           {
@@ -19924,7 +20050,8 @@
         "id": "P1-copy-rot-from-extinction",
         "label": "Activa-Rapida: Copia y usa efecto+costo de 1 Rot en Extincion (costo: Adendei equipado -1 dano + 1 aliado desciende 1)",
         "trigger": {
-          "type": "on-equipped-attack"
+          "type": "on-equipped-attack",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -20042,7 +20169,7 @@
         "id": "P1-fist-bump",
         "label": "Pasiva once-per-game: ambos regresan 1 Adendei de Extincion al Mazo",
         "trigger": {
-          "type": "while-on-field"
+          "type": "on-phase-previa"
         },
         "prerequisites": [
           {
@@ -20394,7 +20521,7 @@
         "id": "P1-negate-passive",
         "label": "Pasiva-Rapida: Niega Pasiva de 1 carta hasta Fin del Turno rival",
         "trigger": {
-          "type": "while-on-field",
+          "type": "on-passive-declared",
           "fast": true
         },
         "prerequisites": [
@@ -20498,7 +20625,7 @@
         "id": "P1-swap-field",
         "label": "Activa: Intercambia 2 cartas en Zona Principal",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -20528,7 +20655,7 @@
         "id": "P2-double-damage-non-facing",
         "label": "Post-Activa: Doble dano en primer ataque a carta no frontal",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -20574,7 +20701,7 @@
         "id": "P1-cant-attack-select",
         "label": "Bio Pasiva: Inmoviliza 1 aliada y 1 rival hasta fin del siguiente turno",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-phase-previa"
         },
         "prerequisites": [
           {
@@ -20673,7 +20800,7 @@
         "id": "P1-negate-response-damage",
         "label": "Pasiva reactiva: Ataque negado => dana 3 a Adendei equipados en Zona Principal",
         "trigger": {
-          "type": "while-on-field"
+          "type": "on-attack-negated"
         },
         "prerequisites": [
           {
@@ -20768,7 +20895,8 @@
         "id": "P1-redirect-to-token",
         "label": "Pasiva reactiva: Aliado atacado => desvia ataque al Token equipado",
         "trigger": {
-          "type": "on-ally-damaged"
+          "type": "on-ally-damaged",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -20800,7 +20928,8 @@
         "id": "P2-return-on-token-death",
         "label": "Pasiva reactiva: Token equipado a Extincion => Rot regresa a Zona de Equipo",
         "trigger": {
-          "type": "on-equipped-damaged"
+          "type": "on-equipped-damaged",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -21045,8 +21174,7 @@
         "id": "P1-ban-fast-activa",
         "label": "Pasiva continua: Ninguna Activa-Rapida puede ser usada",
         "trigger": {
-          "type": "while-on-field",
-          "fast": true
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -21230,7 +21358,7 @@
         "id": "P1-return-all-to-deck",
         "label": "Pasiva once-per-game: Regresa todas las cartas de Zona Principal al fondo del Mazo",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-phase-previa"
         },
         "prerequisites": [
           {
@@ -21336,7 +21464,7 @@
         "id": "P1-copy-activa",
         "label": "Copia la Activa y Costo de cualquier Adendei en campo",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -21429,7 +21557,7 @@
         "id": "P1-damage-enemy",
         "label": "Daña 6 a 1 Adendei rival",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -21461,7 +21589,7 @@
         "id": "P2-damage-allies",
         "label": "Daña 2 a 2 Adendei aliados",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -21592,7 +21720,7 @@
         "id": "P2-extra-damage",
         "label": "+1 daño adicional al atacar (pasiva continua)",
         "trigger": {
-          "type": "while-on-field"
+          "type": "on-equipped-attack"
         },
         "prerequisites": [
           {
@@ -21753,7 +21881,8 @@
           "type": "on-ally-damaged",
           "filter": {
             "energy": "pirica"
-          }
+          },
+          "fast": true
         },
         "prerequisites": [
           {
@@ -21806,7 +21935,7 @@
         "id": "P1-reveal-out-of-game",
         "label": "Pasiva: revela 1 carta del Mazo y la coloca fuera del juego",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-phase-previa"
         },
         "prerequisites": [
           {
@@ -21844,7 +21973,7 @@
         "id": "P2-swap-out-of-game",
         "label": "Si Protector disponible: regresa Adendei al Mazo y coloca carta-OOG con 6 pts",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-phase-previa"
         },
         "prerequisites": [
           {
@@ -21989,7 +22118,7 @@
         "id": "P1-equip-ixim",
         "label": "Equipa 2 Ixim de Extinción a Adendei aliados",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -22457,7 +22586,10 @@
         "id": "P1-double-damage",
         "label": "Si todas las cartas aliadas disponibles: carta equipada ataca con doble daño",
         "trigger": {
-          "type": "on-equipped-attack"
+          "type": "while-on-field",
+          "condition": {
+            "all-allies-available": true
+          }
         },
         "prerequisites": [
           {
@@ -22506,7 +22638,7 @@
         "id": "P1-swap-abisal",
         "label": "Auto-extingue y coloca cualquier Adendei Abisal de Mazo o Extinción",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-phase-previa"
         },
         "prerequisites": [
           {
@@ -22652,7 +22784,8 @@
         },
         "prerequisites": [
           {
-            "type": "needs-protector"
+            "type": "self-has-status",
+            "status": "protected"
           }
         ],
         "costs": [
@@ -22714,7 +22847,8 @@
         },
         "prerequisites": [
           {
-            "type": "needs-protector"
+            "type": "self-has-status",
+            "status": "protected"
           }
         ],
         "costs": [
@@ -22759,7 +22893,7 @@
         "id": "P1-counter-swap-damage",
         "label": "Si rival cambio carta a tu campo este turno: dana 3 a 1 Adendei rival y regresa 1 carta al Mazo (una vez por juego)",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-enemy-swap-to-ally-field"
         },
         "prerequisites": [
           {
@@ -23142,7 +23276,7 @@
         "id": "P1-conditional-heal-damage",
         "label": "Si hay Adendei-Atlico o Abisal en campo: cura 1 a hasta 3 aliados y dana 1 por cada curado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -23289,7 +23423,7 @@
         "id": "P2-on-activate-damage-pirico",
         "label": "Al activarse: dana 1 a todos los Adendei-Pirico",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -23691,7 +23825,8 @@
         },
         "prerequisites": [
           {
-            "type": "needs-protector"
+            "type": "self-has-status",
+            "status": "protected"
           }
         ],
         "costs": [
@@ -23929,7 +24064,8 @@
           "type": "on-ally-death",
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "fast": true
         },
         "prerequisites": [
           {
