@@ -1,0 +1,332 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Kódem TCG Card Pipeline v2",
+  "description": "Schema para definir pipelines de efectos de cartas. Cada carta tiene 1-N pipelines que el engine ejecuta secuencialmente.",
+  "type": "object",
+  "required": ["card_id", "card_name", "pipelines"],
+  "properties": {
+    "card_id": {
+      "type": "string",
+      "description": "Folio único de la carta (ej: CAMP-004)"
+    },
+    "card_name": {
+      "type": "string",
+      "description": "Nombre de la carta"
+    },
+    "effect_text": {
+      "type": "string",
+      "description": "Texto original del efecto (referencia)"
+    },
+    "cost_text": {
+      "type": "string",
+      "description": "Texto original del costo (referencia)"
+    },
+    "pipelines": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/pipeline" }
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "role": { "type": "string", "enum": ["opener","closer","hitter","support","engine","disruptor","tech"] },
+        "affinities": { "type": "array", "items": { "type": "string" } },
+        "validated": { "type": "boolean", "default": false },
+        "validated_by": { "type": "string" },
+        "validated_at": { "type": "string", "format": "date-time" },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+  "definitions": {
+    "pipeline": {
+      "type": "object",
+      "required": ["id", "trigger", "operation"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador del pipeline (ej: P1-activa, P2-pasiva, P3-on-death)"
+        },
+        "label": {
+          "type": "string",
+          "description": "Descripción humana del pipeline (ej: 'Curación al atacar')"
+        },
+        "trigger": { "$ref": "#/definitions/trigger" },
+        "prerequisites": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/prerequisite" },
+          "default": [{ "type": "independent" }]
+        },
+        "costs": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/cost" },
+          "default": [{ "type": "none" }]
+        },
+        "operation": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/operation" },
+          "description": "Operaciones ejecutadas en orden secuencial"
+        },
+        "target": { "$ref": "#/definitions/target" },
+        "restrictions": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/restriction" },
+          "default": []
+        },
+        "modifiers": { "$ref": "#/definitions/modifiers" }
+      }
+    },
+
+    "trigger": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "on-attack", "on-activate", "on-damaged", "on-reveal", "on-death",
+            "on-equip", "on-healed", "on-link",
+            "on-ally-attack", "on-ally-damaged", "on-ally-reveal", "on-ally-death",
+            "on-ally-hide", "on-ally-leaves-field",
+            "on-any-reveal", "on-any-healed",
+            "on-equipped-attack",
+            "end-of-turn", "end-of-turn-expire", "on-poison", "on-rest-update",
+            "on-pass-turn", "on-draw", "on-bio-extinct",
+            "while-on-field", "unconditional", "conditional-self-destruct"
+          ]
+        },
+        "fast": {
+          "type": "boolean",
+          "default": false,
+          "description": "Activa-Rápida — se resuelve en ventana rápida de Batalla"
+        },
+        "filter": { "$ref": "#/definitions/filter" }
+      }
+    },
+
+    "prerequisite": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "independent",
+            "once-per-game", "once-per-turn", "once-per-field",
+            "min-extinction", "min-ext-type", "min-ext-name", "min-ext-same-energy",
+            "min-count",
+            "needs-ally", "needs-same-name", "needs-equip", "needs-rava",
+            "needs-protector", "needs-protector-available", "needs-bio",
+            "needs-mark", "needs-link",
+            "self-hidden",
+            "no-own",
+            "target-has-mark", "target-has-rests",
+            "total-damage-this-turn"
+          ]
+        },
+        "value": {
+          "description": "Valor numérico del prerequisito (ej: min-extinction:3)",
+          "type": "integer"
+        },
+        "filter": { "$ref": "#/definitions/filter" },
+        "name": {
+          "type": "string",
+          "description": "Nombre de carta para min-ext-name"
+        },
+        "mark": {
+          "type": "string",
+          "enum": ["burn", "poison", "abyss"],
+          "description": "Tipo de marca para target-has-mark"
+        },
+        "card_type": {
+          "type": "string",
+          "description": "Tipo de carta para no-own (ej: bio, rava)"
+        },
+        "zones": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["field", "extinction", "deck", "equip"] },
+          "description": "Zonas para min-count"
+        }
+      }
+    },
+
+    "cost": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "none",
+            "self-damage", "ally-damage", "ally-damage-all", "field-damage-all",
+            "self-extinct", "self-return-deck", "ally-extinct", "equip-extinct", "bio-extinct",
+            "no-attack-this-turn", "lose-turn", "extra-rest",
+            "protector-damage", "protector-rest",
+            "pass-turn", "bio-passive-disabled",
+            "mirror"
+          ]
+        },
+        "value": {
+          "description": "Valor numérico (daño, cantidad, etc.)",
+          "type": "integer"
+        },
+        "position": {
+          "type": "string",
+          "enum": ["top", "bottom"],
+          "description": "Posición para self-return-deck"
+        },
+        "filter": { "$ref": "#/definitions/filter" }
+      }
+    },
+
+    "operation": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "damage", "damage-all", "damage-multi", "damage-per", "damage-as-revealed", "damage-protector",
+            "heal", "heal-all", "remove-marks",
+            "burn", "poison", "abyss", "mark-persist",
+            "scale", "scale-per", "descend", "reset-stats", "grant-double-damage", "attack-as",
+            "rest-add", "rest-remove", "no-rest",
+            "negate-effect", "negate-attack", "conditional-negate", "protect-attack", "protect-effect", "immune-marks",
+            "hide", "reveal", "reveal-all", "swap", "swap-field-extinction",
+            "return-deck", "send-extinction", "vivify", "enhanced-replace",
+            "equip-from-extinct", "equip-self", "equip-destroy", "unequip-all", "extra-equip-slot",
+            "change-subtype", "promote-to-fast", "grant-mark-on-attack",
+            "create-token", "copy", "peek-enemy-deck", "feralizar",
+            "redirect", "link", "possess",
+            "attack-all", "attack-protector", "multi-attack"
+          ]
+        },
+        "value": {
+          "description": "Valor numérico (daño, curación, etc.)",
+          "type": "integer"
+        },
+        "condition": {
+          "type": "string",
+          "description": "Condición para damage-per, scale-per, conditional-negate, attack-as"
+        },
+        "mark": {
+          "type": "string",
+          "enum": ["burn", "poison", "abyss"],
+          "description": "Tipo de marca para mark-persist, grant-mark-on-attack"
+        },
+        "position": {
+          "type": "string",
+          "enum": ["top", "bottom"],
+          "description": "Posición para return-deck"
+        },
+        "hp": {
+          "type": "integer",
+          "description": "Puntos de vida para vivify (default 6)"
+        },
+        "subtype": {
+          "type": "string",
+          "description": "Para change-subtype"
+        },
+        "source_zone": {
+          "type": "string",
+          "description": "Zona fuente para copy, equip-from-extinct"
+        },
+        "source_filter": { "$ref": "#/definitions/filter" },
+        "equip_type": {
+          "type": "string",
+          "enum": ["ixim", "rot", "any"],
+          "description": "Para extra-equip-slot"
+        }
+      }
+    },
+
+    "target": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["self", "ally", "enemy", "both", "facing", "protector", "any", "triggering", "equipped"]
+        },
+        "count": {
+          "description": "Número de targets (null = 1, 'all' = todos)",
+          "oneOf": [
+            { "type": "integer", "minimum": 1 },
+            { "type": "string", "enum": ["all"] }
+          ]
+        },
+        "filter": { "$ref": "#/definitions/filter" }
+      }
+    },
+
+    "restriction": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "cant-attack", "cant-attack-protector", "cant-attack-on-reveal-turn",
+            "cant-be-attacked", "cant-be-damaged-effect",
+            "cant-equip", "cant-heal", "cant-be-protected", "cant-hide",
+            "cant-rest-update", "cant-link",
+            "cant-negate", "cant-negate-passive", "cant-negate-active",
+            "cant-be-copied",
+            "immune-extinction-by-effect"
+          ]
+        },
+        "duration": { "$ref": "#/definitions/duration" }
+      }
+    },
+
+    "modifiers": {
+      "type": "object",
+      "properties": {
+        "optional": { "type": "boolean", "default": false },
+        "choice": {
+          "description": "Rango de elección numérica o 'op' para elegir entre operaciones",
+          "oneOf": [
+            { "type": "object", "properties": { "min": {"type":"integer"}, "max": {"type":"integer"} }, "required": ["min","max"] },
+            { "type": "string", "enum": ["op"] }
+          ]
+        },
+        "choice_operations": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/operation" },
+          "description": "Operaciones alternativas cuando choice='op'"
+        },
+        "duration": { "$ref": "#/definitions/duration" },
+        "mirror_cost": { "type": "boolean", "default": false }
+      }
+    },
+
+    "filter": {
+      "type": "object",
+      "description": "Filtro para targets, triggers, etc.",
+      "properties": {
+        "energy": { "type": "string" },
+        "subtype": { "type": "string" },
+        "card_type": { "type": "string", "enum": ["adendei","rava","protector","bio","ixim","rot","espectro","token"] },
+        "name": { "type": "string" },
+        "negate": { "type": "boolean", "default": false, "description": "Invertir filtro (NOT)" },
+        "or": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/filter" },
+          "description": "OR de múltiples filtros"
+        }
+      }
+    },
+
+    "duration": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["permanent", "turn", "next-turn", "while-on-field", "next-attack"]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,224 @@
+[
+  {
+    "card_id": "009/066",
+    "card_name": "Nok, Frio Magno",
+    "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Gélido mientras esta carta esté en campo. Si un Adendei-Gélido aliado atacó, cura 1 punto a un Adendei-Gélido aliado.",
+    "cost_text": "Si esta carta es enviada a Extinción, daña 1 punto a todos los Adendei-Gélido en campo.",
+    "pipelines": [
+      {
+        "id": "P1-aura",
+        "label": "Aura: +1 daño a Gélidos aliados",
+        "trigger": { "type": "while-on-field" },
+        "prerequisites": [{ "type": "independent" }],
+        "costs": [{ "type": "none" }],
+        "operation": [{ "type": "scale", "value": 1 }],
+        "target": { "type": "ally", "filter": { "energy": "gelida" } },
+        "restrictions": [],
+        "modifiers": { "duration": { "type": "while-on-field" } }
+      },
+      {
+        "id": "P2-heal",
+        "label": "Cura 1 a Gélido aliado cuando Gélido ataca",
+        "trigger": { "type": "on-ally-attack", "filter": { "energy": "gelida" } },
+        "prerequisites": [{ "type": "independent" }],
+        "costs": [{ "type": "none" }],
+        "operation": [{ "type": "heal", "value": 1 }],
+        "target": { "type": "ally", "count": 1, "filter": { "energy": "gelida" } },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P3-on-death",
+        "label": "Al morir: daña 1 a todos los Gélidos",
+        "trigger": { "type": "on-death" },
+        "prerequisites": [{ "type": "independent" }],
+        "costs": [{ "type": "none" }],
+        "operation": [{ "type": "damage-all", "value": 1 }],
+        "target": { "type": "both", "count": "all", "filter": { "energy": "gelida" } },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": { "role": "support", "affinities": ["aff:gelida"], "validated": true, "notes": "Pattern Rava Deidad" }
+  },
+  {
+    "card_id": "ANIV-001",
+    "card_name": "Xilan, Tercer Aniversario",
+    "effect_text": "Pasiva: Puedes enviar esta carta al fondo de tu Mazo y regresar 1 Rava de tu Extincion a tu Zona Principal con 3 puntos de vida.",
+    "cost_text": "Solo puedes usar este efecto una vez por juego",
+    "pipelines": [
+      {
+        "id": "P1-vivify-rava",
+        "label": "Vivifica Rava con 3 PV (auto-retorno)",
+        "trigger": { "type": "while-on-field" },
+        "prerequisites": [{ "type": "once-per-game" }],
+        "costs": [{ "type": "self-return-deck", "position": "bottom" }],
+        "operation": [{ "type": "vivify", "hp": 3 }],
+        "target": { "type": "ally", "count": 1, "filter": { "card_type": "rava" } },
+        "restrictions": [],
+        "modifiers": { "optional": true }
+      }
+    ],
+    "meta": { "role": "support", "affinities": ["aff:huumica"] }
+  },
+  {
+    "card_id": "BETA-001",
+    "card_name": "Ariam, Dualidad",
+    "effect_text": "Costo: Antes de atacar, esta carta quita 1 pto. de vida a los Adendei aliados.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-cost-attack",
+        "label": "Pre-ataque: daña 1 a todos los aliados",
+        "trigger": { "type": "on-attack" },
+        "prerequisites": [{ "type": "independent" }],
+        "costs": [{ "type": "ally-damage-all", "value": 1 }],
+        "operation": [],
+        "target": { "type": "enemy" },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": { "role": "hitter", "affinities": ["aff:pirica"], "notes": "Solo tiene costo, sin operación extra" }
+  },
+  {
+    "card_id": "CAMP-001",
+    "card_name": "Kumba, Despertar",
+    "effect_text": "Pasiva: Si el Bio aliado es enviado a Extinción, puedes enviar a Extinción 1 Adendei rival.",
+    "cost_text": "Costo: No puedes atacar en el turno que usaste esta Pasiva. Solo puedes usar esta Pasiva una vez mientras esta carta esté en el campo.",
+    "pipelines": [
+      {
+        "id": "P1-bio-death-removal",
+        "label": "Cuando Bio muere: envía 1 rival a Extinción",
+        "trigger": { "type": "on-bio-extinct" },
+        "prerequisites": [{ "type": "once-per-field" }],
+        "costs": [{ "type": "no-attack-this-turn" }],
+        "operation": [{ "type": "send-extinction" }],
+        "target": { "type": "enemy", "count": 1, "filter": { "card_type": "adendei" } },
+        "restrictions": [],
+        "modifiers": { "optional": true }
+      }
+    ],
+    "meta": { "role": "disruptor", "affinities": ["aff:litica"] }
+  },
+  {
+    "card_id": "CAMP-002",
+    "card_name": "Zotz, Aislamiento",
+    "effect_text": "Activa: Si no tienes Bio, envia esta carta y el Bio rival a Extincion.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-kamikaze-bio",
+        "label": "Sin Bio propio: destruye Bio rival (kamikaze)",
+        "trigger": { "type": "on-activate" },
+        "prerequisites": [{ "type": "no-own", "card_type": "bio" }],
+        "costs": [{ "type": "self-extinct" }],
+        "operation": [{ "type": "send-extinction" }],
+        "target": { "type": "enemy", "count": 1, "filter": { "card_type": "bio" } },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": { "role": "disruptor", "affinities": ["aff:huumica"] }
+  },
+  {
+    "card_id": "CAMP-003",
+    "card_name": "Xilan, Calma",
+    "effect_text": "Esta carta puede escalar 1-5 ptos. una vez mientras esté en el campo.",
+    "cost_text": "Para usar su Activa, daña los mismos ptos. escalados a todos los Adendei en tu campo.",
+    "pipelines": [
+      {
+        "id": "P1-scale-mirror",
+        "label": "Escala 1-5 (costo: daña lo mismo a aliados)",
+        "trigger": { "type": "on-activate" },
+        "prerequisites": [{ "type": "once-per-field" }],
+        "costs": [{ "type": "field-damage-all", "filter": { "card_type": "adendei" } }],
+        "operation": [{ "type": "scale" }],
+        "target": { "type": "self" },
+        "restrictions": [],
+        "modifiers": { "choice": { "min": 1, "max": 5 }, "mirror_cost": true }
+      }
+    ],
+    "meta": { "role": "engine", "affinities": ["aff:huumica"] }
+  },
+  {
+    "card_id": "CAMP-004",
+    "card_name": "Enis, Coma",
+    "effect_text": "Activa: 2 Adendei rivales reciben 1 descanso.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-slow",
+        "label": "Añade 1 descanso a 2 rivales",
+        "trigger": { "type": "on-activate" },
+        "prerequisites": [{ "type": "independent" }],
+        "costs": [{ "type": "none" }],
+        "operation": [{ "type": "rest-add", "value": 1 }],
+        "target": { "type": "enemy", "count": 2, "filter": { "card_type": "adendei" } },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": { "role": "tech", "affinities": ["aff:gelida"] }
+  },
+  {
+    "card_id": "CAMP-005",
+    "card_name": "Zenam, Veneno Siseante",
+    "effect_text": "Activa: Envenena un Adendei rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-poison",
+        "label": "Envenena 1 rival",
+        "trigger": { "type": "on-activate" },
+        "prerequisites": [{ "type": "independent" }],
+        "costs": [{ "type": "none" }],
+        "operation": [{ "type": "poison" }],
+        "target": { "type": "enemy", "count": 1, "filter": { "card_type": "adendei" } },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": { "role": "tech", "affinities": ["aff:chaaktica"] }
+  },
+  {
+    "card_id": "CAMP-006",
+    "card_name": "Hierro",
+    "effect_text": "Activa: Toma 6 cartas del tope de tu mazo, escoge 1 y cambiala por una carta en tu Zona Principal, con 6 puntos de vida. Regresa el resto de las cartas y la carta cambiada al fondo de tu mazo.",
+    "cost_text": "Antes de utilizar su Activa, esta carta debe ser enviada a Extincion.",
+    "pipelines": [
+      {
+        "id": "P1-super-replace",
+        "label": "Super-reemplazo (toma 6, elige 1)",
+        "trigger": { "type": "on-activate" },
+        "prerequisites": [{ "type": "independent" }],
+        "costs": [{ "type": "self-extinct" }],
+        "operation": [{ "type": "enhanced-replace", "value": 6 }],
+        "target": { "type": "ally" },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": { "role": "engine", "affinities": [], "notes": "Rot — equipo mineral" }
+  },
+  {
+    "card_id": "CAMP-007UV",
+    "card_name": "Virste, Reseteo",
+    "effect_text": "Activa: Regresa las estadisticas de todas las cartas en el campo a su valor original.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-reset",
+        "label": "Reset global de estadísticas",
+        "trigger": { "type": "on-activate" },
+        "prerequisites": [{ "type": "independent" }],
+        "costs": [{ "type": "none" }],
+        "operation": [{ "type": "reset-stats" }],
+        "target": { "type": "both", "count": "all" },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": { "role": "tech", "affinities": ["aff:atlica","aff:titan"] }
+  }
+]
