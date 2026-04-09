@@ -39,7 +39,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-017",
@@ -89,7 +90,8 @@
         "aff:feral"
       ],
       "notes": "Solo vinculable con Adendei-Feral"
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "LGRO-019",
@@ -101,7 +103,7 @@
         "id": "P1-equip-from-extinction",
         "label": "Activa: Equipa Ixim o Rot de Extincion a un Adendei en ZP",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -138,7 +140,8 @@
       "affinities": [
         "aff:protector"
       ]
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "LGRO-020",
@@ -150,7 +153,7 @@
         "id": "P1-reset-scaled",
         "label": "Previa: Envia a Extincion; cartas escaladas regresan a dano original",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -182,7 +185,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "LGRO-021",
@@ -194,7 +198,7 @@
         "id": "P1-equip-to-enemy",
         "label": "Activa: Equipa esta carta al Adendei rival; dano 2 al final del turno rival",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -255,7 +259,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "LGRO-022",
@@ -300,7 +305,8 @@
       "affinities": [
         "aff:rot"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-025",
@@ -317,10 +323,8 @@
         },
         "prerequisites": [
           {
-            "type": "no-own-field",
-            "filter": {
-              "has_rests": true
-            }
+            "type": "self-available",
+            "_original_type": "no-ally-in-rest"
           }
         ],
         "costs": [
@@ -346,7 +350,8 @@
       "affinities": [
         "aff:rot"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-027",
@@ -394,7 +399,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-030",
@@ -427,9 +433,13 @@
         "target": {
           "type": "enemy",
           "filter": {
-            "card_type": [
-              "ixim",
-              "rot"
+            "or": [
+              {
+                "card_type": "ixim"
+              },
+              {
+                "card_type": "rot"
+              }
             ]
           }
         },
@@ -437,7 +447,8 @@
         "modifiers": {
           "duration": {
             "type": "turn"
-          }
+          },
+          "optional": true
         }
       }
     ],
@@ -446,7 +457,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-032",
@@ -482,7 +494,8 @@
         "modifiers": {
           "duration": {
             "type": "next-turn"
-          }
+          },
+          "optional": true
         }
       }
     ],
@@ -491,7 +504,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-036",
@@ -522,7 +536,10 @@
           }
         ],
         "target": {
-          "type": "equipped"
+          "type": "attacked",
+          "filter": {
+            "has_rests": true
+          }
         },
         "restrictions": [],
         "modifiers": {}
@@ -533,7 +550,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "LGRO-037",
@@ -583,7 +601,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "LGRO-039",
@@ -595,7 +614,7 @@
         "id": "P1-ally-attacked-retaliate",
         "label": "Si aliado es atacado: carta rival recibe 1 descanso (costo: equipada recibe 1 descanso)",
         "trigger": {
-          "type": "on-ally-attack",
+          "type": "on-activate",
           "filter": {
             "card_type": "adendei"
           }
@@ -625,8 +644,12 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {},
-        "notes": "Solo equipable a Adendei Nanuk"
+        "modifiers": {
+          "_original_trigger": "on-ally-damaged",
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
+        },
+        "notes": "Solo equipable a Adendei Nanuk",
+        "fast": true
       }
     ],
     "meta": {
@@ -635,7 +658,8 @@
         "aff:rot",
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-040",
@@ -682,7 +706,8 @@
         "aff:rot",
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-041",
@@ -722,7 +747,8 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
+          },
+          "optional": true
         }
       }
     ],
@@ -731,7 +757,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "LGRO-042",
@@ -784,7 +811,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-043",
@@ -822,7 +850,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_trigger": "on-any-healed-or-scaled"
+        }
       }
     ],
     "meta": {
@@ -830,7 +860,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-046",
@@ -874,7 +905,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-048",
@@ -910,7 +942,8 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
+          },
+          "optional": true
         }
       }
     ],
@@ -919,7 +952,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-051",
@@ -945,7 +979,7 @@
         ],
         "operation": [],
         "target": {
-          "type": "enemy"
+          "type": "both"
         },
         "restrictions": [
           {
@@ -965,7 +999,8 @@
       "affinities": [
         "aff:bio"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "LGRO-058",
@@ -996,7 +1031,7 @@
           }
         ],
         "target": {
-          "type": "ally"
+          "type": "both"
         },
         "restrictions": [],
         "modifiers": {}
@@ -1007,7 +1042,8 @@
       "affinities": [
         "aff:bio"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "LGRO-060",
@@ -1037,11 +1073,13 @@
           }
         ],
         "target": {
-          "type": "ally",
+          "type": "both",
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "optional": true
+        }
       }
     ],
     "meta": {
@@ -1050,7 +1088,8 @@
         "aff:bio",
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "LGRO-066",
@@ -1092,7 +1131,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-069",
@@ -1133,7 +1173,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-001",
@@ -1176,6 +1217,272 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "MLBU-001S",
+    "card_name": "Arbol, Leyendas",
+    "effect_text": "Las cartas en Zona Principal que durante este turno declararon 3 ptos. o mas de dano a 1 carta, reciben 1 descanso adicional al final del turno.",
+    "cost_text": "Esta carta no puede ser vivificada. Esta Pasiva no puede ser negada.",
+    "pipelines": [
+      {
+        "id": "P1-punish-heavy-attackers",
+        "label": "Pasiva: Cartas en Zona Principal que daniaron 3+ ptos. a 1 carta reciben 1 descanso adicional al fin del turno",
+        "trigger": {
+          "type": "end-of-turn"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "both",
+          "zone": "principal",
+          "filter": {
+            "total-damage-this-turn": {
+              "op": ">=",
+              "value": 3
+            }
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-vivify"
+          },
+          {
+            "type": "cant-negate-passive"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    },
+    "card_type": "bio"
+  },
+  {
+    "card_id": "MLBU-002",
+    "card_name": "Ketzz, Saliva de Fuego",
+    "effect_text": "Pasiva: Las cartas aliadas quemadas danan 1 punto adicional al atacar.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-burn-bonus-damage",
+        "label": "Pasiva: Cartas aliadas quemadas danan 1 pto. adicional al atacar",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "mark": "burn"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "condition": "on-attack",
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:pirica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "MLBU-002S",
+    "card_name": "Esfera Morfeica, Leyendas",
+    "effect_text": "Si el rival declara 1 efecto de 1 carta fuera de la Zona Principal, da 2 descansos a 1 carta en Zona Principal.",
+    "cost_text": "No puedes dar los descansos a Adendei que hayan sido vinculados durante este turno. Solo puedes usar esta Pasiva una vez por turno.",
+    "pipelines": [
+      {
+        "id": "P1-punish-out-of-field-effect",
+        "label": "Reactiva (once-per-turn): Si rival usa efecto de carta fuera de Zona Principal, da 2 descansos a 1 carta en Zona Principal",
+        "trigger": {
+          "type": "on-enemy-uses-drawn-effect"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-turn"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": 1,
+          "zone": "principal"
+        },
+        "restrictions": [
+          {
+            "type": "cant-link",
+            "note": "no-linked-this-turn targets"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    },
+    "card_type": "bio"
+  },
+  {
+    "card_id": "MLBU-003",
+    "card_name": "Ariam, Restauracion Branquial",
+    "effect_text": "Pasiva: Aumenta 1 punto el efecto de curacion de los Ixim y del Bio Hundimiento de la Esperanza.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-amplify-heal-ixim-bio",
+        "label": "Pasiva: Amplifica en 1 pto. el efecto de curacion de los Ixim y del Bio Hundimiento de la Esperanza",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "amplify-effect",
+            "effect_type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "ixim"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "also_applies_to": [
+            "Bio:Hundimiento de la Esperanza"
+          ],
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "MLBU-003S",
+    "card_name": "Zaykan, Jungla y Calma",
+    "effect_text": "Si esta carta es revelada, ninguna carta en tu campo puede recibir dano en el siguiente turno.",
+    "cost_text": "Solo puedes usar esta Pasiva una vez por juego. Esta Pasiva no puede ser negada. Esta carta no puede ser curada o protegida.",
+    "pipelines": [
+      {
+        "id": "P1-on-reveal-shield-field",
+        "label": "Pasiva (once-per-game): Al ser revelada, cartas aliadas en campo no pueden recibir dano el siguiente turno",
+        "trigger": {
+          "type": "on-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "protect-effect"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "field"
+        },
+        "restrictions": [
+          {
+            "type": "cant-negate-passive"
+          },
+          {
+            "type": "cant-heal"
+          },
+          {
+            "type": "cant-be-protected"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "next-turn"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    },
+    "card_type": "adendei"
   }
 ]

@@ -1,27 +1,1812 @@
 [
-{"card_id":"RAMI-008S","card_name":"Planta Carnivora","effect_text":"Si esta carta es revelada, puedes enviar el Adendei equipado y 1 carta rival no equipada en Zona Principal a Extincion.","cost_text":"Esta carta no puede equiparse a Adendei cambiados de lugar por efectos de cartas aliadas.","pipelines":[{"id":"P1-reveal-extinction","label":"Al revelarse: envia Adendei equipado y 1 rival no equipado a Extincion","trigger":{"type":"on-reveal"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"send-extinction","target_ref":"equipped"},{"type":"send-extinction","count":1}],"target":{"type":"enemy","count":1,"filter":{"zone":"principal","not_equipped":true}},"restrictions":[{"type":"cant-equip","condition":"target-moved-by-ally-effect"}],"modifiers":{}}],"meta":{"role":"disruptor","affinities":[],"notes":"Ixim on-reveal double send-extinction"}},
-{"card_id":"SNVL-001","card_name":"Ariam, Dia del Amor y la Amistad","effect_text":"Pasiva: Si tu y tu rival aceptan, ofrecele un choque de punos. Ambos jugadores pueden regresar un Adendei en Extincion al fondo de su Mazo.","cost_text":"Solo puedes usar este efecto una vez por juego.","pipelines":[{"id":"P1-fist-bump","label":"Pasiva once-per-game: ambos regresan 1 Adendei de Extincion al Mazo","trigger":{"type":"on-activate"},"prerequisites":[{"type":"once-per-game"}],"costs":[{"type":"none"}],"operation":[{"type":"return-deck","count":1,"position":"bottom"}],"target":{"type":"both","count":1,"filter":{"card_type":"adendei","zone":"extinction"}},"restrictions":[],"modifiers":{}}],"meta":{"role":"support","affinities":["aff:atlica","aff:pirica"],"notes":"once-per-game mutual recovery"}},
-{"card_id":"SNVL-002","card_name":"Ariam, Vinculo de Corazon","effect_text":"Activa: Cura 1 punto a todas las cartas aliadas.","cost_text":"","pipelines":[{"id":"P1-heal-all-allies","label":"Activa: Cura 1 a todas las cartas aliadas","trigger":{"type":"on-activate"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"heal-all","value":1}],"target":{"type":"ally","count":"all"},"restrictions":[],"modifiers":{}}],"meta":{"role":"support","affinities":["aff:atlica","aff:pirica"]}},
-{"card_id":"TCDE-001","card_name":"Dragel, Redireccion","effect_text":"Activa-Rapida: Si un Adendei Titan aliado es atacado, puedes desviar el ataque a esta carta.","cost_text":"","pipelines":[{"id":"P1-redirect-attack","label":"Activa-Rapida: Redirige ataque a Titan aliado hacia esta carta","trigger":{"type":"on-ally-damaged","fast":true},"prerequisites":[{"type":"needs-ally","filter":{"card_type":"adendei","subtype":"Titan"}}],"costs":[{"type":"none"}],"operation":[{"type":"redirect"}],"target":{"type":"self"},"restrictions":[],"modifiers":{}}],"meta":{"role":"support","affinities":["aff:chaaktica"],"notes":"Activa-Rapida protege Titanes aliados"}},
-{"card_id":"TCDE-002","card_name":"Gloku, Dispersion","effect_text":"Activa: Esta carta puede atacar a un Adendei rival con 4 puntos o a 2 Adendei rivales con 2 puntos.","cost_text":"","pipelines":[{"id":"P1-multi-attack","label":"Activa: 1 rival con 4 pts o 2 rivales con 2 pts","trigger":{"type":"on-activate"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"damage-multi","options":[{"count":1,"value":4},{"count":2,"value":2}]}],"target":{"type":"enemy","filter":{"card_type":"adendei"}},"restrictions":[],"modifiers":{}}],"meta":{"role":"hitter","affinities":["aff:litica"],"notes":"Titan split damage choice"}},
-{"card_id":"TCDE-003","card_name":"Greifen, Versatilidad","effect_text":"Pasiva: Esta carta tambien es considerada Adendei-Pirico-Gelido-Atlico-Litico","cost_text":"","pipelines":[{"id":"P1-multi-energy","label":"Pasiva continua: Tambien cuenta como Pirico Gelido Atlico y Litico","trigger":{"type":"while-on-field"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"change-energy","value":["pirica","gelida","atlica","litica"],"additive":true}],"target":{"type":"self"},"restrictions":[],"modifiers":{"duration":{"type":"while-on-field"}}}],"meta":{"role":"engine","affinities":["aff:huumica","aff:pirica","aff:gelida","aff:atlica","aff:litica"]}},
-{"card_id":"TCDE-004","card_name":"Greah, Terremoto","effect_text":"Pasiva: Si un Adendei-Litico Titan aliado es revelado, ese Adendei podra atacar con el doble de dano durante ese turno.","cost_text":"","pipelines":[{"id":"P1-double-damage-titan","label":"Pasiva reactiva: Titan Litico aliado revelado => doble dano ese turno","trigger":{"type":"on-ally-reveal","filter":{"card_type":"adendei","energy":"litica","subtype":"Titan"}},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"grant-double-damage"}],"target":{"type":"triggering"},"restrictions":[],"modifiers":{"duration":{"type":"turn"}}}],"meta":{"role":"support","affinities":["aff:litica"]}},
-{"card_id":"TCDE-006","card_name":"Turix, Aleteo Gelido","effect_text":"Activa: Actualiza 1 descanso de todas tus cartas.","cost_text":"","pipelines":[{"id":"P1-rest-remove-all","label":"Activa: Actualiza 1 descanso de todas las cartas aliadas","trigger":{"type":"on-activate"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"rest-remove","value":1}],"target":{"type":"ally","count":"all"},"restrictions":[],"modifiers":{}}],"meta":{"role":"support","affinities":["aff:gelida"]}},
-{"card_id":"TCDE-007","card_name":"Chapalab, El Anciano","effect_text":"Pasiva-Rapida: Niega la Pasiva de 1 carta hasta el Fin del Turno rival.","cost_text":"","pipelines":[{"id":"P1-negate-passive","label":"Pasiva-Rapida: Niega Pasiva de 1 carta hasta Fin del Turno rival","trigger":{"type":"on-activate","fast":true},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"negate-passive-persistent"}],"target":{"type":"any","count":1},"restrictions":[],"modifiers":{"duration":{"type":"next-turn"}}}],"meta":{"role":"disruptor","affinities":[],"notes":"Feral Titan niega pasiva hasta fin turno rival"}},
-{"card_id":"TCDE-008","card_name":"Dagg, Abismo Feral","effect_text":"Si un Adendei es enviado a Extincion, antes de colocar la carta suplente, puedes colocar un Token-Feral en su lugar con alguna de las siguientes estadisticas: 4 danos y 2 descansos o 2 danos y 0 descansos.","cost_text":"","pipelines":[{"id":"P1-token-replace","label":"Pasiva reactiva: Adendei a Extincion => Token-Feral (4/2 o 2/0)","trigger":{"type":"on-any-death","filter":{"card_type":"adendei"}},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"create-token-parametric","options":[{"damage":4,"rest":2},{"damage":2,"rest":0}],"energy":"feral"}],"target":{"type":"ally","zone":"field"},"restrictions":[],"modifiers":{}}],"meta":{"role":"engine","affinities":[],"notes":"Feral Titan genera Token-Feral al morir cualquier Adendei"}},
-{"card_id":"TCDE-009","card_name":"Ib-Nirge, Iximante","effect_text":"Activa: Cambia de lugar 2 cartas en tu Zona Principal. Si una de esas cartas ataca a una carta que no este frente a ella, puede hacer el doble de dano en el primer ataque despues de usar esta Activa.","cost_text":"","pipelines":[{"id":"P1-swap-field","label":"Activa: Intercambia 2 cartas en Zona Principal","trigger":{"type":"on-activate"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"swap","count":2}],"target":{"type":"ally","count":2,"zone":"principal"},"restrictions":[],"modifiers":{}},{"id":"P2-double-damage-non-facing","label":"Post-Activa: Doble dano en primer ataque a carta no frontal","trigger":{"type":"on-attack"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"grant-double-damage","condition":"target-not-facing"}],"target":{"type":"ally"},"restrictions":[],"modifiers":{"duration":{"type":"next-attack"}}}],"meta":{"role":"tech","affinities":[],"notes":"Protector swap + doble dano primer ataque no frontal"}},
-{"card_id":"TCDE-010","card_name":"Hifa Madre","effect_text":"Selecciona una carta aliada y una carta rival. Las cartas seleccionadas no podran atacar hasta el final de tu siguiente turno.","cost_text":"Si usas esta Pasiva tu Protector recibe 1 descanso. Solo puedes usar esta Pasiva mientras tu Protector este disponible.","pipelines":[{"id":"P1-cant-attack-select","label":"Bio Pasiva: Inmoviliza 1 aliada y 1 rival hasta fin del siguiente turno","trigger":{"type":"on-activate"},"prerequisites":[{"type":"once-per-field"},{"type":"needs-protector-available"}],"costs":[{"type":"protector-rest","value":1}],"operation":[{"type":"select-and-lock","restriction":"cant-attack"}],"target":{"type":"both","count":1},"restrictions":[],"modifiers":{"duration":{"type":"next-turn"}}}],"meta":{"role":"disruptor","affinities":[],"notes":"Bio Protector disponible; once-per-field; costo protector+1 descanso"}},
-{"card_id":"TCDE-011","card_name":"Union Arborea","effect_text":"El Adendei equipado puede vincularse con el Protector rival.","cost_text":"El Adendei equipado es danado 3 ptos. si se vincula con el Protector rival.","pipelines":[{"id":"P1-link-enemy-protector","label":"Ixim: Adendei equipado puede vincularse con Protector rival","trigger":{"type":"while-on-field"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"self-damage","value":3,"condition":"on-link-enemy-protector"}],"operation":[{"type":"link"}],"target":{"type":"protector","owner":"enemy"},"restrictions":[],"modifiers":{"duration":{"type":"while-on-field"}}}],"meta":{"role":"hitter","affinities":[],"notes":"Ixim vinculo con Protector rival; 3 dano al equipado"}},
-{"card_id":"TCDE-012","card_name":"Bomba de Clorofila","effect_text":"Pasiva: Si un ataque fue negado, puedes mostrar esta carta desde la Zona de Equipo y danar 3 ptos. a los Adendei equipados en Zona Principal.","cost_text":"Costo: Envia esta carta a Extincion para utilizar esta Pasiva.","pipelines":[{"id":"P1-negate-response-damage","label":"Pasiva reactiva: Ataque negado => dana 3 a Adendei equipados en Zona Principal","trigger":{"type":"on-activate"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"equip-extinct"}],"operation":[{"type":"damage-all","value":3}],"target":{"type":"both","count":"all","filter":{"has_equip":true,"zone":"principal"}},"restrictions":[],"modifiers":{}}],"meta":{"role":"disruptor","affinities":[],"notes":"Ixim respuesta a ataque negado; auto-extincion"}},
-{"card_id":"TCDE-013","card_name":"Templo Electrico","effect_text":"Activa-Rapida: Puedes enviar esta carta a Zona de Extincion y danar 2 puntos hasta 3 Adendei Rivales","cost_text":"","pipelines":[{"id":"P1-blast-3-enemies","label":"Activa-Rapida: Envia Rot a Extincion => dana 2 a hasta 3 Adendei rivales","trigger":{"type":"on-activate","fast":true},"prerequisites":[{"type":"independent"}],"costs":[{"type":"equip-extinct"}],"operation":[{"type":"damage","value":2}],"target":{"type":"enemy","count":3,"filter":{"card_type":"adendei"}},"restrictions":[],"modifiers":{}}],"meta":{"role":"disruptor","affinities":[],"notes":"Rot Activa-Rapida self-extinct dana hasta 3 enemigos"}},
-{"card_id":"TCDE-014","card_name":"Desviacion Petrea","effect_text":"Si una carta aliada es atacada, puedes desviar el ataque al Token equipado con esta carta. Si el Token equipado es enviado a Extincion, puedes regresar esta carta a la Zona de Equipo.","cost_text":"Esta carta solo puede ser equipada a un Token. El Token equipado no podra atacar.","pipelines":[{"id":"P1-redirect-to-token","label":"Pasiva reactiva: Aliado atacado => desvia ataque al Token equipado","trigger":{"type":"on-ally-damaged"},"prerequisites":[{"type":"needs-equip"}],"costs":[{"type":"none"}],"operation":[{"type":"redirect"}],"target":{"type":"equipped"},"restrictions":[{"type":"cant-attack","target":"equipped"}],"modifiers":{}},{"id":"P2-return-on-token-death","label":"Pasiva reactiva: Token equipado a Extincion => Rot regresa a Zona de Equipo","trigger":{"type":"on-equipped-damaged"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"equip-from-equip-zone"}],"target":{"type":"self"},"restrictions":[{"type":"cant-equip","condition":"non-token"}],"modifiers":{}}],"meta":{"role":"support","affinities":[],"notes":"Rot solo equipable a Token; Token no puede atacar; redirect y auto-return"}},
-{"card_id":"TCDE-015","card_name":"Gloku, Trituracion","effect_text":"Pasiva-Rapida: Si esta carta es enviada a Extincion, puedes colocar un Token-Litico en tu Zona Principal con el mismo dano, descanso, Activa y costo que un Adendei rival en el campo.","cost_text":"","pipelines":[{"id":"P1-copy-token-on-death","label":"Pasiva-Rapida: Al morir => crea Token-Litico copiando Adendei rival","trigger":{"type":"on-death","fast":true},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"copy","as_token":true,"energy_override":"litica"}],"target":{"type":"enemy","count":1,"filter":{"card_type":"adendei"}},"restrictions":[],"modifiers":{}}],"meta":{"role":"engine","affinities":["aff:litica"],"notes":"Titan Litico Token-Litico clona Adendei rival al morir"}},
-{"card_id":"TCDE-016","card_name":"Greifen, Fortalecimiento","effect_text":"Pasiva: Si un Adendei-Huumico Titan aliado es revelado, escala 1 punto a 1 carta en Zona Principal","cost_text":"","pipelines":[{"id":"P1-scale-on-titan-reveal","label":"Pasiva reactiva: Titan Huumico aliado revelado => escala 1 pto a 1 carta en Zona Principal","trigger":{"type":"on-ally-reveal","filter":{"card_type":"adendei","energy":"huumica","subtype":"Titan"}},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"scale","value":1}],"target":{"type":"ally","count":1,"zone":"principal"},"restrictions":[],"modifiers":{}}],"meta":{"role":"support","affinities":["aff:huumica"]}},
-{"card_id":"TCDE-017","card_name":"Ryptor, Velocidad Prehistorica","effect_text":"Pasiva: Los Adendei Titan no pueden tener sus efectos negados.","cost_text":"","pipelines":[{"id":"P1-titan-cant-negate","label":"Pasiva continua: Adendei Titan aliados inmunes a negacion","trigger":{"type":"while-on-field"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"grant-ability","ability":"cant-negate"}],"target":{"type":"ally","count":"all","filter":{"card_type":"adendei","subtype":"Titan"}},"restrictions":[],"modifiers":{"duration":{"type":"while-on-field"}}}],"meta":{"role":"support","affinities":["aff:chaaktica"]}},
-{"card_id":"TCDE-018","card_name":"Hypex, Furia","effect_text":"Pasiva: Si un Adendei-Huumico es colocado boca abajo, esta carta escala 1 punto.","cost_text":"","pipelines":[{"id":"P1-scale-on-huumico-hide","label":"Pasiva reactiva: Adendei Huumico se oculta => esta carta escala 1 pto","trigger":{"type":"on-ally-hide","filter":{"card_type":"adendei","energy":"huumica"}},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"scale","value":1}],"target":{"type":"self"},"restrictions":[],"modifiers":{}}],"meta":{"role":"engine","affinities":["aff:huumica"]}},
-{"card_id":"TCDE-020","card_name":"Ryptor, Destello en Sombras","effect_text":"Pasiva: Ninguna Activa-Rapida puede ser usada.","cost_text":"","pipelines":[{"id":"P1-ban-fast-activa","label":"Pasiva continua: Ninguna Activa-Rapida puede ser usada","trigger":{"type":"while-on-field"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"register-game-rule","rule":"ban-fast-activa"}],"target":{"type":"both","count":"all"},"restrictions":[],"modifiers":{"duration":{"type":"while-on-field"}}}],"meta":{"role":"disruptor","affinities":["aff:chaaktica"]}},
-{"card_id":"TCDE-021","card_name":"Rots Andantes","effect_text":"Mientras tengas un Adendei Titan en tu Zona Principal, los ataques de los Adendei Titanes no pueden ser negados.","cost_text":"Si no tienes ningun Adendei Titan revelado en tu Zona Principal, envia esta carta a Zona de Extincion.","pipelines":[{"id":"P1-titan-attack-cant-negate","label":"Bio Pasiva continua: Titan en Zona Principal => ataques de Titanes no se pueden negar","trigger":{"type":"while-on-field"},"prerequisites":[{"type":"needs-ally","filter":{"card_type":"adendei","subtype":"Titan"}}],"costs":[{"type":"none"}],"operation":[{"type":"grant-ability","ability":"cant-negate-active"}],"target":{"type":"ally","count":"all","filter":{"card_type":"adendei","subtype":"Titan"}},"restrictions":[],"modifiers":{"duration":{"type":"while-on-field"}}},{"id":"P2-self-destruct-no-titans","label":"Pasiva: Sin Titanes revelados => Bio a Extincion","trigger":{"type":"conditional-self-destruct"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"send-extinction"}],"target":{"type":"self"},"restrictions":[],"modifiers":{}}],"meta":{"role":"support","affinities":[],"notes":"Bio ataques Titanes no negables; se destruye sin Titanes revelados"}},
-{"card_id":"TCOO-001","card_name":"Morx, Descarga Atlica","effect_text":"Si Consejo de Hielo esta en el campo, esta carta puede atacar a todos los Adendei rivales.","cost_text":"","pipelines":[{"id":"P1-attack-all-conditional","label":"Pasiva: Con Consejo de Hielo en campo => puede atacar a todos los Adendei rivales","trigger":{"type":"while-on-field"},"prerequisites":[{"type":"needs-ally","filter":{"card_name":"Consejo de Hielo"}}],"costs":[{"type":"none"}],"operation":[{"type":"attack-all"}],"target":{"type":"enemy","count":"all","filter":{"card_type":"adendei"}},"restrictions":[],"modifiers":{"duration":{"type":"while-on-field"}}}],"meta":{"role":"hitter","affinities":["aff:atlica"],"notes":"Titan Atlico ataque masivo con Consejo de Hielo"}},
-{"card_id":"TCOO-001K","card_name":"Zinawe, Rey de las Aves","effect_text":"Devuelve las cartas en tu Zona Principal al fondo del Mazo.","cost_text":"No puedes atacar, vincular ni usar otros efectos en el turno que usas esta Pasiva. Este efecto solo se puede usar una vez por juego.","pipelines":[{"id":"P1-return-all-to-deck","label":"Pasiva once-per-game: Regresa todas las cartas de Zona Principal al fondo del Mazo","trigger":{"type":"on-activate"},"prerequisites":[{"type":"once-per-game"}],"costs":[{"type":"no-attack-this-turn"},{"type":"cant-use-activa-while-active"}],"operation":[{"type":"return-deck","count":"all","position":"bottom"}],"target":{"type":"ally","count":"all","zone":"principal"},"restrictions":[],"modifiers":{}}],"meta":{"role":"engine","affinities":[],"notes":"Demotica Titan resetea campo propio; once-per-game; sin atacar ni efectos ese turno"}},
-{"card_id":"TCOO-002U","card_name":"Arbol de la Savia Sagrada","effect_text":"Los Adendei con 3 o mas ptos. de dano, danan 1 pto. menos al atacar.","cost_text":"Esta carta no puede ser enviada a Extincion. Los Adendei aliados solo pueden ser curados por efectos de Adendei.","pipelines":[{"id":"P1-damage-reduce-high-atk","label":"Bio Pasiva continua: Adendei con 3+ dano reducen 1 pto al atacar","trigger":{"type":"while-on-field"},"prerequisites":[{"type":"independent"}],"costs":[{"type":"none"}],"operation":[{"type":"damage-reduce","value":1}],"target":{"type":"both","count":"all","filter":{"min_damage":3}},"restrictions":[{"type":"immune-extinction-by-effect"},{"type":"cant-heal-by-own-effects","condition":"non-adendei-source"}],"modifiers":{"duration":{"type":"while-on-field"}}}],"meta":{"role":"disruptor","affinities":[],"notes":"Bio inmortal; reduce ataque de cartas con 3+ dano; curacion aliada solo por Adendei"}}
+  {
+    "card_id": "TCDE-009",
+    "card_name": "Ib-Nirge, Iximante",
+    "effect_text": "Activa: Cambia de lugar 2 cartas en tu Zona Principal. Si una de esas cartas ataca a una carta que no este frente a ella, puede hacer el doble de dano en el primer ataque despues de usar esta Activa.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-swap-field",
+        "label": "Activa: Intercambia 2 cartas en Zona Principal",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "swap",
+            "count": 2
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 2,
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-double-damage-non-facing",
+        "label": "Post-Activa: Doble dano en primer ataque a carta no frontal",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "grant-double-damage",
+            "condition": "target-not-facing"
+          }
+        ],
+        "target": {
+          "type": "ally"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-attack"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [],
+      "notes": "Protector swap + doble dano primer ataque no frontal"
+    },
+    "card_type": "protector"
+  },
+  {
+    "card_id": "TCDE-010",
+    "card_name": "Hifa Madre",
+    "effect_text": "Selecciona una carta aliada y una carta rival. Las cartas seleccionadas no podran atacar hasta el final de tu siguiente turno.",
+    "cost_text": "Si usas esta Pasiva tu Protector recibe 1 descanso. Solo puedes usar esta Pasiva mientras tu Protector este disponible.",
+    "pipelines": [
+      {
+        "id": "P1-cant-attack-select",
+        "label": "Bio Pasiva: Inmoviliza 1 aliada y 1 rival hasta fin del siguiente turno",
+        "trigger": {
+          "type": "unconditional"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-field"
+          },
+          {
+            "type": "needs-protector-available"
+          }
+        ],
+        "costs": [
+          {
+            "type": "protector-rest",
+            "value": 1
+          }
+        ],
+        "operation": [
+          {
+            "type": "select-and-lock",
+            "restriction": "cant-attack"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-turn"
+          },
+          "_original_trigger": "on-phase-previa"
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [],
+      "notes": "Bio Protector disponible; once-per-field; costo protector+1 descanso"
+    },
+    "card_type": "bio"
+  },
+  {
+    "card_id": "TCDE-011",
+    "card_name": "Union Arborea",
+    "effect_text": "El Adendei equipado puede vincularse con el Protector rival.",
+    "cost_text": "El Adendei equipado es danado 3 ptos. si se vincula con el Protector rival.",
+    "pipelines": [
+      {
+        "id": "P1-link-enemy-protector",
+        "label": "Ixim: Adendei equipado puede vincularse con Protector rival",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-damage",
+            "value": 3,
+            "condition": "on-link-enemy-protector"
+          }
+        ],
+        "operation": [
+          {
+            "type": "link"
+          }
+        ],
+        "target": {
+          "type": "protector",
+          "owner": "enemy"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          },
+          "optional": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [],
+      "notes": "Ixim vinculo con Protector rival; 3 dano al equipado"
+    },
+    "card_type": "ixim"
+  },
+  {
+    "card_id": "TCDE-012",
+    "card_name": "Bomba de Clorofila",
+    "effect_text": "Pasiva: Si un ataque fue negado, puedes mostrar esta carta desde la Zona de Equipo y danar 3 ptos. a los Adendei equipados en Zona Principal.",
+    "cost_text": "Costo: Envia esta carta a Extincion para utilizar esta Pasiva.",
+    "pipelines": [
+      {
+        "id": "P1-negate-response-damage",
+        "label": "Pasiva reactiva: Ataque negado => dana 3 a Adendei equipados en Zona Principal",
+        "trigger": {
+          "type": "on-damaged"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct-from-equip-zone"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-all",
+            "value": 3
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": "all",
+          "filter": {
+            "has_equip": true,
+            "zone": "principal"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "_original_trigger": "on-attack-negated"
+        }
+      },
+      {
+        "id": "P2-self-extinct-cost",
+        "label": "Costo: Envia esta carta desde Zona Equipo a Extincion para activar Pasiva",
+        "trigger": {
+          "type": "on-activate",
+          "linked_to": "P1-negate-response-damage"
+        },
+        "prerequisites": [
+          {
+            "type": "independent",
+            "zone": "equip",
+            "_original_type": "zone-filter"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct-from-equip-zone"
+          }
+        ],
+        "operation": [
+          {
+            "type": "send-extinction",
+            "target": "self"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "is_cost_effect": true,
+          "_original_trigger": "on-cost-pay"
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [],
+      "notes": "Ixim respuesta a ataque negado; auto-extincion"
+    },
+    "card_type": "ixim"
+  },
+  {
+    "card_id": "TCDE-013",
+    "card_name": "Templo Electrico",
+    "effect_text": "Activa-Rapida: Puedes enviar esta carta a Zona de Extincion y danar 2 puntos hasta 3 Adendei Rivales",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-blast-3-enemies",
+        "label": "Activa-Rapida: Envia Rot a Extincion => dana 2 a hasta 3 Adendei rivales",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "equip-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 3,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {},
+        "fast": true
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [],
+      "notes": "Rot Activa-Rapida self-extinct dana hasta 3 enemigos"
+    },
+    "card_type": "rot"
+  },
+  {
+    "card_id": "TCDE-014",
+    "card_name": "Desviacion Petrea",
+    "effect_text": "Si una carta aliada es atacada, puedes desviar el ataque al Token equipado con esta carta. Si el Token equipado es enviado a Extincion, puedes regresar esta carta a la Zona de Equipo.",
+    "cost_text": "Esta carta solo puede ser equipada a un Token. El Token equipado no podra atacar.",
+    "pipelines": [
+      {
+        "id": "P1-redirect-to-token",
+        "label": "Pasiva reactiva: Aliado atacado => desvia ataque al Token equipado",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "redirect"
+          }
+        ],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [
+          {
+            "type": "cant-attack",
+            "target": "equipped"
+          }
+        ],
+        "modifiers": {
+          "_original_trigger": "on-ally-damaged",
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
+        }
+      },
+      {
+        "id": "P2-return-on-token-death",
+        "label": "Pasiva reactiva: Token equipado a Extincion => Rot regresa a Zona de Equipo",
+        "trigger": {
+          "type": "on-equipped-damaged",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-from-equip-zone"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-equip",
+            "condition": "non-token"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [],
+      "notes": "Rot solo equipable a Token; Token no puede atacar; redirect y auto-return"
+    },
+    "card_type": "rot"
+  },
+  {
+    "card_id": "TCDE-015",
+    "card_name": "Gloku, Trituracion",
+    "effect_text": "Pasiva-Rapida: Si esta carta es enviada a Extincion, puedes colocar un Token-Litico en tu Zona Principal con el mismo dano, descanso, Activa y costo que un Adendei rival en el campo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-copy-token-on-death",
+        "label": "Pasiva-Rapida: Al morir => crea Token-Litico copiando Adendei rival",
+        "trigger": {
+          "type": "on-death",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "copy",
+            "as_token": true,
+            "energy_override": "litica"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:litica"
+      ],
+      "notes": "Titan Litico Token-Litico clona Adendei rival al morir"
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCDE-016",
+    "card_name": "Greifen, Fortalecimiento",
+    "effect_text": "Pasiva: Si un Adendei-Huumico Titan aliado es revelado, escala 1 punto a 1 carta en Zona Principal",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-scale-on-titan-reveal",
+        "label": "Pasiva reactiva: Titan Huumico aliado revelado => escala 1 pto a 1 carta en Zona Principal",
+        "trigger": {
+          "type": "on-ally-reveal",
+          "filter": {
+            "card_type": "adendei",
+            "energy": "huumica",
+            "subtype": "Titan"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:huumica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCDE-017",
+    "card_name": "Ryptor, Velocidad Prehistorica",
+    "effect_text": "Pasiva: Los Adendei Titan no pueden tener sus efectos negados.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-titan-cant-negate",
+        "label": "Pasiva continua: Adendei Titan aliados inmunes a negacion",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "grant-ability",
+            "ability": "cant-negate"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": "all",
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Titan"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCDE-018",
+    "card_name": "Hypex, Furia",
+    "effect_text": "Pasiva: Si un Adendei-Huumico es colocado boca abajo, esta carta escala 1 punto.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-scale-on-huumico-hide",
+        "label": "Pasiva reactiva: Adendei Huumico se oculta => esta carta escala 1 pto",
+        "trigger": {
+          "type": "on-ally-hide",
+          "filter": {
+            "card_type": "adendei",
+            "energy": "huumica"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:huumica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCDE-020",
+    "card_name": "Ryptor, Destello en Sombras",
+    "effect_text": "Pasiva: Ninguna Activa-Rapida puede ser usada.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-ban-fast-activa",
+        "label": "Pasiva continua: Ninguna Activa-Rapida puede ser usada",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "ban-fast-activa"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": "all"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          },
+          "optional": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCDE-021",
+    "card_name": "Rots Andantes",
+    "effect_text": "Mientras tengas un Adendei Titan en tu Zona Principal, los ataques de los Adendei Titanes no pueden ser negados.",
+    "cost_text": "Si no tienes ningun Adendei Titan revelado en tu Zona Principal, envia esta carta a Zona de Extincion.",
+    "pipelines": [
+      {
+        "id": "P1-titan-attack-cant-negate",
+        "label": "Bio Pasiva continua: Titan en Zona Principal => ataques de Titanes no se pueden negar",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-ally",
+            "filter": {
+              "card_type": "adendei",
+              "subtype": "Titan"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "grant-ability",
+            "ability": "cant-negate-active"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": "all",
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Titan"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      },
+      {
+        "id": "P2-self-destruct-no-titans",
+        "label": "Pasiva: Sin Titanes revelados => Bio a Extincion",
+        "trigger": {
+          "type": "conditional-self-destruct"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "send-extinction"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [],
+      "notes": "Bio ataques Titanes no negables; se destruye sin Titanes revelados"
+    },
+    "card_type": "bio"
+  },
+  {
+    "card_id": "TCOO-001",
+    "card_name": "Morx, Descarga Atlica",
+    "effect_text": "Si Consejo de Hielo esta en el campo, esta carta puede atacar a todos los Adendei rivales.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-attack-all-conditional",
+        "label": "Pasiva: Con Consejo de Hielo en campo => puede atacar a todos los Adendei rivales",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-ally",
+            "filter": {
+              "card_name": "Consejo de Hielo"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "attack-all"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": "all",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          },
+          "optional": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:atlica"
+      ],
+      "notes": "Titan Atlico ataque masivo con Consejo de Hielo"
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCOO-001K",
+    "card_name": "Zinawe, Rey de las Aves",
+    "effect_text": "Devuelve las cartas en tu Zona Principal al fondo del Mazo.",
+    "cost_text": "No puedes atacar, vincular ni usar otros efectos en el turno que usas esta Pasiva. Este efecto solo se puede usar una vez por juego.",
+    "pipelines": [
+      {
+        "id": "P1-return-all-to-deck",
+        "label": "Pasiva once-per-game: Regresa todas las cartas de Zona Principal al fondo del Mazo",
+        "trigger": {
+          "type": "unconditional"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "no-attack-this-turn"
+          },
+          {
+            "type": "cant-use-activa-while-active"
+          }
+        ],
+        "operation": [
+          {
+            "type": "return-deck",
+            "count": "all",
+            "position": "bottom"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": "all",
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "_original_trigger": "on-phase-previa"
+        }
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [],
+      "notes": "Demotica Titan resetea campo propio; once-per-game; sin atacar ni efectos ese turno"
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCOO-002U",
+    "card_name": "Arbol de la Savia Sagrada",
+    "effect_text": "Los Adendei con 3 o mas ptos. de dano, danan 1 pto. menos al atacar.",
+    "cost_text": "Esta carta no puede ser enviada a Extincion. Los Adendei aliados solo pueden ser curados por efectos de Adendei.",
+    "pipelines": [
+      {
+        "id": "P1-damage-reduce-high-atk",
+        "label": "Bio Pasiva continua: Adendei con 3+ dano reducen 1 pto al atacar",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-reduce",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": "all",
+          "filter": {
+            "min_damage": 3
+          }
+        },
+        "restrictions": [
+          {
+            "type": "immune-extinction-by-effect"
+          },
+          {
+            "type": "cant-heal-by-own-effects",
+            "condition": "non-adendei-source"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [],
+      "notes": "Bio inmortal; reduce ataque de cartas con 3+ dano; curacion aliada solo por Adendei"
+    },
+    "card_type": "bio"
+  },
+  {
+    "card_id": "TCOO-003R",
+    "card_name": "Ojos de Nirge",
+    "effect_text": "Activa: Puedes copiar y usar la misma Activa y Costo de cualquier Adendei en el campo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-copy-activa",
+        "label": "Copia la Activa y Costo de cualquier Adendei en campo",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "copy",
+            "scope": "activa-and-cost"
+          }
+        ],
+        "target": {
+          "type": "any",
+          "filter": {
+            "card_type": "adendei"
+          },
+          "zone": "field"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    },
+    "card_type": "protector"
+  },
+  {
+    "card_id": "TCOO-003S",
+    "card_name": "Therz, Prevencion",
+    "effect_text": "Activa: Si esta carta tiene 3 o menos puntos de vida, puedes enviar esta carta a Extincion y colocar en tu Zona Principal cualquier carta suplente de tu Mazo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-self-swap",
+        "label": "Si ≤3 pts de vida: auto-extingue y coloca suplente del Mazo",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "ally-stat-filter",
+            "stat": "hp",
+            "op": "<=",
+            "value": 3
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "vivify",
+            "source": "deck",
+            "subtype": "suplente"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:demotica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCOO-004R",
+    "card_name": "El Otro, Vinculo",
+    "effect_text": "Activa: Daña 6 puntos a 1 Adendei rival y daña 2 puntos a 2 Adendei aliados.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-damage-enemy",
+        "label": "Daña 6 a 1 Adendei rival",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 6
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-damage-allies",
+        "label": "Daña 2 a 2 Adendei aliados",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 2,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": []
+    },
+    "card_type": "protector"
+  },
+  {
+    "card_id": "TCOO-004U",
+    "card_name": "Rhymir, Pararayos",
+    "effect_text": "Pasiva: Si esta carta es tomada del Mazo, puedes mostrarla y actualizar 1 descanso de hasta 2 cartas aliadas.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-drawn-rest-remove",
+        "label": "Al ser tomada del Mazo: quita 1 descanso a hasta 2 aliados",
+        "trigger": {
+          "type": "on-draw"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-remove",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 2
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCOO-005R",
+    "card_name": "Escamas de Lava",
+    "effect_text": "Quema 1 carta y daña 1 pto. a todas las cartas rivales quemadas. El Adendei equipado puede atacar con 1 pto. de daño adicional.",
+    "cost_text": "Esta carta sólo puede ser equipada a un Adendei \"Draxes\".",
+    "pipelines": [
+      {
+        "id": "P1-burn-and-damage-burned",
+        "label": "Al equiparse al atacar: quema 1 rival y daña 1 a todos rivales quemados",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "burn"
+          },
+          {
+            "type": "damage-all",
+            "value": 1,
+            "filter": {
+              "mark": "burn"
+            }
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [
+          {
+            "type": "cant-equip",
+            "filter": {
+              "name_not_contains": "Draxes"
+            }
+          }
+        ],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-extra-damage",
+        "label": "+1 daño adicional al atacar (pasiva continua)",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:pirica"
+      ]
+    },
+    "card_type": "rot"
+  },
+  {
+    "card_id": "TCOO-005S",
+    "card_name": "Iceberg de Control",
+    "effect_text": "Activa-Rápida: Todas las cartas rivales reciben 1 descanso.",
+    "cost_text": "Envía la carta equipada a Extinción y regresa este Rot a la Zona de Equipo para usar este efecto. Tu Protector debe estar disponible para usar este efecto y recibe 3 descansos en Fin de Turno.",
+    "pipelines": [
+      {
+        "id": "P1-mass-rest",
+        "label": "Activa-Rápida: todas las cartas rivales reciben 1 descanso",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "needs-protector-available"
+          }
+        ],
+        "costs": [
+          {
+            "type": "equip-extinct"
+          },
+          {
+            "type": "cant-return-to-equip"
+          },
+          {
+            "type": "protector-rest",
+            "value": 3,
+            "timing": "end-of-turn"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": "all"
+        },
+        "restrictions": [],
+        "modifiers": {},
+        "fast": true
+      }
+    ],
+    "meta": {
+      "role": "control",
+      "affinities": [
+        "aff:gelida"
+      ]
+    },
+    "card_type": "rot"
+  },
+  {
+    "card_id": "TCOO-005U",
+    "card_name": "Yogg vs Rhymir, Rayo Contra Luz",
+    "effect_text": "Si hay 1 Adendei abismado y 1 Adendei-Átlico aliados en Zona Principal, esta carta puede dañar 3 ptos. adicionales.",
+    "cost_text": "Si esta carta usó su Activa, recibe 2 descansos en Fin de Turno.",
+    "pipelines": [
+      {
+        "id": "P1-bonus-damage",
+        "label": "Con Abisal + Átlico aliados: +3 daño adicional al atacar",
+        "trigger": {
+          "type": "on-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-ally",
+            "filter": {
+              "subtype": "abisal"
+            }
+          },
+          {
+            "type": "needs-ally",
+            "filter": {
+              "energy": "atlica"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "extra-rest",
+            "value": 2,
+            "timing": "end-of-turn"
+          }
+        ],
+        "operation": [
+          {
+            "type": "amplify-effect",
+            "value": 3,
+            "_original_type": "scale"
+          }
+        ],
+        "target": {
+          "type": "enemy"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-attack"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:chaaktica",
+        "aff:atlica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCOO-006R",
+    "card_name": "Cascada de Lava",
+    "effect_text": "Si 1 Adendei-Pírico aliado es atacado, quema a 1 Adendei rival.",
+    "cost_text": "Esta carta sólo puede ser equipada a 1 Adendei-Pírico.",
+    "pipelines": [
+      {
+        "id": "P1-reactive-burn",
+        "label": "Reactiva: si Adendei-Pírico aliado es atacado, quema 1 rival",
+        "trigger": {
+          "type": "on-activate",
+          "filter": {
+            "energy": "pirica"
+          },
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "burn"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-equip",
+            "filter": {
+              "energy_not": "pirica"
+            }
+          }
+        ],
+        "modifiers": {
+          "_original_trigger": "on-ally-damaged",
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:pirica"
+      ]
+    },
+    "card_type": "rot"
+  },
+  {
+    "card_id": "TCOO-006U",
+    "card_name": "Quam, Detras de la Materia",
+    "effect_text": "Pasiva: Revela 1 carta de tu Mazo y colócala fuera del juego. Si tu Protector está disponible, puedes regresar 1 Adendei en tu Zona Principal al fondo de tu Mazo y colocar la carta fuera del juego en su lugar con 6 ptos. de vida (aún si esta carta ya no está en el campo).",
+    "cost_text": "Tu Protector recibe 3 descansos y regresa esta carta al fondo del Mazo para usar su Pasiva.",
+    "pipelines": [
+      {
+        "id": "P1-reveal-out-of-game",
+        "label": "Pasiva: revela 1 carta del Mazo y la coloca fuera del juego",
+        "trigger": {
+          "type": "unconditional"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "protector-rest",
+            "value": 3
+          },
+          {
+            "type": "self-return-deck",
+            "position": "bottom"
+          }
+        ],
+        "operation": [
+          {
+            "type": "reveal"
+          },
+          {
+            "type": "send-extinction",
+            "zone": "out-of-game"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "zone": "deck",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {
+          "_original_trigger": "on-phase-previa"
+        }
+      },
+      {
+        "id": "P2-swap-out-of-game",
+        "label": "Si Protector disponible: regresa Adendei al Mazo y coloca carta-OOG con 6 pts",
+        "trigger": {
+          "type": "unconditional"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-protector-available"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "return-deck",
+            "position": "bottom"
+          },
+          {
+            "type": "vivify",
+            "hp": 6,
+            "source": "out-of-game"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "zone": "principal",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {
+          "_original_trigger": "on-phase-previa"
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:demotica"
+      ]
+    },
+    "card_type": "rava"
+  },
+  {
+    "card_id": "TCOO-007R",
+    "card_name": "Virste, Restauracion",
+    "effect_text": "Activa: Cura 3 puntos a 1 Adendei-Atlico Titan aliado.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-heal-titan",
+        "label": "Cura 3 a 1 Adendei-Atlico Titan aliado",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-ally",
+            "filter": {
+              "energy": "atlica",
+              "subtype": "titan"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 3
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "energy": "atlica",
+            "subtype": "titan"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCOO-007S",
+    "card_name": "Kaykac, Sorpresa Pirica",
+    "effect_text": "Pasiva: Si esta carta es tomada del Mazo, puedes mostrarla y quemar 1 carta rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-drawn-burn",
+        "label": "Al ser tomada del Mazo: quema 1 carta rival",
+        "trigger": {
+          "type": "on-draw"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "burn"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCOO-008",
+    "card_name": "El Otro, Dominio Vegetal",
+    "effect_text": "Activa: Equipa 2 Ixim de tu Extinción a Adendei aliados.",
+    "cost_text": "Si al final de tu siguiente turno tienes 1 o más Ixim en tu Zona Principal, envía 1 de ellos a Extinción.",
+    "pipelines": [
+      {
+        "id": "P1-equip-ixim",
+        "label": "Equipa 2 Ixim de Extinción a Adendei aliados",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "min-ext-type",
+            "filter": {
+              "card_type": "ixim"
+            },
+            "value": 2
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-from-extinct",
+            "equip_type": "ixim",
+            "count": 2
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-delayed-cost",
+        "label": "Fin del siguiente turno: si hay Ixim en Zona Principal, envía 1 a Extinción",
+        "trigger": {
+          "type": "end-of-turn"
+        },
+        "prerequisites": [
+          {
+            "type": "min-count",
+            "filter": {
+              "card_type": "ixim",
+              "zone": "principal"
+            },
+            "value": 1
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "send-extinction"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "ixim"
+          },
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "delayed": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    },
+    "card_type": "protector"
+  },
+  {
+    "card_id": "TCOO-008R",
+    "card_name": "Greah, Mazo Petreo",
+    "effect_text": "Activa: Daña 4 ptos. a 1 carta rival en Zona Principal.",
+    "cost_text": "Debes tener 2 Rot en Extinción para usar su Activa.",
+    "pipelines": [
+      {
+        "id": "P1-damage-4",
+        "label": "Daña 4 a 1 carta rival en Zona Principal",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-extinction",
+            "filter": {
+              "card_type": "rot"
+            },
+            "value": 2
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 4
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-min-extinction-prereq",
+        "label": "Requisito: debe haber al menos 2 Rot en Extincion",
+        "trigger": {
+          "type": "on-activate",
+          "linked_to": "P1-damage-4"
+        },
+        "prerequisites": [
+          {
+            "type": "min-extinction",
+            "filter": {
+              "card_type": "rot"
+            },
+            "value": 2
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "_original_type": "check-prereq"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "extinction",
+          "filter": {
+            "card_type": "rot"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "is_cost_effect": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:litica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCOO-008S",
+    "card_name": "Rhymir, Devorador de Rayos",
+    "effect_text": "Activa-Rapida: Si 1 carta aliada es atacada, desvia el ataque a esta carta.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-redirect-attack",
+        "label": "Activa-Rápida: si aliado es atacado, redirige ataque a esta carta",
+        "trigger": {
+          "type": "on-ally-damaged",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "redirect"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "defender",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "TCOO-009",
+    "card_name": "Draxes, Ultimo Aliento",
+    "effect_text": "Pasiva: Si esta carta daña y envia a Extincion a un Protector rival, ¡GANAS EL JUEGO!",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-win-condition",
+        "label": "Si destruye Protector rival al atacar: gana el juego",
+        "trigger": {
+          "type": "on-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "check-win-condition",
+            "condition": "enemy-protector-sent-to-extinction"
+          }
+        ],
+        "target": {
+          "type": "protector"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica"
+      ]
+    },
+    "card_type": "adendei"
+  }
 ]

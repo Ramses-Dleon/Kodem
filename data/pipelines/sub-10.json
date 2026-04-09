@@ -1,5 +1,280 @@
 [
   {
+    "card_id": "KPRF-0003",
+    "card_name": "Ariam, Jugada Maestra",
+    "effect_text": "Pasiva: Los Adendei aliados equipados no pueden ser danados por efectos.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-equip-immune-effects",
+        "label": "Aura: Adendei aliados equipados son inmunes a dano por efectos",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "has_equip": true,
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-damaged-effect"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "KPRF-0004",
+    "card_name": "Tekei, Destierro",
+    "effect_text": "Activa: Esta carta puede atacar con doble de dano si ataca a la carta frente a ella.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-facing-double",
+        "label": "Activa: Doble dano al atacar a la carta frente a ella",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "grant-double-damage"
+          }
+        ],
+        "target": {
+          "type": "facing"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-attack"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:huumica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "KSPC-001",
+    "card_name": "Ariam, 1st Anniversary",
+    "effect_text": "Activa: Cura 6 puntos a un Adendei aliado.",
+    "cost_text": "Solo puedes usar esta Activa una vez por juego.",
+    "pipelines": [
+      {
+        "id": "P1-ally-heal",
+        "label": "Activa: Cura 6 a un Adendei aliado (una vez por juego)",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 6
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-once-per-game-restriction",
+        "label": "Restriccion: solo puede usarse una vez por juego",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "_original_type": "restriction-apply"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "once-per-game",
+            "note": "Solo puedes usar esta Activa una vez por juego"
+          }
+        ],
+        "modifiers": {
+          "once_per_game": true,
+          "optional": true,
+          "_original_trigger": "permanent"
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
+    "card_id": "LGRO-001R",
+    "card_name": "Prueba de Campo",
+    "effect_text": "Si una carta aliada es atacada, puedes regresar esta carta a la Zona de Equipo y negar el ataque. Solo puedes usar esta carta 1 vez por juego.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-negate-attack",
+        "label": "Al atacar aliado: regresa a Zona de Equipo y niega el ataque (una vez por juego)",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-return-to-equip-zone"
+          }
+        ],
+        "operation": [
+          {
+            "type": "negate-attack"
+          },
+          {
+            "type": "equip-from-equip-zone"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "_original_trigger": "on-ally-damaged",
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
+        },
+        "fast": true
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:rot"
+      ]
+    },
+    "card_type": "rot"
+  },
+  {
+    "card_id": "LGRO-001S",
+    "card_name": "Zaykan, Fractura",
+    "effect_text": "Activa: Cambia de lugar 2 cartas en Zona Principal.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-swap-field",
+        "label": "Activa: Intercambia 2 cartas en Zona Principal",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "swap"
+          }
+        ],
+        "target": {
+          "type": "any",
+          "count": 2,
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:litica"
+      ]
+    },
+    "card_type": "adendei"
+  },
+  {
     "card_id": "LGRO-002",
     "card_name": "Zaykan, Cisma",
     "effect_text": "Pasiva: Si esta carta fue atacada, dana 1 punto al Protector rival.",
@@ -40,7 +315,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-002K",
@@ -86,7 +362,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-002S",
@@ -98,7 +375,7 @@
         "id": "P1-equip-return-scale",
         "label": "Al regresar un equipo a Zona de Equipo: escala 1",
         "trigger": {
-          "type": "on-ally-equip"
+          "type": "on-equip"
         },
         "prerequisites": [
           {
@@ -120,7 +397,9 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_trigger": "on-equip-returned"
+        }
       }
     ],
     "meta": {
@@ -128,7 +407,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-002U",
@@ -213,7 +493,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "LGRO-003",
@@ -248,9 +529,13 @@
           "zone": "extinction",
           "count": 1,
           "filter": {
-            "card_type": [
-              "adendei",
-              "rava"
+            "or": [
+              {
+                "card_type": "adendei"
+              },
+              {
+                "card_type": "rava"
+              }
             ]
           }
         },
@@ -263,7 +548,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-003R",
@@ -289,7 +575,10 @@
         ],
         "operation": [
           {
-            "type": "equip-from-equip-zone"
+            "type": "swap",
+            "from": "ally-adendei-field",
+            "to": "compatible-ally-adendei",
+            "_original_type": "equip-transfer"
           }
         ],
         "target": {
@@ -308,7 +597,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-003S",
@@ -320,7 +610,8 @@
         "id": "P1-rot-fast",
         "label": "Pasiva: Efecto de Rot equipado se convierte en Activa Rapida",
         "trigger": {
-          "type": "while-on-field"
+          "type": "while-on-field",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -349,6 +640,45 @@
             "type": "while-on-field"
           }
         }
+      },
+      {
+        "id": "P2-rot-activa-promoted",
+        "label": "Activa Rapida: usa el efecto del Rot equipado (promovido por Pasiva)",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip",
+            "filter": {
+              "card_type": "rot"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "inherited-from-rot"
+          }
+        ],
+        "operation": [
+          {
+            "type": "execute-from-zone",
+            "filter": {
+              "card_type": "rot"
+            },
+            "as_fast": true,
+            "_original_type": "resolve-equip-effect"
+          }
+        ],
+        "target": {
+          "type": "inherited-from-rot"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "inherited": true
+        },
+        "fast": true
       }
     ],
     "meta": {
@@ -356,7 +686,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-003U",
@@ -466,7 +797,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "LGRO-004R",
@@ -478,7 +810,7 @@
         "id": "P1-rest-swap",
         "label": "Activa: +2 descansos a 1 rival, actualiza 2 descansos a 1 aliado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -535,7 +867,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "optional": true
+        }
       }
     ],
     "meta": {
@@ -543,7 +877,8 @@
       "affinities": [
         "aff:protector"
       ]
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "LGRO-004S",
@@ -578,9 +913,13 @@
           "zone": "principal",
           "count": 1,
           "filter": {
-            "card_type": [
-              "ixim",
-              "rot"
+            "or": [
+              {
+                "card_type": "ixim"
+              },
+              {
+                "card_type": "rot"
+              }
             ]
           }
         },
@@ -593,7 +932,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-004U",
@@ -674,7 +1014,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "LGRO-005U",
@@ -714,7 +1055,8 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
+          },
+          "optional": true
         }
       }
     ],
@@ -723,7 +1065,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-007",
@@ -754,7 +1097,7 @@
           }
         ],
         "target": {
-          "type": "ally",
+          "type": "both",
           "filter": {
             "card_type": "adendei"
           }
@@ -773,7 +1116,8 @@
         "aff:bio",
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "LGRO-007R",
@@ -814,7 +1158,8 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
+          },
+          "optional": true
         }
       },
       {
@@ -854,7 +1199,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-007U",
@@ -895,7 +1241,10 @@
         "id": "P2-attack-facing-rest",
         "label": "Al atacar a carta frente a ella: esa carta recibe 1 descanso",
         "trigger": {
-          "type": "on-attack"
+          "type": "on-attack",
+          "filter": {
+            "target": "facing"
+          }
         },
         "prerequisites": [
           {
@@ -925,7 +1274,8 @@
       "affinities": [
         "aff:demotica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-008U",
@@ -968,7 +1318,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-009",
@@ -1014,7 +1365,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-009R",
@@ -1026,7 +1378,7 @@
         "id": "P1-negate-on-attack",
         "label": "Si Adendei aliado es atacado: niega el ataque (costo: dano 1 a equipada)",
         "trigger": {
-          "type": "on-ally-attack",
+          "type": "on-activate",
           "filter": {
             "card_type": "adendei"
           }
@@ -1058,8 +1410,12 @@
             "type": "cant-heal"
           }
         ],
-        "modifiers": {},
-        "notes": "Solo equipable a Adendei Zaykan"
+        "modifiers": {
+          "_original_trigger": "on-ally-damaged",
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
+        },
+        "notes": "Solo equipable a Adendei Zaykan",
+        "fast": true
       }
     ],
     "meta": {
@@ -1067,7 +1423,8 @@
       "affinities": [
         "aff:rot"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-010",
@@ -1109,7 +1466,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-011",
@@ -1188,7 +1546,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-011R",
@@ -1200,7 +1559,7 @@
         "id": "P1-copy-extinction",
         "label": "Pasiva: Copia Activa y Costo de una carta en Extincion (una vez por juego)",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -1223,7 +1582,44 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-copied-activa-execute",
+        "label": "Activa: Ejecuta la Activa copiada de la carta en Extincion (con su Costo)",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          },
+          {
+            "type": "independent",
+            "_original_type": "has-copied-effect"
+          }
+        ],
+        "costs": [
+          {
+            "type": "inherited-from-copied"
+          }
+        ],
+        "operation": [
+          {
+            "type": "execute-from-zone",
+            "_original_type": "resolve-copied-effect"
+          }
+        ],
+        "target": {
+          "type": "inherited-from-copied"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "once_per_game": true,
+          "inherited": true
+        }
       }
     ],
     "meta": {
@@ -1231,7 +1627,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-012",
@@ -1305,7 +1702,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-012R",
@@ -1317,7 +1715,7 @@
         "id": "P1-damage-3-rivals",
         "label": "Activa: Dana 2 a hasta 3 Adendei rivales",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -1351,7 +1749,8 @@
       "affinities": [
         "aff:protector"
       ]
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "LGRO-013R",
@@ -1394,7 +1793,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-014",
@@ -1406,7 +1806,7 @@
         "id": "P1-unnegable-attack",
         "label": "Pasiva: Ataque del equipado no puede ser negado ni desviado",
         "trigger": {
-          "type": "while-on-field"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -1430,7 +1830,10 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
+          },
+          "optional": true,
+          "_original_trigger": "while-on-field",
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
         }
       },
       {
@@ -1463,6 +1866,7 @@
       "affinities": [
         "aff:rot"
       ]
-    }
+    },
+    "card_type": "rot"
   }
 ]
