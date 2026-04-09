@@ -444,7 +444,8 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field"
+        "_fix_wave-f1a": "edit_field",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -970,7 +971,9 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "post.passives"
+        "phase": "post.passives",
+        "_fix_wave-f-late": "add_field",
+        "effect_type": "pasiva"
       }
     ],
     "meta": {
@@ -978,7 +981,8 @@
       "affinities": [
         "aff:huumica"
       ],
-      "subtype": "titan"
+      "subtype": "titan",
+      "notes": "Add Pasiva label to effect_text for clarity.; Move frequency restriction from cost_text to effect_text."
     },
     "card_type": "adendei"
   },
@@ -1034,7 +1038,8 @@
           "type": "set-attack-damage",
           "formula": "2 * pending_end_of_turn_rests"
         },
-        "_fix_wave-f1b": "replace_operation"
+        "_fix_wave-f1b": "replace_operation",
+        "_fix_wave-f-late": "add_modifier"
       },
       {
         "id": "P2-cant-be-protected",
@@ -1066,7 +1071,8 @@
             "type": "while-on-field"
           }
         },
-        "phase": "continuous"
+        "phase": "continuous",
+        "_fix_wave-f-late": "create_pipeline"
       }
     ],
     "meta": {
@@ -1134,9 +1140,9 @@
         ],
         "operation": [
           {
-            "type": "prevent-hide",
-            "scope": "both",
-            "zone": "principal"
+            "type": "apply-restriction",
+            "restriction": "cant-hide",
+            "scope": "both-zones-principal"
           }
         ],
         "target": {
@@ -1156,7 +1162,15 @@
         },
         "phase": "continuous",
         "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "add_operation"
+        "_fix_wave-f1a": "add_operation",
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation": [
+          {
+            "type": "prevent-hide",
+            "scope": "both",
+            "zone": "principal"
+          }
+        ]
       }
     ],
     "meta": {
@@ -1192,7 +1206,8 @@
         "operation": [
           {
             "type": "apply-restriction",
-            "restriction": "cant-heal"
+            "restriction": "cant-heal",
+            "to": "target"
           }
         ],
         "target": {
@@ -1205,21 +1220,28 @@
         ],
         "modifiers": {
           "duration": {
-            "type": "end-of-next-own-turn",
-            "_original_type": "until-end-of-next-own-turn"
+            "type": "until-end-of-next-own-turn"
           },
           "optional": false,
           "_original_effect_type": "",
           "effect_type": "activa",
           "_original_duration": {
-            "type": "next-turn"
+            "type": "end-of-next-own-turn",
+            "_original_type": "until-end-of-next-own-turn"
           }
         },
         "phase": "battle.declaration",
         "_fix_wave-f3": "fix",
         "_fix_wave-f1a": "edit_field",
-        "_original_operation": [],
-        "_fix_wave-f1b": "replace_modifier"
+        "_original_operation": [
+          {
+            "type": "apply-restriction",
+            "restriction": "cant-heal"
+          }
+        ],
+        "_fix_wave-f1b": "replace_modifier",
+        "_fix_wave-f-late": "update_field",
+        "effect_type": "activa"
       }
     ],
     "meta": {
@@ -1275,12 +1297,17 @@
         "phase": "battle.declaration",
         "_fix_wave-f1a": "add_field",
         "operation[0]": {
+          "type": "promote-to-activa-rapida",
+          "duration": "current-turn"
+        },
+        "_fix_wave-f1b": "add_field",
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation[0]": {
           "_original_type": null,
           "type": "promote-to-activa-rapida",
           "duration": "current-turn",
           "scope": "all-activa-effects"
-        },
-        "_fix_wave-f1b": "add_field"
+        }
       }
     ],
     "meta": {
@@ -1337,14 +1364,17 @@
           "effect_type": "activa"
         },
         "phase": "battle.declaration",
-        "_wave_d_fix": "fix-cost-target-exclusion"
+        "_wave_d_fix": "fix-cost-target-exclusion",
+        "_fix_wave-f-late": "add_field",
+        "effect_type": "activa"
       }
     ],
     "meta": {
       "role": "support",
       "affinities": [
         "aff:atlica"
-      ]
+      ],
+      "notes": "Add Activa label to effect_text.; Confirmation note — values correct."
     },
     "card_type": "adendei"
   },
@@ -1376,7 +1406,8 @@
           },
           {
             "type": "apply-immunity",
-            "immunity": "damage-by-effect"
+            "immunity": "damage-by-effect",
+            "target": "ally-atlica-adendei"
           }
         ],
         "target": {
@@ -1406,16 +1437,20 @@
             "type": "immune-marks"
           },
           {
-            "type": "damage-reduce",
-            "value": "effect_only"
+            "type": "apply-immunity",
+            "immunity": "damage-by-effect"
           }
         ],
         "_fix_wave-f3": "fix",
         "_fix_wave-f1b": "replace_operation",
-        "_original_operation[1]": null,
-        "operation[1]": {
+        "_original_operation[1]": {
           "type": "immune-effect-damage"
-        }
+        },
+        "operation[1]": {
+          "type": "grant-immunity",
+          "scope": "effect-damage"
+        },
+        "_fix_wave-f-late": "update_operation"
       },
       {
         "id": "P2-heal-on-ally-attack",
@@ -1454,7 +1489,8 @@
         "modifiers": {},
         "phase": "battle.declaration",
         "_fix_wave-f2": "replace",
-        "_fix_wave-f3": "fix"
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -1462,7 +1498,7 @@
       "affinities": [
         "aff:atlica"
       ],
-      "notes": "Pattern Rava Deidad"
+      "notes": "Pattern Rava Deidad; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -1571,7 +1607,8 @@
             "target_has_mark": "burn"
           }
         },
-        "_fix_wave-f1b": "replace_operation"
+        "_fix_wave-f1b": "replace_operation",
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -1579,7 +1616,7 @@
       "affinities": [
         "aff:pirica"
       ],
-      "notes": "Pattern Rava Deidad"
+      "notes": "Pattern Rava Deidad; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -1670,10 +1707,18 @@
         "_fix_wave-f3": "fix",
         "_fix_wave-f1a": "edit_field",
         "operation[0]": {
+          "type": "bonus-attack-damage",
+          "value": 1,
+          "condition": {
+            "target_has_rests": true
+          }
+        },
+        "_fix_wave-f1b": "replace_operation",
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation[0]": {
           "_original_type": "bonus-attack-damage",
           "type": "damage-bonus"
-        },
-        "_fix_wave-f1b": "replace_operation"
+        }
       }
     ],
     "meta": {
@@ -1681,7 +1726,7 @@
       "affinities": [
         "aff:gelida"
       ],
-      "notes": "Pattern Rava Deidad"
+      "notes": "Pattern Rava Deidad; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -1807,7 +1852,7 @@
       "affinities": [
         "aff:litica"
       ],
-      "notes": "Pattern Rava Deidad"
+      "notes": "Pattern Rava Deidad; Semantic report confirmed scale is correct here. Documentation note only.; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -1942,7 +1987,7 @@
       "affinities": [
         "aff:huumica"
       ],
-      "notes": "Pattern Rava Deidad; Issue reported target.count:all missing but inspection confirms it IS already present in P3 JSON. Recorded as verification-pass, no change needed."
+      "notes": "Pattern Rava Deidad; Issue reported target.count:all missing but inspection confirms it IS already present in P3 JSON. Recorded as verification-pass, no change needed.; Add 'Pasiva:' label to effect_text.; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -1970,9 +2015,9 @@
         ],
         "operation": [
           {
-            "type": "peek-deck",
+            "type": "peek-cards",
             "count": 3,
-            "owner": "self"
+            "source": "own-deck"
           },
           {
             "type": "player-chooses",
@@ -2008,7 +2053,10 @@
             {
               "type": "target-must-be-revealed"
             }
-          ]
+          ],
+          {
+            "type": "target-must-be-revealed"
+          }
         ],
         "modifiers": {
           "_original_effect_type": "",
@@ -2020,11 +2068,28 @@
         "_fix_wave-f1b": "replace_operation",
         "_original_operation": [
           {
-            "type": "damage-as-revealed",
-            "peek_count": 3,
-            "return_position": "bottom"
+            "type": "peek-deck",
+            "count": 3,
+            "owner": "self"
+          },
+          {
+            "type": "player-chooses",
+            "count": 1,
+            "from": "peeked-cards"
+          },
+          {
+            "type": "damage-from-stat",
+            "stat": "damage",
+            "source": "chosen-card"
+          },
+          {
+            "type": "return-all",
+            "position": "bottom",
+            "count": 3
           }
-        ]
+        ],
+        "_fix_wave-f-late": "update_operation",
+        "effect_type": "activa"
       }
     ],
     "meta": {
@@ -2032,7 +2097,8 @@
       "affinities": [
         "aff:litica"
       ],
-      "subtype": "titan"
+      "subtype": "titan",
+      "notes": "Move cant-be-copied note from cost_text to effect_text."
     },
     "card_type": "adendei"
   },
@@ -2083,7 +2149,9 @@
         },
         "phase": "post.extinction",
         "_fix_wave-f2": "replace",
-        "_fix_wave-f3": "note-only"
+        "_fix_wave-f3": "note-only",
+        "_fix_wave-f-late": "add_field",
+        "effect_type": "pasiva"
       }
     ],
     "meta": {
@@ -2152,7 +2220,8 @@
           "trigger": "while-on-field",
           "_note": "Húumica archetype: escala permanente confirmada (progressive potency); scale-per es correcto"
         },
-        "_fix_wave-f1b": "add_field"
+        "_fix_wave-f1b": "add_field",
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -2210,7 +2279,10 @@
             {
               "type": "target-must-be-revealed"
             }
-          ]
+          ],
+          {
+            "type": "target-must-be-revealed"
+          }
         ],
         "modifiers": {
           "_original_effect_type": "",
@@ -2218,7 +2290,9 @@
         },
         "phase": "battle.declaration",
         "_fix_wave-f2": "add_field",
-        "_fix_wave-f3": "note-only"
+        "_fix_wave-f3": "note-only",
+        "_fix_wave-f-late": "add_field",
+        "effect_type": "pasiva"
       }
     ],
     "meta": {
@@ -2226,7 +2300,7 @@
       "affinities": [
         "aff:litica"
       ],
-      "notes": "Requiere decision de diseno sobre unicidad por nombre completo vs nombre base."
+      "notes": "Requiere decision de diseno sobre unicidad por nombre completo vs nombre base.; Confirmation note — values correct."
     },
     "card_type": "adendei"
   },
@@ -2289,7 +2363,8 @@
           {
             "type": "swap-field-extinction"
           }
-        ]
+        ],
+        "_fix_wave-f-late": "update_operation"
       },
       {
         "id": "P2-opg-restriction",
@@ -2393,7 +2468,8 @@
             "zone": "extinction",
             "snapshot": "post-cost"
           }
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       },
       {
         "id": "P2-cost-and-restrictions",
@@ -2493,7 +2569,8 @@
       "role": "hitter",
       "affinities": [
         "aff:pirica"
-      ]
+      ],
+      "notes": "Numeric values confirmed correct per semantic report."
     },
     "card_type": "adendei"
   },
@@ -2550,14 +2627,41 @@
         "phase": "continuous",
         "_fix_wave-f1b": "add_field",
         "prerequisites[0]": {
-          "_original_value": null,
-          "value": 4
+          "type": "min-count",
+          "filter": {
+            "card_type": "ixim"
+          },
+          "zone": [
+            "field",
+            "extinction"
+          ],
+          "value": 4,
+          "stat_op": ">="
         },
         "operation[0]": {
+          "type": "copy",
+          "copy_targets": [
+            "effect",
+            "cost"
+          ],
+          "source_zone": [
+            "field",
+            "extinction"
+          ],
+          "source_filter": {
+            "card_type": "ixim"
+          }
+        },
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation[0]": {
           "copy_targets": [
             "effect",
             "cost"
           ]
+        },
+        "_original_prerequisites[0]": {
+          "_original_value": null,
+          "value": 4
         }
       }
     ],
@@ -2614,7 +2718,8 @@
         },
         "phase": "continuous",
         "_wave_d_fix": "remove-optional-flag",
-        "_fix_wave-f1b": "add_operation"
+        "_fix_wave-f1b": "add_operation",
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -2699,7 +2804,16 @@
         ],
         "operation": [
           {
-            "type": "attack-protector"
+            "type": "grant-permission",
+            "unlock": "attack-target",
+            "target": {
+              "card_type": "protector",
+              "owner": "enemy"
+            }
+          },
+          {
+            "type": "register-game-rule",
+            "rule": "permission-active-while-pasiva-active"
           }
         ],
         "target": {
@@ -2721,7 +2835,13 @@
             "card_type": "protector",
             "owner": "enemy"
           }
-        }
+        },
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation": [
+          {
+            "type": "attack-protector"
+          }
+        ]
       }
     ],
     "meta": {
@@ -2803,7 +2923,8 @@
             },
             "choice": true
           }
-        ]
+        ],
+        "_fix_wave-f-late": "update_operation"
       },
       {
         "id": "P2-hide-self",
@@ -2938,7 +3059,8 @@
         },
         "_original_trigger": "on-ally-damaged",
         "phase": "reactive",
-        "_fix_wave-f1b": "add_field"
+        "_fix_wave-f1b": "add_field",
+        "_fix_wave-f-late": "add_modifier"
       }
     ],
     "meta": {
@@ -3029,7 +3151,8 @@
           "effect_type": "pasiva"
         },
         "phase": "continuous",
-        "_fix_wave-f1b": "add_field"
+        "_fix_wave-f1b": "add_field",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -3137,6 +3260,20 @@
               "zone": "deck",
               "count": 3
             }
+          },
+          {
+            "type": "restrict-shown-cards",
+            "restriction": "cant-use-effects",
+            "duration": "while-shown"
+          },
+          {
+            "type": "return-to-deck",
+            "position": "bottom",
+            "target": {
+              "type": "enemy",
+              "zone": "deck",
+              "count": 3
+            }
           }
         ],
         "target": {
@@ -3151,7 +3288,8 @@
           "once_per_game": true
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "add_operations"
+        "_fix_wave-f1b": "add_operations",
+        "_fix_wave-f-late": "add_operation"
       },
       {
         "id": "P2-opg-restriction",
@@ -3273,12 +3411,13 @@
           "_original_effect_type": "",
           "effect_type": "pasiva",
           "equipment_override": {
-            "type": "equipment-rule-override",
+            "equipment_rule_override": true,
             "allows": "2-ixim-revealed"
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1b": "add_field"
+        "_fix_wave-f1b": "add_field",
+        "_fix_wave-f-late": "add_modifier"
       }
     ],
     "meta": {
@@ -3476,7 +3615,8 @@
             },
             "zone": "principal"
           }
-        ]
+        ],
+        "_fix_wave-f-late": "remove_prerequisite"
       },
       {
         "id": "P2-self-destruct",
@@ -3787,6 +3927,11 @@
           "scope": "both"
         },
         "operation[0]": {
+          "type": "abyss",
+          "count": 1
+        },
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation[0]": {
           "_original_value": null,
           "value": null,
           "count": 1
@@ -4320,7 +4465,8 @@
         "operation[0]": {
           "_original_type": null,
           "type": "protect-passive-from-negation"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -4422,7 +4568,8 @@
       "affinities": [
         "aff:feral",
         "aff:abisal"
-      ]
+      ],
+      "notes": "Add Activa: prefix to effect_text."
     },
     "card_type": "adendei"
   },
@@ -4525,13 +4672,17 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
+            "type": "until-self-available"
+          },
+          "_original_duration": {
             "type": "until-self-available",
             "_original_type": "until-protector-available"
           }
         },
         "phase": "battle.declaration",
         "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_modifier"
+        "_fix_wave-f1b": "replace_modifier",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -4680,7 +4831,8 @@
         "operation[0]": {
           "_original_type": null,
           "type": "equip-return"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -4907,7 +5059,8 @@
         "operation[0]": {
           "_original_type": null,
           "type": "damage-buff-temporary"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       },
       {
         "id": "P2",
@@ -4984,7 +5137,8 @@
       "role": "support",
       "affinities": [
         "aff:atlica"
-      ]
+      ],
+      "notes": "Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -5034,7 +5188,8 @@
         "operation[0]": {
           "_original_type": null,
           "type": "damage-buff-temporary"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       },
       {
         "id": "P2",
@@ -5079,7 +5234,7 @@
       "affinities": [
         "aff:pirica"
       ],
-      "notes": "EXPO-004 (Nozi) tiene P3 on-death que dana 1 a todos los Atlicos. Hori (EXPO-006) no tiene pipeline analogo. Confirmar con diseno si la asimetria es intencional o si falta P3 on-death para Piricos."
+      "notes": "EXPO-004 (Nozi) tiene P3 on-death que dana 1 a todos los Atlicos. Hori (EXPO-006) no tiene pipeline analogo. Confirmar con diseno si la asimetria es intencional o si falta P3 on-death para Piricos.; Flag for design review: missing on-death pipeline symmetry with EXPO-004.; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -5137,7 +5292,8 @@
       "role": "hitter",
       "affinities": [
         "aff:pirica"
-      ]
+      ],
+      "notes": "Add effect type label to effect_text per system convention."
     },
     "card_type": "adendei"
   },
@@ -5211,15 +5367,19 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
-            "type": "while-self-available",
-            "_original_type": "until-protector-available"
+            "type": "while-self-available"
           },
           "_original_effect_type": "",
-          "effect_type": "activa"
+          "effect_type": "activa",
+          "_original_duration": {
+            "type": "while-self-available",
+            "_original_type": "until-protector-available"
+          }
         },
         "phase": "prev",
         "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_modifier"
+        "_fix_wave-f1b": "replace_modifier",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -6140,7 +6300,8 @@
           "type": "return-to-zone",
           "zone": "protector-zone",
           "state": "available"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -6282,7 +6443,30 @@
             "type": "min-extinction",
             "value": 7
           }
-        ]
+        ],
+        "_fix_wave-f-late": "update_prerequisite",
+        "_original_prerequisites[0]": null,
+        "prerequisites[0]": {
+          "type": "or-condition",
+          "conditions": [
+            {
+              "type": "min-extinction",
+              "value": 7
+            },
+            {
+              "type": "and-condition",
+              "conditions": [
+                {
+                  "type": "has-protector-in-extinction"
+                },
+                {
+                  "type": "min-extinction",
+                  "value": 3
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "P3-heal-allies",
@@ -6331,7 +6515,30 @@
             "type": "min-extinction",
             "value": 7
           }
-        ]
+        ],
+        "_fix_wave-f-late": "update_prerequisite",
+        "_original_prerequisites[0]": null,
+        "prerequisites[0]": {
+          "type": "or-condition",
+          "conditions": [
+            {
+              "type": "min-extinction",
+              "value": 7
+            },
+            {
+              "type": "and-condition",
+              "conditions": [
+                {
+                  "type": "has-protector-in-extinction"
+                },
+                {
+                  "type": "min-extinction",
+                  "value": 3
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "P4-return-card",
@@ -6378,7 +6585,30 @@
             "type": "min-extinction",
             "value": 7
           }
-        ]
+        ],
+        "_fix_wave-f-late": "update_prerequisite",
+        "_original_prerequisites[0]": null,
+        "prerequisites[0]": {
+          "type": "or-condition",
+          "conditions": [
+            {
+              "type": "min-extinction",
+              "value": 7
+            },
+            {
+              "type": "and-condition",
+              "conditions": [
+                {
+                  "type": "has-protector-in-extinction"
+                },
+                {
+                  "type": "min-extinction",
+                  "value": 3
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "meta": {
@@ -6481,7 +6711,8 @@
       "role": "hitter",
       "affinities": [
         "aff:chaaktica"
-      ]
+      ],
+      "notes": "Clarify '6+' covers exactly 6 and above."
     },
     "card_type": "protector"
   },
@@ -6665,11 +6896,19 @@
                 "card_type": "adendei"
               }
             }
-          ]
+          ],
+          {
+            "type": "equip-only-to",
+            "filter": {
+              "zone": "original-principal",
+              "card_type": "adendei"
+            }
+          }
         ],
         "modifiers": {},
         "phase": "equip",
-        "_fix_wave-f2": "add_to_array"
+        "_fix_wave-f2": "add_to_array",
+        "_fix_wave-f-late": "add_restriction"
       },
       {
         "id": "P2-on-equipped-death",
@@ -6768,6 +7007,10 @@
           },
           {
             "type": "protect-attack"
+          },
+          {
+            "type": "protect-attack",
+            "target": "equipped"
           }
         ],
         "target": {
@@ -6780,7 +7023,8 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "add_operation"
+        "_fix_wave-f1b": "add_operation",
+        "_fix_wave-f-late": "add_operation"
       }
     ],
     "meta": {
@@ -6820,6 +7064,9 @@
           },
           {
             "type": "protect-effect"
+          },
+          {
+            "type": "protect-effect"
           }
         ],
         "target": {
@@ -6834,7 +7081,8 @@
           }
         },
         "phase": "prev",
-        "_fix_wave-f1b": "add_operation"
+        "_fix_wave-f1b": "add_operation",
+        "_fix_wave-f-late": "add_operation"
       }
     ],
     "meta": {
@@ -7027,7 +7275,8 @@
           "_original_optional": true
         },
         "phase": "equip",
-        "_fix_wave-f1b": "replace_modifier"
+        "_fix_wave-f1b": "replace_modifier",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -7112,7 +7361,8 @@
         "operation[0]": {
           "type": "register-game-rule",
           "rule": "block-drawn-card-effects-this-turn"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -7163,7 +7413,8 @@
           "filter": {
             "card_type": "adendei"
           }
-        }
+        },
+        "_fix_wave-f-late": "update_prerequisite"
       }
     ],
     "meta": {
@@ -7225,11 +7476,39 @@
         "fast": true,
         "phase": "battle.declaration",
         "_fix_wave-f1b": "add_field"
+      },
+      {
+        "id": "P2-equip-compatibility",
+        "effect_type": "pasiva",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "target": {
+          "type": "self"
+        },
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "equip-to-protector-or-adendei"
+          }
+        ],
+        "restrictions": [],
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
       "role": "tech",
-      "affinities": []
+      "affinities": [],
+      "notes": "Need pipeline for special equip compatibility with Protector OR Adendei."
     },
     "card_type": "rot"
   },
@@ -7430,7 +7709,8 @@
           {
             "type": "independent"
           }
-        ]
+        ],
+        "_fix_wave-f-late": "remove_prerequisite"
       }
     ],
     "meta": {
@@ -7734,7 +8014,8 @@
             "subtype": "Equino",
             "value": 3
           }
-        ]
+        ],
+        "_fix_wave-f-late": "remove_prerequisite"
       }
     ],
     "meta": {
@@ -7809,14 +8090,17 @@
         ],
         "target": {
           "type": "ally",
-          "count": "up-to-3",
+          "count": {
+            "max": 3
+          },
           "zone": "field",
-          "_original_count": 3
+          "_original_count": "up-to-3"
         },
         "restrictions": [],
         "modifiers": {},
         "phase": "post.extinction",
-        "_fix_wave-f1b": "replace_field"
+        "_fix_wave-f1b": "replace_field",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -7928,6 +8212,16 @@
             "type": "restrict-heal-self",
             "target": "ally-ariam",
             "detail": "no curan por propios efectos"
+          },
+          {
+            "type": "restrict-heal-self",
+            "target": {
+              "filter": {
+                "card_type": "adendei",
+                "card_name_contains": "Ariam"
+              }
+            },
+            "duration": "rest-of-game"
           }
         ],
         "target": {
@@ -7954,7 +8248,8 @@
         },
         "phase": "prev",
         "_wave_d_fix": "move-restriction-to-operation",
-        "_fix_wave-f1b": "add_operation"
+        "_fix_wave-f1b": "add_operation",
+        "_fix_wave-f-late": "add_operation"
       }
     ],
     "meta": {
@@ -8229,6 +8524,11 @@
           {
             "type": "cant-use-activa-while-active",
             "notes": "No puedes usar efectos de cartas tomadas mientras esta Bio este en campo"
+          },
+          {
+            "type": "player-level-restriction",
+            "rule": "no-use-taken-card-effects",
+            "scope": "controlling-player"
           }
         ],
         "modifiers": {
@@ -8237,7 +8537,8 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1b": "add_operation"
+        "_fix_wave-f1b": "add_operation",
+        "_fix_wave-f-late": "add_restriction"
       }
     ],
     "meta": {
@@ -9129,7 +9430,12 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f3": "note-only"
+        "_fix_wave-f3": "note-only",
+        "_fix_wave-f-late": "update_operation",
+        "operation[0]": {
+          "_original_timing": null,
+          "timing": "end-of-turn"
+        }
       }
     ],
     "meta": {
@@ -9428,12 +9734,16 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
+            "type": "while-in-extinction"
+          },
+          "_original_duration": {
             "type": "while-in-extinction",
             "_original_type": "while-on-field"
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1b": "replace_modifier"
+        "_fix_wave-f1b": "replace_modifier",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -9494,13 +9804,24 @@
         "modifiers": {},
         "phase": "battle.declaration",
         "_fix_wave-f1b": "replace_operation",
-        "_original_operation[1]": null,
-        "operation[1]": {
+        "_original_operation[1]": {
           "type": "send-extinction",
           "target_type": "token",
           "count": 1,
           "target_owner": "any"
-        }
+        },
+        "operation[1]": {
+          "type": "send-extinction",
+          "target": {
+            "type": "any",
+            "filter": {
+              "card_type": "token"
+            },
+            "owner": "any"
+          },
+          "count": 1
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -9584,7 +9905,8 @@
     ],
     "meta": {
       "role": "hitter",
-      "affinities": []
+      "affinities": [],
+      "notes": "Flag redundancy: on-attack + on-activate may stack rests unintentionally."
     },
     "card_type": "espectro"
   },
@@ -9954,7 +10276,8 @@
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-be-healed"
-        }
+        },
+        "_fix_wave-f-late": "update_restriction"
       }
     ],
     "meta": {
@@ -10057,10 +10380,13 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_removed_optional": true,
+          "_original_optional": null,
+          "optional": false
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "remove_field"
+        "_fix_wave-f1a": "remove_field",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -10169,7 +10495,8 @@
         "operation[0]": {
           "_original_type": null,
           "type": "protect-full"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       },
       {
         "id": "P2-activate-heal",
@@ -10250,6 +10577,11 @@
             "type": "place-in-field",
             "target": "triggered-drawn-card",
             "zone": "rival-principal"
+          },
+          {
+            "type": "place-in-field",
+            "target": "rival-drawn-card",
+            "zone": "zona-principal-rival"
           }
         ],
         "target": {
@@ -10265,7 +10597,8 @@
           "zone_condition": "self-in-extinction"
         },
         "phase": "prev",
-        "_fix_wave-f1a": "add_operation"
+        "_fix_wave-f1a": "add_operation",
+        "_fix_wave-f-late": "add_operation"
       }
     ],
     "meta": {
@@ -10925,7 +11258,8 @@
       "affinities": [
         "aff:feral",
         "sub:equino"
-      ]
+      ],
+      "notes": "Fix spelling in cost_text to match pipeline filter."
     },
     "card_type": "adendei"
   },
@@ -11028,7 +11362,8 @@
       "affinities": [
         "aff:feral",
         "sub:equino"
-      ]
+      ],
+      "notes": "Fix spelling in cost_text to match pipeline filter."
     },
     "card_type": "adendei"
   },
@@ -11256,7 +11591,8 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field"
+        "_fix_wave-f1a": "edit_field",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -11433,6 +11769,10 @@
             "stat": "rest",
             "op": "<",
             "value": 2
+          },
+          {
+            "type": "target-has-rest-below",
+            "max": 2
           }
         ],
         "costs": [
@@ -11454,7 +11794,8 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "prev",
-        "_fix_wave-f1a": "add_field"
+        "_fix_wave-f1a": "add_field",
+        "_fix_wave-f-late": "add_prerequisite"
       }
     ],
     "meta": {
@@ -12616,7 +12957,8 @@
         "prerequisites[1]": {
           "_original_type": null,
           "type": "target-hidden"
-        }
+        },
+        "_fix_wave-f-late": "update_prerequisite"
       }
     ],
     "meta": {
@@ -12953,8 +13295,15 @@
           "type": "no-field-ixim-equip",
           "scope": "both-players",
           "exclude_self": true,
-          "note": "no other Adendei with an Ixim equipped on the field (any player)"
-        }
+          "note": "no other Adendei with an Ixim equipped on the field (any player)",
+          "_original_filter": null,
+          "filter": {
+            "has_ixim_equip": true,
+            "zone": "field",
+            "scope": "any-card"
+          }
+        },
+        "_fix_wave-f-late": "update_prerequisite"
       }
     ],
     "meta": {
@@ -13098,7 +13447,8 @@
         "_fix_wave-f1a": "add_field",
         "operation[0]": {
           "destination": "equip-zone"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -13150,9 +13500,10 @@
         "phase": "battle.declaration",
         "_fix_wave-f1a": "edit_field",
         "operation[0]": {
-          "_original_type": null,
-          "type": "damage-bonus"
-        }
+          "_original_type": "damage-bonus",
+          "type": "damage-add-temp"
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -13756,7 +14107,8 @@
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-receive-rest-by-effect"
-        }
+        },
+        "_fix_wave-f-late": "update_restriction"
       }
     ],
     "meta": {
@@ -13811,7 +14163,8 @@
         "operation[0]": {
           "_original_scope": null,
           "scope": "all-enemy-effects"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -14008,7 +14361,8 @@
           "optional": true
         },
         "phase": "end.activas-pasivas",
-        "_fix_wave-f1a": "add_field"
+        "_fix_wave-f1a": "add_field",
+        "_fix_wave-f-late": "add_modifier"
       }
     ],
     "meta": {
@@ -14338,10 +14692,13 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_removed_optional": true,
+          "_original_optional": null,
+          "optional": false
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "remove_field"
+        "_fix_wave-f1a": "remove_field",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -14800,7 +15157,12 @@
               "value": 6,
               "source": "cyra"
             }
-          ]
+          ],
+          {
+            "type": "self-damage",
+            "value": 6,
+            "source": "cyra"
+          }
         ],
         "operation": [
           {
@@ -14821,7 +15183,8 @@
           "once_per_game": true
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_cost"
+        "_fix_wave-f1a": "add_cost",
+        "_fix_wave-f-late": "add_cost"
       },
       {
         "id": "P2-once-per-game-restriction",
@@ -15180,13 +15543,13 @@
         },
         "restrictions": [],
         "modifiers": {
-          "stat_preservation": {
-            "rule": "§12",
-            "note": "swapped rival card keeps own stats; enters your zone with its own stats"
-          }
+          "stat_preservation": true,
+          "rule_reference": "§12",
+          "restriction": "rival-card-keeps-own-stats"
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field"
+        "_fix_wave-f1a": "add_field",
+        "_fix_wave-f-late": "add_modifier"
       }
     ],
     "meta": {
@@ -15568,10 +15931,13 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_removed_optional": true,
+          "_original_optional": null,
+          "optional": false
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "remove_field"
+        "_fix_wave-f1a": "remove_field",
+        "_fix_wave-f-late": "update_field"
       },
       {
         "id": "P2-cant-negate-attack",
@@ -15652,10 +16018,13 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_removed_optional": true,
+          "_original_optional": null,
+          "optional": false
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "remove_field"
+        "_fix_wave-f1a": "remove_field",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -15899,7 +16268,8 @@
           "filter": {
             "has_fast_active": true
           }
-        }
+        },
+        "_fix_wave-f-late": "update_prerequisite"
       }
     ],
     "meta": {
@@ -16321,6 +16691,12 @@
         "phase": "battle.declaration",
         "_fix_wave-f1a": "edit_field",
         "prerequisites[0]": {
+          "type": "min-tokens",
+          "operator": "lt",
+          "value": 1
+        },
+        "_fix_wave-f-late": "update_prerequisite",
+        "_original_prerequisites[0]": {
           "_original_operator": null,
           "operator": "lt"
         }
@@ -16402,15 +16778,16 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
-            "type": "next-turn-from-equip",
-            "note": "ends at end-of-turn following equip turn"
+            "type": "next-turn-from-equip"
           },
           "_original_duration": {
-            "type": "next-turn"
+            "type": "next-turn-from-equip",
+            "note": "ends at end-of-turn following equip turn"
           }
         },
         "phase": "equip",
-        "_fix_wave-f1a": "edit_field"
+        "_fix_wave-f1a": "edit_field",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -16463,7 +16840,8 @@
           "value": {
             "max": 6
           }
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -16596,7 +16974,8 @@
             "name": "Rasvel, Congelado",
             "_original_type": "card-not-on-field"
           }
-        ]
+        ],
+        "_fix_wave-f-late": "remove_prerequisite"
       },
       {
         "id": "P2-enter-field-no-titan-penalty",
@@ -16717,7 +17096,8 @@
           "_original_type": null,
           "type": "return-to-equip-zone",
           "source": "principal"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -16895,7 +17275,8 @@
           "value": {
             "max": 6
           }
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -16961,7 +17342,8 @@
           "optional": true
         },
         "phase": "prev",
-        "_fix_wave-f1a": "add_field"
+        "_fix_wave-f1a": "add_field",
+        "_fix_wave-f-late": "add_modifier"
       }
     ],
     "meta": {
@@ -17046,12 +17428,13 @@
             "n": 2
           },
           "bypass_protection": {
-            "value": true,
+            "bypass_protection": true,
             "scope": "first-attack"
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field"
+        "_fix_wave-f1a": "add_field",
+        "_fix_wave-f-late": "add_modifier"
       }
     ],
     "meta": {
@@ -17113,6 +17496,9 @@
           },
           {
             "type": "cant-negate-passive"
+          },
+          {
+            "type": "cant-receive-rests-by-effect"
           }
         ],
         "modifiers": {
@@ -17123,9 +17509,10 @@
         "phase": "continuous",
         "_fix_wave-f1a": "edit_field",
         "operation[1]": {
-          "_original_type": null,
-          "type": "cant-receive-rests-by-effect"
-        }
+          "_original_type": "cant-receive-rests-by-effect",
+          "type": "restrict"
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -17462,7 +17849,8 @@
           "optional": true
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "add_pipeline"
+        "_fix_wave-f2": "add_pipeline",
+        "_fix_wave-f-late": "add_modifier"
       },
       {
         "id": "P2-cant-heal-own-protector",
@@ -17497,6 +17885,36 @@
           }
         },
         "phase": "continuous"
+      },
+      {
+        "id": "P3-cant-heal-own-protector",
+        "effect_type": "pasiva",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "protector"
+          }
+        },
+        "operation": [],
+        "restrictions": [
+          {
+            "type": "cant-be-healed",
+            "scope": "own-protector-while-on-field"
+          }
+        ],
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -17757,9 +18175,11 @@
         "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
-          "type": "self-has-rests",
-          "min": 1
-        }
+          "type": "self-in-rest",
+          "min": 1,
+          "_original_type": "self-has-rests"
+        },
+        "_fix_wave-f-late": "update_prerequisite"
       }
     ],
     "meta": {
@@ -17815,7 +18235,8 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace"
+        "_fix_wave-f2": "replace",
+        "_fix_wave-f-late": "update_field"
       },
       {
         "id": "P2-self-extinct-cost",
@@ -17973,6 +18394,11 @@
         "phase": "reactive",
         "_fix_wave-f1a": "edit_field",
         "operation[0]": {
+          "type": "register-game-rule",
+          "rule": "cant-return-equipment-to-zone"
+        },
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation[0]": {
           "_original_restrict": null,
           "restrict": "return-equipment-to-zone"
         }
@@ -18867,7 +19293,8 @@
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-scale"
-        }
+        },
+        "_fix_wave-f-late": "update_restriction"
       },
       {
         "id": "P3-death-damage",
@@ -18936,11 +19363,13 @@
         "operation": [
           {
             "type": "rest-add",
-            "value": 2
+            "value": 2,
+            "target": "enemy-count-1"
           },
           {
             "type": "rest-remove",
-            "value": 2
+            "value": 2,
+            "target": "ally-count-1"
           }
         ],
         "target": {
@@ -18960,7 +19389,18 @@
         "_original_target": {
           "type": "both",
           "count": 1
-        }
+        },
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation": [
+          {
+            "type": "rest-add",
+            "value": 2
+          },
+          {
+            "type": "rest-remove",
+            "value": 2
+          }
+        ]
       },
       {
         "id": "P2-link-resting",
@@ -19289,10 +19729,13 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_removed_optional": true,
+          "_original_optional": null,
+          "optional": false
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "remove_field"
+        "_fix_wave-f1a": "remove_field",
+        "_fix_wave-f-late": "update_field"
       },
       {
         "id": "P2-death-ally-rest",
@@ -19842,7 +20285,8 @@
           {
             "type": "cant-equip"
           }
-        ]
+        ],
+        "_fix_wave-f-late": "remove_restriction"
       },
       {
         "id": "P3-cant-equip",
@@ -19874,7 +20318,8 @@
             "type": "while-on-field"
           }
         },
-        "phase": "continuous"
+        "phase": "continuous",
+        "_fix_wave-f-late": "create_pipeline"
       }
     ],
     "meta": {
@@ -20134,16 +20579,27 @@
             "not_facing": true
           }
         },
-        "restrictions": [],
+        "restrictions": [
+          {
+            "type": "link-restriction",
+            "filter": {
+              "subtype": "feral"
+            }
+          }
+        ],
         "modifiers": {
           "duration": {
+            "type": "until-self-available"
+          },
+          "_original_duration": {
             "type": "until-self-available",
             "_original_type": "until-protector-available"
           }
         },
         "phase": "battle.declaration",
         "_fix_wave-f2": "add_pipeline",
-        "_fix_wave-f1a": "edit_field"
+        "_fix_wave-f1a": "edit_field",
+        "_fix_wave-f-late": "update_field"
       },
       {
         "id": "P2-link-restriction",
@@ -20456,7 +20912,8 @@
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "no-ally-in-rest"
-        }
+        },
+        "_fix_wave-f-late": "update_prerequisite"
       }
     ],
     "meta": {
@@ -20511,7 +20968,8 @@
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-heal-except-by-adendei-effect"
-        }
+        },
+        "_fix_wave-f-late": "update_restriction"
       }
     ],
     "meta": {
@@ -20573,6 +21031,11 @@
         "phase": "reactive",
         "_fix_wave-f1a": "add_field",
         "operation[0]": {
+          "type": "restrict-activation",
+          "scope": "equip-cards"
+        },
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation[0]": {
           "_original_type": null,
           "type": "restrict-activation",
           "scope": "equip-cards"
@@ -20769,6 +21232,15 @@
               "name": "Nanuk"
             },
             "note": "Can only be equipped to Adendei Nanuk"
+          },
+          {
+            "type": "equipped-card-available"
+          },
+          {
+            "type": "equip-restriction",
+            "filter": {
+              "name": "Nanuk"
+            }
           }
         ],
         "costs": [
@@ -20803,7 +21275,8 @@
           {
             "type": "self-available"
           }
-        ]
+        ],
+        "_fix_wave-f-late": "add_prerequisite"
       }
     ],
     "meta": {
@@ -21061,7 +21534,15 @@
             ]
           }
         },
-        "restrictions": [],
+        "restrictions": [
+          {
+            "type": "target-exclusion",
+            "exclude": [
+              "token",
+              "protector"
+            ]
+          }
+        ],
         "modifiers": {},
         "phase": "reactive",
         "_fix_wave-f2": "replace",
@@ -21069,7 +21550,8 @@
           "type": "any",
           "count": 1,
           "zone": "principal"
-        }
+        },
+        "_fix_wave-f-late": "add_restriction"
       }
     ],
     "meta": {
@@ -21115,10 +21597,13 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_removed_optional": true,
+          "_original_optional": null,
+          "optional": false
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "remove_field"
+        "_fix_wave-f1a": "remove_field",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -21171,7 +21656,8 @@
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-attack-facing"
-        }
+        },
+        "_fix_wave-f-late": "update_restriction"
       }
     ],
     "meta": {
@@ -21467,7 +21953,8 @@
         ],
         "modifiers": {},
         "phase": "end.activas-pasivas",
-        "_fix_wave-f2": "replace"
+        "_fix_wave-f2": "replace",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -21520,6 +22007,15 @@
         "phase": "continuous",
         "_fix_wave-f1a": "add_field",
         "operation[0]": {
+          "type": "damage-bonus",
+          "value": 1,
+          "condition": {
+            "on_attack": true,
+            "has_mark": "burn"
+          }
+        },
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation[0]": {
           "_original_type": null,
           "type": "damage-bonus",
           "condition": {
@@ -21583,7 +22079,8 @@
         "restrictions[0]": {
           "type": "cant-target-linked-adendei-this-turn",
           "note": "Cannot give rests to Adendei that were linked this turn"
-        }
+        },
+        "_fix_wave-f-late": "update_restriction"
       }
     ],
     "meta": {
@@ -21709,7 +22206,8 @@
         "operation[0]": {
           "_original_type": null,
           "type": "damage-immunity"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -21758,9 +22256,10 @@
         "phase": "battle.declaration",
         "_fix_wave-f1a": "edit_field",
         "operation[0]": {
-          "_original_type": null,
-          "type": "damage-attack"
-        }
+          "_original_type": "damage-attack",
+          "type": "attack-additional"
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -21888,7 +22387,8 @@
               }
             ]
           }
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -22439,7 +22939,8 @@
     ],
     "meta": {
       "role": "tech",
-      "affinities": []
+      "affinities": [],
+      "notes": "Flag for card text review: add explicit 'vivificar' language per §15."
     },
     "card_type": "protector"
   },
@@ -22565,7 +23066,8 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field"
+        "_fix_wave-f1a": "add_field",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -22932,7 +23434,8 @@
         "operation[0]": {
           "_original_type": null,
           "type": "damage-additional"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -23618,7 +24121,8 @@
         },
         "phase": "post.extinction",
         "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "add_field"
+        "_fix_wave-f1a": "add_field",
+        "_fix_wave-f-late": "add_modifier"
       }
     ],
     "meta": {
@@ -24030,7 +24534,8 @@
         "operation[0]": {
           "_original_type": null,
           "type": "return-to-equip-zone"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -24077,11 +24582,33 @@
             "card_type": "adendei"
           }
         },
-        "restrictions": [],
+        "restrictions": [
+          {
+            "type": "token-energy-override",
+            "energy": "litica",
+            "note": "Token-Litico special property; §2.7 tokens normally have no energy"
+          }
+        ],
         "modifiers": {},
         "phase": "reactive",
         "_fix_wave-f1a": "add_field",
         "operation[0]": {
+          "type": "copy",
+          "as_token": true,
+          "energy_override": "litica",
+          "copy_fields": [
+            "damage",
+            "rest",
+            "activa",
+            "cost"
+          ],
+          "exclude_fields": [
+            "vida",
+            "subtipo"
+          ]
+        },
+        "_fix_wave-f-late": "update_operation",
+        "_original_operation[0]": {
           "copy_fields": [
             "damage",
             "rest",
@@ -24484,6 +25011,9 @@
         "restrictions": [
           {
             "type": "cant-link-this-turn"
+          },
+          {
+            "type": "cant-link-this-turn"
           }
         ],
         "modifiers": {
@@ -24491,7 +25021,8 @@
         },
         "phase": "continuous",
         "_wave_d_fix": "move-cost-to-restriction",
-        "_fix_wave-f1a": "add_field"
+        "_fix_wave-f1a": "add_field",
+        "_fix_wave-f-late": "add_restriction"
       }
     ],
     "meta": {
@@ -24650,7 +25181,8 @@
         "operation[0]": {
           "_original_type": null,
           "type": "place-from-deck"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -24873,7 +25405,8 @@
         "operation[0]": {
           "_original_type": null,
           "type": "damage-additional"
-        }
+        },
+        "_fix_wave-f-late": "update_operation"
       }
     ],
     "meta": {
@@ -24929,7 +25462,12 @@
         "modifiers": {},
         "fast": true,
         "phase": "reactive",
-        "_wave_d_fix": "fix-cost-type"
+        "_wave_d_fix": "fix-cost-type",
+        "_fix_wave-f-late": "update_field",
+        "costs[0]": {
+          "_original_type": null,
+          "type": "self-return-equip"
+        }
       }
     ],
     "meta": {
@@ -24996,7 +25534,8 @@
           "filter": {
             "mark": "abismar"
           }
-        }
+        },
+        "_fix_wave-f-late": "update_prerequisite"
       }
     ],
     "meta": {
@@ -25124,6 +25663,11 @@
         "operation[1]": {
           "_original_type": null,
           "type": "send-out-of-game"
+        },
+        "_fix_wave-f-late": "update_operation",
+        "costs[0]": {
+          "_original_timing": null,
+          "timing": "immediate"
         }
       },
       {
@@ -25354,7 +25898,8 @@
           "delayed": true
         },
         "phase": "end.activas-pasivas",
-        "_fix_wave-f1b": "move_to_costs"
+        "_fix_wave-f1b": "move_to_costs",
+        "_fix_wave-f-late": "move_to_costs"
       }
     ],
     "meta": {
@@ -25593,7 +26138,8 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace"
+        "_fix_wave-f2": "replace",
+        "_fix_wave-f-late": "update_field"
       }
     ],
     "meta": {
@@ -25643,7 +26189,8 @@
         "modifiers": {
           "optional": true
         },
-        "phase": "prev"
+        "phase": "prev",
+        "_fix_wave-f-late": "add_modifier"
       }
     ],
     "meta": {
@@ -26225,7 +26772,8 @@
         "modifiers": {
           "optional": true
         },
-        "phase": "battle.declaration"
+        "phase": "battle.declaration",
+        "_fix_wave-f-late": "add_modifier"
       }
     ],
     "meta": {
@@ -26271,7 +26819,14 @@
             "has_effect": true
           }
         },
-        "restrictions": [],
+        "restrictions": [
+          {
+            "type": "target-filter",
+            "filter": {
+              "has_effect": true
+            }
+          }
+        ],
         "modifiers": {
           "duration": {
             "type": "turn"
@@ -26283,7 +26838,8 @@
           "type": "any",
           "count": 1,
           "zone": "field"
-        }
+        },
+        "_fix_wave-f-late": "add_restriction"
       }
     ],
     "meta": {
@@ -26391,7 +26947,8 @@
         "prerequisites[0]": {
           "_original_type": null,
           "type": "enemy-stat-filter"
-        }
+        },
+        "_fix_wave-f-late": "update_prerequisite"
       }
     ],
     "meta": {
@@ -26654,7 +27211,8 @@
           "filter": {
             "card_type": "adendei"
           }
-        }
+        },
+        "_fix_wave-f-late": "add_target"
       }
     ],
     "meta": {
@@ -27253,7 +27811,8 @@
         "prerequisites[0]": {
           "type": "self-has-status",
           "status": "protected"
-        }
+        },
+        "_fix_wave-f-late": "update_prerequisite"
       }
     ],
     "meta": {
@@ -27555,7 +28114,8 @@
           {
             "type": "cant-attack-protector"
           }
-        ]
+        ],
+        "_fix_wave-f-late": "remove_restriction"
       },
       {
         "id": "P2-self-destruct-no-abisal",
