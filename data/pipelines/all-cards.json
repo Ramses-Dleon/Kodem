@@ -1182,7 +1182,13 @@
         "costs": [
           {
             "type": "ally-damage",
-            "value": 1
+            "value": 1,
+            "target": {
+              "type": "ally",
+              "count": 1,
+              "exclude": "operation-target"
+            },
+            "note": "otra carta aliada (diferente al objetivo de curación)"
           }
         ],
         "operation": [
