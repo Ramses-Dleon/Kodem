@@ -12831,7 +12831,7 @@
         "id": "P1-full-heal-linked",
         "label": "Activa: cura toda la vida del Adendei vinculado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -13782,7 +13782,8 @@
         ],
         "operation": [
           {
-            "type": "return-deck"
+            "type": "swap",
+            "attribute": "reset-positions"
           }
         ],
         "target": {
@@ -14185,7 +14186,8 @@
         ],
         "operation": [
           {
-            "type": "return-deck"
+            "type": "swap",
+            "attribute": "reset-positions"
           }
         ],
         "target": {
@@ -14494,7 +14496,7 @@
         "id": "P1-return-ixim-and-scale",
         "label": "Activa: Regresa 1 Ixim de Zona Principal a Zona de Equipo y escala 1 pto. a 1 aliado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -16365,7 +16367,7 @@
         "id": "P1-rest-swap",
         "label": "Activa: +2 descansos a 1 rival, actualiza 2 descansos a 1 aliado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -17218,7 +17220,7 @@
         "id": "P1-damage-3-rivals",
         "label": "Activa: Dana 2 a hasta 3 Adendei rivales",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -17473,7 +17475,7 @@
         "id": "P1-equip-from-extinction",
         "label": "Activa: Equipa Ixim o Rot de Extincion a un Adendei en ZP",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -17568,7 +17570,7 @@
         "id": "P1-equip-to-enemy",
         "label": "Activa: Equipa esta carta al Adendei rival; dano 2 al final del turno rival",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
