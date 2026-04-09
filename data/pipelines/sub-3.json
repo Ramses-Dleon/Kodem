@@ -89,7 +89,8 @@
       "affinities": [
         "aff:feral",
         "aff:abisal"
-      ]
+      ],
+      "notes": "Add Activa: prefix to effect_text."
     },
     "card_type": "adendei"
   },
@@ -192,13 +193,14 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
+            "type": "until-self-available"
+          },
+          "_original_duration": {
             "type": "until-self-available",
             "_original_type": "until-protector-available"
           }
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_modifier"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -245,8 +247,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "post.extinction",
-        "_fix_wave-f3": "fix"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -291,8 +292,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -326,8 +326,7 @@
         ],
         "operation": [
           {
-            "type": "equip-destroy",
-            "destination": "equip-zone"
+            "type": "equip-return"
           }
         ],
         "target": {
@@ -343,7 +342,6 @@
           "effect_type": "activa-rapida"
         },
         "phase": "reactive",
-        "_fix_wave-f1b": "replace_operation",
         "operation[0]": {
           "_original_type": null,
           "type": "equip-return"
@@ -403,9 +401,7 @@
           },
           "simultaneous": true
         },
-        "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "add_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -448,7 +444,9 @@
             "type": "vivify",
             "filter": {
               "card_type": "bio"
-            }
+            },
+            "destination": "bio-zone",
+            "entry_state": "hidden"
           }
         ],
         "target": {
@@ -461,8 +459,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-operation",
-        "_fix_wave-f1b": "add_fields",
         "operation[0]": {
           "type": "vivify",
           "filter": {
@@ -515,9 +511,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "equip",
-        "_fix_wave-f2": "add_field",
-        "_fix_wave-f3": "fix"
+        "phase": "equip"
       }
     ],
     "meta": {
@@ -569,8 +563,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_operation",
         "operation[0]": {
           "_original_type": null,
           "type": "damage-buff-temporary"
@@ -651,7 +643,8 @@
       "role": "support",
       "affinities": [
         "aff:atlica"
-      ]
+      ],
+      "notes": "Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -696,8 +689,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_operation",
         "operation[0]": {
           "_original_type": null,
           "type": "damage-buff-temporary"
@@ -737,8 +728,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -746,7 +736,7 @@
       "affinities": [
         "aff:pirica"
       ],
-      "notes": "EXPO-004 (Nozi) tiene P3 on-death que dana 1 a todos los Atlicos. Hori (EXPO-006) no tiene pipeline analogo. Confirmar con diseno si la asimetria es intencional o si falta P3 on-death para Piricos."
+      "notes": "EXPO-004 (Nozi) tiene P3 on-death que dana 1 a todos los Atlicos. Hori (EXPO-006) no tiene pipeline analogo. Confirmar con diseno si la asimetria es intencional o si falta P3 on-death para Piricos.; Flag for design review: missing on-death pipeline symmetry with EXPO-004.; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -795,16 +785,15 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
       "role": "hitter",
       "affinities": [
         "aff:pirica"
-      ]
+      ],
+      "notes": "Add effect type label to effect_text per system convention."
     },
     "card_type": "adendei"
   },
@@ -846,8 +835,7 @@
           "effect_type": "activa"
         },
         "_original_trigger": "on-link",
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2",
@@ -878,15 +866,16 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
-            "type": "while-self-available",
-            "_original_type": "until-protector-available"
+            "type": "while-self-available"
           },
           "_original_effect_type": "",
-          "effect_type": "activa"
+          "effect_type": "activa",
+          "_original_duration": {
+            "type": "while-self-available",
+            "_original_type": "until-protector-available"
+          }
         },
-        "phase": "prev",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_modifier"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -935,7 +924,6 @@
         "modifiers": {},
         "_original_trigger": "on-damaged",
         "phase": "reactive",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "triggering"
         }
@@ -1004,8 +992,7 @@
         "modifiers": {
           "once_per_field": true
         },
-        "phase": "post.extinction",
-        "_fix_wave-f3": "fix"
+        "phase": "post.extinction"
       },
       {
         "id": "P2-once-per-field-restriction",
@@ -1042,8 +1029,7 @@
         },
         "_redundant": true,
         "_redundant_reason": "P2 ('Restriccion: solo puede escalar una vez mientras este en campo') es pipeline separado con operation.type=register-game-rule. Esta restriccion ya esta modelada en P1 mediante prerequisites.type=once-per-field y modifiers.once_per_field=true. Redundante.",
-        "phase": "continuous",
-        "_wave_d_fix": "remove-redundant-pipeline"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1787,7 +1773,9 @@
         ],
         "operation": [
           {
-            "type": "vivify"
+            "type": "return-to-zone",
+            "zone": "protector-zone",
+            "state": "available"
           }
         ],
         "target": {
@@ -1801,7 +1789,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "post.extinction",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "return-to-zone",
@@ -1943,13 +1930,34 @@
         ],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "min-extinction",
             "value": 7
           }
-        ]
+        ],
+        "_original_prerequisites[0]": null,
+        "prerequisites[0]": {
+          "type": "or-condition",
+          "conditions": [
+            {
+              "type": "min-extinction",
+              "value": 7
+            },
+            {
+              "type": "and-condition",
+              "conditions": [
+                {
+                  "type": "has-protector-in-extinction"
+                },
+                {
+                  "type": "min-extinction",
+                  "value": 3
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "P3-heal-allies",
@@ -1992,13 +2000,34 @@
         ],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "min-extinction",
             "value": 7
           }
-        ]
+        ],
+        "_original_prerequisites[0]": null,
+        "prerequisites[0]": {
+          "type": "or-condition",
+          "conditions": [
+            {
+              "type": "min-extinction",
+              "value": 7
+            },
+            {
+              "type": "and-condition",
+              "conditions": [
+                {
+                  "type": "has-protector-in-extinction"
+                },
+                {
+                  "type": "min-extinction",
+                  "value": 3
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "P4-return-card",
@@ -2039,13 +2068,34 @@
         ],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "min-extinction",
             "value": 7
           }
-        ]
+        ],
+        "_original_prerequisites[0]": null,
+        "prerequisites[0]": {
+          "type": "or-condition",
+          "conditions": [
+            {
+              "type": "min-extinction",
+              "value": 7
+            },
+            {
+              "type": "and-condition",
+              "conditions": [
+                {
+                  "type": "has-protector-in-extinction"
+                },
+                {
+                  "type": "min-extinction",
+                  "value": 3
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "meta": {
@@ -2137,8 +2187,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_wave_d_fix": "remove-duplicate-operation",
-        "_fix_wave-f1b": "add_field",
         "operation[0]": {
           "_note": "'6+' cubre exactamente 6 y todos los valores mayores (≥6)"
         }
@@ -2148,7 +2196,8 @@
       "role": "hitter",
       "affinities": [
         "aff:chaaktica"
-      ]
+      ],
+      "notes": "Clarify '6+' covers exactly 6 and above."
     },
     "card_type": "protector"
   },
@@ -2332,11 +2381,17 @@
                 "card_type": "adendei"
               }
             }
-          ]
+          ],
+          {
+            "type": "equip-only-to",
+            "filter": {
+              "zone": "original-principal",
+              "card_type": "adendei"
+            }
+          }
         ],
         "modifiers": {},
-        "phase": "equip",
-        "_fix_wave-f2": "add_to_array"
+        "phase": "equip"
       },
       {
         "id": "P2-on-equipped-death",

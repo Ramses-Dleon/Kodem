@@ -79,16 +79,24 @@
             "not_facing": true
           }
         },
-        "restrictions": [],
+        "restrictions": [
+          {
+            "type": "link-restriction",
+            "filter": {
+              "subtype": "feral"
+            }
+          }
+        ],
         "modifiers": {
           "duration": {
+            "type": "until-self-available"
+          },
+          "_original_duration": {
             "type": "until-self-available",
             "_original_type": "until-protector-available"
           }
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "add_pipeline",
-        "_fix_wave-f1a": "edit_field"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-link-restriction",
@@ -177,8 +185,7 @@
         "restrictions": [],
         "modifiers": {},
         "_original_trigger": "on-link",
-        "phase": "battle.declaration",
-        "_wave_d_fix": "fix-cost-target"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -253,6 +260,9 @@
         "prerequisites": [
           {
             "type": "independent"
+          },
+          {
+            "type": "once-while-on-field"
           }
         ],
         "costs": [
@@ -273,8 +283,10 @@
           }
         },
         "restrictions": [],
-        "modifiers": {},
-        "phase": "continuous"
+        "modifiers": {
+          "effect_type": "pasiva-opcional"
+        },
+        "phase": "prev"
       },
       {
         "id": "P2-end-of-turn-damage",
@@ -397,7 +409,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "reactive",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "no-ally-in-rest"
@@ -443,7 +454,7 @@
         },
         "restrictions": [
           {
-            "type": "cant-heal-by-own-effects"
+            "type": "cant-heal-except-by-adendei-effect"
           }
         ],
         "modifiers": {
@@ -452,7 +463,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-heal-except-by-adendei-effect"
@@ -492,7 +502,8 @@
         ],
         "operation": [
           {
-            "type": "negate-effect"
+            "type": "restrict-activation",
+            "scope": "equip-cards"
           }
         ],
         "target": {
@@ -516,8 +527,11 @@
           "optional": true
         },
         "phase": "reactive",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
+          "type": "restrict-activation",
+          "scope": "equip-cards"
+        },
+        "_original_operation[0]": {
           "_original_type": null,
           "type": "restrict-activation",
           "scope": "equip-cards"
@@ -619,7 +633,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -695,7 +709,8 @@
           "type": "on-activate",
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "fast": true
         },
         "prerequisites": [
           {
@@ -714,6 +729,15 @@
               "name": "Nanuk"
             },
             "note": "Can only be equipped to Adendei Nanuk"
+          },
+          {
+            "type": "equipped-card-available"
+          },
+          {
+            "type": "equip-restriction",
+            "filter": {
+              "name": "Nanuk"
+            }
           }
         ],
         "costs": [
@@ -739,8 +763,7 @@
         },
         "notes": "Solo equipable a Adendei Nanuk",
         "fast": true,
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
+        "phase": "reactive",
         "_original_prerequisites": [
           {
             "type": "independent"
@@ -955,8 +978,7 @@
         "modifiers": {
           "_original_trigger": "on-any-healed-or-scaled"
         },
-        "phase": "post.passives",
-        "_fix_wave-f3": "fix"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -1006,10 +1028,17 @@
             ]
           }
         },
-        "restrictions": [],
+        "restrictions": [
+          {
+            "type": "target-exclusion",
+            "exclude": [
+              "token",
+              "protector"
+            ]
+          }
+        ],
         "modifiers": {},
         "phase": "reactive",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "any",
           "count": 1,
@@ -1060,10 +1089,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_original_optional": null,
+          "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1a": "remove_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1102,8 +1131,7 @@
         },
         "restrictions": [
           {
-            "type": "cant-attack-protector",
-            "scope": "facing"
+            "type": "cant-attack-facing"
           }
         ],
         "modifiers": {
@@ -1112,7 +1140,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-attack-facing"
@@ -1208,7 +1235,6 @@
           "optional": true
         },
         "phase": "post.extinction",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "both",
           "zone": "principal"
@@ -1257,8 +1283,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "equip",
-        "_fix_wave-f3": "fix"
+        "phase": "equip"
       }
     ],
     "meta": {
@@ -1411,8 +1436,7 @@
           }
         ],
         "modifiers": {},
-        "phase": "end.activas-pasivas",
-        "_fix_wave-f2": "replace"
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -1445,8 +1469,12 @@
         ],
         "operation": [
           {
-            "type": "scale",
-            "value": 1
+            "type": "damage-bonus",
+            "value": 1,
+            "condition": {
+              "on_attack": true,
+              "has_mark": "burn"
+            }
           }
         ],
         "target": {
@@ -1463,8 +1491,15 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
+          "type": "damage-bonus",
+          "value": 1,
+          "condition": {
+            "on_attack": true,
+            "has_mark": "burn"
+          }
+        },
+        "_original_operation[0]": {
           "_original_type": null,
           "type": "damage-bonus",
           "condition": {
@@ -1517,13 +1552,11 @@
         },
         "restrictions": [
           {
-            "type": "cant-link",
-            "note": "no-linked-this-turn targets"
+            "type": "cant-target-linked-adendei-this-turn"
           }
         ],
         "modifiers": {},
         "phase": "prev",
-        "_fix_wave-f2": "replace",
         "_original_restrictions[0]": null,
         "restrictions[0]": {
           "type": "cant-target-linked-adendei-this-turn",
@@ -1585,7 +1618,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "ally",
           "filter": {
@@ -1626,7 +1658,7 @@
         ],
         "operation": [
           {
-            "type": "protect-effect"
+            "type": "damage-immunity"
           }
         ],
         "target": {
@@ -1650,7 +1682,6 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "damage-immunity"

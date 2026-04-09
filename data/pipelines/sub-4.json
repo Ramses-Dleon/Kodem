@@ -32,7 +32,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration"
+        "phase": "post.passives"
       },
       {
         "id": "P2-protect-equipped",
@@ -59,6 +59,10 @@
           },
           {
             "type": "protect-attack"
+          },
+          {
+            "type": "protect-attack",
+            "target": "equipped"
           }
         ],
         "target": {
@@ -70,8 +74,7 @@
             "type": "until-protector-available"
           }
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1b": "add_operation"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -111,6 +114,9 @@
           },
           {
             "type": "protect-effect"
+          },
+          {
+            "type": "protect-effect"
           }
         ],
         "target": {
@@ -124,8 +130,7 @@
             "type": "next-turn"
           }
         },
-        "phase": "prev",
-        "_fix_wave-f1b": "add_operation"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -249,7 +254,7 @@
         "id": "P1-deck-top",
         "label": "Al equipar disponible: coloca 1 carta del Mazo en el tope",
         "trigger": {
-          "type": "on-equip"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -273,14 +278,16 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {},
+        "modifiers": {
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rapida"
+        },
         "phase": "equip"
       },
       {
         "id": "P2-rest-lock",
         "label": "Al equipar: equipado recibe 2 descansos, solo actualiza 1 por turno, no puede atacar ni activar",
         "trigger": {
-          "type": "on-equip"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -315,10 +322,10 @@
             "type": "while-on-field"
           },
           "optional": false,
-          "_original_optional": true
+          "_original_optional": true,
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rapida"
         },
-        "phase": "equip",
-        "_fix_wave-f1b": "replace_modifier"
+        "phase": "equip"
       }
     ],
     "meta": {
@@ -398,7 +405,6 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "register-game-rule",
@@ -445,7 +451,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "min-ext-name",
@@ -514,13 +519,41 @@
           }
         },
         "fast": true,
-        "phase": "battle.declaration",
-        "_fix_wave-f1b": "add_field"
+        "phase": "battle.declaration"
+      },
+      {
+        "id": "P2-equip-compatibility",
+        "effect_type": "pasiva",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "target": {
+          "type": "self"
+        },
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "equip-to-protector-or-adendei"
+          }
+        ],
+        "restrictions": [],
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
       "role": "tech",
-      "affinities": []
+      "affinities": [],
+      "notes": "Need pipeline for special equip compatibility with Protector OR Adendei."
     },
     "card_type": "rot"
   },
@@ -582,7 +615,7 @@
         "id": "P1-on-negate-ally",
         "label": "Reactiva: Al negar efecto/ataque aliado, envia 1 carta en Zona Principal al fondo del Mazo (una vez por juego)",
         "trigger": {
-          "type": "on-ally-damaged"
+          "type": "on-ally-negated"
         },
         "prerequisites": [
           {
@@ -716,7 +749,6 @@
         "_redundant": true,
         "_redundant_reason": "Las restricciones 'cant-heal' y 'cant-protect' ya están registradas en P1; P2 las duplica innecesariamente.",
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "independent"
@@ -903,8 +935,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "end.activas-pasivas",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -1017,7 +1048,6 @@
         "_redundant": true,
         "_redundant_reason": "Restricciones cant-heal, cant-protect, cant-copy ya están en P1; P2 las repite sin agregar valor.",
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "min-ext-type",
@@ -1100,14 +1130,15 @@
         ],
         "target": {
           "type": "ally",
-          "count": "up-to-3",
+          "count": {
+            "max": 3
+          },
           "zone": "field",
-          "_original_count": 3
+          "_original_count": "up-to-3"
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "post.extinction",
-        "_fix_wave-f1b": "replace_field"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1211,14 +1242,19 @@
             "notes": "+1 dano al atacar"
           },
           {
-            "type": "scale",
-            "value": 1,
-            "notes": "+1 dano al atacar"
-          },
-          {
             "type": "restrict-heal-self",
             "target": "ally-ariam",
             "detail": "no curan por propios efectos"
+          },
+          {
+            "type": "restrict-heal-self",
+            "target": {
+              "filter": {
+                "card_type": "adendei",
+                "card_name_contains": "Ariam"
+              }
+            },
+            "duration": "rest-of-game"
           }
         ],
         "target": {
@@ -1243,9 +1279,7 @@
             "type": "rest-of-game"
           }
         },
-        "phase": "prev",
-        "_wave_d_fix": "move-restriction-to-operation",
-        "_fix_wave-f1b": "add_operation"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -1520,6 +1554,11 @@
           {
             "type": "cant-use-activa-while-active",
             "notes": "No puedes usar efectos de cartas tomadas mientras esta Bio este en campo"
+          },
+          {
+            "type": "player-level-restriction",
+            "rule": "no-use-taken-card-effects",
+            "scope": "controlling-player"
           }
         ],
         "modifiers": {
@@ -1527,8 +1566,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "continuous",
-        "_fix_wave-f1b": "add_operation"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -2035,7 +2073,7 @@
           "_original_trigger": "on-place"
         },
         "_original_trigger": "on-reveal",
-        "phase": "battle.declaration"
+        "phase": "prev"
       }
     ],
     "meta": {

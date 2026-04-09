@@ -84,7 +84,7 @@
           "_original_effect_type": "",
           "effect_type": "activa-rapida"
         },
-        "phase": "battle.declaration"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -443,13 +443,11 @@
           {
             "type": "none"
           },
-          [
-            {
-              "type": "self-damage",
-              "value": 6,
-              "source": "cyra"
-            }
-          ]
+          {
+            "type": "self-damage",
+            "value": 6,
+            "source": "cyra"
+          }
         ],
         "operation": [
           {
@@ -469,8 +467,7 @@
         "modifiers": {
           "once_per_game": true
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_cost"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-once-per-game-restriction",
@@ -632,8 +629,7 @@
         "id": "P1-abyssal-trigger-extinction",
         "label": "Al ser abismada en este turno: envía a Extinción 1 Adendei Abisal en campo",
         "trigger": {
-          "type": "on-damaged",
-          "mark": "abyss"
+          "type": "on-self-marked"
         },
         "prerequisites": [
           {
@@ -783,7 +779,7 @@
           }
         ],
         "target": {
-          "type": "both",
+          "type": "enemy",
           "count": 1
         },
         "restrictions": [],
@@ -829,13 +825,11 @@
         },
         "restrictions": [],
         "modifiers": {
-          "stat_preservation": {
-            "rule": "§12",
-            "note": "swapped rival card keeps own stats; enters your zone with its own stats"
-          }
+          "stat_preservation": true,
+          "rule_reference": "§12",
+          "restriction": "rival-card-keeps-own-stats"
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1066,7 +1060,11 @@
         },
         "prerequisites": [
           {
-            "type": "independent"
+            "type": "needs-equip",
+            "filter": {
+              "card_name_contains": "Ariam",
+              "card_type": "adendei"
+            }
           }
         ],
         "costs": [
@@ -1089,9 +1087,7 @@
         },
         "restrictions": [],
         "modifiers": {
-          "equip_restriction": "Adendei Ariam only",
-          "_original_effect_type": "",
-          "effect_type": null
+          "effect_type": "pasiva"
         },
         "phase": "battle.declaration"
       },
@@ -1103,7 +1099,11 @@
         },
         "prerequisites": [
           {
-            "type": "independent"
+            "type": "needs-equip",
+            "filter": {
+              "card_name_contains": "Ariam",
+              "card_type": "adendei"
+            }
           }
         ],
         "costs": [
@@ -1121,7 +1121,9 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {},
+        "modifiers": {
+          "effect_type": "pasiva"
+        },
         "phase": "battle.declaration"
       }
     ],
@@ -1217,10 +1219,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_original_optional": null,
+          "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1a": "remove_field"
+        "phase": "continuous"
       },
       {
         "id": "P2-cant-negate-attack",
@@ -1301,10 +1303,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_original_optional": null,
+          "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1a": "remove_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1516,7 +1518,10 @@
         },
         "prerequisites": [
           {
-            "type": "needs-equip"
+            "type": "needs-card-in-equip-zone",
+            "filter": {
+              "has_fast_active": true
+            }
           }
         ],
         "costs": [
@@ -1540,8 +1545,6 @@
         "modifiers": {},
         "fast": true,
         "phase": "reactive",
-        "_wave_d_fix": "move-cost-to-operation",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "needs-card-in-equip-zone",

@@ -45,8 +45,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "replace"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -237,10 +236,6 @@
             "condition": "target-has-rests"
           },
           {
-            "type": "protect-effect",
-            "condition": "target-has-rests"
-          },
-          {
             "type": "protect-attack",
             "condition": "target-has-rests"
           }
@@ -255,8 +250,7 @@
           },
           "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1b": "add_operation"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -311,8 +305,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "continuous",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -597,7 +590,7 @@
         "id": "P1-counter-swap-damage",
         "label": "Si rival cambio carta a tu campo este turno: dana 3 a 1 Adendei rival y regresa 1 carta al Mazo (una vez por juego)",
         "trigger": {
-          "type": "on-ally-damaged"
+          "type": "on-enemy-swap-to-ally-field"
         },
         "prerequisites": [
           {
@@ -724,14 +717,20 @@
             "has_effect": true
           }
         },
-        "restrictions": [],
+        "restrictions": [
+          {
+            "type": "target-filter",
+            "filter": {
+              "has_effect": true
+            }
+          }
+        ],
         "modifiers": {
           "duration": {
             "type": "turn"
           }
         },
         "phase": "prev",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "any",
           "count": 1,
@@ -840,7 +839,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "prerequisites[0]": {
           "_original_type": null,
           "type": "enemy-stat-filter"
@@ -936,8 +934,7 @@
           "_original_trigger": "while-on-field",
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
         },
-        "phase": "battle.declaration",
-        "_wave_d_fix": "remove-redundant-pipeline"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1050,7 +1047,8 @@
         "id": "P1-conditional-heal-damage",
         "label": "Si hay Adendei-Atlico o Abisal en campo: cura 1 a hasta 3 aliados y dana 1 por cada curado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link",
+          "_original_trigger": "on-activate"
         },
         "prerequisites": [
           {
@@ -1100,7 +1098,6 @@
         "modifiers": {},
         "_original_trigger": "on-link",
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "ally",
           "count": 3,
@@ -1219,7 +1216,8 @@
         "id": "P2-on-activate-damage-pirico",
         "label": "Al activarse: dana 1 a todos los Adendei-Pirico",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link",
+          "_original_trigger": "on-activate"
         },
         "prerequisites": [
           {
@@ -1390,8 +1388,7 @@
         },
         "_redundant": true,
         "_redundant_reason": "P2 duplicates the once-per-field constraint already captured in P1 prerequisites, creating an unnecessary redundant pipeline.",
-        "phase": "continuous",
-        "_wave_d_fix": "remove-redundant-pipeline"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1701,7 +1698,6 @@
           "optional": true
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "self-has-status",

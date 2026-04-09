@@ -230,7 +230,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_restrictions": [
           {
             "type": "cant-attack-protector"
@@ -440,8 +439,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {

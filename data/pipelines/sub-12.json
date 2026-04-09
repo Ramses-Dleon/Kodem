@@ -23,7 +23,7 @@
         ],
         "operation": [
           {
-            "type": "damage",
+            "type": "attack-additional",
             "value_min": 1,
             "value_max": 2
           }
@@ -35,10 +35,9 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
-          "_original_type": null,
-          "type": "damage-attack"
+          "_original_type": "damage-attack",
+          "type": "attack-additional"
         }
       }
     ],
@@ -153,8 +152,6 @@
           }
         },
         "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-operation",
-        "_fix_wave-f2": "replace",
         "operation[0]": {
           "_original_filter": null,
           "filter": {
@@ -391,8 +388,7 @@
         "modifiers": {
           "self_return_to_equip": true
         },
-        "phase": "reactive",
-        "_fix_wave-f3": "fix"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -662,9 +658,10 @@
           "type": "linked"
         },
         "restrictions": [],
-        "modifiers": {},
+        "modifiers": {
+          "_review_flag": "vivify_keyword_must_be_explicit_in_card_text"
+        },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
         "meta": {
           "flag_review": "effect_text_missing_vivify_keyword"
         }
@@ -718,7 +715,8 @@
     ],
     "meta": {
       "role": "tech",
-      "affinities": []
+      "affinities": [],
+      "notes": "Flag for card text review: add explicit 'vivificar' language per §15."
     },
     "card_type": "protector"
   },
@@ -843,8 +841,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -865,9 +862,13 @@
         "id": "P1-mass-equip-on-link",
         "label": "Activa: Si Protector es vinculado, equipa hasta 4 equipos durante la siguiente Previa; al final recupera equipos y Protector recibe 1 descanso adicional",
         "trigger": {
-          "type": "on-link"
+          "type": "on-activate",
+          "fast": true
         },
         "prerequisites": [
+          {
+            "type": "link-declared-this-turn"
+          },
           {
             "type": "independent"
           }
@@ -905,9 +906,10 @@
           }
         ],
         "modifiers": {
-          "persistent_even_if_leaves_field": true
+          "persistent_even_if_leaves_field": true,
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rapida - on-link->on-activate fast"
         },
-        "phase": "battle.declaration"
+        "phase": "reactive"
       },
       {
         "id": "P2-equip-restriction",
@@ -1104,10 +1106,7 @@
         "id": "P1-counter-negate-passive",
         "label": "Reactiva: Si Pasiva aliada es negada, dana 2 ptos. a 1 Adendei rival (costo: auto-dano 1)",
         "trigger": {
-          "type": "on-ally-damaged",
-          "filter": {
-            "owner": "ally"
-          }
+          "type": "on-ally-passive-negated"
         },
         "prerequisites": [
           {
@@ -1141,7 +1140,7 @@
         "modifiers": {
           "_original_trigger": "on-ally-passive-negated"
         },
-        "phase": "battle.resolution"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -1183,7 +1182,7 @@
         ],
         "operation": [
           {
-            "type": "amplify-effect",
+            "type": "damage-additional",
             "value": 1,
             "_original_type": "scale"
           },
@@ -1207,7 +1206,6 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "damage-additional"
@@ -1233,7 +1231,7 @@
         "id": "P1-scale-on-descend",
         "label": "Reactiva (once-per-turn): Si cualquier carta desciende, esta carta escala 1 pto. permanentemente",
         "trigger": {
-          "type": "on-any-death"
+          "type": "on-any-descend"
         },
         "prerequisites": [
           {
@@ -1262,7 +1260,7 @@
           },
           "_original_trigger": "on-any-descend"
         },
-        "phase": "post.extinction"
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -1326,8 +1324,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "reactive",
-        "_wave_d_fix": "fix-cost-type"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -1806,7 +1803,7 @@
         "id": "P1-negate-passive",
         "label": "Pasiva-Rapida: Niega Pasiva de 1 carta hasta Fin del Turno rival",
         "trigger": {
-          "type": "on-any-reveal",
+          "type": "on-passive-declared",
           "fast": true
         },
         "prerequisites": [
@@ -1895,9 +1892,7 @@
         "modifiers": {
           "timing": "before-replacement"
         },
-        "phase": "post.extinction",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "add_field"
+        "phase": "post.extinction"
       }
     ],
     "meta": {

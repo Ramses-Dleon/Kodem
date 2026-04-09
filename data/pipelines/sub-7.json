@@ -110,12 +110,8 @@
             "type": "needs-equip"
           },
           {
-            "type": "no-own-field",
-            "filter": {
-              "card_type": "ixim",
-              "exclude_self": true
-            },
-            "note": "no other Ixim on field"
+            "type": "no-field-ixim-equip",
+            "scope": "both-players"
           }
         ],
         "costs": [
@@ -139,13 +135,18 @@
           "optional": true
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[1]": null,
         "prerequisites[1]": {
           "type": "no-field-ixim-equip",
           "scope": "both-players",
           "exclude_self": true,
-          "note": "no other Adendei with an Ixim equipped on the field (any player)"
+          "note": "no other Adendei with an Ixim equipped on the field (any player)",
+          "_original_filter": null,
+          "filter": {
+            "has_ixim_equip": true,
+            "zone": "field",
+            "scope": "any-card"
+          }
         }
       }
     ],
@@ -266,7 +267,9 @@
         ],
         "operation": [
           {
-            "type": "unequip-all"
+            "type": "return-to-equip-zone",
+            "destination": "equip-zone",
+            "scope": "all"
           }
         ],
         "target": {
@@ -287,7 +290,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
           "destination": "equip-zone"
         }
@@ -326,7 +328,7 @@
         ],
         "operation": [
           {
-            "type": "scale",
+            "type": "damage-add-temp",
             "value": 1
           }
         ],
@@ -340,10 +342,9 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
-          "_original_type": null,
-          "type": "damage-bonus"
+          "_original_type": "damage-bonus",
+          "type": "damage-add-temp"
         }
       }
     ],
@@ -648,7 +649,6 @@
           ]
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_modifiers": {
           "duration": {
             "type": "until-condition",
@@ -700,8 +700,7 @@
         "restrictions": [],
         "modifiers": {},
         "_original_trigger": "on-equipped-damaged",
-        "phase": "reactive",
-        "_wave_d_fix": "add-optional-flag"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -747,8 +746,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "reactive",
-        "_wave_d_fix": "add-optional-flag"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -935,7 +933,7 @@
         },
         "restrictions": [
           {
-            "type": "cant-rest-update"
+            "type": "cant-receive-rest-by-effect"
           }
         ],
         "modifiers": {
@@ -944,7 +942,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-receive-rest-by-effect"
@@ -999,7 +996,6 @@
           "optional": true
         },
         "phase": "reactive",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_scope": null,
           "scope": "all-enemy-effects"
@@ -1199,8 +1195,7 @@
         "modifiers": {
           "optional": true
         },
-        "phase": "end.activas-pasivas",
-        "_fix_wave-f1a": "add_field"
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -1530,10 +1525,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_original_optional": null,
+          "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1a": "remove_field"
+        "phase": "continuous"
       }
     ],
     "meta": {

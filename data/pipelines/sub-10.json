@@ -195,8 +195,9 @@
         "id": "P1-negate-attack",
         "label": "Al atacar aliado: regresa a Zona de Equipo y niega el ataque (una vez por juego)",
         "trigger": {
-          "type": "on-ally-attacked",
-          "_original_trigger": "on-activate"
+          "type": "on-activate",
+          "_original_trigger": "on-activate",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -229,7 +230,7 @@
         "fast": true,
         "_redundant": true,
         "_redundant_reason": "La operación incluye 'equip-from-equip-zone' pero la carta se regresa a Zona de Equipo (self-return-to-equip-zone es el costo), no se re-equipa; esta sub-operación es incorrecta y no está en el texto.",
-        "phase": "battle.declaration"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -388,7 +389,7 @@
         "id": "P1-equip-return-scale",
         "label": "Al regresar un equipo a Zona de Equipo: escala 1",
         "trigger": {
-          "type": "on-equip"
+          "type": "on-equip-returned"
         },
         "prerequisites": [
           {
@@ -413,7 +414,7 @@
         "modifiers": {
           "_original_trigger": "on-equip-returned"
         },
-        "phase": "equip"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -658,7 +659,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "reactive"
+        "phase": "continuous"
       },
       {
         "id": "P2-rot-activa-promoted",
@@ -771,7 +772,7 @@
         },
         "restrictions": [
           {
-            "type": "cant-rest-update"
+            "type": "cant-scale"
           }
         ],
         "modifiers": {
@@ -780,7 +781,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-scale"
@@ -853,11 +853,13 @@
         "operation": [
           {
             "type": "rest-add",
-            "value": 2
+            "value": 2,
+            "target": "enemy-count-1"
           },
           {
             "type": "rest-remove",
-            "value": 2
+            "value": 2,
+            "target": "ally-count-1"
           }
         ],
         "target": {
@@ -873,17 +875,26 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "_original_target": {
           "type": "both",
           "count": 1
-        }
+        },
+        "_original_operation": [
+          {
+            "type": "rest-add",
+            "value": 2
+          },
+          {
+            "type": "rest-remove",
+            "value": 2
+          }
+        ]
       },
       {
         "id": "P2-link-resting",
         "label": "Pasiva: Puede vincularse con carta en descanso",
         "trigger": {
-          "type": "on-link"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -908,9 +919,12 @@
         },
         "restrictions": [],
         "modifiers": {
-          "optional": true
+          "optional": true,
+          "duration": {
+            "type": "while-on-field"
+          }
         },
-        "phase": "battle.declaration"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1206,10 +1220,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_original_optional": null,
+          "optional": false
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "remove_field"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-death-ally-rest",
@@ -1435,7 +1449,8 @@
           "type": "on-activate",
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "fast": true
         },
         "prerequisites": [
           {
@@ -1470,8 +1485,7 @@
         },
         "notes": "Solo equipable a Adendei Zaykan",
         "fast": true,
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -1754,7 +1768,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_restrictions": [
           {
             "type": "cant-equip"
@@ -1959,8 +1972,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {

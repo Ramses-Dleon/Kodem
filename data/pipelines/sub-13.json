@@ -190,7 +190,7 @@
         "id": "P1-negate-response-damage",
         "label": "Pasiva reactiva: Ataque negado => dana 3 a Adendei equipados en Zona Principal",
         "trigger": {
-          "type": "on-damaged"
+          "type": "on-attack-negated"
         },
         "prerequisites": [
           {
@@ -221,43 +221,6 @@
           "_original_trigger": "on-attack-negated"
         },
         "phase": "battle.resolution"
-      },
-      {
-        "id": "P2-self-extinct-cost",
-        "label": "Costo: Envia esta carta desde Zona Equipo a Extincion para activar Pasiva",
-        "trigger": {
-          "type": "on-activate",
-          "linked_to": "P1-negate-response-damage"
-        },
-        "prerequisites": [
-          {
-            "type": "independent",
-            "zone": "equip",
-            "_original_type": "zone-filter"
-          }
-        ],
-        "costs": [
-          {
-            "type": "self-extinct-from-equip-zone"
-          }
-        ],
-        "operation": [
-          {
-            "type": "send-extinction",
-            "target": "self"
-          }
-        ],
-        "target": {
-          "type": "self"
-        },
-        "restrictions": [],
-        "modifiers": {
-          "is_cost_effect": true,
-          "_original_trigger": "on-cost-pay"
-        },
-        "_redundant": true,
-        "_redundant_reason": "P2 duplica el costo de P1 (self-extinct-from-equip-zone ya está en costs de P1); modelar la auto-extinción solo en el array costs de P1.",
-        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -380,7 +343,7 @@
         ],
         "operation": [
           {
-            "type": "equip-from-equip-zone"
+            "type": "return-to-equip-zone"
           }
         ],
         "target": {
@@ -397,7 +360,6 @@
           "effect_type": "activa-rapida"
         },
         "phase": "reactive",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "return-to-equip-zone"
@@ -448,11 +410,31 @@
             "card_type": "adendei"
           }
         },
-        "restrictions": [],
+        "restrictions": [
+          {
+            "type": "token-energy-override",
+            "energy": "litica",
+            "note": "Token-Litico special property; §2.7 tokens normally have no energy"
+          }
+        ],
         "modifiers": {},
         "phase": "reactive",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
+          "type": "copy",
+          "as_token": true,
+          "energy_override": "litica",
+          "copy_fields": [
+            "damage",
+            "rest",
+            "activa",
+            "cost"
+          ],
+          "exclude_fields": [
+            "vida",
+            "subtipo"
+          ]
+        },
+        "_original_operation[0]": {
           "copy_fields": [
             "damage",
             "rest",
@@ -860,9 +842,7 @@
         "modifiers": {
           "_original_trigger": "on-phase-previa"
         },
-        "phase": "continuous",
-        "_wave_d_fix": "move-cost-to-restriction",
-        "_fix_wave-f1a": "add_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1004,8 +984,7 @@
         ],
         "operation": [
           {
-            "type": "vivify",
-            "source": "deck",
+            "type": "place-from-deck",
             "subtype": "suplente"
           }
         ],
@@ -1016,8 +995,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_wave_d_fix": "add-optional-flag",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "place-from-deck"
@@ -1223,7 +1200,7 @@
         ],
         "operation": [
           {
-            "type": "scale",
+            "type": "damage-additional",
             "value": 1
           }
         ],
@@ -1240,7 +1217,6 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "damage-additional"
@@ -1275,7 +1251,7 @@
         ],
         "costs": [
           {
-            "type": "equip-extinct"
+            "type": "self-return-equip"
           },
           {
             "type": "cant-return-to-equip"
@@ -1300,7 +1276,10 @@
         "modifiers": {},
         "fast": true,
         "phase": "reactive",
-        "_wave_d_fix": "fix-cost-type"
+        "costs[0]": {
+          "_original_type": null,
+          "type": "self-return-equip"
+        }
       }
     ],
     "meta": {
@@ -1346,7 +1325,7 @@
         ],
         "operation": [
           {
-            "type": "amplify-effect",
+            "type": "damage-additional",
             "value": 3,
             "_original_type": "scale"
           }
@@ -1361,7 +1340,6 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "prerequisites[0]": {
           "_original_filter": null,
           "filter": {
@@ -1474,8 +1452,7 @@
             "type": "reveal"
           },
           {
-            "type": "send-extinction",
-            "zone": "out-of-game"
+            "type": "send-out-of-game"
           }
         ],
         "target": {
@@ -1490,11 +1467,13 @@
           "effect_type": "pasiva"
         },
         "phase": "continuous",
-        "_wave_d_fix": "add-cost-timing",
-        "_fix_wave-f1b": "replace_operation",
         "operation[1]": {
           "_original_type": null,
           "type": "send-out-of-game"
+        },
+        "costs[0]": {
+          "_original_timing": null,
+          "timing": "immediate"
         }
       },
       {
@@ -1724,8 +1703,7 @@
         "modifiers": {
           "delayed": true
         },
-        "phase": "end.activas-pasivas",
-        "_fix_wave-f1b": "move_to_costs"
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {

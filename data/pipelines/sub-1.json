@@ -443,8 +443,7 @@
             "type": "next-attack"
           }
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -970,7 +969,8 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "post.passives"
+        "phase": "post.passives",
+        "effect_type": "pasiva"
       }
     ],
     "meta": {
@@ -978,7 +978,8 @@
       "affinities": [
         "aff:huumica"
       ],
-      "subtype": "titan"
+      "subtype": "titan",
+      "notes": "Add Pasiva label to effect_text for clarity.; Move frequency restriction from cost_text to effect_text."
     },
     "card_type": "adendei"
   },
@@ -1018,13 +1019,11 @@
           "optional": true
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_restrictions": [
           {
             "type": "cant-be-protected"
           }
         ],
-        "_fix_wave-f1a": "edit_field",
         "_original_operation[0]": {
           "type": "multiply-damage",
           "base_multiplier": 2,
@@ -1033,8 +1032,7 @@
         "operation[0]": {
           "type": "set-attack-damage",
           "formula": "2 * pending_end_of_turn_rests"
-        },
-        "_fix_wave-f1b": "replace_operation"
+        }
       },
       {
         "id": "P2-cant-be-protected",
@@ -1113,8 +1111,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "add_field"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-no-hide-aura",
@@ -1134,9 +1131,9 @@
         ],
         "operation": [
           {
-            "type": "prevent-hide",
-            "scope": "both",
-            "zone": "principal"
+            "type": "apply-restriction",
+            "restriction": "cant-hide",
+            "scope": "both-zones-principal"
           }
         ],
         "target": {
@@ -1155,8 +1152,13 @@
           "optional": false
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "add_operation"
+        "_original_operation": [
+          {
+            "type": "prevent-hide",
+            "scope": "both",
+            "zone": "principal"
+          }
+        ]
       }
     ],
     "meta": {
@@ -1192,7 +1194,8 @@
         "operation": [
           {
             "type": "apply-restriction",
-            "restriction": "cant-heal"
+            "restriction": "cant-heal",
+            "to": "target"
           }
         ],
         "target": {
@@ -1205,21 +1208,24 @@
         ],
         "modifiers": {
           "duration": {
-            "type": "end-of-next-own-turn",
-            "_original_type": "until-end-of-next-own-turn"
+            "type": "until-end-of-next-own-turn"
           },
           "optional": false,
           "_original_effect_type": "",
           "effect_type": "activa",
           "_original_duration": {
-            "type": "next-turn"
+            "type": "end-of-next-own-turn",
+            "_original_type": "until-end-of-next-own-turn"
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "edit_field",
-        "_original_operation": [],
-        "_fix_wave-f1b": "replace_modifier"
+        "_original_operation": [
+          {
+            "type": "apply-restriction",
+            "restriction": "cant-heal"
+          }
+        ],
+        "effect_type": "activa"
       }
     ],
     "meta": {
@@ -1258,7 +1264,7 @@
         ],
         "operation": [
           {
-            "type": "promote-to-fast"
+            "type": "promote-to-activa-rapida"
           }
         ],
         "target": {
@@ -1273,14 +1279,16 @@
           "effect_type": "pasiva-rapida"
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
+          "type": "promote-to-activa-rapida",
+          "duration": "current-turn"
+        },
+        "_original_operation[0]": {
           "_original_type": null,
           "type": "promote-to-activa-rapida",
           "duration": "current-turn",
           "scope": "all-activa-effects"
-        },
-        "_fix_wave-f1b": "add_field"
+        }
       }
     ],
     "meta": {
@@ -1337,14 +1345,15 @@
           "effect_type": "activa"
         },
         "phase": "battle.declaration",
-        "_wave_d_fix": "fix-cost-target-exclusion"
+        "effect_type": "activa"
       }
     ],
     "meta": {
       "role": "support",
       "affinities": [
         "aff:atlica"
-      ]
+      ],
+      "notes": "Add Activa label to effect_text.; Confirmation note — values correct."
     },
     "card_type": "adendei"
   },
@@ -1375,8 +1384,8 @@
             "type": "immune-marks"
           },
           {
-            "type": "apply-immunity",
-            "immunity": "damage-by-effect"
+            "type": "grant-immunity",
+            "scope": "effect-damage"
           }
         ],
         "target": {
@@ -1395,7 +1404,6 @@
         "_redundant": true,
         "_redundant_reason": "P1 has both operation:[{type:'damage-reduce', value:'effect_only'}] AND restrictions:[{type:'cant-be-damaged-effect'}]. These encode the same immunity to effect damage twice — once as an operation and once as a restriction. Redundant.",
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_restrictions": [
           {
             "type": "cant-be-damaged-effect"
@@ -1406,15 +1414,16 @@
             "type": "immune-marks"
           },
           {
-            "type": "damage-reduce",
-            "value": "effect_only"
+            "type": "apply-immunity",
+            "immunity": "damage-by-effect"
           }
         ],
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_operation",
-        "_original_operation[1]": null,
-        "operation[1]": {
+        "_original_operation[1]": {
           "type": "immune-effect-damage"
+        },
+        "operation[1]": {
+          "type": "grant-immunity",
+          "scope": "effect-damage"
         }
       },
       {
@@ -1452,9 +1461,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1462,7 +1469,7 @@
       "affinities": [
         "aff:atlica"
       ],
-      "notes": "Pattern Rava Deidad"
+      "notes": "Pattern Rava Deidad; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -1507,8 +1514,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "block-mark-removal",
@@ -1534,7 +1539,7 @@
         ],
         "operation": [
           {
-            "type": "scale",
+            "type": "conditional-damage-bonus",
             "value": 1,
             "condition": {
               "target_has_mark": "burn"
@@ -1555,8 +1560,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "edit_field",
         "_original_operation[0]": {
           "type": "bonus-attack-damage",
           "value": 1,
@@ -1570,8 +1573,7 @@
           "condition": {
             "target_has_mark": "burn"
           }
-        },
-        "_fix_wave-f1b": "replace_operation"
+        }
       }
     ],
     "meta": {
@@ -1579,7 +1581,7 @@
       "affinities": [
         "aff:pirica"
       ],
-      "notes": "Pattern Rava Deidad"
+      "notes": "Pattern Rava Deidad; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -1623,8 +1625,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-bonus-vs-rest",
@@ -1644,7 +1645,7 @@
         ],
         "operation": [
           {
-            "type": "scale",
+            "type": "bonus-attack-damage",
             "value": 1,
             "condition": {
               "target_has_rests": true
@@ -1667,13 +1668,17 @@
           "effect_type": "pasiva"
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
+          "type": "bonus-attack-damage",
+          "value": 1,
+          "condition": {
+            "target_has_rests": true
+          }
+        },
+        "_original_operation[0]": {
           "_original_type": "bonus-attack-damage",
           "type": "damage-bonus"
-        },
-        "_fix_wave-f1b": "replace_operation"
+        }
       }
     ],
     "meta": {
@@ -1681,7 +1686,7 @@
       "affinities": [
         "aff:gelida"
       ],
-      "notes": "Pattern Rava Deidad"
+      "notes": "Pattern Rava Deidad; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -1726,8 +1731,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "continuous",
-        "_fix_wave-f3": "fix"
+        "phase": "continuous"
       },
       {
         "id": "P2-heal",
@@ -1764,8 +1768,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P3-on-death",
@@ -1807,7 +1810,7 @@
       "affinities": [
         "aff:litica"
       ],
-      "notes": "Pattern Rava Deidad"
+      "notes": "Pattern Rava Deidad; Semantic report confirmed scale is correct here. Documentation note only.; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -1854,8 +1857,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "continuous",
-        "_fix_wave-f3": "fix"
+        "phase": "continuous"
       },
       {
         "id": "P2-heal",
@@ -1895,8 +1897,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P3-on-death",
@@ -1933,8 +1934,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "post.extinction",
-        "_fix_wave-f2": "verify"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1942,7 +1942,7 @@
       "affinities": [
         "aff:huumica"
       ],
-      "notes": "Pattern Rava Deidad; Issue reported target.count:all missing but inspection confirms it IS already present in P3 JSON. Recorded as verification-pass, no change needed."
+      "notes": "Pattern Rava Deidad; Issue reported target.count:all missing but inspection confirms it IS already present in P3 JSON. Recorded as verification-pass, no change needed.; Add 'Pasiva:' label to effect_text.; Document Rava Deidad exception to neutrality rule §2.3 or flag for design review."
     },
     "card_type": "rava"
   },
@@ -1970,9 +1970,9 @@
         ],
         "operation": [
           {
-            "type": "peek-deck",
+            "type": "peek-cards",
             "count": 3,
-            "owner": "self"
+            "source": "own-deck"
           },
           {
             "type": "player-chooses",
@@ -2008,23 +2008,39 @@
             {
               "type": "target-must-be-revealed"
             }
-          ]
+          ],
+          {
+            "type": "target-must-be-revealed"
+          }
         ],
         "modifiers": {
           "_original_effect_type": "",
           "effect_type": "activa"
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "add_to_array",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation": [
           {
-            "type": "damage-as-revealed",
-            "peek_count": 3,
-            "return_position": "bottom"
+            "type": "peek-deck",
+            "count": 3,
+            "owner": "self"
+          },
+          {
+            "type": "player-chooses",
+            "count": 1,
+            "from": "peeked-cards"
+          },
+          {
+            "type": "damage-from-stat",
+            "stat": "damage",
+            "source": "chosen-card"
+          },
+          {
+            "type": "return-all",
+            "position": "bottom",
+            "count": 3
           }
-        ]
+        ],
+        "effect_type": "activa"
       }
     ],
     "meta": {
@@ -2032,7 +2048,8 @@
       "affinities": [
         "aff:litica"
       ],
-      "subtype": "titan"
+      "subtype": "titan",
+      "notes": "Move cant-be-copied note from cost_text to effect_text."
     },
     "card_type": "adendei"
   },
@@ -2082,8 +2099,7 @@
           "effect_type": "pasiva"
         },
         "phase": "post.extinction",
-        "_fix_wave-f2": "replace",
-        "_fix_wave-f3": "note-only"
+        "effect_type": "pasiva"
       }
     ],
     "meta": {
@@ -2137,8 +2153,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "edit_field",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "bonus-attack-damage-per",
@@ -2151,8 +2165,7 @@
           },
           "trigger": "while-on-field",
           "_note": "Húumica archetype: escala permanente confirmada (progressive potency); scale-per es correcto"
-        },
-        "_fix_wave-f1b": "add_field"
+        }
       }
     ],
     "meta": {
@@ -2210,15 +2223,17 @@
             {
               "type": "target-must-be-revealed"
             }
-          ]
+          ],
+          {
+            "type": "target-must-be-revealed"
+          }
         ],
         "modifiers": {
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "add_field",
-        "_fix_wave-f3": "note-only"
+        "effect_type": "pasiva"
       }
     ],
     "meta": {
@@ -2226,7 +2241,7 @@
       "affinities": [
         "aff:litica"
       ],
-      "notes": "Requiere decision de diseno sobre unicidad por nombre completo vs nombre base."
+      "notes": "Requiere decision de diseno sobre unicidad por nombre completo vs nombre base.; Confirmation note — values correct."
     },
     "card_type": "adendei"
   }

@@ -39,7 +39,7 @@
           "_original_trigger": "on-place"
         },
         "_original_trigger": "on-reveal",
-        "phase": "battle.declaration"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -142,7 +142,7 @@
           "_original_trigger": "on-place"
         },
         "_original_trigger": "on-reveal",
-        "phase": "battle.declaration"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -186,7 +186,10 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f3": "note-only"
+        "operation[0]": {
+          "_original_timing": null,
+          "timing": "end-of-turn"
+        }
       }
     ],
     "meta": {
@@ -251,8 +254,7 @@
             "on-activate"
           ]
         },
-        "phase": "continuous",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -367,7 +369,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva-rapida"
         },
-        "phase": "post.extinction"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -485,12 +487,14 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
+            "type": "while-in-extinction"
+          },
+          "_original_duration": {
             "type": "while-in-extinction",
             "_original_type": "while-on-field"
           }
         },
-        "phase": "continuous",
-        "_fix_wave-f1b": "replace_modifier"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -550,13 +554,22 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "replace_operation",
-        "_original_operation[1]": null,
-        "operation[1]": {
+        "_original_operation[1]": {
           "type": "send-extinction",
           "target_type": "token",
           "count": 1,
           "target_owner": "any"
+        },
+        "operation[1]": {
+          "type": "send-extinction",
+          "target": {
+            "type": "any",
+            "filter": {
+              "card_type": "token"
+            },
+            "owner": "any"
+          },
+          "count": 1
         }
       }
     ],
@@ -604,8 +617,7 @@
         "modifiers": {
           "timing": "end-of-turn"
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1b": "merge_pipelines"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-activate-extra-rest",
@@ -641,7 +653,8 @@
     ],
     "meta": {
       "role": "hitter",
-      "affinities": []
+      "affinities": [],
+      "notes": "Flag redundancy: on-attack + on-activate may stack rests unintentionally."
     },
     "card_type": "espectro"
   },
@@ -1007,7 +1020,6 @@
         ],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-be-healed"
@@ -1114,10 +1126,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true
+          "_original_optional": null,
+          "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1a": "remove_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1222,7 +1234,6 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "protect-full"
@@ -1284,7 +1295,7 @@
             "type": "needs-protector"
           },
           {
-            "type": "min-ext-name",
+            "type": "self-in-extinction",
             "_original_type": "self-in-extinction"
           }
         ],
@@ -1321,8 +1332,7 @@
         "modifiers": {
           "zone_condition": "self-in-extinction"
         },
-        "phase": "prev",
-        "_fix_wave-f1a": "add_operation"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -1570,7 +1580,7 @@
           "_original_trigger": "on-place"
         },
         "_original_trigger": "on-reveal",
-        "phase": "battle.declaration"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -1634,7 +1644,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "battle.declaration"
+        "phase": "continuous"
       },
       {
         "id": "P2-on-death-bounce-spectro-or-token",
@@ -1720,8 +1730,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-restriction"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1777,7 +1786,7 @@
         "id": "P2-enemy-link-damage-protector",
         "label": "Pasiva: al vincularse el Protector rival, dana 1 al Protector rival",
         "trigger": {
-          "type": "on-ally-damaged"
+          "type": "on-enemy-link"
         },
         "prerequisites": [
           {
@@ -1802,7 +1811,7 @@
         "modifiers": {
           "_original_trigger": "on-enemy-link"
         },
-        "phase": "battle.resolution"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1903,8 +1912,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-on-death-damage-rival",
@@ -1982,7 +1990,8 @@
       "affinities": [
         "aff:feral",
         "sub:equino"
-      ]
+      ],
+      "notes": "Fix spelling in cost_text to match pipeline filter."
     },
     "card_type": "adendei"
   },
@@ -2033,8 +2042,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-activate-damage-protector-2rest",
@@ -2085,7 +2093,8 @@
       "affinities": [
         "aff:feral",
         "sub:equino"
-      ]
+      ],
+      "notes": "Fix spelling in cost_text to match pipeline filter."
     },
     "card_type": "adendei"
   }

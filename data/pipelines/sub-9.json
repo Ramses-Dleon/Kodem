@@ -214,8 +214,12 @@
         },
         "_original_trigger": "on-link",
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "prerequisites[0]": {
+          "type": "min-tokens",
+          "operator": "lt",
+          "value": 1
+        },
+        "_original_prerequisites[0]": {
           "_original_operator": null,
           "operator": "lt"
         }
@@ -297,15 +301,14 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
-            "type": "next-turn-from-equip",
-            "note": "ends at end-of-turn following equip turn"
+            "type": "next-turn-from-equip"
           },
           "_original_duration": {
-            "type": "next-turn"
+            "type": "next-turn-from-equip",
+            "note": "ends at end-of-turn following equip turn"
           }
         },
-        "phase": "equip",
-        "_fix_wave-f1a": "edit_field"
+        "phase": "equip"
       }
     ],
     "meta": {
@@ -351,8 +354,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "continuous",
-        "_wave_d_fix": "add-optional-flag",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_value": null,
           "value": {
@@ -470,7 +471,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "edit_field",
         "_original_prerequisites": [
           {
             "type": "self-available"
@@ -522,7 +522,8 @@
           }
         ],
         "label": "P2-enter-field-no-titan-penalty",
-        "phase": "battle.declaration"
+        "phase": "battle.declaration",
+        "restrictions": []
       },
       {
         "id": "P3-on-extinction-damage-protector",
@@ -556,7 +557,8 @@
           }
         ],
         "label": "P3-on-extinction-damage-protector",
-        "phase": "post.extinction"
+        "phase": "post.extinction",
+        "restrictions": []
       }
     ],
     "meta": {
@@ -593,7 +595,8 @@
         ],
         "operation": [
           {
-            "type": "equip-from-equip-zone"
+            "type": "return-to-equip-zone",
+            "source": "principal"
           },
           {
             "type": "scale",
@@ -607,7 +610,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
           "_original_type": null,
           "type": "return-to-equip-zone",
@@ -784,7 +786,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_value": null,
           "value": {
@@ -855,8 +856,7 @@
         "modifiers": {
           "optional": true
         },
-        "phase": "prev",
-        "_fix_wave-f1a": "add_field"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -941,12 +941,11 @@
             "n": 2
           },
           "bypass_protection": {
-            "value": true,
+            "bypass_protection": true,
             "scope": "first-attack"
           }
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -988,9 +987,6 @@
         "operation": [
           {
             "type": "grant-double-damage"
-          },
-          {
-            "type": "no-rest"
           }
         ],
         "target": {
@@ -1008,6 +1004,9 @@
           },
           {
             "type": "cant-negate-passive"
+          },
+          {
+            "type": "cant-receive-rests-by-effect"
           }
         ],
         "modifiers": {
@@ -1016,10 +1015,9 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "edit_field",
         "operation[1]": {
-          "_original_type": null,
-          "type": "cant-receive-rests-by-effect"
+          "_original_type": "cant-receive-rests-by-effect",
+          "type": "restrict"
         }
       }
     ],
@@ -1057,7 +1055,7 @@
         "id": "P1-burn-extra-damage",
         "label": "Aura: Adendei quemados reciben 1 dano adicional al atacar o activar",
         "trigger": {
-          "type": "on-any-reveal",
+          "type": "on-any-attack-or-activate",
           "filter": {
             "has_mark": "burn",
             "card_type": "adendei"
@@ -1239,7 +1237,7 @@
         "modifiers": {
           "optional": true
         },
-        "phase": "battle.declaration"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -1262,14 +1260,7 @@
         "trigger": {
           "type": "on-reveal"
         },
-        "prerequisites": [
-          {
-            "type": "needs-mark",
-            "mark": "burn",
-            "inverted": true,
-            "side": "ally"
-          }
-        ],
+        "prerequisites": [],
         "costs": [
           {
             "type": "custom-lookup",
@@ -1295,8 +1286,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-prerequisite-to-cost"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1318,7 +1308,7 @@
         "id": "P1-protect-player",
         "label": "Activa: Protege a un jugador de ataques hasta su siguiente turno",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -1356,8 +1346,7 @@
           "effect_type": "pasiva-opcional",
           "optional": true
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "add_pipeline"
+        "phase": "prev"
       },
       {
         "id": "P2-cant-heal-own-protector",
@@ -1392,6 +1381,37 @@
           }
         },
         "phase": "continuous"
+      },
+      {
+        "id": "P3-cant-heal-own-protector",
+        "effect_type": "pasiva",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "protector"
+          }
+        },
+        "operation": [],
+        "restrictions": [
+          {
+            "type": "cant-be-healed",
+            "scope": "own-protector-while-on-field"
+          }
+        ],
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1412,7 +1432,7 @@
         "id": "P1-swap-damage",
         "label": "Al ser movida en el campo: dana 1 a una carta rival en descanso",
         "trigger": {
-          "type": "on-reveal"
+          "type": "on-self-position-change"
         },
         "prerequisites": [
           {
@@ -1544,8 +1564,7 @@
         },
         "_redundant": true,
         "_redundant_reason": "P1 already includes the three restrictions (cant-equip, cant-heal, cant-be-protected) in its restrictions array; P2 duplicates them as a separate 'while-on-field' pipeline making the restrictions declared twice.",
-        "phase": "continuous",
-        "_wave_d_fix": "remove-optional-flag"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1649,11 +1668,11 @@
         "modifiers": {},
         "_original_trigger": "on-damaged",
         "phase": "battle.resolution",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
-          "type": "self-has-rests",
-          "min": 1
+          "type": "self-in-rest",
+          "min": 1,
+          "_original_type": "self-has-rests"
         }
       }
     ],
@@ -1709,8 +1728,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "replace"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-self-extinct-cost",
@@ -1866,8 +1884,11 @@
         },
         "fast": true,
         "phase": "reactive",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
+          "type": "register-game-rule",
+          "rule": "cant-return-equipment-to-zone"
+        },
+        "_original_operation[0]": {
           "_original_restrict": null,
           "restrict": "return-equipment-to-zone"
         }

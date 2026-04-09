@@ -53,7 +53,6 @@
           "once_per_game": true
         },
         "phase": "end.activas-pasivas",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation": [
           {
             "type": "swap-field-extinction"
@@ -134,7 +133,8 @@
             "value": 1,
             "per": {
               "zone": "extinction"
-            }
+            },
+            "snapshot": "post-cost"
           }
         ],
         "target": {
@@ -153,7 +153,6 @@
           "once_per_game": true
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "damage-per",
@@ -262,7 +261,8 @@
       "role": "hitter",
       "affinities": [
         "aff:pirica"
-      ]
+      ],
+      "notes": "Numeric values confirmed correct per semantic report."
     },
     "card_type": "adendei"
   },
@@ -305,7 +305,11 @@
             ],
             "source_filter": {
               "card_type": "ixim"
-            }
+            },
+            "copy_targets": [
+              "effect",
+              "cost"
+            ]
           }
         ],
         "target": {
@@ -317,16 +321,41 @@
           "effect_type": "pasiva"
         },
         "phase": "continuous",
-        "_fix_wave-f1b": "add_field",
         "prerequisites[0]": {
-          "_original_value": null,
-          "value": 4
+          "type": "min-count",
+          "filter": {
+            "card_type": "ixim"
+          },
+          "zone": [
+            "field",
+            "extinction"
+          ],
+          "value": 4,
+          "stat_op": ">="
         },
         "operation[0]": {
+          "type": "copy",
+          "copy_targets": [
+            "effect",
+            "cost"
+          ],
+          "source_zone": [
+            "field",
+            "extinction"
+          ],
+          "source_filter": {
+            "card_type": "ixim"
+          }
+        },
+        "_original_operation[0]": {
           "copy_targets": [
             "effect",
             "cost"
           ]
+        },
+        "_original_prerequisites[0]": {
+          "_original_value": null,
+          "value": 4
         }
       }
     ],
@@ -381,9 +410,7 @@
           },
           "optional": true
         },
-        "phase": "continuous",
-        "_wave_d_fix": "remove-optional-flag",
-        "_fix_wave-f1b": "add_operation"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -468,7 +495,11 @@
         ],
         "operation": [
           {
-            "type": "attack-protector"
+            "type": "unlock-attack-target",
+            "target": {
+              "card_type": "protector",
+              "owner": "enemy"
+            }
           }
         ],
         "target": {
@@ -482,7 +513,6 @@
           "optional": true
         },
         "phase": "continuous",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "unlock-attack-target",
@@ -490,7 +520,12 @@
             "card_type": "protector",
             "owner": "enemy"
           }
-        }
+        },
+        "_original_operation": [
+          {
+            "type": "attack-protector"
+          }
+        ]
       }
     ],
     "meta": {
@@ -559,7 +594,6 @@
           "effect_type": "pasiva"
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation": [
           {
             "type": "burn"
@@ -648,8 +682,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "note-only"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -706,8 +739,7 @@
           "optional": true
         },
         "_original_trigger": "on-ally-damaged",
-        "phase": "reactive",
-        "_fix_wave-f1b": "add_field"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -797,8 +829,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "continuous",
-        "_fix_wave-f1b": "add_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -906,6 +937,20 @@
               "zone": "deck",
               "count": 3
             }
+          },
+          {
+            "type": "restrict-shown-cards",
+            "restriction": "cant-use-effects",
+            "duration": "while-shown"
+          },
+          {
+            "type": "return-to-deck",
+            "position": "bottom",
+            "target": {
+              "type": "enemy",
+              "zone": "deck",
+              "count": 3
+            }
           }
         ],
         "target": {
@@ -919,8 +964,7 @@
           },
           "once_per_game": true
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1b": "add_operations"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-opg-restriction",
@@ -1042,12 +1086,11 @@
           "_original_effect_type": "",
           "effect_type": "pasiva",
           "equipment_override": {
-            "type": "equipment-rule-override",
+            "equipment_rule_override": true,
             "allows": "2-ixim-revealed"
           }
         },
-        "phase": "continuous",
-        "_fix_wave-f1b": "add_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1104,8 +1147,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-restriction"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1188,8 +1230,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "post.extinction",
-        "_fix_wave-f2": "replace"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1236,7 +1277,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "needs-ally",
@@ -1329,8 +1369,7 @@
           "optional": true
         },
         "_original_trigger": "on-link",
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1390,8 +1429,6 @@
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
         },
         "phase": "reactive",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "add_field",
         "operation[1]": {
           "partial_resolution": "abyss-partial-no-negate"
         }
@@ -1449,7 +1486,6 @@
         "choice_group": "main",
         "_original_trigger": "on-link",
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "any",
           "count": 2,
@@ -1476,7 +1512,7 @@
         ],
         "operation": [
           {
-            "type": "protect-attack"
+            "type": "protect-full"
           }
         ],
         "target": {
@@ -1494,7 +1530,6 @@
         },
         "choice_group": "main",
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "protect-full"
@@ -1533,7 +1568,7 @@
         "operation": [
           {
             "type": "abyss",
-            "value": 1
+            "count": 1
           },
           {
             "type": "unequip-all",
@@ -1551,11 +1586,14 @@
         "modifiers": {},
         "fast": true,
         "phase": "reactive",
-        "_fix_wave-f1b": "add_field",
         "operation[1]": {
           "scope": "both"
         },
         "operation[0]": {
+          "type": "abyss",
+          "count": 1
+        },
+        "_original_operation[0]": {
           "_original_value": null,
           "value": null,
           "count": 1
@@ -1608,8 +1646,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1654,8 +1691,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "note-only"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1732,8 +1768,7 @@
         "modifiers": {
           "_original_trigger": "on-enemy-protector-damaged"
         },
-        "phase": "battle.declaration",
-        "_wave_d_fix": "fix-cost-trigger"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1787,11 +1822,10 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
+          },
+          "optional": true
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "add_field",
         "operation[0]": {
           "optional": true
         }
@@ -1893,8 +1927,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "post.extinction",
-        "_fix_wave-f3": "fix"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1946,8 +1979,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "note-only"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -2067,8 +2099,7 @@
         ],
         "operation": [
           {
-            "type": "negate-passive-persistent",
-            "note": "protege Pasivas de Ferales"
+            "type": "protect-passive-from-negation"
           }
         ],
         "target": {
@@ -2085,7 +2116,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1b": "replace_operation",
         "operation[0]": {
           "_original_type": null,
           "type": "protect-passive-from-negation"

@@ -222,8 +222,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -245,8 +244,7 @@
         "id": "P1",
         "label": "Al vivificarse: +1 fast-activa en turno rival; pierde fast propias",
         "trigger": {
-          "type": "on-vivify",
-          "fast": true
+          "type": "on-vivify"
         },
         "prerequisites": [
           {
@@ -278,7 +276,7 @@
             "type": "rest-of-game"
           }
         },
-        "phase": "reactive"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -400,6 +398,10 @@
             "stat": "rest",
             "op": "<",
             "value": 2
+          },
+          {
+            "type": "target-has-rest-below",
+            "max": 2
           }
         ],
         "costs": [
@@ -420,8 +422,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "prev",
-        "_fix_wave-f1a": "add_field"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -507,7 +508,7 @@
         "id": "P1",
         "label": "Activa: 1 descanso a rival no-Gelida (cuesta 1 rest al Protector)",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -534,8 +535,13 @@
           }
         },
         "restrictions": [],
-        "modifiers": {},
-        "phase": "battle.declaration"
+        "modifiers": {
+          "effect_type": "pasiva",
+          "duration": {
+            "type": "while-on-field"
+          }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2",
@@ -713,7 +719,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1131,7 +1137,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1550,8 +1556,7 @@
             "type": "independent"
           },
           {
-            "type": "self-hidden",
-            "note": "target must be hidden"
+            "type": "target-hidden"
           }
         ],
         "costs": [
@@ -1579,7 +1584,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "prerequisites[1]": {
           "_original_type": null,
           "type": "target-hidden"
