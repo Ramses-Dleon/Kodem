@@ -55,8 +55,7 @@
         "id": "P1-negate-passive-on-attack",
         "label": "Activa Rot: equipada ataca → pasiva de atacada negada hasta fin de turno",
         "trigger": {
-          "type": "on-equipped-attack",
-          "fast": true
+          "type": "on-equipped-attack"
         },
         "prerequisites": [
           {
@@ -82,9 +81,9 @@
             "type": "turn"
           },
           "_original_effect_type": "",
-          "effect_type": "activa-rapida"
+          "effect_type": "activa"
         },
-        "phase": "reactive"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {

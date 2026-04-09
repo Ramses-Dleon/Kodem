@@ -1007,8 +1007,8 @@
         ],
         "operation": [
           {
-            "type": "grant-double-damage",
-            "multiplier": "pending_rests"
+            "type": "set-attack-damage",
+            "formula": "2 * pending_end_of_turn_rests"
           }
         ],
         "target": {
@@ -1208,7 +1208,7 @@
         ],
         "modifiers": {
           "duration": {
-            "type": "until-end-of-next-own-turn"
+            "type": "end-of-next-own-turn"
           },
           "optional": false,
           "_original_effect_type": "",
@@ -1264,7 +1264,9 @@
         ],
         "operation": [
           {
-            "type": "promote-to-activa-rapida"
+            "type": "promote-to-activa-rapida",
+            "duration": "current-turn",
+            "scope": "all-activa-effects"
           }
         ],
         "target": {

@@ -987,6 +987,10 @@
         "operation": [
           {
             "type": "grant-double-damage"
+          },
+          {
+            "type": "restrict",
+            "scope": "cant-receive-rests-by-effect"
           }
         ],
         "target": {

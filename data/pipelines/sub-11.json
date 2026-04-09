@@ -255,7 +255,8 @@
         "id": "P1-equip-to-enemy",
         "label": "Activa: Equipa esta carta al Adendei rival; dano 2 al final del turno rival",
         "trigger": {
-          "type": "while-on-field"
+          "type": "on-activate",
+          "_original_trigger": "while-on-field"
         },
         "prerequisites": [
           {

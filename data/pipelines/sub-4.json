@@ -478,7 +478,7 @@
         "id": "P1-damage-redistribute",
         "label": "Reactiva: Si rival declara 4+ daño, redistribuye el total entre tus cartas",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-enemy-declare-damage"
         },
         "prerequisites": [
           {
@@ -547,7 +547,12 @@
             "type": "while-on-field"
           }
         },
-        "phase": "continuous"
+        "phase": "continuous",
+        "costs": [
+          {
+            "type": "none"
+          }
+        ]
       }
     ],
     "meta": {
@@ -1240,11 +1245,6 @@
             "type": "scale",
             "value": 1,
             "notes": "+1 dano al atacar"
-          },
-          {
-            "type": "restrict-heal-self",
-            "target": "ally-ariam",
-            "detail": "no curan por propios efectos"
           },
           {
             "type": "restrict-heal-self",

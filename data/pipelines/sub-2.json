@@ -132,9 +132,9 @@
             "type": "damage-per",
             "value": 1,
             "per": {
-              "zone": "extinction"
-            },
-            "snapshot": "post-cost"
+              "zone": "extinction",
+              "snapshot": "post-cost"
+            }
           }
         ],
         "target": {
@@ -1572,7 +1572,8 @@
           },
           {
             "type": "unequip-all",
-            "note": "regresa equipos a Zona de Equipo"
+            "note": "regresa equipos a Zona de Equipo",
+            "scope": "both"
           }
         ],
         "target": {
@@ -1808,7 +1809,8 @@
             "per_source": "field-count",
             "filter": {
               "subtype": "Feral"
-            }
+            },
+            "optional": true
           }
         ],
         "target": {
@@ -1882,7 +1884,7 @@
         "restrictions": [],
         "modifiers": {},
         "_original_trigger": "on-ally-damaged",
-        "phase": "battle.resolution"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -2032,7 +2034,7 @@
           }
         },
         "_original_trigger": "on-ally-damaged",
-        "phase": "battle.resolution"
+        "phase": "post.passives"
       },
       {
         "id": "P2",

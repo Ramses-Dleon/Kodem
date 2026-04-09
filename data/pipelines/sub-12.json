@@ -647,11 +647,12 @@
             }
           },
           {
-            "type": "vivify",
+            "type": "place-from-extinction",
             "filter": {
               "card_type": "rava"
             },
-            "zone": "principal"
+            "zone": "principal",
+            "_original_type": "vivify"
           }
         ],
         "target": {
