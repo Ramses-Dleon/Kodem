@@ -443,9 +443,7 @@
             "type": "next-attack"
           }
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -972,7 +970,6 @@
           "effect_type": "pasiva"
         },
         "phase": "post.passives",
-        "_fix_wave-f-late": "add_field",
         "effect_type": "pasiva"
       }
     ],
@@ -1022,13 +1019,11 @@
           "optional": true
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_restrictions": [
           {
             "type": "cant-be-protected"
           }
         ],
-        "_fix_wave-f1a": "edit_field",
         "_original_operation[0]": {
           "type": "multiply-damage",
           "base_multiplier": 2,
@@ -1037,9 +1032,7 @@
         "operation[0]": {
           "type": "set-attack-damage",
           "formula": "2 * pending_end_of_turn_rests"
-        },
-        "_fix_wave-f1b": "replace_operation",
-        "_fix_wave-f-late": "add_modifier"
+        }
       },
       {
         "id": "P2-cant-be-protected",
@@ -1071,8 +1064,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "continuous",
-        "_fix_wave-f-late": "create_pipeline"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1119,8 +1111,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "add_field"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-no-hide-aura",
@@ -1161,9 +1152,6 @@
           "optional": false
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "add_operation",
-        "_fix_wave-f-late": "update_operation",
         "_original_operation": [
           {
             "type": "prevent-hide",
@@ -1231,16 +1219,12 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "edit_field",
         "_original_operation": [
           {
             "type": "apply-restriction",
             "restriction": "cant-heal"
           }
         ],
-        "_fix_wave-f1b": "replace_modifier",
-        "_fix_wave-f-late": "update_field",
         "effect_type": "activa"
       }
     ],
@@ -1295,13 +1279,10 @@
           "effect_type": "pasiva-rapida"
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
           "type": "promote-to-activa-rapida",
           "duration": "current-turn"
         },
-        "_fix_wave-f1b": "add_field",
-        "_fix_wave-f-late": "update_operation",
         "_original_operation[0]": {
           "_original_type": null,
           "type": "promote-to-activa-rapida",
@@ -1364,8 +1345,6 @@
           "effect_type": "activa"
         },
         "phase": "battle.declaration",
-        "_wave_d_fix": "fix-cost-target-exclusion",
-        "_fix_wave-f-late": "add_field",
         "effect_type": "activa"
       }
     ],
@@ -1426,7 +1405,6 @@
         "_redundant": true,
         "_redundant_reason": "P1 has both operation:[{type:'damage-reduce', value:'effect_only'}] AND restrictions:[{type:'cant-be-damaged-effect'}]. These encode the same immunity to effect damage twice — once as an operation and once as a restriction. Redundant.",
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_restrictions": [
           {
             "type": "cant-be-damaged-effect"
@@ -1441,16 +1419,13 @@
             "immunity": "damage-by-effect"
           }
         ],
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[1]": {
           "type": "immune-effect-damage"
         },
         "operation[1]": {
           "type": "grant-immunity",
           "scope": "effect-damage"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       },
       {
         "id": "P2-heal-on-ally-attack",
@@ -1487,10 +1462,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f-late": "update_field"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1543,8 +1515,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "block-mark-removal",
@@ -1591,8 +1561,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "edit_field",
         "_original_operation[0]": {
           "type": "bonus-attack-damage",
           "value": 1,
@@ -1606,9 +1574,7 @@
           "condition": {
             "target_has_mark": "burn"
           }
-        },
-        "_fix_wave-f1b": "replace_operation",
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -1660,8 +1626,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-bonus-vs-rest",
@@ -1704,8 +1669,6 @@
           "effect_type": "pasiva"
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "type": "bonus-attack-damage",
           "value": 1,
@@ -1713,8 +1676,6 @@
             "target_has_rests": true
           }
         },
-        "_fix_wave-f1b": "replace_operation",
-        "_fix_wave-f-late": "update_operation",
         "_original_operation[0]": {
           "_original_type": "bonus-attack-damage",
           "type": "damage-bonus"
@@ -1771,8 +1732,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "continuous",
-        "_fix_wave-f3": "fix"
+        "phase": "continuous"
       },
       {
         "id": "P2-heal",
@@ -1809,8 +1769,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P3-on-death",
@@ -1899,8 +1858,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "continuous",
-        "_fix_wave-f3": "fix"
+        "phase": "continuous"
       },
       {
         "id": "P2-heal",
@@ -1940,8 +1898,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P3-on-death",
@@ -1978,8 +1935,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "post.extinction",
-        "_fix_wave-f2": "verify"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -2063,9 +2019,6 @@
           "effect_type": "activa"
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "add_to_array",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation": [
           {
             "type": "peek-deck",
@@ -2088,7 +2041,6 @@
             "count": 3
           }
         ],
-        "_fix_wave-f-late": "update_operation",
         "effect_type": "activa"
       }
     ],
@@ -2148,9 +2100,6 @@
           "effect_type": "pasiva"
         },
         "phase": "post.extinction",
-        "_fix_wave-f2": "replace",
-        "_fix_wave-f3": "note-only",
-        "_fix_wave-f-late": "add_field",
         "effect_type": "pasiva"
       }
     ],
@@ -2205,8 +2154,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "edit_field",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "bonus-attack-damage-per",
@@ -2219,9 +2166,7 @@
           },
           "trigger": "while-on-field",
           "_note": "Húumica archetype: escala permanente confirmada (progressive potency); scale-per es correcto"
-        },
-        "_fix_wave-f1b": "add_field",
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -2289,9 +2234,6 @@
           "effect_type": "pasiva"
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "add_field",
-        "_fix_wave-f3": "note-only",
-        "_fix_wave-f-late": "add_field",
         "effect_type": "pasiva"
       }
     ],
@@ -2358,13 +2300,11 @@
           "once_per_game": true
         },
         "phase": "end.activas-pasivas",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation": [
           {
             "type": "swap-field-extinction"
           }
-        ],
-        "_fix_wave-f-late": "update_operation"
+        ]
       },
       {
         "id": "P2-opg-restriction",
@@ -2459,7 +2399,6 @@
           "once_per_game": true
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "damage-per",
@@ -2468,8 +2407,7 @@
             "zone": "extinction",
             "snapshot": "post-cost"
           }
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       },
       {
         "id": "P2-cost-and-restrictions",
@@ -2625,7 +2563,6 @@
           "effect_type": "pasiva"
         },
         "phase": "continuous",
-        "_fix_wave-f1b": "add_field",
         "prerequisites[0]": {
           "type": "min-count",
           "filter": {
@@ -2652,7 +2589,6 @@
             "card_type": "ixim"
           }
         },
-        "_fix_wave-f-late": "update_operation",
         "_original_operation[0]": {
           "copy_targets": [
             "effect",
@@ -2716,10 +2652,7 @@
           },
           "optional": true
         },
-        "phase": "continuous",
-        "_wave_d_fix": "remove-optional-flag",
-        "_fix_wave-f1b": "add_operation",
-        "_fix_wave-f-late": "update_operation"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -2827,7 +2760,6 @@
           "optional": true
         },
         "phase": "continuous",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "unlock-attack-target",
@@ -2836,7 +2768,6 @@
             "owner": "enemy"
           }
         },
-        "_fix_wave-f-late": "update_operation",
         "_original_operation": [
           {
             "type": "attack-protector"
@@ -2910,7 +2841,6 @@
           "effect_type": "pasiva"
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation": [
           {
             "type": "burn"
@@ -2923,8 +2853,7 @@
             },
             "choice": true
           }
-        ],
-        "_fix_wave-f-late": "update_operation"
+        ]
       },
       {
         "id": "P2-hide-self",
@@ -3000,8 +2929,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "note-only"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -3058,9 +2986,7 @@
           "optional": true
         },
         "_original_trigger": "on-ally-damaged",
-        "phase": "reactive",
-        "_fix_wave-f1b": "add_field",
-        "_fix_wave-f-late": "add_modifier"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -3150,9 +3076,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "continuous",
-        "_fix_wave-f1b": "add_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -3287,9 +3211,7 @@
           },
           "once_per_game": true
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1b": "add_operations",
-        "_fix_wave-f-late": "add_operation"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-opg-restriction",
@@ -3415,9 +3337,7 @@
             "allows": "2-ixim-revealed"
           }
         },
-        "phase": "continuous",
-        "_fix_wave-f1b": "add_field",
-        "_fix_wave-f-late": "add_modifier"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -3474,8 +3394,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-restriction"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -3558,8 +3477,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "post.extinction",
-        "_fix_wave-f2": "replace"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -3606,7 +3524,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "needs-ally",
@@ -3615,8 +3532,7 @@
             },
             "zone": "principal"
           }
-        ],
-        "_fix_wave-f-late": "remove_prerequisite"
+        ]
       },
       {
         "id": "P2-self-destruct",
@@ -3700,8 +3616,7 @@
           "optional": true
         },
         "_original_trigger": "on-link",
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -3761,8 +3676,6 @@
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
         },
         "phase": "reactive",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "add_field",
         "operation[1]": {
           "partial_resolution": "abyss-partial-no-negate"
         }
@@ -3820,7 +3733,6 @@
         "choice_group": "main",
         "_original_trigger": "on-link",
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "any",
           "count": 2,
@@ -3865,7 +3777,6 @@
         },
         "choice_group": "main",
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "protect-full"
@@ -3922,7 +3833,6 @@
         "modifiers": {},
         "fast": true,
         "phase": "reactive",
-        "_fix_wave-f1b": "add_field",
         "operation[1]": {
           "scope": "both"
         },
@@ -3930,7 +3840,6 @@
           "type": "abyss",
           "count": 1
         },
-        "_fix_wave-f-late": "update_operation",
         "_original_operation[0]": {
           "_original_value": null,
           "value": null,
@@ -3984,8 +3893,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -4030,8 +3938,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "note-only"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -4108,8 +4015,7 @@
         "modifiers": {
           "_original_trigger": "on-enemy-protector-damaged"
         },
-        "phase": "battle.declaration",
-        "_wave_d_fix": "fix-cost-trigger"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -4166,8 +4072,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "add_field",
         "operation[0]": {
           "optional": true
         }
@@ -4269,8 +4173,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "post.extinction",
-        "_fix_wave-f3": "fix"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -4322,8 +4225,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "note-only"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -4461,12 +4363,10 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1b": "replace_operation",
         "operation[0]": {
           "_original_type": null,
           "type": "protect-passive-from-negation"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -4679,10 +4579,7 @@
             "_original_type": "until-protector-available"
           }
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_modifier",
-        "_fix_wave-f-late": "update_field"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -4729,8 +4626,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "post.extinction",
-        "_fix_wave-f3": "fix"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -4775,8 +4671,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -4827,12 +4722,10 @@
           "effect_type": "activa-rapida"
         },
         "phase": "reactive",
-        "_fix_wave-f1b": "replace_operation",
         "operation[0]": {
           "_original_type": null,
           "type": "equip-return"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -4888,9 +4781,7 @@
           },
           "simultaneous": true
         },
-        "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "add_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -4946,8 +4837,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-operation",
-        "_fix_wave-f1b": "add_fields",
         "operation[0]": {
           "type": "vivify",
           "filter": {
@@ -5000,9 +4889,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "equip",
-        "_fix_wave-f2": "add_field",
-        "_fix_wave-f3": "fix"
+        "phase": "equip"
       }
     ],
     "meta": {
@@ -5054,13 +4941,10 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_operation",
         "operation[0]": {
           "_original_type": null,
           "type": "damage-buff-temporary"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       },
       {
         "id": "P2",
@@ -5183,13 +5067,10 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_operation",
         "operation[0]": {
           "_original_type": null,
           "type": "damage-buff-temporary"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       },
       {
         "id": "P2",
@@ -5225,8 +5106,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -5283,9 +5163,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -5335,8 +5213,7 @@
           "effect_type": "activa"
         },
         "_original_trigger": "on-link",
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2",
@@ -5376,10 +5253,7 @@
             "_original_type": "until-protector-available"
           }
         },
-        "phase": "prev",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1b": "replace_modifier",
-        "_fix_wave-f-late": "update_field"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -5428,7 +5302,6 @@
         "modifiers": {},
         "_original_trigger": "on-damaged",
         "phase": "reactive",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "triggering"
         }
@@ -5497,8 +5370,7 @@
         "modifiers": {
           "once_per_field": true
         },
-        "phase": "post.extinction",
-        "_fix_wave-f3": "fix"
+        "phase": "post.extinction"
       },
       {
         "id": "P2-once-per-field-restriction",
@@ -5535,8 +5407,7 @@
         },
         "_redundant": true,
         "_redundant_reason": "P2 ('Restriccion: solo puede escalar una vez mientras este en campo') es pipeline separado con operation.type=register-game-rule. Esta restriccion ya esta modelada en P1 mediante prerequisites.type=once-per-field y modifiers.once_per_field=true. Redundante.",
-        "phase": "continuous",
-        "_wave_d_fix": "remove-redundant-pipeline"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -6294,14 +6165,12 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "post.extinction",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "return-to-zone",
           "zone": "protector-zone",
           "state": "available"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -6437,14 +6306,12 @@
         ],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "min-extinction",
             "value": 7
           }
         ],
-        "_fix_wave-f-late": "update_prerequisite",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "or-condition",
@@ -6509,14 +6376,12 @@
         ],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "min-extinction",
             "value": 7
           }
         ],
-        "_fix_wave-f-late": "update_prerequisite",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "or-condition",
@@ -6579,14 +6444,12 @@
         ],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "min-extinction",
             "value": 7
           }
         ],
-        "_fix_wave-f-late": "update_prerequisite",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "or-condition",
@@ -6700,8 +6563,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_wave_d_fix": "remove-duplicate-operation",
-        "_fix_wave-f1b": "add_field",
         "operation[0]": {
           "_note": "'6+' cubre exactamente 6 y todos los valores mayores (≥6)"
         }
@@ -6906,9 +6767,7 @@
           }
         ],
         "modifiers": {},
-        "phase": "equip",
-        "_fix_wave-f2": "add_to_array",
-        "_fix_wave-f-late": "add_restriction"
+        "phase": "equip"
       },
       {
         "id": "P2-on-equipped-death",
@@ -6980,7 +6839,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration"
+        "phase": "post.passives"
       },
       {
         "id": "P2-protect-equipped",
@@ -7022,9 +6881,7 @@
             "type": "until-protector-available"
           }
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1b": "add_operation",
-        "_fix_wave-f-late": "add_operation"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -7080,9 +6937,7 @@
             "type": "next-turn"
           }
         },
-        "phase": "prev",
-        "_fix_wave-f1b": "add_operation",
-        "_fix_wave-f-late": "add_operation"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -7274,9 +7129,7 @@
           "optional": false,
           "_original_optional": true
         },
-        "phase": "equip",
-        "_fix_wave-f1b": "replace_modifier",
-        "_fix_wave-f-late": "update_field"
+        "phase": "equip"
       }
     ],
     "meta": {
@@ -7356,13 +7209,11 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[0]": null,
         "operation[0]": {
           "type": "register-game-rule",
           "rule": "block-drawn-card-effects-this-turn"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -7404,7 +7255,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "min-ext-name",
@@ -7413,8 +7263,7 @@
           "filter": {
             "card_type": "adendei"
           }
-        },
-        "_fix_wave-f-late": "update_prerequisite"
+        }
       }
     ],
     "meta": {
@@ -7474,8 +7323,7 @@
           }
         },
         "fast": true,
-        "phase": "battle.declaration",
-        "_fix_wave-f1b": "add_field"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-equip-compatibility",
@@ -7502,7 +7350,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -7704,13 +7553,11 @@
         "_redundant": true,
         "_redundant_reason": "Las restricciones 'cant-heal' y 'cant-protect' ya están registradas en P1; P2 las duplica innecesariamente.",
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "independent"
           }
-        ],
-        "_fix_wave-f-late": "remove_prerequisite"
+        ]
       }
     ],
     "meta": {
@@ -7892,8 +7739,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "end.activas-pasivas",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -8006,7 +7852,6 @@
         "_redundant": true,
         "_redundant_reason": "Restricciones cant-heal, cant-protect, cant-copy ya están en P1; P2 las repite sin agregar valor.",
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "min-ext-type",
@@ -8014,8 +7859,7 @@
             "subtype": "Equino",
             "value": 3
           }
-        ],
-        "_fix_wave-f-late": "remove_prerequisite"
+        ]
       }
     ],
     "meta": {
@@ -8098,9 +7942,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "post.extinction",
-        "_fix_wave-f1b": "replace_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -8246,10 +8088,7 @@
             "type": "rest-of-game"
           }
         },
-        "phase": "prev",
-        "_wave_d_fix": "move-restriction-to-operation",
-        "_fix_wave-f1b": "add_operation",
-        "_fix_wave-f-late": "add_operation"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -8536,9 +8375,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "continuous",
-        "_fix_wave-f1b": "add_operation",
-        "_fix_wave-f-late": "add_restriction"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -9045,7 +8882,7 @@
           "_original_trigger": "on-place"
         },
         "_original_trigger": "on-reveal",
-        "phase": "battle.declaration"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -9283,7 +9120,7 @@
           "_original_trigger": "on-place"
         },
         "_original_trigger": "on-reveal",
-        "phase": "battle.declaration"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -9386,7 +9223,7 @@
           "_original_trigger": "on-place"
         },
         "_original_trigger": "on-reveal",
-        "phase": "battle.declaration"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -9430,8 +9267,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f3": "note-only",
-        "_fix_wave-f-late": "update_operation",
         "operation[0]": {
           "_original_timing": null,
           "timing": "end-of-turn"
@@ -9500,8 +9335,7 @@
             "on-activate"
           ]
         },
-        "phase": "continuous",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -9616,7 +9450,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva-rapida"
         },
-        "phase": "post.extinction"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -9741,9 +9575,7 @@
             "_original_type": "while-on-field"
           }
         },
-        "phase": "continuous",
-        "_fix_wave-f1b": "replace_modifier",
-        "_fix_wave-f-late": "update_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -9803,7 +9635,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1b": "replace_operation",
         "_original_operation[1]": {
           "type": "send-extinction",
           "target_type": "token",
@@ -9820,8 +9651,7 @@
             "owner": "any"
           },
           "count": 1
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -9868,8 +9698,7 @@
         "modifiers": {
           "timing": "end-of-turn"
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1b": "merge_pipelines"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-activate-extra-rest",
@@ -10272,12 +10101,10 @@
         ],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-be-healed"
-        },
-        "_fix_wave-f-late": "update_restriction"
+        }
       }
     ],
     "meta": {
@@ -10384,9 +10211,7 @@
           "_original_optional": null,
           "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1a": "remove_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -10491,12 +10316,10 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "protect-full"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       },
       {
         "id": "P2-activate-heal",
@@ -10596,9 +10419,7 @@
         "modifiers": {
           "zone_condition": "self-in-extinction"
         },
-        "phase": "prev",
-        "_fix_wave-f1a": "add_operation",
-        "_fix_wave-f-late": "add_operation"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -10846,7 +10667,7 @@
           "_original_trigger": "on-place"
         },
         "_original_trigger": "on-reveal",
-        "phase": "battle.declaration"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -10910,7 +10731,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "battle.declaration"
+        "phase": "post.passives"
       },
       {
         "id": "P2-on-death-bounce-spectro-or-token",
@@ -10996,8 +10817,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-restriction"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -11179,8 +10999,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-on-death-damage-rival",
@@ -11310,8 +11129,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f3": "fix"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-activate-damage-protector-2rest",
@@ -11590,9 +11408,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -11793,9 +11609,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "prev",
-        "_fix_wave-f1a": "add_field",
-        "_fix_wave-f-late": "add_prerequisite"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -12087,7 +11901,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -12505,7 +12319,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -12953,12 +12767,10 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "prerequisites[1]": {
           "_original_type": null,
           "type": "target-hidden"
-        },
-        "_fix_wave-f-late": "update_prerequisite"
+        }
       }
     ],
     "meta": {
@@ -13289,7 +13101,6 @@
           "optional": true
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[1]": null,
         "prerequisites[1]": {
           "type": "no-field-ixim-equip",
@@ -13302,8 +13113,7 @@
             "zone": "field",
             "scope": "any-card"
           }
-        },
-        "_fix_wave-f-late": "update_prerequisite"
+        }
       }
     ],
     "meta": {
@@ -13444,11 +13254,9 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
           "destination": "equip-zone"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -13498,12 +13306,10 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": "damage-bonus",
           "type": "damage-add-temp"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -13807,7 +13613,6 @@
           ]
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_modifiers": {
           "duration": {
             "type": "until-condition",
@@ -13859,8 +13664,7 @@
         "restrictions": [],
         "modifiers": {},
         "_original_trigger": "on-equipped-damaged",
-        "phase": "reactive",
-        "_wave_d_fix": "add-optional-flag"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -13906,8 +13710,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "reactive",
-        "_wave_d_fix": "add-optional-flag"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -14103,12 +13906,10 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-receive-rest-by-effect"
-        },
-        "_fix_wave-f-late": "update_restriction"
+        }
       }
     ],
     "meta": {
@@ -14159,12 +13960,10 @@
           "optional": true
         },
         "phase": "reactive",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_scope": null,
           "scope": "all-enemy-effects"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -14360,9 +14159,7 @@
         "modifiers": {
           "optional": true
         },
-        "phase": "end.activas-pasivas",
-        "_fix_wave-f1a": "add_field",
-        "_fix_wave-f-late": "add_modifier"
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -14696,9 +14493,7 @@
           "_original_optional": null,
           "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1a": "remove_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -14792,7 +14587,7 @@
           "_original_effect_type": "",
           "effect_type": "activa-rapida"
         },
-        "phase": "battle.declaration"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -15151,13 +14946,6 @@
           {
             "type": "none"
           },
-          [
-            {
-              "type": "self-damage",
-              "value": 6,
-              "source": "cyra"
-            }
-          ],
           {
             "type": "self-damage",
             "value": 6,
@@ -15182,9 +14970,7 @@
         "modifiers": {
           "once_per_game": true
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_cost",
-        "_fix_wave-f-late": "add_cost"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-once-per-game-restriction",
@@ -15547,9 +15333,7 @@
           "rule_reference": "§12",
           "restriction": "rival-card-keeps-own-stats"
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
-        "_fix_wave-f-late": "add_modifier"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -15943,9 +15727,7 @@
           "_original_optional": null,
           "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1a": "remove_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "continuous"
       },
       {
         "id": "P2-cant-negate-attack",
@@ -16030,9 +15812,7 @@
           "_original_optional": null,
           "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1a": "remove_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -16268,16 +16048,13 @@
         "modifiers": {},
         "fast": true,
         "phase": "reactive",
-        "_wave_d_fix": "move-cost-to-operation",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "needs-card-in-equip-zone",
           "filter": {
             "has_fast_active": true
           }
-        },
-        "_fix_wave-f-late": "update_prerequisite"
+        }
       }
     ],
     "meta": {
@@ -16697,13 +16474,11 @@
         },
         "_original_trigger": "on-link",
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "prerequisites[0]": {
           "type": "min-tokens",
           "operator": "lt",
           "value": 1
         },
-        "_fix_wave-f-late": "update_prerequisite",
         "_original_prerequisites[0]": {
           "_original_operator": null,
           "operator": "lt"
@@ -16793,9 +16568,7 @@
             "note": "ends at end-of-turn following equip turn"
           }
         },
-        "phase": "equip",
-        "_fix_wave-f1a": "edit_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "equip"
       }
     ],
     "meta": {
@@ -16841,15 +16614,12 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "continuous",
-        "_wave_d_fix": "add-optional-flag",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_value": null,
           "value": {
             "max": 6
           }
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -16961,7 +16731,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "edit_field",
         "_original_prerequisites": [
           {
             "type": "self-available"
@@ -16982,8 +16751,7 @@
             "name": "Rasvel, Congelado",
             "_original_type": "card-not-on-field"
           }
-        ],
-        "_fix_wave-f-late": "remove_prerequisite"
+        ]
       },
       {
         "id": "P2-enter-field-no-titan-penalty",
@@ -17099,13 +16867,11 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
           "_original_type": null,
           "type": "return-to-equip-zone",
           "source": "principal"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -17277,14 +17043,12 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_value": null,
           "value": {
             "max": 6
           }
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -17349,9 +17113,7 @@
         "modifiers": {
           "optional": true
         },
-        "phase": "prev",
-        "_fix_wave-f1a": "add_field",
-        "_fix_wave-f-late": "add_modifier"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -17440,9 +17202,7 @@
             "scope": "first-attack"
           }
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
-        "_fix_wave-f-late": "add_modifier"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -17515,12 +17275,10 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "edit_field",
         "operation[1]": {
           "_original_type": "cant-receive-rests-by-effect",
           "type": "restrict"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -17739,7 +17497,7 @@
         "modifiers": {
           "optional": true
         },
-        "phase": "battle.declaration"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -17795,8 +17553,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-prerequisite-to-cost"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -17856,9 +17613,7 @@
           "effect_type": "pasiva-opcional",
           "optional": true
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "add_pipeline",
-        "_fix_wave-f-late": "add_modifier"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-cant-heal-own-protector",
@@ -17922,7 +17677,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -18075,8 +17831,7 @@
         },
         "_redundant": true,
         "_redundant_reason": "P1 already includes the three restrictions (cant-equip, cant-heal, cant-be-protected) in its restrictions array; P2 duplicates them as a separate 'while-on-field' pipeline making the restrictions declared twice.",
-        "phase": "continuous",
-        "_wave_d_fix": "remove-optional-flag"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -18180,14 +17935,12 @@
         "modifiers": {},
         "_original_trigger": "on-damaged",
         "phase": "battle.resolution",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "self-in-rest",
           "min": 1,
           "_original_type": "self-has-rests"
-        },
-        "_fix_wave-f-late": "update_prerequisite"
+        }
       }
     ],
     "meta": {
@@ -18242,9 +17995,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
-        "_fix_wave-f-late": "update_field"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-self-extinct-cost",
@@ -18400,12 +18151,10 @@
         },
         "fast": true,
         "phase": "reactive",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "type": "register-game-rule",
           "rule": "cant-return-equipment-to-zone"
         },
-        "_fix_wave-f-late": "update_operation",
         "_original_operation[0]": {
           "_original_restrict": null,
           "restrict": "return-equipment-to-zone"
@@ -19175,7 +18924,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "reactive"
+        "phase": "continuous"
       },
       {
         "id": "P2-rot-activa-promoted",
@@ -19297,12 +19046,10 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-scale"
-        },
-        "_fix_wave-f-late": "update_restriction"
+        }
       },
       {
         "id": "P3-death-damage",
@@ -19393,12 +19140,10 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "_original_target": {
           "type": "both",
           "count": 1
         },
-        "_fix_wave-f-late": "update_operation",
         "_original_operation": [
           {
             "type": "rest-add",
@@ -19741,9 +19486,7 @@
           "_original_optional": null,
           "optional": false
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "remove_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-death-ally-rest",
@@ -20004,8 +19747,7 @@
         },
         "notes": "Solo equipable a Adendei Zaykan",
         "fast": true,
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -20288,13 +20030,11 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_restrictions": [
           {
             "type": "cant-equip"
           }
-        ],
-        "_fix_wave-f-late": "remove_restriction"
+        ]
       },
       {
         "id": "P3-cant-equip",
@@ -20326,8 +20066,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "continuous",
-        "_fix_wave-f-late": "create_pipeline"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -20495,8 +20234,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -20604,10 +20342,7 @@
             "_original_type": "until-protector-available"
           }
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "add_pipeline",
-        "_fix_wave-f1a": "edit_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-link-restriction",
@@ -20696,8 +20431,7 @@
         "restrictions": [],
         "modifiers": {},
         "_original_trigger": "on-link",
-        "phase": "battle.declaration",
-        "_wave_d_fix": "fix-cost-target"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -20916,12 +20650,10 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "reactive",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "no-ally-in-rest"
-        },
-        "_fix_wave-f-late": "update_prerequisite"
+        }
       }
     ],
     "meta": {
@@ -20972,12 +20704,10 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-heal-except-by-adendei-effect"
-        },
-        "_fix_wave-f-late": "update_restriction"
+        }
       }
     ],
     "meta": {
@@ -21037,12 +20767,10 @@
           "optional": true
         },
         "phase": "reactive",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
           "type": "restrict-activation",
           "scope": "equip-cards"
         },
-        "_fix_wave-f-late": "update_operation",
         "_original_operation[0]": {
           "_original_type": null,
           "type": "restrict-activation",
@@ -21145,7 +20873,7 @@
           "_original_effect_type": "",
           "effect_type": "pasiva"
         },
-        "phase": "battle.declaration"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -21275,7 +21003,6 @@
         "notes": "Solo equipable a Adendei Nanuk",
         "fast": true,
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites": [
           {
             "type": "independent"
@@ -21283,8 +21010,7 @@
           {
             "type": "self-available"
           }
-        ],
-        "_fix_wave-f-late": "add_prerequisite"
+        ]
       }
     ],
     "meta": {
@@ -21491,8 +21217,7 @@
         "modifiers": {
           "_original_trigger": "on-any-healed-or-scaled"
         },
-        "phase": "post.passives",
-        "_fix_wave-f3": "fix"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -21553,13 +21278,11 @@
         ],
         "modifiers": {},
         "phase": "reactive",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "any",
           "count": 1,
           "zone": "principal"
-        },
-        "_fix_wave-f-late": "add_restriction"
+        }
       }
     ],
     "meta": {
@@ -21609,9 +21332,7 @@
           "_original_optional": null,
           "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1a": "remove_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -21660,12 +21381,10 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "restrictions[0]": {
           "_original_type": null,
           "type": "cant-attack-facing"
-        },
-        "_fix_wave-f-late": "update_restriction"
+        }
       }
     ],
     "meta": {
@@ -21757,7 +21476,6 @@
           "optional": true
         },
         "phase": "post.extinction",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "both",
           "zone": "principal"
@@ -21806,8 +21524,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "equip",
-        "_fix_wave-f3": "fix"
+        "phase": "equip"
       }
     ],
     "meta": {
@@ -21960,9 +21677,7 @@
           }
         ],
         "modifiers": {},
-        "phase": "end.activas-pasivas",
-        "_fix_wave-f2": "replace",
-        "_fix_wave-f-late": "update_field"
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -22013,7 +21728,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
           "type": "damage-bonus",
           "value": 1,
@@ -22022,7 +21736,6 @@
             "has_mark": "burn"
           }
         },
-        "_fix_wave-f-late": "update_operation",
         "_original_operation[0]": {
           "_original_type": null,
           "type": "damage-bonus",
@@ -22082,13 +21795,11 @@
         ],
         "modifiers": {},
         "phase": "prev",
-        "_fix_wave-f2": "replace",
         "_original_restrictions[0]": null,
         "restrictions[0]": {
           "type": "cant-target-linked-adendei-this-turn",
           "note": "Cannot give rests to Adendei that were linked this turn"
-        },
-        "_fix_wave-f-late": "update_restriction"
+        }
       }
     ],
     "meta": {
@@ -22145,7 +21856,6 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "ally",
           "filter": {
@@ -22210,12 +21920,10 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "damage-immunity"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -22262,12 +21970,10 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": "damage-attack",
           "type": "attack-additional"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -22381,8 +22087,6 @@
           }
         },
         "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-operation",
-        "_fix_wave-f2": "replace",
         "operation[0]": {
           "_original_filter": null,
           "filter": {
@@ -22395,8 +22099,7 @@
               }
             ]
           }
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -22620,8 +22323,7 @@
         "modifiers": {
           "self_return_to_equip": true
         },
-        "phase": "reactive",
-        "_fix_wave-f3": "fix"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -22893,7 +22595,6 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
         "meta": {
           "flag_review": "effect_text_missing_vivify_keyword"
         }
@@ -23073,9 +22774,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f1a": "add_field",
-        "_fix_wave-f-late": "update_field"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -23438,12 +23137,10 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "damage-additional"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -23558,8 +23255,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "reactive",
-        "_wave_d_fix": "fix-cost-type"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -24127,10 +23823,7 @@
         "modifiers": {
           "timing": "before-replacement"
         },
-        "phase": "post.extinction",
-        "_fix_wave-f3": "fix",
-        "_fix_wave-f1a": "add_field",
-        "_fix_wave-f-late": "add_modifier"
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -24538,12 +24231,10 @@
           "effect_type": "activa-rapida"
         },
         "phase": "reactive",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "return-to-equip-zone"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -24599,7 +24290,6 @@
         ],
         "modifiers": {},
         "phase": "reactive",
-        "_fix_wave-f1a": "add_field",
         "operation[0]": {
           "type": "copy",
           "as_token": true,
@@ -24615,7 +24305,6 @@
             "subtipo"
           ]
         },
-        "_fix_wave-f-late": "update_operation",
         "_original_operation[0]": {
           "copy_fields": [
             "damage",
@@ -25019,18 +24708,12 @@
         "restrictions": [
           {
             "type": "cant-link-this-turn"
-          },
-          {
-            "type": "cant-link-this-turn"
           }
         ],
         "modifiers": {
           "_original_trigger": "on-phase-previa"
         },
-        "phase": "continuous",
-        "_wave_d_fix": "move-cost-to-restriction",
-        "_fix_wave-f1a": "add_field",
-        "_fix_wave-f-late": "add_restriction"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -25184,13 +24867,10 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_wave_d_fix": "add-optional-flag",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "place-from-deck"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -25409,12 +25089,10 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f1a": "edit_field",
         "operation[0]": {
           "_original_type": null,
           "type": "damage-additional"
-        },
-        "_fix_wave-f-late": "update_operation"
+        }
       }
     ],
     "meta": {
@@ -25470,8 +25148,6 @@
         "modifiers": {},
         "fast": true,
         "phase": "reactive",
-        "_wave_d_fix": "fix-cost-type",
-        "_fix_wave-f-late": "update_field",
         "costs[0]": {
           "_original_type": null,
           "type": "self-return-equip"
@@ -25536,14 +25212,12 @@
           }
         },
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "prerequisites[0]": {
           "_original_filter": null,
           "filter": {
             "mark": "abismar"
           }
-        },
-        "_fix_wave-f-late": "update_prerequisite"
+        }
       }
     ],
     "meta": {
@@ -25666,13 +25340,10 @@
           "effect_type": "pasiva"
         },
         "phase": "continuous",
-        "_wave_d_fix": "add-cost-timing",
-        "_fix_wave-f1b": "replace_operation",
         "operation[1]": {
           "_original_type": null,
           "type": "send-out-of-game"
         },
-        "_fix_wave-f-late": "update_operation",
         "costs[0]": {
           "_original_timing": null,
           "timing": "immediate"
@@ -25905,9 +25576,7 @@
         "modifiers": {
           "delayed": true
         },
-        "phase": "end.activas-pasivas",
-        "_fix_wave-f1b": "move_to_costs",
-        "_fix_wave-f-late": "move_to_costs"
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -26145,9 +25814,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
-        "_fix_wave-f-late": "update_field"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -26197,8 +25864,7 @@
         "modifiers": {
           "optional": true
         },
-        "phase": "prev",
-        "_fix_wave-f-late": "add_modifier"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -26357,8 +26023,7 @@
           },
           "optional": false
         },
-        "phase": "continuous",
-        "_fix_wave-f1b": "add_operation"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -26413,8 +26078,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "continuous",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -26780,8 +26444,7 @@
         "modifiers": {
           "optional": true
         },
-        "phase": "battle.declaration",
-        "_fix_wave-f-late": "add_modifier"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -26841,13 +26504,11 @@
           }
         },
         "phase": "prev",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "any",
           "count": 1,
           "zone": "field"
-        },
-        "_fix_wave-f-late": "add_restriction"
+        }
       }
     ],
     "meta": {
@@ -26951,12 +26612,10 @@
         "restrictions": [],
         "modifiers": {},
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "prerequisites[0]": {
           "_original_type": null,
           "type": "enemy-stat-filter"
-        },
-        "_fix_wave-f-late": "update_prerequisite"
+        }
       }
     ],
     "meta": {
@@ -27048,8 +26707,7 @@
           "_original_trigger": "while-on-field",
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
         },
-        "phase": "battle.declaration",
-        "_wave_d_fix": "remove-redundant-pipeline"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -27162,7 +26820,8 @@
         "id": "P1-conditional-heal-damage",
         "label": "Si hay Adendei-Atlico o Abisal en campo: cura 1 a hasta 3 aliados y dana 1 por cada curado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link",
+          "_original_trigger": "on-activate"
         },
         "prerequisites": [
           {
@@ -27212,15 +26871,13 @@
         "modifiers": {},
         "_original_trigger": "on-link",
         "phase": "battle.declaration",
-        "_fix_wave-f2": "replace",
         "_original_target": {
           "type": "ally",
           "count": 3,
           "filter": {
             "card_type": "adendei"
           }
-        },
-        "_fix_wave-f-late": "add_target"
+        }
       }
     ],
     "meta": {
@@ -27332,7 +26989,8 @@
         "id": "P2-on-activate-damage-pirico",
         "label": "Al activarse: dana 1 a todos los Adendei-Pirico",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link",
+          "_original_trigger": "on-activate"
         },
         "prerequisites": [
           {
@@ -27503,8 +27161,7 @@
         },
         "_redundant": true,
         "_redundant_reason": "P2 duplicates the once-per-field constraint already captured in P1 prerequisites, creating an unnecessary redundant pipeline.",
-        "phase": "continuous",
-        "_wave_d_fix": "remove-redundant-pipeline"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -27814,13 +27471,11 @@
           "optional": true
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_prerequisites[0]": null,
         "prerequisites[0]": {
           "type": "self-has-status",
           "status": "protected"
-        },
-        "_fix_wave-f-late": "update_prerequisite"
+        }
       }
     ],
     "meta": {
@@ -28117,13 +27772,11 @@
           }
         },
         "phase": "continuous",
-        "_fix_wave-f2": "replace",
         "_original_restrictions": [
           {
             "type": "cant-attack-protector"
           }
-        ],
-        "_fix_wave-f-late": "remove_restriction"
+        ]
       },
       {
         "id": "P2-self-destruct-no-abisal",
@@ -28328,8 +27981,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "battle.declaration",
-        "_wave_d_fix": "move-cost-to-operation"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
