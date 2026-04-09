@@ -1,0 +1,1468 @@
+[
+  {
+    "card_id": "LGRO-002",
+    "card_name": "Zaykan, Cisma",
+    "effect_text": "Pasiva: Si esta carta fue atacada, dana 1 punto al Protector rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-attacked-retaliate",
+        "label": "Al ser atacado: dana 1 al Protector rival",
+        "trigger": {
+          "type": "on-damaged"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-protector",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-002K",
+    "card_name": "Zaykan, Anulacion",
+    "effect_text": "Pasiva: Mientras esta carta este en el campo, los efectos de cartas en Zona Principal son negados.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-negate-field-effects",
+        "label": "Aura: Niega efectos de cartas en Zona Principal mientras este en campo",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "negate-effect"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-002S",
+    "card_name": "Xilan, Fractura",
+    "effect_text": "Pasiva: Si un equipo en el campo es regresado a Zona de Equipo, esta carta escala 1 punto.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-equip-return-scale",
+        "label": "Al regresar un equipo a Zona de Equipo: escala 1",
+        "trigger": {
+          "type": "on-ally-equip"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-002U",
+    "card_name": "Ruk, Trueno Nocturno",
+    "effect_text": "Pasiva: Los Adendei-Chaaktico pueden atacar con 0 descansos en el turno que son revelados. Los Adendei-Chaaktico aliados no pueden recibir descansos por efectos.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-chaak-reveal-no-rest",
+        "label": "Aura: Chaakticos atacan con 0 descansos el turno que son revelados",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "no-rest"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "energy": "chaaktica",
+            "card_type": "adendei"
+          },
+          "condition": "on-reveal-turn"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      },
+      {
+        "id": "P2-chaak-no-rest-effect",
+        "label": "Aura: Adendei-Chaaktico aliados inmunes a descansos por efectos",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "energy": "chaaktica",
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-rest-update"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-003",
+    "card_name": "Ariam, Limite",
+    "effect_text": "Coloca 1 Adendei o Rava de tu Zona de Extincion en el tope de tu Mazo. Envia esta carta a Extincion.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-recycle-top",
+        "label": "Activa: Coloca 1 Adendei/Rava de Extincion al tope del Mazo; esta carta a Extincion",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-extinction",
+            "value": 1
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "deck-top-place"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "extinction",
+          "count": 1,
+          "filter": {
+            "card_type": [
+              "adendei",
+              "rava"
+            ]
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-003R",
+    "card_name": "Zaykan, Guia Sombria",
+    "effect_text": "Activa: Cambia 1 equipo de un Adendei aliado a otro Adendei aliado compatible.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-equip-transfer",
+        "label": "Activa: Mueve 1 equipo entre Adendei aliados compatibles",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-ally"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-from-equip-zone"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-003S",
+    "card_name": "Yakerr, Vinculo Odemico",
+    "effect_text": "Pasiva: Si esta carta esta equipada con una carta Rot, el efecto de esa carta se considera Activa Rapida.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-rot-fast",
+        "label": "Pasiva: Efecto de Rot equipado se convierte en Activa Rapida",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "promote-to-fast"
+          }
+        ],
+        "target": {
+          "type": "equipped",
+          "filter": {
+            "card_type": "rot"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-003U",
+    "card_name": "Muz, Sinfonia Cosmica",
+    "effect_text": "Pasiva: Si esta carta es revelada, un Adendei-Humico aliado escala 1 punto. Las cartas rivales no pueden escalar. Si esta carta es enviada a Extincion, dana 1 punto a los Adendei-Humico en el campo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-reveal-scale",
+        "label": "Al ser revelado: escala 1 a un Adendei-Humico aliado",
+        "trigger": {
+          "type": "on-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "energy": "huumica",
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-lock-rival-scale",
+        "label": "Aura: Cartas rivales no pueden escalar",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "enemy"
+        },
+        "restrictions": [
+          {
+            "type": "cant-rest-update"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      },
+      {
+        "id": "P3-death-damage",
+        "label": "Al morir: dana 1 a los Adendei-Humico en campo",
+        "trigger": {
+          "type": "on-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-all",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "both",
+          "filter": {
+            "energy": "huumica",
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-004R",
+    "card_name": "Allih, Pesadilla Universal",
+    "effect_text": "Una carta rival recibe 2 descansos, una carta aliada actualiza 2 descansos. Este Protector puede ser vinculado con una carta en descanso.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-rest-swap",
+        "label": "Activa: +2 descansos a 1 rival, actualiza 2 descansos a 1 aliado",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 2
+          },
+          {
+            "type": "rest-remove",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-link-resting",
+        "label": "Pasiva: Puede vincularse con carta en descanso",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "target-has-rests"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "link"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "has_rests": true
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:protector"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-004S",
+    "card_name": "Zaykan, Practicante",
+    "effect_text": "Activa Rapida: Regresa un equipo en Zona Principal a la Zona de Equipo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-return-equip",
+        "label": "Activa-Rapida: Regresa un equipo en ZP a Zona de Equipo",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "unequip-all"
+          }
+        ],
+        "target": {
+          "type": "any",
+          "zone": "principal",
+          "count": 1,
+          "filter": {
+            "card_type": [
+              "ixim",
+              "rot"
+            ]
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-004U",
+    "card_name": "Hog, Terremoto",
+    "effect_text": "Los Adendei-Litico aliados no pueden ser atacados por cartas frente a ellos. Si un Adendei-Litico aliado es enviado a Extincion, dana la misma cantidad de ptos. de dano del Adendei a una carta rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-litico-cant-be-attacked",
+        "label": "Aura: Adendei-Litico aliados no pueden ser atacados por cartas frente a ellos",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "energy": "litica",
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-attacked-by",
+            "scope": "facing"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      },
+      {
+        "id": "P2-litico-death-damage",
+        "label": "Al morir Adendei-Litico aliado: dana su valor de ataque a 1 carta rival",
+        "trigger": {
+          "type": "on-ally-death",
+          "filter": {
+            "energy": "litica"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-as-revealed"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-005U",
+    "card_name": "Kephir, Lanzallamas",
+    "effect_text": "Pasiva: Esta carta puede atacar adicionalmente a Adendei rivales igual al numero de equipos en esta carta.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-equip-multi-attack",
+        "label": "Pasiva: Puede atacar adicionalmente igual al numero de equipos equipados",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "multi-attack",
+            "count": "equip-count"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-007",
+    "card_name": "Consejo de Hielo",
+    "effect_text": "Pasiva: Los Adendei aliados son considerados Adendei-Atlico.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-all-atlica",
+        "label": "Pasiva: Todos los Adendei aliados se consideran Atlico",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "change-energy",
+            "value": "atlica"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:bio",
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-007R",
+    "card_name": "Enis, Burbuja de Tiempo",
+    "effect_text": "Si esta carta es revelada, una carta rival recibe 1 descanso. Esa carta no podra actualizar su descanso mientras esta carta este revelada.",
+    "cost_text": "Si esta carta es enviada a Extincion, los Adendei aliados reciben 1 descanso. Solo puedes usar su Pasiva una vez por juego.",
+    "pipelines": [
+      {
+        "id": "P1-reveal-rest-lock",
+        "label": "Al ser revelada: 1 carta rival recibe 1 descanso y no puede actualizarlo (una vez por juego)",
+        "trigger": {
+          "type": "on-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          },
+          {
+            "type": "select-and-lock"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      },
+      {
+        "id": "P2-death-ally-rest",
+        "label": "Al ir a Extincion: Adendei aliados reciben 1 descanso",
+        "trigger": {
+          "type": "on-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-007U",
+    "card_name": "Kuyovi, Salto Electrico",
+    "effect_text": "Activa: Cambia de lugar esta carta con cualquier carta en tu Zona Principal. Si esta carta ataco a una carta frente a ella, esa carta recibe 1 descanso.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-swap-self",
+        "label": "Activa: Intercambia esta carta con cualquier carta en ZP propia",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "swap"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "principal",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-attack-facing-rest",
+        "label": "Al atacar a carta frente a ella: esa carta recibe 1 descanso",
+        "trigger": {
+          "type": "on-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "facing"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:demotica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-008U",
+    "card_name": "Enis, Lluvia de Hielo",
+    "effect_text": "Pasiva: Si esta carta es enviada a Extincion, las cartas aliadas actualizan todos sus descansos.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-death-update-all",
+        "label": "Al ir a Extincion: cartas aliadas actualizan todos sus descansos",
+        "trigger": {
+          "type": "on-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-remove",
+            "value": "all"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "field"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-009",
+    "card_name": "Nanuk, Reclutado",
+    "effect_text": "Pasiva: Si un Adendei aliado recibe descanso por efecto, un Adendei rival recibe el mismo descanso.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-mirror-rest",
+        "label": "Si aliado recibe descanso por efecto: rival recibe igual descanso",
+        "trigger": {
+          "type": "on-rest-update"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": "mirror"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-009R",
+    "card_name": "Proteccion Selectiva",
+    "effect_text": "Si un Adendei aliado es atacado, niega el ataque.",
+    "cost_text": "La carta equipada se dana 1 pto. si niega el ataque. La carta equipada no podra atacar, ni ser curada. Solo puede ser equipada a un Adendei Zaykan.",
+    "pipelines": [
+      {
+        "id": "P1-negate-on-attack",
+        "label": "Si Adendei aliado es atacado: niega el ataque (costo: dano 1 a equipada)",
+        "trigger": {
+          "type": "on-ally-attack",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-damage",
+            "value": 1
+          }
+        ],
+        "operation": [
+          {
+            "type": "negate-attack"
+          }
+        ],
+        "target": {
+          "type": "ally"
+        },
+        "restrictions": [
+          {
+            "type": "cant-attack"
+          },
+          {
+            "type": "cant-heal"
+          }
+        ],
+        "modifiers": {},
+        "notes": "Solo equipable a Adendei Zaykan"
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:rot"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-010",
+    "card_name": "Cretus, Promesa",
+    "effect_text": "Pasiva: Si una carta aliada es enviada a Extincion, esta carta escala 1 punto.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-ally-death-scale",
+        "label": "Al morir un aliado: escala 1",
+        "trigger": {
+          "type": "on-ally-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-011",
+    "card_name": "Zotz, Rechazo",
+    "effect_text": "Revela las 3 cartas del tope del Mazo rival y envia 1 de ellas a Extincion, regresa las cartas restantes al fondo del Mazo rival.",
+    "cost_text": "Si esta carta es revelada, recibe 2 descansos. Esta carta debera enviarse a Extincion para usar su Activa.",
+    "pipelines": [
+      {
+        "id": "P1-peek-exile",
+        "label": "Activa: Revela 3 del Mazo rival, envia 1 a Extincion y regresa resto al fondo",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "peek-enemy-deck",
+            "count": 3
+          },
+          {
+            "type": "send-extinction",
+            "count": 1
+          },
+          {
+            "type": "return-deck",
+            "position": "bottom"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "zone": "deck"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-reveal-rest",
+        "label": "Al ser revelada: recibe 2 descansos",
+        "trigger": {
+          "type": "on-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-011R",
+    "card_name": "Zotz, Absorcion de Energia",
+    "effect_text": "Pasiva: Esta carta puede copiar la Activa y el Costo de una carta en Extincion, una vez en el juego.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-copy-extinction",
+        "label": "Pasiva: Copia Activa y Costo de una carta en Extincion (una vez por juego)",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "copy"
+          }
+        ],
+        "target": {
+          "type": "any",
+          "zone": "extinction",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-012",
+    "card_name": "Zaykan, Reclutamiento",
+    "effect_text": "Si una carta aliada en Zona Principal es revelada, dana 1 pto. a un Adendei rival.",
+    "cost_text": "Esta carta se dana 1 pto. antes de atacar. Esta carta no puede ser equipada.",
+    "pipelines": [
+      {
+        "id": "P1-ally-reveal-damage",
+        "label": "Al revelar aliado en ZP: dana 1 a un Adendei rival",
+        "trigger": {
+          "type": "on-ally-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-self-damage-pre-attack",
+        "label": "Antes de atacar: se dana 1",
+        "trigger": {
+          "type": "on-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-damage",
+            "value": 1
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-equip"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-012R",
+    "card_name": "Antoine Graham, Sujeto de Prueba",
+    "effect_text": "Activa: Dana 2 puntos hasta a 3 Adendei rivales.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-damage-3-rivals",
+        "label": "Activa: Dana 2 a hasta 3 Adendei rivales",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 3,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:protector"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-013R",
+    "card_name": "Abisales, Destruccion",
+    "effect_text": "Pasiva: Si esta carta es revelada, dana 1 punto a las cartas en Zona Principal.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-reveal-damage-all",
+        "label": "Al ser revelada: dana 1 a todas las cartas en Zona Principal",
+        "trigger": {
+          "type": "on-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-all",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "both",
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-014",
+    "card_name": "Develacion",
+    "effect_text": "El ataque del Adendei equipado no puede ser negado ni desviado.",
+    "cost_text": "Despues de atacar, el Adendei equipado recibe 2 descansos.",
+    "pipelines": [
+      {
+        "id": "P1-unnegable-attack",
+        "label": "Pasiva: Ataque del equipado no puede ser negado ni desviado",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [
+          {
+            "type": "cant-negate"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      },
+      {
+        "id": "P2-post-attack-rest",
+        "label": "Despues de atacar: equipado recibe 2 descansos",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "extra-rest",
+            "value": 2
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:rot"
+      ]
+    }
+  }
+]

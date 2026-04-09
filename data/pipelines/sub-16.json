@@ -1,0 +1,122 @@
+[
+  {
+    "card_id": "TCOO-066",
+    "card_name": "Capullo Aislante",
+    "effect_text": "Los Adendei-Chaaktico aliados no pueden ser danados con 3 o mas ptos.",
+    "cost_text": "Esta carta solo puede ser equipada a Adendei-Chaaktico.",
+    "pipelines": [
+      {
+        "id": "P1-damage-cap-chaaktico",
+        "label": "Pasiva continua: Adendei-Chaaktico aliados no pueden recibir 3+ dano",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-cap",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "energy": "chaaktica"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-equip",
+            "filter": {
+              "energy_not": "chaaktica"
+            }
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "defender",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "TCOO-068",
+    "card_name": "Resucitacion Mineral",
+    "effect_text": "Puedes enviar esta carta a Extincion y regresa 1 Bio o Protector de Extincion a su respectiva Zona.",
+    "cost_text": "Solo puedes usar esta Activa una vez por juego.",
+    "pipelines": [
+      {
+        "id": "P1-revive-bio-or-protector",
+        "label": "Una vez por juego: auto-extingue y regresa 1 Bio o Protector de Extincion a su Zona",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          },
+          {
+            "type": "min-ext-type",
+            "filter": {
+              "card_type_or": [
+                "bio",
+                "protector"
+              ]
+            },
+            "count": 1
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "vivify",
+            "source": "extinction",
+            "filter": {
+              "card_type_or": [
+                "bio",
+                "protector"
+              ]
+            }
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "extinction",
+          "count": 1,
+          "filter": {
+            "card_type_or": [
+              "bio",
+              "protector"
+            ]
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  }
+]

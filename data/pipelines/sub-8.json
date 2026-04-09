@@ -1,0 +1,1360 @@
+[
+  {
+    "card_id": "KDMOLE-01-2022",
+    "card_name": "Ilith, Fuego Primo",
+    "effect_text": "Pasiva: Si tienes al menos 1 carta en Extinción, esta carta puede atacar a 2 Adendei rivales al mismo tiempo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-multi-attack",
+        "label": "Pasiva: Ataca a 2 Adendei rivales si hay al menos 1 en Extinción",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "min-extinction",
+            "value": 1
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "attack-all",
+            "count": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 2,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-001",
+    "card_name": "Cretus, Portadora de Estrellas",
+    "effect_text": "Activa: Si la carta equipada ataca, una carta rival quemada no podra atacar en el siguiente turno.",
+    "cost_text": "Esta carta solo podra ser equipada a un Adendei Cretus.",
+    "pipelines": [
+      {
+        "id": "P1-burn-lock",
+        "label": "Al atacar equipado: carta rival quemada no puede atacar el siguiente turno",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "mark": "burn"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-attack",
+            "duration": {
+              "type": "next-turn"
+            }
+          }
+        ],
+        "modifiers": {
+          "equip_restriction": "Adendei Cretus only"
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "KPRC-003",
+    "card_name": "Zaren, Primer Paso",
+    "effect_text": "Niega la Pasiva de 2 cartas rivales hasta que esta carta vuelva a estar disponible.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-negate-passive",
+        "label": "Al vincularse: Niega Pasiva de 2 rivales hasta que vuelva a estar disponible",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "negate-passive-persistent",
+            "count": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 2
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "until-protector-available"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "KPRC-004",
+    "card_name": "Petalos de Fuego",
+    "effect_text": "Si la carta equipada ataco, cura 1 pto. a un Adendei aliado. Quita todas las marcas de tu Zona Principal.",
+    "cost_text": "Esta carta solo puede ser equipada a un Adendei Ariam.",
+    "pipelines": [
+      {
+        "id": "P1-heal-on-attack",
+        "label": "Al atacar equipado: cura 1 a un Adendei aliado",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "equip_restriction": "Adendei Ariam only"
+        }
+      },
+      {
+        "id": "P2-remove-marks",
+        "label": "Al atacar equipado: quita todas las marcas de Zona Principal aliada",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "remove-marks"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-006",
+    "card_name": "Ozom, Ejercito",
+    "effect_text": "Activa: Si hay una carta quemada en el campo, esta carta puede atacar con doble dano.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-double-damage",
+        "label": "Activa: Si hay carta quemada en campo, ataca con doble dano",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-mark",
+            "mark": "burn",
+            "zone": "field"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "grant-double-damage"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-attack"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-007",
+    "card_name": "Yakerr, Trote Chaaktico",
+    "effect_text": "Pasiva: Esta carta no puede recibir descansos por efectos. Los ataques de esta carta no pueden ser negados.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-immune-rest",
+        "label": "Pasiva: No puede recibir descansos por efectos",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-rest-update"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      },
+      {
+        "id": "P2-cant-negate-attack",
+        "label": "Pasiva: Sus ataques no pueden ser negados",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-negate"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-008",
+    "card_name": "Huehue, Maestro Lupino",
+    "effect_text": "Pasiva: Mientras esta carta este en el campo, ningun Protector puede ser atacado.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-protect-all-protectors",
+        "label": "Pasiva: Ningun Protector puede ser atacado mientras este en campo",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "both",
+          "filter": {
+            "card_type": "protector"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-attacked"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-009",
+    "card_name": "Tekei, Responsabilidad",
+    "effect_text": "Las cartas aliadas no pueden ser enviadas a Extincion.",
+    "cost_text": "Esta carta no puede ser curada ni protegida.",
+    "pipelines": [
+      {
+        "id": "P1-immune-extinction",
+        "label": "Pasiva: Cartas aliadas no pueden ser enviadas a Extincion por efectos",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "ally"
+        },
+        "restrictions": [
+          {
+            "type": "immune-extinction-by-effect"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          },
+          "self_restrictions": [
+            "cant-heal",
+            "cant-be-protected"
+          ]
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-010",
+    "card_name": "Kephir Lanzallamas",
+    "effect_text": "Pasiva: Esta carta puede atacar adicionalmente a Adendei rivales igual al numero de equipos en esta carta.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-multi-attack-per-equip",
+        "label": "Pasiva: Ataques adicionales a Adendei rivales igual al numero de equipos equipados",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "multi-attack"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "count_source": "equip-count",
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-011",
+    "card_name": "Kiivi, Vibracion",
+    "effect_text": "Pasiva-Rapida: Si esta carta es revelada, regresa todas las cartas en Zona Principal a su Zona Principal original. Pasiva: Ninguna carta puede ser cambiada de lugar en Zona Principal.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-on-reveal-reset-positions",
+        "label": "Pasiva-Rapida: Al ser revelada, regresa todas las cartas de Zona Principal a su lugar original",
+        "trigger": {
+          "type": "on-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "return-deck"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "zone": "principal",
+          "count": "all"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "fast": true
+        }
+      },
+      {
+        "id": "P2-lock-positions",
+        "label": "Pasiva: Ninguna carta puede cambiar de lugar en Zona Principal",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "no-position-change-principal"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-012",
+    "card_name": "Dragel, Tormenta",
+    "effect_text": "Activa-Rapida: Envia un equipo que tenga un efecto de Activa-Rapida de tu Zona de Equipo a Extincion y usa el efecto de la Activa-Rapida.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-execute-equip-fast",
+        "label": "Activa-Rapida: Envia equipo con Activa-Rapida a Extincion y usa su efecto",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip"
+          }
+        ],
+        "costs": [
+          {
+            "type": "equip-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "execute-from-zone",
+            "zone": "equip-zone",
+            "filter": {
+              "has_fast_active": true
+            }
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "fast": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-013",
+    "card_name": "Recipiente de Vida",
+    "effect_text": "Selecciona 1 carta de tu rival, esa carta tendra su Pasiva negada mientras este en el campo.",
+    "cost_text": "Debes enviar esta carta a Extincion para usar su Pasiva.",
+    "pipelines": [
+      {
+        "id": "P1-negate-rival-passive",
+        "label": "Pasiva: Enviar a Extincion para negar la Pasiva de 1 carta rival mientras este en campo",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "negate-passive-persistent"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "KPRC-014",
+    "card_name": "Therz, Lagarto Guadana",
+    "effect_text": "Activa: Si esta carta ataca, regresa la carta atacada al fondo del Mazo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-return-to-deck",
+        "label": "Activa: Al atacar, regresa la carta atacada al fondo del mazo rival",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "return-deck",
+            "position": "bottom"
+          }
+        ],
+        "target": {
+          "type": "facing"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:demotica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-015",
+    "card_name": "Zilit, Dorso de Vida",
+    "effect_text": "Pasiva: Los Adendei Titan aliados no pueden ser danados por efectos.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-immune-effect-damage",
+        "label": "Pasiva: Adendei Titan aliados inmunes a dano por efectos",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Titan"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-damaged-effect"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-017",
+    "card_name": "Kap, Lluvia de Ranas",
+    "effect_text": "Pasiva: Si tomas esta carta de tu Mazo, puedes revelarla y curar 3 puntos a tu Protector.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-draw-reveal-heal",
+        "label": "Pasiva: Al sacar del mazo, revelar y curar 3 al Protector",
+        "trigger": {
+          "type": "on-draw"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "reveal"
+          },
+          {
+            "type": "heal",
+            "value": 3
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "protector"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-018",
+    "card_name": "Zaykan, Cambio de Energia",
+    "effect_text": "Pasiva: Selecciona un tipo de Energia y todos los Adendei rivales seran considerados ese tipo de Energia hasta el final del turno. Activa: Esta carta puede atacar a Adendei rivales con el mismo tipo de Energia.",
+    "cost_text": "Un Rava aliado debe recibir un descanso para usar su activa.",
+    "pipelines": [
+      {
+        "id": "P1-change-energy-type",
+        "label": "Pasiva: Selecciona tipo de Energia; todos los Adendei rivales son ese tipo hasta fin de turno",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "change-energy"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "turn"
+          }
+        }
+      },
+      {
+        "id": "P2-attack-same-energy",
+        "label": "Activa: Ataca a Adendei rivales con el mismo tipo de Energia (costo: Rava aliado +1 descanso)",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-rava"
+          }
+        ],
+        "costs": [
+          {
+            "type": "extra-rest",
+            "filter": {
+              "card_type": "rava"
+            },
+            "value": 1
+          }
+        ],
+        "operation": [
+          {
+            "type": "attack-all",
+            "filter": {
+              "same_energy": true
+            }
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "filter": {
+            "card_type": "adendei",
+            "same_energy": true
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-019",
+    "card_name": "Zaren, Union",
+    "effect_text": "Usa 1 de los siguientes efectos. - Regresa todas las cartas en Zona Principal a su Zona Principal original. - Si tu rival no tiene 1 Token en Zona Principal, regresa 1 Adendei rival al tope de su Mazo y coloca 1 Token con el mismo tipo de Energia, 2 ptos. de dano y 0 descansos. - Cura 3 ptos. a 1 carta en el campo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-reset-principal",
+        "label": "Activa opcion 1: Regresa todas las cartas de Zona Principal a su lugar original",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "return-deck"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "zone": "principal",
+          "count": "all"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "select_one_of": "P1/P2/P3"
+        }
+      },
+      {
+        "id": "P2-bounce-and-token",
+        "label": "Activa opcion 2: Sin token rival en Principal: regresa Adendei al tope del mazo y crea Token",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "no-own-field",
+            "owner": "enemy",
+            "filter": {
+              "card_type": "token"
+            },
+            "zone": "principal"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "return-deck",
+            "position": "top"
+          },
+          {
+            "type": "create-token",
+            "stats": {
+              "damage": 2,
+              "rests": 0
+            },
+            "match_energy": true
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "select_one_of": "P1/P2/P3"
+        }
+      },
+      {
+        "id": "P3-heal",
+        "label": "Activa opcion 3: Cura 3 ptos. a 1 carta en el campo",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 3
+          }
+        ],
+        "target": {
+          "type": "any",
+          "count": 1,
+          "zone": "field"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "select_one_of": "P1/P2/P3"
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "KPRC-024",
+    "card_name": "Flora Filosofal",
+    "effect_text": "Pasiva: El Adendei equipado esta protegido de ataques y efectos rivales hasta el fin del siguiente turno en que esta carta es equipada.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-protect-on-equip",
+        "label": "Pasiva: Al equiparse, Adendei protegido de ataques y efectos hasta fin del siguiente turno",
+        "trigger": {
+          "type": "on-equip"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "protect-attack"
+          },
+          {
+            "type": "protect-effect"
+          }
+        ],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-turn"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "KPRC-025",
+    "card_name": "Terapia Botanica",
+    "effect_text": "Pasiva: Envia esta carta a Extincion y cura hasta 6 puntos a tu Protector.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-sacrifice-heal-protector",
+        "label": "Pasiva: Enviar a Extincion para curar 6 al Protector",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 6
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "protector"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "KPRC-026",
+    "card_name": "Selva Abductiva",
+    "effect_text": "Pasiva: Ninguna carta puede atacar al Protector.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-protect-protector-global",
+        "label": "Pasiva: Ninguna carta puede atacar al Protector mientras esta carta este equipada",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "protector"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-attacked"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "KPRC-027",
+    "card_name": "Cementerio de Dinosaurios",
+    "effect_text": "Pasiva: Si tu Protector esta disponible y esta carta esta en Extincion, puedes vivificar esta carta a tu Zona de Bio.",
+    "cost_text": "Costo: Tu Protector recibe 2 descansos. Si no hay un Adendei Titan en tu campo envia esta carta a Extincion. Si esta carta es enviada a Extincion, dana 4 ptos. a tu Protector. Rasvel, Congelado no puede estar en tu campo.",
+    "pipelines": [
+      {
+        "id": "P1-vivify-from-extinction",
+        "label": "Pasiva: Vivificar desde Extincion a Zona Bio si Protector disponible y Titan en campo",
+        "trigger": {
+          "type": "while-in-zone",
+          "zone": "extinction"
+        },
+        "prerequisites": [
+          {
+            "type": "self-available"
+          },
+          {
+            "type": "needs-ally",
+            "filter": {
+              "card_type": "adendei",
+              "subtype": "Titan"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "protector-rest",
+            "value": 2
+          }
+        ],
+        "operation": [
+          {
+            "type": "vivify",
+            "zone": "bio"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-vivify-names",
+            "names": [
+              "Rasvel, Congelado"
+            ]
+          }
+        ],
+        "modifiers": {
+          "on_exit_to_extinction_damage": {
+            "value": 4,
+            "target": "protector"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "KPRC-029",
+    "card_name": "Nirge, Los Floridos",
+    "effect_text": "Activa: Regresa 1 Ixim de la Zona Principal a la Zona de Equipo y escala 1 punto a 1 carta aliada.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-return-ixim-and-scale",
+        "label": "Activa: Regresa 1 Ixim de Zona Principal a Zona de Equipo y escala 1 pto. a 1 aliado",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-ally",
+            "filter": {
+              "card_type": "ixim"
+            },
+            "zone": "principal"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-from-equip-zone"
+          },
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "KPRC-031",
+    "card_name": "Daku, Mandibula Toxica",
+    "effect_text": "Activa: Dana 1 punto a todas las cartas envenenadas.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-damage-poisoned",
+        "label": "Activa: Dana 1 punto a todas las cartas envenenadas",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-all",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "both",
+          "filter": {
+            "mark": "poison"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "KPRC-033",
+    "card_name": "Retis, Nado Prehistorico",
+    "effect_text": "Las aguas no son un obstaculo, sino un aliado de caceria.",
+    "cost_text": "",
+    "pipelines": [],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:atlica",
+        "aff:litica"
+      ],
+      "notes": "Flavor text only; no mechanical effect detected"
+    }
+  },
+  {
+    "card_id": "KPRC-034",
+    "card_name": "Rasvel, Bestiario",
+    "effect_text": "Si tu Protector esta en descanso, lo puedes vincular con esta carta.",
+    "cost_text": "Tu Protector no actualiza descanso en el turno que se usa esta Pasiva. Solo puedes usar este efecto una vez mientras esta carta este en el campo.",
+    "pipelines": [
+      {
+        "id": "P1-link-resting-protector",
+        "label": "Pasiva (once-per-field): Si Protector en descanso, vincularlo con esta carta; Protector no actualiza descanso ese turno",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-field"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "link"
+          }
+        ],
+        "target": {
+          "type": "protector"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "condition": "protector-in-rest",
+          "protector_no_rest_update_this_turn": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  }
+]

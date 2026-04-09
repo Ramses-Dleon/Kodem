@@ -1,0 +1,1560 @@
+[
+  {
+    "card_id": "FYTE-007R",
+    "card_name": "Tlahuelpuchi, Invocacion Espectral",
+    "effect_text": "Activa: Envenena 1 carta y 1 Adendei rival (ambos en Zona Principal). Los Espectros aliados no envian cartas a Extincion para poseer hasta que este Protector este disponible.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-poison",
+        "label": "Activa: Envenena 1 carta y 1 Adendei rival en Zona Principal",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "poison",
+            "notes": "1 carta rival en Zona Principal"
+          },
+          {
+            "type": "poison",
+            "notes": "1 Adendei rival en Zona Principal"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 2,
+          "zone": "principal",
+          "notes": "1 carta cualquiera + 1 Adendei rival"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-spectros-no-extinct-to-possess",
+        "label": "Pasiva: Espectros aliados no envian a Extincion para poseer mientras Protector este disponible",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "spectros-skip-extinct-for-possess-while-protector-available"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "espectro"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "until-protector-available"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-007S",
+    "card_name": "Marok, Invocacion de Ultratumba",
+    "effect_text": "Si esta carta es vivificada, equipa 1 Ixim o Rot de tu Zona de Equipos que no tenga un efecto de proteccion o negacion a 1 Adendei aliado; ese equipo no podra cambiar de lugar, regresar a Zona de Equipo o ser enviado a Extincion por el resto del juego.",
+    "cost_text": "Si no puedes reemplazar con 1 Adendei compatible, envia el equipo y 1 Adendei de los tomados a Extincion.",
+    "pipelines": [
+      {
+        "id": "P1-vivify-equip-lock",
+        "label": "Al vivificarse: equipa Ixim/Rot (sin proteccion/negacion) a aliado; queda fijo el resto del juego",
+        "trigger": {
+          "type": "on-vivify"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-from-equip-zone",
+            "equip_type": "any",
+            "filter_notes": "sin efecto de proteccion o negacion"
+          },
+          {
+            "type": "register-game-rule",
+            "rule": "equip-cant-move-or-return-or-extinct-rest-of-game"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-return-to-equip"
+          },
+          {
+            "type": "immune-extinction-by-effect",
+            "notes": "equipo bloqueado por el resto del juego"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "rest-of-game"
+          }
+        }
+      },
+      {
+        "id": "P2-cost-no-compatible",
+        "label": "Costo condicional: si no hay Adendei compatible, envia el equipo y 1 Adendei tomado a Extincion",
+        "trigger": {
+          "type": "conditional-self-destruct"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "equip-extinct"
+          },
+          {
+            "type": "ally-extinct"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-007U",
+    "card_name": "Tetrada Inferna",
+    "effect_text": "Activa: Dana 3 ptos. a 1 Adendei rival y 3 ptos. a 1 carta no Adendei revelada en Zona Principal.",
+    "cost_text": "Debes tener 3 Adendei-Equino en Extincion para usar esta Activa. Esta carta no puede ser curada o protegida. Este efecto no puede ser copiado.",
+    "pipelines": [
+      {
+        "id": "P1-damage-dual",
+        "label": "Activa: Dana 3 a 1 Adendei rival y 3 a 1 carta no-Adendei revelada en Zona Principal",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-ext-type",
+            "card_type": "adendei",
+            "subtype": "Equino",
+            "count": 3
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 3,
+            "notes": "a 1 Adendei rival en Zona Principal"
+          },
+          {
+            "type": "damage",
+            "value": 3,
+            "notes": "a 1 carta no-Adendei revelada en Zona Principal"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 2,
+          "zone": "principal"
+        },
+        "restrictions": [
+          {
+            "type": "cant-heal",
+            "source": "self"
+          },
+          {
+            "type": "cant-be-protected",
+            "source": "self"
+          },
+          {
+            "type": "cant-be-copied"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-008",
+    "card_name": "Copal Blanco, Resina Depuradora",
+    "effect_text": "Si esta carta es revelada puedes enviarla a Extincion. Si esta carta es enviada a Extincion, remueve todas las marcas en tu campo y cura 1 pto. hasta 3 cartas aliadas.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-on-reveal-send",
+        "label": "Al revelarse: opcionalmente envia esta carta a Extincion",
+        "trigger": {
+          "type": "on-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "send-extinction",
+            "optional": true
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-on-extinct-cleanse-heal",
+        "label": "Al ir a Extincion: remueve todas las marcas aliadas y cura 1 a hasta 3 aliados",
+        "trigger": {
+          "type": "on-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "remove-marks"
+          },
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 3,
+          "zone": "field"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-008R",
+    "card_name": "Macit, Resguardo Divino",
+    "effect_text": "Pasiva: Los Adendei Catrin en tu Zona Principal, no pueden recibir dano por efectos o ser enviados a Extincion por efectos de cartas que no sean Adendei Catrin.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-catrin-immunity",
+        "label": "Pasiva: Adendei Catrin aliados inmunes a dano por efecto e ir a Extincion de fuentes no-Catrin",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "protect-effect",
+            "notes": "dano por efecto e ir a Extincion desde cartas no Adendei Catrin"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "principal",
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Catrin"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-damaged-effect",
+            "source_filter": {
+              "notes": "cartas que no sean Adendei Catrin"
+            }
+          },
+          {
+            "type": "immune-extinction-by-effect",
+            "source_filter": {
+              "notes": "cartas que no sean Adendei Catrin"
+            }
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-008U",
+    "card_name": "Ariam, Resurgimiento Fangoso",
+    "effect_text": "Si esta carta es vivificada, todos los Adendei 'Ariam' aliados podran danar 1 pto. adicional al atacar y no podran curar por sus propios efectos por el resto del juego.",
+    "cost_text": "Solo puedes usar este efecto una vez por juego. Esta Pasiva no puede ser negada.",
+    "pipelines": [
+      {
+        "id": "P1-vivify-ariam-buff",
+        "label": "Al vivificarse (una vez por juego): Ariam aliados +1 dano al atacar; no curan por propios efectos (resto del juego)",
+        "trigger": {
+          "type": "on-vivify"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1,
+            "notes": "+1 dano al atacar"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "adendei",
+            "card_name_contains": "Ariam"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-heal-by-own-effects",
+            "notes": "Ariam aliados no curan por propios efectos, resto del juego"
+          },
+          {
+            "type": "cant-negate-passive",
+            "notes": "Esta Pasiva no puede ser negada"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "rest-of-game"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-009",
+    "card_name": "Cempasuchil, Flor de Veinte Petalos",
+    "effect_text": "Si 2 Adendei aliados han sido vivificados, aun si esta carta no estaba en el campo, el Adendei equipado esta protegido de efectos rivales.",
+    "cost_text": "Este Ixim no puede ser protegido.",
+    "pipelines": [
+      {
+        "id": "P1-vivify-conditional-protection",
+        "label": "Pasiva Ixim: si 2 Adendei aliados han sido vivificados, Adendei equipado protegido de efectos rivales",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "cards-vivified-count",
+            "count": 2,
+            "filter": {
+              "card_type": "adendei",
+              "owner": "ally"
+            },
+            "retroactive": true
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "protect-effect"
+          }
+        ],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-protected",
+            "source": "self",
+            "notes": "Este Ixim no puede ser protegido"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-009R",
+    "card_name": "Enis, Giro Gelido",
+    "effect_text": "Pasiva: Los Adendei Catrin reciben 1 descanso menos al atacar o usar Activa.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-catrin-rest-reduction",
+        "label": "Pasiva: Adendei Catrin aliados reciben 1 descanso menos al atacar o usar Activa",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-remove",
+            "value": 1,
+            "on": [
+              "on-attack",
+              "on-activate"
+            ]
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Catrin"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-009S",
+    "card_name": "Barrera Espectral",
+    "effect_text": "Pasiva: Si 1 o mas cartas aliadas son enviadas a Extincion, por cada carta aliada enviada a Extincion cura 2 puntos a 1 Protector aliado o 1 punto a 1 Adendei aliado con 2 o menos puntos de dano en su estadistica.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-extinction-heal",
+        "label": "Pasiva: Por cada carta aliada a Extincion, cura 2 a Protector aliado O 1 a Adendei aliado (<=2 dano)",
+        "trigger": {
+          "type": "on-ally-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 2,
+            "target_notes": "1 Protector aliado (opcion A)"
+          },
+          {
+            "type": "heal",
+            "value": 1,
+            "target_notes": "1 Adendei aliado con <=2 dano (opcion B)"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "notes": "Protector (2 pts) O Adendei con <=2 dano (1 pt); por trigger"
+        },
+        "restrictions": [
+          {
+            "type": "target-filter",
+            "notes": "Adendei target must have 2 or fewer damage points"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          },
+          "per_trigger": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-010",
+    "card_name": "El Lago del Adios Eterno",
+    "effect_text": "Puedes enviar 1 Adendei Catrin aliado al fondo del Mazo. Mientras esta carta este en el campo, los Adendei Catrin estan protegidos de marcas y de efectos de cartas tomadas.",
+    "cost_text": "No puedes usar efectos de cartas tomadas. Dana 2 ptos. al Protector aliado si envias a 1 Adendei al fondo del Mazo con esta Pasiva.",
+    "pipelines": [
+      {
+        "id": "P1-return-catrin-to-deck",
+        "label": "Pasiva opcional: envia 1 Adendei Catrin aliado al fondo del Mazo (cuesta 2 al Protector aliado)",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "protector-damage",
+            "value": 2
+          }
+        ],
+        "operation": [
+          {
+            "type": "return-deck",
+            "position": "bottom"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Catrin"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-catrin-immunity-continuous",
+        "label": "Pasiva continua: Adendei Catrin protegidos de marcas y efectos de cartas tomadas",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "immune-marks"
+          },
+          {
+            "type": "protect-effect",
+            "notes": "efectos de cartas tomadas"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Catrin"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-use-activa-while-active",
+            "notes": "No puedes usar efectos de cartas tomadas mientras esta Bio este en campo"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-010R",
+    "card_name": "Ravas, Hielo Vibrante",
+    "effect_text": "Pasiva: Si 1 Adendei-Huumico, Gelido o Atlico aliado ataca, dana adicionalmente 1 punto por cada energia Huumica, Gelida, o Atlica en su propia estadistica.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-energy-bonus-damage",
+        "label": "Pasiva: Al atacar Adendei Huumico/Gelido/Atlico, +1 dano por energia Huumica/Gelida/Atlica en su estadistica",
+        "trigger": {
+          "type": "on-ally-attack",
+          "filter": {
+            "energy": [
+              "huumica",
+              "gelida",
+              "atlica"
+            ]
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-per",
+            "value": 1,
+            "per": "multi-energy-stat",
+            "energies": [
+              "huumica",
+              "gelida",
+              "atlica"
+            ]
+          }
+        ],
+        "target": {
+          "type": "facing"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:huumica",
+        "aff:gelida",
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-010S",
+    "card_name": "Flora Espectral",
+    "effect_text": "En Previa puedes equipar 1 Ixim o Rot de tu Zona de Equipo o Extincion a 1 Adendei aliado.",
+    "cost_text": "Solo puedes usar este efecto una vez por juego.",
+    "pipelines": [
+      {
+        "id": "P1-equip-from-ext-or-zone",
+        "label": "Activa una vez por juego (Previa): equipa Ixim o Rot desde Zona de Equipo o Extincion a Adendei aliado",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-from-extinct",
+            "equip_type": "any",
+            "zones": [
+              "equip-zone",
+              "extinction"
+            ],
+            "notes": "Disponible en fase Previa"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-011R",
+    "card_name": "Ravas, Lava y Rayos",
+    "effect_text": "Pasiva: Si 1 Adendei-Pirico, Litico o Chaaktico aliado ataca, dana adicionalmente 1 punto por cada energia Pirica, Litica o Chaaktica en su propia estadistica.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-energy-bonus-damage",
+        "label": "Pasiva: Al atacar Adendei Pirico/Litico/Chaaktico, +1 dano por energia Pirica/Litica/Chaaktica en su estadistica",
+        "trigger": {
+          "type": "on-ally-attack",
+          "filter": {
+            "energy": [
+              "pirica",
+              "litica",
+              "chaaktica"
+            ]
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-per",
+            "value": 1,
+            "per": "multi-energy-stat",
+            "energies": [
+              "pirica",
+              "litica",
+              "chaaktica"
+            ]
+          }
+        ],
+        "target": {
+          "type": "facing"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica",
+        "aff:litica",
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-011S",
+    "card_name": "Evadett, Ultima Luz",
+    "effect_text": "Ataca adicionalmente a 1 o 2 cartas rivales en Zona Principal si hay respectivamente 1 o 2 Adendei Equino rivales en el campo.",
+    "cost_text": "Esta Activa no puede ser copiada.",
+    "pipelines": [
+      {
+        "id": "P1-multi-attack-equino",
+        "label": "Activa: Ataca 1-2 cartas rivales adicionales segun Adendei Equino rivales en campo",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-count",
+            "count": 1,
+            "filter": {
+              "card_type": "adendei",
+              "subtype": "Equino",
+              "owner": "enemy"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "multi-attack",
+            "count": "variable",
+            "notes": "1 adicional si 1 Equino rival; 2 adicionales si 2 Equino rivales"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": "variable",
+          "zone": "principal"
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-copied"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-012R",
+    "card_name": "Ketzz, Ponzona Ancestral",
+    "effect_text": "Envenena a 1 carta rival en Zona Principal.",
+    "cost_text": "Debes tener 4 o mas Adendei en Extincion para usar su Activa.",
+    "pipelines": [
+      {
+        "id": "P1-poison",
+        "label": "Activa: Envenena 1 carta rival en Zona Principal (requiere 4+ Adendei en Extincion)",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-extinction",
+            "count": 4,
+            "filter": {
+              "card_type": "adendei"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "poison"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-012S",
+    "card_name": "Nahual, Mascara",
+    "effect_text": "Usa 1 de los siguientes efectos:\n-Usa la misma Activa y costo que el Protector rival.\n-Cura 1 pto. a 3 cartas en tu campo.",
+    "cost_text": "Si esta carta usa la misma Activa que el Protector rival, dana 1 pto. a 3 cartas en tu campo.",
+    "pipelines": [
+      {
+        "id": "P1-copy-enemy-protector",
+        "label": "Activa (opcion A): Usa la misma Activa y costo que el Protector rival (cuesta 1 dano a 3 aliados)",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "field-damage-all",
+            "value": 1,
+            "count": 3,
+            "notes": "dana 1 a 3 cartas en tu campo al usar esta opcion"
+          }
+        ],
+        "operation": [
+          {
+            "type": "copy",
+            "source": "enemy-protector-activa"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "filter": {
+            "card_type": "protector"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-heal-field",
+        "label": "Activa (opcion B): Cura 1 pto. a 3 cartas en tu campo",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 3,
+          "zone": "field"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-013",
+    "card_name": "Nakuah, Vigia Yokoa",
+    "effect_text": "Cura 1 pto. al Adendei vinculado. Selecciona 1 carta rival revelada en Zona Principal, la siguiente vez que este Protector este disponible, envia la carta seleccionada a Extincion.",
+    "cost_text": "Las cartas equipadas u ocultas no podran ser enviadas a Extincion por este efecto. Esta carta solo puede actualizar 1 descanso por turno.",
+    "pipelines": [
+      {
+        "id": "P1-heal-linked",
+        "label": "Activa: Cura 1 al Adendei vinculado",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "linked"
+        },
+        "restrictions": [
+          {
+            "type": "cant-rest-update-more-than",
+            "value": 1,
+            "notes": "solo 1 descanso por turno"
+          }
+        ],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-select-and-extinct-on-available",
+        "label": "Activa: Selecciona 1 carta rival revelada; al siguiente disponible la envia a Extincion",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "select-and-lock",
+            "notes": "selecciona 1 carta rival revelada en Zona Principal"
+          },
+          {
+            "type": "send-extinction",
+            "timing": "next-protector-available"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "zone": "principal",
+          "filter": {
+            "notes": "revelada; no equipadas ni ocultas"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "target-filter",
+            "notes": "cartas equipadas u ocultas no pueden ser objetivo"
+          },
+          {
+            "type": "cant-rest-update-more-than",
+            "value": 1,
+            "notes": "solo 1 descanso por turno"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "until-condition",
+            "condition": "protector-becomes-available"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-013R",
+    "card_name": "Aki, Brinco Espectral",
+    "effect_text": "Requisito: 1 o mas Adendei 'Aki' en tu Extincion.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-possess-aki",
+        "label": "Espectro: Poseer — requiere 1 o mas Adendei Aki en Extincion propia",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-ext-name",
+            "card_name_contains": "Aki",
+            "card_type": "adendei",
+            "count": 1
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "possess"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-013S",
+    "card_name": "Mixtla, Recarga",
+    "effect_text": "Los Adendei Catrin aliados con 2 ptos. o menos de dano podran declarar ataque 2 veces en Batalla.",
+    "cost_text": "Los Adendei Catrin aliados solo podran usar su Activa y/o la de su Rot equipado una vez por turno. El segundo ataque no detona ninguna Pasiva aliada.",
+    "pipelines": [
+      {
+        "id": "P1-catrin-double-attack",
+        "label": "Pasiva: Adendei Catrin aliados con <=2 dano pueden atacar 2 veces en Batalla",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "multi-attack",
+            "count": 2,
+            "notes": "solo para Adendei Catrin con <=2 dano"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Catrin"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "target-filter",
+            "notes": "Solo Catrin con 2 o menos puntos de dano"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          },
+          "second_attack_no_passive": true
+        }
+      },
+      {
+        "id": "P2-catrin-activa-once-per-turn",
+        "label": "Restriccion: Activa y Activa de Rot de Catrin aliados solo una vez por turno",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "catrin-activa-and-rot-activa-once-per-turn"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Catrin"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-014",
+    "card_name": "Yaotec, Punta de Guerra",
+    "effect_text": "Activa: Dana 3 ptos. a 1 carta rival.",
+    "cost_text": "Los Adendei y Protectores no pueden ser danados por este efecto.",
+    "pipelines": [
+      {
+        "id": "P1-damage-non-adendei-protector",
+        "label": "Activa Rot: Dana 3 ptos. a 1 carta rival (no Adendei ni Protector)",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 3
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [
+          {
+            "type": "target-filter",
+            "notes": "Los Adendei y Protectores no pueden ser danados"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-014R",
+    "card_name": "Yakerr, Aullido Espectral",
+    "effect_text": "Requisito: 3 o mas Adendei 'Yakerr' en tu Extincion.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-possess-yakerr",
+        "label": "Espectro: Poseer — requiere 3 o mas Adendei Yakerr en Extincion propia",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-ext-name",
+            "card_name_contains": "Yakerr",
+            "card_type": "adendei",
+            "count": 3
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "possess"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-014S",
+    "card_name": "Erwin, Gatividencia",
+    "effect_text": "Puedes mostrar sin revelar 1 carta del campo, Mazo o la Zona de Equipo del rival.",
+    "cost_text": "El Protector aliado recibe 1 descanso si usas esta Activa. Solo puedes usar esta Activa si tu Protector esta disponible. No se puede usar el efecto de la carta mostrada.",
+    "pipelines": [
+      {
+        "id": "P1-peek-enemy",
+        "label": "Activa: Muestra sin revelar 1 carta del campo, Mazo o Zona de Equipo rival",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "self-available",
+            "notes": "Solo si tu Protector esta disponible"
+          }
+        ],
+        "costs": [
+          {
+            "type": "protector-rest",
+            "value": 1,
+            "notes": "Protector aliado recibe 1 descanso"
+          }
+        ],
+        "operation": [
+          {
+            "type": "peek-enemy-deck",
+            "notes": "mostrar sin revelar; puede ser campo, Mazo o Zona de Equipo rival"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "notes": "carta de campo, Mazo o Zona de Equipo del rival"
+        },
+        "restrictions": [
+          {
+            "type": "target-filter",
+            "notes": "El efecto de la carta mostrada no puede ser usado"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "FYTE-015R",
+    "card_name": "Nanuk, Garras Heladas",
+    "effect_text": "Requisito: 2 o mas Adendei 'Nanuk' en tu Extincion.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-possess-nanuk",
+        "label": "Espectro: Poseer — requiere 2 o mas Adendei Nanuk en Extincion propia",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-ext-name",
+            "card_name_contains": "Nanuk",
+            "card_type": "adendei",
+            "count": 2
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "possess"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-015S",
+    "card_name": "Trote Espectral",
+    "effect_text": "Si esta carta ataca, recibe 1 descanso adicional al final del turno.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-attack-extra-rest",
+        "label": "Pasiva: Al atacar, recibe 1 descanso adicional al final del turno",
+        "trigger": {
+          "type": "on-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1,
+            "timing": "end-of-turn"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FYTE-016R",
+    "card_name": "Zaykan, Refuerzo Catrin",
+    "effect_text": "Los Adendei Catrin aliados pueden danar 2 ptos. a 1 carta rival en Zona Principal al atacar o usar Activa.",
+    "cost_text": "Los Adendei Catrin aliados se danan 2 ptos. al atacar o usar Activa si se usa esta Pasiva. Esta Pasiva no puede ser negada.",
+    "pipelines": [
+      {
+        "id": "P1-catrin-bonus-damage",
+        "label": "Pasiva: Catrin aliados danan 2 a 1 carta rival en Zona Principal al atacar/Activa (se danan 2 a si mismos)",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-damage",
+            "value": 2,
+            "notes": "el Adendei Catrin se dana 2 al atacar o usar Activa"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "zone": "principal"
+        },
+        "restrictions": [
+          {
+            "type": "cant-negate-passive",
+            "notes": "Esta Pasiva no puede ser negada"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          },
+          "applies_to": {
+            "card_type": "adendei",
+            "subtype": "Catrin",
+            "owner": "ally"
+          },
+          "trigger_on": [
+            "on-attack",
+            "on-activate"
+          ]
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  }
+]

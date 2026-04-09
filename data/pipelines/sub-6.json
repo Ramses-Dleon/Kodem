@@ -1,0 +1,1229 @@
+[
+  {
+    "card_id": "IDRMA-022",
+    "card_name": "Yimsah, Voraz",
+    "effect_text": "Pasiva: Si solo 1 carta es enviada a Extincion, daña 1 punto a una carta rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-on-death-single",
+        "label": "Si solo 1 carta va a Extinción: daña 1 a rival",
+        "trigger": {
+          "type": "on-any-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          },
+          {
+            "type": "min-count",
+            "value": 1,
+            "max": 1,
+            "note": "exactly 1 card sent to extinction"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-002",
+    "card_name": "Enis, Contemplacion",
+    "effect_text": "Activa: Si la carta atacada no esta revelada, puedes revelarla y esa carta recibe 1 descanso.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-reveal-rest",
+        "label": "Activa: revela carta rival oculta y añade 1 descanso",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          },
+          {
+            "type": "self-hidden",
+            "note": "target must be hidden"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "reveal",
+            "value": 1
+          },
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "zone": "field"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-003",
+    "card_name": "Enis, Revelacion",
+    "effect_text": "Pasiva: Si una carta aliada recibe descanso(s) por efecto, puedes dañar 1 punto a un Adendei rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-ally-rested-damage",
+        "label": "Cuando aliado recibe descanso por efecto: daña 1 a Adendei rival",
+        "trigger": {
+          "type": "on-rest-update",
+          "filter": {
+            "side": "ally"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-004",
+    "card_name": "Xilan, Baculo de Poder",
+    "effect_text": "Activa: Si esta carta ataca, escala 1 pto. hasta tener 5 ptos. de ataque.",
+    "cost_text": "Si esta carta tiene 5 ptos. o más de ataque, se daña 2 ptos. antes de atacar.",
+    "pipelines": [
+      {
+        "id": "P1-scale-on-attack",
+        "label": "Al atacar: escala 1 pto (hasta 5)",
+        "trigger": {
+          "type": "on-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1,
+            "max": 5
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-self-damage-at-max",
+        "label": "Si tiene 5+ ataque: se daña 2 antes de atacar",
+        "trigger": {
+          "type": "on-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "ally-stat-filter",
+            "stat": "attack",
+            "op": ">=",
+            "value": 5,
+            "note": "self stat check"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-damage",
+            "value": 2
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-006",
+    "card_name": "Zaykan, Ermitaño",
+    "effect_text": "Pasiva: Esta carta no puede ser atacada por la carta frente a ella.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-cant-be-attacked-facing",
+        "label": "Pasiva: no puede ser atacado por la carta frente",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-attacked-by",
+            "filter": {
+              "position": "facing"
+            }
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-007",
+    "card_name": "Kopit, Guardian de la Corteza",
+    "effect_text": "Pasiva: Si esta carta fue atacada, una carta en el campo recibe 1 descanso.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-damaged-rest-field",
+        "label": "Al ser atacado: 1 carta en campo recibe 1 descanso",
+        "trigger": {
+          "type": "on-damaged"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "any",
+          "count": 1,
+          "filter": {
+            "zone": "field"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-008",
+    "card_name": "Voracidad Natural",
+    "effect_text": "Pasiva: La carta equipada no puede ser dañada por efectos.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-immune-effect-damage",
+        "label": "Pasiva Ixim: equipada inmune a daño por efectos",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-damaged-effect"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "IDRMG-009",
+    "card_name": "Estocada Escarlata",
+    "effect_text": "Pasiva: Si no hay otras cartas equipadas con Ixim en el campo, la carta equipada puede atacar al Protector rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-attack-protector-only-ixim",
+        "label": "Pasiva Ixim: si es único Ixim en campo, equipada puede atacar Protector",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip"
+          },
+          {
+            "type": "no-own-field",
+            "filter": {
+              "card_type": "ixim",
+              "exclude_self": true
+            },
+            "note": "no other Ixim on field"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "attack-protector"
+          }
+        ],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "IDRMG-010",
+    "card_name": "Jane, Sabotaje",
+    "effect_text": "Activa: Escoge un Adendei rival; ese Adendei no podra atacar hasta que este Protector este disponible. Este Protector se vincula solo con un Adendei en descanso.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-lock-enemy-attack",
+        "label": "Activa: bloquea ataque de Adendei rival hasta que Protector esté disponible",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "select-and-lock",
+            "restriction": "cant-attack"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "until-protector-available"
+          }
+        }
+      },
+      {
+        "id": "P2-link-rested-only",
+        "label": "Pasiva: Protector solo se vincula con Adendei en descanso",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "target-has-rests"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "link"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "IDRMG-011",
+    "card_name": "Inacio, Reinicio",
+    "effect_text": "Activa: Regresa todos los Ixim y Rot en el campo a la Zona de Equipo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-return-all-equips",
+        "label": "Activa: regresa todos los Ixim y Rot en campo a Zona de Equipo",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "unequip-all"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": "all",
+          "filter": {
+            "card_type": [
+              "ixim",
+              "rot"
+            ],
+            "zone": "field"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "IDRMG-012",
+    "card_name": "Sol y Luna",
+    "effect_text": "Pasiva: Los Adendei-Feral dañan 1 punto adicional en el turno en que son revelados.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-feral-reveal-bonus",
+        "label": "Pasiva Bio: Feral aliado +1 daño en turno de revelación",
+        "trigger": {
+          "type": "on-ally-reveal",
+          "filter": {
+            "energy": "feral"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "triggering"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "turn"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-013",
+    "card_name": "Macit, Semilla Dorada",
+    "effect_text": "Pasiva: Si un Adendei es colocado en el campo mientras esta carta esta revelada, ese Adendei no puede ser atacado en el siguiente turno.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-protect-new-ally",
+        "label": "Al revelarse nuevo Adendei aliado: proteger de ataques siguiente turno",
+        "trigger": {
+          "type": "on-ally-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "protect-attack"
+          }
+        ],
+        "target": {
+          "type": "triggering"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-turn"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-014",
+    "card_name": "Mizthe, Ancestral",
+    "effect_text": "Pasiva: Si un Adendei aliado deja el campo, cura 1 punto a los Adendei aliados.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-ally-leaves-heal",
+        "label": "Al salir Adendei aliado del campo: cura 1 a todos Adendei aliados",
+        "trigger": {
+          "type": "on-ally-leaves-field",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal-all",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": "all",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-015",
+    "card_name": "Erwin, Sopor Felino",
+    "effect_text": "Pasiva: Si esta carta es revelada, cura 2 puntos a un Adendei aliado.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-reveal-heal",
+        "label": "Al revelarse: cura 2 a un Adendei aliado",
+        "trigger": {
+          "type": "on-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-016",
+    "card_name": "Nanuk, Fiereza Kosmica",
+    "effect_text": "Pasiva: Esta carta no puede recibir marcas.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-immune-marks",
+        "label": "Pasiva: inmune a marcas",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "immune-marks"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-017",
+    "card_name": "Boras, Poder Kosmico",
+    "effect_text": "Activa: Esta carta daña un punto adicional por cada carta rival en descanso.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-damage-per-rested-enemy",
+        "label": "Activa: +1 daño por cada carta rival en descanso",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-per",
+            "value": 1,
+            "per": "enemy-rested-count"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-018",
+    "card_name": "Boras, Sacrificio",
+    "effect_text": "Pasiva: Si esta carta es revelada, una carta rival recibe 2 descansos. Esa carta tiene su pasiva negada hasta volver a estar disponible.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-reveal-rest-negate-passive",
+        "label": "Al revelarse: rival recibe 2 descansos y pasiva negada hasta disponible",
+        "trigger": {
+          "type": "on-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 2
+          },
+          {
+            "type": "negate-passive-persistent"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "until-condition",
+            "condition": "target-available"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-019",
+    "card_name": "Petrologia Emergente",
+    "effect_text": "Activa Rapida: Si la carta equipada es atacada, puedes enviar esta carta a Extincion y desvia el daño que esa carta recibiria a una carta rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-redirect-damage",
+        "label": "Activa Rápida Rot: equipada atacada → envía Rot a Extinción y redirige daño a rival",
+        "trigger": {
+          "type": "on-equipped-damaged"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip"
+          }
+        ],
+        "costs": [
+          {
+            "type": "equip-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "redirect"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {
+          "fast": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "IDRMG-020",
+    "card_name": "Aura Protectora",
+    "effect_text": "Activa Rapida: Si la carta equipada ataca, puedes enviar esta carta a Extincion y enviar 1 equipo de un Adendei rival a Extincion.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-destroy-enemy-equip",
+        "label": "Activa Rápida Rot: equipada ataca → envía Rot a Extinción, destruye 1 equipo rival",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip"
+          }
+        ],
+        "costs": [
+          {
+            "type": "equip-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-destroy"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "has_equip": true
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "fast": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "IDRMG-021",
+    "card_name": "Yakerr, Soledad",
+    "effect_text": "Pasiva: Esta carta solo recibe daño por efectos de Adendei-Feral",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-damage-filter-feral-only",
+        "label": "Pasiva: solo recibe daño por efectos de Adendei-Feral",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "source-filter",
+            "allow_only": {
+              "card_type": "adendei",
+              "energy": "feral"
+            },
+            "note": "only Adendei-Feral effects can damage this card"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMG-022",
+    "card_name": "Zagal, Ruinas",
+    "effect_text": "Pasiva: Si hay un Adendei aliado en descanso, esta carta puede atacar al Protector rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-attack-protector-if-ally-rested",
+        "label": "Pasiva: si hay Adendei aliado en descanso, puede atacar al Protector",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-ally",
+            "filter": {
+              "card_type": "adendei",
+              "has_rests": true
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "attack-protector"
+          }
+        ],
+        "target": {
+          "type": "protector"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMP-003",
+    "card_name": "Zaykan, Analisis",
+    "effect_text": "Pasiva: Si esta carta fue atacada, daña 1 punto a una carta rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-counterattack",
+        "label": "Al ser atacado: daña 1 a carta rival",
+        "trigger": {
+          "type": "on-damaged"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMP-005",
+    "card_name": "Tzun, Mensajero Celestial",
+    "effect_text": "Pasiva: Esta carta no puede recibir descansos por efectos.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-immune-rest-effects",
+        "label": "Pasiva: inmune a descansos por efectos",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-rest-update"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMP-006",
+    "card_name": "Maquemura, Desliz",
+    "effect_text": "Activa Rapida: Si esta carta ataca, tu rival no puede activar efectos por el resto del turno.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-suppress-rival-effects",
+        "label": "Activa Rápida: al atacar, rival no puede activar efectos hasta fin de turno",
+        "trigger": {
+          "type": "on-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "negate-effect",
+            "scope": "all-enemy-activas"
+          }
+        ],
+        "target": {
+          "type": "enemy"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "fast": true,
+          "duration": {
+            "type": "turn"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "IDRMP-007",
+    "card_name": "Ceiba, Raices Cosmicas",
+    "effect_text": "Pasiva: Durante tu Previa, puedes enviar este equipo a Extincion. La carta que estaba equipada escala 1 punto.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-previa-sacrifice-scale",
+        "label": "Pasiva Ixim: durante Previa, puedes enviar a Extinción para escalar 1 pto a equipada",
+        "trigger": {
+          "type": "on-pass-turn"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip"
+          }
+        ],
+        "costs": [
+          {
+            "type": "equip-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  }
+]

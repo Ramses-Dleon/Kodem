@@ -1,0 +1,1442 @@
+[
+  {
+    "card_id": "DOOC-008",
+    "card_name": "Sangre Petrea",
+    "effect_text": "Activa-Rapida: Abisma 1 Adendei rival y regresa todos los equipos en Zona Principal a Zona de Equipo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Activa-Rapida: Abismar y regresar equipos",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "abyss",
+            "value": 1
+          },
+          {
+            "type": "unequip-all",
+            "note": "regresa equipos a Zona de Equipo"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "DOOC-008S",
+    "card_name": "Rhymir, Rayo Doble",
+    "effect_text": "Pasiva: Si 1 Adendei-Chaaktico aliado ataco, dania 2 puntos a 1 Adendei rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: Chaaktico aliado ataca -> dania 2 a Adendei rival",
+        "trigger": {
+          "type": "on-ally-attack",
+          "filter": {
+            "energy": "chaaktica"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-009S",
+    "card_name": "Nephtis, Aqua Vitae",
+    "effect_text": "Activa: Cura 1 punto a 2 cartas en tu campo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Activa: Cura 1 a 2 cartas aliadas",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 2
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-010",
+    "card_name": "Makua, Mandibula de Acero",
+    "effect_text": "Si 1 Adendei-Feral es revelado u ocultado, dania 1 pto. al Protector rival.",
+    "cost_text": "Dania esta carta 1 pto. por cada pto. de danio que reciba el Protector rival.",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: Feral revelado/ocultado -> dania 1 al Protector rival",
+        "trigger": {
+          "type": "on-any-reveal",
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Feral"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-protector",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "protector"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2",
+        "label": "Costo: Recibe 1 danio por cada danio al Protector rival",
+        "trigger": {
+          "type": "on-damaged"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-damage",
+            "value": 1,
+            "note": "por cada pto. que reciba el Protector rival"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-010S",
+    "card_name": "Makua, Aguas Feroces",
+    "effect_text": "Esta carta puede dañar 1 pto. adicional por cada Adendei-Feral en el campo.",
+    "cost_text": "Esta carta no puede atacar al Protector rival.",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: +1 danio por cada Feral en campo",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-per",
+            "value": 1,
+            "per_source": "field-count",
+            "filter": {
+              "subtype": "Feral"
+            }
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-attack-protector"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-012",
+    "card_name": "Zaykan, Comando Abisal",
+    "effect_text": "Pasiva: Si 1 Adendei Abisal es atacado, dania 1 punto a 1 Adendei no-Abisal rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: Abisal aliado atacado -> dania 1 a no-Abisal rival",
+        "trigger": {
+          "type": "on-ally-damaged",
+          "filter": {
+            "subtype": "Abisal"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei",
+            "exclude_subtype": "Abisal"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:litica",
+        "aff:abisal"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-013",
+    "card_name": "Dagg, Reflejos Abisales",
+    "effect_text": "Si solo 1 Adendei Abisal o 1 Adendei-Feral dejan el campo, puedes equipar 1 Ixim o Rot a esta carta.",
+    "cost_text": "Solo puedes usar este efecto una vez mientras esta carta este en el campo.",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: Abisal o Feral deja campo -> equipar Ixim/Rot",
+        "trigger": {
+          "type": "on-ally-leaves-field"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-field"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-from-equip-zone",
+            "equip_type": "any"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:feral",
+        "aff:abisal"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-014",
+    "card_name": "Shugg, Acecho Submarino",
+    "effect_text": "Pasiva: Si 1 Adendei Abisal aliado es revelado, dania 2 puntos a 1 Adendei rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: Abisal aliado revelado -> dania 2 a Adendei rival",
+        "trigger": {
+          "type": "on-ally-reveal",
+          "filter": {
+            "subtype": "Abisal"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:feral",
+        "aff:abisal"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-017",
+    "card_name": "Zona Feral",
+    "effect_text": "Pasiva: Si 1 Adendei-Feral es atacado, ese Adendei podra atacar con doble danio en el siguiente turno.",
+    "cost_text": "Si no tienes ningun Adendei-Feral en tu Zona Principal, envia esta carta a Extincion.",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: Feral atacado -> doble danio turno siguiente",
+        "trigger": {
+          "type": "on-ally-damaged",
+          "filter": {
+            "subtype": "Feral"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "grant-double-damage"
+          }
+        ],
+        "target": {
+          "type": "triggering"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-turn"
+          }
+        }
+      },
+      {
+        "id": "P2",
+        "label": "Bio: Sin Feral en campo -> Extincion",
+        "trigger": {
+          "type": "conditional-self-destruct"
+        },
+        "prerequisites": [
+          {
+            "type": "no-own-field",
+            "filter": {
+              "card_type": "adendei",
+              "subtype": "Feral"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "send-extinction"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-020",
+    "card_name": "Dagg, Apetito Abisal",
+    "effect_text": "Pasiva: Los Adendei-Feral no pueden tener su Pasiva negada.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva continua: Ferales inmunes a negacion de Pasiva",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "negate-passive-persistent",
+            "note": "protege Pasivas de Ferales"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "adendei",
+            "subtype": "Feral"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:feral",
+        "aff:abisal"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-021",
+    "card_name": "Shugg, Destructor Abisal",
+    "effect_text": "Dania 4 ptos. a 1 Token. Pasiva: Este Adendei no puede ser daniado por cartas Token.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Activa: Dania 4 a 1 Token",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 4
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "token"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2",
+        "label": "Pasiva: Inmune a danio por Tokens",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "protect-effect",
+            "note": "no puede ser daniado por Tokens"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "source-filter",
+            "filter": {
+              "card_type": "token"
+            }
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:feral",
+        "aff:abisal"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-022",
+    "card_name": "Shugg, Regreso a la Sombra",
+    "effect_text": "Activa: Oculta (coloca boca abajo) 1 Adendei aliado y 1 Adendei rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Activa: Oculta 1 Adendei aliado y 1 rival",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "hide",
+            "side": "ally",
+            "count": 1,
+            "filter": {
+              "card_type": "adendei"
+            }
+          },
+          {
+            "type": "hide",
+            "side": "enemy",
+            "count": 1,
+            "filter": {
+              "card_type": "adendei"
+            }
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:feral",
+        "aff:abisal"
+      ]
+    }
+  },
+  {
+    "card_id": "DOOC-023",
+    "card_name": "Nephtis, Escudo Coral",
+    "effect_text": "Activa: Protege de efectos rivales a 2 Adendei aliados hasta que esta carta este disponible.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Activa: Protege 2 Adendei aliados de efectos rivales",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "protect-effect",
+            "count": 2
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 2,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "until-protector-available"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "Demo-001",
+    "card_name": "Mizthe, Cruce",
+    "effect_text": "Pasiva: Si un Adendei en el campo es enviado a Extincion, esta carta se cura 1 punto.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: Adendei va a Extincion -> se cura 1",
+        "trigger": {
+          "type": "on-any-death",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "EXPN-001",
+    "card_name": "Expulsion de Energia I.C.A.R.O.",
+    "effect_text": "Activa: Si la carta equipada ataca, podra dañar adicionalmente con el mismo danio que haya recibido en el turno anterior.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Activa (Rot): Equipada ataca -> danio adicional = danio recibido turno anterior",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-per",
+            "source": "damage-received-last-turn"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "EXPN-003",
+    "card_name": "Abisales, Control",
+    "effect_text": "Activa Rapida: Regresa un equipo rival a la Zona de Equipo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Activa-Rapida: Regresa equipo rival a su Zona de Equipo",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-destroy",
+            "destination": "equip-zone"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "zone": "equip"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:chaaktica",
+        "aff:abisal"
+      ]
+    }
+  },
+  {
+    "card_id": "EXPO-001",
+    "card_name": "Illith, Fuego Primo",
+    "effect_text": "Pasiva: Si tienes al menos 1 carta en Extincion, esta carta puede atacar a 2 Adendei rivales al mismo tiempo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: 1+ en Extincion -> atacar 2 Adendei rivales",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "min-extinction",
+            "value": 1,
+            "side": "self"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "attack-all",
+            "count": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 2,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "EXPO-002",
+    "card_name": "Xilan, Sacrificio",
+    "effect_text": "Activa: Si tienes una carta Bio en Extincion, envia esta carta a Extincion y regresa tu carta Bio al campo.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Activa: Sacrificarse -> traer Bio de Extincion al campo",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-ext-type",
+            "filter": {
+              "card_type": "bio"
+            },
+            "value": 1,
+            "side": "self"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "vivify",
+            "filter": {
+              "card_type": "bio"
+            }
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "extinction",
+          "filter": {
+            "card_type": "bio"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "EXPO-003",
+    "card_name": "Kuhna, Resguardo",
+    "effect_text": "Pasiva: Si un Adendei es equipado con un Ixim o Rot boca arriba, cura 1 punto a ese Adendei.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: Adendei equipado -> cura 1",
+        "trigger": {
+          "type": "on-ally-equip"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "triggering"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "EXPO-004",
+    "card_name": "Nozi, Corona Marina",
+    "effect_text": "Aumenta 1 pto. de ataque a los Adendei-Atlico mientras esta carta este en campo. Si un Adendei-Atlico aliado ataco, cura 1 pto. a un Adendei-Atlico aliado.",
+    "cost_text": "Si esta carta es enviada a Extincion, dania 1 pto. a todos los Adendei-Atlico en campo.",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Aura: +1 danio a Atlicos aliados",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "energy": "atlica"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      },
+      {
+        "id": "P2",
+        "label": "Pasiva: Atlico aliado ataca -> cura 1 a Atlico",
+        "trigger": {
+          "type": "on-ally-attack",
+          "filter": {
+            "energy": "atlica"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "energy": "atlica"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P3",
+        "label": "Al morir: dania 1 a todos los Atlicos en campo",
+        "trigger": {
+          "type": "on-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-all",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": "all",
+          "filter": {
+            "energy": "atlica"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "EXPO-006",
+    "card_name": "Hori, Huella de Magma",
+    "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Piricco mientras esta carta este en campo. Si un Adendei Pirico aliado ataco, cura 1 punto a un Adendei Pirico Aliado",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Aura: +1 danio a Piricos aliados",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "energy": "pirica"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      },
+      {
+        "id": "P2",
+        "label": "Pasiva: Pirico aliado ataca -> cura 1 a Pirico",
+        "trigger": {
+          "type": "on-ally-attack",
+          "filter": {
+            "energy": "pirica"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "energy": "pirica"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "EXPO-009",
+    "card_name": "Ariam, Alianza",
+    "effect_text": "Si esta carta fue vinculada con 1 Protector Zaren, dania 1 pto. hasta 3 Adendei rivales.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: Vinculada con Zaren -> dania 1 hasta 3 Adendei rivales",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-named-protector",
+            "name": "Zaren"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 3,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "FAFT-001",
+    "card_name": "Nirge, Los Ocultos",
+    "effect_text": "Activa: Usa 1 de los siguientes efectos: -Oculta 2 cartas en tu campo. -Dania 2 ptos. a 1 carta rival por cada efecto de carta tomada que el rival use, hasta disponible.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Activa (A): Oculta 2 cartas aliadas",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "hide",
+            "count": 2
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 2
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2",
+        "label": "Activa (B): Dania 2 rival por cada efecto tomado",
+        "trigger": {
+          "type": "on-enemy-uses-drawn-effect"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "until-protector-available"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "FAFT-002",
+    "card_name": "Dragel, Relampago Oceanico",
+    "effect_text": "Activa-Rapida: Si esta carta es atacada, dania 3 puntos al Adendei atacante.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Activa-Rapida: Atacada -> dania 3 al atacante",
+        "trigger": {
+          "type": "on-damaged",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 3
+          }
+        ],
+        "target": {
+          "type": "triggering"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "FAFT-003",
+    "card_name": "Zagal, Devorador de Inmundicia",
+    "effect_text": "Pasiva: Si hay 1 Adendei Equino en Extincion, puedes escalar esta carta 1 punto y copiar el efecto y costo de 1 Adendei Equino en Extincion.",
+    "cost_text": "Esta carta solo puede escalar una vez mientras este en el campo por el efecto de esta Pasiva.",
+    "pipelines": [
+      {
+        "id": "P1",
+        "label": "Pasiva: Equino en Extincion -> escalar 1 y copiar efecto",
+        "trigger": {
+          "type": "on-bio-extinct"
+        },
+        "prerequisites": [
+          {
+            "type": "min-ext-type",
+            "filter": {
+              "card_type": "adendei",
+              "subtype": "Equino"
+            },
+            "value": 1,
+            "side": "self"
+          },
+          {
+            "type": "once-per-field"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          },
+          {
+            "type": "copy",
+            "source": "extinction",
+            "filter": {
+              "card_type": "adendei",
+              "subtype": "Equino"
+            }
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:feral",
+        "aff:equino"
+      ]
+    }
+  }
+]

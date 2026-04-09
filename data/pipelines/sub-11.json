@@ -1,0 +1,1181 @@
+[
+  {
+    "card_id": "LGRO-014R",
+    "card_name": "Kitse, Cola de Fuego",
+    "effect_text": "Pasiva: Si esta carta ataco, dana 1 punto al Protector rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-attack-protector-damage",
+        "label": "Al atacar: dana 1 al Protector rival",
+        "trigger": {
+          "type": "on-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-protector",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "protector"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-017",
+    "card_name": "Juan Galgo, Motin",
+    "effect_text": "El Adendei vinculado podra atacar con doble dano a cartas que no esten frente a ella, hasta que esta carta este disponible.",
+    "cost_text": "Esta carta solo puede vincularse con Adendei-Feral.",
+    "pipelines": [
+      {
+        "id": "P1-double-non-facing",
+        "label": "Vinculado: doble dano a cartas no frente, hasta que Protector este disponible",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "grant-double-damage"
+          }
+        ],
+        "target": {
+          "type": "linked",
+          "filter": {
+            "not_facing": true
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "until-protector-available"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:protector",
+        "aff:feral"
+      ],
+      "notes": "Solo vinculable con Adendei-Feral"
+    }
+  },
+  {
+    "card_id": "LGRO-019",
+    "card_name": "Los Herejes",
+    "effect_text": "Equipa 1 Ixim o Rot en Extincion a 1 Adendei en Zona Principal.",
+    "cost_text": "La carta vinculada recibe 2 descansos.",
+    "pipelines": [
+      {
+        "id": "P1-equip-from-extinction",
+        "label": "Activa: Equipa Ixim o Rot de Extincion a un Adendei en ZP",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-extinction",
+            "value": 1
+          }
+        ],
+        "costs": [
+          {
+            "type": "extra-rest",
+            "value": 2
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-from-extinct",
+            "equip_type": "any"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "principal",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:protector"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-020",
+    "card_name": "Cordyceps, Experimentos",
+    "effect_text": "Pasiva: Durante tu Previa, envia esta carta a Extincion, las cartas escaladas regresan a su dano original.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-reset-scaled",
+        "label": "Previa: Envia a Extincion; cartas escaladas regresan a dano original",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "reset-stats"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "filter": {
+            "is_scaled": true
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:ixim"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-021",
+    "card_name": "Cordyceps, Plan de Liberacion",
+    "effect_text": "Selecciona 1 Adendei rival y equipalo con esta carta. El Adendei equipado es danado 2 ptos. al final del turno rival.",
+    "cost_text": "Esta carta solo puede cambiar de Adendei 1 vez mientras este en el campo.",
+    "pipelines": [
+      {
+        "id": "P1-equip-to-enemy",
+        "label": "Activa: Equipa esta carta al Adendei rival; dano 2 al final del turno rival",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "equip-to-enemy"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-end-of-turn-damage",
+        "label": "Fin de turno rival: dano 2 al equipado",
+        "trigger": {
+          "type": "end-of-turn"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:ixim"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-022",
+    "card_name": "Armaduras I.C.A.R.O.",
+    "effect_text": "Los Adendei rivales reciben 1 descanso. Esta carta debe ser enviada a Extincion para usar su Activa.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-all-rival-rest",
+        "label": "Activa: Todos los Adendei rivales reciben 1 descanso",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:rot"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-025",
+    "card_name": "Escudos I.C.A.R.O.",
+    "effect_text": "Si la carta equipada sera afectada por un efecto durante la Fase de Batalla, desvia ese efecto a una carta rival.",
+    "cost_text": "No podras usar esta Activa si hay una carta aliada en descanso.",
+    "pipelines": [
+      {
+        "id": "P1-redirect-effect",
+        "label": "Activa-Rapida: Desvia efecto que afectaria a equipada hacia una carta rival",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "no-own-field",
+            "filter": {
+              "has_rests": true
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "redirect"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:rot"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-027",
+    "card_name": "Ariam, Defensa Pirica",
+    "effect_text": "Pasiva: Los Adendei rivales solo pueden ser curados por efectos de Adendei.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-restrict-rival-heal",
+        "label": "Aura: Adendei rivales solo pueden ser curados por efectos de Adendei",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "enemy",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-heal-by-own-effects"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-030",
+    "card_name": "Balim, Anochecer",
+    "effect_text": "Activa Rapida: Tu rival no puede activar equipos durante la Fase de Batalla.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-lock-equip-activation",
+        "label": "Activa-Rapida: Rival no puede activar equipos en Fase de Batalla",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "negate-effect"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "filter": {
+            "card_type": [
+              "ixim",
+              "rot"
+            ]
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "turn"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-032",
+    "card_name": "Ungan, Aleteo Glacial",
+    "effect_text": "Activa: Si esta carta ataca, tu rival no puede actualizar descansos durante su siguiente turno.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-attack-lock-rest",
+        "label": "Activa: Al atacar, rival no puede actualizar descansos el siguiente turno",
+        "trigger": {
+          "type": "on-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "no-rest"
+          }
+        ],
+        "target": {
+          "type": "enemy"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-turn"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-036",
+    "card_name": "Embestida Petrea",
+    "effect_text": "Pasiva: Dana 1 punto adicional si la carta equipada ataco a una carta en descanso.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-bonus-damage-resting",
+        "label": "Al atacar carta en descanso: +1 dano adicional",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "target-has-rests"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "equipped"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:ixim"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-037",
+    "card_name": "Amanecer",
+    "effect_text": "Pasiva: Selecciona 1 Adendei en el campo y cambia su energia hasta el final del turno rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-change-energy-temp",
+        "label": "Pasiva: Cambia la energia de 1 Adendei hasta fin de turno rival",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "change-energy",
+            "value": "selected"
+          }
+        ],
+        "target": {
+          "type": "any",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-turn"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:ixim"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-039",
+    "card_name": "Conquista Feroz",
+    "effect_text": "Si un Adendei aliado es atacado, una carta rival recibe 1 descanso.",
+    "cost_text": "La carta equipada recibe 1 descanso. Esta carta no podra activar su efecto mientras la carta equipada este en descanso. Solo puedes equipar esta carta a Adendei Nanuk.",
+    "pipelines": [
+      {
+        "id": "P1-ally-attacked-retaliate",
+        "label": "Si aliado es atacado: carta rival recibe 1 descanso (costo: equipada recibe 1 descanso)",
+        "trigger": {
+          "type": "on-ally-attack",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          },
+          {
+            "type": "self-available"
+          }
+        ],
+        "costs": [
+          {
+            "type": "extra-rest",
+            "value": 1
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {},
+        "notes": "Solo equipable a Adendei Nanuk"
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:rot",
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-040",
+    "card_name": "Guerrero Pirico",
+    "effect_text": "Activa: La carta equipada podra atacar a todas las cartas rivales quemadas.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-attack-all-burned",
+        "label": "Activa: Equipada ataca a todas las cartas rivales quemadas",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-mark",
+            "mark": "burn",
+            "side": "enemy"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "attack-all"
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "filter": {
+            "has_mark": "burn"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:rot",
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-041",
+    "card_name": "Restriccion Floral",
+    "effect_text": "Pasiva: Mientras esta carta este en campo, ningun Adendei puede atacar a mas de 1 carta en el mismo ataque.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-restrict-multi-attack",
+        "label": "Aura: Ningun Adendei puede atacar mas de 1 carta por ataque",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "both",
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-attack",
+            "scope": "multi-target"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:ixim"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-042",
+    "card_name": "Enis, Estocada Gelida",
+    "effect_text": "Pasiva: Todos los Adendei en el campo recibiran 1 descanso adicional si atacan o usan Activa.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-extra-rest-on-action",
+        "label": "Aura: Todos los Adendei en campo reciben 1 descanso adicional al atacar o usar Activa",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "both",
+          "filter": {
+            "card_type": "adendei"
+          },
+          "on_event": [
+            "on-attack",
+            "on-activate"
+          ]
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-043",
+    "card_name": "Nanuk, Zarpazo",
+    "effect_text": "Pasiva: Si una carta escalo o fue curada, dana 1 punto a un Adendei rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-scale-heal-punish",
+        "label": "Si alguna carta escala o es curada: dana 1 a un Adendei rival",
+        "trigger": {
+          "type": "on-any-healed"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:feral"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-046",
+    "card_name": "Yakerr, Tormenta",
+    "effect_text": "Activa Rapida: Coloca boca abajo una carta en Zona Principal",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-hide-card",
+        "label": "Activa-Rapida: Oculta (boca abajo) una carta en Zona Principal",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "hide"
+          }
+        ],
+        "target": {
+          "type": "any",
+          "count": 1,
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-048",
+    "card_name": "Abisales, Liberacion",
+    "effect_text": "Pasiva: Mientras esta carta este en el campo, ninguna carta puede equiparse.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-lock-equip",
+        "label": "Aura: Ninguna carta puede equiparse mientras este en campo",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "both"
+        },
+        "restrictions": [
+          {
+            "type": "cant-equip"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-051",
+    "card_name": "Satelite V.E.L.O.",
+    "effect_text": "Pasiva: Las cartas rivales no pueden atacar a la carta frente a ellas.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-no-facing-attack",
+        "label": "Aura: Cartas rivales no pueden atacar a la carta frente a ellas",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "enemy"
+        },
+        "restrictions": [
+          {
+            "type": "cant-attack-protector",
+            "scope": "facing"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:bio"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-058",
+    "card_name": "El Otro Lado",
+    "effect_text": "Pasiva: Si una carta en tu Zona Principal es enviada a Extincion, toma 5 cartas del tope del Mazo para colocar la carta suplente, en lugar de 3.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-enhanced-replace",
+        "label": "Al ir a Extincion un aliado: toma 5 cartas para reemplazar en lugar de 3",
+        "trigger": {
+          "type": "on-ally-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "enhanced-replace",
+            "value": 5
+          }
+        ],
+        "target": {
+          "type": "ally"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:bio"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-060",
+    "card_name": "Zaykan, Primer Peldano",
+    "effect_text": "Pasiva: Si esta carta es enviada a Extincion, puedes cambiar al Protector aliado, por un Protector suplente.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-death-swap-protector",
+        "label": "Al ir a Extincion: puede cambiar al Protector aliado por un suplente",
+        "trigger": {
+          "type": "on-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "swap-protector"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "engine",
+      "affinities": [
+        "aff:bio",
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-066",
+    "card_name": "Ariam, Culpa",
+    "effect_text": "Pasiva: Si esta carta es equipada, se cura 2 puntos.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-equip-heal",
+        "label": "Al ser equipada: se cura 2",
+        "trigger": {
+          "type": "on-equip"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "LGRO-069",
+    "card_name": "Karus, Ponzona Purpurea",
+    "effect_text": "Activa: Envenena a la carta atacada.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-poison-attacked",
+        "label": "Activa: Envenena a la carta atacada",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "poison"
+          }
+        ],
+        "target": {
+          "type": "facing"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "disruptor",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-001",
+    "card_name": "Ketzz, Reflejo Viperino",
+    "effect_text": "Activa-Rapida: Si esta carta es atacada, puedes regresarla al fondo de tu Mazo",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-attacked-return-deck",
+        "label": "Activa-Rapida: Si es atacada, regresa al fondo del Mazo",
+        "trigger": {
+          "type": "on-damaged",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "return-deck",
+            "position": "bottom"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  }
+]

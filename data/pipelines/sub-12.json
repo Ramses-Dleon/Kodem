@@ -1,0 +1,1377 @@
+[
+  {
+    "card_id": "MLBU-001S",
+    "card_name": "Arbol, Leyendas",
+    "effect_text": "Las cartas en Zona Principal que durante este turno declararon 3 ptos. o mas de dano a 1 carta, reciben 1 descanso adicional al final del turno.",
+    "cost_text": "Esta carta no puede ser vivificada. Esta Pasiva no puede ser negada.",
+    "pipelines": [
+      {
+        "id": "P1-punish-heavy-attackers",
+        "label": "Pasiva: Cartas en Zona Principal que daniaron 3+ ptos. a 1 carta reciben 1 descanso adicional al fin del turno",
+        "trigger": {
+          "type": "end-of-turn"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "both",
+          "zone": "principal",
+          "filter": {
+            "total-damage-this-turn": {
+              "op": ">=",
+              "value": 3
+            }
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-vivify"
+          },
+          {
+            "type": "cant-negate-passive"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "MLBU-002",
+    "card_name": "Ketzz, Saliva de Fuego",
+    "effect_text": "Pasiva: Las cartas aliadas quemadas danan 1 punto adicional al atacar.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-burn-bonus-damage",
+        "label": "Pasiva: Cartas aliadas quemadas danan 1 pto. adicional al atacar",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "mark": "burn"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "condition": "on-attack",
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-002S",
+    "card_name": "Esfera Morfeica, Leyendas",
+    "effect_text": "Si el rival declara 1 efecto de 1 carta fuera de la Zona Principal, da 2 descansos a 1 carta en Zona Principal.",
+    "cost_text": "No puedes dar los descansos a Adendei que hayan sido vinculados durante este turno. Solo puedes usar esta Pasiva una vez por turno.",
+    "pipelines": [
+      {
+        "id": "P1-punish-out-of-field-effect",
+        "label": "Reactiva (once-per-turn): Si rival usa efecto de carta fuera de Zona Principal, da 2 descansos a 1 carta en Zona Principal",
+        "trigger": {
+          "type": "on-enemy-uses-drawn-effect"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-turn"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "zone": "principal"
+        },
+        "restrictions": [
+          {
+            "type": "cant-link",
+            "note": "no-linked-this-turn targets"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "MLBU-003",
+    "card_name": "Ariam, Restauracion Branquial",
+    "effect_text": "Pasiva: Aumenta 1 punto el efecto de curacion de los Ixim y del Bio Hundimiento de la Esperanza.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-amplify-heal-ixim-bio",
+        "label": "Pasiva: Amplifica en 1 pto. el efecto de curacion de los Ixim y del Bio Hundimiento de la Esperanza",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "amplify-effect",
+            "effect_type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "ixim"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "also_applies_to": [
+            "Bio:Hundimiento de la Esperanza"
+          ],
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-003S",
+    "card_name": "Zaykan, Jungla y Calma",
+    "effect_text": "Si esta carta es revelada, ninguna carta en tu campo puede recibir dano en el siguiente turno.",
+    "cost_text": "Solo puedes usar esta Pasiva una vez por juego. Esta Pasiva no puede ser negada. Esta carta no puede ser curada o protegida.",
+    "pipelines": [
+      {
+        "id": "P1-on-reveal-shield-field",
+        "label": "Pasiva (once-per-game): Al ser revelada, cartas aliadas en campo no pueden recibir dano el siguiente turno",
+        "trigger": {
+          "type": "on-reveal"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "protect-effect"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "field"
+        },
+        "restrictions": [
+          {
+            "type": "cant-negate-passive"
+          },
+          {
+            "type": "cant-heal"
+          },
+          {
+            "type": "cant-be-protected"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "next-turn"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-004",
+    "card_name": "Balim, Sacudida Estatica",
+    "effect_text": "Activa: Esta carta puede atacar adicionalmente con 1 o 2 puntos de dano a 1 carta aliada.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-damage-ally-for-setup",
+        "label": "Activa: Ataca adicionalmente con 1 o 2 ptos. de dano a 1 carta aliada",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value_min": 1,
+            "value_max": 2
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-004S",
+    "card_name": "Balim, Trueno y Fuego",
+    "effect_text": "Pasiva: Las cartas quemadas descansan 1 turno menos al atacar o usar Activa.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-burn-rest-reduction",
+        "label": "Pasiva: Cartas quemadas descansan 1 turno menos al atacar o usar Activa",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-remove",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "both",
+          "filter": {
+            "mark": "burn"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "condition": "on-attack-or-activate",
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:chaaktica",
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-005",
+    "card_name": "Ariam, Invocacion",
+    "effect_text": "Puedes enviar esta carta al fondo del Mazo y colocar 1 carta Ariam o Atlica de tu Mazo en su lugar, esa carta estara protegida de ataques y efectos rivales hasta el final del siguiente turno.",
+    "cost_text": "Solo puedes usar este efecto una vez por juego.",
+    "pipelines": [
+      {
+        "id": "P1-self-return-and-fetch",
+        "label": "Activa (once-per-game): Enviar al fondo del Mazo y reemplazar con carta Ariam o Atlica del Mazo (protegida hasta fin del siguiente turno)",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-return-deck",
+            "position": "bottom"
+          }
+        ],
+        "operation": [
+          {
+            "type": "enhanced-replace",
+            "filter": {
+              "names": [
+                "Ariam"
+              ],
+              "energy": "atlica"
+            }
+          },
+          {
+            "type": "protect-attack"
+          },
+          {
+            "type": "protect-effect"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "protect_duration": {
+            "type": "next-turn"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-005S",
+    "card_name": "Karus, Relampago Venenoso",
+    "effect_text": "Activa: Puedes envenenar a 1 carta aliada y 1 carta rival, ambas en su Zona Principal original.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-poison-ally-and-enemy",
+        "label": "Activa: Envenena 1 carta aliada y 1 carta rival, ambas en su Zona Principal original",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "poison"
+          }
+        ],
+        "target": {
+          "type": "both",
+          "count": 2,
+          "zone": "principal",
+          "filter": {
+            "in_original_position": true
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "ally_count": 1,
+          "enemy_count": 1
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-005U",
+    "card_name": "Naywa, Guardian de los Suenos",
+    "effect_text": "Pasiva: Las cartas rivales quemadas danan 1 punto menos en su primer ataque despues de haber sido quemadas.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-reduce-burn-first-attack",
+        "label": "Pasiva: Cartas rivales quemadas danan 1 pto. menos en su primer ataque post-quemadura",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-reduce",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "filter": {
+            "mark": "burn"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "condition": "first-attack-after-burn",
+          "duration": {
+            "type": "next-attack"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-006",
+    "card_name": "Balim, Pezunas Felinas",
+    "effect_text": "Activa-Rapida: Si 1 carta en tu campo es atacada, dana 1 punto a 1 carta rival en Zona Principal.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-counter-on-ally-attacked",
+        "label": "Activa-Rapida: Si carta aliada es atacada, dana 1 pto. a 1 carta rival en Zona Principal",
+        "trigger": {
+          "type": "on-ally-damaged"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "zone": "principal"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "fast": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-007",
+    "card_name": "Rot, Leyendas",
+    "effect_text": "Oculta 1 Adendei o Bio en el campo y regresa esta carta a Zona de Equipo.",
+    "cost_text": "El Adendei equipado se dana 2 ptos. y recibe 2 descansos para usar esta Activa.",
+    "pipelines": [
+      {
+        "id": "P1-hide-and-return",
+        "label": "Activa-Rapida (on-equipped-attack): Oculta 1 Adendei o Bio en campo y regresa esta carta a Zona de Equipo",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-damage",
+            "value": 2,
+            "target": "equipped"
+          },
+          {
+            "type": "extra-rest",
+            "value": 2,
+            "target": "equipped"
+          }
+        ],
+        "operation": [
+          {
+            "type": "hide"
+          },
+          {
+            "type": "cant-return-to-equip",
+            "self": true
+          }
+        ],
+        "target": {
+          "type": "any",
+          "count": 1,
+          "filter": {
+            "card_type": [
+              "adendei",
+              "bio"
+            ]
+          },
+          "zone": "field"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "fast": true,
+          "self_return_to_equip": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "MLBU-009",
+    "card_name": "Boras, Congelamiento Masivo",
+    "effect_text": "Mientras esta carta este en el campo, todas las cartas en Zona Principal tendran 2 ptos. de dano y 2 turnos de descanso.",
+    "cost_text": "Esta carta no puede ser curada o protegida. Esta Pasiva no puede ser negada.",
+    "pipelines": [
+      {
+        "id": "P1-mass-rest-and-damage",
+        "label": "Pasiva: Mientras en campo, todas las cartas en Zona Principal tienen 2 dano y 2 descansos",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 2
+          },
+          {
+            "type": "rest-set",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "both",
+          "zone": "principal"
+        },
+        "restrictions": [
+          {
+            "type": "cant-heal"
+          },
+          {
+            "type": "cant-be-protected"
+          },
+          {
+            "type": "cant-negate-passive"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "MLBU-010",
+    "card_name": "Zotz, Ojos de Vida",
+    "effect_text": "Elige 1 Adendei; esta carta escala 1 pto. por cada carta en tu Extincion que incluya ese Adendei en su nombre.",
+    "cost_text": "Esta carta no puede atacar al Protector rival. Solo puedes usar esta Pasiva una vez por juego. Esta Pasiva no puede ser negada.",
+    "pipelines": [
+      {
+        "id": "P1-scale-per-extinct-name",
+        "label": "Pasiva (once-per-game): Escala 1 pto. por cada carta en Extincion con el nombre del Adendei elegido",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale-per",
+            "source": "extinction-count",
+            "filter": {
+              "name_includes": "selected"
+            },
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-attack-protector"
+          },
+          {
+            "type": "cant-negate-passive"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "NAVD-001",
+    "card_name": "Ariam, Regalo Navideno",
+    "effect_text": "Pasiva: Esta carta se cura 1 punto.",
+    "cost_text": "Si es diciembre, antes de usar esta Pasiva por primera vez, deseale una Feliz Navidad a tu rival. Si no lo haces, dana 3 puntos a esta carta.",
+    "pipelines": [
+      {
+        "id": "P1-self-heal",
+        "label": "Pasiva: Esta carta se cura 1 punto (condicion especial en diciembre)",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "special_condition": "december-greeting-required-first-use",
+          "penalty_on_fail": {
+            "type": "damage",
+            "value": 3,
+            "target": "self"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica",
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "NYPR-001",
+    "card_name": "Fuego Nuevo",
+    "effect_text": "Activa: Envia al Adendei vinculado a Extincion y regresa 1 Rava en Extincion a tu Zona Principal.",
+    "cost_text": "Dana 3 puntos a esta carta o dana 1 punto a 3 cartas aliadas.",
+    "pipelines": [
+      {
+        "id": "P1-sacrifice-linked-vivify-rava",
+        "label": "Activa: Envia Adendei vinculado a Extincion y regresa 1 Rava de Extincion a Zona Principal",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-link"
+          }
+        ],
+        "costs": [
+          {
+            "type": "custom-lookup",
+            "options": [
+              {
+                "type": "self-damage",
+                "value": 3
+              },
+              {
+                "type": "ally-damage-all",
+                "value": 1,
+                "count": 3
+              }
+            ]
+          }
+        ],
+        "operation": [
+          {
+            "type": "send-extinction",
+            "filter": {
+              "linked": true
+            }
+          },
+          {
+            "type": "vivify",
+            "filter": {
+              "card_type": "rava"
+            },
+            "zone": "principal"
+          }
+        ],
+        "target": {
+          "type": "linked"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "ODEM-002",
+    "card_name": "Ariam, Encuentro",
+    "effect_text": "Pasiva: Si esta carta es enviada a Extincion, cura 6 puntos a tu Protector.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-on-death-heal-protector",
+        "label": "Pasiva: Al ser enviada a Extincion, cura 6 al Protector",
+        "trigger": {
+          "type": "on-death"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "heal",
+            "value": 6
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "protector"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": [
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "PASE-001",
+    "card_name": "Enis, Descenso Glacial",
+    "effect_text": "Activa: Dana 1 punto a todas las cartas rivales en descanso en Zona Principal. Pasiva: Si un Adendei rival es revelado, recibe 1 descanso.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-damage-resting-enemies",
+        "label": "Activa: Dana 1 pto. a todas las cartas rivales en descanso en Zona Principal",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-all",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "zone": "principal",
+          "filter": {
+            "target-has-rests": {
+              "op": ">",
+              "value": 0
+            }
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-rest-on-enemy-reveal",
+        "label": "Reactiva: Si Adendei rival es revelado, recibe 1 descanso",
+        "trigger": {
+          "type": "on-any-reveal",
+          "filter": {
+            "card_type": "adendei",
+            "owner": "enemy"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "rest-add",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "triggering"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:gelida"
+      ]
+    }
+  },
+  {
+    "card_id": "PASE-005",
+    "card_name": "Carga Arsenal",
+    "effect_text": "Activa: Si tu Protector es vinculado, puede equipar hasta 4 equipos a cartas aliadas, durante tu siguiente Previa. Al final de ese turno actualiza 1 descanso adicional a tu Protector y regresa los equipos equipados en Previa a la Zona de Equipos. Esta Activa debe cumplirse aun si esta carta deja el campo.",
+    "cost_text": "Esta carta solo puede ser equipada a Inacio, Reinicio.",
+    "pipelines": [
+      {
+        "id": "P1-mass-equip-on-link",
+        "label": "Activa: Si Protector es vinculado, equipa hasta 4 equipos durante la siguiente Previa; al final recupera equipos y Protector recibe 1 descanso adicional",
+        "trigger": {
+          "type": "on-link"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "extra-equip-slot",
+            "value": 4,
+            "phase": "previa"
+          },
+          {
+            "type": "extra-rest",
+            "value": 1,
+            "target": "protector",
+            "timing": "end-of-next-turn"
+          },
+          {
+            "type": "equip-from-equip-zone",
+            "return_after_turn": true
+          }
+        ],
+        "target": {
+          "type": "ally"
+        },
+        "restrictions": [
+          {
+            "type": "cant-equip",
+            "equip_restriction": "Inacio, Reinicio only"
+          }
+        ],
+        "modifiers": {
+          "persistent_even_if_leaves_field": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "support",
+      "affinities": []
+    }
+  },
+  {
+    "card_id": "PASE-007",
+    "card_name": "Aki, Quemadura",
+    "effect_text": "Activa: Dana 1 punto a todas las cartas con quemadura. Pasiva: Si un Adendei-Pirico aliado es revelado, ese Adendei quema a todas las cartas danadas en su primer ataque y/o Activa.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-damage-all-burned",
+        "label": "Activa: Dana 1 pto. a todas las cartas con quemadura",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage-all",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "both",
+          "filter": {
+            "mark": "burn"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-pirico-reveal-grants-burn-attack",
+        "label": "Reactiva: Si Adendei-Pirico aliado es revelado, en su primer ataque/Activa quema a todas las cartas danadas",
+        "trigger": {
+          "type": "on-ally-reveal",
+          "filter": {
+            "energy": "pirica"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "grant-mark-on-attack",
+            "mark": "burn",
+            "target_filter": {
+              "damaged": true
+            }
+          }
+        ],
+        "target": {
+          "type": "triggering"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-attack"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:pirica"
+      ]
+    }
+  },
+  {
+    "card_id": "PATREON-002",
+    "card_name": "Kopit, Protector Celeste",
+    "effect_text": "Activa: Desciende (Disminuye su ataque permanentemente) 1 punto a 1 carta rival.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-descend-enemy",
+        "label": "Activa: Desciende 1 pto. permanentemente a 1 carta rival",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "descend",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": [
+        "aff:litica"
+      ]
+    }
+  },
+  {
+    "card_id": "RAMI-004S",
+    "card_name": "Yakerr, Relampago de Contraataque",
+    "effect_text": "Si la Pasiva de 1 carta aliada es negada, puedes danar 2 ptos. a 1 Adendei rival.",
+    "cost_text": "Esta carta se dana 1 pto. despues de usar su Pasiva. Esta Pasiva no puede ser negada.",
+    "pipelines": [
+      {
+        "id": "P1-counter-negate-passive",
+        "label": "Reactiva: Si Pasiva aliada es negada, dana 2 ptos. a 1 Adendei rival (costo: auto-dano 1)",
+        "trigger": {
+          "type": "on-ally-damaged"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-damage",
+            "value": 1
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 2
+          }
+        ],
+        "target": {
+          "type": "enemy",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [
+          {
+            "type": "cant-negate-passive"
+          }
+        ],
+        "modifiers": {}
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:chaaktica"
+      ]
+    }
+  },
+  {
+    "card_id": "RAMI-005S",
+    "card_name": "Ariam vs Zaykan",
+    "effect_text": "Activa: Si tienes 1 Adendei Ariam y 1 Adendei Zaykan en Extincion, dana 1 punto adicional y cura 1 pto. a 1 Adendei aliado al atacar.",
+    "cost_text": "",
+    "pipelines": [
+      {
+        "id": "P1-dual-condition-bonus",
+        "label": "Activa: Si Ariam y Zaykan en Extincion, +1 dano al atacar y cura 1 a 1 Adendei aliado",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-ext-name",
+            "name": "Ariam",
+            "value": 1
+          },
+          {
+            "type": "min-ext-name",
+            "name": "Zaykan",
+            "value": 1
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          },
+          {
+            "type": "heal",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "adendei"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "condition": "on-attack",
+          "duration": {
+            "type": "next-attack"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:litica",
+        "aff:atlica"
+      ]
+    }
+  },
+  {
+    "card_id": "RAMI-006S",
+    "card_name": "Xilan, Poder de la Corteza",
+    "effect_text": "Si 1 carta desciende (disminuye su ataque permanentemente), esta carta escala (incrementa su ataque permanentemente) 1 pto.",
+    "cost_text": "Solo puedes usar la Pasiva de esta carta una vez por turno.",
+    "pipelines": [
+      {
+        "id": "P1-scale-on-descend",
+        "label": "Reactiva (once-per-turn): Si cualquier carta desciende, esta carta escala 1 pto. permanentemente",
+        "trigger": {
+          "type": "on-any-death"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-turn"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "scale",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "condition": "on-descend-any",
+          "duration": {
+            "type": "permanent"
+          }
+        }
+      }
+    ],
+    "meta": {
+      "role": "hitter",
+      "affinities": [
+        "aff:huumica"
+      ]
+    }
+  },
+  {
+    "card_id": "RAMI-007S",
+    "card_name": "Brazalete de Rotanio",
+    "effect_text": "Copia y usa el efecto y costo de cualquier Rot en Extincion.",
+    "cost_text": "El Adendei equipado se dana 1 pto. y 1 carta aliada con mas de 0 ptos. de ataque desciende (disminuye su ataque permanentemente) 1 pto. para usar esta Activa-Rapida.",
+    "pipelines": [
+      {
+        "id": "P1-copy-rot-from-extinction",
+        "label": "Activa-Rapida: Copia y usa efecto+costo de 1 Rot en Extincion (costo: Adendei equipado -1 dano + 1 aliado desciende 1)",
+        "trigger": {
+          "type": "on-equipped-attack"
+        },
+        "prerequisites": [
+          {
+            "type": "min-ext-type",
+            "filter": {
+              "card_type": "rot"
+            },
+            "value": 1
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-damage",
+            "value": 1,
+            "target": "equipped"
+          },
+          {
+            "type": "ally-damage",
+            "value": 1,
+            "operation": "descend",
+            "filter": {
+              "stat_op": ">",
+              "stat": "attack",
+              "value": 0
+            }
+          }
+        ],
+        "operation": [
+          {
+            "type": "copy",
+            "source": "extinction",
+            "filter": {
+              "card_type": "rot"
+            }
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "fast": true
+        }
+      }
+    ],
+    "meta": {
+      "role": "tech",
+      "affinities": []
+    }
+  }
+]
