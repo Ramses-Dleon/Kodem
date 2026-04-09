@@ -4858,7 +4858,8 @@
         "id": "P1-poison-on-attack",
         "label": "Activa-Rapida: Al ser atacado el equipado, envenena al atacante",
         "trigger": {
-          "type": "on-equipped-damaged"
+          "type": "on-equipped-damaged",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -5419,7 +5420,8 @@
         "id": "P1-damage-reduce",
         "label": "Activa-Rapida: Reduce daño recibido en 2 y actualiza todos los descansos del equipado",
         "trigger": {
-          "type": "on-equipped-damaged"
+          "type": "on-equipped-damaged",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -5990,7 +5992,8 @@
         "id": "P1-redirect-attack",
         "label": "Activa-Rapida: Desvia ataque rival a carta equipada y cura 1 al equipado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-activate",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -9489,7 +9492,8 @@
         "id": "P1",
         "label": "Al vivificarse: +1 fast-activa en turno rival; pierde fast propias",
         "trigger": {
-          "type": "on-vivify"
+          "type": "on-vivify",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -11461,7 +11465,8 @@
         "id": "P1-redirect-damage",
         "label": "Activa Rápida Rot: equipada atacada → envía Rot a Extinción y redirige daño a rival",
         "trigger": {
-          "type": "on-equipped-damaged"
+          "type": "on-equipped-damaged",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -11503,7 +11508,8 @@
         "id": "P1-destroy-enemy-equip",
         "label": "Activa Rápida Rot: equipada ataca → envía Rot a Extinción, destruye 1 equipo rival",
         "trigger": {
-          "type": "on-equipped-attack"
+          "type": "on-equipped-attack",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -11735,7 +11741,8 @@
         "id": "P1-suppress-rival-effects",
         "label": "Activa Rápida: al atacar, rival no puede activar efectos hasta fin de turno",
         "trigger": {
-          "type": "on-attack"
+          "type": "on-attack",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -12189,7 +12196,8 @@
         "id": "P1-redirect-attack",
         "label": "Activa Rápida: al ser atacada, desvía ataque a otra carta aliada",
         "trigger": {
-          "type": "on-damaged"
+          "type": "on-damaged",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -13600,7 +13608,8 @@
         "id": "P1-execute-equip-fast",
         "label": "Activa-Rapida: Envia equipo con Activa-Rapida a Extincion y usa su efecto",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-activate",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -15907,7 +15916,8 @@
         "id": "P1-rot-fast",
         "label": "Pasiva: Efecto de Rot equipado se convierte en Activa Rapida",
         "trigger": {
-          "type": "while-on-field"
+          "type": "while-on-field",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -16482,7 +16492,7 @@
         "id": "P2-attack-facing-rest",
         "label": "Al atacar a carta frente a ella: esa carta recibe 1 descanso",
         "trigger": {
-          "type": "on-attack"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -18753,7 +18763,8 @@
         "id": "P1-counter-on-ally-attacked",
         "label": "Activa-Rapida: Si carta aliada es atacada, dana 1 pto. a 1 carta rival en Zona Principal",
         "trigger": {
-          "type": "on-ally-damaged"
+          "type": "on-ally-damaged",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -20147,7 +20158,7 @@
         "id": "P2-double-damage-non-facing",
         "label": "Post-Activa: Doble dano en primer ataque a carta no frontal",
         "trigger": {
-          "type": "on-attack"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -20653,7 +20664,8 @@
         "id": "P1-ban-fast-activa",
         "label": "Pasiva continua: Ninguna Activa-Rapida puede ser usada",
         "trigger": {
-          "type": "while-on-field"
+          "type": "while-on-field",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -21236,7 +21248,8 @@
         "id": "P1-mass-rest",
         "label": "Activa-Rápida: todas las cartas rivales reciben 1 descanso",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-activate",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -21713,7 +21726,8 @@
         "id": "P1-redirect-attack",
         "label": "Activa-Rápida: si aliado es atacado, redirige ataque a esta carta",
         "trigger": {
-          "type": "on-ally-damaged"
+          "type": "on-ally-damaged",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -23197,7 +23211,8 @@
         "id": "P1-reactive-poison",
         "label": "Activa-Rapida: si esta carta es atacada, envenena 1 carta en Zona Principal",
         "trigger": {
-          "type": "on-damaged"
+          "type": "on-damaged",
+          "fast": true
         },
         "prerequisites": [
           {
