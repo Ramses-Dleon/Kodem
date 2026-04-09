@@ -33,7 +33,13 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "edit_field",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "damage-attack"
+        }
       }
     ],
     "meta": {
@@ -84,7 +90,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -144,6 +151,22 @@
           "protect_duration": {
             "type": "next-turn"
           }
+        },
+        "phase": "battle.declaration",
+        "_wave_d_fix": "move-cost-to-operation",
+        "_fix_wave-f2": "replace",
+        "operation[0]": {
+          "_original_filter": null,
+          "filter": {
+            "or": [
+              {
+                "name_includes": "Ariam"
+              },
+              {
+                "energy": "atlica"
+              }
+            ]
+          }
         }
       }
     ],
@@ -197,7 +220,8 @@
         "modifiers": {
           "ally_count": 1,
           "enemy_count": 1
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -248,7 +272,8 @@
           "duration": {
             "type": "next-attack"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -269,7 +294,7 @@
         "id": "P1-counter-on-ally-attacked",
         "label": "Activa-Rapida: Si carta aliada es atacada, dana 1 pto. a 1 carta rival en Zona Principal",
         "trigger": {
-          "type": "on-ally-damaged",
+          "type": "on-ally-attacked",
           "fast": true
         },
         "prerequisites": [
@@ -294,7 +319,9 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-ally-damaged",
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -363,7 +390,9 @@
         "restrictions": [],
         "modifiers": {
           "self_return_to_equip": true
-        }
+        },
+        "phase": "reactive",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -424,7 +453,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -478,7 +508,8 @@
             "type": "cant-negate-passive"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -528,7 +559,8 @@
             "value": 3,
             "target": "self"
           }
-        }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2-december-penalty",
@@ -563,7 +595,10 @@
           "once_per_game": true,
           "trigger_on_first_use_only": true,
           "_original_trigger": "on-condition-fail"
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 duplicates the penalty already defined in P1.modifiers.penalty_on_fail; the penalty is a single conditional consequence, not a separate pipeline.",
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -627,7 +662,12 @@
           "type": "linked"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "add_field",
+        "meta": {
+          "flag_review": "effect_text_missing_vivify_keyword"
+        }
       },
       {
         "id": "P2-cost-effect",
@@ -670,7 +710,10 @@
         "modifiers": {
           "is_cost_effect": true,
           "_original_trigger": "on-cost-pay"
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 re-declares the same cost already present in P1.costs[], creating a duplicate cost definition for the same action.",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -714,7 +757,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -764,7 +808,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-rest-on-enemy-reveal",
@@ -774,7 +819,8 @@
           "filter": {
             "card_type": "adendei",
             "owner": "enemy"
-          }
+          },
+          "fast": true
         },
         "prerequisites": [
           {
@@ -796,7 +842,9 @@
           "type": "triggering"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "add_field"
       }
     ],
     "meta": {
@@ -858,7 +906,8 @@
         ],
         "modifiers": {
           "persistent_even_if_leaves_field": true
-        }
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-equip-restriction",
@@ -902,7 +951,10 @@
           "optional": true,
           "_original_trigger": "while-on-field",
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 is a separate pipeline solely to register the equip restriction, but this restriction is already declared in P1.restrictions[] and belongs in card-level equip data, not as an operational pipeline.",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -946,7 +998,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-pirico-reveal-grants-burn-attack",
@@ -984,7 +1037,8 @@
           "duration": {
             "type": "next-attack"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1028,7 +1082,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1085,7 +1140,8 @@
         ],
         "modifiers": {
           "_original_trigger": "on-ally-passive-negated"
-        }
+        },
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -1149,6 +1205,12 @@
           "duration": {
             "type": "next-attack"
           }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "edit_field",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "damage-additional"
         }
       }
     ],
@@ -1199,7 +1261,8 @@
             "type": "permanent"
           },
           "_original_trigger": "on-any-descend"
-        }
+        },
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1262,7 +1325,9 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "reactive",
+        "_wave_d_fix": "fix-cost-type"
       }
     ],
     "meta": {
@@ -1317,7 +1382,8 @@
             "condition": "target-moved-by-ally-effect"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1368,7 +1434,8 @@
         "modifiers": {
           "once_per_game": true,
           "_original_trigger": "on-phase-previa"
-        }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2-once-per-game-restriction",
@@ -1405,7 +1472,10 @@
           "once_per_game": true,
           "optional": true,
           "_original_trigger": "permanent"
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 duplicates the once-per-game restriction already encoded in P1's prerequisites and modifiers — it adds no new rule and creates redundancy.",
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1451,7 +1521,8 @@
           "count": "all"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1473,7 +1544,7 @@
         "id": "P1-redirect-attack",
         "label": "Activa-Rapida: Redirige ataque a Titan aliado hacia esta carta",
         "trigger": {
-          "type": "on-ally-damaged",
+          "type": "on-ally-attacked",
           "fast": true
         },
         "prerequisites": [
@@ -1499,7 +1570,9 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-ally-damaged",
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -1555,7 +1628,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1609,7 +1683,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1664,7 +1739,8 @@
           "duration": {
             "type": "turn"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1708,7 +1784,8 @@
           "count": "all"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1758,7 +1835,8 @@
           },
           "_original_trigger": "on-passive-declared"
         },
-        "fast": true
+        "fast": true,
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -1814,7 +1892,12 @@
           "zone": "field"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "timing": "before-replacement"
+        },
+        "phase": "post.extinction",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1a": "add_field"
       }
     ],
     "meta": {

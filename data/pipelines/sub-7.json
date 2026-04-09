@@ -9,7 +9,7 @@
         "id": "P1-damaged-rest-field",
         "label": "Al ser atacado: 1 carta en campo recibe 1 descanso",
         "trigger": {
-          "type": "on-damaged"
+          "type": "on-attacked"
         },
         "prerequisites": [
           {
@@ -35,7 +35,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-damaged",
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -81,7 +83,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -134,6 +137,15 @@
             "type": "while-on-field"
           },
           "optional": true
+        },
+        "phase": "continuous",
+        "_fix_wave-f2": "replace",
+        "_original_prerequisites[1]": null,
+        "prerequisites[1]": {
+          "type": "no-field-ixim-equip",
+          "scope": "both-players",
+          "exclude_self": true,
+          "note": "no other Adendei with an Ixim equipped on the field (any player)"
         }
       }
     ],
@@ -182,8 +194,11 @@
         "modifiers": {
           "duration": {
             "type": "until-protector-available"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "activa"
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-link-rested-only",
@@ -214,7 +229,11 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -266,7 +285,12 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "add_field",
+        "operation[0]": {
+          "destination": "equip-zone"
+        }
       }
     ],
     "meta": {
@@ -314,6 +338,12 @@
           "duration": {
             "type": "turn"
           }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "edit_field",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "damage-bonus"
         }
       }
     ],
@@ -360,7 +390,8 @@
           "duration": {
             "type": "next-turn"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -410,7 +441,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -457,7 +489,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -503,7 +536,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -548,7 +582,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -596,6 +631,25 @@
         },
         "restrictions": [],
         "modifiers": {
+          "operation_modifiers": [
+            {
+              "operation_index": 0,
+              "type": "rest-add",
+              "duration": null
+            },
+            {
+              "operation_index": 1,
+              "type": "negate-passive-persistent",
+              "duration": {
+                "type": "until-condition",
+                "condition": "target-available"
+              }
+            }
+          ]
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "_original_modifiers": {
           "duration": {
             "type": "until-condition",
             "condition": "target-available"
@@ -621,7 +675,7 @@
         "id": "P1-redirect-damage",
         "label": "Activa Rápida Rot: equipada atacada → envía Rot a Extinción y redirige daño a rival",
         "trigger": {
-          "type": "on-equipped-damaged",
+          "type": "on-equipped-attacked",
           "fast": true
         },
         "prerequisites": [
@@ -644,7 +698,10 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-equipped-damaged",
+        "phase": "reactive",
+        "_wave_d_fix": "add-optional-flag"
       }
     ],
     "meta": {
@@ -689,7 +746,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "reactive",
+        "_wave_d_fix": "add-optional-flag"
       }
     ],
     "meta": {
@@ -738,7 +797,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -789,7 +849,8 @@
             "type": "while-on-field"
           },
           "optional": true
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -810,7 +871,7 @@
         "id": "P1-counterattack",
         "label": "Al ser atacado: daña 1 a carta rival",
         "trigger": {
-          "type": "on-damaged"
+          "type": "on-attacked"
         },
         "prerequisites": [
           {
@@ -833,7 +894,9 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-damaged",
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -879,6 +942,12 @@
           "duration": {
             "type": "while-on-field"
           }
+        },
+        "phase": "continuous",
+        "_fix_wave-f2": "replace",
+        "restrictions[0]": {
+          "_original_type": null,
+          "type": "cant-receive-rest-by-effect"
         }
       }
     ],
@@ -928,6 +997,12 @@
             "type": "turn"
           },
           "optional": true
+        },
+        "phase": "reactive",
+        "_fix_wave-f1a": "edit_field",
+        "operation[0]": {
+          "_original_scope": null,
+          "scope": "all-enemy-effects"
         }
       }
     ],
@@ -973,7 +1048,8 @@
         "restrictions": [],
         "modifiers": {
           "optional": true
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1023,7 +1099,8 @@
           "duration": {
             "type": "next-turn"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1072,7 +1149,8 @@
           "duration": {
             "type": "next-turn"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1118,7 +1196,11 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "optional": true
+        },
+        "phase": "end.activas-pasivas",
+        "_fix_wave-f1a": "add_field"
       }
     ],
     "meta": {
@@ -1161,7 +1243,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1208,7 +1291,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1254,7 +1338,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1300,7 +1385,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1347,7 +1433,8 @@
             "type": "while-on-field"
           },
           "optional": true
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1368,7 +1455,7 @@
         "id": "P1-redirect-attack",
         "label": "Activa Rápida: al ser atacada, desvía ataque a otra carta aliada",
         "trigger": {
-          "type": "on-damaged",
+          "type": "on-attacked",
           "fast": true
         },
         "prerequisites": [
@@ -1391,7 +1478,9 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-damaged",
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -1441,8 +1530,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "optional": true
-        }
+          "_removed_optional": true
+        },
+        "phase": "continuous",
+        "_fix_wave-f1a": "remove_field"
       }
     ],
     "meta": {

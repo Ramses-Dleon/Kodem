@@ -9,7 +9,7 @@
         "id": "P1-possess-yakerr",
         "label": "Espectro: Poseer — requiere 3 o mas Adendei Yakerr en Extincion propia",
         "trigger": {
-          "type": "on-reveal"
+          "type": "on-place"
         },
         "prerequisites": [
           {
@@ -30,13 +30,16 @@
           }
         ],
         "target": {
-          "type": "enemy",
-          "count": 1
+          "type": "ally",
+          "count": 1,
+          "_original_target": "enemy"
         },
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-place"
-        }
+        },
+        "_original_trigger": "on-reveal",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -87,7 +90,8 @@
             "notes": "El efecto de la carta mostrada no puede ser usado"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -108,7 +112,7 @@
         "id": "P1-possess-nanuk",
         "label": "Espectro: Poseer — requiere 2 o mas Adendei Nanuk en Extincion propia",
         "trigger": {
-          "type": "on-reveal"
+          "type": "on-place"
         },
         "prerequisites": [
           {
@@ -129,13 +133,16 @@
           }
         ],
         "target": {
-          "type": "enemy",
-          "count": 1
+          "type": "ally",
+          "count": 1,
+          "_original_target": "enemy"
         },
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-place"
-        }
+        },
+        "_original_trigger": "on-reveal",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -177,12 +184,15 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "note-only"
       }
     ],
     "meta": {
       "role": "hitter",
-      "affinities": []
+      "affinities": [],
+      "notes": "El campo timing:'end-of-turn' ya esta presente en operation[0] del pipeline. El pipeline es correcto segun el texto que especifica que el descanso se aplica al final del turno. Sin cambio requerido."
     },
     "card_type": "espectro"
   },
@@ -240,7 +250,9 @@
             "on-attack",
             "on-activate"
           ]
-        }
+        },
+        "phase": "continuous",
+        "_wave_d_fix": "move-cost-to-operation"
       }
     ],
     "meta": {
@@ -289,7 +301,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -310,7 +323,8 @@
         "id": "P1-ally-death-damage",
         "label": "Pasiva: al morir aliado, dana 2 a 1 rival en Zona Principal",
         "trigger": {
-          "type": "on-ally-death"
+          "type": "on-ally-death",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -349,7 +363,11 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva-rapida"
+        },
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -413,7 +431,8 @@
         "restrictions": [],
         "modifiers": {
           "condition": "target-reduced-to-zero"
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -466,9 +485,12 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
-            "type": "while-on-field"
+            "type": "while-in-extinction",
+            "_original_type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous",
+        "_fix_wave-f1b": "replace_modifier"
       }
     ],
     "meta": {
@@ -526,7 +548,16 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f1b": "replace_operation",
+        "_original_operation[1]": null,
+        "operation[1]": {
+          "type": "send-extinction",
+          "target_type": "token",
+          "count": 1,
+          "target_owner": "any"
+        }
       }
     ],
     "meta": {
@@ -572,7 +603,9 @@
         "restrictions": [],
         "modifiers": {
           "timing": "end-of-turn"
-        }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1b": "merge_pipelines"
       },
       {
         "id": "P2-activate-extra-rest",
@@ -602,7 +635,8 @@
         "restrictions": [],
         "modifiers": {
           "timing": "end-of-turn"
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -654,7 +688,8 @@
             "type": "cant-be-copied"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -708,7 +743,8 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -752,7 +788,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -809,7 +846,8 @@
             "type": "cant-be-protected"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-cant-heal-protect",
@@ -849,7 +887,10 @@
             "type": "while-on-field"
           },
           "optional": true
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 modela las restricciones 'no puede ser curada ni protegida' como un pipeline separado con register-game-rule, pero estas restricciones ya están capturadas en P1's restrictions[] y son condiciones intrínsecas de la carta, no un efecto que se activa; P2 es redundante.",
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -889,9 +930,10 @@
           }
         ],
         "target": {
-          "type": "enemy",
+          "type": "any",
           "count": 1,
-          "zone": "principal"
+          "zone": "principal",
+          "_original_target": "enemy"
         },
         "restrictions": [
           {
@@ -906,7 +948,8 @@
         ],
         "modifiers": {
           "condition": "target-is-revealed-non-adendei"
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -962,7 +1005,13 @@
             "type": "cant-be-protected"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "restrictions[0]": {
+          "_original_type": null,
+          "type": "cant-be-healed"
+        }
       }
     ],
     "meta": {
@@ -1028,7 +1077,8 @@
             "requirement": "own-field-must-be-burned-pirica-or-ariam"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-cant-negate-restriction",
@@ -1064,8 +1114,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "optional": true
-        }
+          "_removed_optional": true
+        },
+        "phase": "continuous",
+        "_fix_wave-f1a": "remove_field"
       }
     ],
     "meta": {
@@ -1117,7 +1169,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1167,6 +1220,12 @@
             "type": "until-condition",
             "condition": "self-available"
           }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "edit_field",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "protect-full"
         }
       },
       {
@@ -1196,7 +1255,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1242,6 +1302,11 @@
           },
           {
             "type": "execute-from-zone"
+          },
+          {
+            "type": "place-in-field",
+            "target": "triggered-drawn-card",
+            "zone": "rival-principal"
           }
         ],
         "target": {
@@ -1255,7 +1320,9 @@
         "restrictions": [],
         "modifiers": {
           "zone_condition": "self-in-extinction"
-        }
+        },
+        "phase": "prev",
+        "_fix_wave-f1a": "add_operation"
       }
     ],
     "meta": {
@@ -1307,7 +1374,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-ally-death-damage-burned",
@@ -1348,7 +1416,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1412,7 +1481,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2-cant-attack-cant-negate",
@@ -1452,7 +1522,10 @@
             "type": "while-on-field"
           },
           "optional": true
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 duplicates the cant-attack and cant-negate-passive restrictions already declared in P1's restrictions array, and is incorrectly marked optional=true for permanent restrictions.",
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1471,7 +1544,7 @@
         "id": "P1-reveal-conditional",
         "label": "Requiere 2+ Adendei Xilan en Extincion para ser jugado",
         "trigger": {
-          "type": "on-reveal"
+          "type": "on-place"
         },
         "prerequisites": [
           {
@@ -1495,7 +1568,9 @@
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-place"
-        }
+        },
+        "_original_trigger": "on-reveal",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1558,7 +1633,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-on-death-bounce-spectro-or-token",
@@ -1597,7 +1673,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1642,7 +1719,9 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "battle.declaration",
+        "_wave_d_fix": "move-cost-to-restriction"
       }
     ],
     "meta": {
@@ -1691,7 +1770,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-enemy-link-damage-protector",
@@ -1721,7 +1801,8 @@
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-enemy-link"
-        }
+        },
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -1766,7 +1847,8 @@
           "owner": "enemy"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1820,7 +1902,9 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix"
       },
       {
         "id": "P2-on-death-damage-rival",
@@ -1849,7 +1933,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       },
       {
         "id": "P3-activa-cost-restriction",
@@ -1886,7 +1971,10 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_redundant": true,
+        "_redundant_reason": "P3 re-encodes the same prerequisite (2 Adendei Xacros/Yimsah in field) already present in P1, providing no new information.",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1944,7 +2032,9 @@
           "owner": "enemy"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix"
       },
       {
         "id": "P2-activate-damage-protector-2rest",
@@ -1986,7 +2076,8 @@
           "owner": "enemy"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {

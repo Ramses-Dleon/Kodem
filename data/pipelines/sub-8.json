@@ -35,7 +35,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -54,7 +55,8 @@
         "id": "P1-negate-passive-on-attack",
         "label": "Activa Rot: equipada ataca → pasiva de atacada negada hasta fin de turno",
         "trigger": {
-          "type": "on-equipped-attack"
+          "type": "on-equipped-attack",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -78,8 +80,11 @@
         "modifiers": {
           "duration": {
             "type": "turn"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "activa-rapida"
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -121,7 +126,8 @@
           "count": "all"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -166,7 +172,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -213,7 +220,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -264,8 +272,11 @@
         "modifiers": {
           "duration": {
             "type": "next-turn"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "pasiva-opcional"
+        },
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -316,8 +327,11 @@
         "modifiers": {
           "duration": {
             "type": "next-turn"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "pasiva-opcional"
+        },
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -360,7 +374,8 @@
           "type": "linked"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-linked-death-scale-heal",
@@ -397,7 +412,8 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -426,7 +442,14 @@
         "costs": [
           {
             "type": "none"
-          }
+          },
+          [
+            {
+              "type": "self-damage",
+              "value": 6,
+              "source": "cyra"
+            }
+          ]
         ],
         "operation": [
           {
@@ -445,7 +468,9 @@
         "restrictions": [],
         "modifiers": {
           "once_per_game": true
-        }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "add_cost"
       },
       {
         "id": "P2-once-per-game-restriction",
@@ -482,7 +507,10 @@
           "once_per_game": true,
           "optional": true,
           "_original_trigger": "permanent"
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 encodes the once-per-game restriction as a separate pipeline, but this is already captured in P1 via prerequisites:[{type:'once-per-game'}] and modifiers.once_per_game:true — the restriction pipeline is fully redundant.",
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -535,7 +563,8 @@
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-zone-swap"
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -581,7 +610,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -633,7 +663,8 @@
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-self-marked"
-        }
+        },
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -682,7 +713,8 @@
         "restrictions": [],
         "modifiers": {
           "optional": true
-        }
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-eot-self-rest",
@@ -710,7 +742,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -754,7 +787,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -794,7 +828,14 @@
           "type": "facing"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "stat_preservation": {
+            "rule": "§12",
+            "note": "swapped rival card keeps own stats; enters your zone with its own stats"
+          }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "add_field"
       }
     ],
     "meta": {
@@ -846,8 +887,11 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "pasiva-opcional"
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -903,8 +947,11 @@
         ],
         "modifiers": {
           "equip_restriction": "Adendei Cretus only",
-          "optional": true
-        }
+          "optional": true,
+          "_original_effect_type": "",
+          "effect_type": "activa"
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-equip-restriction",
@@ -948,7 +995,8 @@
           "optional": true,
           "_original_trigger": "while-on-field",
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -994,7 +1042,8 @@
           "duration": {
             "type": "until-protector-available"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1040,8 +1089,11 @@
         },
         "restrictions": [],
         "modifiers": {
-          "equip_restriction": "Adendei Ariam only"
-        }
+          "equip_restriction": "Adendei Ariam only",
+          "_original_effect_type": "",
+          "effect_type": null
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-remove-marks",
@@ -1069,7 +1121,8 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1117,7 +1170,8 @@
           "duration": {
             "type": "next-attack"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1163,8 +1217,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "optional": true
-        }
+          "_removed_optional": true
+        },
+        "phase": "continuous",
+        "_fix_wave-f1a": "remove_field"
       },
       {
         "id": "P2-cant-negate-attack",
@@ -1195,7 +1251,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1244,8 +1301,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "optional": true
-        }
+          "_removed_optional": true
+        },
+        "phase": "continuous",
+        "_fix_wave-f1a": "remove_field"
       }
     ],
     "meta": {
@@ -1295,7 +1354,8 @@
             "cant-heal",
             "cant-be-protected"
           ]
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1346,7 +1406,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1393,7 +1454,8 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "fast": true
+        "fast": true,
+        "phase": "reactive"
       },
       {
         "id": "P2-lock-positions",
@@ -1427,7 +1489,8 @@
             "type": "while-on-field"
           },
           "optional": true
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1475,7 +1538,17 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "fast": true
+        "fast": true,
+        "phase": "reactive",
+        "_wave_d_fix": "move-cost-to-operation",
+        "_fix_wave-f2": "replace",
+        "_original_prerequisites[0]": null,
+        "prerequisites[0]": {
+          "type": "needs-card-in-equip-zone",
+          "filter": {
+            "has_fast_active": true
+          }
+        }
       }
     ],
     "meta": {
@@ -1521,8 +1594,11 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1563,7 +1639,8 @@
           "type": "facing"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1613,7 +1690,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1634,7 +1712,7 @@
         "id": "P1-draw-reveal-heal",
         "label": "Pasiva: Al sacar del mazo, revelar y curar 3 al Protector",
         "trigger": {
-          "type": "on-draw"
+          "type": "on-taken-from-deck"
         },
         "prerequisites": [
           {
@@ -1662,7 +1740,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-draw",
+        "phase": "prev"
       }
     ],
     "meta": {

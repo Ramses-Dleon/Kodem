@@ -31,7 +31,11 @@
           "type": "protector"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "activa"
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -78,9 +82,48 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
-            "type": "until-protector-available"
+            "type": "until-self-available",
+            "_original_type": "until-protector-available"
           }
-        }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "add_pipeline",
+        "_fix_wave-f1a": "edit_field"
+      },
+      {
+        "id": "P2-link-restriction",
+        "label": "Restriccion de vinculo: solo puede vincularse con Adendei-Feral",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "link-restriction",
+            "filter": {
+              "subtype": "feral"
+            }
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -103,7 +146,7 @@
         "id": "P1-equip-from-extinction",
         "label": "Activa: Equipa Ixim o Rot de Extincion a un Adendei en ZP",
         "trigger": {
-          "type": "on-link"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -132,7 +175,10 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-link",
+        "phase": "battle.declaration",
+        "_wave_d_fix": "fix-cost-target"
       }
     ],
     "meta": {
@@ -177,7 +223,11 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -223,7 +273,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "continuous"
       },
       {
         "id": "P2-end-of-turn-damage",
@@ -251,7 +302,8 @@
           "type": "equipped"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -297,7 +349,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -342,7 +395,13 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "reactive",
+        "_fix_wave-f2": "replace",
+        "_original_prerequisites[0]": null,
+        "prerequisites[0]": {
+          "type": "no-ally-in-rest"
+        }
       }
     ],
     "meta": {
@@ -391,6 +450,12 @@
           "duration": {
             "type": "while-on-field"
           }
+        },
+        "phase": "continuous",
+        "_fix_wave-f2": "replace",
+        "restrictions[0]": {
+          "_original_type": null,
+          "type": "cant-heal-except-by-adendei-effect"
         }
       }
     ],
@@ -449,6 +514,13 @@
             "type": "turn"
           },
           "optional": true
+        },
+        "phase": "reactive",
+        "_fix_wave-f1a": "add_field",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "restrict-activation",
+          "scope": "equip-cards"
         }
       }
     ],
@@ -496,7 +568,8 @@
             "type": "next-turn"
           },
           "optional": true
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -542,7 +615,11 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -593,7 +670,8 @@
           "duration": {
             "type": "next-turn"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -625,6 +703,17 @@
           },
           {
             "type": "self-available"
+          },
+          {
+            "type": "equipped-card-available",
+            "note": "Cannot activate if equipped card is in descanso"
+          },
+          {
+            "type": "equip-restriction",
+            "filter": {
+              "name": "Nanuk"
+            },
+            "note": "Can only be equipped to Adendei Nanuk"
           }
         ],
         "costs": [
@@ -649,7 +738,17 @@
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
         },
         "notes": "Solo equipable a Adendei Nanuk",
-        "fast": true
+        "fast": true,
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "_original_prerequisites": [
+          {
+            "type": "independent"
+          },
+          {
+            "type": "self-available"
+          }
+        ]
       }
     ],
     "meta": {
@@ -697,7 +796,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -749,7 +849,8 @@
             "type": "while-on-field"
           },
           "optional": true
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -803,7 +904,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -852,7 +954,9 @@
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-any-healed-or-scaled"
-        }
+        },
+        "phase": "post.passives",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -894,10 +998,23 @@
         "target": {
           "type": "any",
           "count": 1,
-          "zone": "principal"
+          "zone": "principal",
+          "filter": {
+            "card_type_exclude": [
+              "token",
+              "protector"
+            ]
+          }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "reactive",
+        "_fix_wave-f2": "replace",
+        "_original_target": {
+          "type": "any",
+          "count": 1,
+          "zone": "principal"
+        }
       }
     ],
     "meta": {
@@ -943,8 +1060,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "optional": true
-        }
+          "_removed_optional": true
+        },
+        "phase": "continuous",
+        "_fix_wave-f1a": "remove_field"
       }
     ],
     "meta": {
@@ -991,6 +1110,12 @@
           "duration": {
             "type": "while-on-field"
           }
+        },
+        "phase": "continuous",
+        "_fix_wave-f2": "replace",
+        "restrictions[0]": {
+          "_original_type": null,
+          "type": "cant-attack-facing"
         }
       }
     ],
@@ -1031,10 +1156,12 @@
           }
         ],
         "target": {
-          "type": "both"
+          "type": "ally",
+          "_original_target": "both"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1073,12 +1200,18 @@
           }
         ],
         "target": {
-          "type": "both",
-          "zone": "principal"
+          "type": "ally",
+          "zone": "protector-zone"
         },
         "restrictions": [],
         "modifiers": {
           "optional": true
+        },
+        "phase": "post.extinction",
+        "_fix_wave-f2": "replace",
+        "_original_target": {
+          "type": "both",
+          "zone": "principal"
         }
       }
     ],
@@ -1123,7 +1256,9 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "equip",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -1165,7 +1300,8 @@
           "type": "facing"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1186,7 +1322,7 @@
         "id": "P1-attacked-return-deck",
         "label": "Activa-Rapida: Si es atacada, regresa al fondo del Mazo",
         "trigger": {
-          "type": "on-damaged",
+          "type": "on-attacked",
           "fast": true
         },
         "prerequisites": [
@@ -1209,7 +1345,9 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-damaged",
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -1252,6 +1390,12 @@
           "type": "both",
           "zone": "principal",
           "filter": {
+            "single-attack-damage-to-one-card": {
+              "op": ">=",
+              "value": 3
+            }
+          },
+          "_original_filter": {
             "total-damage-this-turn": {
               "op": ">=",
               "value": 3
@@ -1266,7 +1410,9 @@
             "type": "cant-negate-passive"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "end.activas-pasivas",
+        "_fix_wave-f2": "replace"
       }
     ],
     "meta": {
@@ -1314,6 +1460,16 @@
           "condition": "on-attack",
           "duration": {
             "type": "while-on-field"
+          }
+        },
+        "phase": "continuous",
+        "_fix_wave-f1a": "add_field",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "damage-bonus",
+          "condition": {
+            "on": "attack",
+            "has_mark": "burn"
           }
         }
       }
@@ -1365,7 +1521,14 @@
             "note": "no-linked-this-turn targets"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "prev",
+        "_fix_wave-f2": "replace",
+        "_original_restrictions[0]": null,
+        "restrictions[0]": {
+          "type": "cant-target-linked-adendei-this-turn",
+          "note": "Cannot give rests to Adendei that were linked this turn"
+        }
       }
     ],
     "meta": {
@@ -1406,16 +1569,27 @@
         "target": {
           "type": "ally",
           "filter": {
-            "card_type": "ixim"
+            "card_type_or": [
+              "ixim",
+              {
+                "card_type": "bio",
+                "name": "Hundimiento de la Esperanza"
+              }
+            ]
           }
         },
         "restrictions": [],
         "modifiers": {
-          "also_applies_to": [
-            "Bio:Hundimiento de la Esperanza"
-          ],
           "duration": {
             "type": "while-on-field"
+          }
+        },
+        "phase": "continuous",
+        "_fix_wave-f2": "replace",
+        "_original_target": {
+          "type": "ally",
+          "filter": {
+            "card_type": "ixim"
           }
         }
       }
@@ -1474,6 +1648,12 @@
           "duration": {
             "type": "next-turn"
           }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "edit_field",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "damage-immunity"
         }
       }
     ],

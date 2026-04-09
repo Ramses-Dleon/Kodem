@@ -39,7 +39,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-atlica-as-abisal",
@@ -78,7 +79,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -120,14 +122,16 @@
           }
         ],
         "target": {
-          "type": "both",
+          "type": "enemy",
           "count": 1,
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "_original_target": "both"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -174,7 +178,8 @@
           "type": "protector"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -218,16 +223,19 @@
             "not_subtype": "abisal"
           }
         },
-        "restrictions": [
-          {
-            "type": "cant-attack-protector"
-          }
-        ],
+        "restrictions": [],
         "modifiers": {
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous",
+        "_fix_wave-f2": "replace",
+        "_original_restrictions": [
+          {
+            "type": "cant-attack-protector"
+          }
+        ]
       },
       {
         "id": "P2-self-destruct-no-abisal",
@@ -257,7 +265,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -306,7 +315,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -361,7 +371,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -428,7 +439,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_wave_d_fix": "move-cost-to-operation"
       }
     ],
     "meta": {

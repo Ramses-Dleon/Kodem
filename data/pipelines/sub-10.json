@@ -38,7 +38,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -84,7 +85,8 @@
           "duration": {
             "type": "next-attack"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -133,7 +135,8 @@
         "restrictions": [],
         "modifiers": {
           "once_per_game": true
-        }
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-once-per-game-restriction",
@@ -170,7 +173,8 @@
           "once_per_game": true,
           "optional": true,
           "_original_trigger": "permanent"
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -191,7 +195,8 @@
         "id": "P1-negate-attack",
         "label": "Al atacar aliado: regresa a Zona de Equipo y niega el ataque (una vez por juego)",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-ally-attacked",
+          "_original_trigger": "on-activate"
         },
         "prerequisites": [
           {
@@ -217,9 +222,14 @@
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-ally-damaged",
-          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida",
+          "_original_effect_type": "",
+          "effect_type": "activa-rapida"
         },
-        "fast": true
+        "fast": true,
+        "_redundant": true,
+        "_redundant_reason": "La operación incluye 'equip-from-equip-zone' pero la carta se regresa a Zona de Equipo (self-return-to-equip-zone es el costo), no se re-equipa; esta sub-operación es incorrecta y no está en el texto.",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -263,7 +273,8 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -307,7 +318,8 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -354,7 +366,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -399,7 +412,8 @@
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-equip-returned"
-        }
+        },
+        "phase": "equip"
       }
     ],
     "meta": {
@@ -450,7 +464,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2-chaak-no-rest-effect",
@@ -485,7 +500,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -540,7 +556,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -589,7 +606,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -639,7 +657,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "reactive"
       },
       {
         "id": "P2-rot-activa-promoted",
@@ -678,7 +697,8 @@
         "modifiers": {
           "inherited": true
         },
-        "fast": true
+        "fast": true,
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -726,7 +746,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-lock-rival-scale",
@@ -757,6 +778,12 @@
           "duration": {
             "type": "while-on-field"
           }
+        },
+        "phase": "continuous",
+        "_fix_wave-f2": "replace",
+        "restrictions[0]": {
+          "_original_type": null,
+          "type": "cant-scale"
         }
       },
       {
@@ -789,7 +816,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -833,11 +861,23 @@
           }
         ],
         "target": {
-          "type": "both",
-          "count": 1
+          "rest_add_target": {
+            "type": "enemy",
+            "count": 1
+          },
+          "rest_remove_target": {
+            "type": "ally",
+            "count": 1
+          }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "edit_field",
+        "_original_target": {
+          "type": "both",
+          "count": 1
+        }
       },
       {
         "id": "P2-link-resting",
@@ -869,7 +909,8 @@
         "restrictions": [],
         "modifiers": {
           "optional": true
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -924,7 +965,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -975,7 +1017,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2-litico-death-damage",
@@ -1006,7 +1049,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1057,7 +1101,8 @@
             "type": "while-on-field"
           },
           "optional": true
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1097,17 +1142,19 @@
           }
         ],
         "target": {
-          "type": "both",
+          "type": "ally",
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "_original_target": "both"
         },
         "restrictions": [],
         "modifiers": {
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1159,8 +1206,10 @@
           "duration": {
             "type": "while-on-field"
           },
-          "optional": true
-        }
+          "_removed_optional": true
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "remove_field"
       },
       {
         "id": "P2-death-ally-rest",
@@ -1191,7 +1240,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1235,7 +1285,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-attack-facing-rest",
@@ -1266,7 +1317,8 @@
           "type": "facing"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1310,7 +1362,8 @@
           "zone": "field"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1357,7 +1410,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "end.rest-update"
       }
     ],
     "meta": {
@@ -1415,7 +1469,9 @@
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
         },
         "notes": "Solo equipable a Adendei Zaykan",
-        "fast": true
+        "fast": true,
+        "phase": "battle.declaration",
+        "_wave_d_fix": "move-cost-to-operation"
       }
     ],
     "meta": {
@@ -1458,7 +1514,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1510,7 +1567,8 @@
           "zone": "deck"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-reveal-rest",
@@ -1538,7 +1596,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1584,7 +1643,8 @@
         "restrictions": [],
         "modifiers": {
           "once_per_game": true
-        }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2-copied-activa-execute",
@@ -1619,7 +1679,8 @@
         "modifiers": {
           "once_per_game": true,
           "inherited": true
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1666,7 +1727,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-self-damage-pre-attack",
@@ -1689,12 +1751,47 @@
         "target": {
           "type": "self"
         },
+        "restrictions": [],
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "_original_restrictions": [
+          {
+            "type": "cant-equip"
+          }
+        ]
+      },
+      {
+        "id": "P3-cant-equip",
+        "label": "Restriccion permanente: Esta carta no puede ser equipada",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
         "restrictions": [
           {
             "type": "cant-equip"
           }
         ],
-        "modifiers": {}
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1741,7 +1838,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1785,7 +1883,8 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1834,7 +1933,8 @@
           "optional": true,
           "_original_trigger": "while-on-field",
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
-        }
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-post-attack-rest",
@@ -1858,7 +1958,9 @@
           "type": "equipped"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_wave_d_fix": "move-cost-to-operation"
       }
     ],
     "meta": {

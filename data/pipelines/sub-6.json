@@ -42,14 +42,16 @@
           }
         ],
         "target": {
-          "type": "both",
+          "type": "enemy",
           "count": 1,
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "_original_target": "both"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -110,7 +112,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -161,7 +164,8 @@
           "zone": "extinction"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -210,10 +214,16 @@
           "filter": {
             "card_type": "espectro"
           },
-          "zone": "field"
+          "zone": [
+            "field",
+            "deck"
+          ],
+          "_original_zone": "field"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "edit_field"
       }
     ],
     "meta": {
@@ -267,7 +277,8 @@
           "duration": {
             "type": "rest-of-game"
           }
-        }
+        },
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -323,7 +334,8 @@
           "zone": "field"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -370,7 +382,8 @@
           "zone": "field"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "prev"
       },
       {
         "id": "P2",
@@ -381,6 +394,12 @@
         "prerequisites": [
           {
             "type": "independent"
+          },
+          {
+            "type": "target-stat-filter",
+            "stat": "rest",
+            "op": "<",
+            "value": 2
           }
         ],
         "costs": [
@@ -400,7 +419,9 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "prev",
+        "_fix_wave-f1a": "add_field"
       }
     ],
     "meta": {
@@ -462,7 +483,8 @@
           "duration": {
             "type": "rest-of-game"
           }
-        }
+        },
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -512,7 +534,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2",
@@ -549,7 +572,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -597,7 +621,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -642,7 +667,8 @@
           "type": "facing"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -686,7 +712,8 @@
           "type": "equipped"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -731,7 +758,8 @@
           "duration": {
             "type": "until-protector-available"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -751,7 +779,7 @@
         "id": "P1",
         "label": "Activa: si ningun aliado en 6HP, cura todos a 6",
         "trigger": {
-          "type": "on-link"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -781,7 +809,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-link",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -823,7 +853,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "equip"
       }
     ],
     "meta": {
@@ -867,7 +898,8 @@
           "type": "facing"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -916,7 +948,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -969,7 +1002,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1014,13 +1048,14 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2",
         "label": "Pasiva reactiva: al ser atacada, escala 1",
         "trigger": {
-          "type": "on-damaged"
+          "type": "on-attacked"
         },
         "prerequisites": [
           {
@@ -1042,7 +1077,9 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-damaged",
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -1093,7 +1130,8 @@
           "type": "facing"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1144,7 +1182,8 @@
           "once_per_game": true,
           "_original_trigger": "on-ally-damaged",
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
-        }
+        },
+        "phase": "reactive"
       },
       {
         "id": "P2-opg-restriction",
@@ -1180,7 +1219,10 @@
           },
           "_original_trigger": "while-on-field",
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 is a separate pipeline solely to register the once-per-game rule, which is already captured in P1's prerequisites and modifiers; this creates a duplicate representation.",
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -1222,7 +1264,8 @@
           "type": "triggering"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -1271,7 +1314,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1331,7 +1375,8 @@
             "type": "while-on-field"
           }
         },
-        "fast": true
+        "fast": true,
+        "phase": "reactive"
       },
       {
         "id": "P2-attack-restriction",
@@ -1373,7 +1418,10 @@
           },
           "optional": true,
           "_original_trigger": "permanent"
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 duplicates the attack restriction already partially encoded in P1's restrictions array, creating two conflicting representations of the same rule.",
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1414,15 +1462,17 @@
           }
         ],
         "target": {
-          "type": "both",
+          "type": "ally",
           "count": 1,
           "filter": {
             "card_type": "adendei",
             "has_equip": true
-          }
+          },
+          "_original_target": "both"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -1471,7 +1521,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1526,7 +1577,13 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "prerequisites[1]": {
+          "_original_type": null,
+          "type": "target-hidden"
+        }
       }
     ],
     "meta": {
@@ -1576,7 +1633,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "end.rest-update"
       }
     ],
     "meta": {
@@ -1624,7 +1682,8 @@
           "duration": {
             "type": "next-attack"
           }
-        }
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-self-damage-at-max",
@@ -1652,7 +1711,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1702,7 +1762,8 @@
             "type": "while-on-field"
           },
           "optional": true
-        }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {

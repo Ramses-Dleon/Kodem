@@ -35,7 +35,11 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "activa"
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2",
@@ -73,8 +77,11 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -134,7 +141,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -184,9 +192,13 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
-            "type": "until-protector-available"
+            "type": "until-self-available",
+            "_original_type": "until-protector-available"
           }
-        }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1b": "replace_modifier"
       }
     ],
     "meta": {
@@ -232,7 +244,9 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -276,7 +290,9 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -322,7 +338,16 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "activa-rapida"
+        },
+        "phase": "reactive",
+        "_fix_wave-f1b": "replace_operation",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "equip-return"
+        }
       }
     ],
     "meta": {
@@ -375,8 +400,12 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
-        }
+          },
+          "simultaneous": true
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1b": "add_field"
       }
     ],
     "meta": {
@@ -430,7 +459,18 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_wave_d_fix": "move-cost-to-operation",
+        "_fix_wave-f1b": "add_fields",
+        "operation[0]": {
+          "type": "vivify",
+          "filter": {
+            "card_type": "bio"
+          },
+          "destination": "bio-zone",
+          "entry_state": "hidden"
+        }
       }
     ],
     "meta": {
@@ -451,7 +491,8 @@
         "id": "P1",
         "label": "Pasiva: Adendei equipado -> cura 1",
         "trigger": {
-          "type": "on-ally-equip"
+          "type": "on-ally-equip",
+          "note": "Trigger on-ally-equip restricts to allied Adendei. effect_text un Adendei is ambiguous. Recommend clarification: si un Adendei aliado es equipado. If both players intended, change trigger to on-any-equip."
         },
         "prerequisites": [
           {
@@ -473,7 +514,10 @@
           "type": "triggering"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "equip",
+        "_fix_wave-f2": "add_field",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -523,6 +567,13 @@
           "duration": {
             "type": "while-on-field"
           }
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1b": "replace_operation",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "damage-buff-temporary"
         }
       },
       {
@@ -558,13 +609,14 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P3",
         "label": "Al morir: dania 1 a todos los Atlicos en campo",
         "trigger": {
-          "type": "on-death"
+          "type": "on-sent-to-extinction"
         },
         "prerequisites": [
           {
@@ -590,7 +642,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-death",
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -640,6 +694,13 @@
           "duration": {
             "type": "while-on-field"
           }
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1b": "replace_operation",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "damage-buff-temporary"
         }
       },
       {
@@ -675,14 +736,17 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
       "role": "support",
       "affinities": [
         "aff:pirica"
-      ]
+      ],
+      "notes": "EXPO-004 (Nozi) tiene P3 on-death que dana 1 a todos los Atlicos. Hori (EXPO-006) no tiene pipeline analogo. Confirmar con diseno si la asimetria es intencional o si falta P3 on-death para Piricos."
     },
     "card_type": "rava"
   },
@@ -717,13 +781,23 @@
         ],
         "target": {
           "type": "enemy",
-          "count": 3,
+          "count": {
+            "min": 1,
+            "max": 3
+          },
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "_original_count": 3
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -744,7 +818,7 @@
         "id": "P1",
         "label": "Activa (A): Oculta 2 cartas aliadas",
         "trigger": {
-          "type": "on-link"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -767,7 +841,13 @@
           "count": 2
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "activa"
+        },
+        "_original_trigger": "on-link",
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix"
       },
       {
         "id": "P2",
@@ -798,9 +878,15 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
-            "type": "until-protector-available"
-          }
-        }
+            "type": "while-self-available",
+            "_original_type": "until-protector-available"
+          },
+          "_original_effect_type": "",
+          "effect_type": "activa"
+        },
+        "phase": "prev",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1b": "replace_modifier"
       }
     ],
     "meta": {
@@ -819,7 +905,7 @@
         "id": "P1",
         "label": "Activa-Rapida: Atacada -> dania 3 al atacante",
         "trigger": {
-          "type": "on-damaged",
+          "type": "on-attacked",
           "fast": true
         },
         "prerequisites": [
@@ -839,10 +925,20 @@
           }
         ],
         "target": {
-          "type": "triggering"
+          "type": "triggering",
+          "filter": {
+            "card_type": "adendei"
+          },
+          "note": "In Vinculo Odemico context the triggering may include Protector; filter ensures only Adendei is valid target."
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-damaged",
+        "phase": "reactive",
+        "_fix_wave-f2": "replace",
+        "_original_target": {
+          "type": "triggering"
+        }
       }
     ],
     "meta": {
@@ -907,7 +1003,9 @@
         "restrictions": [],
         "modifiers": {
           "once_per_field": true
-        }
+        },
+        "phase": "post.extinction",
+        "_fix_wave-f3": "fix"
       },
       {
         "id": "P2-once-per-field-restriction",
@@ -941,7 +1039,11 @@
             "type": "while-on-field"
           },
           "optional": true
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 ('Restriccion: solo puede escalar una vez mientras este en campo') es pipeline separado con operation.type=register-game-rule. Esta restriccion ya esta modelada en P1 mediante prerequisites.type=once-per-field y modifiers.once_per_field=true. Redundante.",
+        "phase": "continuous",
+        "_wave_d_fix": "remove-redundant-pipeline"
       }
     ],
     "meta": {
@@ -992,7 +1094,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2-heal",
@@ -1027,13 +1130,14 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P3-on-death",
         "label": "Al morir: daña 1 a todos los Chaakticos en campo",
         "trigger": {
-          "type": "on-death"
+          "type": "on-sent-to-extinction"
         },
         "prerequisites": [
           {
@@ -1059,7 +1163,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-death",
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1104,7 +1210,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-no-rest-chaaktico",
@@ -1142,7 +1249,8 @@
           "duration": {
             "type": "until-protector-available"
           }
-        }
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1186,7 +1294,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-change-energy",
@@ -1218,7 +1327,8 @@
           "duration": {
             "type": "until-protector-available"
           }
-        }
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P3-scale",
@@ -1250,7 +1360,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1293,7 +1404,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -1344,7 +1456,8 @@
           "duration": {
             "type": "next-turn"
           }
-        }
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-no-rest-catrin-activa",
@@ -1383,7 +1496,10 @@
           "duration": {
             "type": "next-turn"
           }
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P1 already covers both attack and Activa (effect_text says 'al atacar o usar Activa'); P2 splits off the Activa case into a duplicate pipeline with identical trigger and target.",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1430,7 +1546,8 @@
           "duration": {
             "type": "rest-of-game"
           }
-        }
+        },
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -1451,7 +1568,7 @@
         "id": "P1-poison-on-attack",
         "label": "Activa-Rapida: Al ser atacado el equipado, envenena al atacante",
         "trigger": {
-          "type": "on-equipped-damaged",
+          "type": "on-equipped-attacked",
           "fast": true
         },
         "prerequisites": [
@@ -1477,7 +1594,9 @@
             "type": "cant-return-to-equip"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-equipped-damaged",
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -1532,7 +1651,8 @@
             "type": "cant-be-copied"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1570,11 +1690,13 @@
           }
         ],
         "target": {
-          "type": "both",
-          "count": 3
+          "type": "ally",
+          "count": 3,
+          "_original_target": "both"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       },
       {
         "id": "P2-return-adendei",
@@ -1599,15 +1721,17 @@
           }
         ],
         "target": {
-          "type": "both",
+          "type": "ally",
           "zone": "extinction",
           "count": 1,
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "_original_target": "both"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       },
       {
         "id": "P3-return-equip",
@@ -1642,7 +1766,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       },
       {
         "id": "P4-return-protector",
@@ -1674,7 +1799,15 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction",
+        "_fix_wave-f1b": "replace_operation",
+        "_original_operation[0]": null,
+        "operation[0]": {
+          "type": "return-to-zone",
+          "zone": "protector-zone",
+          "state": "available"
+        }
       }
     ],
     "meta": {
@@ -1712,7 +1845,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -1768,7 +1902,8 @@
           "duration": {
             "type": "until-protector-available"
           }
-        }
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-damage-rivals",
@@ -1779,7 +1914,11 @@
         "prerequisites": [
           {
             "type": "min-extinction",
-            "value": 7
+            "value": 7,
+            "_or": {
+              "type": "has-protector-in-extinction",
+              "plus_min_extinction": 3
+            }
           }
         ],
         "costs": [
@@ -1802,7 +1941,15 @@
             "type": "cant-be-copied"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "_original_prerequisites": [
+          {
+            "type": "min-extinction",
+            "value": 7
+          }
+        ]
       },
       {
         "id": "P3-heal-allies",
@@ -1813,7 +1960,11 @@
         "prerequisites": [
           {
             "type": "min-extinction",
-            "value": 7
+            "value": 7,
+            "_or": {
+              "type": "has-protector-in-extinction",
+              "plus_min_extinction": 3
+            }
           }
         ],
         "costs": [
@@ -1839,7 +1990,15 @@
             "type": "cant-be-copied"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "_original_prerequisites": [
+          {
+            "type": "min-extinction",
+            "value": 7
+          }
+        ]
       },
       {
         "id": "P4-return-card",
@@ -1850,7 +2009,11 @@
         "prerequisites": [
           {
             "type": "min-extinction",
-            "value": 7
+            "value": 7,
+            "_or": {
+              "type": "has-protector-in-extinction",
+              "plus_min_extinction": 3
+            }
           }
         ],
         "costs": [
@@ -1874,7 +2037,15 @@
             "type": "cant-be-copied"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "_original_prerequisites": [
+          {
+            "type": "min-extinction",
+            "value": 7
+          }
+        ]
       }
     ],
     "meta": {
@@ -1923,7 +2094,8 @@
             "note": "Solo a Adendei Catrin en Zona Principal original"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-damage-linked",
@@ -1963,7 +2135,13 @@
           "type": "linked"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_wave_d_fix": "remove-duplicate-operation",
+        "_fix_wave-f1b": "add_field",
+        "operation[0]": {
+          "_note": "'6+' cubre exactamente 6 y todos los valores mayores (≥6)"
+        }
       }
     ],
     "meta": {
@@ -2014,7 +2192,8 @@
             "type": "cant-be-copied"
           }
         ],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-cant-copy-restriction",
@@ -2053,7 +2232,10 @@
           "optional": true,
           "_original_trigger": "while-on-field",
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 models 'can't be copied' as a separate pipeline with operation 'register-game-rule', but this restriction is already encoded in P1's restrictions[] array — P2 is redundant.",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -2099,7 +2281,8 @@
           "type": "equipped"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -2140,8 +2323,20 @@
           "zone": "principal",
           "count": 1
         },
-        "restrictions": [],
-        "modifiers": {}
+        "restrictions": [
+          [
+            {
+              "type": "equip-only-to",
+              "filter": {
+                "zone": "original-principal",
+                "card_type": "adendei"
+              }
+            }
+          ]
+        ],
+        "modifiers": {},
+        "phase": "equip",
+        "_fix_wave-f2": "add_to_array"
       },
       {
         "id": "P2-on-equipped-death",
@@ -2170,7 +2365,8 @@
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-equipped-death"
-        }
+        },
+        "phase": "post.extinction"
       }
     ],
     "meta": {

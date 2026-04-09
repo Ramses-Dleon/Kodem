@@ -29,7 +29,15 @@
         ],
         "operation": [
           {
-            "type": "swap-field-extinction"
+            "type": "send-to-extinction",
+            "target": "ally-adendei"
+          },
+          {
+            "type": "place-from-extinction",
+            "slot": "freed",
+            "filter": {
+              "card_type": "adendei"
+            }
           }
         ],
         "target": {
@@ -43,7 +51,14 @@
         "restrictions": [],
         "modifiers": {
           "once_per_game": true
-        }
+        },
+        "phase": "end.activas-pasivas",
+        "_fix_wave-f1b": "replace_operation",
+        "_original_operation": [
+          {
+            "type": "swap-field-extinction"
+          }
+        ]
       },
       {
         "id": "P2-opg-restriction",
@@ -76,7 +91,10 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 registra la restricción 'once-per-game' como pipeline separado con trigger 'while-on-field'. Esta información ya está completamente codificada en P1 (prerequisites[0].type: 'once-per-game' + modifiers.once_per_game:true). P2 no agrega ninguna operación nueva; su única operation es 'register-game-",
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -133,6 +151,17 @@
         ],
         "modifiers": {
           "once_per_game": true
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1b": "replace_operation",
+        "_original_operation[0]": null,
+        "operation[0]": {
+          "type": "damage-per",
+          "value": 1,
+          "per": {
+            "zone": "extinction",
+            "snapshot": "post-cost"
+          }
         }
       },
       {
@@ -167,7 +196,10 @@
         ],
         "modifiers": {
           "once_per_game": true
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 es un pipeline separado que duplica exactamente los costos (self-extinct) y restricciones (cant-be-copied, once-per-game) de P1. Su única operation es 'register-game-rule:once-per-game-effect', que ya está modelado en P1 via prerequisites y modifiers. No agrega operación nueva ni cubre un sub-efe",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -219,7 +251,11 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "activa"
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -276,7 +312,22 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "continuous",
+        "_fix_wave-f1b": "add_field",
+        "prerequisites[0]": {
+          "_original_value": null,
+          "value": 4
+        },
+        "operation[0]": {
+          "copy_targets": [
+            "effect",
+            "cost"
+          ]
+        }
       }
     ],
     "meta": {
@@ -307,7 +358,14 @@
             "type": "none"
           }
         ],
-        "operation": [],
+        "operation": [
+          {
+            "type": "apply-global-restriction",
+            "restriction": "no-extinction-by-effect",
+            "zone": "field",
+            "scope": "both-players"
+          }
+        ],
         "target": {
           "type": "both",
           "zone": "field"
@@ -322,7 +380,10 @@
             "type": "while-on-field"
           },
           "optional": true
-        }
+        },
+        "phase": "continuous",
+        "_wave_d_fix": "remove-optional-flag",
+        "_fix_wave-f1b": "add_operation"
       }
     ],
     "meta": {
@@ -367,7 +428,11 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "activa"
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -415,6 +480,16 @@
             "type": "while-on-field"
           },
           "optional": true
+        },
+        "phase": "continuous",
+        "_fix_wave-f1b": "replace_operation",
+        "_original_operation[0]": null,
+        "operation[0]": {
+          "type": "unlock-attack-target",
+          "target": {
+            "card_type": "protector",
+            "owner": "enemy"
+          }
         }
       }
     ],
@@ -450,15 +525,25 @@
         ],
         "operation": [
           {
-            "type": "burn"
-          },
-          {
-            "type": "damage",
-            "value": 1,
-            "condition": {
-              "target_has_mark": "burn"
-            },
-            "choice": true
+            "type": "choose-one",
+            "options": [
+              {
+                "type": "burn",
+                "target": {
+                  "type": "enemy",
+                  "filter": {
+                    "card_type": "adendei"
+                  }
+                }
+              },
+              {
+                "type": "damage",
+                "value": 1,
+                "condition": {
+                  "target_has_mark": "burn"
+                }
+              }
+            ]
           }
         ],
         "target": {
@@ -469,7 +554,25 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1b": "replace_operation",
+        "_original_operation": [
+          {
+            "type": "burn"
+          },
+          {
+            "type": "damage",
+            "value": 1,
+            "condition": {
+              "target_has_mark": "burn"
+            },
+            "choice": true
+          }
+        ]
       },
       {
         "id": "P2-hide-self",
@@ -496,7 +599,11 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -540,12 +647,15 @@
           "type": "equipped"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "note-only"
       }
     ],
     "meta": {
       "role": "support",
-      "affinities": []
+      "affinities": [],
+      "notes": "Pipeline semanticamente correcto. Restricciones base de curacion son reglas del sistema. Sin correcciones criticas necesarias."
     },
     "card_type": "ixim"
   },
@@ -559,7 +669,7 @@
         "id": "P1-negate-attack",
         "label": "Si Chaáktico aliado atacado: revela self y niega ataque (rápida)",
         "trigger": {
-          "type": "on-ally-damaged",
+          "type": "on-ally-attacked",
           "filter": {
             "energy": "chaaktica"
           },
@@ -592,7 +702,12 @@
           }
         ],
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "optional": true
+        },
+        "_original_trigger": "on-ally-damaged",
+        "phase": "reactive",
+        "_fix_wave-f1b": "add_field"
       }
     ],
     "meta": {
@@ -639,7 +754,11 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-abyss-aura",
@@ -667,14 +786,19 @@
           "type": "enemy",
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "zone": "field"
         },
         "restrictions": [],
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "continuous",
+        "_fix_wave-f1b": "add_field"
       }
     ],
     "meta": {
@@ -718,7 +842,8 @@
           "count": "all"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -759,6 +884,28 @@
           {
             "type": "copy",
             "copy_type": "active"
+          },
+          {
+            "type": "peek-enemy-deck",
+            "count": 3
+          },
+          {
+            "type": "restrict-shown-cards",
+            "restriction": "cant-use-effects",
+            "duration": "while-shown"
+          },
+          {
+            "type": "copy",
+            "copy_type": "active"
+          },
+          {
+            "type": "return-to-deck",
+            "position": "bottom",
+            "target": {
+              "type": "enemy",
+              "zone": "deck",
+              "count": 3
+            }
           }
         ],
         "target": {
@@ -771,7 +918,9 @@
             "type": "while-on-field"
           },
           "once_per_game": true
-        }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1b": "add_operations"
       },
       {
         "id": "P2-opg-restriction",
@@ -804,7 +953,10 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 solo registra la restricción once-per-game como pipeline independiente con trigger:'while-on-field'. Esta información ya está completamente en P1 (prerequisites.once-per-game + modifiers.once_per_game:true + modifiers.duration.while-on-field). P2 no agrega operación nueva.",
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -849,7 +1001,11 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "post.passives"
       },
       {
         "id": "P2-extra-equip",
@@ -882,8 +1038,16 @@
           "duration": {
             "type": "while-on-field"
           },
-          "optional": true
-        }
+          "optional": true,
+          "_original_effect_type": "",
+          "effect_type": "pasiva",
+          "equipment_override": {
+            "type": "equipment-rule-override",
+            "allows": "2-ixim-revealed"
+          }
+        },
+        "phase": "continuous",
+        "_fix_wave-f1b": "add_field"
       }
     ],
     "meta": {
@@ -936,8 +1100,12 @@
         "modifiers": {
           "duration": {
             "type": "turn"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "battle.declaration",
+        "_wave_d_fix": "move-cost-to-restriction"
       }
     ],
     "meta": {
@@ -988,7 +1156,8 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2-on-death-damage",
@@ -1013,11 +1182,14 @@
           }
         ],
         "target": {
-          "type": "both",
-          "count": 3
+          "type": "ally",
+          "count": 3,
+          "_original_type": "both"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction",
+        "_fix_wave-f2": "replace"
       }
     ],
     "meta": {
@@ -1040,11 +1212,7 @@
         },
         "prerequisites": [
           {
-            "type": "needs-ally",
-            "filter": {
-              "subtype": "abisal"
-            },
-            "zone": "principal"
+            "type": "independent"
           }
         ],
         "costs": [
@@ -1066,7 +1234,18 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous",
+        "_fix_wave-f2": "replace",
+        "_original_prerequisites": [
+          {
+            "type": "needs-ally",
+            "filter": {
+              "subtype": "abisal"
+            },
+            "zone": "principal"
+          }
+        ]
       },
       {
         "id": "P2-self-destruct",
@@ -1097,7 +1276,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -1116,7 +1296,7 @@
         "id": "P1-grant-abyss",
         "label": "Aliados en principal pueden abismar al atacar",
         "trigger": {
-          "type": "on-link"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -1145,8 +1325,12 @@
         "modifiers": {
           "duration": {
             "type": "next-attack"
-          }
-        }
+          },
+          "optional": true
+        },
+        "_original_trigger": "on-link",
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -1204,6 +1388,12 @@
         "modifiers": {
           "_original_trigger": "on-ally-damaged",
           "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
+        },
+        "phase": "reactive",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1b": "add_field",
+        "operation[1]": {
+          "partial_resolution": "abyss-partial-no-negate"
         }
       }
     ],
@@ -1223,7 +1413,7 @@
         "id": "P1-hide-choice",
         "label": "Opción A: oculta 2 Adendei",
         "trigger": {
-          "type": "on-link"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -1244,12 +1434,29 @@
           "type": "any",
           "count": 2,
           "filter": {
-            "card_type": "adendei"
+            "card_type": "adendei",
+            "card_type_exclude": [
+              "token",
+              "protector"
+            ],
+            "zone_exclude": [
+              "extincion"
+            ]
           }
         },
         "restrictions": [],
         "modifiers": {},
-        "choice_group": "main"
+        "choice_group": "main",
+        "_original_trigger": "on-link",
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "_original_target": {
+          "type": "any",
+          "count": 2,
+          "filter": {
+            "card_type": "adendei"
+          }
+        }
       },
       {
         "id": "P2-protect-choice",
@@ -1285,7 +1492,13 @@
             "type": "next-turn"
           }
         },
-        "choice_group": "main"
+        "choice_group": "main",
+        "phase": "battle.declaration",
+        "_fix_wave-f1b": "replace_operation",
+        "_original_operation[0]": null,
+        "operation[0]": {
+          "type": "protect-full"
+        }
       }
     ],
     "meta": {
@@ -1336,7 +1549,17 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "fast": true
+        "fast": true,
+        "phase": "reactive",
+        "_fix_wave-f1b": "add_field",
+        "operation[1]": {
+          "scope": "both"
+        },
+        "operation[0]": {
+          "_original_value": null,
+          "value": null,
+          "count": 1
+        }
       }
     ],
     "meta": {
@@ -1384,7 +1607,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -1428,14 +1653,17 @@
           "count": 2
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "note-only"
       }
     ],
     "meta": {
       "role": "support",
       "affinities": [
         "aff:atlica"
-      ]
+      ],
+      "notes": "Pipeline completamente fiel al texto. Sin correcciones requeridas."
     },
     "card_type": "adendei"
   },
@@ -1475,7 +1703,8 @@
           "type": "protector"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2",
@@ -1502,7 +1731,9 @@
         "restrictions": [],
         "modifiers": {
           "_original_trigger": "on-enemy-protector-damaged"
-        }
+        },
+        "phase": "battle.declaration",
+        "_wave_d_fix": "fix-cost-trigger"
       }
     ],
     "meta": {
@@ -1557,6 +1788,12 @@
           "duration": {
             "type": "while-on-field"
           }
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1b": "add_field",
+        "operation[0]": {
+          "optional": true
         }
       }
     ],
@@ -1578,7 +1815,7 @@
         "id": "P1",
         "label": "Pasiva: Abisal aliado atacado -> dania 1 a no-Abisal rival",
         "trigger": {
-          "type": "on-ally-damaged",
+          "type": "on-ally-attacked",
           "filter": {
             "subtype": "Abisal"
           }
@@ -1609,7 +1846,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-ally-damaged",
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -1653,7 +1892,9 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -1704,7 +1945,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "note-only"
       }
     ],
     "meta": {
@@ -1712,7 +1955,8 @@
       "affinities": [
         "aff:feral",
         "aff:abisal"
-      ]
+      ],
+      "notes": "Pipeline completamente fiel al texto. Sin issues. Correcto."
     },
     "card_type": "adendei"
   },
@@ -1726,7 +1970,7 @@
         "id": "P1",
         "label": "Pasiva: Feral atacado -> doble danio turno siguiente",
         "trigger": {
-          "type": "on-ally-damaged",
+          "type": "on-ally-attacked",
           "filter": {
             "subtype": "Feral"
           }
@@ -1754,7 +1998,9 @@
           "duration": {
             "type": "next-turn"
           }
-        }
+        },
+        "_original_trigger": "on-ally-damaged",
+        "phase": "battle.resolution"
       },
       {
         "id": "P2",
@@ -1785,7 +2031,8 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "end.activas-pasivas"
       }
     ],
     "meta": {
@@ -1836,6 +2083,12 @@
           "duration": {
             "type": "while-on-field"
           }
+        },
+        "phase": "continuous",
+        "_fix_wave-f1b": "replace_operation",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "protect-passive-from-negation"
         }
       }
     ],

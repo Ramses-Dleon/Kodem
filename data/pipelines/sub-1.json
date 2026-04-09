@@ -28,18 +28,20 @@
           }
         ],
         "target": {
-          "type": "ally",
+          "type": "both",
           "filter": {
             "energy": "gelida",
             "card_type": "adendei"
-          }
+          },
+          "_original_target": "ally"
         },
         "restrictions": [],
         "modifiers": {
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2-heal",
@@ -75,7 +77,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P3-on-death",
@@ -108,7 +111,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -168,7 +172,8 @@
         "restrictions": [],
         "modifiers": {
           "once_per_game": true
-        }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2-opg-restriction",
@@ -201,7 +206,10 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 exists solely to register the 'once-per-game' rule that is already encoded in P1 via prerequisites[once-per-game] and modifiers.once_per_game:true. P2 adds no new semantic content from the card text — the text only describes one effect with one restriction.",
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -243,7 +251,8 @@
           "type": "enemy"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -295,7 +304,8 @@
         "restrictions": [],
         "modifiers": {
           "once_per_field": true
-        }
+        },
+        "phase": "post.extinction"
       },
       {
         "id": "P2-cost-restrictions",
@@ -321,7 +331,10 @@
         "modifiers": {
           "once_per_field": true,
           "_original_trigger": "on-use"
-        }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P2 duplicates the cost 'cant-attack-this-turn' already present in P1's costs array, and the once-per-field restriction already in P1's prerequisites and modifiers. P2 provides no additional semantic content from the card text — it is structurally redundant.",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -370,7 +383,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -423,9 +437,14 @@
         "restrictions": [],
         "modifiers": {
           "duration": {
+            "type": "permanent"
+          },
+          "_original_duration": {
             "type": "next-attack"
           }
-        }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "edit_field"
       }
     ],
     "meta": {
@@ -472,7 +491,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -518,7 +538,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -563,7 +584,8 @@
           "zone": "deck"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-self-extinct-requirement",
@@ -591,7 +613,10 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_redundant": true,
+        "_redundant_reason": "P2 duplicates the self-extinct cost already encoded in P1's costs array. Both P1 and P2 have costs:[{type:'self-extinct'}] with the same trigger 'on-activate'. P2 adds only a 'register-game-rule' operation that is not mentioned in the card text — the text just says 'debe ser enviada a Extincion' as ",
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -633,7 +658,8 @@
           "count": "all"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -683,7 +709,8 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "fast": true
+        "fast": true,
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -740,7 +767,8 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "fast": true
+        "fast": true,
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -762,7 +790,7 @@
         "id": "P1-ambush-rest",
         "label": "Si aliado atacado: self y 1 rival reciben 1 descanso (rápida)",
         "trigger": {
-          "type": "on-ally-damaged",
+          "type": "on-ally-attacked",
           "fast": true
         },
         "prerequisites": [
@@ -792,7 +820,9 @@
           }
         ],
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "_original_trigger": "on-ally-damaged",
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -840,7 +870,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -890,7 +921,8 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -934,7 +966,11 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -977,12 +1013,60 @@
         "target": {
           "type": "self"
         },
+        "restrictions": [],
+        "modifiers": {
+          "optional": true
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "_original_restrictions": [
+          {
+            "type": "cant-be-protected"
+          }
+        ],
+        "_fix_wave-f1a": "edit_field",
+        "_original_operation[0]": {
+          "type": "multiply-damage",
+          "base_multiplier": 2,
+          "additional_multiplier": "pending_rests_at_end_of_turn"
+        },
+        "operation[0]": {
+          "type": "set-attack-damage",
+          "formula": "2 * pending_end_of_turn_rests"
+        },
+        "_fix_wave-f1b": "replace_operation"
+      },
+      {
+        "id": "P2-cant-be-protected",
+        "label": "Restriccion permanente: Esta carta no puede ser protegida",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
         "restrictions": [
           {
             "type": "cant-be-protected"
           }
         ],
-        "modifiers": {}
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        },
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -1024,10 +1108,13 @@
         "target": {
           "type": "both",
           "zone": "principal",
-          "count": "all"
+          "count": "all",
+          "note": "Intentionally targets both players Zona Principal. Recommend effect_text clarification: de ambos jugadores."
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "add_field"
       },
       {
         "id": "P2-no-hide-aura",
@@ -1045,7 +1132,13 @@
             "type": "none"
           }
         ],
-        "operation": [],
+        "operation": [
+          {
+            "type": "prevent-hide",
+            "scope": "both",
+            "zone": "principal"
+          }
+        ],
         "target": {
           "type": "both",
           "zone": "principal"
@@ -1059,8 +1152,11 @@
           "duration": {
             "type": "while-on-field"
           },
-          "optional": true
-        }
+          "optional": false
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1a": "add_operation"
       }
     ],
     "meta": {
@@ -1093,7 +1189,12 @@
             "type": "none"
           }
         ],
-        "operation": [],
+        "operation": [
+          {
+            "type": "apply-restriction",
+            "restriction": "cant-heal"
+          }
+        ],
         "target": {
           "type": "facing"
         },
@@ -1104,10 +1205,21 @@
         ],
         "modifiers": {
           "duration": {
-            "type": "next-turn"
+            "type": "end-of-next-own-turn",
+            "_original_type": "until-end-of-next-own-turn"
           },
-          "optional": true
-        }
+          "optional": false,
+          "_original_effect_type": "",
+          "effect_type": "activa",
+          "_original_duration": {
+            "type": "next-turn"
+          }
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1a": "edit_field",
+        "_original_operation": [],
+        "_fix_wave-f1b": "replace_modifier"
       }
     ],
     "meta": {
@@ -1156,8 +1268,19 @@
         "modifiers": {
           "duration": {
             "type": "turn"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "pasiva-rapida"
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f1a": "add_field",
+        "operation[0]": {
+          "_original_type": null,
+          "type": "promote-to-activa-rapida",
+          "duration": "current-turn",
+          "scope": "all-activa-effects"
+        },
+        "_fix_wave-f1b": "add_field"
       }
     ],
     "meta": {
@@ -1209,7 +1332,12 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "activa"
+        },
+        "phase": "battle.declaration",
+        "_wave_d_fix": "fix-cost-target-exclusion"
       }
     ],
     "meta": {
@@ -1247,8 +1375,8 @@
             "type": "immune-marks"
           },
           {
-            "type": "damage-reduce",
-            "value": "effect_only"
+            "type": "apply-immunity",
+            "immunity": "damage-by-effect"
           }
         ],
         "target": {
@@ -1258,15 +1386,35 @@
             "card_type": "adendei"
           }
         },
-        "restrictions": [
-          {
-            "type": "cant-be-damaged-effect"
-          }
-        ],
+        "restrictions": [],
         "modifiers": {
           "duration": {
             "type": "while-on-field"
           }
+        },
+        "_redundant": true,
+        "_redundant_reason": "P1 has both operation:[{type:'damage-reduce', value:'effect_only'}] AND restrictions:[{type:'cant-be-damaged-effect'}]. These encode the same immunity to effect damage twice — once as an operation and once as a restriction. Redundant.",
+        "phase": "continuous",
+        "_fix_wave-f2": "replace",
+        "_original_restrictions": [
+          {
+            "type": "cant-be-damaged-effect"
+          }
+        ],
+        "_original_operation": [
+          {
+            "type": "immune-marks"
+          },
+          {
+            "type": "damage-reduce",
+            "value": "effect_only"
+          }
+        ],
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1b": "replace_operation",
+        "_original_operation[1]": null,
+        "operation[1]": {
+          "type": "immune-effect-damage"
         }
       },
       {
@@ -1275,6 +1423,10 @@
         "trigger": {
           "type": "on-ally-attack",
           "filter": {
+            "energy": "atlica",
+            "card_type": "adendei"
+          },
+          "_original_filter": {
             "energy": "atlica"
           }
         },
@@ -1299,7 +1451,10 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "replace",
+        "_fix_wave-f3": "fix"
       }
     ],
     "meta": {
@@ -1350,6 +1505,15 @@
           "duration": {
             "type": "while-on-field"
           }
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1b": "replace_operation",
+        "_original_operation[0]": null,
+        "operation[0]": {
+          "type": "block-mark-removal",
+          "mark": "burn",
+          "via": "heal"
         }
       },
       {
@@ -1389,7 +1553,25 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1a": "edit_field",
+        "_original_operation[0]": {
+          "type": "bonus-attack-damage",
+          "value": 1,
+          "condition": {
+            "target_has_mark": "burn"
+          }
+        },
+        "operation[0]": {
+          "type": "conditional-damage-bonus",
+          "value": 1,
+          "condition": {
+            "target_has_mark": "burn"
+          }
+        },
+        "_fix_wave-f1b": "replace_operation"
       }
     ],
     "meta": {
@@ -1437,7 +1619,12 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix"
       },
       {
         "id": "P2-bonus-vs-rest",
@@ -1475,8 +1662,18 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1a": "edit_field",
+        "operation[0]": {
+          "_original_type": "bonus-attack-damage",
+          "type": "damage-bonus"
+        },
+        "_fix_wave-f1b": "replace_operation"
       }
     ],
     "meta": {
@@ -1528,7 +1725,9 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix"
       },
       {
         "id": "P2-heal",
@@ -1564,7 +1763,9 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix"
       },
       {
         "id": "P3-on-death",
@@ -1597,7 +1798,8 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {},
+        "phase": "post.extinction"
       }
     ],
     "meta": {
@@ -1648,8 +1850,12 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
-        }
+          },
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix"
       },
       {
         "id": "P2-heal",
@@ -1685,7 +1891,12 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f3": "fix"
       },
       {
         "id": "P3-on-death",
@@ -1718,7 +1929,12 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "post.extinction",
+        "_fix_wave-f2": "verify"
       }
     ],
     "meta": {
@@ -1726,7 +1942,7 @@
       "affinities": [
         "aff:huumica"
       ],
-      "notes": "Pattern Rava Deidad"
+      "notes": "Pattern Rava Deidad; Issue reported target.count:all missing but inspection confirms it IS already present in P3 JSON. Recorded as verification-pass, no change needed."
     },
     "card_type": "rava"
   },
@@ -1754,9 +1970,24 @@
         ],
         "operation": [
           {
-            "type": "damage-as-revealed",
-            "peek_count": 3,
-            "return_position": "bottom"
+            "type": "peek-deck",
+            "count": 3,
+            "owner": "self"
+          },
+          {
+            "type": "player-chooses",
+            "count": 1,
+            "from": "peeked-cards"
+          },
+          {
+            "type": "damage-from-stat",
+            "stat": "damage",
+            "source": "chosen-card"
+          },
+          {
+            "type": "return-all",
+            "position": "bottom",
+            "count": 3
           }
         ],
         "target": {
@@ -1769,9 +2000,31 @@
         "restrictions": [
           {
             "type": "cant-be-copied"
-          }
+          },
+          [
+            {
+              "type": "cant-be-copied"
+            },
+            {
+              "type": "target-must-be-revealed"
+            }
+          ]
         ],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "activa"
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "add_to_array",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1b": "replace_operation",
+        "_original_operation": [
+          {
+            "type": "damage-as-revealed",
+            "peek_count": 3,
+            "return_position": "bottom"
+          }
+        ]
       }
     ],
     "meta": {
@@ -1816,19 +2069,27 @@
           }
         ],
         "target": {
-          "type": "both",
+          "type": "enemy",
           "count": 1,
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "_original_type": "both"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "post.extinction",
+        "_fix_wave-f2": "replace",
+        "_fix_wave-f3": "note-only"
       }
     ],
     "meta": {
       "role": "closer",
-      "affinities": []
+      "affinities": [],
+      "notes": "once-per-game es tecnicamente redundante (la carta se envia a Extincion como costo). Sin embargo, cubre edge cases de revival. Mantener para robustez."
     },
     "card_type": "bio"
   },
@@ -1874,7 +2135,24 @@
           "duration": {
             "type": "while-on-field"
           }
-        }
+        },
+        "phase": "continuous",
+        "_fix_wave-f3": "fix",
+        "_fix_wave-f1a": "edit_field",
+        "_original_operation[0]": null,
+        "operation[0]": {
+          "type": "bonus-attack-damage-per",
+          "value": 1,
+          "per": {
+            "zone": "extinction",
+            "filter": {
+              "subtype": "abisal"
+            }
+          },
+          "trigger": "while-on-field",
+          "_note": "Húumica archetype: escala permanente confirmada (progressive potency); scale-per es correcto"
+        },
+        "_fix_wave-f1b": "add_field"
       }
     ],
     "meta": {
@@ -1924,17 +2202,31 @@
           "count": 1,
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "selection": "player-chooses"
         },
-        "restrictions": [],
-        "modifiers": {}
+        "restrictions": [
+          [
+            {
+              "type": "target-must-be-revealed"
+            }
+          ]
+        ],
+        "modifiers": {
+          "_original_effect_type": "",
+          "effect_type": "pasiva"
+        },
+        "phase": "battle.declaration",
+        "_fix_wave-f2": "add_field",
+        "_fix_wave-f3": "note-only"
       }
     ],
     "meta": {
       "role": "support",
       "affinities": [
         "aff:litica"
-      ]
+      ],
+      "notes": "Requiere decision de diseno sobre unicidad por nombre completo vs nombre base."
     },
     "card_type": "adendei"
   }
