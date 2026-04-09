@@ -1,0 +1,2772 @@
+[
+  {
+    "card_id": "009/066",
+    "pipeline_id": "P1-aura",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "009/066",
+    "pipeline_id": "P2-heal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "009/066",
+    "pipeline_id": "P3-on-death",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "ANIV-001",
+    "pipeline_id": "P1-vivify-rava",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "ANIV-001",
+    "pipeline_id": "P2-opg-restriction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "BETA-001",
+    "pipeline_id": "P1-cost-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-001",
+    "pipeline_id": "P1-bio-death-trigger",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "CAMP-001",
+    "pipeline_id": "P2-cost-restrictions",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-002",
+    "pipeline_id": "P1-mutual-bio-extinct",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-003",
+    "pipeline_id": "P1-scale-self",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-004",
+    "pipeline_id": "P1-slow",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-005",
+    "pipeline_id": "P1-poison",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-006",
+    "pipeline_id": "P1-swap-from-deck",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-006",
+    "pipeline_id": "P2-self-extinct-requirement",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-007UV",
+    "pipeline_id": "P1-reset-all",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-008UV",
+    "pipeline_id": "P1-hide-feral",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "CAMP-009UV",
+    "pipeline_id": "P1-equip-from-extinct",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "CAMP-010UV",
+    "pipeline_id": "P1-ambush-rest",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "CAMP-011UV",
+    "pipeline_id": "P1-burn-on-titan-reveal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-012UV",
+    "pipeline_id": "P1-rest-remove-on-reveal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-013UV",
+    "pipeline_id": "P1-scale-on-heal",
+    "phase": "post.passives"
+  },
+  {
+    "card_id": "CAMP-014UV",
+    "pipeline_id": "P1-double-damage-per-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-015UV",
+    "pipeline_id": "P1-reveal-all-on-reveal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-015UV",
+    "pipeline_id": "P2-no-hide-aura",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "CAMP-016",
+    "pipeline_id": "P1-no-heal-debuff",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-017",
+    "pipeline_id": "P1-grant-fast",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-018",
+    "pipeline_id": "P1-heal-on-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-019",
+    "pipeline_id": "P1-immune-aura",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "CAMP-019",
+    "pipeline_id": "P2-heal-on-ally-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-020",
+    "pipeline_id": "P1-burn-persist",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "CAMP-020",
+    "pipeline_id": "P2-bonus-vs-burn",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "CAMP-021",
+    "pipeline_id": "P1-extra-rest-debuff",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-021",
+    "pipeline_id": "P2-bonus-vs-rest",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "CAMP-022",
+    "pipeline_id": "P1-aura",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "CAMP-022",
+    "pipeline_id": "P2-heal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-022",
+    "pipeline_id": "P3-on-death",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "CAMP-023",
+    "pipeline_id": "P1-aura",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "CAMP-023",
+    "pipeline_id": "P2-heal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-023",
+    "pipeline_id": "P3-on-death",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "CAMP-024",
+    "pipeline_id": "P1-deck-peek-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CAMP-025",
+    "pipeline_id": "P1-massive-damage",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "CAMP-026",
+    "pipeline_id": "P1-scale-per-abyss",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "CDC-001",
+    "pipeline_id": "P1-damage-on-abyss-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CMFT-001",
+    "pipeline_id": "P1-swap-with-extinct",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "CMFT-001",
+    "pipeline_id": "P2-opg-restriction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "CMFT-002",
+    "pipeline_id": "P1-damage-per-extinct",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CMFT-002",
+    "pipeline_id": "P2-cost-and-restrictions",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CMFT-003",
+    "pipeline_id": "P1-bonus-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "CMFT-004",
+    "pipeline_id": "P1-copy-ixim",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "CMFT-005",
+    "pipeline_id": "P1-immune-extinction-effect",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "DMRTS-2022-01",
+    "pipeline_id": "P1-heal-on-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DMUE-001",
+    "pipeline_id": "P1-attack-protector",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "DOOC-001",
+    "pipeline_id": "P1-burn-or-damage-on-reveal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-001",
+    "pipeline_id": "P2-hide-self",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-001S",
+    "pipeline_id": "P1-heal-equipped-on-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-002",
+    "pipeline_id": "P1-negate-attack",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "DOOC-002S",
+    "pipeline_id": "P1-descend-on-reveal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-002S",
+    "pipeline_id": "P2-abyss-aura",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "DOOC-003",
+    "pipeline_id": "P1-remove-all-marks",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-003S",
+    "pipeline_id": "P1-copy-from-enemy-deck",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-003S",
+    "pipeline_id": "P2-opg-restriction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "DOOC-004",
+    "pipeline_id": "P1-damage-on-heal",
+    "phase": "post.passives"
+  },
+  {
+    "card_id": "DOOC-004",
+    "pipeline_id": "P2-extra-equip",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "DOOC-004S",
+    "pipeline_id": "P1-reveal-and-negate",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-005S",
+    "pipeline_id": "P1-no-attack-on-reveal",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "DOOC-005S",
+    "pipeline_id": "P2-on-death-damage",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "DOOC-006",
+    "pipeline_id": "P1-immune-effect-damage",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "DOOC-006",
+    "pipeline_id": "P2-self-destruct",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "DOOC-006S",
+    "pipeline_id": "P1-grant-abyss",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-007",
+    "pipeline_id": "P1-abyss-and-negate",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "DOOC-007S",
+    "pipeline_id": "P1-hide-choice",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-007S",
+    "pipeline_id": "P2-protect-choice",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-008",
+    "pipeline_id": "P1",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "DOOC-008S",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-009S",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-010",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-010",
+    "pipeline_id": "P2",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-010S",
+    "pipeline_id": "P1",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "DOOC-012",
+    "pipeline_id": "P1",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "DOOC-013",
+    "pipeline_id": "P1",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "DOOC-014",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-017",
+    "pipeline_id": "P1",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "DOOC-017",
+    "pipeline_id": "P2",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "DOOC-020",
+    "pipeline_id": "P1",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "DOOC-021",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-021",
+    "pipeline_id": "P2",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "DOOC-022",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "DOOC-023",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "Demo-001",
+    "pipeline_id": "P1",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "EXPN-001",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "EXPN-003",
+    "pipeline_id": "P1",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "EXPO-001",
+    "pipeline_id": "P1",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "EXPO-002",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "EXPO-003",
+    "pipeline_id": "P1",
+    "phase": "equip"
+  },
+  {
+    "card_id": "EXPO-004",
+    "pipeline_id": "P1",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "EXPO-004",
+    "pipeline_id": "P2",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "EXPO-004",
+    "pipeline_id": "P3",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "EXPO-006",
+    "pipeline_id": "P1",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "EXPO-006",
+    "pipeline_id": "P2",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "EXPO-009",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FAFT-001",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FAFT-001",
+    "pipeline_id": "P2",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FAFT-002",
+    "pipeline_id": "P1",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "FAFT-003",
+    "pipeline_id": "P1",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FAFT-003",
+    "pipeline_id": "P2-once-per-field-restriction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FAFT-004",
+    "pipeline_id": "P1-aura",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FAFT-004",
+    "pipeline_id": "P2-heal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FAFT-004",
+    "pipeline_id": "P3-on-death",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-001",
+    "pipeline_id": "P1-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-001",
+    "pipeline_id": "P2-no-rest-chaaktico",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-001K",
+    "pipeline_id": "P1-hide",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-001K",
+    "pipeline_id": "P2-change-energy",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-001K",
+    "pipeline_id": "P3-scale",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-001R",
+    "pipeline_id": "P1-on-vivify",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-001U",
+    "pipeline_id": "P1-no-rest-catrin",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-001U",
+    "pipeline_id": "P2-no-rest-catrin-activa",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-002K",
+    "pipeline_id": "P1-on-vivify",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-002R",
+    "pipeline_id": "P1-poison-on-attack",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "FYTE-002S",
+    "pipeline_id": "P1-on-death",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-002U",
+    "pipeline_id": "P1-heal-on-death",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-002U",
+    "pipeline_id": "P2-return-adendei",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-002U",
+    "pipeline_id": "P3-return-equip",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-002U",
+    "pipeline_id": "P4-return-protector",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-003K",
+    "pipeline_id": "P1-summon-req",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-003R",
+    "pipeline_id": "P1-protect-self",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-003R",
+    "pipeline_id": "P2-damage-rivals",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-003R",
+    "pipeline_id": "P3-heal-allies",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-003R",
+    "pipeline_id": "P4-return-card",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-003S",
+    "pipeline_id": "P1-link-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-003S",
+    "pipeline_id": "P2-damage-linked",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-003U",
+    "pipeline_id": "P1-damage-per-energy",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-003U",
+    "pipeline_id": "P2-cant-copy-restriction",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-004",
+    "pipeline_id": "P1-damage-reduce",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "FYTE-004R",
+    "pipeline_id": "P1-on-equip-select",
+    "phase": "equip"
+  },
+  {
+    "card_id": "FYTE-004R",
+    "pipeline_id": "P2-on-equipped-death",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-004S",
+    "pipeline_id": "P1-rest-enemy-protector",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-004S",
+    "pipeline_id": "P2-protect-equipped",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-004U",
+    "pipeline_id": "P1-on-draw-protect",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-005",
+    "pipeline_id": "P1-self-extinct",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-005",
+    "pipeline_id": "P2-vivify-on-death",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-005",
+    "pipeline_id": "P3-self-damage-on-death",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-005R",
+    "pipeline_id": "P1-deck-top",
+    "phase": "equip"
+  },
+  {
+    "card_id": "FYTE-005R",
+    "pipeline_id": "P2-rest-lock",
+    "phase": "equip"
+  },
+  {
+    "card_id": "FYTE-005S",
+    "pipeline_id": "P1-peek-top3",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-005S",
+    "pipeline_id": "P2-block-drawn-effects",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-005U",
+    "pipeline_id": "P1-summon-req",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-006",
+    "pipeline_id": "P1-damage-redistribute",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-006R",
+    "pipeline_id": "P1-redirect-attack",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "FYTE-006S",
+    "pipeline_id": "P1-on-negate-ally",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "FYTE-006U",
+    "pipeline_id": "P1-damage-per-equino",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-006U",
+    "pipeline_id": "P2-cant-heal-protect",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-007R",
+    "pipeline_id": "P1-poison",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-007R",
+    "pipeline_id": "P2-spectros-no-extinct-to-possess",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-007S",
+    "pipeline_id": "P1-vivify-equip-lock",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-007S",
+    "pipeline_id": "P2-cost-no-compatible",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "FYTE-007U",
+    "pipeline_id": "P1-damage-dual",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-007U",
+    "pipeline_id": "P2-standing-restrictions",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-008",
+    "pipeline_id": "P1-on-reveal-send",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-008",
+    "pipeline_id": "P2-on-extinct-cleanse-heal",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-008R",
+    "pipeline_id": "P1-catrin-immunity",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-008U",
+    "pipeline_id": "P1-vivify-ariam-buff",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-009",
+    "pipeline_id": "P1-vivify-conditional-protection",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-009R",
+    "pipeline_id": "P1-catrin-rest-reduction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-009S",
+    "pipeline_id": "P1-extinction-heal",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-010",
+    "pipeline_id": "P1-return-catrin-to-deck",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-010",
+    "pipeline_id": "P2-catrin-immunity-continuous",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-010R",
+    "pipeline_id": "P1-energy-bonus-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-010S",
+    "pipeline_id": "P1-equip-from-ext-or-zone",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-011R",
+    "pipeline_id": "P1-energy-bonus-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-011S",
+    "pipeline_id": "P1-multi-attack-equino",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-012R",
+    "pipeline_id": "P1-poison",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-012S",
+    "pipeline_id": "P1-copy-enemy-protector",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-012S",
+    "pipeline_id": "P2-heal-field",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-013",
+    "pipeline_id": "P1-heal-linked",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-013",
+    "pipeline_id": "P2-select-and-extinct-on-available",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-013R",
+    "pipeline_id": "P1-possess-aki",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-013S",
+    "pipeline_id": "P1-catrin-double-attack",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-013S",
+    "pipeline_id": "P2-catrin-activa-once-per-turn",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-014",
+    "pipeline_id": "P1-damage-non-adendei-protector",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-014",
+    "pipeline_id": "P2-target-restriction",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-014R",
+    "pipeline_id": "P1-possess-yakerr",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-014S",
+    "pipeline_id": "P1-peek-enemy",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-015R",
+    "pipeline_id": "P1-possess-nanuk",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-015S",
+    "pipeline_id": "P1-attack-extra-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-016R",
+    "pipeline_id": "P1-catrin-bonus-damage",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-016S",
+    "pipeline_id": "P1-on-death-vivify-ixim",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "FYTE-017R",
+    "pipeline_id": "P1-ally-death-damage",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-018R",
+    "pipeline_id": "P1-equino-kill-splash",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-019R",
+    "pipeline_id": "P1-extinction-aura-negate-immune",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-020R",
+    "pipeline_id": "P1-activate-damage-token-destroy",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-021R",
+    "pipeline_id": "P1-attack-extra-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-021R",
+    "pipeline_id": "P2-activate-extra-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-022R",
+    "pipeline_id": "P1-activate-swap-resurrecto",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-023R",
+    "pipeline_id": "P1-declare-reveal-conditional-damage",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-024R",
+    "pipeline_id": "P1-on-vivify-swap-protector",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-025",
+    "pipeline_id": "P1-activate-reset-rests-gelido",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-025",
+    "pipeline_id": "P2-cant-heal-protect",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-027",
+    "pipeline_id": "P1-attack-non-adendei-bonus",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-028",
+    "pipeline_id": "P1-activate-heal-catrin",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-029",
+    "pipeline_id": "P1-activate-damage-per-extinction",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-029",
+    "pipeline_id": "P2-cant-negate-restriction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-033",
+    "pipeline_id": "P1-activate-grant-catrin",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-036",
+    "pipeline_id": "P1-activate-protect",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-036",
+    "pipeline_id": "P2-activate-heal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-038",
+    "pipeline_id": "P1-extinction-counter-drawn-effect",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-044",
+    "pipeline_id": "P1-catrin-burn-on-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-044",
+    "pipeline_id": "P2-ally-death-damage-burned",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-048",
+    "pipeline_id": "P1-copy-rava-passive",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-048",
+    "pipeline_id": "P2-cant-attack-cant-negate",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "FYTE-051",
+    "pipeline_id": "P1-reveal-conditional",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-055",
+    "pipeline_id": "P1-equipped-immune-spectro-token",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-055",
+    "pipeline_id": "P2-on-death-bounce-spectro-or-token",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-057",
+    "pipeline_id": "P1-activate-negate-passive",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-059",
+    "pipeline_id": "P1-ally-link-damage-rival",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-059",
+    "pipeline_id": "P2-enemy-link-damage-protector",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "FYTE-060",
+    "pipeline_id": "P1-activate-rest-enemy-protector",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-061",
+    "pipeline_id": "P1-activate-rest-attacked",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-061",
+    "pipeline_id": "P2-on-death-damage-rival",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-061",
+    "pipeline_id": "P3-activa-cost-restriction",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-062",
+    "pipeline_id": "P1-activate-damage-protector-1rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-062",
+    "pipeline_id": "P2-activate-damage-protector-2rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-064",
+    "pipeline_id": "P1",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "FYTE-069",
+    "pipeline_id": "P1",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-071",
+    "pipeline_id": "P1",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "FYTE-075",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-078",
+    "pipeline_id": "P1",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "FYTE-080",
+    "pipeline_id": "P1",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-081",
+    "pipeline_id": "P1",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-081",
+    "pipeline_id": "P2",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-082",
+    "pipeline_id": "P1",
+    "phase": "prev"
+  },
+  {
+    "card_id": "FYTE-084",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "FYTE-084",
+    "pipeline_id": "P2",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMA-003",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMA-004",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMA-005",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMA-006",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMA-007",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMA-008",
+    "pipeline_id": "P1",
+    "phase": "equip"
+  },
+  {
+    "card_id": "IDRMA-009",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMA-010",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMA-012",
+    "pipeline_id": "P1",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMA-013",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMA-013",
+    "pipeline_id": "P2",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "IDRMA-014",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMA-015",
+    "pipeline_id": "P1",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "IDRMA-015",
+    "pipeline_id": "P2-opg-restriction",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "IDRMA-016",
+    "pipeline_id": "P1",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "IDRMA-017",
+    "pipeline_id": "P1",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMA-019",
+    "pipeline_id": "P1",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "IDRMA-019",
+    "pipeline_id": "P2-attack-restriction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMA-021",
+    "pipeline_id": "P1",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "IDRMA-022",
+    "pipeline_id": "P1-on-death-single",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "IDRMG-002",
+    "pipeline_id": "P1-reveal-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-003",
+    "pipeline_id": "P1-ally-rested-damage",
+    "phase": "end.rest-update"
+  },
+  {
+    "card_id": "IDRMG-004",
+    "pipeline_id": "P1-scale-on-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-004",
+    "pipeline_id": "P2-self-damage-at-max",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-006",
+    "pipeline_id": "P1-cant-be-attacked-facing",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMG-007",
+    "pipeline_id": "P1-damaged-rest-field",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "IDRMG-008",
+    "pipeline_id": "P1-immune-effect-damage",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMG-009",
+    "pipeline_id": "P1-attack-protector-only-ixim",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMG-010",
+    "pipeline_id": "P1-lock-enemy-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-010",
+    "pipeline_id": "P2-link-rested-only",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-011",
+    "pipeline_id": "P1-return-all-equips",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-012",
+    "pipeline_id": "P1-feral-reveal-bonus",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-013",
+    "pipeline_id": "P1-protect-new-ally",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-014",
+    "pipeline_id": "P1-ally-leaves-heal",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "IDRMG-015",
+    "pipeline_id": "P1-reveal-heal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-016",
+    "pipeline_id": "P1-immune-marks",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMG-017",
+    "pipeline_id": "P1-damage-per-rested-enemy",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-018",
+    "pipeline_id": "P1-reveal-rest-negate-passive",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMG-019",
+    "pipeline_id": "P1-redirect-damage",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "IDRMG-020",
+    "pipeline_id": "P1-destroy-enemy-equip",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "IDRMG-021",
+    "pipeline_id": "P1-damage-filter-feral-only",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMG-022",
+    "pipeline_id": "P1-attack-protector-if-ally-rested",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMP-003",
+    "pipeline_id": "P1-counterattack",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "IDRMP-005",
+    "pipeline_id": "P1-immune-rest-effects",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMP-006",
+    "pipeline_id": "P1-suppress-rival-effects",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "IDRMP-007",
+    "pipeline_id": "P1-previa-sacrifice-scale",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMP-008",
+    "pipeline_id": "P1-link-no-rest-boost",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMP-009",
+    "pipeline_id": "P1-link-no-rest-multi-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMP-010",
+    "pipeline_id": "P1-eot-damage-equipped",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "IDRMP-011",
+    "pipeline_id": "P1-damage-per-equino",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMP-012",
+    "pipeline_id": "P1-on-death-damage-all-enemies",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "IDRMP-013",
+    "pipeline_id": "P1-burn-attacked",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMP-014",
+    "pipeline_id": "P1-reveal-burn",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMP-015",
+    "pipeline_id": "P1-attack-protector",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMP-016",
+    "pipeline_id": "P1-redirect-attack",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "IDRMP-017",
+    "pipeline_id": "P1-global-no-heal",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "IDRMP-018",
+    "pipeline_id": "P1-equipped-bonus-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMP-019",
+    "pipeline_id": "P1-negate-passive-on-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMP-020",
+    "pipeline_id": "P1-damage-all-enemies",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMP-021",
+    "pipeline_id": "P1-damage-per-abyssal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IDRMP-022",
+    "pipeline_id": "P1-rest-all-by-card-value",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IKMR-001",
+    "pipeline_id": "P1-pass-for-double",
+    "phase": "prev"
+  },
+  {
+    "card_id": "IKMR-001SR",
+    "pipeline_id": "P1-pass-for-double",
+    "phase": "prev"
+  },
+  {
+    "card_id": "IKRW-001",
+    "pipeline_id": "P1-full-heal-linked",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "IKRW-001",
+    "pipeline_id": "P2-linked-death-scale-heal",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "INMX-001",
+    "pipeline_id": "P1-cyra-heal-6",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "INMX-001",
+    "pipeline_id": "P2-once-per-game-restriction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "INMX-002",
+    "pipeline_id": "P1-stabilize-swap",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "ISPMR-010",
+    "pipeline_id": "P1-splash-damage-atlico",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "ISPMR-011",
+    "pipeline_id": "P1-abyssal-trigger-extinction",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "ISPMR-012",
+    "pipeline_id": "P1-double-attack-self-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "ISPMR-012",
+    "pipeline_id": "P2-eot-self-rest",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "ISPMR-013",
+    "pipeline_id": "P1-protector-link-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "ISPMR-019",
+    "pipeline_id": "P1-swap-with-enemy",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KDMOLE-01-2022",
+    "pipeline_id": "P1-multi-attack",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-001",
+    "pipeline_id": "P1-burn-lock",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-001",
+    "pipeline_id": "P2-equip-restriction",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-003",
+    "pipeline_id": "P1-negate-passive",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-004",
+    "pipeline_id": "P1-heal-on-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-004",
+    "pipeline_id": "P2-remove-marks",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-006",
+    "pipeline_id": "P1-double-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-007",
+    "pipeline_id": "P1-immune-rest",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-007",
+    "pipeline_id": "P2-cant-negate-attack",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-008",
+    "pipeline_id": "P1-protect-all-protectors",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-009",
+    "pipeline_id": "P1-immune-extinction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-010",
+    "pipeline_id": "P1-multi-attack-per-equip",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-011",
+    "pipeline_id": "P1-on-reveal-reset-positions",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "KPRC-011",
+    "pipeline_id": "P2-lock-positions",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-012",
+    "pipeline_id": "P1-execute-equip-fast",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "KPRC-013",
+    "pipeline_id": "P1-negate-rival-passive",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-014",
+    "pipeline_id": "P1-return-to-deck",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-015",
+    "pipeline_id": "P1-immune-effect-damage",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-017",
+    "pipeline_id": "P1-draw-reveal-heal",
+    "phase": "prev"
+  },
+  {
+    "card_id": "KPRC-018",
+    "pipeline_id": "P1-change-energy-type",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-018",
+    "pipeline_id": "P2-attack-same-energy",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-018",
+    "pipeline_id": "P3-rava-cost-effect",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-019",
+    "pipeline_id": "P1-reset-principal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-019",
+    "pipeline_id": "P2-bounce-and-token",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-019",
+    "pipeline_id": "P3-heal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-024",
+    "pipeline_id": "P1-protect-on-equip",
+    "phase": "equip"
+  },
+  {
+    "card_id": "KPRC-025",
+    "pipeline_id": "P1-sacrifice-heal-protector",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-026",
+    "pipeline_id": "P1-protect-protector-global",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-027",
+    "pipeline_id": "P1-vivify-from-extinction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-027",
+    "pipeline_id": "P2-enter-field-no-titan-penalty",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-027",
+    "pipeline_id": "P3-on-extinction-damage-protector",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "KPRC-029",
+    "pipeline_id": "P1-return-ixim-and-scale",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-031",
+    "pipeline_id": "P1-damage-poisoned",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-034",
+    "pipeline_id": "P1-link-resting-protector",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-036",
+    "pipeline_id": "P1-heal-redirect",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-037",
+    "pipeline_id": "P1-draw-reveal-heal",
+    "phase": "prev"
+  },
+  {
+    "card_id": "KPRC-038",
+    "pipeline_id": "P1-link-no-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-038",
+    "pipeline_id": "P2-bonus-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-039",
+    "pipeline_id": "P1-abisal-double",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-048",
+    "pipeline_id": "P1-burn-extra-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-050",
+    "pipeline_id": "P1-redirect-damage",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "KPRC-051",
+    "pipeline_id": "P1-reveal-heal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-052",
+    "pipeline_id": "P1-multi-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-054",
+    "pipeline_id": "P1-reveal-burn",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-056",
+    "pipeline_id": "P1-protect-player",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-057",
+    "pipeline_id": "P1-swap-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-058",
+    "pipeline_id": "P1-protector-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-058",
+    "pipeline_id": "P2-permanent-restrictions",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRC-060",
+    "pipeline_id": "P1-reveal-abyss",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-061",
+    "pipeline_id": "P1-resting-retaliate",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "KPRC-064A",
+    "pipeline_id": "P1-extinction-recycle",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-064A",
+    "pipeline_id": "P2-self-extinct-cost",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-071",
+    "pipeline_id": "P1-burn-extinction",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRC-091",
+    "pipeline_id": "P1-lock-equip-return",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "KPRF-0001",
+    "pipeline_id": "P1-unnegable",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRF-0002",
+    "pipeline_id": "P1-link-heal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KPRF-0003",
+    "pipeline_id": "P1-equip-immune-effects",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "KPRF-0004",
+    "pipeline_id": "P1-facing-double",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KSPC-001",
+    "pipeline_id": "P1-ally-heal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "KSPC-001",
+    "pipeline_id": "P2-once-per-game-restriction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-001R",
+    "pipeline_id": "P1-negate-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-001S",
+    "pipeline_id": "P1-swap-field",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-002",
+    "pipeline_id": "P1-attacked-retaliate",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "LGRO-002K",
+    "pipeline_id": "P1-negate-field-effects",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-002S",
+    "pipeline_id": "P1-equip-return-scale",
+    "phase": "equip"
+  },
+  {
+    "card_id": "LGRO-002U",
+    "pipeline_id": "P1-chaak-reveal-no-rest",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-002U",
+    "pipeline_id": "P2-chaak-no-rest-effect",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-003",
+    "pipeline_id": "P1-recycle-top",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-003R",
+    "pipeline_id": "P1-equip-transfer",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-003S",
+    "pipeline_id": "P1-rot-fast",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "LGRO-003S",
+    "pipeline_id": "P2-rot-activa-promoted",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "LGRO-003U",
+    "pipeline_id": "P1-reveal-scale",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-003U",
+    "pipeline_id": "P2-lock-rival-scale",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-003U",
+    "pipeline_id": "P3-death-damage",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "LGRO-004R",
+    "pipeline_id": "P1-rest-swap",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-004R",
+    "pipeline_id": "P2-link-resting",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-004S",
+    "pipeline_id": "P1-return-equip",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "LGRO-004U",
+    "pipeline_id": "P1-litico-cant-be-attacked",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-004U",
+    "pipeline_id": "P2-litico-death-damage",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "LGRO-005U",
+    "pipeline_id": "P1-equip-multi-attack",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-007",
+    "pipeline_id": "P1-all-atlica",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-007R",
+    "pipeline_id": "P1-reveal-rest-lock",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-007R",
+    "pipeline_id": "P2-death-ally-rest",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "LGRO-007U",
+    "pipeline_id": "P1-swap-self",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-007U",
+    "pipeline_id": "P2-attack-facing-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-008U",
+    "pipeline_id": "P1-death-update-all",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "LGRO-009",
+    "pipeline_id": "P1-mirror-rest",
+    "phase": "end.rest-update"
+  },
+  {
+    "card_id": "LGRO-009R",
+    "pipeline_id": "P1-negate-on-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-010",
+    "pipeline_id": "P1-ally-death-scale",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "LGRO-011",
+    "pipeline_id": "P1-peek-exile",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-011",
+    "pipeline_id": "P2-reveal-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-011R",
+    "pipeline_id": "P1-copy-extinction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-011R",
+    "pipeline_id": "P2-copied-activa-execute",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-012",
+    "pipeline_id": "P1-ally-reveal-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-012",
+    "pipeline_id": "P2-self-damage-pre-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-012R",
+    "pipeline_id": "P1-damage-3-rivals",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-013R",
+    "pipeline_id": "P1-reveal-damage-all",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-014",
+    "pipeline_id": "P1-unnegable-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-014",
+    "pipeline_id": "P2-post-attack-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-014R",
+    "pipeline_id": "P1-attack-protector-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-017",
+    "pipeline_id": "P1-double-non-facing",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-019",
+    "pipeline_id": "P1-equip-from-extinction",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-020",
+    "pipeline_id": "P1-reset-scaled",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-021",
+    "pipeline_id": "P1-equip-to-enemy",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-021",
+    "pipeline_id": "P2-end-of-turn-damage",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "LGRO-022",
+    "pipeline_id": "P1-all-rival-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-025",
+    "pipeline_id": "P1-redirect-effect",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "LGRO-027",
+    "pipeline_id": "P1-restrict-rival-heal",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-030",
+    "pipeline_id": "P1-lock-equip-activation",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "LGRO-032",
+    "pipeline_id": "P1-attack-lock-rest",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-036",
+    "pipeline_id": "P1-bonus-damage-resting",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-037",
+    "pipeline_id": "P1-change-energy-temp",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-039",
+    "pipeline_id": "P1-ally-attacked-retaliate",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-040",
+    "pipeline_id": "P1-attack-all-burned",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "LGRO-041",
+    "pipeline_id": "P1-restrict-multi-attack",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-042",
+    "pipeline_id": "P1-extra-rest-on-action",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-043",
+    "pipeline_id": "P1-scale-heal-punish",
+    "phase": "post.passives"
+  },
+  {
+    "card_id": "LGRO-046",
+    "pipeline_id": "P1-hide-card",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "LGRO-048",
+    "pipeline_id": "P1-lock-equip",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-051",
+    "pipeline_id": "P1-no-facing-attack",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "LGRO-058",
+    "pipeline_id": "P1-enhanced-replace",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "LGRO-060",
+    "pipeline_id": "P1-death-swap-protector",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "LGRO-066",
+    "pipeline_id": "P1-equip-heal",
+    "phase": "equip"
+  },
+  {
+    "card_id": "LGRO-069",
+    "pipeline_id": "P1-poison-attacked",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "MLBU-001",
+    "pipeline_id": "P1-attacked-return-deck",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "MLBU-001S",
+    "pipeline_id": "P1-punish-heavy-attackers",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "MLBU-002",
+    "pipeline_id": "P1-burn-bonus-damage",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "MLBU-002S",
+    "pipeline_id": "P1-punish-out-of-field-effect",
+    "phase": "prev"
+  },
+  {
+    "card_id": "MLBU-003",
+    "pipeline_id": "P1-amplify-heal-ixim-bio",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "MLBU-003S",
+    "pipeline_id": "P1-on-reveal-shield-field",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "MLBU-004",
+    "pipeline_id": "P1-damage-ally-for-setup",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "MLBU-004S",
+    "pipeline_id": "P1-burn-rest-reduction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "MLBU-005",
+    "pipeline_id": "P1-self-return-and-fetch",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "MLBU-005S",
+    "pipeline_id": "P1-poison-ally-and-enemy",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "MLBU-005U",
+    "pipeline_id": "P1-reduce-burn-first-attack",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "MLBU-006",
+    "pipeline_id": "P1-counter-on-ally-attacked",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "MLBU-007",
+    "pipeline_id": "P1-hide-and-return",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "MLBU-009",
+    "pipeline_id": "P1-mass-rest-and-damage",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "MLBU-010",
+    "pipeline_id": "P1-scale-per-extinct-name",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "NAVD-001",
+    "pipeline_id": "P1-self-heal",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "NAVD-001",
+    "pipeline_id": "P2-december-penalty",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "NYPR-001",
+    "pipeline_id": "P1-sacrifice-linked-vivify-rava",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "NYPR-001",
+    "pipeline_id": "P2-cost-effect",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "ODEM-002",
+    "pipeline_id": "P1-on-death-heal-protector",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "PASE-001",
+    "pipeline_id": "P1-damage-resting-enemies",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "PASE-001",
+    "pipeline_id": "P2-rest-on-enemy-reveal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "PASE-005",
+    "pipeline_id": "P1-mass-equip-on-link",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "PASE-005",
+    "pipeline_id": "P2-equip-restriction",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "PASE-007",
+    "pipeline_id": "P1-damage-all-burned",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "PASE-007",
+    "pipeline_id": "P2-pirico-reveal-grants-burn-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "PATREON-002",
+    "pipeline_id": "P1-descend-enemy",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "RAMI-004S",
+    "pipeline_id": "P1-counter-negate-passive",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "RAMI-005S",
+    "pipeline_id": "P1-dual-condition-bonus",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "RAMI-006S",
+    "pipeline_id": "P1-scale-on-descend",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "RAMI-007S",
+    "pipeline_id": "P1-copy-rot-from-extinction",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "RAMI-008S",
+    "pipeline_id": "P1-reveal-extinction",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "SNVL-001",
+    "pipeline_id": "P1-fist-bump",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "SNVL-001",
+    "pipeline_id": "P2-once-per-game-restriction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "SNVL-002",
+    "pipeline_id": "P1-heal-all-allies",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCDE-001",
+    "pipeline_id": "P1-redirect-attack",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCDE-002",
+    "pipeline_id": "P1-multi-attack",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCDE-003",
+    "pipeline_id": "P1-multi-energy",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCDE-004",
+    "pipeline_id": "P1-double-damage-titan",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCDE-006",
+    "pipeline_id": "P1-rest-remove-all",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCDE-007",
+    "pipeline_id": "P1-negate-passive",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCDE-008",
+    "pipeline_id": "P1-token-replace",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "TCDE-009",
+    "pipeline_id": "P1-swap-field",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCDE-009",
+    "pipeline_id": "P2-double-damage-non-facing",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCDE-010",
+    "pipeline_id": "P1-cant-attack-select",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCDE-011",
+    "pipeline_id": "P1-link-enemy-protector",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCDE-012",
+    "pipeline_id": "P1-negate-response-damage",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "TCDE-012",
+    "pipeline_id": "P2-self-extinct-cost",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCDE-013",
+    "pipeline_id": "P1-blast-3-enemies",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCDE-014",
+    "pipeline_id": "P1-redirect-to-token",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCDE-014",
+    "pipeline_id": "P2-return-on-token-death",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCDE-015",
+    "pipeline_id": "P1-copy-token-on-death",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCDE-016",
+    "pipeline_id": "P1-scale-on-titan-reveal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCDE-017",
+    "pipeline_id": "P1-titan-cant-negate",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCDE-018",
+    "pipeline_id": "P1-scale-on-huumico-hide",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCDE-020",
+    "pipeline_id": "P1-ban-fast-activa",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCDE-021",
+    "pipeline_id": "P1-titan-attack-cant-negate",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCDE-021",
+    "pipeline_id": "P2-self-destruct-no-titans",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "TCOO-001",
+    "pipeline_id": "P1-attack-all-conditional",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-001K",
+    "pipeline_id": "P1-return-all-to-deck",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-002U",
+    "pipeline_id": "P1-damage-reduce-high-atk",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-003R",
+    "pipeline_id": "P1-copy-activa",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-003S",
+    "pipeline_id": "P1-self-swap",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-004R",
+    "pipeline_id": "P1-damage-enemy",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-004R",
+    "pipeline_id": "P2-damage-allies",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-004U",
+    "pipeline_id": "P1-drawn-rest-remove",
+    "phase": "prev"
+  },
+  {
+    "card_id": "TCOO-005R",
+    "pipeline_id": "P1-burn-and-damage-burned",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-005R",
+    "pipeline_id": "P2-extra-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-005S",
+    "pipeline_id": "P1-mass-rest",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCOO-005U",
+    "pipeline_id": "P1-bonus-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-006R",
+    "pipeline_id": "P1-reactive-burn",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCOO-006U",
+    "pipeline_id": "P1-reveal-out-of-game",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-006U",
+    "pipeline_id": "P2-swap-out-of-game",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-007R",
+    "pipeline_id": "P1-heal-titan",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-007S",
+    "pipeline_id": "P1-drawn-burn",
+    "phase": "prev"
+  },
+  {
+    "card_id": "TCOO-008",
+    "pipeline_id": "P1-equip-ixim",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-008",
+    "pipeline_id": "P2-delayed-cost",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "TCOO-008R",
+    "pipeline_id": "P1-damage-4",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-008R",
+    "pipeline_id": "P2-min-extinction-prereq",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-008S",
+    "pipeline_id": "P1-redirect-attack",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCOO-009",
+    "pipeline_id": "P1-win-condition",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-009R",
+    "pipeline_id": "P1-feralizar-on-ally-reveal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-009S",
+    "pipeline_id": "P1-drawn-rest-enemies",
+    "phase": "prev"
+  },
+  {
+    "card_id": "TCOO-010S",
+    "pipeline_id": "P1-immune-burn-rest",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-011",
+    "pipeline_id": "P1-damage-cap",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-011R",
+    "pipeline_id": "P1-protector-immune-resting",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-011S",
+    "pipeline_id": "P1-double-damage",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-012S",
+    "pipeline_id": "P1-swap-abisal",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-013",
+    "pipeline_id": "P1-scale-low-damage",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-013",
+    "pipeline_id": "P2-rest-penalty-low-damage",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-013R",
+    "pipeline_id": "P1-immune-attack-protected",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-014R",
+    "pipeline_id": "P1-attack-all-protected",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-015",
+    "pipeline_id": "P1-counter-swap-damage",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "TCOO-015R",
+    "pipeline_id": "P1-link-karyn-swap-protector",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-016R",
+    "pipeline_id": "P1-drawn-negate-effect",
+    "phase": "prev"
+  },
+  {
+    "card_id": "TCOO-016S",
+    "pipeline_id": "P1-equip-extinct-damage-6",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-017R",
+    "pipeline_id": "P1-burn-all-if-full-hp",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-018",
+    "pipeline_id": "P1-damage-2-if-low-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-018",
+    "pipeline_id": "P2-equip-damage-prereq",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-018R",
+    "pipeline_id": "P1-abisal-rest-eot",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-018R",
+    "pipeline_id": "P2-immune-abisal-attack",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-019R",
+    "pipeline_id": "P1-conditional-heal-damage",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-020",
+    "pipeline_id": "P1-atlico-reveal-heal-all",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-020R",
+    "pipeline_id": "P1-immune-extinction-pirico",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-020R",
+    "pipeline_id": "P2-on-activate-damage-pirico",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-021R",
+    "pipeline_id": "P1-burn-and-return-equip",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-023R",
+    "pipeline_id": "P1-bio-death-damage-per-abisal",
+    "phase": "post.extinction"
+  },
+  {
+    "card_id": "TCOO-023R",
+    "pipeline_id": "P2-once-per-field-restriction",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-024R",
+    "pipeline_id": "P1-reveal-abyss",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCOO-026",
+    "pipeline_id": "P1-scale-on-reveal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-027",
+    "pipeline_id": "P1-damage-per-hidden",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-035",
+    "pipeline_id": "P1-copy-from-extinction",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-042",
+    "pipeline_id": "P1-reactive-poison",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCOO-047",
+    "pipeline_id": "P1-equip-while-protected",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-053",
+    "pipeline_id": "P1-immune-burned-attacker",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-056",
+    "pipeline_id": "P1-bonus-damage-per-abisal",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-056",
+    "pipeline_id": "P2-atlica-as-abisal",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-061",
+    "pipeline_id": "P1-pirico-reveal-burn",
+    "phase": "battle.declaration"
+  },
+  {
+    "card_id": "TCOO-062",
+    "pipeline_id": "P1-ally-death-swap-protector",
+    "phase": "reactive"
+  },
+  {
+    "card_id": "TCOO-063",
+    "pipeline_id": "P1-non-abisal-cant-choose-target",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-063",
+    "pipeline_id": "P2-self-destruct-no-abisal",
+    "phase": "end.activas-pasivas"
+  },
+  {
+    "card_id": "TCOO-065",
+    "pipeline_id": "P1-heal-after-heavy-damage",
+    "phase": "battle.resolution"
+  },
+  {
+    "card_id": "TCOO-066",
+    "pipeline_id": "P1-damage-cap-chaaktico",
+    "phase": "continuous"
+  },
+  {
+    "card_id": "TCOO-068",
+    "pipeline_id": "P1-revive-bio-or-protector",
+    "phase": "battle.declaration"
+  }
+]

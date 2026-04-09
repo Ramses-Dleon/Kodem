@@ -80,7 +80,20 @@
           "default": []
         },
         "modifiers": { "$ref": "#/definitions/modifiers" },
-        "deferred": { "$ref": "#/definitions/deferred" }
+        "deferred": { "$ref": "#/definitions/deferred" },
+        "phase": {
+          "type": "string",
+          "enum": [
+            "prev",
+            "battle.declaration", "battle.costs", "battle.response", "battle.resolution",
+            "post.extinction", "post.replace", "post.passives",
+            "equip",
+            "end.pending-costs", "end.activas-pasivas", "end.end-effects",
+            "end.poison", "end.passives", "end.rest-update",
+            "continuous", "reactive"
+          ],
+          "description": "Fase del turno donde se resuelve este pipeline (§5.0-5.5). continuous=auras while-on-field, reactive=Activas-Rápidas en respuesta."
+        }
       }
     },
 
@@ -91,13 +104,16 @@
         "type": {
           "type": "string",
           "enum": [
-            "on-attack", "on-activate", "on-damaged", "on-reveal", "on-death",
-            "on-equip", "on-healed", "on-link", "on-vivify",
-            "on-ally-attack", "on-ally-damaged", "on-ally-reveal", "on-ally-death",
+            "on-attack", "on-attacked", "on-activate", "on-damaged", "on-reveal", "on-death",
+            "on-equip", "on-healed", "on-link", "on-vivify", "on-place",
+            "on-ally-attack", "on-ally-attacked", "on-ally-damaged", "on-ally-reveal", "on-ally-death",
             "on-ally-hide", "on-ally-leaves-field", "on-ally-equip", "on-ally-link",
-            "on-any-reveal", "on-any-healed", "on-any-death",
-            "on-enemy-uses-drawn-effect",
-            "on-equipped-attack", "on-equipped-damaged",
+            "on-ally-sent-to-extinction", "on-ally-negated",
+            "on-any-reveal", "on-any-healed", "on-any-death", "on-any-descend",
+            "on-enemy-link", "on-enemy-uses-drawn-effect",
+            "on-equipped-attack", "on-equipped-attacked", "on-equipped-damaged",
+            "on-passive-declared", "on-vinculo-odemico",
+            "on-taken-from-deck", "on-zone-swap", "on-marked",
             "end-of-turn", "end-of-turn-expire", "on-poison", "on-rest-update",
             "on-pass-turn", "on-draw", "on-bio-extinct",
             "while-on-field", "while-in-zone", "unconditional", "conditional-self-destruct"

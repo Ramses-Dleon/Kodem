@@ -1,0 +1,281 @@
+[
+  {
+    "card_id": "FYTE-057",
+    "card_name": "Zaykan, Poder de Restriccion",
+    "pipeline_id": "P1-activate-negate-passive",
+    "action": "move-cost-to-restriction",
+    "detail": "costs[{type:'cant-use-activa-while-active'}] is a conditional restriction on re-use, not a payment to declare the effect. Move to restrictions[]. costs should remain [{type:'none'}].",
+    "from": { "array": "costs", "item": { "type": "cant-use-activa-while-active" } },
+    "to": { "array": "restrictions", "item": { "type": "cant-use-activa-while-active", "condition": "while-passive-active" } }
+  },
+  {
+    "card_id": "IDRMG-019",
+    "card_name": "Petrologia Emergente",
+    "pipeline_id": "P1-redirect-damage",
+    "action": "add-optional-flag",
+    "detail": "effect_text says 'puedes enviar esta carta a Extincion' — the entire effect is optional. Add modifiers.optional:true. equip-extinct remains as the cost of choosing to activate.",
+    "patch": { "modifiers": { "optional": true } }
+  },
+  {
+    "card_id": "IDRMG-020",
+    "card_name": "Aura Protectora",
+    "pipeline_id": "P1-destroy-enemy-equip",
+    "action": "add-optional-flag",
+    "detail": "effect_text says 'puedes enviar esta carta a Extincion' — the effect is optional. Add modifiers.optional:true.",
+    "patch": { "modifiers": { "optional": true } }
+  },
+  {
+    "card_id": "KPRC-012",
+    "card_name": "Dragel, Tormenta",
+    "pipeline_id": "P1-execute-equip-fast",
+    "action": "move-cost-to-operation",
+    "detail": "effect_text says 'Envia... a Extincion y usa el efecto' — the equip extinction is part of the resolution sequence, not a cost paid before declaring. Move equip-extinct from costs[0] to operation[0]. costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "item": { "type": "equip-extinct" } },
+    "to": { "array": "operation", "position": 0, "item": { "type": "equip-extinct" } },
+    "costs_after": [{ "type": "none" }]
+  },
+  {
+    "card_id": "KPRC-025",
+    "card_name": "Terapia Botanica",
+    "pipeline_id": "P1-sacrifice-heal-protector",
+    "action": "add-optional-flag",
+    "detail": "effect_text says 'Puedes enviar esta carta a Extincion y cura...' — the 'puedes' makes the whole effect optional. Add modifiers.optional:true. self-extinct correctly stays as costs[] since paying it is how the optional effect is activated.",
+    "patch": { "modifiers": { "optional": true } }
+  },
+  {
+    "card_id": "KPRC-054",
+    "card_name": "Vesta Ignia, Flor de Fuego",
+    "pipeline_id": "P1-reveal-burn",
+    "action": "move-prerequisite-to-cost",
+    "detail": "cost_text says 'Quema 1 carta aliada no quemada para usar su Pasiva' — burning the ally is the cost to declare, not a state pre-check. Move from prerequisites to costs[]. The current costs[{type:'custom-lookup'}] is vague; replace with proper burn-ally cost.",
+    "from": { "array": "prerequisites", "item": { "type": "needs-mark", "mark": "burn", "inverted": true, "side": "ally" } },
+    "to": { "array": "costs", "item": { "type": "burn-ally-unburned", "target": { "type": "ally", "count": 1, "filter": { "mark_absent": "burn" } } } },
+    "costs_replace_index": 0,
+    "costs_after": [{ "type": "burn-ally-unburned", "target": { "type": "ally", "count": 1, "filter": { "mark_absent": "burn" } } }]
+  },
+  {
+    "card_id": "KPRC-058",
+    "card_name": "Enjambre Pirico",
+    "pipeline_id": "P2-permanent-restrictions",
+    "action": "remove-optional-flag",
+    "detail": "P2 registers permanent self-restrictions (cant-equip, cant-heal, cant-protect). These are always active and should never be optional. Remove modifiers.optional:true.",
+    "patch": { "modifiers": { "optional": false } },
+    "remove_key": { "modifiers": "optional" }
+  },
+  {
+    "card_id": "CAMP-018",
+    "card_name": "Ozet, Amante Lunar",
+    "pipeline_id": "P1-heal-on-attack",
+    "action": "fix-cost-target-exclusion",
+    "detail": "cost_text says 'Dana 1 pto. a OTRA carta aliada'. 'Otra' excludes both the heal target (operation-target) and Ozet herself (self). Update cost target.exclude to ['self','operation-target'].",
+    "from": { "array": "costs", "index": 0, "field": "target.exclude", "value": "operation-target" },
+    "to": { "array": "costs", "index": 0, "field": "target.exclude", "value": ["self", "operation-target"] }
+  },
+  {
+    "card_id": "LGRO-009R",
+    "card_name": "Proteccion Selectiva",
+    "pipeline_id": "P1-negate-on-attack",
+    "action": "move-cost-to-operation",
+    "detail": "cost_text says 'la carta equipada se dana 1 pto. si niega el ataque' — the damage is conditional on the negate succeeding, making it a post-resolution consequence, not a declared cost. Move self-damage from costs[0] to operation as conditional step after negate. costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "item": { "type": "self-damage", "value": 1 } },
+    "to": { "array": "operation", "position": 1, "item": { "type": "self-damage", "value": 1, "condition": "if-negate-resolved", "target": "equipped" } },
+    "costs_after": [{ "type": "none" }]
+  },
+  {
+    "card_id": "LGRO-014",
+    "card_name": "Develacion",
+    "pipeline_id": "P2-post-attack-rest",
+    "action": "move-cost-to-operation",
+    "detail": "cost_text says 'Despues de atacar, el Adendei equipado recibe 2 descansos' — 'después de atacar' is a post-resolution consequence, not a payment before declaring per §10.5. Move extra-rest from costs[0] to operation[0]. costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "item": { "type": "extra-rest", "value": 2 } },
+    "to": { "array": "operation", "position": 0, "item": { "type": "extra-rest", "value": 2, "timing": "post-attack", "target": "equipped" } },
+    "costs_after": [{ "type": "none" }]
+  },
+  {
+    "card_id": "LGRO-019",
+    "card_name": "Los Herejes",
+    "pipeline_id": "P1-equip-from-extinction",
+    "action": "fix-cost-target",
+    "detail": "cost_text says 'La carta vinculada recibe 2 descansos' — the 2 descansos go to the linked Adendei, not the Protector card. Add explicit target to the extra-rest cost entry.",
+    "from": { "array": "costs", "index": 0, "item": { "type": "extra-rest", "value": 2 } },
+    "to": { "array": "costs", "index": 0, "item": { "type": "extra-rest", "value": 2, "target": { "type": "linked-adendei" } } }
+  },
+  {
+    "card_id": "MLBU-005",
+    "card_name": "Ariam, Invocacion",
+    "pipeline_id": "P1-self-return-and-fetch",
+    "action": "move-cost-to-operation",
+    "detail": "effect_text says 'Puedes enviar esta carta al fondo del Mazo' — self-return-deck is the main action described in the effect, not a cost paid before declaring. Move from costs[0] to operation[0]. costs becomes [{type:'once-per-game'}] since cost_text says 'Solo puedes usar este efecto una vez por juego' but per rulebook once-per-game goes in prerequisites, so costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "item": { "type": "self-return-deck", "position": "bottom" } },
+    "to": { "array": "operation", "position": 0, "item": { "type": "self-return-deck", "position": "bottom" } },
+    "costs_after": [{ "type": "none" }],
+    "note": "once-per-game constraint stays in prerequisites[] where it already exists"
+  },
+  {
+    "card_id": "RAMI-007S",
+    "card_name": "Brazalete de Rotanio",
+    "pipeline_id": "P1-copy-rot-from-extinction",
+    "action": "fix-cost-type",
+    "detail": "costs[1] uses type:'ally-damage' with operation:'descend' — 'descend' is a game effect (permanently lowering attack), not a damage type. Rename to type:'descend-ally' to correctly semantically classify this cost.",
+    "from": { "array": "costs", "index": 1, "item": { "type": "ally-damage", "value": 1, "operation": "descend", "filter": { "stat_op": ">", "stat": "attack", "value": 0 } } },
+    "to": { "array": "costs", "index": 1, "item": { "type": "descend-ally", "value": 1, "filter": { "stat_op": ">", "stat": "attack", "value": 0 }, "_original_type": "ally-damage" } }
+  },
+  {
+    "card_id": "TCOO-001K",
+    "card_name": "Zinawe, Rey de las Aves",
+    "pipeline_id": "P1-return-all-to-deck",
+    "action": "move-cost-to-restriction",
+    "detail": "costs contains 'no-attack-this-turn' and 'cant-use-activa-while-active' — these are post-resolution operative constraints (consequences of using the effect this turn), not payments made before declaring per §10.5. Move both to restrictions[]. costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "items": [{ "type": "no-attack-this-turn" }, { "type": "cant-use-activa-while-active" }] },
+    "to": { "array": "restrictions", "items": [{ "type": "no-attack-this-turn", "duration": "this-turn" }, { "type": "cant-use-activa-while-active", "duration": "this-turn" }] },
+    "costs_after": [{ "type": "none" }]
+  },
+  {
+    "card_id": "TCOO-003S",
+    "card_name": "Therz, Prevencion",
+    "pipeline_id": "P1-self-swap",
+    "action": "add-optional-flag",
+    "detail": "effect_text says 'puedes enviar esta carta a Extincion' — the 'puedes' makes the effect optional. Add modifiers.optional:true.",
+    "patch": { "modifiers": { "optional": true } }
+  },
+  {
+    "card_id": "TCOO-005S",
+    "card_name": "Iceberg de Control",
+    "pipeline_id": "P1-mass-rest",
+    "action": "fix-cost-type",
+    "detail": "costs[1] is {type:'cant-return-to-equip'} but cost_text says 'regresa este Rot a la Zona de Equipo' — the Rot DOES return to Zona de Equipo as part of the cost. Replace with self-return-equip.",
+    "from": { "array": "costs", "index": 1, "item": { "type": "cant-return-to-equip" } },
+    "to": { "array": "costs", "index": 1, "item": { "type": "self-return-equip", "_original_type": "cant-return-to-equip" } }
+  },
+  {
+    "card_id": "TCOO-006U",
+    "card_name": "Quam, Detras de la Materia",
+    "pipeline_id": "P1-reveal-out-of-game",
+    "action": "add-cost-timing",
+    "detail": "costs[0] is protector-rest:3 with no timing. Per standard cost resolution, protector-rest is paid immediately when the cost is declared. Add timing:'immediate'.",
+    "from": { "array": "costs", "index": 0, "item": { "type": "protector-rest", "value": 3 } },
+    "to": { "array": "costs", "index": 0, "item": { "type": "protector-rest", "value": 3, "timing": "immediate" } }
+  },
+  {
+    "card_id": "TCOO-011S",
+    "card_name": "Verdor Incandescente",
+    "pipeline_id": "P1-double-damage",
+    "action": "move-cost-to-operation",
+    "detail": "cost_text says 'Si esta Pasiva fue usada, la carta equipada recibe 1 descanso adicional en Fin de Turno' — this is a post-effect consequence paid at end-of-turn, not a declared cost per §10.5. Move extra-rest from costs[0] to operation as a post-effect entry with timing:end-of-turn. costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "item": { "type": "extra-rest", "value": 1, "timing": "end-of-turn", "applies_to": "equipped" } },
+    "to": { "array": "operation", "position": 1, "item": { "type": "extra-rest", "value": 1, "timing": "end-of-turn", "target": "equipped", "condition": "if-passive-used" } },
+    "costs_after": [{ "type": "none" }]
+  },
+  {
+    "card_id": "TCOO-018",
+    "card_name": "Derrumbe Jurasico",
+    "pipeline_id": "P2-equip-damage-prereq",
+    "action": "remove-redundant-pipeline",
+    "detail": "P2 registers a restriction that is already captured as a prerequisite in P1 (ally-stat-filter on equipped damage). P2 also incorrectly uses trigger on-activate instead of while-on-field. The constraint is fully covered by P1.prerequisites — P2 is redundant and should be removed.",
+    "remove_pipeline": "P2-equip-damage-prereq"
+  },
+  {
+    "card_id": "TCOO-023R",
+    "card_name": "Uragg, Vacio Infernal",
+    "pipeline_id": "P2-once-per-field-restriction",
+    "action": "remove-redundant-pipeline",
+    "detail": "P2 registers a once-per-field restriction that is already modeled in P1.prerequisites[{type:'once-per-field'}] and P1.modifiers.once_per_field:true. P2 is redundant. Remove P2.",
+    "remove_pipeline": "P2-once-per-field-restriction"
+  },
+  {
+    "card_id": "TCOO-068",
+    "card_name": "Resucitacion Mineral",
+    "pipeline_id": "P1-revive-bio-or-protector",
+    "action": "move-cost-to-operation",
+    "detail": "effect_text says 'Puedes enviar esta carta a Extincion y regresa...' — self-extinction is presented as the operative action, not a declared payment. cost_text only states the once-per-game restriction (already in prerequisites[]). Move self-extinct from costs[0] to operation[0]. costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "item": { "type": "self-extinct" } },
+    "to": { "array": "operation", "position": 0, "item": { "type": "self-extinct" } },
+    "costs_after": [{ "type": "none" }],
+    "note": "once-per-game stays in prerequisites[] where it already exists"
+  },
+  {
+    "card_id": "CMFT-005",
+    "card_name": "Enis, Escudo de Plata",
+    "pipeline_id": "P1-immune-extinction-effect",
+    "action": "remove-optional-flag",
+    "detail": "effect_text says 'Ninguna carta PUEDE ser enviada a Extincion por efecto' — this is a global aura, always active while the card is on field. There is no 'puedes' for the player to choose. Remove modifiers.optional:true; the Pasiva is permanent.",
+    "patch": { "modifiers": { "optional": false } },
+    "remove_key": { "modifiers": "optional" }
+  },
+  {
+    "card_id": "DOOC-004S",
+    "card_name": "Shugg, Serpiente Voraz",
+    "pipeline_id": "P1-reveal-and-negate",
+    "action": "move-cost-to-restriction",
+    "detail": "costs[{type:'bio-passive-disabled'}] is a continuous restriction active while Shugg is on field, not a payment made when activating the effect. Move to restrictions[] with duration:while-on-field. costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "item": { "type": "bio-passive-disabled" } },
+    "to": { "array": "restrictions", "item": { "type": "bio-passive-disabled", "duration": "while-on-field" } },
+    "costs_after": [{ "type": "none" }]
+  },
+  {
+    "card_id": "DOOC-010",
+    "card_name": "Makua, Mandibula de Acero",
+    "pipeline_id": "P2",
+    "action": "fix-cost-trigger",
+    "detail": "P2 trigger should be on-enemy-protector-damaged (the self-damage fires whenever the rival Protector takes any damage). modifiers._original_trigger already confirms the correct trigger. Update the pipeline trigger from on-ally-attack to on-enemy-protector-damaged.",
+    "from": { "trigger": "on-ally-attack" },
+    "to": { "trigger": "on-enemy-protector-damaged" },
+    "note": "modifiers._original_trigger='on-enemy-protector-damaged' confirms the correct value"
+  },
+  {
+    "card_id": "EXPO-002",
+    "card_name": "Xilan, Sacrificio",
+    "pipeline_id": "P1",
+    "action": "move-cost-to-operation",
+    "detail": "effect_text says 'envia esta carta a Extincion y regresa tu carta Bio al campo' — the self-extinction is the operative action. cost_text is empty. Per §10.5, costs are payments before declaring; here the extinction is part of the effect resolution. Move self-extinct from costs[0] to operation[0]. costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "item": { "type": "self-extinct" } },
+    "to": { "array": "operation", "position": 0, "item": { "type": "self-extinct" } },
+    "costs_after": [{ "type": "none" }]
+  },
+  {
+    "card_id": "FAFT-003",
+    "card_name": "Zagal, Devorador de Inmundicia",
+    "pipeline_id": "P2-once-per-field-restriction",
+    "action": "remove-redundant-pipeline",
+    "detail": "P2 registers a once-per-field-scale restriction but P1 already has prerequisites[{type:'once-per-field'}] and modifiers.once_per_field:true. P2 is redundant. Remove P2.",
+    "remove_pipeline": "P2-once-per-field-restriction"
+  },
+  {
+    "card_id": "FYTE-003S",
+    "card_name": "Anton, Escuadro Catrin",
+    "pipeline_id": "P2-damage-linked",
+    "action": "remove-duplicate-operation",
+    "detail": "P2 has costs[{type:'linked-damage',value_table:{...}}] AND operation[{type:'damage',value_table:{...}}] — both represent the same damage to the linked Adendei. This double-counts the damage. The damage is the cost (paid before resolve), so remove operation[damage] from P2. operation becomes [].",
+    "from": { "array": "operation", "item": { "type": "damage" } },
+    "operation_after": []
+  },
+  {
+    "card_id": "FYTE-007S",
+    "card_name": "Marok, Invocacion de Ultratumba",
+    "pipeline_id": "P2-cost-no-compatible",
+    "action": "move-cost-to-operation",
+    "detail": "cost_text says 'Si no puedes reemplazar con 1 Adendei compatible, envia el equipo y 1 Adendei de los tomados a Extincion' — this is a conditional consequence (if no compatible target exists, then extinction happens), not a declared upfront payment. Move equip-extinct and ally-extinct from costs to operation with condition. costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "items": [{ "type": "equip-extinct" }, { "type": "ally-extinct" }] },
+    "to": { "array": "operation", "items": [{ "type": "equip-extinct", "condition": "no-compatible-adendei" }, { "type": "ally-extinct", "condition": "no-compatible-adendei" }] },
+    "costs_after": [{ "type": "none" }]
+  },
+  {
+    "card_id": "FYTE-008U",
+    "card_name": "Ariam, Resurgimiento Fangoso",
+    "pipeline_id": "P1-vivify-ariam-buff",
+    "action": "move-restriction-to-operation",
+    "detail": "restrictions[{type:'cant-heal-by-own-effects'}] is a debuff applied to all allied Ariam for the rest of the game — it is an effect produced by this pipeline, not a targeting restriction on this card or its pipeline. Move to operation[] as a debuff-apply entry. The cant-negate-passive restriction is a targeting restriction on this pipeline itself, so it stays.",
+    "from": { "array": "restrictions", "item": { "type": "cant-heal-by-own-effects" } },
+    "to": { "array": "operation", "position": 1, "item": { "type": "apply-restriction", "restriction": "cant-heal-by-own-effects", "target": { "type": "ally", "filter": { "name_contains": "Ariam" } }, "duration": "rest-of-game" } }
+  },
+  {
+    "card_id": "FYTE-016R",
+    "card_name": "Zaykan, Refuerzo Catrin",
+    "pipeline_id": "P1-catrin-bonus-damage",
+    "action": "move-cost-to-operation",
+    "detail": "cost_text says 'Los Adendei Catrin aliados se danan 2 ptos. al atacar o usar Activa si se usa esta Pasiva' — this is a conditional consequence triggered when a Catrin attacks/activates (not a payment made when declaring the Pasiva). Move self-damage from costs[0] to operation as a conditional entry. costs becomes [{type:'none'}].",
+    "from": { "array": "costs", "item": { "type": "self-damage", "value": 2 } },
+    "to": { "array": "operation", "position": 1, "item": { "type": "self-damage", "value": 2, "target": { "type": "ally", "filter": { "subtype": "Catrin" } }, "trigger": "on-attack-or-activate", "condition": "if-passive-active" } },
+    "costs_after": [{ "type": "none" }]
+  }
+]

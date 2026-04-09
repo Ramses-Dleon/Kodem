@@ -1,0 +1,474 @@
+[
+  {
+    "card_id": "IDRMG-010",
+    "pipeline_id": "P1-lock-enemy-attack",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "Protector Activa via Vinculo Odemico (on-link trigger). §6.3"
+  },
+  {
+    "card_id": "IDRMG-010",
+    "pipeline_id": "P2-link-rested-only",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Restriccion pasiva de vinculacion: solo acepta Adendei en descanso."
+  },
+  {
+    "card_id": "IDRMP-019",
+    "pipeline_id": "P1-negate-passive-on-attack",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa-rapida",
+    "note": "Rot §2.5: Activa-Rapida. Reactive to attack."
+  },
+  {
+    "card_id": "IDRMP-019",
+    "pipeline_id": "P1-negate-passive-on-attack",
+    "field": "trigger.fast",
+    "old_value": false,
+    "new_value": true,
+    "note": "Activa-Rapida requires fast:true (§2.5, §10.2)"
+  },
+  {
+    "card_id": "IKMR-001",
+    "pipeline_id": "P1-pass-for-double",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva-opcional",
+    "note": "Pass-turn as Pasiva Opcional prerequisite, not formal cost. §10.3"
+  },
+  {
+    "card_id": "IKMR-001SR",
+    "pipeline_id": "P1-pass-for-double",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva-opcional",
+    "note": "Same as IKMR-001: pass-turn maps to Pasiva Opcional. §10.3"
+  },
+  {
+    "card_id": "KDMOLE-01-2022",
+    "pipeline_id": "P1-multi-attack",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva-opcional",
+    "note": "Modificador de ataque que genera descansos - Pasiva Opcional (§10.3)."
+  },
+  {
+    "card_id": "KPRC-001",
+    "pipeline_id": "P1-burn-lock",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "Rot §2.5: Activa confirmed by effect_text. Operation design fix (cant-attack) separate."
+  },
+  {
+    "card_id": "KPRC-004",
+    "pipeline_id": "P1-heal-on-attack",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": null,
+    "note": "[DESIGN_ISSUE] Ixim §2.4: Pasiva only. on-attack trigger is not valid Pasiva for Ixim. Requires card designer review - may need reclassification as Rot or Adendei. No effect_type patch applied."
+  },
+  {
+    "card_id": "KPRC-013",
+    "pipeline_id": "P1-negate-rival-passive",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Ixim §2.4: must be Pasiva. Cost of auto-extinction may be design issue; encoding as pasiva pending designer review."
+  },
+  {
+    "card_id": "KPRC-054",
+    "pipeline_id": "P1-reveal-burn",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Ixim §2.4: Pasiva. on-reveal trigger is valid Pasiva trigger. Cost inconsistency flagged for review."
+  },
+  {
+    "card_id": "KPRC-056",
+    "pipeline_id": "P1-protect-player",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva-opcional",
+    "note": "'Puede seleccionar' = optional Pasiva. §10.3"
+  },
+  {
+    "card_id": "KPRC-056",
+    "pipeline_id": "P1-protect-player",
+    "field": "modifiers.optional",
+    "old_value": null,
+    "new_value": true,
+    "note": "Optional flag missing per issue KPRC-056/missing_effect_type_label."
+  },
+  {
+    "card_id": "KPRC-060",
+    "pipeline_id": "P1-reveal-abyss",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva-rapida",
+    "note": "on-any-reveal trigger = reactive to reveal -> Pasiva-Rapida (§10.4)."
+  },
+  {
+    "card_id": "KPRF-0002",
+    "pipeline_id": "P1-link-heal",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Ixim §2.4: Pasiva. on-link trigger resolves as Pasiva triggered by link event."
+  },
+  {
+    "card_id": "LGRO-001R",
+    "pipeline_id": "P1-negate-attack",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa-rapida",
+    "note": "Rot §2.5: Activa-Rapida. Reactive negate on ally attacked. fast:true already present."
+  },
+  {
+    "card_id": "LGRO-001R",
+    "pipeline_id": "P1-negate-attack",
+    "field": "trigger.type",
+    "old_value": "on-activate",
+    "new_value": "on-ally-attacked",
+    "note": "Fix trigger from on-activate to on-ally-attacked per issue recommendation."
+  },
+  {
+    "card_id": "CAMP-013UV",
+    "pipeline_id": "P1-scale-on-heal",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "on-healed trigger = Pasiva (auto-fires when healed). §10.1"
+  },
+  {
+    "card_id": "CAMP-016",
+    "pipeline_id": "P1-no-heal-debuff",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "effect_text labels 'Activa'. Adendei can have Activa. §10.1"
+  },
+  {
+    "card_id": "CAMP-017",
+    "pipeline_id": "P1-grant-fast",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva-rapida",
+    "note": "on-ally-reveal trigger = reactive to reveal -> Pasiva-Rapida (§10.4)."
+  },
+  {
+    "card_id": "CAMP-018",
+    "pipeline_id": "P1-heal-on-attack",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "on-attack trigger + concrete cost -> Activa. §10.1"
+  },
+  {
+    "card_id": "CAMP-021",
+    "pipeline_id": "P1-extra-rest-debuff",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Rava §2.3: Pasiva. on-reveal trigger is valid Pasiva trigger."
+  },
+  {
+    "card_id": "CAMP-021",
+    "pipeline_id": "P2-bonus-vs-rest",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Rava §2.3: Pasiva. Continuous bonus effect."
+  },
+  {
+    "card_id": "CAMP-023",
+    "pipeline_id": "P1-aura",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Rava §2.3: Pasiva. Missing 'Pasiva:' label in effect_text (add for consistency with CAMP-022)."
+  },
+  {
+    "card_id": "CAMP-023",
+    "pipeline_id": "P2-heal",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Rava §2.3: Pasiva."
+  },
+  {
+    "card_id": "CAMP-023",
+    "pipeline_id": "P3-on-death",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Rava §2.3: Pasiva. on-death trigger fires as Pasiva."
+  },
+  {
+    "card_id": "CAMP-024",
+    "pipeline_id": "P1-deck-peek-damage",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "cost_text references 'La Activa de esta carta'. on-activate trigger. §10.1"
+  },
+  {
+    "card_id": "CAMP-025",
+    "pipeline_id": "P1-massive-damage",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Bio §2.6: Pasiva. cost_text confirms 'Pasiva'. once-per-game restriction noted."
+  },
+  {
+    "card_id": "CDC-001",
+    "pipeline_id": "P1-damage-on-abyss-attack",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "effect_text labels 'Pasiva'. Adendei Pasiva valid."
+  },
+  {
+    "card_id": "LGRO-014R",
+    "pipeline_id": "P1-attack-protector-damage",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "on-attack trigger generates descanso -> Activa (§10.1). effect_text 'Pasiva' label is incorrect per issue."
+  },
+  {
+    "card_id": "LGRO-020",
+    "pipeline_id": "P1-reset-scaled",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Ixim §2.4: Pasiva. Optional Fase Previa action -> Pasiva (Ixim cannot have Activa)."
+  },
+  {
+    "card_id": "LGRO-036",
+    "pipeline_id": "P1-bonus-damage-resting",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Ixim §2.4: Pasiva confirmed by effect_text. Explicit field added for §2.4 compliance."
+  },
+  {
+    "card_id": "TCDE-014",
+    "pipeline_id": "P1-redirect-to-token",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa-rapida",
+    "note": "Rot §2.5: Activa-Rapida. Reactive trigger + fast:true. 'Pasiva reactiva' label is wrong."
+  },
+  {
+    "card_id": "TCDE-014",
+    "pipeline_id": "P2-return-on-token-death",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa-rapida",
+    "note": "Rot §2.5: Activa-Rapida. fast:true already set."
+  },
+  {
+    "card_id": "TCOO-006R",
+    "pipeline_id": "P1-reactive-burn",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa-rapida",
+    "note": "Rot §2.5: Activa-Rapida. fast:true at pipeline root. on-ally-attacked trigger."
+  },
+  {
+    "card_id": "TCOO-006U",
+    "pipeline_id": "P1-reveal-out-of-game",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Rava §2.3: Pasiva. Asymmetric cost flagged for designer review."
+  },
+  {
+    "card_id": "TCOO-006U",
+    "pipeline_id": "P2-swap-out-of-game",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Rava §2.3: Pasiva."
+  },
+  {
+    "card_id": "TCOO-009",
+    "pipeline_id": "P1-win-condition",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "effect_text says 'Pasiva'. Auto-fires when condition met. §10.1"
+  },
+  {
+    "card_id": "TCOO-026",
+    "pipeline_id": "P1-scale-on-reveal",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "on-reveal trigger = Pasiva (condition auto-fires). §10.1"
+  },
+  {
+    "card_id": "CMFT-003",
+    "pipeline_id": "P1-bonus-damage",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "Adendei Activa: bonus damage on attack. Operation type fix (damage->damage-bonus) separate."
+  },
+  {
+    "card_id": "CMFT-003",
+    "pipeline_id": "P1-bonus-damage",
+    "field": "operation[0].type",
+    "old_value": "damage",
+    "new_value": "damage-bonus",
+    "note": "Fix operation type from 'damage' to 'damage-bonus' per CMFT-003/effect_type_mismatch."
+  },
+  {
+    "card_id": "CMFT-004",
+    "pipeline_id": "P1-copy-ixim",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Ixim §2.4: Pasiva. Copy reads effect-text only; does not activate source card in extinction."
+  },
+  {
+    "card_id": "DMRTS-2022-01",
+    "pipeline_id": "P1-heal-on-attack",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "effect_text labels 'Activa'. on-attack trigger. Missing requires-simultaneous-attack prereq is separate fix."
+  },
+  {
+    "card_id": "DOOC-001",
+    "pipeline_id": "P1-burn-or-damage-on-reveal",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "cost_text calls this 'la Pasiva de esta carta'. on-reveal trigger. Scope ambiguity noted."
+  },
+  {
+    "card_id": "DOOC-001",
+    "pipeline_id": "P2-hide-self",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Secondary Pasiva pipeline companion to P1."
+  },
+  {
+    "card_id": "DOOC-002S",
+    "pipeline_id": "P1-descend-on-reveal",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "on-reveal trigger = Pasiva (auto-fires). once-per-turn applies to reveal act itself."
+  },
+  {
+    "card_id": "DOOC-002S",
+    "pipeline_id": "P2-abyss-aura",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Continuous aura = Pasiva."
+  },
+  {
+    "card_id": "DOOC-004",
+    "pipeline_id": "P1-damage-on-heal",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "on-any-healed = reactive Pasiva. once-per-turn on P1 only."
+  },
+  {
+    "card_id": "DOOC-004",
+    "pipeline_id": "P2-extra-equip",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Extra equip slot is continuous Pasiva. No once-per-turn restriction."
+  },
+  {
+    "card_id": "DOOC-004S",
+    "pipeline_id": "P1-reveal-and-negate",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "on-ally-reveal = reactive Pasiva. trigger.scope:any-turn needed separately."
+  },
+  {
+    "card_id": "DOOC-021",
+    "pipeline_id": "P1",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "label confirms 'Activa'. on-activate trigger. Effect text prefix 'Activa:' to be added."
+  },
+  {
+    "card_id": "DOOC-021",
+    "pipeline_id": "P2",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "label confirms 'Pasiva'. Continuous immunity while on field."
+  },
+  {
+    "card_id": "EXPN-003",
+    "pipeline_id": "P1",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa-rapida",
+    "note": "Label normalized to 'Activa-Rapida' (with hyphen). fast:true confirmed in trigger."
+  },
+  {
+    "card_id": "EXPO-009",
+    "pipeline_id": "P1",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Vinculo Odemico trigger (on-link). No cost, auto-fires -> Pasiva. Add type label to effect_text."
+  },
+  {
+    "card_id": "FAFT-001",
+    "pipeline_id": "P1",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "Protector. _original_trigger was on-link (Vinculo Odemico). Activa via Vinculo Odemico. §6.3"
+  },
+  {
+    "card_id": "FAFT-001",
+    "pipeline_id": "P2",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "activa",
+    "note": "Protector P2. Activa (B) per label. Triggers via Vinculo Odemico. §6.3"
+  },
+  {
+    "card_id": "FYTE-010S",
+    "pipeline_id": "P1-equip-from-ext-or-zone",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva",
+    "note": "Espectro special override of normal equip timing (Fase Previa vs Fase de Equipo). §5.4 exception."
+  },
+  {
+    "card_id": "FYTE-017R",
+    "pipeline_id": "P1-ally-death-damage",
+    "field": "modifiers.effect_type",
+    "old_value": null,
+    "new_value": "pasiva-rapida",
+    "note": "on-ally-death = reactive to elimination -> Pasiva-Rapida (§10.4). fast:true needed."
+  },
+  {
+    "card_id": "FYTE-017R",
+    "pipeline_id": "P1-ally-death-damage",
+    "field": "trigger.fast",
+    "old_value": false,
+    "new_value": true,
+    "note": "Pasiva-Rapida requires fast:true on trigger (§10.4)."
+  }
+]

@@ -1,0 +1,1005 @@
+[
+  {
+    "card_id": "FYTE-028",
+    "pipeline_id": "P1-activate-heal-catrin",
+    "action": "replace",
+    "field": "restrictions[0].type",
+    "old_value": "cant-heal-by-own-effects",
+    "new_value": "cant-be-healed",
+    "detail": "Cost text says card cannot be healed (self-restriction). cant-heal-by-own-effects implies it cannot heal others via its own effects — wrong direction. Correct: cant-be-healed."
+  },
+  {
+    "card_id": "IDRMG-002",
+    "pipeline_id": "P1-reveal-rest",
+    "action": "replace",
+    "field": "prerequisites[1].type",
+    "old_value": "self-hidden",
+    "new_value": "target-hidden",
+    "detail": "Condition checks TARGET card is hidden (si la carta atacada no esta revelada), not self. Change to target-hidden."
+  },
+  {
+    "card_id": "IDRMG-009",
+    "pipeline_id": "P1-attack-protector-only-ixim",
+    "action": "replace",
+    "field": "prerequisites[1]",
+    "old_value": {
+      "type": "no-own-field",
+      "filter": {
+        "card_type": "ixim",
+        "exclude_self": true
+      },
+      "note": "no other Ixim on field"
+    },
+    "new_value": {
+      "type": "no-field-ixim-equip",
+      "scope": "both-players",
+      "exclude_self": true,
+      "note": "no other Adendei with an Ixim equipped on the field (any player)"
+    },
+    "detail": "Ixim cards sit under Adendei. Must check has_ixim_equip on any field Adendei, not Ixim as standalone field cards."
+  },
+  {
+    "card_id": "IDRMG-018",
+    "pipeline_id": "P1-reveal-rest-negate-passive",
+    "action": "replace",
+    "field": "modifiers",
+    "old_value": {
+      "duration": {
+        "type": "until-condition",
+        "condition": "target-available"
+      }
+    },
+    "new_value": {
+      "operation_modifiers": [
+        {
+          "operation_index": 0,
+          "type": "rest-add",
+          "duration": null
+        },
+        {
+          "operation_index": 1,
+          "type": "negate-passive-persistent",
+          "duration": {
+            "type": "until-condition",
+            "condition": "target-available"
+          }
+        }
+      ]
+    },
+    "detail": "Duration until-condition:target-available applies ONLY to negate-passive-persistent, not to rest-add (instantaneous). Split modifiers by operation index."
+  },
+  {
+    "card_id": "IDRMP-005",
+    "pipeline_id": "P1-immune-rest-effects",
+    "action": "replace",
+    "field": "restrictions[0].type",
+    "old_value": "cant-rest-update",
+    "new_value": "cant-receive-rest-by-effect",
+    "detail": "Card cannot RECEIVE rests by effect. cant-rest-update means cannot decrement rests. Correct: cant-receive-rest-by-effect."
+  },
+  {
+    "card_id": "KPRC-012",
+    "pipeline_id": "P1-execute-equip-fast",
+    "action": "replace",
+    "field": "prerequisites[0]",
+    "old_value": {
+      "type": "needs-equip"
+    },
+    "new_value": {
+      "type": "needs-card-in-equip-zone",
+      "filter": {
+        "has_fast_active": true
+      }
+    },
+    "detail": "Requires a card in Zona de Equipo with Activa-Rapida (not equipped to a card). Change to needs-card-in-equip-zone with filter has_fast_active:true."
+  },
+  {
+    "card_id": "KPRC-056",
+    "pipeline_id": "P1-protect-player",
+    "action": "add_pipeline",
+    "field": "pipelines",
+    "old_value": null,
+    "new_value": {
+      "id": "P2-cant-heal-own-protector",
+      "label": "Restriccion permanente: Protector aliado no puede ser curado mientras esta carta este en campo",
+      "trigger": {
+        "type": "while-on-field"
+      },
+      "prerequisites": [
+        {
+          "type": "independent"
+        }
+      ],
+      "costs": [
+        {
+          "type": "none"
+        }
+      ],
+      "operation": [],
+      "target": {
+        "type": "ally",
+        "zone": "protector-zone"
+      },
+      "restrictions": [
+        {
+          "type": "cant-heal",
+          "scope": "own-protector"
+        }
+      ],
+      "modifiers": {
+        "duration": {
+          "type": "while-on-field"
+        }
+      },
+      "phase": "continuous"
+    },
+    "detail": "cant-heal on own Protector is permanent (while-on-field). Must be a standalone pipeline, not inside P1 which only fires on activate."
+  },
+  {
+    "card_id": "KPRC-061",
+    "pipeline_id": "P1-resting-retaliate",
+    "action": "replace",
+    "field": "prerequisites[0]",
+    "old_value": {
+      "type": "self-available",
+      "min": 1,
+      "_original_type": "self-has-rests"
+    },
+    "new_value": {
+      "type": "self-has-rests",
+      "min": 1
+    },
+    "detail": "self-available means 0 rests (ready). Text requires card to be in descanso (>=1 rest). Change to self-has-rests min:1."
+  },
+  {
+    "card_id": "KPRC-064A",
+    "pipeline_id": "P1-extinction-recycle",
+    "action": "replace",
+    "field": "target.filter",
+    "old_value": {
+      "card_type": "adendei"
+    },
+    "new_value": {
+      "card_type": "adendei",
+      "energy": "same-as-prerequisite-group"
+    },
+    "detail": "Effect returns 1 of the 4 Adendei with the same energy. Target filter must restrict to the qualifying energy group. Add energy:same-as-prerequisite-group."
+  },
+  {
+    "card_id": "LGRO-003U",
+    "pipeline_id": "P2-lock-rival-scale",
+    "action": "replace",
+    "field": "restrictions[0].type",
+    "old_value": "cant-rest-update",
+    "new_value": "cant-scale",
+    "detail": "P2 blocks rival scaling. cant-rest-update is about rest updates. Correct: cant-scale."
+  },
+  {
+    "card_id": "CAMP-014UV",
+    "pipeline_id": "P1-double-damage-per-rest",
+    "action": "replace",
+    "field": "restrictions",
+    "old_value": [
+      {
+        "type": "cant-be-protected"
+      }
+    ],
+    "new_value": [],
+    "detail": "Remove cant-be-protected from P1 (trigger:on-attack). Permanent restriction must not live inside a conditional-trigger pipeline."
+  },
+  {
+    "card_id": "CAMP-014UV",
+    "pipeline_id": "P1-double-damage-per-rest",
+    "action": "add_pipeline",
+    "field": "pipelines",
+    "old_value": null,
+    "new_value": {
+      "id": "P2-cant-be-protected",
+      "label": "Restriccion permanente: Esta carta no puede ser protegida",
+      "trigger": {
+        "type": "while-on-field"
+      },
+      "prerequisites": [
+        {
+          "type": "independent"
+        }
+      ],
+      "costs": [
+        {
+          "type": "none"
+        }
+      ],
+      "operation": [],
+      "target": {
+        "type": "self"
+      },
+      "restrictions": [
+        {
+          "type": "cant-be-protected"
+        }
+      ],
+      "modifiers": {
+        "duration": {
+          "type": "while-on-field"
+        }
+      },
+      "phase": "continuous"
+    },
+    "detail": "Add standalone P2 pipeline for permanent cant-be-protected restriction with trigger:while-on-field."
+  },
+  {
+    "card_id": "CAMP-015UV",
+    "pipeline_id": "P1-reveal-all-on-reveal",
+    "action": "add_field",
+    "field": "target.note",
+    "old_value": null,
+    "new_value": "Intentionally targets both players Zona Principal. Recommend effect_text clarification: de ambos jugadores.",
+    "detail": "target.type:both is intentional — reveals all cards in both players Zona Principal. Document explicitly. effect_text clarification recommended."
+  },
+  {
+    "card_id": "CAMP-019",
+    "pipeline_id": "P1-immune-aura",
+    "action": "replace",
+    "field": "restrictions",
+    "old_value": [
+      {
+        "type": "cant-be-damaged-effect"
+      }
+    ],
+    "new_value": [],
+    "detail": "restrictions[] is for the declaring card (Nozi), not aura targets. Remove cant-be-damaged-effect from restrictions."
+  },
+  {
+    "card_id": "CAMP-019",
+    "pipeline_id": "P1-immune-aura",
+    "action": "replace",
+    "field": "operation",
+    "old_value": [
+      {
+        "type": "immune-marks"
+      },
+      {
+        "type": "damage-reduce",
+        "value": "effect_only"
+      }
+    ],
+    "new_value": [
+      {
+        "type": "immune-marks"
+      },
+      {
+        "type": "apply-immunity",
+        "immunity": "damage-by-effect"
+      }
+    ],
+    "detail": "Replace damage-reduce:effect_only with apply-immunity:damage-by-effect. Eliminates the operation/restriction redundancy."
+  },
+  {
+    "card_id": "CAMP-019",
+    "pipeline_id": "P2-heal-on-ally-attack",
+    "action": "replace",
+    "field": "trigger.filter",
+    "old_value": {
+      "energy": "atlica"
+    },
+    "new_value": {
+      "energy": "atlica",
+      "card_type": "adendei"
+    },
+    "detail": "Text says Adendei-Atlico aliado ataca. Add card_type:adendei to P2 trigger filter to prevent Atlica Rava from triggering heal."
+  },
+  {
+    "card_id": "CAMP-023",
+    "pipeline_id": "P3-on-death",
+    "action": "verify",
+    "field": "target.count",
+    "old_value": "all",
+    "new_value": "all",
+    "detail": "Issue reported target.count:all missing but inspection confirms it IS already present in P3 JSON. Recorded as verification-pass, no change needed."
+  },
+  {
+    "card_id": "CAMP-024",
+    "pipeline_id": "P1-deck-peek-damage",
+    "action": "add_to_array",
+    "field": "restrictions",
+    "old_value": [
+      {
+        "type": "cant-be-copied"
+      }
+    ],
+    "new_value": [
+      {
+        "type": "cant-be-copied"
+      },
+      {
+        "type": "target-must-be-revealed"
+      }
+    ],
+    "detail": "Rules section 6.5: effects can only target revealed cards unless stated otherwise. Add restriction target-must-be-revealed."
+  },
+  {
+    "card_id": "CAMP-025",
+    "pipeline_id": "P1-massive-damage",
+    "action": "replace",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "enemy",
+    "detail": "Effect says a UN Adendei rival. target.type:both incorrectly allows ally targeting. Change to enemy."
+  },
+  {
+    "card_id": "CDC-001",
+    "pipeline_id": "P1-damage-on-abyss-attack",
+    "action": "add_field",
+    "field": "target.selection",
+    "old_value": null,
+    "new_value": "player-chooses",
+    "detail": "Effect implies player chooses which enemy Adendei receives 1 damage. Add target.selection:player-chooses."
+  },
+  {
+    "card_id": "CDC-001",
+    "pipeline_id": "P1-damage-on-abyss-attack",
+    "action": "add_to_array",
+    "field": "restrictions",
+    "old_value": [],
+    "new_value": [
+      {
+        "type": "target-must-be-revealed"
+      }
+    ],
+    "detail": "Rules section 6.5: effect on 1 Adendei rival without mention of ocultas requires revealed target."
+  },
+  {
+    "card_id": "LGRO-012",
+    "pipeline_id": "P2-self-damage-pre-attack",
+    "action": "replace",
+    "field": "restrictions",
+    "old_value": [
+      {
+        "type": "cant-equip"
+      }
+    ],
+    "new_value": [],
+    "detail": "Remove cant-equip from P2 (on-attack pipeline). Permanent restrictions must not live inside triggered pipelines."
+  },
+  {
+    "card_id": "LGRO-012",
+    "pipeline_id": "P2-self-damage-pre-attack",
+    "action": "add_pipeline",
+    "field": "pipelines",
+    "old_value": null,
+    "new_value": {
+      "id": "P3-cant-equip",
+      "label": "Restriccion permanente: Esta carta no puede ser equipada",
+      "trigger": {
+        "type": "while-on-field"
+      },
+      "prerequisites": [
+        {
+          "type": "independent"
+        }
+      ],
+      "costs": [
+        {
+          "type": "none"
+        }
+      ],
+      "operation": [],
+      "target": {
+        "type": "self"
+      },
+      "restrictions": [
+        {
+          "type": "cant-equip"
+        }
+      ],
+      "modifiers": {
+        "duration": {
+          "type": "while-on-field"
+        }
+      },
+      "phase": "continuous"
+    },
+    "detail": "Add standalone P3-cant-equip pipeline for permanent equip restriction from cost_text."
+  },
+  {
+    "card_id": "LGRO-017",
+    "pipeline_id": "P1-double-non-facing",
+    "action": "add_pipeline",
+    "field": "pipelines",
+    "old_value": null,
+    "new_value": {
+      "id": "P2-link-restriction",
+      "label": "Restriccion de vinculo: solo puede vincularse con Adendei-Feral",
+      "trigger": {
+        "type": "while-on-field"
+      },
+      "prerequisites": [
+        {
+          "type": "independent"
+        }
+      ],
+      "costs": [
+        {
+          "type": "none"
+        }
+      ],
+      "operation": [],
+      "target": {
+        "type": "self"
+      },
+      "restrictions": [
+        {
+          "type": "link-restriction",
+          "filter": {
+            "subtype": "feral"
+          }
+        }
+      ],
+      "modifiers": {
+        "duration": {
+          "type": "while-on-field"
+        }
+      },
+      "phase": "continuous"
+    },
+    "detail": "cost_text solo puede vincularse con Adendei-Feral. Add P2-link-restriction pipeline with type:link-restriction filter:{subtype:feral}."
+  },
+  {
+    "card_id": "LGRO-025",
+    "pipeline_id": "P1-redirect-effect",
+    "action": "replace",
+    "field": "prerequisites[0]",
+    "old_value": {
+      "type": "self-available",
+      "_original_type": "no-ally-in-rest"
+    },
+    "new_value": {
+      "type": "no-ally-in-rest"
+    },
+    "detail": "cost_text: cannot use if any allied card is in descanso. Replace self-available with no-ally-in-rest."
+  },
+  {
+    "card_id": "LGRO-027",
+    "pipeline_id": "P1-restrict-rival-heal",
+    "action": "replace",
+    "field": "restrictions[0].type",
+    "old_value": "cant-heal-by-own-effects",
+    "new_value": "cant-heal-except-by-adendei-effect",
+    "detail": "Text: rivals can ONLY be healed by Adendei effects (source restriction). cant-heal-by-own-effects wrongly blocks own-effect healing. Change to cant-heal-except-by-adendei-effect."
+  },
+  {
+    "card_id": "LGRO-039",
+    "pipeline_id": "P1-ally-attacked-retaliate",
+    "action": "replace",
+    "field": "prerequisites",
+    "old_value": [
+      {
+        "type": "independent"
+      },
+      {
+        "type": "self-available"
+      }
+    ],
+    "new_value": [
+      {
+        "type": "independent"
+      },
+      {
+        "type": "self-available"
+      },
+      {
+        "type": "equipped-card-available",
+        "note": "Cannot activate if equipped card is in descanso"
+      },
+      {
+        "type": "equip-restriction",
+        "filter": {
+          "name": "Nanuk"
+        },
+        "note": "Can only be equipped to Adendei Nanuk"
+      }
+    ],
+    "detail": "Add: (1) equipped-card-available — no activate if equipped card in descanso; (2) equip-restriction filter:{name:Nanuk} — solo equipable a Adendei Nanuk."
+  },
+  {
+    "card_id": "LGRO-046",
+    "pipeline_id": "P1-hide-card",
+    "action": "replace",
+    "field": "target",
+    "old_value": {
+      "type": "any",
+      "count": 1,
+      "zone": "principal"
+    },
+    "new_value": {
+      "type": "any",
+      "count": 1,
+      "zone": "principal",
+      "filter": {
+        "card_type_exclude": [
+          "token",
+          "protector"
+        ]
+      }
+    },
+    "detail": "Rules section 6.5 and 2.2: Tokens and Protectors cannot be hidden. Add filter card_type_exclude:['token','protector']."
+  },
+  {
+    "card_id": "LGRO-051",
+    "pipeline_id": "P1-no-facing-attack",
+    "action": "replace",
+    "field": "restrictions[0].type",
+    "old_value": "cant-attack-protector",
+    "new_value": "cant-attack-facing",
+    "detail": "Effect blocks attacking the facing card (any card), not specifically the Protector. Change to cant-attack-facing."
+  },
+  {
+    "card_id": "LGRO-060",
+    "pipeline_id": "P1-death-swap-protector",
+    "action": "replace",
+    "field": "target",
+    "old_value": {
+      "type": "both",
+      "zone": "principal"
+    },
+    "new_value": {
+      "type": "ally",
+      "zone": "protector-zone"
+    },
+    "detail": "Protector resides in Zona de Protector, not Zona Principal. Change zone to protector-zone and type to ally."
+  },
+  {
+    "card_id": "MLBU-001S",
+    "pipeline_id": "P1-punish-heavy-attackers",
+    "action": "replace",
+    "field": "target.filter",
+    "old_value": {
+      "total-damage-this-turn": {
+        "op": ">=",
+        "value": 3
+      }
+    },
+    "new_value": {
+      "single-attack-damage-to-one-card": {
+        "op": ">=",
+        "value": 3
+      }
+    },
+    "detail": "Effect targets cards that declared 3+ damage to 1 card in a single declaration. total-damage-this-turn counts cumulative. Change to single-attack-damage-to-one-card >= 3."
+  },
+  {
+    "card_id": "MLBU-002S",
+    "pipeline_id": "P1-punish-out-of-field-effect",
+    "action": "replace",
+    "field": "restrictions[0]",
+    "old_value": {
+      "type": "cant-link",
+      "note": "no-linked-this-turn targets"
+    },
+    "new_value": {
+      "type": "cant-target-linked-adendei-this-turn",
+      "note": "Cannot give rests to Adendei that were linked this turn"
+    },
+    "detail": "cost_text prohibits giving rests to Adendei linked this turn. cant-link prevents linking entirely — wrong. Change to cant-target-linked-adendei-this-turn."
+  },
+  {
+    "card_id": "MLBU-003",
+    "pipeline_id": "P1-amplify-heal-ixim-bio",
+    "action": "replace",
+    "field": "target",
+    "old_value": {
+      "type": "ally",
+      "filter": {
+        "card_type": "ixim"
+      }
+    },
+    "new_value": {
+      "type": "ally",
+      "filter": {
+        "card_type_or": [
+          "ixim",
+          {
+            "card_type": "bio",
+            "name": "Hundimiento de la Esperanza"
+          }
+        ]
+      }
+    },
+    "detail": "Include Bio Hundimiento de la Esperanza in target filter alongside card_type:ixim instead of only in modifiers.also_applies_to."
+  },
+  {
+    "card_id": "MLBU-003",
+    "pipeline_id": "P1-amplify-heal-ixim-bio",
+    "action": "remove_field",
+    "field": "modifiers.also_applies_to",
+    "old_value": [
+      "Bio:Hundimiento de la Esperanza"
+    ],
+    "new_value": null,
+    "detail": "Remove modifiers.also_applies_to since Bio is now in the target filter."
+  },
+  {
+    "card_id": "MLBU-005",
+    "pipeline_id": "P1-self-return-and-fetch",
+    "action": "replace",
+    "field": "operation[0].filter",
+    "old_value": {
+      "names": [
+        "Ariam"
+      ],
+      "energy": "atlica"
+    },
+    "new_value": {
+      "or": [
+        {
+          "name_includes": "Ariam"
+        },
+        {
+          "energy": "atlica"
+        }
+      ]
+    },
+    "detail": "Text carta Ariam o Atlica is OR. Current filter uses AND logic. Split to OR: name_includes:Ariam OR energy:atlica."
+  },
+  {
+    "card_id": "TCOO-005U",
+    "pipeline_id": "P1-bonus-damage",
+    "action": "replace",
+    "field": "prerequisites[0].filter",
+    "old_value": {
+      "subtype": "abisal"
+    },
+    "new_value": {
+      "mark": "abismar"
+    },
+    "detail": "Text 1 Adendei abismado means card with Abismar status mark, not subtype Abisal. Change filter to {mark:abismar}."
+  },
+  {
+    "card_id": "TCOO-009R",
+    "pipeline_id": "P1-feralizar-on-ally-reveal",
+    "action": "replace",
+    "field": "trigger.filter",
+    "old_value": {
+      "energy": "feral",
+      "subtype": "titan"
+    },
+    "new_value": {
+      "subtype": [
+        "feral",
+        "titan"
+      ]
+    },
+    "detail": "Rulebook section 16: Feral is NOT a formal energy, it is a subtype. Change from energy:feral to subtype:['feral','titan'] (must be both Feral AND Titan)."
+  },
+  {
+    "card_id": "TCOO-016R",
+    "pipeline_id": "P1-drawn-negate-effect",
+    "action": "replace",
+    "field": "target",
+    "old_value": {
+      "type": "any",
+      "count": 1,
+      "zone": "field"
+    },
+    "new_value": {
+      "type": "any",
+      "count": 1,
+      "zone": "field",
+      "filter": {
+        "has_effect": true
+      }
+    },
+    "detail": "Rules section 13 rule 4: cannot negate a card without an effect. Add filter has_effect:true to target."
+  },
+  {
+    "card_id": "TCOO-017R",
+    "pipeline_id": "P1-burn-all-if-full-hp",
+    "action": "replace",
+    "field": "prerequisites[0].type",
+    "old_value": "ally-stat-filter",
+    "new_value": "enemy-stat-filter",
+    "detail": "Checking HP of ALL enemy Adendei is not an ally-stat-filter. Change type to enemy-stat-filter. scope:all-enemies remains correct."
+  },
+  {
+    "card_id": "TCOO-019R",
+    "pipeline_id": "P1-conditional-heal-damage",
+    "action": "replace",
+    "field": "target",
+    "old_value": {
+      "type": "ally",
+      "count": 3,
+      "filter": {
+        "card_type": "adendei"
+      }
+    },
+    "new_value": {
+      "primary": {
+        "type": "ally",
+        "count": 3,
+        "filter": {
+          "card_type": "adendei"
+        }
+      },
+      "secondary": {
+        "type": "enemy",
+        "count": 1,
+        "filter": {
+          "card_type": "adendei"
+        },
+        "for_operation": "damage-per"
+      }
+    },
+    "detail": "damage-per operation targets 1 Adendei rival but no enemy target is defined. Add secondary target for damage-per operation: enemy Adendei count:1."
+  },
+  {
+    "card_id": "TCOO-047",
+    "pipeline_id": "P1-equip-while-protected",
+    "action": "replace",
+    "field": "prerequisites[0]",
+    "old_value": {
+      "type": "self-available",
+      "status": "protected",
+      "_original_type": "self-has-status"
+    },
+    "new_value": {
+      "type": "self-has-status",
+      "status": "protected"
+    },
+    "detail": "self-available and protected are different states. Condition is si este Adendei esta protegido. Change to self-has-status with status:protected."
+  },
+  {
+    "card_id": "TCOO-063",
+    "pipeline_id": "P1-non-abisal-cant-choose-target",
+    "action": "replace",
+    "field": "restrictions",
+    "old_value": [
+      {
+        "type": "cant-attack-protector"
+      }
+    ],
+    "new_value": [],
+    "detail": "Text only says non-Abisales cannot choose attack target. cant-attack-protector is not in effect text. Remove this restriction."
+  },
+  {
+    "card_id": "DOOC-005S",
+    "pipeline_id": "P2-on-death-damage",
+    "action": "replace",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "ally",
+    "detail": "cost_text dana 2 ptos. a 3 cartas aliadas. target.type:both contradicts aliadas. Change to ally."
+  },
+  {
+    "card_id": "DOOC-006",
+    "pipeline_id": "P1-immune-effect-damage",
+    "action": "replace",
+    "field": "prerequisites",
+    "old_value": [
+      {
+        "type": "needs-ally",
+        "filter": {
+          "subtype": "abisal"
+        },
+        "zone": "principal"
+      }
+    ],
+    "new_value": [
+      {
+        "type": "independent"
+      }
+    ],
+    "detail": "Effect text grants immunity unconditionally. Abisal prerequisite is not in effect_text. Remove it. Self-destruct when no Abisal is correctly modeled in P2."
+  },
+  {
+    "card_id": "DOOC-007S",
+    "pipeline_id": "P1-hide-choice",
+    "action": "replace",
+    "field": "target",
+    "old_value": {
+      "type": "any",
+      "count": 2,
+      "filter": {
+        "card_type": "adendei"
+      }
+    },
+    "new_value": {
+      "type": "any",
+      "count": 2,
+      "filter": {
+        "card_type": "adendei",
+        "card_type_exclude": [
+          "token",
+          "protector"
+        ],
+        "zone_exclude": [
+          "extincion"
+        ]
+      }
+    },
+    "detail": "Tokens and Protectors cannot be hidden (section 6.5, section 2.2). Cards in Extincion cannot be hidden. Add exclusions to target filter."
+  },
+  {
+    "card_id": "EXPO-003",
+    "pipeline_id": "P1",
+    "action": "add_field",
+    "field": "trigger.note",
+    "old_value": null,
+    "new_value": "Trigger on-ally-equip restricts to allied Adendei. effect_text un Adendei is ambiguous. Recommend clarification: si un Adendei aliado es equipado. If both players intended, change trigger to on-any-equip.",
+    "detail": "Effect text does not specify ally or rival Adendei. Trigger on-ally-equip scopes to allies. Document ambiguity and recommend clarification."
+  },
+  {
+    "card_id": "EXPO-009",
+    "pipeline_id": "P1",
+    "action": "replace",
+    "field": "target.count",
+    "old_value": 3,
+    "new_value": {
+      "min": 1,
+      "max": 3
+    },
+    "detail": "Text hasta 3 Adendei rivales means 1 to 3 targets. Fixed count:3 fails when fewer than 3 available. Change to {min:1, max:3}."
+  },
+  {
+    "card_id": "FAFT-002",
+    "pipeline_id": "P1",
+    "action": "replace",
+    "field": "target",
+    "old_value": {
+      "type": "triggering"
+    },
+    "new_value": {
+      "type": "triggering",
+      "filter": {
+        "card_type": "adendei"
+      },
+      "note": "In Vinculo Odemico context the triggering may include Protector; filter ensures only Adendei is valid target."
+    },
+    "detail": "Text al Adendei atacante. Add filter card_type:adendei to target to disambiguate in Vinculo Odemico context."
+  },
+  {
+    "card_id": "FYTE-003R",
+    "pipeline_id": "P2-damage-rivals",
+    "action": "replace",
+    "field": "prerequisites",
+    "old_value": [
+      {
+        "type": "min-extinction",
+        "value": 7
+      }
+    ],
+    "new_value": [
+      {
+        "type": "min-extinction",
+        "value": 7,
+        "_or": {
+          "type": "has-protector-in-extinction",
+          "plus_min_extinction": 3
+        }
+      }
+    ],
+    "detail": "cost_text allows activation with 7+ in Extincion OR 1 Protector + 3+ in Extincion. P2 only has first. Add OR branch."
+  },
+  {
+    "card_id": "FYTE-003R",
+    "pipeline_id": "P3-heal-allies",
+    "action": "replace",
+    "field": "prerequisites",
+    "old_value": [
+      {
+        "type": "min-extinction",
+        "value": 7
+      }
+    ],
+    "new_value": [
+      {
+        "type": "min-extinction",
+        "value": 7,
+        "_or": {
+          "type": "has-protector-in-extinction",
+          "plus_min_extinction": 3
+        }
+      }
+    ],
+    "detail": "P3 missing alternate prerequisite OR condition. Add same OR branch as P2."
+  },
+  {
+    "card_id": "FYTE-003R",
+    "pipeline_id": "P4-return-card",
+    "action": "replace",
+    "field": "prerequisites",
+    "old_value": [
+      {
+        "type": "min-extinction",
+        "value": 7
+      }
+    ],
+    "new_value": [
+      {
+        "type": "min-extinction",
+        "value": 7,
+        "_or": {
+          "type": "has-protector-in-extinction",
+          "plus_min_extinction": 3
+        }
+      }
+    ],
+    "detail": "P4 missing alternate prerequisite OR condition. Add same OR branch as P2 and P3."
+  },
+  {
+    "card_id": "FYTE-004R",
+    "pipeline_id": "P1-on-equip-select",
+    "action": "add_to_array",
+    "field": "restrictions",
+    "old_value": [],
+    "new_value": [
+      {
+        "type": "equip-only-to",
+        "filter": {
+          "zone": "original-principal",
+          "card_type": "adendei"
+        }
+      }
+    ],
+    "detail": "cost_text solo puede equiparse a Adendei en su Zona Principal original. Add restriction equip-only-to filter:{zone:original-principal, card_type:adendei}."
+  },
+  {
+    "card_id": "FYTE-005U",
+    "pipeline_id": "P1-summon-req",
+    "action": "replace",
+    "field": "prerequisites[0]",
+    "old_value": {
+      "type": "min-ext-name",
+      "name": "Zaykan",
+      "value": 3
+    },
+    "new_value": {
+      "type": "min-ext-name",
+      "name": "Zaykan",
+      "value": 3,
+      "filter": {
+        "card_type": "adendei"
+      }
+    },
+    "detail": "Text Adendei Zaykan en tu Extincion. Only Adendei Zaykan count. Add filter card_type:adendei."
+  },
+  {
+    "card_id": "FYTE-006U",
+    "pipeline_id": "P2-cant-heal-protect",
+    "action": "replace",
+    "field": "prerequisites",
+    "old_value": [
+      {
+        "type": "min-ext-type",
+        "card_type": "adendei",
+        "subtype": "Equino",
+        "value": 3
+      }
+    ],
+    "new_value": [
+      {
+        "type": "independent"
+      }
+    ],
+    "detail": "Restrictions cant-heal and cant-protect are unconditional per text. Remove the min-ext-type prerequisite from P2."
+  },
+  {
+    "card_id": "FYTE-007U",
+    "pipeline_id": "P2-standing-restrictions",
+    "action": "replace",
+    "field": "prerequisites",
+    "old_value": [
+      {
+        "type": "min-ext-type",
+        "card_type": "adendei",
+        "subtype": "Equino",
+        "value": 3
+      }
+    ],
+    "new_value": [
+      {
+        "type": "independent"
+      }
+    ],
+    "detail": "Standing restrictions cant-heal, cant-protect, cant-copy are unconditional. Only P1 Activa requires 3 Equino in Extincion. Remove prerequisite from P2."
+  }
+]

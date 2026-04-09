@@ -1,0 +1,685 @@
+[
+  {
+    "card_id": "FYTE-061",
+    "pipeline_id": "P1-activate-rest-attacked",
+    "action": "fix",
+    "field": "card.cost_text",
+    "old_value": "Xakros",
+    "new_value": "Xacros",
+    "detail": "El cost_text contiene 'Xakros' (con k) pero el filter del pipeline y nombre de carta usan 'Xacros' (con c). Estandarizar a 'Xacros' en cost_text."
+  },
+  {
+    "card_id": "FYTE-062",
+    "pipeline_id": "P1-activate-damage-protector-1rest",
+    "action": "fix",
+    "field": "card.cost_text",
+    "old_value": "Xakros",
+    "new_value": "Xacros",
+    "detail": "El cost_text contiene 'Xakros' (con k) pero el filter del pipeline usa 'Xacros' (con c). Estandarizar a 'Xacros'."
+  },
+  {
+    "card_id": "CAMP-019",
+    "pipeline_id": "P1-immune-aura",
+    "action": "fix",
+    "field": "meta.notes",
+    "old_value": null,
+    "new_value": "Rava Deidad: excepcion intencional a neutralidad de Ravas (seccion 2.3). El texto especifica 'aliados' explicitamente — el patron Deidad restringe el alcance por diseno.",
+    "detail": "Nozi es Rava pero P1 aplica solo a aliados Atlicos. Documentar excepcion."
+  },
+  {
+    "card_id": "CAMP-019",
+    "pipeline_id": "P2-heal-on-ally-attack",
+    "action": "fix",
+    "field": "trigger.filter",
+    "old_value": {
+      "energy": "atlica"
+    },
+    "new_value": {
+      "energy": "atlica",
+      "card_type": "adendei"
+    },
+    "detail": "El effect_text especifica 'Adendei-Atlico aliado'. Agregar card_type:'adendei' al trigger.filter para excluir Ravas Atlicas aliadas."
+  },
+  {
+    "card_id": "CAMP-020",
+    "pipeline_id": "P2-bonus-vs-burn",
+    "action": "fix",
+    "field": "trigger",
+    "old_value": {
+      "type": "while-on-field"
+    },
+    "new_value": {
+      "type": "on-ally-attack",
+      "filter": {
+        "energy": "pirica",
+        "card_type": "adendei"
+      }
+    },
+    "detail": "El bonus de dano condicional (solo vs quemados) debe evaluarse en el momento del ataque (on-ally-attack), no como estado permanente (while-on-field)."
+  },
+  {
+    "card_id": "CAMP-020",
+    "pipeline_id": "P2-bonus-vs-burn",
+    "action": "fix",
+    "field": "modifiers.timing",
+    "old_value": null,
+    "new_value": "on-attack-resolution",
+    "detail": "Agregar timing para aclarar que el bonus se evalua al momento de la resolucion del ataque."
+  },
+  {
+    "card_id": "CAMP-020",
+    "pipeline_id": "P1-burn-persist",
+    "action": "fix",
+    "field": "meta.notes",
+    "old_value": null,
+    "new_value": "Rava Deidad: excepcion intencional a neutralidad de Ravas (seccion 2.3). Hori distingue rivales (P1) y aliados (P2) por diseno explicito del patron Deidad.",
+    "detail": "Documentar excepcion de neutralidad para Hori Deidad Pirica."
+  },
+  {
+    "card_id": "CAMP-021",
+    "pipeline_id": "P2-bonus-vs-rest",
+    "action": "fix",
+    "field": "trigger",
+    "old_value": {
+      "type": "while-on-field"
+    },
+    "new_value": {
+      "type": "on-ally-attack",
+      "filter": {
+        "energy": "gelida",
+        "card_type": "adendei"
+      }
+    },
+    "detail": "El bonus condicional (solo vs cartas en descanso) debe evaluarse en el momento del ataque. Cambiar trigger de while-on-field a on-ally-attack."
+  },
+  {
+    "card_id": "CAMP-021",
+    "pipeline_id": "P1-extra-rest-debuff",
+    "action": "fix",
+    "field": "meta.notes",
+    "old_value": null,
+    "new_value": "Rava Deidad: excepcion intencional a neutralidad de Ravas (seccion 2.3). Nok distingue rivales/aliados por diseno del patron Deidad.",
+    "detail": "Documentar excepcion de neutralidad para Nok Deidad Gelida."
+  },
+  {
+    "card_id": "CAMP-021",
+    "pipeline_id": "P1-extra-rest-debuff",
+    "action": "fix",
+    "field": "modifiers.duration_scope",
+    "old_value": null,
+    "new_value": "once-per-card-lifetime",
+    "detail": "El texto 'por primera vez despues de que esta carta es revelada' implica alcance por-carta-por-juego. Agregar duration_scope:'once-per-card-lifetime'."
+  },
+  {
+    "card_id": "CAMP-022",
+    "pipeline_id": "P2-heal",
+    "action": "fix",
+    "field": "modifiers.timing",
+    "old_value": null,
+    "new_value": "post-battle",
+    "detail": "El effect_text usa preterito ('ataco'). Segun seccion 5.3, Pasivas cuya condicion se cumplio durante Batalla se declaran en Fase Post. Agregar timing:post-battle."
+  },
+  {
+    "card_id": "CAMP-022",
+    "pipeline_id": "P1-aura",
+    "action": "fix",
+    "field": "meta.notes",
+    "old_value": null,
+    "new_value": "Rava Deidad: excepcion intencional a neutralidad de Ravas (seccion 2.3). P1/P2 afectan aliados, P3 es neutral (todos los Liticos en campo). Patron Deidad por diseno.",
+    "detail": "Documentar excepcion de neutralidad para Hogg Deidad Litica."
+  },
+  {
+    "card_id": "CAMP-023",
+    "pipeline_id": "P2-heal",
+    "action": "fix",
+    "field": "modifiers.timing",
+    "old_value": null,
+    "new_value": "post-battle",
+    "detail": "El effect_text usa preterito ('ataco'). Seccion 5.3: Pasivas cuya condicion se cumplio durante Batalla se declaran en Fase Post. Agregar timing:post-battle."
+  },
+  {
+    "card_id": "CAMP-023",
+    "pipeline_id": "P1-aura",
+    "action": "fix",
+    "field": "meta.notes",
+    "old_value": null,
+    "new_value": "Rava Deidad: excepcion intencional a neutralidad de Ravas (seccion 2.3). Mismo patron que Hogg (CAMP-022): aliados en P1/P2, neutral en P3.",
+    "detail": "Documentar excepcion de neutralidad para Muz Deidad Huumica."
+  },
+  {
+    "card_id": "CAMP-024",
+    "pipeline_id": "P1-deck-peek-damage",
+    "action": "fix",
+    "field": "operation[0]",
+    "old_value": {
+      "type": "damage-as-revealed",
+      "peek_count": 3,
+      "return_position": "bottom"
+    },
+    "new_value": {
+      "type": "damage-as-revealed",
+      "peek_count": 3,
+      "player_chooses": true,
+      "choose_count": 1,
+      "return_position": "bottom",
+      "return_all": true
+    },
+    "detail": "El jugador elige 1 de las 3 cartas reveladas para determinar el dano. Agregar player_chooses:true, choose_count:1, return_all:true."
+  },
+  {
+    "card_id": "CAMP-026",
+    "pipeline_id": "P1-scale-per-abyss",
+    "action": "fix",
+    "field": "operation[0].per",
+    "old_value": {
+      "zone": "extinction",
+      "filter": {
+        "subtype": "abisal"
+      }
+    },
+    "new_value": {
+      "zone": "extinction",
+      "owner": "both",
+      "filter": {
+        "subtype": "abisal",
+        "card_type": "adendei"
+      }
+    },
+    "detail": "Consolidar dos issues: (1) Agregar owner:'both' — texto sin calificador de jugador, interpretar como ambas extinciones. (2) Agregar card_type:'adendei' al filter para precision."
+  },
+  {
+    "card_id": "CDC-001",
+    "pipeline_id": "P1-damage-on-abyss-attack",
+    "action": "note-only",
+    "field": "meta.notes",
+    "old_value": null,
+    "new_value": "COLISION DE NOMBRE: nombre base 'Zaykan' compartido con CAMP-015UV. Verificar si regla de unicidad (seccion 13.1) aplica a nombre completo o nombre base. Aplicar decision a ambas cartas.",
+    "detail": "Requiere decision de diseno sobre unicidad por nombre completo vs nombre base."
+  },
+  {
+    "card_id": "CDC-001",
+    "pipeline_id": "P1-damage-on-abyss-attack",
+    "action": "fix",
+    "field": "trigger.phase",
+    "old_value": null,
+    "new_value": "post-battle",
+    "detail": "Segun reglas seccion 10.3 y 5.3, Pasivas de cartas tomadas en Batalla se declaran en Fase Post. Agregar trigger.phase:'post-battle'."
+  },
+  {
+    "card_id": "CDC-001",
+    "pipeline_id": "P1-damage-on-abyss-attack",
+    "action": "fix",
+    "field": "trigger.filter",
+    "old_value": {
+      "subtype": [
+        "abisal",
+        "infectado"
+      ]
+    },
+    "new_value": {
+      "card_type": "adendei",
+      "subtype": [
+        "abisal",
+        "infectado"
+      ]
+    },
+    "detail": "Agregar card_type:'adendei' al trigger.filter para explicitamente excluir otros tipos de carta con subtipos Abisal o Infectado."
+  },
+  {
+    "card_id": "CDC-001",
+    "pipeline_id": null,
+    "action": "fix",
+    "field": "meta.affinities",
+    "old_value": [
+      "aff:litica"
+    ],
+    "new_value": [
+      "aff:abisal",
+      "aff:infectado"
+    ],
+    "detail": "La carta sinergiza con Abisal e Infectado, no con Litica. meta.affinities incorrecta. Corregir."
+  },
+  {
+    "card_id": "LGRO-043",
+    "pipeline_id": "P1-scale-heal-punish",
+    "action": "fix",
+    "field": "trigger.type",
+    "old_value": "on-any-healed",
+    "new_value": [
+      "on-any-healed",
+      "on-scaled"
+    ],
+    "detail": "El effect_text dice 'escalo O fue curada'. El trigger actual solo captura on-any-healed. Agregar on-scaled para cubrir ambas condiciones del texto."
+  },
+  {
+    "card_id": "LGRO-066",
+    "pipeline_id": "P1-equip-heal",
+    "action": "fix",
+    "field": "card.effect_text",
+    "old_value": "esta carta es equipada",
+    "new_value": "Si esta carta recibe un equipo, se cura 2 puntos.",
+    "detail": "El phrasing original implica que la carta ES un equipo. Corregir para clarificar que Ariam (Adendei) recibe un equipo."
+  },
+  {
+    "card_id": "MLBU-007",
+    "pipeline_id": "P1-hide-and-return",
+    "action": "fix",
+    "field": "operation",
+    "old_value": [
+      {
+        "type": "hide"
+      },
+      {
+        "type": "register-game-rule",
+        "self": true,
+        "_original_type": "cant-return-to-equip"
+      }
+    ],
+    "new_value": [
+      {
+        "type": "hide"
+      }
+    ],
+    "detail": "Eliminar operacion register-game-rule con cant-return-to-equip. El regreso a Zona de Equipo es el comportamiento intencional y ya esta en modifiers.self_return_to_equip=true. La operacion contradice directamente el efecto."
+  },
+  {
+    "card_id": "TCDE-008",
+    "pipeline_id": "P1-token-replace",
+    "action": "fix",
+    "field": "trigger.filter",
+    "old_value": {
+      "card_type": "adendei"
+    },
+    "new_value": {
+      "card_type": "adendei",
+      "owner": "any"
+    },
+    "detail": "El effect_text dice 'Si un Adendei es enviado a Extincion' sin filtro de propietario. Agregar owner:'any' para cubrir Adendei aliados Y rivales."
+  },
+  {
+    "card_id": "CAMP-015UV",
+    "pipeline_id": "P2-no-hide-aura",
+    "action": "fix",
+    "field": "operation",
+    "old_value": [],
+    "new_value": [
+      {
+        "type": "apply-restriction",
+        "restriction": "cant-hide",
+        "scope": "both-zones-principal"
+      }
+    ],
+    "detail": "El aura activamente previene ocultar en ambas zonas principales. Modelar como apply-restriction en la operacion, no solo en restrictions[]."
+  },
+  {
+    "card_id": "CAMP-016",
+    "pipeline_id": "P1-no-heal-debuff",
+    "action": "fix",
+    "field": "operation",
+    "old_value": [],
+    "new_value": [
+      {
+        "type": "apply-restriction",
+        "restriction": "cant-heal",
+        "to": "target",
+        "duration": "next-turn"
+      }
+    ],
+    "detail": "La restriccion cant-heal se aplica al OBJETIVO del ataque, no a Ariam. Modelar como operacion apply-restriction con to:'target'."
+  },
+  {
+    "card_id": "CAMP-016",
+    "pipeline_id": "P1-no-heal-debuff",
+    "action": "fix",
+    "field": "restrictions",
+    "old_value": [
+      {
+        "type": "cant-heal"
+      }
+    ],
+    "new_value": [],
+    "detail": "Remover cant-heal de restrictions[] de esta carta — la restriccion aplica al objetivo via la operacion, no a Ariam misma."
+  },
+  {
+    "card_id": "CAMP-025",
+    "pipeline_id": "P1-massive-damage",
+    "action": "note-only",
+    "field": "prerequisites",
+    "old_value": [
+      {
+        "type": "once-per-game"
+      }
+    ],
+    "new_value": [
+      {
+        "type": "once-per-game"
+      }
+    ],
+    "detail": "once-per-game es tecnicamente redundante (la carta se envia a Extincion como costo). Sin embargo, cubre edge cases de revival. Mantener para robustez."
+  },
+  {
+    "card_id": "DOOC-001S",
+    "pipeline_id": "P1-heal-equipped-on-attack",
+    "action": "note-only",
+    "field": null,
+    "old_value": null,
+    "new_value": null,
+    "detail": "Pipeline semanticamente correcto. Restricciones base de curacion son reglas del sistema. Sin correcciones criticas necesarias."
+  },
+  {
+    "card_id": "DOOC-006S",
+    "pipeline_id": "P1-grant-abyss",
+    "action": "fix",
+    "field": "modifiers.per_target",
+    "old_value": null,
+    "new_value": true,
+    "detail": "Agregar per_target:true para indicar que 'next-attack' aplica individualmente por cada carta objetivo, no al proximo ataque global del turno."
+  },
+  {
+    "card_id": "DOOC-007",
+    "pipeline_id": "P1-abyss-and-negate",
+    "action": "fix",
+    "field": "modifiers",
+    "old_value": {
+      "_original_trigger": "on-ally-damaged",
+      "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
+    },
+    "new_value": {},
+    "detail": "Limpiar modifiers de notas de desarrollo (_original_trigger, _rot_fix). Mover a campo dev_notes."
+  },
+  {
+    "card_id": "DOOC-007",
+    "pipeline_id": "P1-abyss-and-negate",
+    "action": "fix",
+    "field": "dev_notes",
+    "old_value": null,
+    "new_value": {
+      "_original_trigger": "on-ally-damaged",
+      "_rot_fix": "§2.5: Rot must be Activa/Activa-Rápida"
+    },
+    "detail": "Notas de desarrollo movidas a dev_notes para mantener modifiers limpio de metadata."
+  },
+  {
+    "card_id": "DOOC-008S",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "trigger.timing",
+    "old_value": null,
+    "new_value": "post-attack-resolution",
+    "detail": "El texto usa preterito ('ataco') — el dano se aplica despues de la resolucion del ataque. Agregar timing:'post-attack-resolution'."
+  },
+  {
+    "card_id": "DOOC-008S",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "trigger.filter.exclude_self",
+    "old_value": null,
+    "new_value": false,
+    "detail": "Si Rhymir tiene energia Chaaktica, su propio ataque puede disparar la Pasiva. Documentar exclude_self:false (incluye a si mismo) o cambiar a true si el diseno lo excluye. Requiere verificacion de energia."
+  },
+  {
+    "card_id": "DOOC-009S",
+    "pipeline_id": "P1",
+    "action": "note-only",
+    "field": null,
+    "old_value": null,
+    "new_value": null,
+    "detail": "Pipeline completamente fiel al texto. Sin correcciones requeridas."
+  },
+  {
+    "card_id": "DOOC-010S",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "operation[0].filter.owner",
+    "old_value": null,
+    "new_value": "both",
+    "detail": "El texto dice 'por cada Adendei-Feral en el campo' sin calificador de jugador. Agregar owner:'both' para contar Ferales de ambos jugadores."
+  },
+  {
+    "card_id": "DOOC-013",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "trigger.count_exactly",
+    "old_value": null,
+    "new_value": 1,
+    "detail": "El texto especifica 'Si SOLO 1 Adendei Abisal o Feral deja el campo'. Agregar count_exactly:1 — el efecto NO aplica si multiples cartas elegibles dejan el campo simultaneamente."
+  },
+  {
+    "card_id": "DOOC-013",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "trigger.filter",
+    "old_value": null,
+    "new_value": {
+      "card_type": "adendei",
+      "subtype_or": [
+        "Abisal",
+        "Feral"
+      ]
+    },
+    "detail": "El trigger on-ally-leaves-field no tiene filtro de subtipo. Agregar filter restringiendo a Adendei Abisales o Ferales."
+  },
+  {
+    "card_id": "DOOC-014",
+    "pipeline_id": "P1",
+    "action": "note-only",
+    "field": null,
+    "old_value": null,
+    "new_value": null,
+    "detail": "Pipeline completamente fiel al texto. Sin issues. Correcto."
+  },
+  {
+    "card_id": "DOOC-023",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "operation[0]",
+    "old_value": {
+      "type": "protect-effect",
+      "count": 2
+    },
+    "new_value": {
+      "type": "protect-effect",
+      "count": 2,
+      "source_filter": {
+        "side": "enemy"
+      }
+    },
+    "detail": "El texto dice 'protege de efectos rivales'. Agregar source_filter:{side:'enemy'} para proteccion solo contra efectos del rival."
+  },
+  {
+    "card_id": "Demo-001",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "trigger",
+    "old_value": {
+      "type": "on-any-death",
+      "filter": {
+        "card_type": "adendei"
+      }
+    },
+    "new_value": {
+      "type": "on-any-death",
+      "filter": {
+        "card_type": "adendei",
+        "zone": "zona-principal"
+      },
+      "exclude_self": true
+    },
+    "detail": "Agregar zone:'zona-principal' al filter y exclude_self:true para que Mizthe no sea su propia activadora."
+  },
+  {
+    "card_id": "EXPN-001",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "modifiers.min_damage_received_note",
+    "old_value": null,
+    "new_value": "Si la carta equipada no recibio dano el turno anterior, el dano adicional seria 0. Confirmar si resultado-0 es valido o si se requiere min 1 pto de dano previo para declarar el efecto.",
+    "detail": "Documentar edge case de dano-cero. Si se requiere dano previo minimo, agregar prerequisite min-damage-received-last-turn:1."
+  },
+  {
+    "card_id": "EXPO-001",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "prerequisites[0]",
+    "old_value": {
+      "type": "min-extinction",
+      "value": 1,
+      "side": "self"
+    },
+    "new_value": {
+      "type": "min-extinction",
+      "value": 1,
+      "side": "self",
+      "exclude_tokens": true
+    },
+    "detail": "Tokens no cuentan para victoria (seccion 2.7, 6.4). Agregar exclude_tokens:true — Tokens no deberian satisfacer este prerequisite."
+  },
+  {
+    "card_id": "EXPO-003",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "trigger",
+    "old_value": {
+      "type": "on-ally-equip"
+    },
+    "new_value": {
+      "type": "on-ally-equip",
+      "filter": {
+        "equipment_revealed": true
+      }
+    },
+    "detail": "El texto especifica 'boca arriba' como condicion. Agregar equipment_revealed:true al trigger filter."
+  },
+  {
+    "card_id": "EXPO-004",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "meta.notes",
+    "old_value": null,
+    "new_value": "Esta carta es Rava. Segun seccion 2.3, Ravas tienen Pasivas neutrales (ambos jugadores). P1 usa target.type=ally — verificar con diseno si debe ser target.type=both. Si es excepcion intencional, documentar aqui.",
+    "detail": "Nozi Corona Marina es Rava con P1 que solo afecta aliados. Posible contradiccion con regla de neutralidad."
+  },
+  {
+    "card_id": "EXPO-006",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "card.effect_text",
+    "old_value": "Adendei-Piricco",
+    "new_value": "Adendei Pirico",
+    "detail": "Corregir typo 'Adendei-Piricco' (doble c, con guion) a 'Adendei Pirico' (c simple, sin guion) para consistencia interna del texto."
+  },
+  {
+    "card_id": "EXPO-006",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "meta.notes",
+    "old_value": null,
+    "new_value": "Esta carta es Rava. Segun seccion 2.3, Ravas tienen Pasivas neutrales (ambos jugadores). P1 usa target.type=ally — verificar con diseno si debe ser target.type=both. Si es excepcion intencional, documentar aqui.",
+    "detail": "Hori Huella de Magma es Rava con P1 que solo afecta aliados. Posible contradiccion con regla de neutralidad."
+  },
+  {
+    "card_id": "EXPO-006",
+    "pipeline_id": "P2",
+    "action": "fix",
+    "field": "card.effect_text_p2_end",
+    "old_value": "...un Adendei Pirico Aliado",
+    "new_value": "...un Adendei Pirico Aliado.",
+    "detail": "El effect_text de P2 no termina con punto. Agregar punto final para consistencia de formato."
+  },
+  {
+    "card_id": "EXPO-006",
+    "pipeline_id": "N/A",
+    "action": "note-only",
+    "field": "pipelines",
+    "old_value": null,
+    "new_value": null,
+    "detail": "EXPO-004 (Nozi) tiene P3 on-death que dana 1 a todos los Atlicos. Hori (EXPO-006) no tiene pipeline analogo. Confirmar con diseno si la asimetria es intencional o si falta P3 on-death para Piricos."
+  },
+  {
+    "card_id": "EXPO-009",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "prerequisites[0]",
+    "old_value": {
+      "type": "needs-named-protector",
+      "name": "Zaren"
+    },
+    "new_value": {
+      "type": "needs-named-protector",
+      "name": "Zaren",
+      "match_type": "contains"
+    },
+    "detail": "Agregar match_type:'contains' para que variantes como 'Zaren, El Guardian' satisfagan el prerequisite. Evitar ambiguedad entre match exacto vs parcial."
+  },
+  {
+    "card_id": "FAFT-001",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "trigger.type",
+    "old_value": "on-activate",
+    "new_value": "on-link-choice-a",
+    "detail": "El texto dice 'Usa 1 de los siguientes efectos' (bifurcacion de eleccion). on-link implica activacion automatica al vincularse. Cambiar trigger para modelar que es opcion A del Vinculo Odemica, con bifurcacion al punto de declaracion."
+  },
+  {
+    "card_id": "FAFT-001",
+    "pipeline_id": "P2",
+    "action": "fix",
+    "field": "modifiers.duration_note",
+    "old_value": null,
+    "new_value": "until-protector-available = cuando el Protector tenga 0 descansos (3 descansos segun seccion 2.2). Distinto del uso incorrecto en DOOC-023. Aqui es correcto porque Nirge ES el Protector.",
+    "detail": "Confirmar y documentar que until-protector-available equivale a cuando el Protector tenga 0 descansos."
+  },
+  {
+    "card_id": "FAFT-001",
+    "pipeline_id": "P2",
+    "action": "fix",
+    "field": "modifiers.repeatable",
+    "old_value": null,
+    "new_value": true,
+    "detail": "El texto dice 'por cada efecto de carta tomada que el rival use', confirmando que el trigger se dispara multiples veces durante la duracion activa. Agregar modifiers.repeatable:true."
+  },
+  {
+    "card_id": "FAFT-003",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "meta.notes",
+    "old_value": null,
+    "new_value": "AMBIGUEDAD: El texto dice 'Si hay 1 Adendei Equino en Extincion' (estado en cualquier momento), pero el trigger on-ally-death es mas restrictivo (solo al morir este turno). Si la Pasiva se activa en cualquier momento, cambiar trigger a while-on-field con prerequisite min-ext-type Equino >= 1.",
+    "detail": "Requiere decision de diseno: trigger on-ally-death (al morir) vs while-on-field (estado permanente)."
+  },
+  {
+    "card_id": "FAFT-003",
+    "pipeline_id": "P1",
+    "action": "fix",
+    "field": "operation[1]",
+    "old_value": {
+      "type": "copy",
+      "source": "extinction",
+      "filter": {
+        "card_type": "adendei",
+        "subtype": "Equino"
+      }
+    },
+    "new_value": {
+      "type": "copy",
+      "source": "extinction",
+      "filter": {
+        "card_type": "adendei",
+        "subtype": "Equino"
+      },
+      "player_chooses": true,
+      "replaces_own_effect": false,
+      "incompatible_conditions": "skip"
+    },
+    "detail": "Agregar player_chooses:true (el jugador elige que Equino copiar si hay varios), replaces_own_effect:false (se suma), incompatible_conditions:'skip' (condiciones no cumplibles se ignoran)."
+  },
+  {
+    "card_id": "FYTE-015S",
+    "pipeline_id": "P1-attack-extra-rest",
+    "action": "note-only",
+    "field": "operation[0].timing",
+    "old_value": "end-of-turn",
+    "new_value": "end-of-turn",
+    "detail": "El campo timing:'end-of-turn' ya esta presente en operation[0] del pipeline. El pipeline es correcto segun el texto que especifica que el descanso se aplica al final del turno. Sin cambio requerido."
+  }
+]

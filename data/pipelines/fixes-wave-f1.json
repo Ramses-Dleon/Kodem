@@ -1,0 +1,566 @@
+[
+  {
+    "card_id": "CAMP-003",
+    "pipeline_id": "P1-scale-self",
+    "action": "change_field",
+    "field": "modifiers.duration",
+    "old_value": { "type": "next-attack" },
+    "new_value": { "type": "permanent" },
+    "detail": "Scale (Escalar) is always permanent per §8. Duration 'next-attack' contradicts rules. Changed to permanent."
+  },
+  {
+    "card_id": "FYTE-029",
+    "pipeline_id": "P2-cant-negate-restriction",
+    "action": "remove_field",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": null,
+    "detail": "Non-negation restriction is permanent and mandatory. Removed optional:true from modifiers."
+  },
+  {
+    "card_id": "FYTE-036",
+    "pipeline_id": "P1-activate-protect",
+    "action": "change_field",
+    "field": "operation[0].type",
+    "old_value": "protect-attack",
+    "new_value": "protect-full",
+    "detail": "Effect text says 'Protege' which per §14 means full immunity to attacks AND effects. Changed protect-attack → protect-full."
+  },
+  {
+    "card_id": "FYTE-038",
+    "pipeline_id": "P1-extinction-counter-drawn-effect",
+    "action": "add_operation",
+    "field": "operation[]",
+    "old_value": null,
+    "new_value": { "type": "place-in-field", "target": { "owner": "rival", "card": "drawn-card" }, "zone": "zona-principal" },
+    "detail": "Missing sub-effect: after sending enemy Adendei to bottom of deck, rival's drawn card must be placed into rival's Zona Principal."
+  },
+  {
+    "card_id": "FYTE-075",
+    "pipeline_id": "P1",
+    "action": "change_field",
+    "field": "operation[0].target.zone",
+    "old_value": "field",
+    "new_value": ["field", "deck"],
+    "detail": "Effect text says source can be 'campo/Mazo'. Added 'deck' as valid source zone alongside 'field' for Espectro swap."
+  },
+  {
+    "card_id": "FYTE-081",
+    "pipeline_id": "P2",
+    "action": "add_field",
+    "field": "operation[0].prerequisite",
+    "old_value": null,
+    "new_value": { "target_current_rest": { "operator": "lt", "value": 2 } },
+    "detail": "Cards cannot receive descansos beyond max 2 for Adendei. Added prerequisite: target must have current rest < 2."
+  },
+  {
+    "card_id": "IDRMG-011",
+    "pipeline_id": "P1-return-all-equips",
+    "action": "add_field",
+    "field": "operation[0].destination",
+    "old_value": null,
+    "new_value": "equip-zone",
+    "detail": "Effect text explicitly states equipment returns to Zona de Equipo. Added destination:'equip-zone' to unequip-all operation."
+  },
+  {
+    "card_id": "IDRMG-012",
+    "pipeline_id": "P1-feral-reveal-bonus",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "scale" },
+    "new_value": { "type": "damage-bonus", "duration": "turn" },
+    "detail": "Temporary +1 damage for the turn only. scale is permanent per §8. Changed to damage-bonus with duration:turn."
+  },
+  {
+    "card_id": "IDRMP-006",
+    "pipeline_id": "P1-suppress-rival-effects",
+    "action": "change_field",
+    "field": "operation[0].scope",
+    "old_value": "all-enemy-activas",
+    "new_value": "all-enemy-effects",
+    "detail": "Effect text says 'no puede activar efectos' (all types including Activas-Rápidas and Pasivas-Rápidas). Changed scope."
+  },
+  {
+    "card_id": "IDRMP-010",
+    "pipeline_id": "P1-eot-damage-equipped",
+    "action": "add_field",
+    "field": "modifiers.optional",
+    "old_value": null,
+    "new_value": true,
+    "detail": "Effect text says 'puedes dañar' — optional. Added optional:true to modifiers."
+  },
+  {
+    "card_id": "IDRMP-017",
+    "pipeline_id": "P1-global-no-heal",
+    "action": "remove_field",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": null,
+    "detail": "'Ningún Adendei puede ser curado' is a permanent mandatory restriction. Removed optional:true."
+  },
+  {
+    "card_id": "INMX-001",
+    "pipeline_id": "P1-cyra-heal-6",
+    "action": "add_operation",
+    "field": "costs[]",
+    "old_value": null,
+    "new_value": { "type": "self-damage", "value": 6, "source": "cyra" },
+    "detail": "'Gasta 6 puntos' = Cyra loses 6 PV as cost. Added self-damage cost entry for Cyra. Ally heal operation remains."
+  },
+  {
+    "card_id": "ISPMR-019",
+    "pipeline_id": "P1-swap-with-enemy",
+    "action": "add_field",
+    "field": "modifiers.stat_preservation",
+    "old_value": null,
+    "new_value": true,
+    "detail": "Per §12, cards changed between zones keep their stats. Added stat_preservation:true."
+  },
+  {
+    "card_id": "ISPMR-019",
+    "pipeline_id": "P1-swap-with-enemy",
+    "action": "add_field",
+    "field": "modifiers.no_rival_to_mazo_or_extinction",
+    "old_value": null,
+    "new_value": true,
+    "detail": "§13 rule 3: rival cards cannot go to your Mazo/Extinción. Documented as explicit restriction flag."
+  },
+  {
+    "card_id": "KPRC-007",
+    "pipeline_id": "P1-immune-rest",
+    "action": "remove_field",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": null,
+    "detail": "Effect in bold — mandatory Pasiva. Removed optional:true."
+  },
+  {
+    "card_id": "KPRC-008",
+    "pipeline_id": "P1-protect-all-protectors",
+    "action": "remove_field",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": null,
+    "detail": "No 'puede' in effect text — mandatory Pasiva, not Pasiva Opcional. Removed optional:true."
+  },
+  {
+    "card_id": "KPRC-019",
+    "pipeline_id": "P2-bounce-and-token",
+    "action": "change_field",
+    "field": "operation[0].prerequisite.operator",
+    "old_value": "eq",
+    "new_value": "lt",
+    "detail": "Condition = 'rival has 0 tokens' = fewer than 1. Changed operator eq:0 → lt:1 for precision."
+  },
+  {
+    "card_id": "KPRC-024",
+    "pipeline_id": "P1-protect-on-equip",
+    "action": "change_field",
+    "field": "modifiers.duration",
+    "old_value": "next-turn",
+    "new_value": { "type": "next-turn-from-equip", "turns_remaining": 2 },
+    "detail": "Duration is until end of next turn after the turn equipped. Changed from generic 'next-turn' to anchored 'next-turn-from-equip'."
+  },
+  {
+    "card_id": "KPRC-025",
+    "pipeline_id": "P1-sacrifice-heal-protector",
+    "action": "change_field",
+    "field": "operation[0].value",
+    "old_value": 6,
+    "new_value": { "max": 6 },
+    "detail": "'Cura hasta 6 puntos' = variable up to 6. Changed fixed value:6 → max:6."
+  },
+  {
+    "card_id": "KPRC-027",
+    "pipeline_id": "P1-vivify-from-extinction",
+    "action": "change_field",
+    "field": "operation[0].prerequisite",
+    "old_value": { "needs-ally": { "subtype": "Titan" } },
+    "new_value": { "protector-available": true },
+    "detail": "P1 prerequisite should only check protector-available. Titán condition belongs to P2 (entry penalty), not P1."
+  },
+  {
+    "card_id": "KPRC-029",
+    "pipeline_id": "P1-return-ixim-and-scale",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "equip-from-equip-zone" },
+    "new_value": { "type": "return-to-equip-zone", "source": "principal" },
+    "detail": "Effect returns Ixim FROM Zona Principal TO Zona de Equipo (inverse direction). Changed equip-from-equip-zone → return-to-equip-zone with source:principal."
+  },
+  {
+    "card_id": "KPRC-036",
+    "pipeline_id": "P1-heal-redirect",
+    "action": "change_field",
+    "field": "operation[0].value",
+    "old_value": 6,
+    "new_value": { "max": 6 },
+    "detail": "'Puede curar hasta 6 puntos' = variable. Changed value:6 → max:6."
+  },
+  {
+    "card_id": "KPRC-037",
+    "pipeline_id": "P1-draw-reveal-heal",
+    "action": "add_field",
+    "field": "modifiers.optional",
+    "old_value": null,
+    "new_value": true,
+    "detail": "Pasiva Opcional ('puedes mostrarla'). Added optional:true."
+  },
+  {
+    "card_id": "KPRC-038",
+    "pipeline_id": "P2-bonus-attack",
+    "action": "add_field",
+    "field": "modifiers.bypass_protection",
+    "old_value": null,
+    "new_value": { "bypass_protection": true, "scope": "first-attack" },
+    "detail": "First attack can be applied to protected Adendei (ignores protection). Added bypass-protection:true scoped to first-attack."
+  },
+  {
+    "card_id": "KPRC-039",
+    "pipeline_id": "P1-abisal-double",
+    "action": "change_field",
+    "field": "operation[0].type",
+    "old_value": "no-rest",
+    "new_value": "cant-receive-rests-by-effect",
+    "detail": "no-rest = no cooldown after attack. cant-receive-rests-by-effect = immunity to rests granted by effects. These are distinct mechanics. Changed to correct type."
+  },
+  {
+    "card_id": "KPRC-091",
+    "pipeline_id": "P1-lock-equip-return",
+    "action": "add_field",
+    "field": "operation[0].restrict",
+    "old_value": null,
+    "new_value": "return-equipment-to-zone",
+    "detail": "Added explicit restrict field so engine knows the specific action blocked is returning equipment to Equipment Zone."
+  },
+  {
+    "card_id": "LGRO-004R",
+    "pipeline_id": "P1-rest-swap",
+    "action": "change_field",
+    "field": "operation[0].target",
+    "old_value": { "type": "both", "count": 1 },
+    "new_value": [
+      { "type": "enemy", "count": 1, "effect": "rest-add", "value": 2 },
+      { "type": "ally", "count": 1, "effect": "rest-remove", "value": 2 }
+    ],
+    "detail": "Separated targets: enemy receives rest-add:2, ally card receives rest-remove:2. Old 'both' target was ambiguous."
+  },
+  {
+    "card_id": "CAMP-014UV",
+    "pipeline_id": "P1-double-damage-per-rest",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "grant-double-damage", "multiplier": "pending_rests" },
+    "new_value": { "type": "multiply-damage", "base_multiplier": 2, "additional_multiplier": "pending_rests_at_end_of_turn" },
+    "detail": "Formula: damage × 2 × pending_rests_at_end_of_turn. Changed to multiply-damage with explicit multipliers to remove ambiguity."
+  },
+  {
+    "card_id": "CAMP-015UV",
+    "pipeline_id": "P2-no-hide-aura",
+    "action": "set_operation",
+    "field": "operation[]",
+    "old_value": [],
+    "new_value": [{ "type": "prevent-hide", "scope": "both", "zone": "principal" }],
+    "detail": "operation[] was empty. Added prevent-hide operation for both players in Zona Principal."
+  },
+  {
+    "card_id": "CAMP-016",
+    "pipeline_id": "P1-no-heal-debuff",
+    "action": "change_field",
+    "field": "modifiers.duration",
+    "old_value": "next-turn",
+    "new_value": { "type": "until-end-of-next-own-turn" },
+    "detail": "Text says 'hasta el final de TU siguiente turno'. Changed ambiguous 'next-turn' to 'until-end-of-next-own-turn'."
+  },
+  {
+    "card_id": "CAMP-016",
+    "pipeline_id": "P1-no-heal-debuff",
+    "action": "set_operation",
+    "field": "operation[]",
+    "old_value": [],
+    "new_value": [{ "type": "apply-restriction", "restriction": "cant-heal", "target": "attacked-card" }],
+    "detail": "operation[] was empty. cant-heal must be applied to attacked target as operation, not just as self-restriction on Ariam."
+  },
+  {
+    "card_id": "CAMP-017",
+    "pipeline_id": "P1-grant-fast",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "promote-to-fast" },
+    "new_value": { "type": "promote-to-activa-rapida", "duration": "current-turn", "scope": "all-activa-effects" },
+    "detail": "Per §10.2 canonical type = Activa-Rápida. Changed promote-to-fast → promote-to-activa-rapida with duration:current-turn and scope:all-activa-effects."
+  },
+  {
+    "card_id": "CAMP-018",
+    "pipeline_id": "P1-heal-on-attack",
+    "action": "no_change",
+    "field": null,
+    "old_value": null,
+    "new_value": null,
+    "detail": "Numeric values confirmed correct: cost.value:1, operation.value:2. No fix needed."
+  },
+  {
+    "card_id": "CAMP-020",
+    "pipeline_id": "P2-bonus-vs-burn",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "scale", "value": 1 },
+    "new_value": { "type": "bonus-attack-damage", "value": 1, "condition": { "target_has_mark": "burn" } },
+    "detail": "'dañan 1 pto. ADICIONAL' = Daño Adicional §9, not permanent Escalar §8. Changed scale → bonus-attack-damage with burn condition."
+  },
+  {
+    "card_id": "CAMP-020",
+    "pipeline_id": "P1-burn-persist",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "mark-persist", "mark": "burn" },
+    "new_value": { "type": "block-mark-removal", "mark": "burn", "via": "heal" },
+    "detail": "Only heal-triggered removal is blocked. Other removal methods still work. Changed mark-persist → block-mark-removal via:heal."
+  },
+  {
+    "card_id": "CAMP-021",
+    "pipeline_id": "P2-bonus-vs-rest",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "scale", "value": 1 },
+    "new_value": { "type": "bonus-attack-damage", "value": 1, "condition": { "target_has_rests": true } },
+    "detail": "'dañan 1 pto. adicional' = Daño Adicional §9, not Escalar §8. Changed scale → bonus-attack-damage with condition target-has-rests."
+  },
+  {
+    "card_id": "CAMP-022",
+    "pipeline_id": "P1-aura",
+    "action": "no_change",
+    "field": null,
+    "old_value": null,
+    "new_value": null,
+    "detail": "'Aumenta 1 pto. de daño' = permanent Escalar §8. pipeline.scale is correct. Flagged for confirmation only."
+  },
+  {
+    "card_id": "CAMP-024",
+    "pipeline_id": "P1-deck-peek-damage",
+    "action": "set_operation",
+    "field": "operation[]",
+    "old_value": [{ "type": "damage-as-revealed", "peek_count": 3 }],
+    "new_value": [
+      { "type": "peek", "count": 3, "source": "own-deck" },
+      { "type": "player-chooses", "count": 1, "from": "peeked-cards" },
+      { "type": "damage-from-stat", "stat": "damage", "source": "chosen-card" },
+      { "type": "return-all", "position": "bottom", "count": 3 }
+    ],
+    "detail": "Missing: player choice step, damage from chosen card's stat, all 3 returned to bottom. Replaced single vague operation with 4-step sequence."
+  },
+  {
+    "card_id": "CAMP-026",
+    "pipeline_id": "P1-scale-per-abyss",
+    "action": "add_field",
+    "field": "operation[0].semantic_note",
+    "old_value": null,
+    "new_value": "REVIEW: Ambiguous between permanent scale-per (Húumico archetype) and per-attack bonus-per. If permanent: keep scale-per, add trigger:on-ally-extinction filter:abisal. If per-attack: change to damage-bonus-per. Conservative: keep scale-per.",
+    "detail": "Flagged for human review. Two valid interpretations exist (§8 permanent vs §9 per-attack). Conservative approach keeps current type."
+  },
+  {
+    "card_id": "CDC-001",
+    "pipeline_id": "P1-damage-on-abyss-attack",
+    "action": "no_change",
+    "field": null,
+    "old_value": null,
+    "new_value": null,
+    "detail": "Numeric value confirmed: operation.value:1 matches 'dana 1 punto'. No fix needed."
+  },
+  {
+    "card_id": "LGRO-007R",
+    "pipeline_id": "P1-reveal-rest-lock",
+    "action": "remove_field",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": null,
+    "detail": "No 'puede' in effect text — mandatory on reveal. Removed optional:true."
+  },
+  {
+    "card_id": "LGRO-017",
+    "pipeline_id": "P1-double-non-facing",
+    "action": "change_field",
+    "field": "modifiers.duration.label",
+    "old_value": "until-protector-available",
+    "new_value": "until-self-available",
+    "detail": "'Esta carta' = the Protector itself. Normalized label to until-self-available."
+  },
+  {
+    "card_id": "LGRO-030",
+    "pipeline_id": "P1-lock-equip-activation",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "negate-effect" },
+    "new_value": { "type": "restrict-activation", "scope": "equip-cards" },
+    "detail": "Pre-declaration restriction, not post-declaration negation. Changed negate-effect → restrict-activation with scope:equip-cards."
+  },
+  {
+    "card_id": "LGRO-048",
+    "pipeline_id": "P1-lock-equip",
+    "action": "remove_field",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": null,
+    "detail": "Continuous aura Pasiva is mandatory, not Pasiva Opcional. Removed optional:true."
+  },
+  {
+    "card_id": "MLBU-002",
+    "pipeline_id": "P1-burn-bonus-damage",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "scale" },
+    "new_value": { "type": "damage-bonus", "condition": { "trigger": "on-attack", "self_has_mark": "burn" } },
+    "detail": "scale is permanent. Conditional attack bonus when self has burn. Changed to damage-bonus with on-attack + has-mark:burn condition."
+  },
+  {
+    "card_id": "MLBU-003S",
+    "pipeline_id": "P1-on-reveal-shield-field",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "protect-effect" },
+    "new_value": { "type": "damage-immunity", "duration": "next-turn" },
+    "detail": "protect-effect implies full effect immunity. Effect only grants immunity to DAMAGE. Changed to damage-immunity with duration:next-turn."
+  },
+  {
+    "card_id": "MLBU-004",
+    "pipeline_id": "P1-damage-ally-for-setup",
+    "action": "change_field",
+    "field": "operation[0].type",
+    "old_value": "damage",
+    "new_value": "attack-additional",
+    "detail": "'atacar adicionalmente' = daño por ataque §9, not daño por efecto. Changed to attack-additional."
+  },
+  {
+    "card_id": "NYPR-001",
+    "pipeline_id": "P1-sacrifice-linked-vivify-rava",
+    "action": "add_field",
+    "field": "flags.review_card_text",
+    "old_value": null,
+    "new_value": "Card text missing 'vivificar' keyword. Per §15, vivify requires explicit text. Flag for card text review.",
+    "detail": "Per §15, vivify requires explicit 'vivificar' text. Card text gap — flag for review and card text update."
+  },
+  {
+    "card_id": "PASE-001",
+    "pipeline_id": "P2-rest-on-enemy-reveal",
+    "action": "add_field",
+    "field": "trigger.fast",
+    "old_value": null,
+    "new_value": true,
+    "detail": "Responds to opponent's reveal = Pasiva-Rápida per §10.4. Added fast:true to trigger."
+  },
+  {
+    "card_id": "RAMI-005S",
+    "pipeline_id": "P1-dual-condition-bonus",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "amplify-effect" },
+    "new_value": { "type": "damage-additional", "value": 1, "scope": "triggering-attack" },
+    "detail": "'dana 1 punto adicional' = Daño Adicional §9 on triggering attack. Changed amplify-effect → damage-additional."
+  },
+  {
+    "card_id": "TCDE-008",
+    "pipeline_id": "P1-token-replace",
+    "action": "add_field",
+    "field": "modifiers.timing",
+    "old_value": null,
+    "new_value": "before-replacement",
+    "detail": "Token placed 'antes de colocar la carta suplente'. Added modifiers.timing:before-replacement."
+  },
+  {
+    "card_id": "TCDE-014",
+    "pipeline_id": "P2-return-on-token-death",
+    "action": "change_field",
+    "field": "operation[0].type",
+    "old_value": "equip-from-equip-zone",
+    "new_value": "return-to-equip-zone",
+    "detail": "Action is returning Rot to Zona de Equipo, not equipping from it. Changed direction."
+  },
+  {
+    "card_id": "TCDE-015",
+    "pipeline_id": "P1-copy-token-on-death",
+    "action": "add_field",
+    "field": "operation[0].copy_fields",
+    "old_value": null,
+    "new_value": ["damage", "rest", "activa", "cost"],
+    "detail": "Token copies damage, rest, Activa, cost but NOT max_life or subtype. Added explicit copy_fields."
+  },
+  {
+    "card_id": "TCDE-015",
+    "pipeline_id": "P1-copy-token-on-death",
+    "action": "add_field",
+    "field": "operation[0].exclude_fields",
+    "old_value": null,
+    "new_value": ["max_life", "subtype"],
+    "detail": "Explicitly exclude vida máxima and subtipo from copy per §2.7 Token defaults."
+  },
+  {
+    "card_id": "TCDE-015",
+    "pipeline_id": "P1-copy-token-on-death",
+    "action": "add_field",
+    "field": "operation[0].energy_note",
+    "old_value": null,
+    "new_value": "Token-Lítico energy 'litica' is a special exception to §2.7 (Tokens have no energy by default). Flag for energy-filter effects.",
+    "detail": "Documented Token-Lítico energy exception. energy_override:litica overrides §2.7 default — note for engine."
+  },
+  {
+    "card_id": "TCOO-001K",
+    "pipeline_id": "P1-return-all-to-deck",
+    "action": "add_field",
+    "field": "restrictions[]",
+    "old_value": null,
+    "new_value": { "type": "cant-link-this-turn" },
+    "detail": "cost_text says 'no puedes vincular'. cant-use-activa-while-active doesn't cover Vínculo Odémico. Added cant-link-this-turn restriction."
+  },
+  {
+    "card_id": "TCOO-003S",
+    "pipeline_id": "P1-self-swap",
+    "action": "change_field",
+    "field": "operation[0].type",
+    "old_value": "vivify",
+    "new_value": "place-from-deck",
+    "detail": "Effect places suplente FROM Mazo — standard replacement, not vivification from Extinción. Changed vivify → place-from-deck."
+  },
+  {
+    "card_id": "TCOO-005R",
+    "pipeline_id": "P2-extra-damage",
+    "action": "change_field",
+    "field": "operation[0]",
+    "old_value": { "type": "scale" },
+    "new_value": { "type": "damage-additional", "value": 1, "duration": "while-equipped" },
+    "detail": "'+1 daño adicional al atacar' = Daño Adicional per attack, not permanent Escalar. Changed scale → damage-additional with duration:while-equipped."
+  },
+  {
+    "card_id": "TCOO-006U",
+    "pipeline_id": "P1-reveal-out-of-game",
+    "action": "change_field",
+    "field": "operation[0].type",
+    "old_value": "send-extinction",
+    "new_value": "send-out-of-game",
+    "detail": "Effect places card 'fuera del juego' (out of game), NOT Extinción. Distinct zones. Changed send-extinction → send-out-of-game."
+  },
+  {
+    "card_id": "TCOO-006U",
+    "pipeline_id": "P1-reveal-out-of-game",
+    "action": "change_field",
+    "field": "operation[0].zone",
+    "old_value": "out-of-game",
+    "new_value": "out-of-game",
+    "detail": "Kept zone:out-of-game to distinguish from extinction zone. No change to zone value, only operation type corrected."
+  },
+  {
+    "card_id": "TCOO-008",
+    "pipeline_id": "P2-delayed-cost",
+    "action": "change_field",
+    "field": "costs[]",
+    "old_value": null,
+    "new_value": [{ "type": "send-extinction", "target": "ixim" }],
+    "detail": "Send 1 Ixim to Extinción is a cost, not a free operation. Moved send-extinction to costs array."
+  },
+  {
+    "card_id": "TCOO-008",
+    "pipeline_id": "P2-delayed-cost",
+    "action": "remove_field",
+    "field": "operation[0]",
+    "old_value": { "type": "send-extinction", "target": "ixim" },
+    "new_value": null,
+    "detail": "Removed

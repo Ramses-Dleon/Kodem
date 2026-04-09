@@ -1,0 +1,509 @@
+[
+  {
+    "card_id": "TCOO-006U",
+    "pipeline_id": "P1-reveal-out-of-game",
+    "action": "replace_operation",
+    "field": "operation[1].type",
+    "old_value": "send-extinction",
+    "new_value": "send-out-of-game",
+    "detail": "Extinción y fuera-del-juego son zonas distintas; usar send-out-of-game"
+  },
+  {
+    "card_id": "TCOO-008",
+    "pipeline_id": "P2-delayed-cost",
+    "action": "move_to_costs",
+    "field": "operation[0] -> costs[0]",
+    "old_value": {"operation": [{"type": "send-extinction"}], "costs": [{"type": "none"}]},
+    "new_value": {"operation": [], "costs": [{"type": "send-extinction", "target": {"type": "ally", "count": 1, "filter": {"card_type": "ixim"}, "zone": "principal"}}]},
+    "detail": "El send-extinction es costo demorado, moverlo a costs[]"
+  },
+  {
+    "card_id": "TCOO-011R",
+    "pipeline_id": "P1-protector-immune-resting",
+    "action": "add_operation",
+    "field": "operation",
+    "old_value": [{"type": "protect-effect", "condition": "target-has-rests"}],
+    "new_value": [{"type": "protect-effect", "condition": "target-has-rests"}, {"type": "protect-attack", "condition": "target-has-rests"}],
+    "detail": "Texto dice 'no puede ser dañado' (toda fuente); agregar protect-attack"
+  },
+  {
+    "card_id": "CAMP-014UV",
+    "pipeline_id": "P1-double-damage-per-rest",
+    "action": "replace_operation",
+    "field": "operation[0]",
+    "old_value": {"type": "grant-double-damage", "multiplier": "pending_rests"},
+    "new_value": {"type": "set-attack-damage", "formula": "2 * pending_end_of_turn_rests"},
+    "detail": "Fórmula ambigua; usar set-attack-damage con formula explícita"
+  },
+  {
+    "card_id": "CAMP-016",
+    "pipeline_id": "P1-no-heal-debuff",
+    "action": "replace_modifier",
+    "field": "modifiers.duration.type",
+    "old_value": "next-turn",
+    "new_value": "end-of-next-own-turn",
+    "detail": "Texto dice 'tu siguiente turno'; distinguir de turno del oponente"
+  },
+  {
+    "card_id": "CAMP-017",
+    "pipeline_id": "P1-grant-fast",
+    "action": "add_field",
+    "field": "operation[0].scope",
+    "old_value": null,
+    "new_value": "all-activa-effects",
+    "detail": "Especificar qué efectos del Adendei se promueven a rápidos"
+  },
+  {
+    "card_id": "CAMP-019",
+    "pipeline_id": "P1-immune-aura",
+    "action": "replace_operation",
+    "field": "operation[1]",
+    "old_value": {"type": "apply-immunity", "immunity": "damage-by-effect"},
+    "new_value": {"type": "immune-effect-damage"},
+    "detail": "damage-reduce implica reducción parcial; immune-effect-damage es inmunidad total"
+  },
+  {
+    "card_id": "CAMP-020",
+    "pipeline_id": "P1-burn-persist",
+    "action": "replace_operation",
+    "field": "operation[0]",
+    "old_value": {"type": "mark-persist", "mark": "burn"},
+    "new_value": {"type": "block-mark-removal", "mark": "burn", "via": "heal"},
+    "detail": "Solo bloquea remoción vía curación, no toda remoción de marca"
+  },
+  {
+    "card_id": "CAMP-020",
+    "pipeline_id": "P2-bonus-vs-burn",
+    "action": "replace_operation",
+    "field": "operation[0]",
+    "old_value": {"type": "scale", "value": 1, "condition": {"target_has_mark": "burn"}},
+    "new_value": {"type": "conditional-damage-bonus", "value": 1, "condition": {"target_has_mark": "burn"}},
+    "detail": "scale es buff permanente (§8); esto es bono condicional por ataque, usar conditional-damage-bonus"
+  },
+  {
+    "card_id": "CAMP-021",
+    "pipeline_id": "P2-bonus-vs-rest",
+    "action": "replace_operation",
+    "field": "operation[0].type",
+    "old_value": "scale",
+    "new_value": "damage-bonus",
+    "detail": "scale implica Escalar permanente (§8); daño adicional en combate es damage-bonus condicional"
+  },
+  {
+    "card_id": "CAMP-022",
+    "pipeline_id": "P1-aura",
+    "action": "no_change",
+    "field": "operation[0].type",
+    "old_value": "scale",
+    "new_value": "scale",
+    "detail": "'Aumenta 1 pto de daño' es Escalar permanente (§8); scale es correcto, sin cambio"
+  },
+  {
+    "card_id": "CAMP-024",
+    "pipeline_id": "P1-deck-peek-damage",
+    "action": "replace_operation",
+    "field": "operation",
+    "old_value": [{"type": "damage-as-revealed", "peek_count": 3, "return_position": "bottom"}],
+    "new_value": [
+      {"type": "peek-deck", "count": 3, "owner": "self"},
+      {"type": "player-chooses", "count": 1, "from": "peeked-cards"},
+      {"type": "damage-from-stat", "stat": "damage", "source": "chosen-card"},
+      {"type": "return-all", "position": "bottom", "count": 3}
+    ],
+    "detail": "Modelar sub-pasos: peek, elección del jugador, daño por stat, retorno de las 3 cartas"
+  },
+  {
+    "card_id": "CAMP-026",
+    "pipeline_id": "P1-scale-per-abyss",
+    "action": "add_field",
+    "field": "operation[0]._note",
+    "old_value": null,
+    "new_value": "Húumica archetype: escala permanente confirmada (progressive potency); scale-per es correcto",
+    "detail": "CAMP-026: scale-per permanente es correcto para arquetipo Húumico; confirmar vs damage-bonus-per"
+  },
+  {
+    "card_id": "CMFT-001",
+    "pipeline_id": "P1-swap-with-extinct",
+    "action": "replace_operation",
+    "field": "operation",
+    "old_value": [{"type": "swap-field-extinction"}],
+    "new_value": [
+      {"type": "send-to-extinction", "target": "ally-adendei"},
+      {"type": "place-from-extinction", "slot": "freed", "filter": {"card_type": "adendei"}}
+    ],
+    "detail": "Separar en send-to-extinction + place-from-extinction con slot binding"
+  },
+  {
+    "card_id": "CMFT-002",
+    "pipeline_id": "P1-damage-per-extinct",
+    "action": "replace_operation",
+    "field": "operation[0]",
+    "old_value": {"type": "damage-per", "value": 1, "per": {"zone": "extinction"}},
+    "new_value": {"type": "damage-per", "value": 1, "per": {"zone": "extinction", "snapshot": "post-cost"}},
+    "detail": "Añadir snapshot:post-cost para incluir a Mizthe misma en el conteo de Extinción"
+  },
+  {
+    "card_id": "CMFT-003",
+    "pipeline_id": "P1-bonus-damage",
+    "action": "no_change",
+    "field": "prerequisites[0].value",
+    "old_value": 3,
+    "new_value": 3,
+    "detail": "Valores correctos (>= 3 = '3 o más', daño 4 = 4); sin cambio"
+  },
+  {
+    "card_id": "CMFT-004",
+    "pipeline_id": "P1-copy-ixim",
+    "action": "replace_prerequisite",
+    "field": "prerequisites[0].value",
+    "old_value": 3,
+    "new_value": 4,
+    "detail": "'más de 3' = >3 = >=4; cambiar threshold de 3 a 4"
+  },
+  {
+    "card_id": "CMFT-004",
+    "pipeline_id": "P1-copy-ixim",
+    "action": "add_field",
+    "field": "operation[0].copy_targets",
+    "old_value": null,
+    "new_value": ["effect", "cost"],
+    "detail": "Texto dice 'copiar efecto Y costo'; especificar copy_targets"
+  },
+  {
+    "card_id": "CMFT-005",
+    "pipeline_id": "P1-immune-extinction-effect",
+    "action": "add_operation",
+    "field": "operation",
+    "old_value": [],
+    "new_value": [{"type": "apply-global-restriction", "restriction": "no-extinction-by-effect", "zone": "field", "scope": "both-players"}],
+    "detail": "Auras vacías deben tener operación que documente la restricción en el motor"
+  },
+  {
+    "card_id": "DMUE-001",
+    "pipeline_id": "P1-attack-protector",
+    "action": "replace_operation",
+    "field": "operation[0]",
+    "old_value": {"type": "attack-protector"},
+    "new_value": {"type": "unlock-attack-target", "target": {"card_type": "protector", "owner": "enemy"}},
+    "detail": "Modelar como permiso de ataque al Protector rival, no como operación de ataque directo"
+  },
+  {
+    "card_id": "DOOC-001",
+    "pipeline_id": "P1-burn-or-damage-on-reveal",
+    "action": "replace_operation",
+    "field": "operation",
+    "old_value": [
+      {"type": "burn"},
+      {"type": "damage", "value": 1, "condition": {"target_has_mark": "burn"}, "choice": true}
+    ],
+    "new_value": [
+      {"type": "choose-one", "options": [
+        {"type": "burn", "target": {"type": "enemy", "filter": {"card_type": "adendei"}}},
+        {"type": "damage", "value": 1, "condition": {"target_has_mark": "burn"}}
+      ]}
+    ],
+    "detail": "Reemplazar dos ops separadas con choose-one para garantizar exclusividad burn OR damage"
+  },
+  {
+    "card_id": "DOOC-002",
+    "pipeline_id": "P1-negate-attack",
+    "action": "add_field",
+    "field": "modifiers.optional",
+    "old_value": null,
+    "new_value": true,
+    "detail": "Texto dice 'PUEDES'; el efecto es opcional, agregar modifiers.optional:true"
+  },
+  {
+    "card_id": "DOOC-002S",
+    "pipeline_id": "P2-abyss-aura",
+    "action": "add_field",
+    "field": "target.zone",
+    "old_value": null,
+    "new_value": "field",
+    "detail": "Aura aplica a Adendei en campo (Zona Principal), no a zonas como Mazo o Extinción"
+  },
+  {
+    "card_id": "DOOC-003S",
+    "pipeline_id": "P1-copy-from-enemy-deck",
+    "action": "add_operations",
+    "field": "operation",
+    "old_value": [
+      {"type": "peek-enemy-deck", "count": 3},
+      {"type": "copy", "copy_type": "active"}
+    ],
+    "new_value": [
+      {"type": "peek-enemy-deck", "count": 3},
+      {"type": "restrict-shown-cards", "restriction": "cant-use-effects", "duration": "while-shown"},
+      {"type": "copy", "copy_type": "active"},
+      {"type": "return-to-deck", "position": "bottom", "target": {"type": "enemy", "zone": "deck", "count": 3}}
+    ],
+    "detail": "Añadir restrict-shown-cards y return-to-deck:bottom para las 3 cartas mostradas"
+  },
+  {
+    "card_id": "DOOC-004",
+    "pipeline_id": "P2-extra-equip",
+    "action": "add_field",
+    "field": "modifiers.equipment_override",
+    "old_value": null,
+    "new_value": {"type": "equipment-rule-override", "allows": "2-ixim-revealed"},
+    "detail": "Documentar excepción explícita a regla §11 máx 1 Ixim revelado"
+  },
+  {
+    "card_id": "DOOC-007",
+    "pipeline_id": "P1-abyss-and-negate",
+    "action": "add_field",
+    "field": "operation[1].partial_resolution",
+    "old_value": null,
+    "new_value": "abyss-partial-no-negate",
+    "detail": "Si <2 abismados (rival tiene menos), los abismados son válidos pero ataque no se niega"
+  },
+  {
+    "card_id": "DOOC-007S",
+    "pipeline_id": "P2-protect-choice",
+    "action": "replace_operation",
+    "field": "operation[0]",
+    "old_value": {"type": "protect-attack"},
+    "new_value": {"type": "protect-full"},
+    "detail": "§14 'protegida' = inmune a ataques Y efectos; usar protect-full"
+  },
+  {
+    "card_id": "DOOC-008",
+    "pipeline_id": "P1",
+    "action": "add_field",
+    "field": "operation[1].scope",
+    "old_value": null,
+    "new_value": "both",
+    "detail": "Texto no califica jugador; scope:both para regresa equipos de ambos jugadores"
+  },
+  {
+    "card_id": "DOOC-008",
+    "pipeline_id": "P1",
+    "action": "replace_field",
+    "field": "operation[0].value",
+    "old_value": 1,
+    "new_value": null,
+    "detail": "Estandarizar a 'count' para cantidad objetivo en op abyss (value->count)"
+  },
+  {
+    "card_id": "DOOC-008",
+    "pipeline_id": "P1",
+    "action": "add_field",
+    "field": "operation[0].count",
+    "old_value": null,
+    "new_value": 1,
+    "detail": "Agregar count:1 reemplazando value:1 en operación abyss para consistencia con DOOC-007"
+  },
+  {
+    "card_id": "DOOC-010S",
+    "pipeline_id": "P1",
+    "action": "add_field",
+    "field": "operation[0].optional",
+    "old_value": null,
+    "new_value": true,
+    "detail": "Texto dice 'puede dañar'; el bono es opcional (§10.1)"
+  },
+  {
+    "card_id": "DOOC-020",
+    "pipeline_id": "P1",
+    "action": "replace_operation",
+    "field": "operation[0].type",
+    "old_value": "negate-passive-persistent",
+    "new_value": "protect-passive-from-negation",
+    "detail": "Nombre inverso al efecto real; renombrar a protect-passive-from-negation"
+  },
+  {
+    "card_id": "DOOC-023",
+    "pipeline_id": "P1",
+    "action": "replace_modifier",
+    "field": "modifiers.duration.type",
+    "old_value": "until-protector-available",
+    "new_value": "until-self-available",
+    "detail": "Texto dice 'hasta que ESTA carta esté disponible', no el Protector"
+  },
+  {
+    "card_id": "EXPN-003",
+    "pipeline_id": "P1",
+    "action": "replace_operation",
+    "field": "operation[0].type",
+    "old_value": "equip-destroy",
+    "new_value": "equip-return",
+    "detail": "El equipo regresa intacto a Zona de Equipo; equip-destroy implica destrucción"
+  },
+  {
+    "card_id": "EXPO-001",
+    "pipeline_id": "P1",
+    "action": "add_field",
+    "field": "modifiers.simultaneous",
+    "old_value": null,
+    "new_value": true,
+    "detail": "Texto dice 'al mismo tiempo'; modelar resolución simultánea del daño"
+  },
+  {
+    "card_id": "EXPO-002",
+    "pipeline_id": "P1",
+    "action": "add_fields",
+    "field": "operation[0]",
+    "old_value": {"type": "vivify", "filter": {"card_type": "bio"}},
+    "new_value": {"type": "vivify", "filter": {"card_type": "bio"}, "destination": "bio-zone", "entry_state": "hidden"},
+    "detail": "Añadir destination:bio-zone y entry_state:hidden según §2.6"
+  },
+  {
+    "card_id": "EXPO-004",
+    "pipeline_id": "P1",
+    "action": "replace_operation",
+    "field": "operation[0].type",
+    "old_value": "scale",
+    "new_value": "damage-buff-temporary",
+    "detail": "Escalar (§8) es permanente; buff while-on-field es temporal, usar damage-buff-temporary"
+  },
+  {
+    "card_id": "EXPO-006",
+    "pipeline_id": "P1",
+    "action": "replace_operation",
+    "field": "operation[0].type",
+    "old_value": "scale",
+    "new_value": "damage-buff-temporary",
+    "detail": "Mismo que EXPO-004: buff temporal while-on-field no debe usar scale (§8)"
+  },
+  {
+    "card_id": "FAFT-001",
+    "pipeline_id": "P2",
+    "action": "replace_modifier",
+    "field": "modifiers.duration.type",
+    "old_value": "until-protector-available",
+    "new_value": "while-self-available",
+    "detail": "Texto dice 'hasta disponible' (Nirge misma); while-self-available es el tipo correcto"
+  },
+  {
+    "card_id": "FYTE-002U",
+    "pipeline_id": "P4-return-protector",
+    "action": "replace_operation",
+    "field": "operation[0]",
+    "old_value": {"type": "vivify"},
+    "new_value": {"type": "return-to-zone", "zone": "protector-zone", "state": "available"},
+    "detail": "No es vivificación sino reposicionamiento; usar return-to-zone con state:available"
+  },
+  {
+    "card_id": "FYTE-003S",
+    "pipeline_id": "P2-damage-linked",
+    "action": "add_field",
+    "field": "operation[0]._note",
+    "old_value": null,
+    "new_value": "'6+' cubre exactamente 6 y todos los valores mayores (≥6)",
+    "detail": "Confirmar que key '6+' incluye exactamente 6 pts; agregar nota aclaratoria"
+  },
+  {
+    "card_id": "FYTE-004S",
+    "pipeline_id": "P2-protect-equipped",
+    "action": "add_operation",
+    "field": "operation",
+    "old_value": [{"type": "protect-effect"}],
+    "new_value": [{"type": "protect-effect"}, {"type": "protect-attack"}],
+    "detail": "Texto dice 'ataques y efectos'; agregar protect-attack junto a protect-effect"
+  },
+  {
+    "card_id": "FYTE-004U",
+    "pipeline_id": "P1-on-draw-protect",
+    "action": "add_operation",
+    "field": "operation",
+    "old_value": [{"type": "protect-attack"}],
+    "new_value": [{"type": "protect-attack"}, {"type": "protect-effect"}],
+    "detail": "Texto dice 'protege' sin calificador; §14 implica protección completa (ataques y efectos)"
+  },
+  {
+    "card_id": "FYTE-005R",
+    "pipeline_id": "P2-rest-lock",
+    "action": "replace_modifier",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": false,
+    "detail": "Texto no incluye 'puedes'; efecto obligatorio, cambiar optional:true a false"
+  },
+  {
+    "card_id": "FYTE-005S",
+    "pipeline_id": "P2-block-drawn-effects",
+    "action": "replace_operation",
+    "field": "operation[0]",
+    "old_value": {"type": "negate-effect"},
+    "new_value": {"type": "register-game-rule", "rule": "block-drawn-card-effects-this-turn"},
+    "detail": "negate-effect niega efecto ya declarado; esto es restricción de uso, usar register-game-rule"
+  },
+  {
+    "card_id": "FYTE-006",
+    "pipeline_id": "P1-damage-redistribute",
+    "action": "add_field",
+    "field": "modifiers.equip_compatibility",
+    "old_value": null,
+    "new_value": {"targets": ["protector", "adendei"]},
+    "detail": "cost_text dice 'equipar a 1 Protector o 1 Adendei'; documentar compatibilidad de equipo especial"
+  },
+  {
+    "card_id": "FYTE-008",
+    "pipeline_id": "P2-on-extinct-cleanse-heal",
+    "action": "replace_field",
+    "field": "target.count",
+    "old_value": 3,
+    "new_value": "up-to-3",
+    "detail": "Texto dice 'hasta 3 cartas' (máximo), no exactamente 3; cambiar count a up-to-3"
+  },
+  {
+    "card_id": "FYTE-008U",
+    "pipeline_id": "P1-vivify-ariam-buff",
+    "action": "add_operation",
+    "field": "operation",
+    "old_value": [{"type": "scale", "value": 1, "notes": "+1 dano al atacar"}],
+    "new_value": [
+      {"type": "scale", "value": 1, "notes": "+1 dano al atacar"},
+      {"type": "restrict-heal-self", "target": "ally-ariam", "detail": "no curan por propios efectos"}
+    ],
+    "detail": "Agregar restrict-heal-self para modelar ambos sub-efectos del pipeline"
+  },
+  {
+    "card_id": "FYTE-010",
+    "pipeline_id": "P2-catrin-immunity-continuous",
+    "action": "add_operation",
+    "field": "operation",
+    "old_value": [
+      {"type": "immune-marks"},
+      {"type": "protect-effect", "notes": "efectos de cartas tomadas"}
+    ],
+    "new_value": [
+      {"type": "immune-marks"},
+      {"type": "protect-effect", "notes": "efectos de cartas tomadas"},
+      {"type": "player-restriction", "restriction": "no-use-taken-card-effects", "target": "controlling-player"}
+    ],
+    "detail": "La restricción 'no puedes usar efectos de cartas tomadas' aplica al jugador, no solo a Catrin"
+  },
+  {
+    "card_id": "FYTE-019R",
+    "pipeline_id": "P1-extinction-aura-negate-immune",
+    "action": "replace_modifier",
+    "field": "modifiers.duration.type",
+    "old_value": "while-on-field",
+    "new_value": "while-in-extinction",
+    "detail": "La Pasiva se activa mientras la carta está EN EXTINCIÓN, no en campo"
+  },
+  {
+    "card_id": "FYTE-020R",
+    "pipeline_id": "P1-activate-damage-token-destroy",
+    "action": "replace_operation",
+    "field": "operation[1]",
+    "old_value": {"type": "send-extinction", "target_type": "token", "count": 1},
+    "new_value": {"type": "send-extinction", "target_type": "token", "count": 1, "target_owner": "any"},
+    "detail": "Texto no especifica bando del Token; agregar target_owner:any"
+  },
+  {
+    "card_id": "FYTE-021R",
+    "pipeline_id": "P1-attack-extra-rest",
+    "action": "merge_pipelines",
+    "field": "pipelines",
+    "old_value": ["P1-attack-extra-rest (on-attack)", "P2-activate-extra-rest (on-activate)"],
+    "new_value": {
+      "id": "P1-extra-rest-on-attack-or-activate",
+      "trigger": {"type": "on-attack-or-activate"},
+      "operation": [{"type": "rest-add", "value": 1}],
+      "modifiers": {"timing": "end-of-turn", "max_per_turn": 1}
+    },
+    "detail": "Fusionar P1+P2 en trigger combinado con max_per_turn:1 para evitar 2 descansos si ataca Y activa"
+  }
+]

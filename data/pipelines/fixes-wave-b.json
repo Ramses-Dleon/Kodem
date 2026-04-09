@@ -1,0 +1,479 @@
+[
+  {
+    "card_id": "009/066",
+    "pipeline_id": "P1-aura",
+    "field": "target.type",
+    "old_value": "ally",
+    "new_value": "both",
+    "_original_target": "ally",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "FYTE-027",
+    "pipeline_id": "P1-attack-non-adendei-bonus",
+    "field": "target.type",
+    "old_value": "enemy",
+    "new_value": "any",
+    "_original_target": "enemy",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "FYTE-064",
+    "pipeline_id": "P1",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "enemy",
+    "_original_target": "both",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "IDRMA-021",
+    "pipeline_id": "P1",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "ally",
+    "_original_target": "both",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "KPRC-027",
+    "pipeline_id": "P3-on-extinction-damage-protector",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "ally",
+    "_original_target": "both",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "KPRF-0002",
+    "pipeline_id": "P1-link-heal",
+    "field": "target.type",
+    "old_value": "equipped",
+    "new_value": "protector",
+    "_original_target": "equipped",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "LGRO-007",
+    "pipeline_id": "P1-all-atlica",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "ally",
+    "_original_target": "both",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "LGRO-058",
+    "pipeline_id": "P1-enhanced-replace",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "ally",
+    "_original_target": "both",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "TCDE-021",
+    "pipeline_id": "P1-titan-attack-cant-negate",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "ally",
+    "_original_target": "both",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "TCOO-061",
+    "pipeline_id": "P1-pirico-reveal-burn",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "enemy",
+    "_original_target": "both",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "FYTE-002U",
+    "pipeline_id": "P1-heal-on-death",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "ally",
+    "_original_target": "both",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "FYTE-002U",
+    "pipeline_id": "P2-return-adendei",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "ally",
+    "_original_target": "both",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "FYTE-013R",
+    "pipeline_id": "P1-possess-aki",
+    "field": "target.type",
+    "old_value": "enemy",
+    "new_value": "ally",
+    "_original_target": "enemy",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "FYTE-014R",
+    "pipeline_id": "P1-possess-yakerr",
+    "field": "target.type",
+    "old_value": "enemy",
+    "new_value": "ally",
+    "_original_target": "enemy",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "FYTE-015R",
+    "pipeline_id": "P1-possess-nanuk",
+    "field": "target.type",
+    "old_value": "enemy",
+    "new_value": "ally",
+    "_original_target": "enemy",
+    "_fix_type": "wrong_target"
+  },
+  {
+    "card_id": "ANIV-001",
+    "pipeline_id": "P2-opg-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 exists solely to register the 'once-per-game' rule that is already encoded in P1 via prerequisites[once-per-game] and modifiers.once_per_game:true. P2 adds no new semantic content from the card text — the text only describes one effect with one restriction.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "CAMP-001",
+    "pipeline_id": "P2-cost-restrictions",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 duplicates the cost 'cant-attack-this-turn' already present in P1's costs array, and the once-per-field restriction already in P1's prerequisites and modifiers. P2 provides no additional semantic content from the card text — it is structurally redundant.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "CAMP-006",
+    "pipeline_id": "P2-self-extinct-requirement",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 duplicates the self-extinct cost already encoded in P1's costs array. Both P1 and P2 have costs:[{type:'self-extinct'}] with the same trigger 'on-activate'. P2 adds only a 'register-game-rule' operation that is not mentioned in the card text — the text just says 'debe ser enviada a Extincion' as ",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "FYTE-048",
+    "pipeline_id": "P2-cant-attack-cant-negate",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 duplicates the cant-attack and cant-negate-passive restrictions already declared in P1's restrictions array, and is incorrectly marked optional=true for permanent restrictions.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "FYTE-061",
+    "pipeline_id": "P3-activa-cost-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P3 re-encodes the same prerequisite (2 Adendei Xacros/Yimsah in field) already present in P1, providing no new information.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "IDRMA-015",
+    "pipeline_id": "P2-opg-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 is a separate pipeline solely to register the once-per-game rule, which is already captured in P1's prerequisites and modifiers; this creates a duplicate representation.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "IDRMA-019",
+    "pipeline_id": "P2-attack-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 duplicates the attack restriction already partially encoded in P1's restrictions array, creating two conflicting representations of the same rule.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "INMX-001",
+    "pipeline_id": "P2-once-per-game-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 encodes the once-per-game restriction as a separate pipeline, but this is already captured in P1 via prerequisites:[{type:'once-per-game'}] and modifiers.once_per_game:true — the restriction pipeline is fully redundant.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "KPRC-018",
+    "pipeline_id": "P3-rava-cost-effect",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P3 duplica el costo ya modelado en P2 (extra-rest sobre Rava), creando un pipeline redundante que representa el mismo pago dos veces.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "KPRC-058",
+    "pipeline_id": "P2-permanent-restrictions",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P1 already includes the three restrictions (cant-equip, cant-heal, cant-be-protected) in its restrictions array; P2 duplicates them as a separate 'while-on-field' pipeline making the restrictions declared twice.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "KPRC-064A",
+    "pipeline_id": "P2-self-extinct-cost",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 duplicates the self-extinct cost already declared in P1's costs array; the cost is modeled twice (once as cost in P1 and once as a separate operation pipeline P2).",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "LGRO-001R",
+    "pipeline_id": "P1-negate-attack",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "La operación incluye 'equip-from-equip-zone' pero la carta se regresa a Zona de Equipo (self-return-to-equip-zone es el costo), no se re-equipa; esta sub-operación es incorrecta y no está en el texto.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "NAVD-001",
+    "pipeline_id": "P2-december-penalty",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 duplicates the penalty already defined in P1.modifiers.penalty_on_fail; the penalty is a single conditional consequence, not a separate pipeline.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "NYPR-001",
+    "pipeline_id": "P2-cost-effect",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 re-declares the same cost already present in P1.costs[], creating a duplicate cost definition for the same action.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "PASE-005",
+    "pipeline_id": "P2-equip-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 is a separate pipeline solely to register the equip restriction, but this restriction is already declared in P1.restrictions[] and belongs in card-level equip data, not as an operational pipeline.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "SNVL-001",
+    "pipeline_id": "P2-once-per-game-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 duplicates the once-per-game restriction already encoded in P1's prerequisites and modifiers — it adds no new rule and creates redundancy.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "TCDE-012",
+    "pipeline_id": "P2-self-extinct-cost",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 duplica el costo de P1 (self-extinct-from-equip-zone ya está en costs de P1); modelar la auto-extinción solo en el array costs de P1.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "TCOO-008R",
+    "pipeline_id": "P2-min-extinction-prereq",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 is a duplicate prerequisite check already fully captured in P1's prerequisites array (min-extinction, rot, value:2), making P2 entirely redundant.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "TCOO-023R",
+    "pipeline_id": "P2-once-per-field-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 duplicates the once-per-field constraint already captured in P1 prerequisites, creating an unnecessary redundant pipeline.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "CAMP-019",
+    "pipeline_id": "P1-immune-aura",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P1 has both operation:[{type:'damage-reduce', value:'effect_only'}] AND restrictions:[{type:'cant-be-damaged-effect'}]. These encode the same immunity to effect damage twice — once as an operation and once as a restriction. Redundant.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "CMFT-001",
+    "pipeline_id": "P2-opg-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 registra la restricción 'once-per-game' como pipeline separado con trigger 'while-on-field'. Esta información ya está completamente codificada en P1 (prerequisites[0].type: 'once-per-game' + modifiers.once_per_game:true). P2 no agrega ninguna operación nueva; su única operation es 'register-game-",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "CMFT-002",
+    "pipeline_id": "P2-cost-and-restrictions",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 es un pipeline separado que duplica exactamente los costos (self-extinct) y restricciones (cant-be-copied, once-per-game) de P1. Su única operation es 'register-game-rule:once-per-game-effect', que ya está modelado en P1 via prerequisites y modifiers. No agrega operación nueva ni cubre un sub-efe",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "DOOC-003S",
+    "pipeline_id": "P2-opg-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 solo registra la restricción once-per-game como pipeline independiente con trigger:'while-on-field'. Esta información ya está completamente en P1 (prerequisites.once-per-game + modifiers.once_per_game:true + modifiers.duration.while-on-field). P2 no agrega operación nueva.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "FAFT-003",
+    "pipeline_id": "P2-once-per-field-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 ('Restriccion: solo puede escalar una vez mientras este en campo') es pipeline separado con operation.type=register-game-rule. Esta restriccion ya esta modelada en P1 mediante prerequisites.type=once-per-field y modifiers.once_per_field=true. Redundante.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "FYTE-001U",
+    "pipeline_id": "P2-no-rest-catrin-activa",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P1 already covers both attack and Activa (effect_text says 'al atacar o usar Activa'); P2 splits off the Activa case into a duplicate pipeline with identical trigger and target.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "FYTE-003U",
+    "pipeline_id": "P2-cant-copy-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 models 'can't be copied' as a separate pipeline with operation 'register-game-rule', but this restriction is already encoded in P1's restrictions[] array — P2 is redundant.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "FYTE-006U",
+    "pipeline_id": "P2-cant-heal-protect",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "Las restricciones 'cant-heal' y 'cant-protect' ya están registradas en P1; P2 las duplica innecesariamente.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "FYTE-007U",
+    "pipeline_id": "P2-standing-restrictions",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "Restricciones cant-heal, cant-protect, cant-copy ya están en P1; P2 las repite sin agregar valor.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "FYTE-014",
+    "pipeline_id": "P2-target-restriction",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 duplicates the target restriction already fully captured in P1's restrictions array; having a separate pipeline just to register a game rule that is already modeled in P1 is redundant.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "FYTE-025",
+    "pipeline_id": "P2-cant-heal-protect",
+    "field": "_redundant",
+    "old_value": null,
+    "new_value": true,
+    "_redundant_reason": "P2 modela las restricciones 'no puede ser curada ni protegida' como un pipeline separado con register-game-rule, pero estas restricciones ya están capturadas en P1's restrictions[] y son condiciones intrínsecas de la carta, no un efecto que se activa; P2 es redundante.",
+    "_fix_type": "redundant_pipeline"
+  },
+  {
+    "card_id": "CAMP-014UV",
+    "pipeline_id": "P1-double-damage-per-rest",
+    "field": "modifiers.optional",
+    "old_value": null,
+    "new_value": true,
+    "_fix_type": "optional_flag_add"
+  },
+  {
+    "card_id": "CAMP-015UV",
+    "pipeline_id": "P2-no-hide-aura",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": false,
+    "_fix_type": "optional_flag_remove"
+  },
+  {
+    "card_id": "CAMP-016",
+    "pipeline_id": "P1-no-heal-debuff",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": false,
+    "_fix_type": "optional_flag_remove"
+  },
+  {
+    "card_id": "TCOO-009S",
+    "pipeline_id": "P1-drawn-rest-enemies",
+    "field": "modifiers.optional",
+    "old_value": null,
+    "new_value": true,
+    "_fix_type": "optional_flag_add"
+  },
+  {
+    "card_id": "TCOO-011",
+    "pipeline_id": "P1-damage-cap",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": false,
+    "_fix_type": "optional_flag_remove"
+  },
+  {
+    "card_id": "TCOO-011R",
+    "pipeline_id": "P1-protector-immune-resting",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": false,
+    "_fix_type": "optional_flag_remove"
+  },
+  {
+    "card_id": "TCOO-013R",
+    "pipeline_id": "P1-immune-attack-protected",
+    "field": "modifiers.optional",
+    "old_value": true,
+    "new_value": false,
+    "_fix_type": "optional_flag_remove"
+  },
+  {
+    "card_id": "TCOO-015R",
+    "pipeline_id": "P1-link-karyn-swap-protector",
+    "field": "modifiers.optional",
+    "old_value": null,
+    "new_value": true,
+    "_fix_type": "optional_flag_add"
+  },
+  {
+    "card_id": "DOOC-006S",
+    "pipeline_id": "P1-grant-abyss",
+    "field": "modifiers.optional",
+    "old_value": null,
+    "new_value": true,
+    "_fix_type": "optional_flag_add"
+  }
+]
