@@ -166,7 +166,42 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-opg-restriction",
+        "label": "Restriccion: Solo una vez por juego",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "once-per-game-effect"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "once_per_game": true,
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -258,7 +293,34 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_field": true
+        }
+      },
+      {
+        "id": "P2-cost-restrictions",
+        "label": "Costos: no atacar este turno + solo una vez mientras en campo",
+        "trigger": {
+          "type": "on-use"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "cant-attack-this-turn"
+          }
+        ],
+        "operation": [],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "once_per_field": true
+        }
       }
     ],
     "meta": {
@@ -494,6 +556,34 @@
         "target": {
           "type": "ally",
           "zone": "deck"
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-self-extinct-requirement",
+        "label": "Requisito: debe enviarse a Extincion para activar",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "self-extinct-required-before-activa"
+          }
+        ],
+        "target": {
+          "type": "self"
         },
         "restrictions": [],
         "modifiers": {}
@@ -1877,7 +1967,42 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-opg-restriction",
+        "label": "Restriccion: Solo una vez por juego",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "once-per-game-effect"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "once_per_game": true,
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -1932,7 +2057,43 @@
             "type": "cant-be-copied"
           }
         ],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-cost-and-restrictions",
+        "label": "Costos y restricciones: self-extinct + no copiar + OPG",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "once-per-game-effect"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-be-copied"
+          }
+        ],
+        "modifiers": {
+          "once_per_game": true
+        }
       }
     ],
     "meta": {
@@ -2529,6 +2690,40 @@
         },
         "restrictions": [],
         "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          },
+          "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-opg-restriction",
+        "label": "Restriccion: Solo una vez por juego",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "once-per-game-effect"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "once_per_game": true,
           "duration": {
             "type": "while-on-field"
           }
@@ -4475,7 +4670,42 @@
           "type": "self"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_field": true
+        }
+      },
+      {
+        "id": "P2-once-per-field-restriction",
+        "label": "Restriccion: solo puede escalar una vez mientras este en campo",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-field"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "scale-once-per-field"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "once_per_field": true,
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -4864,6 +5094,45 @@
         "operation": [
           {
             "type": "no-rest"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "subtype": "catrin"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "duration": {
+            "type": "next-turn"
+          }
+        }
+      },
+      {
+        "id": "P2-no-rest-catrin-activa",
+        "label": "Pasiva: Catrin revelado no recibe descanso al usar Activa este turno y el siguiente",
+        "trigger": {
+          "type": "on-ally-reveal",
+          "filter": {
+            "subtype": "catrin"
+          }
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "no-rest",
+            "on": "activa-use"
           }
         ],
         "target": {
@@ -5512,6 +5781,42 @@
           }
         ],
         "modifiers": {}
+      },
+      {
+        "id": "P2-cant-copy-restriction",
+        "label": "Restriccion: este efecto no puede ser copiado",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "cant-copy-this-effect"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-copy"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -6252,6 +6557,45 @@
           }
         ],
         "modifiers": {}
+      },
+      {
+        "id": "P2-cant-heal-protect",
+        "label": "Restriccion permanente: no puede ser curada ni protegida",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "permanent-cant-heal-or-protect"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-heal"
+          },
+          {
+            "type": "cant-protect"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -6495,6 +6839,51 @@
           }
         ],
         "modifiers": {}
+      },
+      {
+        "id": "P2-standing-restrictions",
+        "label": "Restricciones permanentes: no curar/proteger/copiar + requiere 3 Equino en Extincion",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "min-ext-type",
+            "card_type": "adendei",
+            "subtype": "Equino",
+            "count": 3
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "permanent-cant-heal-protect-copy"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-heal"
+          },
+          {
+            "type": "cant-protect"
+          },
+          {
+            "type": "cant-copy"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -7589,6 +7978,46 @@
           }
         ],
         "modifiers": {}
+      },
+      {
+        "id": "P2-target-restriction",
+        "label": "Restriccion de objetivo: Adendei y Protectores inmunes a este efecto",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "cant-target-adendei-or-protector"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "target-filter",
+            "exclude": [
+              "adendei",
+              "protector"
+            ]
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -8405,6 +8834,45 @@
           }
         ],
         "modifiers": {}
+      },
+      {
+        "id": "P2-cant-heal-protect",
+        "label": "Restriccion permanente: no puede ser curada ni protegida",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "permanent-cant-heal-or-protect"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-heal"
+          },
+          {
+            "type": "cant-protect"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -8584,6 +9052,42 @@
           }
         ],
         "modifiers": {}
+      },
+      {
+        "id": "P2-cant-negate-restriction",
+        "label": "Restriccion: esta Activa no puede ser negada",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "activa-cant-be-negated"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-negate"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -8912,6 +9416,45 @@
               "card_type": "rava"
             },
             "count": 1
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-attack"
+          },
+          {
+            "type": "cant-negate-passive"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
+      },
+      {
+        "id": "P2-cant-attack-cant-negate",
+        "label": "Restricciones permanentes: no puede atacar, Pasivas no pueden ser negadas",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "cant-attack-and-passives-cant-negate"
           }
         ],
         "target": {
@@ -9320,6 +9863,43 @@
         "target": {
           "type": "enemy",
           "count": 1
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P3-activa-cost-restriction",
+        "label": "Requisito Activa: 2 Adendei Xacros o Yimsah en campo",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "min-count",
+            "count": 2,
+            "filter": {
+              "name_any": [
+                "Xacros",
+                "Yimsah"
+              ],
+              "card_type": "adendei"
+            },
+            "zone": "field"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "activa-requires-2-xacros-yimsah"
+          }
+        ],
+        "target": {
+          "type": "self"
         },
         "restrictions": [],
         "modifiers": {}
@@ -10556,7 +11136,11 @@
             "type": "once-per-game"
           }
         ],
-        "costs": [],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
         "operation": [
           {
             "type": "negate-attack"
@@ -10570,7 +11154,42 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-opg-restriction",
+        "label": "Restriccion: Solo una vez por juego",
+        "trigger": {
+          "type": "while-on-field"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "register-game-rule",
+            "rule": "once-per-game-effect"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "once_per_game": true,
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -10722,6 +11341,45 @@
           }
         },
         "fast": true
+      },
+      {
+        "id": "P2-attack-restriction",
+        "label": "Restriccion permanente: solo puede atacar a Adendei-Feral",
+        "trigger": {
+          "type": "permanent"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "restriction-apply"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-attack",
+            "filter": {
+              "energy_exclude": "feral"
+            },
+            "note": "Solo puede atacar Adendei-Feral"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -12947,7 +13605,43 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-once-per-game-restriction",
+        "label": "Restriccion: solo puede usarse una vez por juego",
+        "trigger": {
+          "type": "permanent"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "restriction-apply"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "once-per-game",
+            "note": "Solo puedes usar esta Activa una vez por juego"
+          }
+        ],
+        "modifiers": {
+          "once_per_game": true
+        }
       }
     ],
     "meta": {
@@ -13362,6 +14056,44 @@
         "modifiers": {
           "equip_restriction": "Adendei Cretus only"
         }
+      },
+      {
+        "id": "P2-equip-restriction",
+        "label": "Restriccion permanente: solo puede equiparse a Adendei Cretus",
+        "trigger": {
+          "type": "permanent"
+        },
+        "prerequisites": [
+          {
+            "type": "equipped-to",
+            "filter": {
+              "subtype": "cretus"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "restriction-apply"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-equip",
+            "filter": {
+              "subtype_exclude": "cretus"
+            },
+            "note": "Solo puede equiparse a Adendei Cretus"
+          }
+        ],
+        "modifiers": {}
       }
     ],
     "meta": {
@@ -14162,6 +14894,41 @@
         },
         "restrictions": [],
         "modifiers": {}
+      },
+      {
+        "id": "P3-rava-cost-effect",
+        "label": "Efecto de costo: Rava aliado recibe 1 descanso al usar Activa",
+        "trigger": {
+          "type": "on-activate",
+          "linked_to": "P2-attack-same-energy"
+        },
+        "prerequisites": [
+          {
+            "type": "needs-rava"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "extra-rest",
+            "value": 1
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "count": 1,
+          "filter": {
+            "card_type": "rava"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "is_cost_effect": true
+        }
       }
     ],
     "meta": {
@@ -15395,6 +16162,47 @@
           }
         ],
         "modifiers": {}
+      },
+      {
+        "id": "P2-permanent-restrictions",
+        "label": "Restricciones permanentes: no puede ser equipada, curada ni protegida",
+        "trigger": {
+          "type": "permanent"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "restriction-apply"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-equip"
+          },
+          {
+            "type": "cant-heal"
+          },
+          {
+            "type": "cant-protect"
+          }
+        ],
+        "modifiers": {
+          "duration": {
+            "type": "while-on-field"
+          }
+        }
       }
     ],
     "meta": {
@@ -15536,6 +16344,35 @@
           "filter": {
             "card_type": "adendei"
           }
+        },
+        "restrictions": [],
+        "modifiers": {}
+      },
+      {
+        "id": "P2-self-extinct-cost",
+        "label": "Costo de activacion: envia esta carta a Extincion",
+        "trigger": {
+          "type": "on-cost-pay",
+          "linked_to": "P1-extinction-recycle"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct"
+          }
+        ],
+        "operation": [
+          {
+            "type": "send-extinction",
+            "target": "self"
+          }
+        ],
+        "target": {
+          "type": "self"
         },
         "restrictions": [],
         "modifiers": {}
@@ -15888,7 +16725,43 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-once-per-game-restriction",
+        "label": "Restriccion: solo puede usarse una vez por juego",
+        "trigger": {
+          "type": "permanent"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "restriction-apply"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "once-per-game",
+            "note": "Solo puedes usar esta Activa una vez por juego"
+          }
+        ],
+        "modifiers": {
+          "once_per_game": true
+        }
       }
     ],
     "meta": {
@@ -16348,6 +17221,45 @@
             "type": "while-on-field"
           }
         }
+      },
+      {
+        "id": "P2-rot-activa-promoted",
+        "label": "Activa Rapida: usa el efecto del Rot equipado (promovido por Pasiva)",
+        "trigger": {
+          "type": "on-activate",
+          "fast": true
+        },
+        "prerequisites": [
+          {
+            "type": "needs-equip",
+            "filter": {
+              "card_type": "rot"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "inherited-from-rot"
+          }
+        ],
+        "operation": [
+          {
+            "type": "resolve-equip-effect",
+            "filter": {
+              "card_type": "rot"
+            },
+            "as_fast": true
+          }
+        ],
+        "target": {
+          "type": "inherited-from-rot"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "inherited": true,
+          "fast": true
+        },
+        "fast": true
       }
     ],
     "meta": {
@@ -17242,6 +18154,39 @@
         "restrictions": [],
         "modifiers": {
           "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-copied-activa-execute",
+        "label": "Activa: Ejecuta la Activa copiada de la carta en Extincion (con su Costo)",
+        "trigger": {
+          "type": "on-activate"
+        },
+        "prerequisites": [
+          {
+            "type": "once-per-game"
+          },
+          {
+            "type": "has-copied-effect"
+          }
+        ],
+        "costs": [
+          {
+            "type": "inherited-from-copied"
+          }
+        ],
+        "operation": [
+          {
+            "type": "resolve-copied-effect"
+          }
+        ],
+        "target": {
+          "type": "inherited-from-copied"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "once_per_game": true,
+          "inherited": true
         }
       }
     ],
@@ -19486,6 +20431,39 @@
             "target": "self"
           }
         }
+      },
+      {
+        "id": "P2-december-penalty",
+        "label": "Efecto de costo especial: Si es diciembre y no saludas, recibe 3 danos",
+        "trigger": {
+          "type": "on-condition-fail",
+          "condition": "december-greeting-required-first-use"
+        },
+        "prerequisites": [
+          {
+            "type": "month-filter",
+            "month": 12
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "damage",
+            "value": 3
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "once_per_game": true,
+          "trigger_on_first_use_only": true
+        }
       }
     ],
     "meta": {
@@ -19550,6 +20528,47 @@
         },
         "restrictions": [],
         "modifiers": {}
+      },
+      {
+        "id": "P2-cost-effect",
+        "label": "Costo como efecto: Dana 3 a esta carta O 1 pto a 3 cartas aliadas",
+        "trigger": {
+          "type": "on-cost-pay",
+          "linked_to": "P1-sacrifice-linked-vivify-rava"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "choice",
+            "options": [
+              {
+                "type": "self-damage",
+                "value": 3
+              },
+              {
+                "type": "ally-damage-spread",
+                "value": 1,
+                "count": 3
+              }
+            ]
+          }
+        ],
+        "operation": [
+          {
+            "type": "cost-resolve"
+          }
+        ],
+        "target": {
+          "type": "choice"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "is_cost_effect": true
+        }
       }
     ],
     "meta": {
@@ -19737,6 +20756,44 @@
         "modifiers": {
           "persistent_even_if_leaves_field": true
         }
+      },
+      {
+        "id": "P2-equip-restriction",
+        "label": "Restriccion permanente: solo puede equiparse a Inacio, Reinicio",
+        "trigger": {
+          "type": "permanent"
+        },
+        "prerequisites": [
+          {
+            "type": "equipped-to",
+            "filter": {
+              "name": "Inacio, Reinicio"
+            }
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "restriction-apply"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-equip",
+            "filter": {
+              "name_exclude": "Inacio, Reinicio"
+            },
+            "note": "Solo puede equiparse a Inacio, Reinicio"
+          }
+        ],
+        "modifiers": {}
       }
     ],
     "meta": {
@@ -20197,7 +21254,43 @@
           }
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_game": true
+        }
+      },
+      {
+        "id": "P2-once-per-game-restriction",
+        "label": "Restriccion: solo puede usarse una vez por juego",
+        "trigger": {
+          "type": "permanent"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "restriction-apply"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "once-per-game",
+            "note": "Solo puedes usar este efecto una vez por juego"
+          }
+        ],
+        "modifiers": {
+          "once_per_game": true
+        }
       }
     ],
     "meta": {
@@ -20809,7 +21902,7 @@
         ],
         "costs": [
           {
-            "type": "equip-extinct"
+            "type": "self-extinct-from-equip-zone"
           }
         ],
         "operation": [
@@ -20828,6 +21921,38 @@
         },
         "restrictions": [],
         "modifiers": {}
+      },
+      {
+        "id": "P2-self-extinct-cost",
+        "label": "Costo: Envia esta carta desde Zona Equipo a Extincion para activar Pasiva",
+        "trigger": {
+          "type": "on-cost-pay",
+          "linked_to": "P1-negate-response-damage"
+        },
+        "prerequisites": [
+          {
+            "type": "zone-filter",
+            "zone": "equip"
+          }
+        ],
+        "costs": [
+          {
+            "type": "self-extinct-from-equip-zone"
+          }
+        ],
+        "operation": [
+          {
+            "type": "send-extinction",
+            "target": "self"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [],
+        "modifiers": {
+          "is_cost_effect": true
+        }
       }
     ],
     "meta": {
@@ -22210,7 +23335,7 @@
         },
         "prerequisites": [
           {
-            "type": "min-ext-type",
+            "type": "min-extinction",
             "filter": {
               "card_type": "rot"
             },
@@ -22235,6 +23360,44 @@
         },
         "restrictions": [],
         "modifiers": {}
+      },
+      {
+        "id": "P2-min-extinction-prereq",
+        "label": "Requisito: debe haber al menos 2 Rot en Extincion",
+        "trigger": {
+          "type": "on-activate",
+          "linked_to": "P1-damage-4"
+        },
+        "prerequisites": [
+          {
+            "type": "min-extinction",
+            "filter": {
+              "card_type": "rot"
+            },
+            "count": 2
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "check-prereq"
+          }
+        ],
+        "target": {
+          "type": "ally",
+          "zone": "extinction",
+          "filter": {
+            "card_type": "rot"
+          }
+        },
+        "restrictions": [],
+        "modifiers": {
+          "is_cost_effect": true
+        }
       }
     ],
     "meta": {
@@ -23167,6 +24330,43 @@
         },
         "restrictions": [],
         "modifiers": {}
+      },
+      {
+        "id": "P2-equip-damage-prereq",
+        "label": "Restriccion de activacion: carta equipada debe tener 1 o menos dano",
+        "trigger": {
+          "type": "permanent"
+        },
+        "prerequisites": [
+          {
+            "type": "ally-stat-filter",
+            "stat": "damage",
+            "op": "<=",
+            "value": 1,
+            "scope": "equipped"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "restriction-apply"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "cant-activate",
+            "condition": "equipped-card-damage-gt-1",
+            "note": "Solo puede activarse si carta equipada tiene 1 o menos dano"
+          }
+        ],
+        "modifiers": {}
       }
     ],
     "meta": {
@@ -23548,7 +24748,43 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {}
+        "modifiers": {
+          "once_per_field": true
+        }
+      },
+      {
+        "id": "P2-once-per-field-restriction",
+        "label": "Restriccion: solo puede usarse una vez mientras esta carta este en el campo",
+        "trigger": {
+          "type": "permanent"
+        },
+        "prerequisites": [
+          {
+            "type": "independent"
+          }
+        ],
+        "costs": [
+          {
+            "type": "none"
+          }
+        ],
+        "operation": [
+          {
+            "type": "restriction-apply"
+          }
+        ],
+        "target": {
+          "type": "self"
+        },
+        "restrictions": [
+          {
+            "type": "once-per-field",
+            "note": "Solo puedes usar esta pasiva una vez mientras esta carta este en el campo"
+          }
+        ],
+        "modifiers": {
+          "once_per_field": true
+        }
       }
     ],
     "meta": {
