@@ -118,7 +118,8 @@
       ],
       "validated": true,
       "notes": "Pattern Rava Deidad"
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "ANIV-001",
@@ -173,7 +174,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "BETA-001",
@@ -215,7 +217,8 @@
         "aff:pirica"
       ],
       "notes": "Solo tiene costo, sin operación extra"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-001",
@@ -263,7 +266,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-002",
@@ -311,7 +315,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-003",
@@ -361,7 +366,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-004",
@@ -407,7 +413,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-005",
@@ -452,7 +459,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-006",
@@ -494,7 +502,8 @@
     "meta": {
       "role": "engine",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "CAMP-007UV",
@@ -538,7 +547,8 @@
         "aff:atlica"
       ],
       "subtype": "titan"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-008UV",
@@ -586,7 +596,8 @@
         "aff:feral"
       ],
       "subtype": "titan"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-009UV",
@@ -641,7 +652,8 @@
         "aff:demotica"
       ],
       "subtype": "titan"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-010UV",
@@ -691,7 +703,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-011UV",
@@ -739,7 +752,8 @@
         "aff:pirica"
       ],
       "subtype": "titan"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-012UV",
@@ -788,7 +802,8 @@
         "aff:gelida"
       ],
       "subtype": "titan"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-013UV",
@@ -831,7 +846,8 @@
         "aff:huumica"
       ],
       "subtype": "titan"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-014UV",
@@ -878,7 +894,8 @@
         "aff:huumica"
       ],
       "subtype": "catrin"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-015UV",
@@ -953,7 +970,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-016",
@@ -998,7 +1016,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-017",
@@ -1048,7 +1067,8 @@
         "aff:chaaktica"
       ],
       "subtype": "titan"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-018",
@@ -1092,7 +1112,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-019",
@@ -1182,7 +1203,8 @@
         "aff:atlica"
       ],
       "notes": "Pattern Rava Deidad"
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "CAMP-020",
@@ -1271,7 +1293,8 @@
         "aff:pirica"
       ],
       "notes": "Pattern Rava Deidad"
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "CAMP-021",
@@ -1357,7 +1380,8 @@
         "aff:gelida"
       ],
       "notes": "Pattern Rava Deidad"
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "CAMP-022",
@@ -1477,7 +1501,8 @@
         "aff:litica"
       ],
       "notes": "Pattern Rava Deidad"
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "CAMP-023",
@@ -1597,7 +1622,8 @@
         "aff:huumica"
       ],
       "notes": "Pattern Rava Deidad"
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "CAMP-024",
@@ -1649,7 +1675,8 @@
         "aff:litica"
       ],
       "subtype": "titan"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CAMP-025",
@@ -1697,7 +1724,8 @@
     "meta": {
       "role": "closer",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "CAMP-026",
@@ -1749,7 +1777,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CDC-001",
@@ -1801,7 +1830,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CMFT-001",
@@ -1854,7 +1884,8 @@
         "aff:atlica"
       ],
       "subtype": "catrin"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CMFT-002",
@@ -1908,7 +1939,8 @@
         "aff:feral"
       ],
       "subtype": "guardian"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CMFT-003",
@@ -1956,7 +1988,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "CMFT-004",
@@ -2010,7 +2043,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "CMFT-005",
@@ -2057,7 +2091,8 @@
         "aff:gelida"
       ],
       "subtype": "catrin"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DMRTS-2022-01",
@@ -2100,7 +2135,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DMUE-001",
@@ -2146,7 +2182,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-001",
@@ -2227,7 +2264,8 @@
         "aff:pirica"
       ],
       "subtype": "titan"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-001S",
@@ -2267,7 +2305,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "DOOC-002",
@@ -2320,7 +2359,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-002S",
@@ -2401,7 +2441,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-003",
@@ -2444,7 +2485,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-003S",
@@ -2496,7 +2538,8 @@
         "aff:demotica"
       ],
       "subtype": "titan"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-004",
@@ -2573,7 +2616,8 @@
         "aff:atlica"
       ],
       "subtype": "abisal"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-004S",
@@ -2626,7 +2670,8 @@
         "aff:feral"
       ],
       "subtype": "abisal"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-005S",
@@ -2702,7 +2747,8 @@
     "meta": {
       "role": "disruptor",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "DOOC-006",
@@ -2781,7 +2827,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "DOOC-006S",
@@ -2829,7 +2876,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "DOOC-007",
@@ -2883,7 +2931,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "DOOC-007S",
@@ -2963,7 +3012,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "DOOC-008",
@@ -3012,7 +3062,8 @@
     "meta": {
       "role": "disruptor",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "DOOC-008S",
@@ -3061,7 +3112,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-009S",
@@ -3104,7 +3156,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-010",
@@ -3175,7 +3228,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-010S",
@@ -3229,7 +3283,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-012",
@@ -3280,7 +3335,8 @@
         "aff:litica",
         "aff:abisal"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-013",
@@ -3323,7 +3379,8 @@
         "aff:feral",
         "aff:abisal"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-014",
@@ -3373,7 +3430,8 @@
         "aff:feral",
         "aff:abisal"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-017",
@@ -3452,7 +3510,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "DOOC-020",
@@ -3503,7 +3562,8 @@
         "aff:feral",
         "aff:abisal"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-021",
@@ -3589,7 +3649,8 @@
         "aff:feral",
         "aff:abisal"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-022",
@@ -3648,7 +3709,8 @@
         "aff:feral",
         "aff:abisal"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "DOOC-023",
@@ -3698,7 +3760,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "Demo-001",
@@ -3743,7 +3806,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "EXPN-001",
@@ -3784,7 +3848,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "EXPN-003",
@@ -3832,7 +3897,8 @@
         "aff:chaaktica",
         "aff:abisal"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "EXPO-001",
@@ -3884,7 +3950,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "EXPO-002",
@@ -3937,7 +4004,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "EXPO-003",
@@ -3979,7 +4047,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "EXPO-004",
@@ -4095,7 +4164,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "EXPO-006",
@@ -4179,7 +4249,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "EXPO-009",
@@ -4226,7 +4297,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FAFT-001",
@@ -4300,7 +4372,8 @@
     "meta": {
       "role": "disruptor",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "FAFT-002",
@@ -4343,7 +4416,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FAFT-003",
@@ -4403,7 +4477,8 @@
         "aff:feral",
         "aff:equino"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FAFT-004",
@@ -4519,7 +4594,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "FYTE-001",
@@ -4601,7 +4677,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "FYTE-001K",
@@ -4706,7 +4783,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "FYTE-001R",
@@ -4748,7 +4826,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "FYTE-001U",
@@ -4800,7 +4879,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-002K",
@@ -4846,7 +4926,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-002R",
@@ -4892,7 +4973,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "FYTE-002S",
@@ -4946,7 +5028,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "FYTE-002U",
@@ -5087,7 +5170,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "FYTE-003K",
@@ -5124,7 +5208,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "espectro"
   },
   {
     "card_id": "FYTE-003R",
@@ -5278,7 +5363,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "FYTE-003S",
@@ -5360,7 +5446,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "FYTE-003U",
@@ -5408,7 +5495,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "FYTE-004",
@@ -5455,7 +5543,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "FYTE-004R",
@@ -5523,7 +5612,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "FYTE-004S",
@@ -5594,7 +5684,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "FYTE-004U",
@@ -5639,7 +5730,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-005",
@@ -5740,7 +5832,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "FYTE-005R",
@@ -5822,7 +5915,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "FYTE-005S",
@@ -5900,7 +5994,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-005U",
@@ -5937,7 +6032,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "espectro"
   },
   {
     "card_id": "FYTE-006",
@@ -5980,7 +6076,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "FYTE-006R",
@@ -6027,7 +6124,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "FYTE-006S",
@@ -6076,7 +6174,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "FYTE-006U",
@@ -6132,7 +6231,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-007R",
@@ -6214,7 +6314,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "FYTE-007S",
@@ -6307,7 +6408,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-007U",
@@ -6372,7 +6474,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-008",
@@ -6445,7 +6548,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "FYTE-008R",
@@ -6509,7 +6613,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-008U",
@@ -6569,7 +6674,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-009",
@@ -6624,7 +6730,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "FYTE-009R",
@@ -6678,7 +6785,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-009S",
@@ -6736,7 +6844,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "FYTE-010",
@@ -6826,7 +6935,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "FYTE-010R",
@@ -6883,7 +6993,8 @@
         "aff:gelida",
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "FYTE-010S",
@@ -6932,7 +7043,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "espectro"
   },
   {
     "card_id": "FYTE-011R",
@@ -6989,7 +7101,8 @@
         "aff:litica",
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "FYTE-011S",
@@ -7044,7 +7157,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-012R",
@@ -7091,7 +7205,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-012S",
@@ -7167,7 +7282,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "FYTE-013",
@@ -7265,7 +7381,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "FYTE-013R",
@@ -7308,7 +7425,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "espectro"
   },
   {
     "card_id": "FYTE-013S",
@@ -7401,7 +7519,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-014",
@@ -7447,7 +7566,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "FYTE-014R",
@@ -7490,7 +7610,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "espectro"
   },
   {
     "card_id": "FYTE-014S",
@@ -7542,7 +7663,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-015R",
@@ -7585,7 +7707,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "espectro"
   },
   {
     "card_id": "FYTE-015S",
@@ -7626,7 +7749,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "espectro"
   },
   {
     "card_id": "FYTE-016R",
@@ -7690,7 +7814,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-016S",
@@ -7739,7 +7864,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-017R",
@@ -7799,7 +7925,8 @@
         "aff:feral",
         "sub:equino"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-018R",
@@ -7862,7 +7989,8 @@
         "aff:feral",
         "sub:equino"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-019R",
@@ -7916,7 +8044,8 @@
         "aff:feral",
         "sub:catrin"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-020R",
@@ -7973,7 +8102,8 @@
         "aff:demotica",
         "sub:titan-catrin"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-021R",
@@ -8045,7 +8175,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "espectro"
   },
   {
     "card_id": "FYTE-022R",
@@ -8099,7 +8230,8 @@
         "aff:atlica",
         "sub:resurrecto"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-023R",
@@ -8149,7 +8281,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "FYTE-024R",
@@ -8195,7 +8328,8 @@
         "aff:demotica",
         "sub:resurrecto"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-025",
@@ -8250,7 +8384,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-027",
@@ -8307,7 +8442,8 @@
         "aff:huumica",
         "sub:guardian"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-028",
@@ -8362,7 +8498,8 @@
         "aff:atlica",
         "sub:catrin"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-029",
@@ -8427,7 +8564,8 @@
         "aff:atlica",
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-033",
@@ -8478,7 +8616,8 @@
         "aff:gelida",
         "sub:catrin"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-036",
@@ -8555,7 +8694,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-038",
@@ -8612,7 +8752,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-044",
@@ -8705,7 +8846,8 @@
         "aff:pirica",
         "sub:catrin"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-048",
@@ -8765,7 +8907,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "espectro"
   },
   {
     "card_id": "FYTE-051",
@@ -8807,7 +8950,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "espectro"
   },
   {
     "card_id": "FYTE-055",
@@ -8906,7 +9050,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "FYTE-057",
@@ -8953,7 +9098,8 @@
         "aff:atlica",
         "sub:catrin"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-059",
@@ -9033,7 +9179,8 @@
         "aff:feral",
         "sub:equino"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-060",
@@ -9077,7 +9224,8 @@
         "aff:feral",
         "sub:equino"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-061",
@@ -9159,7 +9307,8 @@
         "aff:feral",
         "sub:equino"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-062",
@@ -9258,7 +9407,8 @@
         "aff:feral",
         "sub:equino"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-064",
@@ -9320,7 +9470,8 @@
         "aff:equino"
       ],
       "notes": "Bio; damage scales with Equino reveals this turn"
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "FYTE-069",
@@ -9380,7 +9531,8 @@
         "aff:catrin"
       ],
       "notes": "Pasiva on-death OPG; not-considered-protected"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-071",
@@ -9429,7 +9581,8 @@
         "aff:demotica"
       ],
       "notes": "Pasiva on-death swap"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-075",
@@ -9480,7 +9633,8 @@
         "aff:feral"
       ],
       "notes": "Activa; swap Espectro for unvivified card from extinction"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-078",
@@ -9534,7 +9688,8 @@
         "aff:resurrecto"
       ],
       "notes": "Resurrecto; trades own-turn fast for enemy-turn fast"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-080",
@@ -9589,7 +9744,8 @@
         "aff:resurrecto"
       ],
       "notes": "Resurrecto; OPG descend choice on vivify"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-081",
@@ -9665,7 +9821,8 @@
         "aff:resurrecto"
       ],
       "notes": "Resurrecto; on-vivify resets ally rests and locks 1 enemy at 2"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-082",
@@ -9726,7 +9883,8 @@
         "aff:resurrecto"
       ],
       "notes": "Resurrecto; on-vivify grants low-dmg Adendei protector access"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "FYTE-084",
@@ -9811,7 +9969,8 @@
         "aff:gelida"
       ],
       "notes": "Rava; costs protector rest; aura lets gelidas attack all resting rivals"
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "IDRMA-003",
@@ -9858,7 +10017,8 @@
         "aff:atlica"
       ],
       "notes": "Attack-all; costs 1 self-damage"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMA-004",
@@ -9902,7 +10062,8 @@
         "aff:atlica"
       ],
       "notes": "Activa; +1 bonus damage to facing card"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMA-005",
@@ -9948,7 +10109,8 @@
       "role": "support",
       "affinities": [],
       "notes": "Ixim; heals 1 to Ixim carrier on equipped-attack"
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "IDRMA-006",
@@ -9992,7 +10154,8 @@
       "role": "support",
       "affinities": [],
       "notes": "Protector; Activa shields linked from all effects"
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "IDRMA-007",
@@ -10041,7 +10204,8 @@
       "role": "support",
       "affinities": [],
       "notes": "Protector; conditional mass heal to 6"
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "IDRMA-008",
@@ -10084,7 +10248,8 @@
         "aff:litica"
       ],
       "notes": "Pasiva reactiva; self-scales on any equip event"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMA-009",
@@ -10127,7 +10292,8 @@
         "aff:chaaktica"
       ],
       "notes": "Activa; adds 2 rests to facing card"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMA-010",
@@ -10175,7 +10341,8 @@
         "aff:feral"
       ],
       "notes": "Activa; splash 1 to other enemy when target is resting"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMA-012",
@@ -10228,7 +10395,8 @@
         "aff:infectado"
       ],
       "notes": "Pasiva continua; +1 damage per Ixim-equipped Adendei on field"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMA-013",
@@ -10299,7 +10467,8 @@
         "aff:atlica"
       ],
       "notes": "Dual: activa self-heals; pasiva self-scales on hit"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMA-014",
@@ -10347,7 +10516,8 @@
       "role": "hitter",
       "affinities": [],
       "notes": "Ixim; once-per-equip-instance bonus from Ixim+Rot in extinction"
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "IDRMA-015",
@@ -10392,7 +10562,8 @@
       "role": "tech",
       "affinities": [],
       "notes": "Rot; OPG fast-activa negate attack by returning to equip zone"
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "IDRMA-016",
@@ -10436,7 +10607,8 @@
         "aff:abisal"
       ],
       "notes": "Fast-activa counter; abysses attacker"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMA-017",
@@ -10483,7 +10655,8 @@
         "aff:chaaktica"
       ],
       "notes": "Pasiva on-reveal; removes 1 rest from ally"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMA-019",
@@ -10541,7 +10714,8 @@
         "aff:feral"
       ],
       "notes": "Fast-activa feralizer; self-restricted to attacking Feral only"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMA-021",
@@ -10587,7 +10761,8 @@
       "role": "support",
       "affinities": [],
       "notes": "Bio; end-of-rival-turn heal to equipped ally"
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "IDRMA-022",
@@ -10636,7 +10811,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-002",
@@ -10690,7 +10866,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-003",
@@ -10739,7 +10916,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-004",
@@ -10810,7 +10988,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-006",
@@ -10858,7 +11037,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-007",
@@ -10904,7 +11084,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-008",
@@ -10947,7 +11128,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "IDRMG-009",
@@ -10998,7 +11180,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "IDRMG-010",
@@ -11077,7 +11260,8 @@
     "meta": {
       "role": "disruptor",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "IDRMG-011",
@@ -11124,7 +11308,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "IDRMG-012",
@@ -11173,7 +11358,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "IDRMG-013",
@@ -11218,7 +11404,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-014",
@@ -11267,7 +11454,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-015",
@@ -11313,7 +11501,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-016",
@@ -11358,7 +11547,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-017",
@@ -11402,7 +11592,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-018",
@@ -11453,7 +11644,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-019",
@@ -11496,7 +11688,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "IDRMG-020",
@@ -11542,7 +11735,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "IDRMG-021",
@@ -11592,7 +11786,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMG-022",
@@ -11641,7 +11836,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-003",
@@ -11684,7 +11880,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-005",
@@ -11729,7 +11926,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-006",
@@ -11777,7 +11975,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-007",
@@ -11817,7 +12016,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "IDRMP-008",
@@ -11866,7 +12066,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "IDRMP-009",
@@ -11914,7 +12115,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "IDRMP-010",
@@ -11959,7 +12161,8 @@
     "meta": {
       "role": "disruptor",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "IDRMP-011",
@@ -12003,7 +12206,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-012",
@@ -12049,7 +12253,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-013",
@@ -12094,7 +12299,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-014",
@@ -12139,7 +12345,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-015",
@@ -12184,7 +12391,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-016",
@@ -12229,7 +12437,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-017",
@@ -12276,7 +12485,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "IDRMP-018",
@@ -12320,7 +12530,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "IDRMP-019",
@@ -12363,7 +12574,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "IDRMP-020",
@@ -12406,7 +12618,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-021",
@@ -12450,7 +12663,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IDRMP-022",
@@ -12496,7 +12710,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IKMR-001",
@@ -12547,7 +12762,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IKMR-001SR",
@@ -12598,7 +12814,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "IKRW-001",
@@ -12677,7 +12894,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "INMX-001",
@@ -12725,7 +12943,8 @@
         "aff:gelida",
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "INMX-002",
@@ -12772,7 +12991,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "ISPMR-010",
@@ -12819,7 +13039,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "ISPMR-011",
@@ -12868,7 +13089,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "ISPMR-012",
@@ -12942,7 +13164,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "ISPMR-013",
@@ -12983,7 +13206,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "ISPMR-019",
@@ -13024,7 +13248,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KDMOLE-01-2022",
@@ -13075,7 +13300,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-001",
@@ -13128,7 +13354,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "KPRC-003",
@@ -13173,7 +13400,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "KPRC-004",
@@ -13249,7 +13477,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "KPRC-006",
@@ -13296,7 +13525,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-007",
@@ -13372,7 +13602,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-008",
@@ -13420,7 +13651,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-009",
@@ -13469,7 +13701,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-010",
@@ -13518,7 +13751,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-011",
@@ -13596,7 +13830,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-012",
@@ -13644,7 +13879,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-013",
@@ -13688,7 +13924,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "KPRC-014",
@@ -13730,7 +13967,8 @@
       "affinities": [
         "aff:demotica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-015",
@@ -13779,7 +14017,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-017",
@@ -13827,7 +14066,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-018",
@@ -13913,7 +14153,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-019",
@@ -14035,7 +14276,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "KPRC-024",
@@ -14081,7 +14323,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "KPRC-025",
@@ -14124,7 +14367,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "KPRC-026",
@@ -14170,7 +14414,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "KPRC-027",
@@ -14231,7 +14476,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "KPRC-029",
@@ -14279,7 +14525,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "KPRC-031",
@@ -14324,7 +14571,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-033",
@@ -14339,7 +14587,8 @@
         "aff:litica"
       ],
       "notes": "Flavor text only; no mechanical effect detected"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-034",
@@ -14383,7 +14632,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-036",
@@ -14431,7 +14681,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-037",
@@ -14481,7 +14732,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-038",
@@ -14564,7 +14816,8 @@
         "aff:rot"
       ],
       "notes": "Solo equipable a Karyn, Estrategia"
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "KPRC-039",
@@ -14629,7 +14882,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-047",
@@ -14644,7 +14898,8 @@
         "aff:litica"
       ],
       "notes": "Sin efecto de juego, solo lore"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-048",
@@ -14698,7 +14953,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-050",
@@ -14741,7 +14997,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-051",
@@ -14786,7 +15043,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-052",
@@ -14835,7 +15093,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "KPRC-054",
@@ -14887,7 +15146,8 @@
         "aff:ixim",
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "KPRC-056",
@@ -14941,7 +15201,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-057",
@@ -14987,7 +15248,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-058",
@@ -15041,7 +15303,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-060",
@@ -15091,7 +15354,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-061",
@@ -15132,7 +15396,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-064A",
@@ -15180,7 +15445,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-071",
@@ -15232,7 +15498,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRC-091",
@@ -15278,7 +15545,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRF-0001",
@@ -15323,7 +15591,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRF-0002",
@@ -15366,7 +15635,8 @@
         "aff:ixim"
       ],
       "notes": "Solo equipable a Protector"
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "KPRF-0003",
@@ -15415,7 +15685,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KPRF-0004",
@@ -15460,7 +15731,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "KSPC-001",
@@ -15506,7 +15778,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-001R",
@@ -15550,7 +15823,8 @@
       "affinities": [
         "aff:rot"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-001S",
@@ -15593,7 +15867,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-002",
@@ -15636,7 +15911,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-002K",
@@ -15682,7 +15958,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-002S",
@@ -15724,7 +16001,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-002U",
@@ -15809,7 +16087,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "LGRO-003",
@@ -15859,7 +16138,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-003R",
@@ -15904,7 +16184,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-003S",
@@ -15953,7 +16234,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-003U",
@@ -16063,7 +16345,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "LGRO-004R",
@@ -16140,7 +16423,8 @@
       "affinities": [
         "aff:protector"
       ]
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "LGRO-004S",
@@ -16190,7 +16474,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-004U",
@@ -16271,7 +16556,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "LGRO-005U",
@@ -16320,7 +16606,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-007",
@@ -16370,7 +16657,8 @@
         "aff:bio",
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "LGRO-007R",
@@ -16451,7 +16739,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-007U",
@@ -16522,7 +16811,8 @@
       "affinities": [
         "aff:demotica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-008U",
@@ -16565,7 +16855,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-009",
@@ -16611,7 +16902,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-009R",
@@ -16664,7 +16956,8 @@
       "affinities": [
         "aff:rot"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-010",
@@ -16706,7 +16999,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-011",
@@ -16785,7 +17079,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-011R",
@@ -16828,7 +17123,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-012",
@@ -16902,7 +17198,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-012R",
@@ -16948,7 +17245,8 @@
       "affinities": [
         "aff:protector"
       ]
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "LGRO-013R",
@@ -16991,7 +17289,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-014",
@@ -17060,7 +17359,8 @@
       "affinities": [
         "aff:rot"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-014R",
@@ -17102,7 +17402,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-017",
@@ -17152,7 +17453,8 @@
         "aff:feral"
       ],
       "notes": "Solo vinculable con Adendei-Feral"
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "LGRO-019",
@@ -17201,7 +17503,8 @@
       "affinities": [
         "aff:protector"
       ]
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "LGRO-020",
@@ -17245,7 +17548,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "LGRO-021",
@@ -17318,7 +17622,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "LGRO-022",
@@ -17363,7 +17668,8 @@
       "affinities": [
         "aff:rot"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-025",
@@ -17409,7 +17715,8 @@
       "affinities": [
         "aff:rot"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-027",
@@ -17457,7 +17764,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-030",
@@ -17509,7 +17817,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-032",
@@ -17554,7 +17863,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-036",
@@ -17596,7 +17906,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "LGRO-037",
@@ -17646,7 +17957,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "LGRO-039",
@@ -17698,7 +18010,8 @@
         "aff:rot",
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-040",
@@ -17745,7 +18058,8 @@
         "aff:rot",
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "LGRO-041",
@@ -17794,7 +18108,8 @@
       "affinities": [
         "aff:ixim"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "LGRO-042",
@@ -17847,7 +18162,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-043",
@@ -17893,7 +18209,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-046",
@@ -17937,7 +18254,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-048",
@@ -17982,7 +18300,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-051",
@@ -18028,7 +18347,8 @@
       "affinities": [
         "aff:bio"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "LGRO-058",
@@ -18070,7 +18390,8 @@
       "affinities": [
         "aff:bio"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "LGRO-060",
@@ -18113,7 +18434,8 @@
         "aff:bio",
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "LGRO-066",
@@ -18155,7 +18477,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "LGRO-069",
@@ -18196,7 +18519,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-001",
@@ -18239,7 +18563,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-001S",
@@ -18293,7 +18618,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "MLBU-002",
@@ -18343,7 +18669,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-002S",
@@ -18390,7 +18717,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "MLBU-003",
@@ -18443,7 +18771,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-003S",
@@ -18499,7 +18828,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-004",
@@ -18543,7 +18873,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-004S",
@@ -18594,7 +18925,8 @@
         "aff:chaaktica",
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-005",
@@ -18652,7 +18984,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-005S",
@@ -18701,7 +19034,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-005U",
@@ -18751,7 +19085,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-006",
@@ -18798,7 +19133,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-007",
@@ -18859,7 +19195,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "MLBU-009",
@@ -18920,7 +19257,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "MLBU-010",
@@ -18973,7 +19311,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "NAVD-001",
@@ -19023,7 +19362,8 @@
         "aff:atlica",
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "NYPR-001",
@@ -19083,7 +19423,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "ODEM-002",
@@ -19128,7 +19469,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "PASE-001",
@@ -19209,7 +19551,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "PASE-005",
@@ -19267,7 +19610,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "PASE-007",
@@ -19350,7 +19694,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "PATREON-002",
@@ -19393,7 +19738,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "RAMI-004S",
@@ -19444,7 +19790,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "RAMI-005S",
@@ -19507,7 +19854,8 @@
         "aff:litica",
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "RAMI-006S",
@@ -19554,7 +19902,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "RAMI-007S",
@@ -19615,7 +19964,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "RAMI-008S",
@@ -19670,7 +20020,8 @@
       "role": "disruptor",
       "affinities": [],
       "notes": "Ixim on-reveal double send-extinction"
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "SNVL-001",
@@ -19720,7 +20071,8 @@
         "aff:pirica"
       ],
       "notes": "once-per-game mutual recovery"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "SNVL-002",
@@ -19764,7 +20116,8 @@
         "aff:atlica",
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-001",
@@ -19811,7 +20164,8 @@
         "aff:chaaktica"
       ],
       "notes": "Activa-Rapida protege Titanes aliados"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-002",
@@ -19866,7 +20220,8 @@
         "aff:litica"
       ],
       "notes": "Titan split damage choice"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-003",
@@ -19922,7 +20277,8 @@
         "aff:atlica",
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-004",
@@ -19972,7 +20328,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-006",
@@ -20015,7 +20372,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-007",
@@ -20061,7 +20419,8 @@
       "role": "disruptor",
       "affinities": [],
       "notes": "Feral Titan niega pasiva hasta fin turno rival"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-008",
@@ -20116,7 +20475,8 @@
       "role": "engine",
       "affinities": [],
       "notes": "Feral Titan genera Token-Feral al morir cualquier Adendei"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-009",
@@ -20191,7 +20551,8 @@
       "role": "tech",
       "affinities": [],
       "notes": "Protector swap + doble dano primer ataque no frontal"
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "TCDE-010",
@@ -20241,7 +20602,8 @@
       "role": "disruptor",
       "affinities": [],
       "notes": "Bio Protector disponible; once-per-field; costo protector+1 descanso"
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "TCDE-011",
@@ -20288,7 +20650,8 @@
       "role": "hitter",
       "affinities": [],
       "notes": "Ixim vinculo con Protector rival; 3 dano al equipado"
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "TCDE-012",
@@ -20334,7 +20697,8 @@
       "role": "disruptor",
       "affinities": [],
       "notes": "Ixim respuesta a ataque negado; auto-extincion"
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "TCDE-013",
@@ -20380,7 +20744,8 @@
       "role": "disruptor",
       "affinities": [],
       "notes": "Rot Activa-Rapida self-extinct dana hasta 3 enemigos"
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "TCDE-014",
@@ -20457,7 +20822,8 @@
       "role": "support",
       "affinities": [],
       "notes": "Rot solo equipable a Token; Token no puede atacar; redirect y auto-return"
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "TCDE-015",
@@ -20506,7 +20872,8 @@
         "aff:litica"
       ],
       "notes": "Titan Litico Token-Litico clona Adendei rival al morir"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-016",
@@ -20555,7 +20922,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-017",
@@ -20606,7 +20974,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-018",
@@ -20652,7 +21021,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-020",
@@ -20700,7 +21070,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCDE-021",
@@ -20781,7 +21152,8 @@
       "role": "support",
       "affinities": [],
       "notes": "Bio ataques Titanes no negables; se destruye sin Titanes revelados"
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "TCOO-001",
@@ -20834,7 +21206,8 @@
         "aff:atlica"
       ],
       "notes": "Titan Atlico ataque masivo con Consejo de Hielo"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-001K",
@@ -20881,7 +21254,8 @@
       "role": "engine",
       "affinities": [],
       "notes": "Demotica Titan resetea campo propio; once-per-game; sin atacar ni efectos ese turno"
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-002U",
@@ -20938,7 +21312,8 @@
       "role": "disruptor",
       "affinities": [],
       "notes": "Bio inmortal; reduce ataque de cartas con 3+ dano; curacion aliada solo por Adendei"
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "TCOO-003R",
@@ -20982,7 +21357,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "TCOO-003S",
@@ -21029,7 +21405,8 @@
       "affinities": [
         "aff:demotica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-004R",
@@ -21105,7 +21482,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "TCOO-004U",
@@ -21148,7 +21526,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-005R",
@@ -21236,7 +21615,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "TCOO-005S",
@@ -21290,7 +21670,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "TCOO-005U",
@@ -21344,7 +21725,8 @@
         "aff:chaaktica",
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-006R",
@@ -21399,7 +21781,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "TCOO-006U",
@@ -21486,7 +21869,8 @@
       "affinities": [
         "aff:demotica"
       ]
-    }
+    },
+    "card_type": "rava"
   },
   {
     "card_id": "TCOO-007R",
@@ -21537,7 +21921,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-007S",
@@ -21579,7 +21964,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-008",
@@ -21666,7 +22052,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "TCOO-008R",
@@ -21714,7 +22101,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-008S",
@@ -21758,7 +22146,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-009",
@@ -21800,7 +22189,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-009R",
@@ -21849,7 +22239,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-009S",
@@ -21895,7 +22286,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-010S",
@@ -21946,7 +22338,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-011",
@@ -21992,7 +22385,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "TCOO-011R",
@@ -22038,7 +22432,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-011S",
@@ -22086,7 +22481,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "TCOO-012S",
@@ -22132,7 +22528,8 @@
       "affinities": [
         "aff:demotica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-013",
@@ -22226,7 +22623,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "TCOO-013R",
@@ -22275,7 +22673,8 @@
       "affinities": [
         "aff:feral"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-013S",
@@ -22286,7 +22685,8 @@
     "meta": {
       "role": "token",
       "affinities": []
-    }
+    },
+    "card_type": "token"
   },
   {
     "card_id": "TCOO-014R",
@@ -22334,7 +22734,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-015",
@@ -22386,7 +22787,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "TCOO-015R",
@@ -22428,7 +22830,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-016R",
@@ -22475,7 +22878,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-016S",
@@ -22525,7 +22929,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-017R",
@@ -22574,7 +22979,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-018",
@@ -22620,7 +23026,8 @@
     "meta": {
       "role": "hitter",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "TCOO-018R",
@@ -22710,7 +23117,8 @@
       "affinities": [
         "aff:gelida"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-019R",
@@ -22767,7 +23175,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "TCOO-020",
@@ -22817,7 +23226,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-020R",
@@ -22901,7 +23311,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "protector"
   },
   {
     "card_id": "TCOO-021R",
@@ -22947,7 +23358,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "rot"
   },
   {
     "card_id": "TCOO-023R",
@@ -22998,7 +23410,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-024R",
@@ -23046,7 +23459,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-026",
@@ -23095,7 +23509,8 @@
       "affinities": [
         "aff:huumica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-027",
@@ -23142,7 +23557,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-035",
@@ -23199,7 +23615,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-042",
@@ -23245,7 +23662,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-047",
@@ -23291,7 +23709,8 @@
       "affinities": [
         "aff:litica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-053",
@@ -23343,7 +23762,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-056",
@@ -23432,7 +23852,8 @@
       "affinities": [
         "aff:atlica"
       ]
-    }
+    },
+    "card_type": "adendei"
   },
   {
     "card_id": "TCOO-061",
@@ -23480,7 +23901,8 @@
       "affinities": [
         "aff:pirica"
       ]
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "TCOO-062",
@@ -23525,7 +23947,8 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "TCOO-063",
@@ -23607,7 +24030,8 @@
     "meta": {
       "role": "control",
       "affinities": []
-    }
+    },
+    "card_type": "bio"
   },
   {
     "card_id": "TCOO-065",
@@ -23655,7 +24079,8 @@
     "meta": {
       "role": "support",
       "affinities": []
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "TCOO-066",
@@ -23711,7 +24136,8 @@
       "affinities": [
         "aff:chaaktica"
       ]
-    }
+    },
+    "card_type": "ixim"
   },
   {
     "card_id": "TCOO-068",
@@ -23775,6 +24201,7 @@
     "meta": {
       "role": "tech",
       "affinities": []
-    }
+    },
+    "card_type": "rot"
   }
 ]
