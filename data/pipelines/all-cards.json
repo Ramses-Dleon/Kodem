@@ -7246,7 +7246,7 @@
         "id": "P1-copy-enemy-protector",
         "label": "Activa (opcion A): Usa la misma Activa y costo que el Protector rival (cuesta 1 dano a 3 aliados)",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -7280,7 +7280,7 @@
         "id": "P2-heal-field",
         "label": "Activa (opcion B): Cura 1 pto. a 3 cartas en tu campo",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -7323,7 +7323,7 @@
         "id": "P1-heal-linked",
         "label": "Activa: Cura 1 al Adendei vinculado",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -7357,7 +7357,7 @@
         "id": "P2-select-and-extinct-on-available",
         "label": "Activa: Selecciona 1 carta rival revelada; al siguiente disponible la envia a Extincion",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -10141,7 +10141,7 @@
         "id": "P1",
         "label": "Activa: vinculado inmune a efectos hasta Protector disponible",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -10186,7 +10186,7 @@
         "id": "P1",
         "label": "Activa: si ningun aliado en 6HP, cura todos a 6",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -11209,7 +11209,7 @@
         "id": "P1-lock-enemy-attack",
         "label": "Activa: bloquea ataque de Adendei rival hasta que Protector esté disponible",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -11289,7 +11289,7 @@
         "id": "P1-return-all-equips",
         "label": "Activa: regresa todos los Ixim y Rot en campo a Zona de Equipo",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -12044,7 +12044,7 @@
         "id": "P1-link-no-rest-boost",
         "label": "Activa: vinculado no recibe descanso al linkear, y ataca con 6 el siguiente turno",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
@@ -12094,7 +12094,7 @@
         "id": "P1-link-no-rest-multi-attack",
         "label": "Activa: vinculado no recibe descanso al linkear, ataca a 2 rivales siguiente turno",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-link"
         },
         "prerequisites": [
           {
