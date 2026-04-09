@@ -1264,7 +1264,7 @@
         ],
         "operation": [
           {
-            "type": "promote-to-fast"
+            "type": "promote-to-activa-rapida"
           }
         ],
         "target": {
@@ -1384,9 +1384,8 @@
             "type": "immune-marks"
           },
           {
-            "type": "apply-immunity",
-            "immunity": "damage-by-effect",
-            "target": "ally-atlica-adendei"
+            "type": "grant-immunity",
+            "scope": "effect-damage"
           }
         ],
         "target": {
@@ -1540,7 +1539,7 @@
         ],
         "operation": [
           {
-            "type": "scale",
+            "type": "conditional-damage-bonus",
             "value": 1,
             "condition": {
               "target_has_mark": "burn"
@@ -1646,7 +1645,7 @@
         ],
         "operation": [
           {
-            "type": "scale",
+            "type": "bonus-attack-damage",
             "value": 1,
             "condition": {
               "target_has_rests": true
@@ -2380,7 +2379,8 @@
             "value": 1,
             "per": {
               "zone": "extinction"
-            }
+            },
+            "snapshot": "post-cost"
           }
         ],
         "target": {
@@ -2551,7 +2551,11 @@
             ],
             "source_filter": {
               "card_type": "ixim"
-            }
+            },
+            "copy_targets": [
+              "effect",
+              "cost"
+            ]
           }
         ],
         "target": {
@@ -2737,16 +2741,11 @@
         ],
         "operation": [
           {
-            "type": "grant-permission",
-            "unlock": "attack-target",
+            "type": "unlock-attack-target",
             "target": {
               "card_type": "protector",
               "owner": "enemy"
             }
-          },
-          {
-            "type": "register-game-rule",
-            "rule": "permission-active-while-pasiva-active"
           }
         ],
         "target": {
@@ -3759,7 +3758,7 @@
         ],
         "operation": [
           {
-            "type": "protect-attack"
+            "type": "protect-full"
           }
         ],
         "target": {
@@ -3815,7 +3814,7 @@
         "operation": [
           {
             "type": "abyss",
-            "value": 1
+            "count": 1
           },
           {
             "type": "unequip-all",
@@ -4069,7 +4068,8 @@
         "modifiers": {
           "duration": {
             "type": "while-on-field"
-          }
+          },
+          "optional": true
         },
         "phase": "continuous",
         "operation[0]": {
@@ -4345,8 +4345,7 @@
         ],
         "operation": [
           {
-            "type": "negate-passive-persistent",
-            "note": "protege Pasivas de Ferales"
+            "type": "protect-passive-from-negation"
           }
         ],
         "target": {
@@ -4705,8 +4704,7 @@
         ],
         "operation": [
           {
-            "type": "equip-destroy",
-            "destination": "equip-zone"
+            "type": "equip-return"
           }
         ],
         "target": {
@@ -4824,7 +4822,9 @@
             "type": "vivify",
             "filter": {
               "card_type": "bio"
-            }
+            },
+            "destination": "bio-zone",
+            "entry_state": "hidden"
           }
         ],
         "target": {
@@ -6151,7 +6151,9 @@
         ],
         "operation": [
           {
-            "type": "vivify"
+            "type": "return-to-zone",
+            "zone": "protector-zone",
+            "state": "available"
           }
         ],
         "target": {
@@ -7061,7 +7063,7 @@
         "id": "P1-deck-top",
         "label": "Al equipar disponible: coloca 1 carta del Mazo en el tope",
         "trigger": {
-          "type": "on-equip"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -7085,14 +7087,16 @@
           "count": 1
         },
         "restrictions": [],
-        "modifiers": {},
+        "modifiers": {
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rapida"
+        },
         "phase": "equip"
       },
       {
         "id": "P2-rest-lock",
         "label": "Al equipar: equipado recibe 2 descansos, solo actualiza 1 por turno, no puede atacar ni activar",
         "trigger": {
-          "type": "on-equip"
+          "type": "on-activate"
         },
         "prerequisites": [
           {
@@ -7127,7 +7131,8 @@
             "type": "while-on-field"
           },
           "optional": false,
-          "_original_optional": true
+          "_original_optional": true,
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rapida"
         },
         "phase": "equip"
       }
@@ -7419,7 +7424,7 @@
         "id": "P1-on-negate-ally",
         "label": "Reactiva: Al negar efecto/ataque aliado, envia 1 carta en Zona Principal al fondo del Mazo (una vez por juego)",
         "trigger": {
-          "type": "on-ally-damaged"
+          "type": "on-ally-negated"
         },
         "prerequisites": [
           {
@@ -8040,11 +8045,6 @@
           }
         ],
         "operation": [
-          {
-            "type": "scale",
-            "value": 1,
-            "notes": "+1 dano al atacar"
-          },
           {
             "type": "scale",
             "value": 1,
@@ -10207,7 +10207,6 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true,
           "_original_optional": null,
           "optional": false
         },
@@ -10377,7 +10376,7 @@
             "type": "needs-protector"
           },
           {
-            "type": "min-ext-name",
+            "type": "self-in-extinction",
             "_original_type": "self-in-extinction"
           }
         ],
@@ -10400,11 +10399,6 @@
             "type": "place-in-field",
             "target": "triggered-drawn-card",
             "zone": "rival-principal"
-          },
-          {
-            "type": "place-in-field",
-            "target": "rival-drawn-card",
-            "zone": "zona-principal-rival"
           }
         ],
         "target": {
@@ -10731,7 +10725,7 @@
             "type": "while-on-field"
           }
         },
-        "phase": "post.passives"
+        "phase": "continuous"
       },
       {
         "id": "P2-on-death-bounce-spectro-or-token",
@@ -10873,7 +10867,7 @@
         "id": "P2-enemy-link-damage-protector",
         "label": "Pasiva: al vincularse el Protector rival, dana 1 al Protector rival",
         "trigger": {
-          "type": "on-ally-damaged"
+          "type": "on-enemy-link"
         },
         "prerequisites": [
           {
@@ -10898,7 +10892,7 @@
         "modifiers": {
           "_original_trigger": "on-enemy-link"
         },
-        "phase": "battle.resolution"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -11430,8 +11424,7 @@
         "id": "P1",
         "label": "Al vivificarse: +1 fast-activa en turno rival; pierde fast propias",
         "trigger": {
-          "type": "on-vivify",
-          "fast": true
+          "type": "on-vivify"
         },
         "prerequisites": [
           {
@@ -11463,7 +11456,7 @@
             "type": "rest-of-game"
           }
         },
-        "phase": "reactive"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -11695,7 +11688,7 @@
         "id": "P1",
         "label": "Activa: 1 descanso a rival no-Gelida (cuesta 1 rest al Protector)",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -11722,8 +11715,13 @@
           }
         },
         "restrictions": [],
-        "modifiers": {},
-        "phase": "battle.declaration"
+        "modifiers": {
+          "effect_type": "pasiva",
+          "duration": {
+            "type": "while-on-field"
+          }
+        },
+        "phase": "continuous"
       },
       {
         "id": "P2",
@@ -11901,7 +11899,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "post.passives"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -12319,7 +12317,7 @@
         },
         "restrictions": [],
         "modifiers": {},
-        "phase": "post.passives"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -12738,8 +12736,7 @@
             "type": "independent"
           },
           {
-            "type": "self-hidden",
-            "note": "target must be hidden"
+            "type": "target-hidden"
           }
         ],
         "costs": [
@@ -13072,12 +13069,8 @@
             "type": "needs-equip"
           },
           {
-            "type": "no-own-field",
-            "filter": {
-              "card_type": "ixim",
-              "exclude_self": true
-            },
-            "note": "no other Ixim on field"
+            "type": "no-field-ixim-equip",
+            "scope": "both-players"
           }
         ],
         "costs": [
@@ -13233,7 +13226,9 @@
         ],
         "operation": [
           {
-            "type": "unequip-all"
+            "type": "return-to-equip-zone",
+            "destination": "equip-zone",
+            "scope": "all"
           }
         ],
         "target": {
@@ -13292,7 +13287,7 @@
         ],
         "operation": [
           {
-            "type": "scale",
+            "type": "damage-add-temp",
             "value": 1
           }
         ],
@@ -13897,7 +13892,7 @@
         },
         "restrictions": [
           {
-            "type": "cant-rest-update"
+            "type": "cant-receive-rest-by-effect"
           }
         ],
         "modifiers": {
@@ -14489,7 +14484,6 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true,
           "_original_optional": null,
           "optional": false
         },
@@ -15132,8 +15126,7 @@
         "id": "P1-abyssal-trigger-extinction",
         "label": "Al ser abismada en este turno: envía a Extinción 1 Adendei Abisal en campo",
         "trigger": {
-          "type": "on-damaged",
-          "mark": "abyss"
+          "type": "on-self-marked"
         },
         "prerequisites": [
           {
@@ -15283,7 +15276,7 @@
           }
         ],
         "target": {
-          "type": "both",
+          "type": "enemy",
           "count": 1
         },
         "restrictions": [],
@@ -15593,7 +15586,7 @@
         "modifiers": {
           "effect_type": "pasiva"
         },
-        "phase": "post.passives"
+        "phase": "battle.declaration"
       },
       {
         "id": "P2-remove-marks",
@@ -15628,7 +15621,7 @@
         "modifiers": {
           "effect_type": "pasiva"
         },
-        "phase": "post.passives"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -15723,7 +15716,6 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true,
           "_original_optional": null,
           "optional": false
         },
@@ -15808,7 +15800,6 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true,
           "_original_optional": null,
           "optional": false
         },
@@ -16024,7 +16015,10 @@
         },
         "prerequisites": [
           {
-            "type": "needs-equip"
+            "type": "needs-card-in-equip-zone",
+            "filter": {
+              "has_fast_active": true
+            }
           }
         ],
         "costs": [
@@ -16782,7 +16776,8 @@
           }
         ],
         "label": "P2-enter-field-no-titan-penalty",
-        "phase": "battle.declaration"
+        "phase": "battle.declaration",
+        "restrictions": []
       },
       {
         "id": "P3-on-extinction-damage-protector",
@@ -16816,7 +16811,8 @@
           }
         ],
         "label": "P3-on-extinction-damage-protector",
-        "phase": "post.extinction"
+        "phase": "post.extinction",
+        "restrictions": []
       }
     ],
     "meta": {
@@ -16853,7 +16849,8 @@
         ],
         "operation": [
           {
-            "type": "equip-from-equip-zone"
+            "type": "return-to-equip-zone",
+            "source": "principal"
           },
           {
             "type": "scale",
@@ -17244,9 +17241,6 @@
         "operation": [
           {
             "type": "grant-double-damage"
-          },
-          {
-            "type": "no-rest"
           }
         ],
         "target": {
@@ -17315,7 +17309,7 @@
         "id": "P1-burn-extra-damage",
         "label": "Aura: Adendei quemados reciben 1 dano adicional al atacar o activar",
         "trigger": {
-          "type": "on-any-reveal",
+          "type": "on-any-attack-or-activate",
           "filter": {
             "has_mark": "burn",
             "card_type": "adendei"
@@ -17520,14 +17514,7 @@
         "trigger": {
           "type": "on-reveal"
         },
-        "prerequisites": [
-          {
-            "type": "needs-mark",
-            "mark": "burn",
-            "inverted": true,
-            "side": "ally"
-          }
-        ],
+        "prerequisites": [],
         "costs": [
           {
             "type": "custom-lookup",
@@ -17575,7 +17562,7 @@
         "id": "P1-protect-player",
         "label": "Activa: Protege a un jugador de ataques hasta su siguiente turno",
         "trigger": {
-          "type": "on-activate"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -17613,7 +17600,7 @@
           "effect_type": "pasiva-opcional",
           "optional": true
         },
-        "phase": "battle.declaration"
+        "phase": "prev"
       },
       {
         "id": "P2-cant-heal-own-protector",
@@ -17699,7 +17686,7 @@
         "id": "P1-swap-damage",
         "label": "Al ser movida en el campo: dana 1 a una carta rival en descanso",
         "trigger": {
-          "type": "on-reveal"
+          "type": "on-self-position-change"
         },
         "prerequisites": [
           {
@@ -18461,8 +18448,9 @@
         "id": "P1-negate-attack",
         "label": "Al atacar aliado: regresa a Zona de Equipo y niega el ataque (una vez por juego)",
         "trigger": {
-          "type": "on-ally-attacked",
-          "_original_trigger": "on-activate"
+          "type": "on-activate",
+          "_original_trigger": "on-activate",
+          "fast": true
         },
         "prerequisites": [
           {
@@ -18495,7 +18483,7 @@
         "fast": true,
         "_redundant": true,
         "_redundant_reason": "La operación incluye 'equip-from-equip-zone' pero la carta se regresa a Zona de Equipo (self-return-to-equip-zone es el costo), no se re-equipa; esta sub-operación es incorrecta y no está en el texto.",
-        "phase": "battle.declaration"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -18654,7 +18642,7 @@
         "id": "P1-equip-return-scale",
         "label": "Al regresar un equipo a Zona de Equipo: escala 1",
         "trigger": {
-          "type": "on-equip"
+          "type": "on-equip-returned"
         },
         "prerequisites": [
           {
@@ -18679,7 +18667,7 @@
         "modifiers": {
           "_original_trigger": "on-equip-returned"
         },
-        "phase": "equip"
+        "phase": "prev"
       }
     ],
     "meta": {
@@ -19037,7 +19025,7 @@
         },
         "restrictions": [
           {
-            "type": "cant-rest-update"
+            "type": "cant-scale"
           }
         ],
         "modifiers": {
@@ -19159,7 +19147,7 @@
         "id": "P2-link-resting",
         "label": "Pasiva: Puede vincularse con carta en descanso",
         "trigger": {
-          "type": "on-link"
+          "type": "while-on-field"
         },
         "prerequisites": [
           {
@@ -19184,9 +19172,12 @@
         },
         "restrictions": [],
         "modifiers": {
-          "optional": true
+          "optional": true,
+          "duration": {
+            "type": "while-on-field"
+          }
         },
-        "phase": "battle.declaration"
+        "phase": "continuous"
       }
     ],
     "meta": {
@@ -19482,7 +19473,6 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true,
           "_original_optional": null,
           "optional": false
         },
@@ -19712,7 +19702,8 @@
           "type": "on-activate",
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "fast": true
         },
         "prerequisites": [
           {
@@ -19747,7 +19738,7 @@
         },
         "notes": "Solo equipable a Adendei Zaykan",
         "fast": true,
-        "phase": "battle.declaration"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -20506,6 +20497,9 @@
         "prerequisites": [
           {
             "type": "independent"
+          },
+          {
+            "type": "once-while-on-field"
           }
         ],
         "costs": [
@@ -20526,8 +20520,10 @@
           }
         },
         "restrictions": [],
-        "modifiers": {},
-        "phase": "continuous"
+        "modifiers": {
+          "effect_type": "pasiva-opcional"
+        },
+        "phase": "prev"
       },
       {
         "id": "P2-end-of-turn-damage",
@@ -20695,7 +20691,7 @@
         },
         "restrictions": [
           {
-            "type": "cant-heal-by-own-effects"
+            "type": "cant-heal-except-by-adendei-effect"
           }
         ],
         "modifiers": {
@@ -20743,7 +20739,8 @@
         ],
         "operation": [
           {
-            "type": "negate-effect"
+            "type": "restrict-activation",
+            "scope": "equip-cards"
           }
         ],
         "target": {
@@ -20949,7 +20946,8 @@
           "type": "on-activate",
           "filter": {
             "card_type": "adendei"
-          }
+          },
+          "fast": true
         },
         "prerequisites": [
           {
@@ -21002,7 +21000,7 @@
         },
         "notes": "Solo equipable a Adendei Nanuk",
         "fast": true,
-        "phase": "battle.declaration",
+        "phase": "reactive",
         "_original_prerequisites": [
           {
             "type": "independent"
@@ -21328,7 +21326,6 @@
           "duration": {
             "type": "while-on-field"
           },
-          "_removed_optional": true,
           "_original_optional": null,
           "optional": false
         },
@@ -21371,8 +21368,7 @@
         },
         "restrictions": [
           {
-            "type": "cant-attack-protector",
-            "scope": "facing"
+            "type": "cant-attack-facing"
           }
         ],
         "modifiers": {
@@ -21710,8 +21706,12 @@
         ],
         "operation": [
           {
-            "type": "scale",
-            "value": 1
+            "type": "damage-bonus",
+            "value": 1,
+            "condition": {
+              "on_attack": true,
+              "has_mark": "burn"
+            }
           }
         ],
         "target": {
@@ -21789,8 +21789,7 @@
         },
         "restrictions": [
           {
-            "type": "cant-link",
-            "note": "no-linked-this-turn targets"
+            "type": "cant-target-linked-adendei-this-turn"
           }
         ],
         "modifiers": {},
@@ -21896,7 +21895,7 @@
         ],
         "operation": [
           {
-            "type": "protect-effect"
+            "type": "damage-immunity"
           }
         ],
         "target": {
@@ -21958,7 +21957,7 @@
         ],
         "operation": [
           {
-            "type": "damage",
+            "type": "attack-additional",
             "value_min": 1,
             "value_max": 2
           }
@@ -22593,7 +22592,9 @@
           "type": "linked"
         },
         "restrictions": [],
-        "modifiers": {},
+        "modifiers": {
+          "_review_flag": "vivify_keyword_must_be_explicit_in_card_text"
+        },
         "phase": "battle.declaration",
         "meta": {
           "flag_review": "effect_text_missing_vivify_keyword"
@@ -22795,9 +22796,13 @@
         "id": "P1-mass-equip-on-link",
         "label": "Activa: Si Protector es vinculado, equipa hasta 4 equipos durante la siguiente Previa; al final recupera equipos y Protector recibe 1 descanso adicional",
         "trigger": {
-          "type": "on-link"
+          "type": "on-activate",
+          "fast": true
         },
         "prerequisites": [
+          {
+            "type": "link-declared-this-turn"
+          },
           {
             "type": "independent"
           }
@@ -22835,9 +22840,10 @@
           }
         ],
         "modifiers": {
-          "persistent_even_if_leaves_field": true
+          "persistent_even_if_leaves_field": true,
+          "_rot_fix": "§2.5: Rot must be Activa/Activa-Rapida - on-link->on-activate fast"
         },
-        "phase": "battle.declaration"
+        "phase": "reactive"
       },
       {
         "id": "P2-equip-restriction",
@@ -23034,10 +23040,7 @@
         "id": "P1-counter-negate-passive",
         "label": "Reactiva: Si Pasiva aliada es negada, dana 2 ptos. a 1 Adendei rival (costo: auto-dano 1)",
         "trigger": {
-          "type": "on-ally-damaged",
-          "filter": {
-            "owner": "ally"
-          }
+          "type": "on-ally-passive-negated"
         },
         "prerequisites": [
           {
@@ -23071,7 +23074,7 @@
         "modifiers": {
           "_original_trigger": "on-ally-passive-negated"
         },
-        "phase": "battle.resolution"
+        "phase": "reactive"
       }
     ],
     "meta": {
@@ -23113,7 +23116,7 @@
         ],
         "operation": [
           {
-            "type": "amplify-effect",
+            "type": "damage-additional",
             "value": 1,
             "_original_type": "scale"
           },
@@ -23162,7 +23165,7 @@
         "id": "P1-scale-on-descend",
         "label": "Reactiva (once-per-turn): Si cualquier carta desciende, esta carta escala 1 pto. permanentemente",
         "trigger": {
-          "type": "on-any-death"
+          "type": "on-any-descend"
         },
         "prerequisites": [
           {
@@ -23191,7 +23194,7 @@
           },
           "_original_trigger": "on-any-descend"
         },
-        "phase": "post.extinction"
+        "phase": "battle.resolution"
       }
     ],
     "meta": {
@@ -23734,7 +23737,7 @@
         "id": "P1-negate-passive",
         "label": "Pasiva-Rapida: Niega Pasiva de 1 carta hasta Fin del Turno rival",
         "trigger": {
-          "type": "on-any-reveal",
+          "type": "on-passive-declared",
           "fast": true
         },
         "prerequisites": [
@@ -24024,7 +24027,7 @@
         "id": "P1-negate-response-damage",
         "label": "Pasiva reactiva: Ataque negado => dana 3 a Adendei equipados en Zona Principal",
         "trigger": {
-          "type": "on-damaged"
+          "type": "on-attack-negated"
         },
         "prerequisites": [
           {
@@ -24055,43 +24058,6 @@
           "_original_trigger": "on-attack-negated"
         },
         "phase": "battle.resolution"
-      },
-      {
-        "id": "P2-self-extinct-cost",
-        "label": "Costo: Envia esta carta desde Zona Equipo a Extincion para activar Pasiva",
-        "trigger": {
-          "type": "on-activate",
-          "linked_to": "P1-negate-response-damage"
-        },
-        "prerequisites": [
-          {
-            "type": "independent",
-            "zone": "equip",
-            "_original_type": "zone-filter"
-          }
-        ],
-        "costs": [
-          {
-            "type": "self-extinct-from-equip-zone"
-          }
-        ],
-        "operation": [
-          {
-            "type": "send-extinction",
-            "target": "self"
-          }
-        ],
-        "target": {
-          "type": "self"
-        },
-        "restrictions": [],
-        "modifiers": {
-          "is_cost_effect": true,
-          "_original_trigger": "on-cost-pay"
-        },
-        "_redundant": true,
-        "_redundant_reason": "P2 duplica el costo de P1 (self-extinct-from-equip-zone ya está en costs de P1); modelar la auto-extinción solo en el array costs de P1.",
-        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -24214,7 +24180,7 @@
         ],
         "operation": [
           {
-            "type": "equip-from-equip-zone"
+            "type": "return-to-equip-zone"
           }
         ],
         "target": {
@@ -24855,8 +24821,7 @@
         ],
         "operation": [
           {
-            "type": "vivify",
-            "source": "deck",
+            "type": "place-from-deck",
             "subtype": "suplente"
           }
         ],
@@ -25072,7 +25037,7 @@
         ],
         "operation": [
           {
-            "type": "scale",
+            "type": "damage-additional",
             "value": 1
           }
         ],
@@ -25123,7 +25088,7 @@
         ],
         "costs": [
           {
-            "type": "equip-extinct"
+            "type": "self-return-equip"
           },
           {
             "type": "cant-return-to-equip"
@@ -25197,7 +25162,7 @@
         ],
         "operation": [
           {
-            "type": "amplify-effect",
+            "type": "damage-additional",
             "value": 3,
             "_original_type": "scale"
           }
@@ -25324,8 +25289,7 @@
             "type": "reveal"
           },
           {
-            "type": "send-extinction",
-            "zone": "out-of-game"
+            "type": "send-out-of-game"
           }
         ],
         "target": {
@@ -26005,10 +25969,6 @@
             "condition": "target-has-rests"
           },
           {
-            "type": "protect-effect",
-            "condition": "target-has-rests"
-          },
-          {
             "type": "protect-attack",
             "condition": "target-has-rests"
           }
@@ -26363,7 +26323,7 @@
         "id": "P1-counter-swap-damage",
         "label": "Si rival cambio carta a tu campo este turno: dana 3 a 1 Adendei rival y regresa 1 carta al Mazo (una vez por juego)",
         "trigger": {
-          "type": "on-ally-damaged"
+          "type": "on-enemy-swap-to-ally-field"
         },
         "prerequisites": [
           {
