@@ -15780,7 +15780,11 @@
         },
         "prerequisites": [
           {
-            "type": "independent"
+            "type": "needs-equip",
+            "filter": {
+              "card_name_contains": "Ariam",
+              "card_type": "adendei"
+            }
           }
         ],
         "costs": [
@@ -15803,11 +15807,9 @@
         },
         "restrictions": [],
         "modifiers": {
-          "equip_restriction": "Adendei Ariam only",
-          "_original_effect_type": "",
-          "effect_type": null
+          "effect_type": "pasiva"
         },
-        "phase": "battle.declaration"
+        "phase": "post.passives"
       },
       {
         "id": "P2-remove-marks",
@@ -15817,7 +15819,11 @@
         },
         "prerequisites": [
           {
-            "type": "independent"
+            "type": "needs-equip",
+            "filter": {
+              "card_name_contains": "Ariam",
+              "card_type": "adendei"
+            }
           }
         ],
         "costs": [
@@ -15835,8 +15841,10 @@
           "zone": "principal"
         },
         "restrictions": [],
-        "modifiers": {},
-        "phase": "battle.declaration"
+        "modifiers": {
+          "effect_type": "pasiva"
+        },
+        "phase": "post.passives"
       }
     ],
     "meta": {
