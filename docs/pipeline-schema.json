@@ -110,7 +110,7 @@
         },
         "zone": {
           "type": "string",
-          "enum": ["field", "extinction", "equip-zone", "deck", "any"],
+          "enum": ["field", "extinction", "equip-zone", "deck", "out-of-game", "any"],
           "default": "field",
           "description": "Zona desde donde esta carta puede activar el trigger. Default: field. Cartas como Mizthe Aura Mortal activan desde extinction."
         },
@@ -240,7 +240,11 @@
             "redirect", "link", "possess",
             "attack-all", "attack-protector", "multi-attack",
             "swap-protector",
-            "register-game-rule"
+            "register-game-rule",
+            "execute-from-zone", "check-win-condition",
+            "create-token-parametric", "damage-cap",
+            "amplify-effect", "stat-override",
+            "equip-to-enemy", "swap-with-enemy"
           ]
         },
         "value": {
@@ -307,9 +311,14 @@
           ]
         },
         "filter": { "$ref": "#/definitions/filter" },
+        "players": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "For multiplayer: up to N rival players (default 1). Cards like Maiz Multicolor target up to 2 players."
+        },
         "zone": {
           "type": "string",
-          "enum": ["principal", "field", "extinction", "equip", "deck"],
+          "enum": ["principal", "field", "extinction", "equip", "deck", "out-of-game"],
           "description": "Target zone if not default (field)"
         }
       }
@@ -500,8 +509,9 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["permanent", "turn", "next-turn", "while-on-field", "next-attack", "until-protector-available", "rest-of-game"]
+          "enum": ["permanent", "turn", "next-turn", "while-on-field", "next-attack", "next-N-attacks", "until-protector-available", "rest-of-game", "until-condition"]
         },
+        "attack_count": { "type": "integer", "description": "For next-N-attacks duration" },
         "turns": { "type": "integer", "description": "For multi-turn durations" }
       }
     }
