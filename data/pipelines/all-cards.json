@@ -1007,8 +1007,8 @@
         ],
         "operation": [
           {
-            "type": "grant-double-damage",
-            "multiplier": "pending_rests"
+            "type": "set-attack-damage",
+            "formula": "2 * pending_end_of_turn_rests"
           }
         ],
         "target": {
@@ -1208,7 +1208,7 @@
         ],
         "modifiers": {
           "duration": {
-            "type": "until-end-of-next-own-turn"
+            "type": "end-of-next-own-turn"
           },
           "optional": false,
           "_original_effect_type": "",
@@ -1264,7 +1264,9 @@
         ],
         "operation": [
           {
-            "type": "promote-to-activa-rapida"
+            "type": "promote-to-activa-rapida",
+            "duration": "current-turn",
+            "scope": "all-activa-effects"
           }
         ],
         "target": {
@@ -2378,9 +2380,9 @@
             "type": "damage-per",
             "value": 1,
             "per": {
-              "zone": "extinction"
-            },
-            "snapshot": "post-cost"
+              "zone": "extinction",
+              "snapshot": "post-cost"
+            }
           }
         ],
         "target": {
@@ -3818,7 +3820,8 @@
           },
           {
             "type": "unequip-all",
-            "note": "regresa equipos a Zona de Equipo"
+            "note": "regresa equipos a Zona de Equipo",
+            "scope": "both"
           }
         ],
         "target": {
@@ -4054,7 +4057,8 @@
             "per_source": "field-count",
             "filter": {
               "subtype": "Feral"
-            }
+            },
+            "optional": true
           }
         ],
         "target": {
@@ -4128,7 +4132,7 @@
         "restrictions": [],
         "modifiers": {},
         "_original_trigger": "on-ally-damaged",
-        "phase": "battle.resolution"
+        "phase": "post.passives"
       }
     ],
     "meta": {
@@ -4278,7 +4282,7 @@
           }
         },
         "_original_trigger": "on-ally-damaged",
-        "phase": "battle.resolution"
+        "phase": "post.passives"
       },
       {
         "id": "P2",
@@ -7287,7 +7291,7 @@
         "id": "P1-damage-redistribute",
         "label": "Reactiva: Si rival declara 4+ daño, redistribuye el total entre tus cartas",
         "trigger": {
-          "type": "on-activate"
+          "type": "on-enemy-declare-damage"
         },
         "prerequisites": [
           {
@@ -7356,7 +7360,12 @@
             "type": "while-on-field"
           }
         },
-        "phase": "continuous"
+        "phase": "continuous",
+        "costs": [
+          {
+            "type": "none"
+          }
+        ]
       }
     ],
     "meta": {
@@ -8049,11 +8058,6 @@
             "type": "scale",
             "value": 1,
             "notes": "+1 dano al atacar"
-          },
-          {
-            "type": "restrict-heal-self",
-            "target": "ally-ariam",
-            "detail": "no curan por propios efectos"
           },
           {
             "type": "restrict-heal-self",
@@ -14552,8 +14556,7 @@
         "id": "P1-negate-passive-on-attack",
         "label": "Activa Rot: equipada ataca → pasiva de atacada negada hasta fin de turno",
         "trigger": {
-          "type": "on-equipped-attack",
-          "fast": true
+          "type": "on-equipped-attack"
         },
         "prerequisites": [
           {
@@ -14579,9 +14582,9 @@
             "type": "turn"
           },
           "_original_effect_type": "",
-          "effect_type": "activa-rapida"
+          "effect_type": "activa"
         },
-        "phase": "reactive"
+        "phase": "battle.declaration"
       }
     ],
     "meta": {
@@ -17241,6 +17244,10 @@
         "operation": [
           {
             "type": "grant-double-damage"
+          },
+          {
+            "type": "restrict",
+            "scope": "cant-receive-rests-by-effect"
           }
         ],
         "target": {
@@ -20492,7 +20499,8 @@
         "id": "P1-equip-to-enemy",
         "label": "Activa: Equipa esta carta al Adendei rival; dano 2 al final del turno rival",
         "trigger": {
-          "type": "while-on-field"
+          "type": "on-activate",
+          "_original_trigger": "while-on-field"
         },
         "prerequisites": [
           {
@@ -22581,11 +22589,12 @@
             }
           },
           {
-            "type": "vivify",
+            "type": "place-from-extinction",
             "filter": {
               "card_type": "rava"
             },
-            "zone": "principal"
+            "zone": "principal",
+            "_original_type": "vivify"
           }
         ],
         "target": {

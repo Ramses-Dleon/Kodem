@@ -1,0 +1,431 @@
+[
+  {
+    "card_id": "KPRC-039",
+    "pipeline_id": "P1-abisal-double",
+    "field": "operation",
+    "old_value": [
+      {
+        "type": "grant-double-damage"
+      }
+    ],
+    "new_value": [
+      {
+        "type": "grant-double-damage"
+      },
+      {
+        "type": "restrict",
+        "scope": "cant-receive-rests-by-effect"
+      }
+    ],
+    "action": "fix_not_applied: Add restrict operation entry to array matching the sibling-key annotation 'operation[1]'={type:restrict}. The no-rest immunity is modeled in restrictions[] but also needs to be represented as an operation."
+  },
+  {
+    "card_id": "LGRO-021",
+    "pipeline_id": "P1-equip-to-enemy",
+    "field": "trigger",
+    "old_value": {
+      "type": "while-on-field"
+    },
+    "new_value": {
+      "type": "on-phase-previa"
+    },
+    "action": "effect_text_mismatch: Change trigger from while-on-field to on-phase-previa. Effect is pasiva-opcional activated in Fase Previa (one-time selection per restriction once-while-on-field), not a continuous aura. while-on-field implies always-active which contradicts the once-per-field restriction."
+  },
+  {
+    "card_id": "NYPR-001",
+    "pipeline_id": "P1-sacrifice-linked-vivify-rava",
+    "field": "operation",
+    "old_value": [
+      {
+        "type": "send-extinction",
+        "filter": {
+          "linked": true
+        }
+      },
+      {
+        "type": "vivify",
+        "filter": {
+          "card_type": "rava"
+        },
+        "zone": "principal"
+      }
+    ],
+    "new_value": [
+      {
+        "type": "send-extinction",
+        "filter": {
+          "linked": true
+        }
+      },
+      {
+        "type": "place-from-extinction",
+        "filter": {
+          "card_type": "rava"
+        },
+        "zone": "principal",
+        "_note": "Changed from vivify per S15 — card text must explicitly say vivificar. Flag for card designer review."
+      }
+    ],
+    "action": "effect_text_mismatch: Change operation[1].type from vivify to place-from-extinction per S15 rule. Card text says 'regresa 1 Rava en Extincion' without explicit 'vivificar' keyword. Flagged for card designer to add vivify language or confirm alternate mechanic."
+  },
+  {
+    "card_id": "ISPMR-013",
+    "pipeline_id": "P1-protector-link-damage",
+    "field": "target.type",
+    "old_value": "both",
+    "new_value": "enemy",
+    "action": "verified_already_fixed: target.type is already 'enemy'"
+  },
+  {
+    "card_id": "KPRC-004",
+    "pipeline_id": "P1-heal-on-attack",
+    "field": "phase",
+    "old_value": "post.passives",
+    "new_value": "battle.declaration",
+    "action": "verified_already_fixed: phase is already 'battle.declaration'"
+  },
+  {
+    "card_id": "KPRC-004",
+    "pipeline_id": "P2-remove-marks",
+    "field": "phase",
+    "old_value": "post.passives",
+    "new_value": "battle.declaration",
+    "action": "verified_already_fixed: phase is already 'battle.declaration'"
+  },
+  {
+    "card_id": "KPRC-012",
+    "pipeline_id": "P1-execute-equip-fast",
+    "field": "prerequisites[0].type",
+    "old_value": "needs-equip",
+    "new_value": "needs-card-in-equip-zone",
+    "action": "verified_already_fixed: prerequisites[0].type is already 'needs-card-in-equip-zone' with filter {has_fast_active:true}"
+  },
+  {
+    "card_id": "KPRC-027",
+    "pipeline_id": "P2-enter-field-no-titan-penalty",
+    "field": "restrictions",
+    "old_value": "missing",
+    "new_value": "[]",
+    "action": "verified_already_fixed: restrictions field is present (empty array)"
+  },
+  {
+    "card_id": "KPRC-027",
+    "pipeline_id": "P3-on-extinction-damage-protector",
+    "field": "restrictions",
+    "old_value": "missing",
+    "new_value": "[]",
+    "action": "verified_already_fixed: restrictions field is present (empty array)"
+  },
+  {
+    "card_id": "KPRC-029",
+    "pipeline_id": "P1-return-ixim-and-scale",
+    "field": "operation[0].type",
+    "old_value": "equip-from-equip-zone",
+    "new_value": "return-to-equip-zone",
+    "action": "verified_already_fixed: operation[0].type is already 'return-to-equip-zone' with source='principal'"
+  },
+  {
+    "card_id": "KPRC-048",
+    "pipeline_id": "P1-burn-extra-damage",
+    "field": "trigger.type",
+    "old_value": "on-any-reveal",
+    "new_value": "on-any-attack-or-activate",
+    "action": "verified_already_fixed: trigger.type is already 'on-any-attack-or-activate'"
+  },
+  {
+    "card_id": "KPRC-054",
+    "pipeline_id": "P1-reveal-burn",
+    "field": "prerequisites",
+    "old_value": "[{type:needs-mark,...}]",
+    "new_value": "[]",
+    "action": "verified_already_fixed: needs-mark is not in prerequisites[] (move to costs was completed)"
+  },
+  {
+    "card_id": "KPRC-056",
+    "pipeline_id": "P3-cant-heal-own-protector",
+    "field": "phase",
+    "old_value": "missing",
+    "new_value": "continuous",
+    "action": "verified_already_fixed: phase='continuous' is present"
+  },
+  {
+    "card_id": "KPRC-056",
+    "pipeline_id": "P1-protect-player",
+    "field": "trigger.type+effect_type",
+    "old_value": "on-activate+pasiva-opcional (conflicting)",
+    "new_value": "while-on-field+pasiva-opcional+phase=prev",
+    "action": "verified_already_fixed: trigger changed to while-on-field, effect_type=pasiva-opcional, phase=prev — semantically consistent"
+  },
+  {
+    "card_id": "KPRC-057",
+    "pipeline_id": "P1-swap-damage",
+    "field": "trigger.type",
+    "old_value": "on-reveal",
+    "new_value": "on-self-position-change",
+    "action": "verified_already_fixed: trigger.type is already 'on-self-position-change'"
+  },
+  {
+    "card_id": "LGRO-001R",
+    "pipeline_id": "P1-negate-attack",
+    "field": "phase",
+    "old_value": "battle.declaration",
+    "new_value": "reactive",
+    "action": "verified_already_fixed: phase is already 'reactive'"
+  },
+  {
+    "card_id": "LGRO-002S",
+    "pipeline_id": "P1-equip-return-scale",
+    "field": "trigger.type",
+    "old_value": "on-equip",
+    "new_value": "on-equip-returned",
+    "action": "verified_already_fixed: trigger.type is already 'on-equip-returned'"
+  },
+  {
+    "card_id": "LGRO-003S",
+    "pipeline_id": "P1-rot-fast",
+    "field": "phase",
+    "old_value": "reactive",
+    "new_value": "continuous",
+    "action": "verified_already_fixed: phase is already 'continuous'"
+  },
+  {
+    "card_id": "LGRO-003U",
+    "pipeline_id": "P2-lock-rival-scale",
+    "field": "restrictions[0].type",
+    "old_value": "cant-rest-update",
+    "new_value": "cant-scale",
+    "action": "verified_already_fixed: restrictions[0].type is already 'cant-scale'"
+  },
+  {
+    "card_id": "LGRO-004R",
+    "pipeline_id": "P2-link-resting",
+    "field": "trigger.type+phase",
+    "old_value": "on-link/battle.declaration",
+    "new_value": "while-on-field/continuous",
+    "action": "verified_already_fixed: trigger='while-on-field', phase='continuous'"
+  },
+  {
+    "card_id": "LGRO-009R",
+    "pipeline_id": "P1-negate-on-attack",
+    "field": "phase",
+    "old_value": "battle.declaration",
+    "new_value": "reactive",
+    "action": "verified_already_fixed: phase is already 'reactive'"
+  },
+  {
+    "card_id": "LGRO-021",
+    "pipeline_id": "P1-equip-to-enemy",
+    "field": "prerequisites:once-while-on-field",
+    "old_value": "missing",
+    "new_value": "{type:once-while-on-field}",
+    "action": "verified_already_fixed: once-while-on-field is present in prerequisites array"
+  },
+  {
+    "card_id": "LGRO-027",
+    "pipeline_id": "P1-restrict-rival-heal",
+    "field": "restrictions[0].type",
+    "old_value": "cant-heal-by-own-effects",
+    "new_value": "cant-heal-except-by-adendei-effect",
+    "action": "verified_already_fixed: restrictions[0].type is already 'cant-heal-except-by-adendei-effect'"
+  },
+  {
+    "card_id": "LGRO-030",
+    "pipeline_id": "P1-lock-equip-activation",
+    "field": "operation[0].type",
+    "old_value": "negate-effect",
+    "new_value": "restrict-activation",
+    "action": "verified_already_fixed: operation[0].type is already 'restrict-activation' with scope='equip-cards'"
+  },
+  {
+    "card_id": "LGRO-039",
+    "pipeline_id": "P1-ally-attacked-retaliate",
+    "field": "phase",
+    "old_value": "battle.declaration",
+    "new_value": "reactive",
+    "action": "verified_already_fixed: phase is already 'reactive'"
+  },
+  {
+    "card_id": "LGRO-051",
+    "pipeline_id": "P1-no-facing-attack",
+    "field": "restrictions[0].type",
+    "old_value": "cant-attack-protector",
+    "new_value": "cant-attack-facing",
+    "action": "verified_already_fixed: restrictions[0].type is already 'cant-attack-facing'"
+  },
+  {
+    "card_id": "MLBU-002",
+    "pipeline_id": "P1-burn-bonus-damage",
+    "field": "operation[0].type",
+    "old_value": "scale",
+    "new_value": "damage-bonus",
+    "action": "verified_already_fixed: operation[0].type is already 'damage-bonus'"
+  },
+  {
+    "card_id": "MLBU-002S",
+    "pipeline_id": "P1-punish-out-of-field-effect",
+    "field": "restrictions[0].type",
+    "old_value": "cant-link",
+    "new_value": "cant-target-linked-adendei-this-turn",
+    "action": "verified_already_fixed: restrictions[0].type is already 'cant-target-linked-adendei-this-turn'"
+  },
+  {
+    "card_id": "MLBU-003S",
+    "pipeline_id": "P1-on-reveal-shield-field",
+    "field": "operation[0].type",
+    "old_value": "protect-effect",
+    "new_value": "damage-immunity",
+    "action": "verified_already_fixed: operation[0].type is already 'damage-immunity'"
+  },
+  {
+    "card_id": "MLBU-004",
+    "pipeline_id": "P1-damage-ally-for-setup",
+    "field": "operation[0].type",
+    "old_value": "damage",
+    "new_value": "attack-additional",
+    "action": "verified_already_fixed: operation[0].type is already 'attack-additional'"
+  },
+  {
+    "card_id": "PASE-005",
+    "pipeline_id": "P1-mass-equip-on-link",
+    "field": "trigger.type+fast+phase",
+    "old_value": "on-link (pasiva-style trigger for Rot)",
+    "new_value": "on-activate/fast=True/phase=reactive",
+    "action": "verified_already_fixed: trigger='on-activate'/fast=True, phase='reactive'"
+  },
+  {
+    "card_id": "RAMI-004S",
+    "pipeline_id": "P1-counter-negate-passive",
+    "field": "trigger.type+phase",
+    "old_value": "on-ally-damaged/battle.resolution",
+    "new_value": "on-ally-passive-negated/reactive",
+    "action": "verified_already_fixed: trigger='on-ally-passive-negated', phase='reactive'"
+  },
+  {
+    "card_id": "RAMI-005S",
+    "pipeline_id": "P1-dual-condition-bonus",
+    "field": "operation[0].type",
+    "old_value": "amplify-effect",
+    "new_value": "damage-additional",
+    "action": "verified_already_fixed: operation[0].type is already 'damage-additional'"
+  },
+  {
+    "card_id": "RAMI-006S",
+    "pipeline_id": "P1-scale-on-descend",
+    "field": "trigger.type+phase",
+    "old_value": "on-any-death/post.extinction",
+    "new_value": "on-any-descend/battle.resolution",
+    "action": "verified_already_fixed: trigger='on-any-descend', phase='battle.resolution'"
+  },
+  {
+    "card_id": "TCDE-007",
+    "pipeline_id": "P1-negate-passive",
+    "field": "trigger.type",
+    "old_value": "on-any-reveal",
+    "new_value": "on-passive-declared",
+    "action": "verified_already_fixed: trigger.type is already 'on-passive-declared'"
+  },
+  {
+    "card_id": "TCDE-012",
+    "pipeline_id": "P1-negate-response-damage",
+    "field": "trigger.type",
+    "old_value": "on-damaged",
+    "new_value": "on-attack-negated",
+    "action": "verified_already_fixed: trigger.type is already 'on-attack-negated'"
+  },
+  {
+    "card_id": "TCDE-012",
+    "pipeline_id": "P2-ixim-on-activate-violation",
+    "field": "pipeline_existence",
+    "old_value": "existed",
+    "new_value": "removed",
+    "action": "verified_already_fixed: No P2 with on-activate exists in TCDE-012 — already removed"
+  },
+  {
+    "card_id": "TCDE-014",
+    "pipeline_id": "P2-return-on-token-death",
+    "field": "operation[0].type",
+    "old_value": "equip-from-equip-zone",
+    "new_value": "return-to-equip-zone",
+    "action": "verified_already_fixed: operation[0].type is already 'return-to-equip-zone'"
+  },
+  {
+    "card_id": "TCOO-001K",
+    "pipeline_id": "P1-return-all-to-deck",
+    "field": "restrictions_duplicate",
+    "old_value": "cant-link-this-turn x2",
+    "new_value": "cant-link-this-turn x1",
+    "action": "verified_already_fixed: only 1 cant-link-this-turn restriction entry exists"
+  },
+  {
+    "card_id": "TCOO-003S",
+    "pipeline_id": "P1-self-swap",
+    "field": "operation[0].type",
+    "old_value": "vivify",
+    "new_value": "place-from-deck",
+    "action": "verified_already_fixed: operation[0].type is already 'place-from-deck'"
+  },
+  {
+    "card_id": "TCOO-005R",
+    "pipeline_id": "P2-extra-damage",
+    "field": "operation[0].type",
+    "old_value": "scale",
+    "new_value": "damage-additional",
+    "action": "verified_already_fixed: operation[0].type is already 'damage-additional'"
+  },
+  {
+    "card_id": "TCOO-005S",
+    "pipeline_id": "P1-mass-rest",
+    "field": "costs[0].type",
+    "old_value": "equip-extinct",
+    "new_value": "self-return-equip",
+    "action": "verified_already_fixed: costs[0].type is already 'self-return-equip'"
+  },
+  {
+    "card_id": "TCOO-005U",
+    "pipeline_id": "P1-bonus-damage",
+    "field": "operation[0].type",
+    "old_value": "amplify-effect",
+    "new_value": "damage-additional",
+    "action": "verified_already_fixed: operation[0].type is already 'damage-additional'"
+  },
+  {
+    "card_id": "TCOO-006U",
+    "pipeline_id": "P1-reveal-out-of-game",
+    "field": "operation[1].type",
+    "old_value": "send-extinction+zone=out-of-game",
+    "new_value": "send-out-of-game",
+    "action": "verified_already_fixed: operation[1].type is already 'send-out-of-game'"
+  },
+  {
+    "card_id": "TCOO-011R",
+    "pipeline_id": "P1-protector-immune-resting",
+    "field": "operation_duplicate",
+    "old_value": "protect-effect x2",
+    "new_value": "protect-effect x1",
+    "action": "verified_already_fixed: operation has protect-effect x1 + protect-attack x1 (no duplicate protect-effect)"
+  },
+  {
+    "card_id": "TCOO-015",
+    "pipeline_id": "P1-counter-swap-damage",
+    "field": "trigger.type",
+    "old_value": "on-ally-damaged",
+    "new_value": "on-enemy-swap-to-ally-field",
+    "action": "verified_already_fixed: trigger.type is already 'on-enemy-swap-to-ally-field'"
+  },
+  {
+    "card_id": "TCOO-019R",
+    "pipeline_id": "P1-conditional-heal-damage",
+    "field": "trigger.type",
+    "old_value": "on-activate",
+    "new_value": "on-link",
+    "action": "verified_already_fixed: trigger.type is already 'on-link' (Protector uses on-link for Vinculo Odemico)"
+  },
+  {
+    "card_id": "TCOO-020R",
+    "pipeline_id": "P2-on-activate-damage-pirico",
+    "field": "trigger.type",
+    "old_value": "on-activate",
+    "new_value": "on-link",
+    "action": "verified_already_fixed: trigger.type is already 'on-link' (Protector uses on-link for Vinculo Odemico)"
+  }
+]
