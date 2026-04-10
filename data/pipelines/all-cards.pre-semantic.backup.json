@@ -4124,7 +4124,7 @@
   },
   {
     "card_id": "EXPO-001",
-    "card_name": "Illith, Fuego Primo",
+    "card_name": "Ilith, Fuego Primo",
     "effect_text": "Pasiva: Si tienes al menos 1 carta en Extincion, esta carta puede atacar a 2 Adendei rivales al mismo tiempo.",
     "cost_text": "",
     "pipelines": [
@@ -14539,7 +14539,7 @@
   },
   {
     "card_id": "KPRC-010",
-    "card_name": "Kephir Lanzallamas",
+    "card_name": "Kephir, Lanzallamas",
     "effect_text": "Pasiva: Esta carta puede atacar adicionalmente a Adendei rivales igual al numero de equipos en esta carta.",
     "cost_text": "",
     "pipelines": [
