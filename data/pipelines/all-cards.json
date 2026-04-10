@@ -18447,7 +18447,7 @@
   },
   {
     "card_id": "LGRO-001R",
-    "card_name": "Prueba de Campo",
+    "card_name": "Pruebas de Campo",
     "effect_text": "Si una carta aliada es atacada, puedes regresar esta carta a la Zona de Equipo y negar el ataque. Solo puedes usar esta carta 1 vez por juego.",
     "cost_text": "",
     "pipelines": [
