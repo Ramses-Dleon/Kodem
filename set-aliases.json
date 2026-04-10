@@ -7,12 +7,26 @@
       "name_es": "La Guerra Roja",
       "name_en": "The Red War",
       "aliases": [
-        "LGRO",
+        "LGRO"
+      ],
+      "type": "booster",
+      "base_cards": 78,
+      "total_images": 108,
+      "expansion": 1
+    },
+    {
+      "code": "TRWA",
+      "name_es": "La Guerra Roja (Inglés)",
+      "name_en": "The Red War",
+      "aliases": [
         "TRWA"
       ],
       "type": "booster",
       "base_cards": 78,
-      "total_images": 108
+      "total_images": 108,
+      "language": "en",
+      "equivalent_set": "LGRO",
+      "expansion": 1
     },
     {
       "code": "FYTE",
@@ -23,7 +37,8 @@
       ],
       "type": "booster",
       "base_cards": 84,
-      "total_images": 137
+      "total_images": 137,
+      "expansion": 7
     },
     {
       "code": "TCOO",
@@ -34,7 +49,8 @@
       ],
       "type": "booster",
       "base_cards": 84,
-      "total_images": 133
+      "total_images": 133,
+      "expansion": 3
     },
     {
       "code": "KPRC",
@@ -56,7 +72,8 @@
       ],
       "type": "starter_deck",
       "base_cards": 26,
-      "total_images": 26
+      "total_images": 26,
+      "expansion": 2
     },
     {
       "code": "RAMI",
@@ -67,7 +84,8 @@
       ],
       "type": "structure_deck",
       "base_cards": 26,
-      "total_images": 36
+      "total_images": 36,
+      "expansion": 6
     },
     {
       "code": "DOOC",
@@ -78,7 +96,8 @@
       ],
       "type": "structure_deck",
       "base_cards": 26,
-      "total_images": 36
+      "total_images": 36,
+      "expansion": 5
     },
     {
       "code": "IDRMA",
@@ -89,7 +108,8 @@
       ],
       "type": "intro_deck",
       "base_cards": 22,
-      "total_images": 22
+      "total_images": 22,
+      "expansion": 0
     },
     {
       "code": "IDRMG",
@@ -100,7 +120,8 @@
       ],
       "type": "intro_deck",
       "base_cards": 22,
-      "total_images": 22
+      "total_images": 22,
+      "expansion": 0
     },
     {
       "code": "IDRMP",
@@ -111,7 +132,8 @@
       ],
       "type": "intro_deck",
       "base_cards": 22,
-      "total_images": 22
+      "total_images": 22,
+      "expansion": 0
     },
     {
       "code": "CAMP",
@@ -136,7 +158,8 @@
       ],
       "type": "mini_expansion",
       "base_cards": 15,
-      "total_images": 15
+      "total_images": 15,
+      "expansion": 4
     },
     {
       "code": "MINICONJ",
@@ -177,7 +200,8 @@
       ],
       "type": "tin",
       "base_cards": 10,
-      "total_images": 20
+      "total_images": 20,
+      "expansion": 9
     },
     {
       "code": "EXPO",
@@ -243,6 +267,6 @@
     }
   ],
   "_alias_lookup": {
-    "TRWA": "LGRO"
+    "TRWA": "TRWA"
   }
 }
