@@ -7,3 +7,7 @@ kodem-cartas/
 kodem-engine/
 collection.json
 wantlist.json
+
+# Personal data
+data/collection.json
+data/wantlist.json
