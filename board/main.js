@@ -51,27 +51,8 @@ async function init() {
   if (localDecks) {
     try { DECKS = JSON.parse(localDecks); } catch(e) { DECKS = {}; }
   }
-  if (loadState()) {
-    // Check if server has a newer turn — auto-sync if so
-    try {
-      const apiRes = await fetch('/api/board-pull?t=' + Date.now()).catch(() => null);
-      if (apiRes && apiRes.ok) {
-        const serverData = await apiRes.json();
-        if (serverData && !serverData.error && !serverData.fallback && serverData.t > GAME.turn) {
-          console.log(`Server has turn ${serverData.t}, local has ${GAME.turn} — auto-syncing`);
-          localStorage.removeItem('kodem_board_state');
-          const imported = serverData.v ? compactImport(serverData) : serverData;
-          initGame(imported);
-          logAction(`📥 Auto-sync: servidor tenía turno ${serverData.t} (local: ${GAME.turn})`);
-          return;
-        }
-      }
-    } catch(e) { console.log('Auto-sync check failed:', e); }
-    renderInteractive();
-    return;
-  }
-  const state = await fetch('game-state.json?t=' + Date.now()).then(r => r.json());
-  initGame(state);
+  // Always show new game modal on entry — user picks decks from scratch
+  openNewGameModal();
 }
 
 function renderInteractive() {
@@ -640,8 +621,7 @@ function parseDeck(deck) {
 }
 
 /* ─── New Game ─── */
-function resetGame() {
-  if (!confirm('¿Iniciar nueva partida? Se perderá el progreso actual.')) return;
+function openNewGameModal() {
   // Populate deck selects
   const keys = Object.keys(DECKS).filter(k => {
     const d = parseDeck(DECKS[k]);
@@ -652,6 +632,11 @@ function resetGame() {
     sel.innerHTML = keys.map(k => `<option value="${k}">${DECKS[k].name}</option>`).join('');
   }
   document.getElementById('newGameOverlay').classList.add('active');
+}
+
+function resetGame() {
+  if (!confirm('¿Iniciar nueva partida? Se perderá el progreso actual.')) return;
+  openNewGameModal();
 }
 
 function closeNewGame() {
