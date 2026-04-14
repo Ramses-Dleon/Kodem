@@ -702,6 +702,7 @@ function startNewGame() {
 
   closeNewGame();
   localStorage.removeItem('kodem-board-state');
+  localStorage.removeItem('kodem_board_state');
   UNDO_STACK = [];
   GAME_LOG = state.gameLog;
   initGame(state);
