@@ -7249,25 +7249,6 @@
     "species": ""
   },
   {
-    "folio": "KPRC-064 A",
-    "name": "Mizthe, Custodian of the Underworld",
-    "set": "KPRC",
-    "type": "Protector",
-    "subtype": "",
-    "energy": "Feral",
-    "damage": 1,
-    "rests": 0,
-    "effect_type": "Activa",
-    "effect_text": "If you have 4 Adendei with the same Energy in your Extinction, send 1 of those cards to the bottom of the Deck.",
-    "image": "images/KPRC-064 A.webp",
-    "artist": "Diego Valdéz Art",
-    "rarity_variants": [],
-    "rarity": "Secreta",
-    "cost_text": "Send this card to Extinction to use this Active.",
-    "lore_text": "Thank you for bringing the graves to life in bloom with us, and for turning this campaign into a reality!",
-    "species": "Xoloitzcuintle"
-  },
-  {
     "folio": "KPRC-064A",
     "name": "Mizthe, Custodian of the Underworld",
     "set": "KPRC",
