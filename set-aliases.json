@@ -53,6 +53,20 @@
       "expansion": 3
     },
     {
+      "code": "TCEO",
+      "name_es": "Titanes de la Corteza — Ojos del Océano (Inglés)",
+      "name_en": "Titans of the Crust — Eyes of the Ocean",
+      "aliases": [
+        "TCEO"
+      ],
+      "type": "booster",
+      "base_cards": 84,
+      "total_images": 133,
+      "expansion": 3,
+      "language": "en",
+      "equivalent_set": "TCOO"
+    },
+    {
       "code": "KPRC",
       "name_es": "Kódem Promo",
       "name_en": "Kódem Promo",
@@ -98,42 +112,6 @@
       "base_cards": 26,
       "total_images": 36,
       "expansion": 5
-    },
-    {
-      "code": "IDRMA",
-      "name_es": "Intro Deck Raíces Místicas — Átlica",
-      "name_en": "Intro Deck Mystical Roots — Atlic",
-      "aliases": [
-        "IDRMA"
-      ],
-      "type": "intro_deck",
-      "base_cards": 22,
-      "total_images": 22,
-      "expansion": 0
-    },
-    {
-      "code": "IDRMG",
-      "name_es": "Intro Deck Raíces Místicas — Gélida",
-      "name_en": "Intro Deck Mystical Roots — Gelid",
-      "aliases": [
-        "IDRMG"
-      ],
-      "type": "intro_deck",
-      "base_cards": 22,
-      "total_images": 22,
-      "expansion": 0
-    },
-    {
-      "code": "IDRMP",
-      "name_es": "Intro Deck Raíces Místicas — Pírica",
-      "name_en": "Intro Deck Mystical Roots — Pyric",
-      "aliases": [
-        "IDRMP"
-      ],
-      "type": "intro_deck",
-      "base_cards": 22,
-      "total_images": 22,
-      "expansion": 0
     },
     {
       "code": "CAMP",
@@ -264,9 +242,41 @@
       ],
       "type": "promo",
       "base_cards": 3
+    },
+    {
+      "code": "CUSTOM",
+      "name_es": "Cartas Personalizadas",
+      "name_en": "Custom Cards",
+      "aliases": [
+        "CUSTOM"
+      ],
+      "type": "custom",
+      "base_cards": 6,
+      "total_images": 6
+    },
+    {
+      "code": "IDRM",
+      "name_es": "Triple Mazo Estructura: Raíces Místicas",
+      "name_en": "Triple Structure Deck: Mystical Roots",
+      "aliases": [
+        "IDRMA",
+        "IDRMG",
+        "IDRMP",
+        "RMR",
+        "SRMR"
+      ],
+      "type": "structure_deck",
+      "base_cards": 96,
+      "total_images": 96,
+      "expansion": 0
     }
   ],
   "_alias_lookup": {
-    "TRWA": "TRWA"
+    "TRWA": "TRWA",
+    "RMR": "IDRM",
+    "SRMR": "IDRM",
+    "IDRMA": "IDRM",
+    "IDRMG": "IDRM",
+    "IDRMP": "IDRM"
   }
 }
