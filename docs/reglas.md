@@ -90,6 +90,9 @@ TCG mexicano. Eres un **Protector** que lidera un ejército de **Adendei** (cria
 - Se incluyen en el Mazo Principal (máx recomendado: 4, límite total 24 con Adendei)
 - **No pueden cambiar de jugador**
 - Vida máxima marcada en su texto
+- **Sin carta poseída:** para causar daño, el Espectro debe pagar el **doble de puntos de vida a las cartas aliadas en su Zona Principal original** por cada punto de daño que intente infligir (no es autoinfligido — el daño se paga a aliadas en ZP original)
+- **Si una carta poseída va a Extinción:** regresa a su tipo/subtipo originales y dispara efectos de "ser enviada a Extinción" normales (como Adendei, Ixim, etc.)
+- La única zona donde pueden existir cartas poseídas es la Zona Principal
 
 ---
 
@@ -160,6 +163,8 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
    - Daños por ataque
    - Activas del jugador en turno
 
+**Importante:** Durante Fase de Batalla, cartas solo pueden enviarse a Extinción como resultado de **costo** o **Activa**; no pueden enviarse a Extinción por otros medios durante esta fase (los envíos a Extinción por 0 PV o Pasivas se resuelven en Fase Post).
+
 **O usar Vínculo Odémico** (ver §Protector)
 
 ### 5.3 Fase Post
@@ -206,7 +211,7 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 ### 6.3 Vínculo Odémico (usar Protector)
 - En Fase de Batalla, si Protector está disponible
 - Selecciona 1 Adendei disponible → usa efecto del Protector
-- **IMPORTANTE:** El turno que usas vínculo, NO puedes atacar ni usar Activa de ninguna carta en Zona Principal
+- **IMPORTANTE:** En el turno que utilizas vínculo, NO podrás atacar ni utilizar la Activa de **ninguna otra carta** en Zona Principal (la restricción aplica a todas las otras cartas; el Adendei vinculado resuelve el efecto del Protector pero no realiza ataque propio)
 - Al final del turno: Protector → 3 descansos, Adendei vinculado → 1 descanso
 
 ### 6.4 Condición de Victoria
@@ -265,6 +270,7 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 ## 9. Tipos de Daño
 
 1. **Daño por Ataque** = Daño Base + Daño Aumentado + (Multiplicadores) + Daño Adicional
+   - **Orden de aplicación (PDF v5.0 p.23):** Base → Aumentado → Multiplicadores (se aplican sobre Base+Aumentado) → Adicional
 2. **Daño por Efecto** = Daño que no proviene de la estadística de daño ni menciona "ataca"/"aumenta daño"
 3. **Daño por Costo** = Daño para poder declarar efecto/ataque
 4. **Daño por Marca** = Daño consecuencia de Quemar/Envenenar
@@ -278,6 +284,7 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 - Se declara en Fase de Batalla
 - Obligatoria a menos que diga "puede"
 - Genera descansos
+- **Efectos de "atacar múltiples cartas" con daño específico:** Si un efecto permite atacar (o atacar adicionalmente) a múltiples cartas y menciona puntos de daño específicos, ese daño **REEMPLAZA** el ataque base (no se suma). Ejemplo oficial: *Yanzi, Precisión*.
 - Puede declararse sin atacar (si efecto no está condicionado al ataque)
 - Activa de carta + Activa de Rot equipado = pueden usarse ambas (cuenta como 1 Activa)
 
@@ -306,6 +313,8 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 - Carta debe tener 1+ PV si el costo requiere dañar PV
 - **Costos siempre deben pagarse íntegramente** — si no se puede pagar completo, no se puede declarar
 - Carta debe estar disponible para pagar costo de ataque/Activa
+- **Ataque + Activa declarados simultáneamente:** si una carta declara ataque Y Activa en el mismo turno, el costo se paga **una sola vez** (no se duplica)
+- **Efectos de un solo uso copiados:** si un efecto de "1 vez por juego" es copiado por otra carta, el jugador tampoco podrá usar la carta original ni la copia otra vez en la partida
 
 ### 10.6 Requisito
 - Condición para colocar carta en el campo (ej. Espectros)
@@ -326,6 +335,10 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 - Si carta equipada es ocultada → equipos regresan a Zona de Equipo
 - Ixim/Rot no compatible revelado en carta → va a Extinción
 
+### Penalización por equipos múltiples ilegales
+- Si 2 Ixim o 2 Rot son revelados al mismo tiempo sin permiso: enviar uno a Extinción y **no puede declararse el efecto de ninguno de los dos por el resto del turno**
+- **Excepción:** Si la situación se produjo por cambio de cartas entre Zona Principal rival y la del jugador, el equipo extra se envía a **Zona de Equipos** (no a Extinción) y sí puede declararse el efecto del otro
+
 ### Equipos Compatibles (armaduras únicas)
 - Algunos equipos especifican a qué carta/energía/tipo son compatibles
 - Si la carta equipada sale sin ir a Extinción → se debe colocar suplente compatible revelada
@@ -339,6 +352,7 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 - Carta aliada enviada a campo rival que llega a 0 PV → Extinción de su jugador original
 - Equipos intercambiados deben ser compatibles con la nueva carta
 - Carta cambiada por suplente (sin Extinción): nueva carta tiene los mismos PV de la anterior
+- **Carta revelada que cambia entre Zonas Principales NO se considera "revelada nuevamente"** (no dispara efectos de "al ser revelada")
 
 ---
 
@@ -391,7 +405,9 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 
 ## 15. Vivificar
 
-- Cartas resucitadas del "Reino de la muerte" (subtipo Resurrecto)
+**Definición oficial (glosario PDF v5.0 p.40):** Vivificar es un efecto que hace que una carta deje la Zona de Extinción. **Cualquier carta que deje la Zona de Extinción se considera que está siendo vivificada**, no solo las de subtipo Resurrecto.
+
+- Las cartas de subtipo **Resurrecto** son variantes resurrectas de personajes con habilidades específicas que se activan al ser vivificadas
 - Si una carta NO dice explícitamente que puede vivificar → no puede sacar cartas de Extinción
 - Efectos activos en campo sin fecha de término terminan cuando la carta deje el campo
 
@@ -408,9 +424,9 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 | **Cháaktica** | Electricidad | Rápido e imparable |
 | **Húumica** | Vibración de materia | Potencia progresiva |
 | **Demótica** | Densidad de materia | Reordena posición de cartas |
-| **Feral** | Sin dominio elemental | Auto-buff (no es Energía formal) |
+| **Feral** | Sin dominio elemental | Poder de manada, reacciones rápidas, alta cadencia de ataque |
 
-Se pueden mezclar energías en un mazo. Feral no se considera una Energía.
+Se pueden mezclar energías en un mazo. **Feral SÍ se considera una Energía dentro del juego** (PDF v5.0 p.6: *"Dentro del juego, también se considera una Energía"*), aunque no posee dominio elemental como las otras siete. Esto significa que efectos que targetan cartas "por Energía" también aplican a cartas Ferales.
 
 ---
 
@@ -478,7 +494,7 @@ Por animal/personaje favorito (ajolotes, lobos, reptiles).
 | Zaykan, Anulación | 1 |
 | Retis, Superficie | 1 |
 | Ariam, Límite | 1 |
-| Chapalab, El Anciano | 1 |
+| Chapalsh, El Anciano | 1 |
 | Tekei, Responsabilidad | 1 |
 
 ---
@@ -507,4 +523,5 @@ En cada fase:
 
 ---
 
-_Guardado: 2026-03-17 | Fuentes: Rulebook v5.0 (40pp) + Breve Guía (19pp)_
+_Guardado: 2026-04-17 | Fuentes: Rulebook v5.0 (40pp) + Breve Guía (19pp)_
+_Revisión 2026-04-17: Auditoría vs PDF oficial. Correcciones RB-01 (Feral como Energía), RB-02 (Vínculo restricción), RB-04/05 (equipos múltiples), RB-06 (Espectro sin poseída), RB-10 (orden daño), RB-11 (cambio entre ZP), RB-12 (atacar múltiples reemplaza), RB-14 (efectos copiados), RB-15 (Vivificar definición universal), RB-16 (costos compartidos). Reporte: `.openclaw/workspace/kodem-audit-2026-04-17/07-rulebook-vs-md.md`_
