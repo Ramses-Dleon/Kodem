@@ -494,7 +494,7 @@ Por animal/personaje favorito (ajolotes, lobos, reptiles).
 | Zaykan, Anulación | 1 |
 | Retis, Superficie | 1 |
 | Ariam, Límite | 1 |
-| Chapalsh, El Anciano | 1 |
+| Chapalab, El Anciano | 1 |
 | Tekei, Responsabilidad | 1 |
 
 ---
