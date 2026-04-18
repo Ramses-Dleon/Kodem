@@ -1,0 +1,35 @@
+{
+  "page": 23,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:16:00-06:00",
+  "llm_confidence": 0.90,
+  "agreement_pct": 0.94,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "Concordancia alta en reglas §6.3 Protección, §6.4 Tipos de Daño (4 tipos), §6.5 Cambios entre Zonas. Pero OCR captura texto de Kuyovi, Salto Eléctrico omitido por LLM: 'Activa: Cambia de lugar esta carta con cualquier carta en tu Zona Principal.' y 'Pasiva: Si esta carta atacó a una carta [frente a ella], esa carta recibe 1 descanso.' Estos efectos son didácticamente relevantes al §6.5 Cambios entre Zonas. Error en heading: LLM registró '6.5 Cambios entre Zonas' pero numeración correcta del rulebook podría ser otra (verificar secuencia 6.1, 6.2, 6.3, 6.4, 6.5).",
+  "text_blocks_review": [
+    {"anchor": "p23/b01", "llm_text": "6.3 Protección", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b02", "llm_text": "Una carta está protegida si...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b03-b04", "llm_text": "2 viñetas", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b05", "llm_text": "6.4 Tipos de Daño", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b06", "llm_text": "Existen diferentes tipos de daño...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b07", "llm_text": "1. Daño por Ataque: El total de daños...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b08-b12", "llm_text": "Orden de daño: 4 viñetas (base, aumentado, multiplicadores, adicional)", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b13", "llm_text": "2. Daño por Efecto:...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b14", "llm_text": "3. Daño por Costo:...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b15", "llm_text": "4. Daño por Marca:...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b16", "llm_text": "6.5 Cambios entre Zonas", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/b17-b21", "llm_text": "Intro + 4 viñetas Cambios entre Zonas", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p23/fig-01-text-MISSING", "llm_text": "[Texto efectos de Kuyovi no extraído completo]", "ocr_match": "ocr_has_more", "divergence": "'Activa: Cambia de lugar esta carta con cualquier carta en tu Zona Principal.' y 'Pasiva: Si esta carta atacó a una carta frente a ella, esa carta recibe 1 descanso.'", "action": "merge"},
+    {"anchor": "p23/b22", "llm_text": "23", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p23/fig-01", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "re_extract"}
+  ],
+  "critical_discrepancies": [
+    "Texto de Activa y Pasiva de Kuyovi, Salto Eléctrico no capturado por LLM (didácticamente relevante para §6.5 Cambios entre Zonas)"
+  ],
+  "typos_confirmed": [
+    "OCR tiene 'TIPOS DE DANO' (sin Ñ) y 'DAÑO POR ATAQUE' mezclado - OCR-errors de tilde, LLM correcto"
+  ],
+  "recommendation": "re_extract"
+}

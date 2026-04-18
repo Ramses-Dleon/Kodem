@@ -1,0 +1,28 @@
+{
+  "page": 36,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T21:30:00-06:00",
+  "llm_confidence": 0.87,
+  "agreement_pct": 0.93,
+  "verdict": "llm_preferred",
+  "verdict_reason": "LLM cubre completamente variante Manada + §8.2 Formato Extendido + apertura tabla CARTAS LIMITADAS. LLM reconstruye correctamente palabras partidas por guiones ('Protec-tor', 'pri-meras', 'estratégi-cas'). OCR preserva estos cortes pero también omite entradas de la tabla (solo captura 'Zotz' parcialmente). Verificado en imagen: 'Tekei, Responsabilidad' es correcto en esta página (no 'Tolei' como dijo LLM p32, ni 'Telei' como leí antes — posiblemente la carta se llama Tekei y hay inconsistencia entre páginas del rulebook). OCR también pierde completamente la entrada de Tekei en la tabla. 'Adonde / Háumsca' es probable error de LLM (debería ser 'Adende' — confirmar con imagen en spot-check).",
+  "text_blocks_review": [
+    {"anchor": "p36/b01", "llm_text": "• Manada: + párrafo + condición.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p36/b02", "llm_text": "8.2 Formato Extendido + párrafo intro.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p36/b03", "llm_text": "a) Composición del Mazo: 50 cartas, hasta 3 Ravas, hasta 3 copias de Adendei, hasta 12 equipos.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p36/b04", "llm_text": "b) Selección de Cartas Suplentes: toma 3 cartas, elige 1, puede sacar 1-2 adicionales costando vida al Protector.", "ocr_match": "exact", "divergence": "LLM reconstruye 'Protec-tor' → 'Protector'. OCR preserva el corte.", "action": "keep_llm"},
+    {"anchor": "p36/b05", "llm_text": "c) Condición de Victoria: 10 cartas a Extinción o 3 con mismo nombre/arte.", "ocr_match": "exact", "divergence": "OCR 'ilustracion' sin acento. LLM correcto.", "action": "keep_llm"},
+    {"anchor": "p36/b06", "llm_text": "CARTAS LIMITADAS + tabla con Zotz (0 copias) y Tekei (1 copia).", "ocr_match": "ocr_has_more", "divergence": "OCR trunca la tabla (solo captura 'Zotz, Absorción de Energía' + encabezado). LLM tiene la entrada Tekei. Ambas son correctas; LLM más completo.", "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p36/fig-01", "type": "photo (3 copias Tun, Mensajero Celestial)", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p36/fig-02", "type": "illustration (Zotz, Absorción de Energía)", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"},
+    {"anchor": "p36/fig-03", "type": "illustration (Tekei, Responsabilidad)", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "flag"}
+  ],
+  "critical_discrepancies": [
+    "Clasificación 'Adonde / Háumsca' en figs 02 y 03 — probable error de lectura; debería ser 'Adende'.",
+    "Inconsistencia posible entre p32 ('Tolei'/'Telei'?) y p36 ('Tekei') — revisar si es la misma carta referenciada o diferentes."
+  ],
+  "typos_confirmed": [],
+  "recommendation": "spot_check_human"
+}

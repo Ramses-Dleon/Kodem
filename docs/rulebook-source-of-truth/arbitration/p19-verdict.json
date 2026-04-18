@@ -1,0 +1,22 @@
+{
+  "page": 19,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:08:00-06:00",
+  "llm_confidence": 0.88,
+  "agreement_pct": 0.70,
+  "verdict": "llm_preferred",
+  "verdict_reason": "Página casi exclusivamente gráfica (§5.2 Diagrama Estructura de turno). OCR falla catastróficamente capturando solo fragmentos ilegibles del flowchart y texto rotado vertical. LLM describe con detalle excelente los 3 componentes: leyenda cromática, flowchart principal con 5 Fases y sus nodos, y flowchart secundario 'Pasar Turno'. embedded_text completo en figuras. Nota reglamentaria (b02) capturada verbatim por ambos.",
+  "text_blocks_review": [
+    {"anchor": "p19/b01", "llm_text": "5.2 Diagrama Estructura de turno", "ocr_match": "absent", "divergence": "OCR no captura heading de sección (posiblemente en rotación vertical)", "action": "keep_llm"},
+    {"anchor": "p19/b02", "llm_text": "Nota: Las Pasivas que cumplan su condición, podrán declararse en todas las Fases a excepción de la Fase de Batalla.", "ocr_match": "partial", "divergence": "OCR captura texto fragmentado en columna vertical: 'Las Pasivas que cumplan su condición, podrán declararse en todas las Fases a excepcI...' - texto truncado pero coincide", "action": "keep_llm"},
+    {"anchor": "p19/b03", "llm_text": "19", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p19/fig-01", "type": "table", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p19/fig-02", "type": "flowchart", "legibility_llm": "needs_enhance", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p19/fig-03", "type": "flowchart", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": [],
+  "recommendation": "spot_check_human"
+}

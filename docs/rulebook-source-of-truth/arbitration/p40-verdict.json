@@ -1,0 +1,48 @@
+{
+  "page": 40,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T21:48:00-06:00",
+  "llm_confidence": 0.90,
+  "agreement_pct": 0.95,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "LLM cubre correctamente el cierre del glosario (U-Z, 9 entradas), bloque de contacto, créditos y copyright. Preserva el typo crítico 'sea ha hecho posible' verbatim. OCR aporta UN elemento estructural faltante en LLM: el encabezado 'CRÉDITOS' (verificado en imagen — aparece centrado en negrita entre las redes sociales y los créditos). LLM lo omite. Además OCR revela que el lema Kódem en copyright puede decir 'Kódem TCC' en vez de 'Kódem TCG' — posible degradación OCR pero vale verificar. Por lo demás, LLM limpia degradaciones OCR ('Adendel' vs 'Adendei', 'iran' vs 'irán', 'Irá' con mayúscula, 'JUCQO' por 'juego'). Recomendación: merge para añadir el encabezado 'Créditos' faltante en LLM.",
+  "text_blocks_review": [
+    {"anchor": "p40/b01", "llm_text": "•Usar una carta: ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b02", "llm_text": "•Usar un efecto: ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b03", "llm_text": "•Vincular: Uso del efecto del Protector... \"Vínculo Odémico\".", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b04", "llm_text": "•Vivificar: Efecto. Es un efecto... deje la zona Extinción... la zona de extinción...", "ocr_match": "exact", "divergence": "Inconsistencia preservada: 'zona Extinción' vs 'zona de extinción' (mayúscula/minúscula y con/sin 'de') — verbatim del rulebook.", "action": "keep_llm"},
+    {"anchor": "p40/b05", "llm_text": "•Zona de Bio: Zona. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b06", "llm_text": "•Zona de Equipo: Zona. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b07", "llm_text": "•Zona de Extinción: Zona. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b08", "llm_text": "•Zona de Protector: Zona. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b09", "llm_text": "•Zona Principal: Zona. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b10", "llm_text": "¿Dudas?", "ocr_match": "exact", "divergence": "OCR dice '¿DUDAS?' en mayúsculas; stylistic.", "action": "keep_llm"},
+    {"anchor": "p40/b11", "llm_text": "E-MAIL: admin@kodem.com.mx", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b12", "llm_text": "ATENCIÓN AL CLIENTE: +521 55 64 91 21 59", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b13", "llm_text": "¡Escríbenos a Redes Sociales!", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b14", "llm_text": "Diseño de Mecánicas de Juego: Sergio Mora Camargo y Wenceslao Rodríguez", "ocr_match": "ocr_has_more", "divergence": "OCR captura encabezado de sección 'CRÉDITOS' previo a este bloque — LLM no lo documenta. Merge recomendado.", "action": "merge"},
+    {"anchor": "p40/b15", "llm_text": "Personajes y universo creados por: Alan Mac Donald", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b16", "llm_text": "Edición y Diseño Gráfico: Itzel Soto", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p40/b17", "llm_text": "Agradecimientos especiales... con su apoyo este proyecto sea ha hecho posible...", "ocr_match": "exact", "divergence": "Typo verbatim 'sea ha hecho posible' preservado por ambos.", "action": "keep_llm"},
+    {"anchor": "p40/b18", "llm_text": "Este reglamento es publicado en febrero de 2026. ©2026 Adendei Entretenimiento...", "ocr_match": "exact", "divergence": "OCR dice 'Kódem TCC' en última línea; posible degradación OCR de TCG. Verificar en imagen — si dice TCC es typo verbatim; si TCG, LLM correcto.", "action": "flag_for_human"},
+    {"anchor": "p40/b19", "llm_text": "40", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p40/fig-01", "type": "infographic (cierre glosario U-Z)", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p40/fig-02", "type": "infographic (sección ¿Dudas?)", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p40/fig-03", "type": "icon (4 redes sociales)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p40/fig-04", "type": "illustration (criatura morada decorativa)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p40/fig-05", "type": "infographic (bloque de créditos)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p40/fig-06", "type": "infographic (copyright)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p40/fig-07", "type": "icon (número página 40)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [
+    "LLM omite el encabezado 'Créditos' entre redes sociales y los nombres del equipo — OCR lo captura. Merge requerido.",
+    "OCR dice 'Kódem TCC' en copyright final; verificar si es typo verbatim o degradación OCR. Imagen necesaria para decisión final."
+  ],
+  "typos_confirmed": [
+    "'sea ha hecho posible' (por 'se ha hecho posible') — b17",
+    "inconsistencia 'zona Extinción' vs 'zona de extinción' en entrada Vivificar — b04"
+  ],
+  "recommendation": "spot_check_human"
+}

@@ -1,0 +1,23 @@
+{
+  "page": 1,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:00:00-06:00",
+  "llm_confidence": 0.97,
+  "agreement_pct": 1.0,
+  "verdict": "llm_preferred",
+  "verdict_reason": "Portada con imagen dominante y texto tipográfico (logotipo, título, versión, copyright). OCR está vacío porque no captura texto embebido en gráficos complejos. LLM extrajo correctamente los 5 bloques de texto visibles y las 2 figuras (ilustración principal + logotipo).",
+  "text_blocks_review": [
+    {"anchor": "p01/b01", "llm_text": "KÓDEM\\nTRADING CARD GAME", "ocr_match": "absent", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p01/b02", "llm_text": "Libro de Reglas Oficial", "ocr_match": "absent", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p01/b03", "llm_text": "Versión 5.0", "ocr_match": "absent", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p01/b04", "llm_text": "©2026 Adender Entretenimiento S.A. de C.V. Todos los derechos reservados", "ocr_match": "absent", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p01/b05", "llm_text": "1", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p01/fig-01", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p01/fig-02", "type": "icon", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": ["Título indica 'Versión 5.0' pero proyecto se referencia como v5.1 (preservar verbatim como 5.0)"],
+  "recommendation": "accept"
+}

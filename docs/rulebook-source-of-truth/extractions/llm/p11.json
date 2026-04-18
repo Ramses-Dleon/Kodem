@@ -2,6 +2,14 @@
   "page": 11,
   "model": "opus-4-7",
   "extraction_date": "2026-04-18T19:47:00-06:00",
+  "re_extraction_pass": 2,
+  "re_extraction_date": "2026-04-18T15:58:00-06:00",
+  "re_extraction_focus": [
+    "missing_card_text",
+    "missing_flavor_texts",
+    "missing_blocks",
+    "pasiva_draxes_aliado_fix"
+  ],
   "title": "EQUIPOS COMPATIBLES / EQUIPOS MÚLTIPLES",
   "section_refs": ["§3.4"],
   "text_blocks": [
@@ -17,7 +25,7 @@
       "heading": null,
       "text": "· Una carta solo podrá ser equipada con equipos que sean compatibles.\n· Si un equipo se pretende cambiar de carta, el equipo debe ser compatible con la carta nueva.\n· Si una carta equipada abandona el campo sin ser enviada a Extinción (por ejemplo, si regresa al Mazo o se envía al campo rival), debe colocarse una carta suplente compatible revelada en el campo para mantener el equipo; de lo contrario, el equipo volverá a la Zona de Equipo.",
       "position": "top",
-      "notes": "Bullets con reglas de compatibilidad. 'compatibles', 'compatible', 'revelada' en negrita."
+      "notes": "Bullets con reglas de compatibilidad. 'compatibles', 'compatible', 'revelada' en negrita. Primer bullet usa 'solo' sin tilde; el párrafo intro (b01) usa 'sólo' con tilde — inconsistencia de la fuente preservada verbatim."
     },
     {
       "anchor": "p11/b03",
@@ -53,6 +61,195 @@
       "text": "Un jugador puede equipar 2 Ixim o 2 Rot ocultos a una carta por decisión propia, pero, si dichos equipos son revelados y no existe una condición que lo permita, el jugador deberá enviar uno de ellos a Extinción y no podrá declarar el efecto de ninguno de ellos por el resto del turno.",
       "position": "bottom",
       "notes": "Título en píldora azul. '2', 'Ixim', '2', 'Rot', 'ocultos' en negrita."
+    },
+    {
+      "anchor": "p11/b08",
+      "heading": "Carta Zaykan — Nombre",
+      "text": "Zaykan, Retorno del Ermitaño",
+      "position": "card-zaykan/title-banner",
+      "notes": "Banner superior de la carta Adendei del par A (superior izquierdo)."
+    },
+    {
+      "anchor": "p11/b09",
+      "heading": "Carta Zaykan — Tipo/Subtipo",
+      "text": "Adendei / Lítica",
+      "position": "card-zaykan/middle-banner",
+      "notes": "Banda media del tipo/subtipo."
+    },
+    {
+      "anchor": "p11/b10",
+      "heading": "Carta Zaykan — Pasiva",
+      "text": "Pasiva: Si esta carta es revelada, revela todas las cartas en Zona Principal. Ninguna Zona Principal puede estar boca abajo.",
+      "position": "card-zaykan/text-box",
+      "notes": "Reconstrucción con alto grado de confianza combinando OCR fragmentario + vision. Algunas palabras parcialmente tapadas por la superposición con Protección Selectiva; se marca legibility needs_enhance para el detalle exacto. El OCR capturó 'Si esta carta es revelada, re...' y 'las cartas en Zona Principal. Ninguna Zona Principal puede estar boca ab...'."
+    },
+    {
+      "anchor": "p11/b11",
+      "heading": "Carta Zaykan — Flavor text",
+      "text": "El portal se cerró tras de sí, el ojo abierto y su luz a la oscuridad.",
+      "position": "card-zaykan/flavor",
+      "notes": "Texto en cursiva debajo de la caja de efectos. Verbatim del OCR (verificado). CORRECCIÓN pass 2: Pass 1 omitió este flavor text completamente."
+    },
+    {
+      "anchor": "p11/b12",
+      "heading": "Carta Protección Selectiva — Nombre",
+      "text": "Protección Selectiva",
+      "position": "card-proteccion-selectiva/title-banner",
+      "notes": "Banner superior carta equipo del par A."
+    },
+    {
+      "anchor": "p11/b13",
+      "heading": "Carta Protección Selectiva — Tipo",
+      "text": "Rot",
+      "position": "card-proteccion-selectiva/middle-banner",
+      "notes": "Subtipo de equipo."
+    },
+    {
+      "anchor": "p11/b14",
+      "heading": "Carta Protección Selectiva — Activa Rápida",
+      "text": "Activa Rápida: Si un Adendei aliado es atacado, niega el ataque.",
+      "position": "card-proteccion-selectiva/text-box",
+      "notes": "Verbatim por vision + OCR."
+    },
+    {
+      "anchor": "p11/b15",
+      "heading": "Carta Protección Selectiva — Costo",
+      "text": "Costo: La carta equipada se daña 1 pto. si niega el ataque. La carta equipada no podrá atacar, ni ser curada.",
+      "position": "card-proteccion-selectiva/text-box",
+      "notes": "Verbatim por vision + OCR. 'pto.' abreviatura preservada."
+    },
+    {
+      "anchor": "p11/b16",
+      "heading": "Carta Protección Selectiva — Restricción",
+      "text": "Solo puede ser equipada a un Adendei \"Zaykan\".",
+      "position": "card-proteccion-selectiva/restriction",
+      "notes": "Línea resaltada en rojo que define la compatibilidad del equipo. 'Solo' sin tilde (verbatim)."
+    },
+    {
+      "anchor": "p11/b17",
+      "heading": "Carta Draxes — Nombre",
+      "text": "Draxes, Instinto Draconiano",
+      "position": "card-draxes/title-banner",
+      "notes": "Banner superior carta Adendei del par B (superior derecho)."
+    },
+    {
+      "anchor": "p11/b18",
+      "heading": "Carta Draxes — Tipo/Subtipo",
+      "text": "Adendei Titán / Pírica",
+      "position": "card-draxes/middle-banner",
+      "notes": "'Pírica' con tilde (verificado por vision). 'Pírica' resaltada visualmente en rojo (indica la energía que hace compatible el equipo)."
+    },
+    {
+      "anchor": "p11/b19",
+      "heading": "Carta Draxes — Pasiva",
+      "text": "Pasiva: Si 1 Adendei-Pírico Titán aliado es revelado, quema 1 carta en Zona Principal...",
+      "position": "card-draxes/text-box",
+      "notes": "CORRECCIÓN CRÍTICA pass 2: Pass 1 escribió 'Si 1 Adendei-Pírico Titán es revelado' OMITIENDO la palabra 'aliado'. Verificado por vision + OCR: la palabra 'aliado' SÍ aparece. El resto de la Pasiva queda parcialmente tapado por la superposición con la carta Cascada de Lava; texto visible termina con '...quema 1 carta en Zona Principal'. Probable continuación: '...del rival' o similar, pero marcado como elipsis por legibilidad parcial."
+    },
+    {
+      "anchor": "p11/b20",
+      "heading": "Carta Draxes — Flavor text",
+      "text": "No es un dragón, es más bien un carnotaurus con alas pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...",
+      "position": "card-draxes/flavor",
+      "notes": "Texto en cursiva debajo de la caja de efectos. Verbatim del OCR (verificado). CORRECCIÓN pass 2: Pass 1 omitió este flavor text completamente."
+    },
+    {
+      "anchor": "p11/b21",
+      "heading": "Carta Cascada de Lava — Nombre",
+      "text": "Cascada de Lava",
+      "position": "card-cascada-lava/title-banner",
+      "notes": "Banner superior carta equipo del par B."
+    },
+    {
+      "anchor": "p11/b22",
+      "heading": "Carta Cascada de Lava — Tipo",
+      "text": "Rot",
+      "position": "card-cascada-lava/middle-banner",
+      "notes": "Subtipo de equipo."
+    },
+    {
+      "anchor": "p11/b23",
+      "heading": "Carta Cascada de Lava — Activa-Rápida",
+      "text": "Activa-Rápida: Si 1 Adendei-Pírico aliado es atacado, quema a 1 Adendei rival.",
+      "position": "card-cascada-lava/text-box",
+      "notes": "Verbatim por vision + OCR. Nótese el guión en 'Activa-Rápida' (diferente de 'Activa Rápida' en Protección Selectiva — preservado verbatim)."
+    },
+    {
+      "anchor": "p11/b24",
+      "heading": "Carta Cascada de Lava — Costo/Restricción",
+      "text": "Costo: Esta carta sólo puede ser equipada a 1 Adendei-Pírico.",
+      "position": "card-cascada-lava/text-box",
+      "notes": "Verbatim por vision + OCR. 'sólo' con tilde (preservado). Línea resaltada en rojo."
+    },
+    {
+      "anchor": "p11/b25",
+      "heading": "Carta Cascada de Lava — Flavor text",
+      "text": "Se trataba de un Rot con un núcleo hirviente que con sus saltos, convertía el magma en lava.",
+      "position": "card-cascada-lava/flavor",
+      "notes": "Texto en cursiva debajo de la caja de efectos. Verbatim del OCR (verificado). CORRECCIÓN pass 2: Pass 1 omitió este flavor text completamente."
+    },
+    {
+      "anchor": "p11/b26",
+      "heading": "Carta Jane — Nombre",
+      "text": "Jane, Maniobra",
+      "position": "card-jane/title-banner",
+      "notes": "Banner superior carta Protector del par C (centro-inferior)."
+    },
+    {
+      "anchor": "p11/b27",
+      "heading": "Carta Jane — Tipo",
+      "text": "Protector",
+      "position": "card-jane/middle-banner",
+      "notes": "Tipo resaltado en rojo (indica el tipo compatible con el equipo Proliferación)."
+    },
+    {
+      "anchor": "p11/b28",
+      "heading": "Carta Jane — Activa",
+      "text": "Activa: Cura toda la vida del Adendei vinculado. Si ese Adendei es enviado a Extinción, un aliado escala 1 pto. y cura 1 pto. a todas las cartas en tu Zona Principal.",
+      "position": "card-jane/text-box",
+      "notes": "Verbatim por OCR (consistente con reporte de árbitro)."
+    },
+    {
+      "anchor": "p11/b29",
+      "heading": "Carta Proliferación — Nombre",
+      "text": "Proliferación",
+      "position": "card-proliferacion/title-banner",
+      "notes": "Banner superior carta equipo del par C."
+    },
+    {
+      "anchor": "p11/b30",
+      "heading": "Carta Proliferación — Tipo",
+      "text": "Ixim",
+      "position": "card-proliferacion/middle-banner",
+      "notes": "Subtipo de equipo."
+    },
+    {
+      "anchor": "p11/b31",
+      "heading": "Carta Proliferación — Pasiva",
+      "text": "Pasiva: Si el Protector equipado es vinculado, se cura 2 ptos.",
+      "position": "card-proliferacion/text-box",
+      "notes": "Verbatim por OCR."
+    },
+    {
+      "anchor": "p11/b32",
+      "heading": "Carta Proliferación — Restricción",
+      "text": "Solo puedes equipar esta carta a un Protector.",
+      "position": "card-proliferacion/restriction",
+      "notes": "Línea resaltada en rojo que define la compatibilidad del equipo. 'Solo' sin tilde (verbatim)."
+    },
+    {
+      "anchor": "p11/b33",
+      "heading": "Carta Proliferación — Flavor/Lore",
+      "text": "Lograr el vínculo con tu Adendei era tener también el dominio de algunos Ixim.",
+      "position": "card-proliferacion/flavor",
+      "notes": "Texto en cursiva debajo de la caja de efectos. Verbatim del OCR (verificado, la vision alucinó variantes como 'abre bien también' — se prefiere OCR que es más fiel al texto pequeño)."
+    },
+    {
+      "anchor": "p11/b34",
+      "heading": null,
+      "text": "11",
+      "position": "bottom-right-corner",
+      "notes": "Número de página."
     }
   ],
   "figures": [
@@ -61,7 +258,7 @@
       "slug": "titulo-equipos-compatibles",
       "type": "infographic",
       "bbox_pct": {"x": 4, "y": 2, "w": 35, "h": 5},
-      "description_detailed": "Banner/título 'EQUIPOS COMPATIBLES' en píldora azul/cian con el estilo característico de encabezados del rulebook.",
+      "description_detailed": "Banner/título 'EQUIPOS COMPATIBLES' en píldora azul/cian con el estilo característico de encabezados del rulebook Kódem.",
       "embedded_text": ["EQUIPOS COMPATIBLES"],
       "relation_to_text": "Introduce el bloque b01.",
       "legibility": "clear",
@@ -72,11 +269,12 @@
       "slug": "ejemplo-compatible-personaje-zaykan",
       "type": "illustration",
       "bbox_pct": {"x": 8, "y": 35, "w": 37, "h": 33},
-      "description_detailed": "Par de cartas superpuestas que ejemplifican un equipo compatible con un personaje específico. La carta izquierda/principal es un Adendei encapuchado (figura con capucha, aspecto ermitaño) y a su derecha/superpuesta una carta de equipo con ilustración de criatura reptil humanoide con armadura.\n\nLa carta Adendei se identifica como 'Zaykan, Retorno del Ermitaño', subtipo 'Adendei / Lítica'. Su Pasiva comienza con 'Si esta carta es revelada...'.\n\nLa carta de equipo se identifica como 'Protección Selectiva', subtipo 'Rot', con una Activa Rápida que permite negar un ataque a un Adendei aliado, con Costo donde la carta equipada se daña 1 pto y no podrá atacar ni ser curada. La última línea de la caja de texto, resaltada en rojo, indica la restricción de compatibilidad: 'Solo puede ser equipada a un Adendei \"Zaykan\"'.\n\nLos resaltados en rojo destacan el nombre de la compatibilidad ('Zaykan') en la carta Adendei y la cláusula de restricción en la carta equipo.\n\nEste conjunto ilustra un 'equipo compatible con un personaje específico'.",
+      "description_detailed": "Par de cartas superpuestas que ejemplifican un equipo compatible con un personaje específico. La carta izquierda/principal es un Adendei encapuchado (figura con capucha, aspecto ermitaño, atmósfera mística/nocturna) y a su derecha/superpuesta una carta de equipo con ilustración de criatura reptil humanoide con armadura.\n\nLa carta Adendei se identifica como 'Zaykan, Retorno del Ermitaño', subtipo 'Adendei / Lítica'. Su Pasiva (parcialmente tapada por superposición) dice: 'Pasiva: Si esta carta es revelada, revela todas las cartas en Zona Principal. Ninguna Zona Principal puede estar boca abajo.' Debajo de la caja de efectos, en cursiva, aparece el flavor text: 'El portal se cerró tras de sí, el ojo abierto y su luz a la oscuridad.'\n\nLa carta de equipo se identifica como 'Protección Selectiva', subtipo 'Rot', con una Activa Rápida que permite negar un ataque a un Adendei aliado: 'Activa Rápida: Si un Adendei aliado es atacado, niega el ataque.' y Costo: 'La carta equipada se daña 1 pto. si niega el ataque. La carta equipada no podrá atacar, ni ser curada.' La última línea, resaltada en rojo, indica la restricción de compatibilidad: 'Solo puede ser equipada a un Adendei \"Zaykan\"'.\n\nLos resaltados en rojo destacan el nombre de la compatibilidad ('Zaykan') en la carta Adendei y la cláusula de restricción en la carta equipo.\n\nEste conjunto ilustra un 'equipo compatible con un personaje específico'.",
       "embedded_text": [
         "Zaykan, Retorno del Ermitaño",
         "Adendei / Lítica",
-        "Pasiva: Si esta carta es revelada...",
+        "Pasiva: Si esta carta es revelada, revela todas las cartas en Zona Principal. Ninguna Zona Principal puede estar boca abajo.",
+        "El portal se cerró tras de sí, el ojo abierto y su luz a la oscuridad.",
         "Protección Selectiva",
         "Rot",
         "Activa Rápida: Si un Adendei aliado es atacado, niega el ataque.",
@@ -85,46 +283,48 @@
       ],
       "relation_to_text": "Ejemplo referenciado por el pie b04 'Ejemplo de equipo compatible con un personaje específico'.",
       "legibility": "needs_enhance",
-      "legibility_notes": "Algunas líneas de texto de habilidades se ven pequeñas a esta resolución; para recuperar literal exacto de toda la Pasiva de Zaykan puede requerirse la imagen original a mayor resolución. Los resaltados rojos son las partes visibles con mayor confianza."
+      "legibility_notes": "Algunas líneas de la Pasiva de Zaykan están parcialmente tapadas por la superposición con Protección Selectiva. El flavor text fue recuperado del OCR. El resto (restricción roja, Activa Rápida, Costo) se lee con alta confianza."
     },
     {
       "anchor": "p11/fig-03",
       "slug": "ejemplo-compatible-energia-draxes",
       "type": "illustration",
       "bbox_pct": {"x": 50, "y": 35, "w": 42, "h": 33},
-      "description_detailed": "Par de cartas superpuestas que ejemplifican un equipo compatible con una energía específica. La carta izquierda/principal muestra un dragón/carnotauro de tonos rojos intensos y la carta derecha/superpuesta muestra una escena de cascada de lava fluyendo.\n\nLa carta Adendei es 'Draxes, Instinto Draconiano', subtipo 'Adendei Titán / Pírica' (con 'Pírica' destacado en rojo). Su Pasiva indica 'Si 1 Adendei-Pírico Titán es revelado, quema 1 carta en Zona Principal...'.\n\nLa carta de equipo es 'Cascada de Lava', subtipo 'Rot', con Activa-Rápida que 'Si 1 Adendei-Pírico aliado es atacado, quema a 1 Adendei rival.' y Costo con la restricción resaltada en rojo: 'Esta carta sólo puede ser equipada a 1 Adendei-Pírico'.\n\nEste conjunto ilustra un 'equipo compatible con una energía específica' (Pírica).",
+      "description_detailed": "Par de cartas superpuestas que ejemplifican un equipo compatible con una energía específica. La carta izquierda/principal muestra un dragón/carnotauro de tonos rojos intensos y la carta derecha/superpuesta muestra una escena de cascada de lava fluyendo.\n\nLa carta Adendei es 'Draxes, Instinto Draconiano', subtipo 'Adendei Titán / Pírica' (con 'Pírica' destacado en rojo). Su Pasiva: 'Pasiva: Si 1 Adendei-Pírico Titán aliado es revelado, quema 1 carta en Zona Principal...' (el resto de la Pasiva queda parcialmente tapado por la superposición). Debajo aparece el flavor text en cursiva: 'No es un dragón, es más bien un carnotaurus con alas pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...'\n\nLa carta de equipo es 'Cascada de Lava', subtipo 'Rot', con Activa-Rápida: 'Si 1 Adendei-Pírico aliado es atacado, quema a 1 Adendei rival.' y Costo con la restricción resaltada en rojo: 'Costo: Esta carta sólo puede ser equipada a 1 Adendei-Pírico.' Debajo aparece el flavor text en cursiva: 'Se trataba de un Rot con un núcleo hirviente que con sus saltos, convertía el magma en lava.'\n\nEste conjunto ilustra un 'equipo compatible con una energía específica' (Pírica).",
       "embedded_text": [
         "Draxes, Instinto Draconiano",
         "Adendei Titán / Pírica",
-        "Pasiva: Si 1 Adendei-Pírico Titán es revelado, quema 1 carta en Zona Principal...",
+        "Pasiva: Si 1 Adendei-Pírico Titán aliado es revelado, quema 1 carta en Zona Principal...",
+        "No es un dragón, es más bien un carnotaurus con alas pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...",
         "Cascada de Lava",
         "Rot",
         "Activa-Rápida: Si 1 Adendei-Pírico aliado es atacado, quema a 1 Adendei rival.",
-        "Costo: Esta carta sólo puede ser equipada a 1 Adendei-Pírico"
+        "Costo: Esta carta sólo puede ser equipada a 1 Adendei-Pírico.",
+        "Se trataba de un Rot con un núcleo hirviente que con sus saltos, convertía el magma en lava."
       ],
       "relation_to_text": "Ejemplo referenciado por el pie b05 'Ejemplo de equipo compatible con una energía específica'.",
       "legibility": "needs_enhance",
-      "legibility_notes": "Ver observación fig-02: algunos detalles menores de texto de habilidades podrían requerir la imagen original para verificación literal completa."
+      "legibility_notes": "CORRECCIÓN CRÍTICA pass 2: Pasiva de Draxes incluye 'aliado' (pass 1 omitió la palabra). Los dos flavor texts (Draxes y Cascada de Lava) fueron recuperados del OCR — pass 1 los omitió completamente. 'Pírica'/'Pírico' con tilde en todas las ocurrencias (verificado por vision)."
     },
     {
       "anchor": "p11/fig-04",
       "slug": "ejemplo-compatible-tipo-carta-jane-proliferacion",
       "type": "illustration",
       "bbox_pct": {"x": 28, "y": 68, "w": 42, "h": 24},
-      "description_detailed": "Par de cartas superpuestas que ejemplifican un equipo compatible con un tipo de carta específico. La carta izquierda/principal muestra a una mujer con cabello sobre una motocicleta roja en actitud dinámica; la carta derecha/superpuesta muestra a una mujer de cabello oscuro rodeada de vegetación densa.\n\nLa carta izquierda es 'Jane, Maniobra', subtipo 'Protector' (destacado en rojo). Su Activa: 'Cura toda la vida del Adendei vinculado. Si ese Adendei es enviado a Extinción, un aliado escala 1 pto. y cura 1 pto. a todas las cartas en tu Zona Principal'.\n\nLa carta derecha es 'Proliferación', subtipo 'Ixim', con Pasiva: 'Si el Protector equipado es vinculado, se cura 2 ptos. Solo puedes equipar esta carta a un Protector' (última cláusula resaltada en rojo como la restricción). Incluye cita de lore: 'Lograr el vínculo con tu Adendei era tener también el dominio de algunos Ixim'.\n\nEste conjunto ilustra un 'equipo compatible con un tipo de carta específico' (tipo Protector).",
+      "description_detailed": "Par de cartas superpuestas que ejemplifican un equipo compatible con un tipo de carta específico. La carta izquierda/principal muestra a una mujer con cabello sobre una motocicleta roja en actitud dinámica; la carta derecha/superpuesta muestra a una mujer de cabello oscuro rodeada de vegetación densa.\n\nLa carta izquierda es 'Jane, Maniobra', subtipo 'Protector' (destacado en rojo). Su Activa: 'Cura toda la vida del Adendei vinculado. Si ese Adendei es enviado a Extinción, un aliado escala 1 pto. y cura 1 pto. a todas las cartas en tu Zona Principal.'\n\nLa carta derecha es 'Proliferación', subtipo 'Ixim', con Pasiva: 'Si el Protector equipado es vinculado, se cura 2 ptos.' y restricción resaltada en rojo: 'Solo puedes equipar esta carta a un Protector.' Debajo aparece el flavor text en cursiva: 'Lograr el vínculo con tu Adendei era tener también el dominio de algunos Ixim.'\n\nEste conjunto ilustra un 'equipo compatible con un tipo de carta específico' (tipo Protector).",
       "embedded_text": [
         "Jane, Maniobra",
         "Protector",
-        "Activa: Cura toda la vida del Adendei vinculado. Si ese Adendei es enviado a Extinción, un aliado escala 1 pto. y cura 1 pto. a todas las cartas en tu Zona Principal",
+        "Activa: Cura toda la vida del Adendei vinculado. Si ese Adendei es enviado a Extinción, un aliado escala 1 pto. y cura 1 pto. a todas las cartas en tu Zona Principal.",
         "Proliferación",
         "Ixim",
         "Pasiva: Si el Protector equipado es vinculado, se cura 2 ptos.",
-        "Solo puedes equipar esta carta a un Protector",
-        "Lograr el vínculo con tu Adendei era tener también el dominio de algunos Ixim"
+        "Solo puedes equipar esta carta a un Protector.",
+        "Lograr el vínculo con tu Adendei era tener también el dominio de algunos Ixim."
       ],
       "relation_to_text": "Ejemplo referenciado por el pie b06 'Ejemplo de equipo compatible con un tipo de carta específico'.",
       "legibility": "needs_enhance",
-      "legibility_notes": "Texto de habilidades parcialmente pequeño; los elementos resaltados en rojo (restricciones de compatibilidad y tipo 'Protector') son la clave del ejemplo y se leen con alta confianza."
+      "legibility_notes": "Texto de habilidades parcialmente pequeño; elementos resaltados en rojo (restricciones de compatibilidad y tipo 'Protector') se leen con alta confianza. Flavor text recuperado del OCR."
     },
     {
       "anchor": "p11/fig-05",
@@ -149,6 +349,6 @@
       "legibility_notes": null
     }
   ],
-  "page_notes": "Página continúa 3.4 con reglas de compatibilidad (armaduras/equipos únicos) y equipos múltiples. Presenta tres pares de cartas como ejemplos de compatibilidad: por personaje (Zaykan + Protección Selectiva), por energía (Draxes + Cascada de Lava), por tipo de carta (Jane + Proliferación). Las restricciones están resaltadas en rojo sobre las cartas.",
-  "self_confidence": 0.88
+  "page_notes": "Página continúa §3.4 con reglas de compatibilidad (armaduras/equipos únicos) y equipos múltiples. Presenta tres pares de cartas como ejemplos de compatibilidad: por personaje (Zaykan + Protección Selectiva), por energía (Draxes + Cascada de Lava), por tipo de carta (Jane + Proliferación). Las restricciones están resaltadas en rojo sobre las cartas.\n\nPASS 2 NOTES: (1) CRÍTICO — Pasiva de Draxes (b19, fig-03) corregida para incluir 'aliado': 'Adendei-Pírico Titán aliado es revelado' (pass 1 omitió la palabra). (2) Se agregaron flavor texts que pass 1 había omitido: Zaykan 'El portal se cerró tras de sí, el ojo abierto y su luz a la oscuridad.' (b11), Draxes 'No es un dragón, es más bien un carnotaurus con alas pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...' (b20), Cascada de Lava 'Se trataba de un Rot con un núcleo hirviente que con sus saltos, convertía el magma en lava.' (b25), Proliferación 'Lograr el vínculo con tu Adendei era tener también el dominio de algunos Ixim.' (b33). (3) Se agregaron bloques separados b08-b33 para cada texto impreso en las 6 cartas ejemplo (nombres, tipos/subtipos, habilidades, costos, restricciones, flavor). (4) Variabilidad 'sólo/solo' con/sin tilde preservada verbatim (párrafo intro usa 'sólo', bullet 1 usa 'solo', restricciones de cartas usan 'Solo'/'sólo' según cómo están impresas).",
+  "self_confidence": 0.92
 }

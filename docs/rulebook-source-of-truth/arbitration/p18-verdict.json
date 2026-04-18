@@ -1,0 +1,30 @@
+{
+  "page": 18,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:06:00-06:00",
+  "llm_confidence": 0.94,
+  "agreement_pct": 0.96,
+  "verdict": "llm_preferred",
+  "verdict_reason": "LLM captura los 12 bloques reglamentarios de §5.1 Descansos con estructura clara: Criterios de Resolución, Nota sobre Pasiva-Rápida (que p16 omitió aquí SÍ aparece), 3 Generalidades en viñetas, y Actualización. OCR confirma contenido. Los 2 diagramas complejos (Aplicar/Actualizar Descansos para Adendei/Rava/Token y Protector) son bien descritos por LLM con embedded_text completo.",
+  "text_blocks_review": [
+    {"anchor": "p18/b01", "llm_text": "CRITERIOS DE RESOLUCIÓN DE MÚLTIPLES PASIVAS", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p18/b02", "llm_text": "Si múltiples Pasivas...alternará entre jugadores", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p18/b03", "llm_text": "Nota: Durante las Fases Previa, Post, Equipos y Fin de turno, el jugador rival solo puede revelar cartas con Pasiva-Rápida...", "ocr_match": "exact", "divergence": "Esta nota confirma que la NOTA faltante en p16 era correcta - aquí reaparece formalmente", "action": "keep_llm"},
+    {"anchor": "p18/b04", "llm_text": "5.1 DESCANSOS", "ocr_match": "absent", "divergence": "OCR no captura el heading explícito '5.1 DESCANSOS' pero está implícito por el contexto", "action": "keep_llm"},
+    {"anchor": "p18/b05", "llm_text": "Después de utilizar tus cartas...denomina 'disponible'", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p18/b06", "llm_text": "GENERALIDADES", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p18/b07", "llm_text": "·Las cartas Adendei, Rava y Token...no podrán añadirse más de 2 descansos", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p18/b08", "llm_text": "·Los Protectores siempre tendrán 3 turnos de descanso...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p18/b09", "llm_text": "·La declaración de Activa de las cartas equipo Rot NO aplicarán descansos...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p18/b10", "llm_text": "ACTUALIZACIÓN DE DESCANSOS", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p18/b11", "llm_text": "Al final del turno si se declaró ataque o Activa...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p18/b12", "llm_text": "18", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p18/fig-01", "type": "infographic", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p18/fig-02", "type": "infographic", "legibility_llm": "needs_enhance", "description_quality": "excellent", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": [],
+  "recommendation": "accept"
+}

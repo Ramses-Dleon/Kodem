@@ -1,0 +1,37 @@
+{
+  "page": 22,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:14:00-06:00",
+  "llm_confidence": 0.84,
+  "agreement_pct": 0.75,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "§6.2 Cambios de Estadísticas: definiciones de 5 mecanismos coinciden exactamente. PERO OCR captura texto importante de cartas ejemplo que LLM omitió: (1) Xilan Calma tiene 'Activa: Esta carta puede escalar 1-5 ptos. una vez mientras esté en el campo' y 'Costos Para usar A...', (2) Yakerr Encuentro tiene 'Activa Rápida: Feraliza un Adendei rival mientras esta carta está en el campo. Costo: Esta carta podrá atacar solo a Adendei-Feral', (3) Texto de flavor 'Silencia tu mente y escucha la sinfonía de tu interior' (Xilan). Estos son efectos de carta reales asociados didácticamente a los mecanismos. Además el símbolo '⌀' podría ser incorrecto — OCR no confirma ese carácter.",
+  "text_blocks_review": [
+    {"anchor": "p22/b01", "llm_text": "6.2 CAMBIOS DE ESTADÍSTICAS", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p22/b02", "llm_text": "Algunas cartas también podrán modificar las estadísticas...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p22/b03", "llm_text": "ESCALAR: Incrementar los puntos de daño...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p22/b04", "llm_text": "⌀ = 3", "ocr_match": "absent", "divergence": "OCR no captura este símbolo; posible mal-lectura LLM. Verificar en PNG", "action": "flag_for_human"},
+    {"anchor": "p22/b05", "llm_text": "CURAR: Incrementa los puntos de vida...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p22/b06", "llm_text": "⌀ = 2", "ocr_match": "absent", "divergence": "Ídem b04. OCR sí captura '= 2' cerca de CURAR, no DESCENDER", "action": "flag_for_human"},
+    {"anchor": "p22/b07", "llm_text": "DESCENDER: Disminuir los puntos de daño...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p22/b08", "llm_text": "FERALIZAR: Es un efecto que hace que una carta pierda 1 de sus energías originales...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p22/b09", "llm_text": "DAÑAR: Disminuir los puntos de vida...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p22/b10", "llm_text": "22", "ocr_match": "absent", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p22/fig-text-MISSING-Xilan", "llm_text": "[Texto carta Xilan no extraído]", "ocr_match": "ocr_has_more", "divergence": "'Activa: Esta carta puede escalar 1-5 ptos. una vez mientras esté en el campo' + flavor 'Silencia tu mente y escucha la sinfonía de tu interior'", "action": "merge"},
+    {"anchor": "p22/fig-text-MISSING-Yakerr", "llm_text": "[Texto carta Yakerr no extraído]", "ocr_match": "ocr_has_more", "divergence": "'Activa Rápida: Feraliza un Adendei rival mientras esta carta está en el campo. Costo: Esta carta podrá atacar solo a Adendei-Feral'", "action": "merge"}
+  ],
+  "figures_review": [
+    {"anchor": "p22/fig-01-05", "type": "icon", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "flag"},
+    {"anchor": "p22/fig-06-10", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "re_extract"}
+  ],
+  "critical_discrepancies": [
+    "Texto de Activa de carta Xilan no extraído: 'Esta carta puede escalar 1-5 ptos. una vez mientras esté en el campo'",
+    "Texto de Activa Rápida de carta Yakerr no extraído: 'Feraliza un Adendei rival mientras esta carta está en el campo'",
+    "Símbolo '⌀' en b04/b06 no confirmado por OCR — posible mal-lectura"
+  ],
+  "typos_confirmed": [
+    "'Yakerr' (¿vs 'Yakert'?) - OCR dice 'Yakerr', LLM dice 'Yakert'. Verificar PNG",
+    "'Bora' vs 'Boras' - inconsistencia entre OCR y LLM"
+  ],
+  "recommendation": "re_extract"
+}

@@ -1,0 +1,24 @@
+{
+  "page": 37,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T21:36:00-06:00",
+  "llm_confidence": 0.78,
+  "agreement_pct": 0.88,
+  "verdict": "llm_preferred",
+  "verdict_reason": "LLM estructura correctamente la página como transición: tabla de Cartas Limitadas (5 filas con Zots Rechazo, Zaykan Anulación, Retis Superficie, Ariam Límite, Chapalab El Anciano) + banner §9 GLOSARIO + primeras 2 entradas. Verificado con imagen: los 5 nombres de cartas son correctos. OCR aporta valor adicional capturando los textos impresos dentro de las miniaturas de cartas (Activa de Zots, Pasiva de Zaykan, Activa de Retis, Pasiva-Rápida de Chapalab) que LLM solo describió como figures sin transcripción. La baja confianza de LLM (0.78) se debe a la densidad mixta y a que las descripciones de cartas en la tabla no incluyeron los efectos impresos. Los 2 glosario entries están completos y correctos en ambos. OCR confirma: 'abismada' en cursiva, '(ver 6.1. Marcas)' con 'ver' minúscula (LLM 'Ver' con mayúscula — menor inconsistencia).",
+  "text_blocks_review": [
+    {"anchor": "p37/b01", "llm_text": "NOMBRE DE LA CARTA   NO. DE COPIAS", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p37/b02", "llm_text": "9. GLOSARIO", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p37/b03", "llm_text": "•Abismar: Marca. Una carta abismada ataca al azar; lanza un dado para determinar el objetivo del ataque. (Ver 6.1. Marcas).", "ocr_match": "exact", "divergence": "OCR usa 'ver' minúscula en la referencia cruzada; LLM 'Ver' mayúscula. Revisar stylization consistente con otras entradas.", "action": "keep_llm"},
+    {"anchor": "p37/b04", "llm_text": "•Daño por costo: Daños que se realizan para poder resolver la declaración de un ataque y/o efecto (Ver 6.3. Tipos de Daño).", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p37/b05", "llm_text": "37", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p37/fig-01", "type": "table (Cartas Limitadas — 5 entradas)", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"},
+    {"anchor": "p37/fig-02", "type": "banner (9. GLOSARIO)", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p37/fig-03", "type": "icon (número página 37)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": [],
+  "recommendation": "accept"
+}

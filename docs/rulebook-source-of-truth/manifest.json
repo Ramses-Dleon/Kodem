@@ -1,0 +1,40 @@
+{
+  "rulebook_version": "5.1",
+  "generated_at": "2026-04-18T22:21:05+00:00",
+  "pdf_sha256": "05672af59629e1e8c7ead6d9487aba107506d239c4863eec49fc28ab45479b03",
+  "stats": {
+    "total_pages": 40,
+    "total_blocks": 558,
+    "total_figures": 207,
+    "re_extracted_pages": 9,
+    "avg_confidence": 0.9073,
+    "avg_confidence_pass2": 0.9189,
+    "total_typos_preserved": 75,
+    "human_review_count": 1,
+    "verdicts": {
+      "both_agree": 14,
+      "llm_preferred": 13,
+      "ocr_preferred": 12,
+      "needs_human": 1
+    }
+  },
+  "files": [
+    {
+      "path": "master-rulebook-v5.1.md",
+      "size_bytes": 489898,
+      "sha256": "e2a14fe23b0701e2b51af7c11437ce5a283991b033ba19f169cf1bfda00d95d5",
+      "format": "markdown",
+      "description": "Documento legible humano con TOC, bloques, figuras y apéndices"
+    },
+    {
+      "path": "master-rulebook-v5.1.json",
+      "size_bytes": 643638,
+      "sha256": "ad8d60ddc59a58832a9bc761770857ddf86b99904280f0678f00242a265968de",
+      "format": "json",
+      "description": "JSON estructurado con todas las páginas, anchors_index, typos y human_review_pending"
+    }
+  ],
+  "human_review_pending": [
+    16
+  ]
+}

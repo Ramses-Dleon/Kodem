@@ -2,6 +2,9 @@
   "page": 22,
   "model": "opus-4-7",
   "extraction_date": "2026-04-18T20:05:00-06:00",
+  "re_extraction_pass": 2,
+  "re_extraction_date": "2026-04-18T15:58:00-06:00",
+  "re_extraction_focus": ["missing_card_text", "card_example_blocks", "symbol_verification", "bullet_order_correction"],
   "title": "6.2 CAMBIOS DE ESTADÍSTICAS",
   "section_refs": ["§6.2"],
   "text_blocks": [
@@ -30,8 +33,8 @@
       "anchor": "p22/b04",
       "heading": null,
       "text": "⌀ = 3",
-      "position": "middle",
-      "notes": "notación numérica al lado del icono de ESCALAR. El símbolo ⌀ aparece como un círculo con diagonal; posible glifo estilizado de estadística de daño"
+      "position": "middle-left",
+      "notes": "anotación/ejemplo numérico asociado al bullet ESCALAR; el símbolo '⌀' NO es un glifo tipográfico sino el ICONO DE DAÑO del juego (círculo estilizado con diagonal), representado inline como anotación de ejemplo. Convenciones: usar '⌀' como placeholder Unicode del icono de daño."
     },
     {
       "anchor": "p22/b05",
@@ -42,17 +45,17 @@
     },
     {
       "anchor": "p22/b06",
-      "heading": null,
-      "text": "⌀ = 2",
-      "position": "middle",
-      "notes": "notación numérica al lado del icono de DESCENDER"
-    },
-    {
-      "anchor": "p22/b07",
       "heading": "DESCENDER",
       "text": "•DESCENDER: Disminuir los puntos de daño de una carta permanentemente.",
       "position": "middle",
       "notes": "viñeta, término en mayúsculas"
+    },
+    {
+      "anchor": "p22/b07",
+      "heading": null,
+      "text": "⌀ = 2",
+      "position": "middle-right",
+      "notes": "anotación/ejemplo numérico asociado al bullet DESCENDER; el símbolo '⌀' es el ICONO DE DAÑO del juego (círculo con diagonal), no un glifo tipográfico"
     },
     {
       "anchor": "p22/b08",
@@ -74,6 +77,139 @@
       "text": "22",
       "position": "bottom-center",
       "notes": "número de página (folio)"
+    },
+    {
+      "anchor": "p22/b11",
+      "heading": "Jokokan, Guardián de la Corteza — Nombre",
+      "text": "Jokokan, Guardián de la Corteza",
+      "position": "carta-ejemplo-superior-izquierda",
+      "notes": "nombre impreso en la carta ejemplo asociada a ESCALAR"
+    },
+    {
+      "anchor": "p22/b12",
+      "heading": "Jokokan, Guardián de la Corteza — Subtipo",
+      "text": "Adendei Guardián / Lítica",
+      "position": "carta-ejemplo-superior-izquierda",
+      "notes": "subtipo/clasificación en letra pequeña debajo del nombre"
+    },
+    {
+      "anchor": "p22/b13",
+      "heading": "Jokokan, Guardián de la Corteza — Costo",
+      "text": "Costo: Después de atacar, esta carta desciende 1 pto. y es dañada 1 pto.",
+      "position": "carta-ejemplo-superior-izquierda",
+      "notes": "texto de regla Costo impreso en la carta ejemplo"
+    },
+    {
+      "anchor": "p22/b14",
+      "heading": "Jokokan, Guardián de la Corteza — Flavor",
+      "text": "Fauces y un infinito vacío esperan a aquel que coloque un solo pie en los dominos del Árbol...",
+      "position": "carta-ejemplo-superior-izquierda",
+      "notes": "flavor text en cursiva; preservar 'dominos' tal como aparece (sin tilde/sin s final, transcripción verbatim)"
+    },
+    {
+      "anchor": "p22/b15",
+      "heading": "Xilan, Calma — Nombre",
+      "text": "Xilan, Calma",
+      "position": "carta-ejemplo-superior-derecha",
+      "notes": "nombre impreso en la carta ejemplo asociada a ESCALAR (ejemplo de la regla)"
+    },
+    {
+      "anchor": "p22/b16",
+      "heading": "Xilan, Calma — Subtipo",
+      "text": "Adendei / Húumica",
+      "position": "carta-ejemplo-superior-derecha",
+      "notes": "subtipo en letra pequeña (transcripción aproximada; podría requerir revisión a 300dpi)"
+    },
+    {
+      "anchor": "p22/b17",
+      "heading": "Xilan, Calma — Activa",
+      "text": "Activa: Esta carta puede escalar 1-5 ptos. una vez mientras esté en el campo.",
+      "position": "carta-ejemplo-superior-derecha",
+      "notes": "texto de regla Activa impreso en la carta ejemplo"
+    },
+    {
+      "anchor": "p22/b18",
+      "heading": "Xilan, Calma — Costo",
+      "text": "Costo: Para usar su Activa, daña los mismos ptos. escalados a todos los Adendei en tu campo.",
+      "position": "carta-ejemplo-superior-derecha",
+      "notes": "texto de regla Costo impreso en la carta ejemplo"
+    },
+    {
+      "anchor": "p22/b19",
+      "heading": "Ariem, Balance — Nombre",
+      "text": "Ariem, Balance",
+      "position": "carta-ejemplo-izquierda-media-baja",
+      "notes": "nombre impreso en la carta ejemplo asociada probablemente a CURAR"
+    },
+    {
+      "anchor": "p22/b20",
+      "heading": "Ariem, Balance — Subtipo",
+      "text": "Adendei / Átlica",
+      "position": "carta-ejemplo-izquierda-media-baja",
+      "notes": "subtipo en letra pequeña debajo del nombre"
+    },
+    {
+      "anchor": "p22/b21",
+      "heading": "Ariem, Balance — Activa",
+      "text": "Activa: Si esta carta ataca, cura 1 pto. a una carta aliada.",
+      "position": "carta-ejemplo-izquierda-media-baja",
+      "notes": "texto de regla Activa impreso en la carta ejemplo"
+    },
+    {
+      "anchor": "p22/b22",
+      "heading": "Ariem, Balance — Flavor",
+      "text": "Silencia tu mente y escucha la sinfonía de tu interior.",
+      "position": "carta-ejemplo-izquierda-media-baja",
+      "notes": "flavor text en cursiva"
+    },
+    {
+      "anchor": "p22/b23",
+      "heading": "Yakerr, Encuentro — Nombre",
+      "text": "Yakerr, Encuentro",
+      "position": "carta-ejemplo-derecha-media-baja",
+      "notes": "nombre impreso en la carta ejemplo asociada a FERALIZAR"
+    },
+    {
+      "anchor": "p22/b24",
+      "heading": "Yakerr, Encuentro — Subtipo",
+      "text": "Adendei / Feral",
+      "position": "carta-ejemplo-derecha-media-baja",
+      "notes": "subtipo en letra pequeña debajo del nombre"
+    },
+    {
+      "anchor": "p22/b25",
+      "heading": "Yakerr, Encuentro — Activa Rápida",
+      "text": "Activa Rápida: Feraliza un Adendei rival mientras esta carta está en el campo.",
+      "position": "carta-ejemplo-derecha-media-baja",
+      "notes": "texto de regla Activa Rápida impreso en la carta ejemplo"
+    },
+    {
+      "anchor": "p22/b26",
+      "heading": "Yakerr, Encuentro — Costo",
+      "text": "Costo: Esta carta podrá atacar solo a Adendei-Feral.",
+      "position": "carta-ejemplo-derecha-media-baja",
+      "notes": "texto de regla Costo impreso en la carta ejemplo"
+    },
+    {
+      "anchor": "p22/b27",
+      "heading": "Boras, Poder Kósmico — Nombre",
+      "text": "Boras, Poder Kósmico",
+      "position": "carta-ejemplo-inferior-derecha",
+      "notes": "nombre impreso en la carta ejemplo asociada a DAÑAR"
+    },
+    {
+      "anchor": "p22/b28",
+      "heading": "Boras, Poder Kósmico — Subtipo",
+      "text": "Adendei Kósmico / Gélida",
+      "position": "carta-ejemplo-inferior-derecha",
+      "notes": "subtipo en letra pequeña debajo del nombre (transcripción aproximada)"
+    },
+    {
+      "anchor": "p22/b29",
+      "heading": "Boras, Poder Kósmico — Activa",
+      "text": "Activa: Esta carta da 1 pto. adicional por cada carta rival en descenso.",
+      "position": "carta-ejemplo-inferior-derecha",
+      "notes": "texto de regla Activa impreso en la carta ejemplo"
     }
   ],
   "figures": [
@@ -84,9 +220,9 @@
       "bbox_pct": {"x": 60, "y": 18, "w": 14, "h": 12},
       "description_detailed": "Icono asociado al término ESCALAR. Consiste en una flecha estilizada con dirección ascendente (o descendente con rayas, según lectura) en tonos rojos intensos, renderizada con un estilo dinámico que sugiere movimiento y poder ofensivo. Las líneas son limpias, con gradientes del rojo claro al rojo oscuro.\n\nEl icono aparece al lado o por encima de la notación '⌀ = 3' y funciona como símbolo visual de la acción de incrementar permanentemente los puntos de daño de una carta. El fondo blanco de la página hace destacar el icono, que tiene una presencia gráfica fuerte.\n\nEl estilo coincide con la iconografía general del rulebook Kódem: iconos planos/semi-planos, colores saturados, con función identificativa inmediata del mecanismo de cambio de estadística.",
       "embedded_text": ["⌀ = 3"],
-      "relation_to_text": "Refuerza visualmente el bullet 'ESCALAR' (b03); la cifra acompañante ('3') indica ejemplo del incremento aplicado.",
-      "legibility": "needs_enhance",
-      "legibility_notes": "El glifo preciso del icono (flecha, número estilizado) y el símbolo '⌀' podrían interpretarse con mayor seguridad a 300dpi."
+      "relation_to_text": "Refuerza visualmente el bullet 'ESCALAR' (b03); la cifra acompañante ('3') indica ejemplo del incremento aplicado. Nota: el símbolo '⌀' es el icono de DAÑO del juego (círculo con diagonal), no un glifo tipográfico.",
+      "legibility": "clear",
+      "legibility_notes": "Confirmado en re-extracción pass 2: el símbolo '⌀' es una representación del icono de daño del juego, no un glifo Unicode estándar. Se preserva como '⌀' para mantener compatibilidad textual."
     },
     {
       "anchor": "p22/fig-02",
@@ -95,9 +231,9 @@
       "bbox_pct": {"x": 60, "y": 48, "w": 14, "h": 12},
       "description_detailed": "Icono asociado al término DESCENDER. Es una flecha estilizada de dirección descendente en tonos azules, con trazos que sugieren velocidad o caída controlada. Los colores fríos contrastan con el icono rojo de ESCALAR, marcando visualmente la oposición de funciones (incrementar vs disminuir daño).\n\nAcompaña a la notación '⌀ = 2'. La presencia conjunta de ambos iconos (ESCALAR/DESCENDER) crea un par visual que comunica la idea de modificación permanente del daño en direcciones opuestas.\n\nEstilo plano/semi-plano, con gradientes suaves, consistente con el lenguaje visual del rulebook. El icono destaca sobre el fondo blanco.",
       "embedded_text": ["⌀ = 2"],
-      "relation_to_text": "Refuerza visualmente el bullet 'DESCENDER' (b07); la cifra '2' indica ejemplo del decremento aplicado.",
-      "legibility": "needs_enhance",
-      "legibility_notes": "Confirmación exacta del glifo y del símbolo '⌀' requiere inspección a mayor resolución."
+      "relation_to_text": "Refuerza visualmente el bullet 'DESCENDER' (b06); la cifra '2' indica ejemplo del decremento aplicado. Nota: el símbolo '⌀' es el icono de DAÑO del juego, no un glifo tipográfico.",
+      "legibility": "clear",
+      "legibility_notes": "Confirmado en re-extracción pass 2: el símbolo '⌀' es una representación del icono de daño del juego."
     },
     {
       "anchor": "p22/fig-03",
@@ -136,10 +272,10 @@
       "anchor": "p22/fig-06",
       "slug": "jokokan-guardian-corteza-ilustracion",
       "type": "illustration",
-      "bbox_pct": {"x": 4, "y": 14, "w": 30, "h": 22},
-      "description_detailed": "Ilustración de la carta 'Jokokan, Guardián de la Corteza'. La imagen presenta una criatura reptiliana o anfibia grande y robusta, con postura erguida, texturas rugosas en la piel que recuerdan a corteza de árbol. Los tonos dominantes son verdes y marrones terrosos, coherentes con el nombre 'Guardián de la Corteza'.\n\nEl fondo muestra un bosque denso con luz filtrada entre los árboles, creando una atmósfera de misterio selvático y profundidad natural. La composición enfatiza la imponencia de la criatura en su hábitat.\n\nEstilo de ilustración digital con colores saturados, contornos definidos y contraste alto entre la criatura y el fondo forestal. Encuadre vertical tipo carta. Funciona como ejemplo visual asociado (probablemente) al concepto ESCALAR o un efecto de la página.",
-      "embedded_text": ["Jokokan, Guardián de la Corteza"],
-      "relation_to_text": "Ejemplo visual de carta asociada al mecanismo ESCALAR (incremento de daño permanente).",
+      "bbox_pct": {"x": 23, "y": 28, "w": 22, "h": 28},
+      "description_detailed": "Ilustración de la carta 'Jokokan, Guardián de la Corteza'. La imagen presenta una criatura reptiliana o anfibia grande y robusta, con postura erguida, texturas rugosas en la piel que recuerdan a corteza de árbol. Los tonos dominantes son verdes y marrones terrosos, coherentes con el nombre 'Guardián de la Corteza'.\n\nEl fondo muestra un bosque denso con luz filtrada entre los árboles, creando una atmósfera de misterio selvático y profundidad natural. La composición enfatiza la imponencia de la criatura en su hábitat.\n\nEstilo de ilustración digital con colores saturados, contornos definidos y contraste alto entre la criatura y el fondo forestal. Encuadre vertical tipo carta. La carta lleva impreso el texto 'Costo: Después de atacar, esta carta desciende 1 pto. y es dañada 1 pto.' y el flavor 'Fauces y un infinito vacío esperan a aquel que coloque un solo pie en los dominos del Árbol...'. Asociada visualmente al mecanismo ESCALAR/DESCENDER.",
+      "embedded_text": ["Jokokan, Guardián de la Corteza", "Adendei Guardián / Lítica", "Costo: Después de atacar, esta carta desciende 1 pto. y es dañada 1 pto.", "Fauces y un infinito vacío esperan a aquel que coloque un solo pie en los dominos del Árbol..."],
+      "relation_to_text": "Ejemplo visual de carta asociada al mecanismo ESCALAR/DESCENDER (Costo que implica descender y dañar tras atacar).",
       "legibility": "clear",
       "legibility_notes": null
     },
@@ -147,10 +283,10 @@
       "anchor": "p22/fig-07",
       "slug": "xilan-calma-ilustracion",
       "type": "illustration",
-      "bbox_pct": {"x": 68, "y": 32, "w": 28, "h": 20},
-      "description_detailed": "Ilustración de la carta 'Xilan, Calma'. Muestra una criatura pequeña y redondeada tipo armadillo o tatú, con concha dorsal prominente en colores cálidos anaranjados y marrones. La criatura interactúa con un pequeño elemento vegetal (flor), transmitiendo tranquilidad y docilidad.\n\nEl fondo presenta tonos azules y verdes vibrantes con hierbas altas y cielo despejado, creando un ambiente sereno y campestre. El estilo es ilustración digital colorida con líneas suaves y alta saturación.\n\nLa composición general transmite paz y equilibrio, reforzando el concepto temático de la carta ('Calma'). Posiblemente asociada visualmente al mecanismo CURAR dado su aire pacífico/restaurador.",
-      "embedded_text": ["Xilan, Calma"],
-      "relation_to_text": "Ejemplo visual asociado posiblemente al mecanismo CURAR (restauración de vida), por su temática de serenidad.",
+      "bbox_pct": {"x": 54, "y": 14, "w": 22, "h": 28},
+      "description_detailed": "Ilustración de la carta 'Xilan, Calma'. Muestra una criatura pequeña y redondeada tipo armadillo o tatú, con concha dorsal prominente en colores cálidos anaranjados y marrones. La criatura interactúa con un pequeño elemento vegetal (flor), transmitiendo tranquilidad y docilidad.\n\nEl fondo presenta tonos azules y verdes vibrantes con hierbas altas y cielo despejado, creando un ambiente sereno y campestre. El estilo es ilustración digital colorida con líneas suaves y alta saturación.\n\nLa carta lleva impreso el texto 'Activa: Esta carta puede escalar 1-5 ptos. una vez mientras esté en el campo.' y 'Costo: Para usar su Activa, daña los mismos ptos. escalados a todos los Adendei en tu campo.'. Es el ejemplo didáctico central del mecanismo ESCALAR.",
+      "embedded_text": ["Xilan, Calma", "Adendei / Húumica", "Activa: Esta carta puede escalar 1-5 ptos. una vez mientras esté en el campo.", "Costo: Para usar su Activa, daña los mismos ptos. escalados a todos los Adendei en tu campo."],
+      "relation_to_text": "Ejemplo visual principal del mecanismo ESCALAR, con texto impreso que demuestra la mecánica.",
       "legibility": "clear",
       "legibility_notes": null
     },
@@ -158,21 +294,21 @@
       "anchor": "p22/fig-08",
       "slug": "ariem-balance-ilustracion",
       "type": "illustration",
-      "bbox_pct": {"x": 4, "y": 42, "w": 28, "h": 22},
-      "description_detailed": "Ilustración de la carta 'Ariem, Balance'. Muestra una criatura acuática elegante tipo plesiosaurio o serpiente marina, con cuerpo alargado y cuello esbelto. Colores predominantes: azules turquesa y violetas profundos, con destellos bioluminiscentes.\n\nEl ambiente es subacuático o de transición agua-aire, con burbujas y ondulaciones que envuelven a la criatura. Estilo digital con fondos oscuros y criatura luminosa en primer plano.\n\nComposición circular del cuerpo que refuerza el concepto 'Balance'. Encuadre vertical típico de carta. Asociada posiblemente a DESCENDER o FERALIZAR según el flujo de la página.",
-      "embedded_text": ["Ariem, Balance"],
-      "relation_to_text": "Ejemplo visual asociado al concepto DESCENDER o FERALIZAR según posicionamiento en la página.",
+      "bbox_pct": {"x": 54, "y": 49, "w": 22, "h": 28},
+      "description_detailed": "Ilustración de la carta 'Ariem, Balance'. Muestra una criatura acuática elegante tipo plesiosaurio o serpiente marina, con cuerpo alargado y cuello esbelto. Colores predominantes: azules turquesa y violetas profundos, con destellos bioluminiscentes.\n\nEl ambiente es subacuático o de transición agua-aire, con burbujas y ondulaciones que envuelven a la criatura. Estilo digital con fondos oscuros y criatura luminosa en primer plano.\n\nLa carta lleva impreso el texto 'Activa: Si esta carta ataca, cura 1 pto. a una carta aliada.' y el flavor 'Silencia tu mente y escucha la sinfonía de tu interior.'. Asociada al mecanismo CURAR.",
+      "embedded_text": ["Ariem, Balance", "Adendei / Átlica", "Activa: Si esta carta ataca, cura 1 pto. a una carta aliada.", "Silencia tu mente y escucha la sinfonía de tu interior."],
+      "relation_to_text": "Ejemplo visual del mecanismo CURAR (restauración de vida).",
       "legibility": "clear",
       "legibility_notes": null
     },
     {
       "anchor": "p22/fig-09",
-      "slug": "yakert-encuentro-ilustracion",
+      "slug": "yakerr-encuentro-ilustracion",
       "type": "illustration",
-      "bbox_pct": {"x": 68, "y": 52, "w": 28, "h": 22},
-      "description_detailed": "Ilustración de la carta 'Yakert, Encuentro'. Escena nocturna en tonos azul-negros profundos, iluminada por una luna llena en el horizonte. Criatura protagonista tipo felino/cánido grande de pelaje oscuro, en movimiento con dinamismo.\n\nAmbiente: claro o paisaje nocturno abierto, con siluetas de árboles y atmósfera misteriosa feral. La iluminación lunar crea halo dramático detrás de la criatura, enfatizando su naturaleza salvaje.\n\nEstilo digital oscuro y atmosférico, con énfasis en el movimiento. Asociado posiblemente al mecanismo FERALIZAR (pérdida de energía original → estado feral).",
-      "embedded_text": ["Yakert, Encuentro"],
-      "relation_to_text": "Ejemplo visual probablemente vinculado al mecanismo FERALIZAR.",
+      "bbox_pct": {"x": 23, "y": 62, "w": 22, "h": 28},
+      "description_detailed": "Ilustración de la carta 'Yakerr, Encuentro'. Escena nocturna en tonos azul-negros profundos, iluminada por una luna llena en el horizonte. Criatura protagonista tipo felino/cánido grande de pelaje oscuro, en movimiento con dinamismo.\n\nAmbiente: claro o paisaje nocturno abierto, con siluetas de árboles y atmósfera misteriosa feral. La iluminación lunar crea halo dramático detrás de la criatura, enfatizando su naturaleza salvaje.\n\nLa carta lleva impreso el texto 'Activa Rápida: Feraliza un Adendei rival mientras esta carta está en el campo.' y 'Costo: Esta carta podrá atacar solo a Adendei-Feral.'. Es el ejemplo visual principal del mecanismo FERALIZAR.",
+      "embedded_text": ["Yakerr, Encuentro", "Adendei / Feral", "Activa Rápida: Feraliza un Adendei rival mientras esta carta está en el campo.", "Costo: Esta carta podrá atacar solo a Adendei-Feral."],
+      "relation_to_text": "Ejemplo visual principal del mecanismo FERALIZAR (pérdida de energía original → estado feral).",
       "legibility": "clear",
       "legibility_notes": null
     },
@@ -180,14 +316,14 @@
       "anchor": "p22/fig-10",
       "slug": "boras-poder-kosmico-ilustracion",
       "type": "illustration",
-      "bbox_pct": {"x": 60, "y": 76, "w": 32, "h": 22},
-      "description_detailed": "Ilustración de la carta 'Boras, Poder Kósmico'. Criatura voladora etérea y poderosa, tipo dragón o ser alado de gran envergadura, con alas y cuerpo compuestos de elementos naturales como nubes, nieve y rayos de luz. Tonos blancos, plateados y azules fríos que evocan hielo, viento y energía cósmica.\n\nFondo: cielo dramático con fenómeno celeste, nubes dinámicas y destellos de luz que refuerzan el 'Poder Kósmico'. Estilo digital de alta energía, colores fríos y explosivos.\n\nTransmite escala épica y poder sobrenatural. Posición en la zona inferior de la página la asocia visualmente al mecanismo DAÑAR.",
-      "embedded_text": ["Boras, Poder Kósmico"],
-      "relation_to_text": "Ejemplo visual probablemente vinculado al mecanismo DAÑAR, dada su energía agresiva y su posición inferior en la página.",
-      "legibility": "clear",
-      "legibility_notes": null
+      "bbox_pct": {"x": 54, "y": 76, "w": 22, "h": 20},
+      "description_detailed": "Ilustración de la carta 'Boras, Poder Kósmico'. Criatura voladora etérea y poderosa, tipo dragón o ser alado de gran envergadura, con alas y cuerpo compuestos de elementos naturales como nubes, nieve y rayos de luz. Tonos blancos, plateados y azules fríos que evocan hielo, viento y energía cósmica.\n\nFondo: cielo dramático con fenómeno celeste, nubes dinámicas y destellos de luz que refuerzan el 'Poder Kósmico'. Estilo digital de alta energía, colores fríos y explosivos.\n\nLa carta lleva impreso el texto 'Activa: Esta carta da 1 pto. adicional por cada carta rival en descenso.'. Transmite escala épica y poder sobrenatural. Posición en la zona inferior de la página la asocia visualmente al mecanismo DAÑAR.",
+      "embedded_text": ["Boras, Poder Kósmico", "Adendei Kósmico / Gélida", "Activa: Esta carta da 1 pto. adicional por cada carta rival en descenso."],
+      "relation_to_text": "Ejemplo visual del mecanismo DAÑAR, dada su energía agresiva y posición inferior en la página.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto parcialmente legible a 1600px; algunas palabras del subtipo podrían requerir inspección a mayor resolución."
     }
   ],
-  "page_notes": "Página de la sección 6.2 CAMBIOS DE ESTADÍSTICAS. Lista 5 mecanismos (ESCALAR, CURAR, DESCENDER, FERALIZAR, DAÑAR) cada uno acompañado de icono y, en algunos casos, ilustración de carta ejemplo. Dos notaciones '⌀ = 3' y '⌀ = 2' acompañan los iconos de ESCALAR y DESCENDER, mostrando ejemplos numéricos. El símbolo '⌀' podría ser un glifo estilizado para 'estadística base'. Asociación exacta entre cada ilustración de carta y cada mecanismo requiere confirmación visual a 300dpi. Folio '22' en el pie.",
-  "self_confidence": 0.84
+  "page_notes": "Página de la sección 6.2 CAMBIOS DE ESTADÍSTICAS. Lista 5 mecanismos en el orden: ESCALAR, CURAR, DESCENDER, FERALIZAR, DAÑAR. Cada uno con icono y, en algunos casos, ilustración de carta ejemplo. Dos notaciones '⌀ = 3' (asociada a ESCALAR) y '⌀ = 2' (asociada a DESCENDER) funcionan como ejemplos numéricos; el símbolo '⌀' es el ICONO DE DAÑO del juego (círculo con diagonal), no un glifo tipográfico Unicode estándar. Cartas ejemplo: Jokokan, Guardián de la Corteza (sup izq, Lítica/Guardián); Xilan, Calma (sup der, Húumica); Ariem, Balance (izq media-baja, Átlica); Yakerr, Encuentro (der media-baja, Feral); Boras, Poder Kósmico (inf der, Kósmico/Gélida). Folio '22' en el pie. Re-extracción pass 2: se corrigió el orden de los bullets (el bullet CURAR aparece ANTES de DESCENDER en la página, no después), se capturaron 19 bloques nuevos con el texto impreso en las 5 cartas ejemplo (nombre, subtipo, reglas Activa/Activa Rápida/Costo, flavor text) y se clarificó que '⌀' es el icono de daño del juego.",
+  "self_confidence": 0.86
 }

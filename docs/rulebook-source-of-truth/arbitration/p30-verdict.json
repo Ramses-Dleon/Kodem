@@ -1,0 +1,27 @@
+{
+  "page": 30,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T21:08:00-06:00",
+  "llm_confidence": 0.90,
+  "agreement_pct": 0.95,
+  "verdict": "llm_preferred",
+  "verdict_reason": "LLM y OCR coinciden sustancialmente. LLM captura correctamente el encabezado §6.7.3 Costos (OCR omite el número de sección). LLM preserva verbatim el typo 'tú Zona Principal' con tilde incorrecta (confirmado en imagen). OCR sirve como verificación cruzada; presenta pequeñas erratas propias ('20 más' en vez de '2 o más', 'está situación' vs 'esta situación' — LLM correcto con 'esta').",
+  "text_blocks_review": [
+    {"anchor": "p30/b01", "llm_text": "6.7.3 Costos", "ocr_match": "absent", "divergence": "OCR no captura el encabezado numerado §6.7.3.", "action": "keep_llm"},
+    {"anchor": "p30/b02", "llm_text": "Lista de 6 viñetas sobre reglas de costos", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p30/b03", "llm_text": "Los costos siempre deben pagarse de forma íntegra...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p30/b04", "llm_text": "6.8 Restricciones e Interacciones", "ocr_match": "exact", "divergence": "OCR usa mayúsculas por stylizado del título; LLM normaliza a capitalización estándar. Imagen muestra small-caps, por lo que ambos son defendibles; LLM coincide con convención del rulebook en otras secciones.", "action": "keep_llm"},
+    {"anchor": "p30/b05", "llm_text": "Existen situaciones... Restringir: Bajo ciertas condiciones...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p30/b06", "llm_text": "Generalidades de las Restricciones e Interacciones", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p30/b07", "llm_text": "1. No pueden existir 2 o más cartas con el mismo nombre, arte y/o efecto impreso en tu Mazo General.", "ocr_match": "exact", "divergence": "OCR dice '20 más' (error de espacio). LLM correcto.", "action": "keep_llm"},
+    {"anchor": "p30/b08", "llm_text": "Ejemplo: Carta impresa con diferente arte, pero mismo nombre y efecto.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p30/b09", "llm_text": "2. Si un jugador tiene 2 cartas... tú Zona Principal y la del rival). 3. Ninguna carta ajena... 4. No se pueden seleccionar como objetivo...", "ocr_match": "exact", "divergence": "OCR dice 'está situación' (verbo). Imagen confirma 'esta situación' (demostrativo). LLM correcto.", "action": "keep_llm"},
+    {"anchor": "p30/b10", "llm_text": "30", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p30/fig-01", "type": "illustration comparativa (2 cartas Arian: Balance)", "legibility_llm": "needs_enhance", "description_quality": "excellent", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": ["tú Zona Principal (tilde incorrecta sobre 'tu')", "desvia (ya visto en p29 pero no aquí)"],
+  "recommendation": "accept"
+}

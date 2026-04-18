@@ -1,0 +1,35 @@
+{
+  "page": 5,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:05:00-06:00",
+  "llm_confidence": 0.88,
+  "agreement_pct": 0.85,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "Página anatómica con carta ejemplo 'Ozet, Amante Lunar'. LLM omitió el texto impreso EN LA CARTA EJEMPLO que OCR sí capturó: 'Activa: Si esta carta ataca, cura 2 ptos. a una carta aliada. / Costo: Dana 1 pto. a otra carta aliada.' Esto es texto de reglas real visible en la ilustración. También divergencia en 'flora, fauna minerales' (OCR) vs 'flora, fauna y minerales' (LLM) — probable typo de fuente que LLM corrigió.",
+  "text_blocks_review": [
+    {"anchor": "p05/b01", "llm_text": "2. Partes de la carta", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p05/b02", "llm_text": "2.1 Características Generales", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p05/b03", "llm_text": "Ícono de expansión callout", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p05/b04", "llm_text": "Nombre de la carta callout con ejemplo Ozet", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p05/b05", "llm_text": "Texto: Activa/Pasiva/Activa-Rápida/Pasiva-Rápida", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p05/b06", "llm_text": "Flavor Text callout", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p05/b07", "llm_text": "Nombre científico... flora, fauna y minerales", "ocr_match": "partial", "divergence": "OCR dice 'flora, fauna minerales' sin 'y' — verificar si es typo de fuente", "action": "flag_for_human"},
+    {"anchor": "p05/b08", "llm_text": "Créditos del Artista", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p05/b09", "llm_text": "Folio: ... expasión (typo preservado)", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p05/b10", "llm_text": "2.1.1 Rarezas", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p05/b11", "llm_text": "Algunas cartas producidas por Kódem tienen un tiraje...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p05/b12", "llm_text": "Lista de 6 rarezas + nota Titán Kósmica", "ocr_match": "partial", "divergence": "OCR solo capturó 'Carta Súper Rara' y la nota al pie; LLM tiene la lista completa", "action": "keep_llm"},
+    {"anchor": "p05/b-MISSING-CARD-TEXT", "llm_text": "(ausente)", "ocr_match": "ocr_has_more", "divergence": "OCR capturó texto dentro de la carta ejemplo: 'Activa: Si esta carta ataca, cura 2 ptos. a una carta aliada. Costo: Dana 1 pto. a otra carta aliada.' LLM lo omitió como bloque separado aunque lo mencionó dentro del fig-01.", "action": "merge"}
+  ],
+  "figures_review": [
+    {"anchor": "p05/fig-01", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p05/fig-02", "type": "infographic", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p05/fig-03", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [
+    "LLM omitió como bloque de texto el contenido de reglas impreso en la carta ejemplo 'Ozet, Amante Lunar' (Activa/Costo). Merge recomendado como bloque adicional p05/b13.",
+    "Posible discrepancia 'flora, fauna y minerales' (LLM) vs 'flora, fauna minerales' (OCR). Verificar fuente."
+  ],
+  "typos_confirmed": ["'expasión' en b09 (preservado correctamente)", "'Dana' (sic) en lugar de 'Daña' según OCR — preservar si es literal"],
+  "recommendation": "spot_check_human"
+}

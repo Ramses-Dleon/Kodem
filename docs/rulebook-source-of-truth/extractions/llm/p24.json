@@ -2,6 +2,9 @@
   "page": 24,
   "model": "opus-4-7",
   "extraction_date": "2026-04-18T20:05:00-06:00",
+  "re_extraction_pass": 2,
+  "re_extraction_date": "2026-04-18T21:55:00-06:00",
+  "re_extraction_focus": ["missing_card_text", "card_active_passive", "adendo_vs_adendei_verification", "card_type_correction"],
   "title": "6.6 ATAQUE",
   "section_refs": ["§6.5", "§6.6"],
   "text_blocks": [
@@ -106,6 +109,111 @@
     {
       "anchor": "p24/b15",
       "heading": null,
+      "text": "Xakros, Peste",
+      "position": "card-xakros-name",
+      "notes": "nombre impreso en carta de ejemplo Xakros, Peste (ejemplo NO condicionado)"
+    },
+    {
+      "anchor": "p24/b16",
+      "heading": null,
+      "text": "Adendei Equino / Feral",
+      "position": "card-xakros-type",
+      "notes": "tipo/categoría de la carta Xakros. VERBATIM: 'Adendei' (no 'Adendo')"
+    },
+    {
+      "anchor": "p24/b17",
+      "heading": null,
+      "text": "Activa: Todos los Adendei en el campo reciben descansos iguales a los indicados en su respectiva carta.",
+      "position": "card-xakros-active",
+      "notes": "texto ACTIVA de Xakros. VERBATIM: 'Adendei' (plural) y 'descansos' (no 'decesos'/'dócimas')"
+    },
+    {
+      "anchor": "p24/b18",
+      "heading": null,
+      "text": "\"Toda voz se debilita con su lento trote...\"",
+      "position": "card-xakros-flavor",
+      "notes": "flavor text en cursiva, carta Xakros, Peste"
+    },
+    {
+      "anchor": "p24/b19",
+      "heading": null,
+      "text": "1DRMP-022",
+      "position": "card-xakros-code",
+      "notes": "código de carta Xakros"
+    },
+    {
+      "anchor": "p24/b20",
+      "heading": null,
+      "text": "Ariam, Dualidad",
+      "position": "card-ariam-name",
+      "notes": "nombre impreso en carta de ejemplo Ariam, Dualidad (ejemplo CONDICIONADO)"
+    },
+    {
+      "anchor": "p24/b21",
+      "heading": null,
+      "text": "Adendei / Átlica",
+      "position": "card-ariam-type",
+      "notes": "tipo/categoría carta Ariam. VERBATIM: 'Adendei' (no 'Adendo'), 'Átlica' (no 'Ártica')"
+    },
+    {
+      "anchor": "p24/b22",
+      "heading": null,
+      "text": "Activa: Si esta carta ataca, protege a un Adendei aliado de ataques y efectos hasta el final de tu siguiente turno.",
+      "position": "card-ariam-active",
+      "notes": "texto ACTIVA de Ariam. VERBATIM CRÍTICO: 'Adendei aliado' — NO 'Adendo aliado'. El PDF consistentemente usa 'Adendei' en esta sección."
+    },
+    {
+      "anchor": "p24/b23",
+      "heading": null,
+      "text": "\"Agua y fuego, vida y muerte...\"",
+      "position": "card-ariam-flavor",
+      "notes": "flavor text en cursiva, carta Ariam, Dualidad"
+    },
+    {
+      "anchor": "p24/b24",
+      "heading": null,
+      "text": "1DRMA-020",
+      "position": "card-ariam-code",
+      "notes": "código de carta Ariam"
+    },
+    {
+      "anchor": "p24/b25",
+      "heading": null,
+      "text": "Zoadon, Filtración",
+      "position": "card-zoadon-name",
+      "notes": "nombre impreso en carta de ejemplo Zoadon, Filtración"
+    },
+    {
+      "anchor": "p24/b26",
+      "heading": null,
+      "text": "Adendei Titán / Lítica",
+      "position": "card-zoadon-type",
+      "notes": "tipo/categoría carta Zoadon. VERBATIM: 'Adendei' (no 'Adendo'), 'Lítica' (no 'Lútica')"
+    },
+    {
+      "anchor": "p24/b27",
+      "heading": null,
+      "text": "Activa-Rápida: Puedes desviar 1 pto. de daño de cada carta aliada atacada a esta carta.",
+      "position": "card-zoadon-activa-rapida",
+      "notes": "texto ACTIVA-RÁPIDA de Zoadon"
+    },
+    {
+      "anchor": "p24/b28",
+      "heading": null,
+      "text": "\"A través de su cuerpo, depura el mar.\"",
+      "position": "card-zoadon-flavor",
+      "notes": "flavor text en cursiva, carta Zoadon, Filtración"
+    },
+    {
+      "anchor": "p24/b29",
+      "heading": null,
+      "text": "TC00-012R",
+      "position": "card-zoadon-code",
+      "notes": "código de carta Zoadon"
+    },
+    {
+      "anchor": "p24/b30",
+      "heading": null,
       "text": "24",
       "position": "bottom-center",
       "notes": "número de página (folio)"
@@ -128,35 +236,35 @@
       "slug": "xakros-peste-ejemplo-no-condicionado",
       "type": "illustration",
       "bbox_pct": {"x": 52, "y": 42, "w": 22, "h": 22},
-      "description_detailed": "Ilustración de la carta 'Xakros, Peste'. Muestra un caballo oscuro de aspecto misterioso y amenazante, con crines que se dispersan como humo o energía. Fondo en tonos púrpura y magenta intensos. Estilo digital, alto contraste, atmosférico.\n\nEn la parte inferior de la carta se ven estadísticas del juego con iconos de energías y valores numéricos (se distinguen los números 2 en los marcadores de ataque/vida), junto con texto de efecto que menciona 'Adendo Equino / Feral'. Marco oscuro típico de TCG.\n\nDebajo de la carta aparece la leyenda 'Ejemplo: Efecto NO condicionado al ataque' en cursiva, usando esta carta como ilustración del concepto de efecto independiente del acto de atacar (contraparte al ejemplo condicionado).",
-      "embedded_text": ["Xakros, Peste", "Adendo Equino / Feral", "2"],
-      "relation_to_text": "Ejemplo visual para la regla §6.6 (Atacar), específicamente caption b12 'Ejemplo: Efecto NO condicionado al ataque'. Ilustra un efecto que NO está condicionado al ataque de la carta.",
+      "description_detailed": "Ilustración de la carta 'Xakros, Peste'. Muestra un caballo oscuro de aspecto misterioso y amenazante, con crines que se dispersan como humo o energía. Fondo en tonos púrpura y magenta intensos. Estilo digital, alto contraste, atmosférico.\n\nEn la parte inferior de la carta se ven estadísticas del juego con iconos de energías y valores numéricos 2/2, junto con tipo 'Adendei Equino / Feral' y texto de efecto ACTIVA: 'Todos los Adendei en el campo reciben descansos iguales a los indicados en su respectiva carta.' Flavor text: '\"Toda voz se debilita con su lento trote...\"'. Código de carta: 1DRMP-022. Marco oscuro típico de TCG.\n\nDebajo de la carta aparece la leyenda 'Ejemplo: Efecto NO condicionado al ataque' en cursiva, usando esta carta como ilustración del concepto de efecto independiente del acto de atacar (contraparte al ejemplo condicionado).",
+      "embedded_text": ["Xakros, Peste", "Adendei Equino / Feral", "Activa: Todos los Adendei en el campo reciben descansos iguales a los indicados en su respectiva carta.", "\"Toda voz se debilita con su lento trote...\"", "1DRMP-022", "2", "2"],
+      "relation_to_text": "Ejemplo visual para la regla §6.6 (Atacar), específicamente caption b12 'Ejemplo: Efecto NO condicionado al ataque'. Ilustra un efecto que NO está condicionado al ataque de la carta (su Activa se dispara sin requerir declaración de ataque).",
       "legibility": "clear",
-      "legibility_notes": "Texto de efecto pequeño parcialmente legible."
+      "legibility_notes": "Texto completo extraído vía crop a resolución nativa."
     },
     {
       "anchor": "p24/fig-03",
       "slug": "ariam-dualidad-ejemplo-condicionado",
       "type": "illustration",
       "bbox_pct": {"x": 68, "y": 52, "w": 22, "h": 22},
-      "description_detailed": "Ilustración de la carta 'Ariam, Dualidad'. Presenta un personaje femenino rodeado de elementos mágicos y luminosos, con destellos naranjas, rojos y dorados que evocan fuego o energía explosiva. Fondo en tonos azules oscuros que contrastan con los brillos cálidos alrededor del personaje. Estilo digital de alta calidad, muy dinámico visualmente.\n\nEn la parte inferior se leen estadísticas con valores 2, 1 y texto de efecto que menciona condiciones de ataque ('Si esta carta ataca, protege a un Adendo aliado...'). Marco oscuro típico de TCG.\n\nDebajo de la carta aparece la leyenda 'Ejemplo: Efecto CONDICIONADO al ataque' en cursiva. Sirve como ejemplo visual del concepto opuesto a la figura anterior: un efecto que sí está condicionado al acto de atacar de la carta.",
-      "embedded_text": ["Ariam, Dualidad", "Si esta carta ataca, protege a un Adendo aliado", "2", "1"],
+      "description_detailed": "Ilustración de la carta 'Ariam, Dualidad'. Presenta un personaje femenino rodeado de elementos mágicos y luminosos, con destellos naranjas, rojos y dorados que evocan fuego o energía explosiva. Fondo en tonos azules oscuros que contrastan con los brillos cálidos alrededor del personaje. Estilo digital de alta calidad, muy dinámico visualmente.\n\nEn la parte inferior se leen estadísticas con valores 2/1, tipo 'Adendei / Átlica' y texto ACTIVA: 'Si esta carta ataca, protege a un Adendei aliado de ataques y efectos hasta el final de tu siguiente turno.'. Flavor text: '\"Agua y fuego, vida y muerte...\"'. Código: 1DRMA-020. Marco oscuro típico de TCG.\n\nDebajo de la carta aparece la leyenda 'Ejemplo: Efecto CONDICIONADO al ataque' en cursiva. Sirve como ejemplo visual del concepto opuesto a la figura anterior: un efecto que sí está condicionado al acto de atacar de la carta (disparador 'Si esta carta ataca').\n\nNota verbatim crítica: tanto el tipo como el texto de Activa usan 'Adendei' (no 'Adendo'). Esta es la ortografía consistente del PDF en esta página, aunque parezca irregular.",
+      "embedded_text": ["Ariam, Dualidad", "Adendei / Átlica", "Activa: Si esta carta ataca, protege a un Adendei aliado de ataques y efectos hasta el final de tu siguiente turno.", "\"Agua y fuego, vida y muerte...\"", "1DRMA-020", "2", "1"],
       "relation_to_text": "Ejemplo visual para la regla §6.6, específicamente caption b13 'Ejemplo: Efecto CONDICIONADO al ataque'. Ilustra un efecto que SÍ está condicionado al ataque, con el clásico disparador 'Si esta carta ataca'.",
       "legibility": "clear",
-      "legibility_notes": "Texto de efecto parcialmente legible."
+      "legibility_notes": "Texto completo extraído vía crop a resolución nativa. Palabra 'Adendei' confirmada verbatim — NO es 'Adendo'."
     },
     {
       "anchor": "p24/fig-04",
       "slug": "zoadon-filtracion-ilustracion",
       "type": "illustration",
       "bbox_pct": {"x": 5, "y": 68, "w": 25, "h": 25},
-      "description_detailed": "Ilustración de la carta 'Zoadon, Filtración'. Muestra una criatura acuática titánica y tentacular, inspirada en seres del abismo marino. Estilo digital oscuro con tonos azules profundos, verdes y negros que simulan las profundidades del océano. La criatura presenta múltiples apéndices y una presencia imponente.\n\nEn la parte inferior de la carta se lee el tipo 'Adendo: Titán / Lútica', con efecto de habilidad 'Activa-Rápida' que permite desviar daño, y estadísticas mostrando 2, 0 junto al icono de 'Punto de Cueta'. Marco oscuro elegante.\n\nPosicionada en la zona inferior izquierda de la página, parece vincularse al concepto 'Respuestas al ataque' (b14), específicamente el uso de Activa-Rápida para desviar o modificar daño cuando una carta está siendo atacada.",
-      "embedded_text": ["Zoadon, Filtración", "Adendo: Titán / Lútica", "Activa-Rápida", "2", "0"],
-      "relation_to_text": "Ejemplo visual probablemente vinculado al bloque b14 'Respuestas al ataque', mostrando una Activa-Rápida como herramienta de respuesta.",
+      "description_detailed": "Ilustración de la carta 'Zoadon, Filtración'. Muestra una criatura acuática titánica y tentacular, inspirada en seres del abismo marino. Estilo digital oscuro con tonos azules profundos, verdes y negros que simulan las profundidades del océano. La criatura presenta múltiples apéndices y una presencia imponente.\n\nEn la parte inferior de la carta se lee el tipo 'Adendei Titán / Lítica', con habilidad ACTIVA-RÁPIDA: 'Puedes desviar 1 pto. de daño de cada carta aliada atacada a esta carta.'. Flavor text: '\"A través de su cuerpo, depura el mar.\"'. Estadísticas 2/0. Código TC00-012R. Marco oscuro elegante.\n\nPosicionada en la zona inferior izquierda de la página, se vincula al concepto 'Respuestas al ataque' (b14), específicamente el uso de Activa-Rápida para desviar daño cuando una carta aliada está siendo atacada.",
+      "embedded_text": ["Zoadon, Filtración", "Adendei Titán / Lítica", "Activa-Rápida: Puedes desviar 1 pto. de daño de cada carta aliada atacada a esta carta.", "\"A través de su cuerpo, depura el mar.\"", "TC00-012R", "2", "0"],
+      "relation_to_text": "Ejemplo visual vinculado al bloque b14 'Respuestas al ataque', mostrando una Activa-Rápida como herramienta de respuesta (desvío de daño a un titán).",
       "legibility": "clear",
-      "legibility_notes": "Texto de efecto parcialmente legible; 'Punto de Cueta' podría ser 'Punto de Cuenta' o glifo alternativo, requiere validación a 300dpi."
+      "legibility_notes": "Texto completo extraído vía crop a resolución nativa."
     }
   ],
-  "page_notes": "Página que completa §6.5 (Cambios entre Zonas, últimas 4 viñetas) e inicia §6.6 ATAQUE. Introduce la fórmula de daño total (Daños de Ataque = Daño Base + Daño Aumentado + Daño Adicional) y distingue tres conceptos numerados: Atacar, Declarar un ataque, Resolver un ataque. Contiene dos ilustraciones-ejemplo que contrastan efecto NO condicionado (Xakros) vs CONDICIONADO (Ariam) al ataque. La carta Zoadon ilustra respuestas al ataque. Folio '24' al pie.",
-  "self_confidence": 0.88
+  "page_notes": "Página que completa §6.5 (Cambios entre Zonas, últimas 4 viñetas) e inicia §6.6 ATAQUE. Introduce la fórmula de daño total (Daños de Ataque = Daño Base + Daño Aumentado + Daño Adicional) y distingue tres conceptos numerados: Atacar, Declarar un ataque, Resolver un ataque. Contiene tres ilustraciones-carta con texto transcrito verbatim: Xakros (ejemplo NO condicionado, 1DRMP-022), Ariam (ejemplo CONDICIONADO, 1DRMA-020), Zoadon (respuesta al ataque, TC00-012R). Hallazgo verbatim crítico: el PDF usa consistentemente 'Adendei' (no 'Adendo') en los tipos y textos de habilidad de estas tres cartas. Folio '24' al pie.",
+  "self_confidence": 0.92
 }

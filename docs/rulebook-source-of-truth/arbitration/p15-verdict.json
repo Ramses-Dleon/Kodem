@@ -1,0 +1,35 @@
+{
+  "page": 15,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:00:00-06:00",
+  "llm_confidence": 0.89,
+  "agreement_pct": 0.97,
+  "verdict": "llm_preferred",
+  "verdict_reason": "LLM extrae los 20 bloques con estructura correcta, formato markdown y contexto visual del ecosistema-board diagram. OCR confirma contenido pero pierde orden espacial (bloques 2-4 fuera de secuencia) y emoji de estrellas corrupto. Typo 'se indiquen el texto' preservado en ambos, confirmando es verbatim del original.",
+  "text_blocks_review": [
+    {"anchor": "p15/b01", "llm_text": "4. Preparación del Ecosistema", "ocr_match": "absent", "divergence": "OCR no captura banner chapter (solo glifos decorativos 'QU NW')", "action": "keep_llm"},
+    {"anchor": "p15/b02", "llm_text": "¡Prepara tu Ecosistema para el combate!...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p15/b03", "llm_text": "¡En Kódem cada carta es única...!", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p15/b04", "llm_text": "1. Elige:", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p15/b05", "llm_text": "· 15-24 Adendei · 0-2 Rava · 1-2 Protectores · 0-1 Bio · 0-5 Ixim · 0-5 Rot · Los Token que quieras", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p15/b06", "llm_text": "2. Selecciona 3 cartas de Adendei y colócalas ocultas...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p15/b07", "llm_text": "3. Selecciona 15-21 Adendei, 0 - 2 Rava y 0 o más Espectros...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p15/b08", "llm_text": "4. Selecciona 1 o 2 Protectores y colócalos boca abajo y girado 180°...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p15/b09", "llm_text": "5. Selecciona 0 o 1 Bio...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p15/b10", "llm_text": "6. Selecciona 0 a 10 Equipos...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p15/b11", "llm_text": "7. La Extinción será la Zona...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p15/b12", "llm_text": "Condición de Victoria: ...que se indiquen el texto de las cartas...", "ocr_match": "exact", "divergence": "Typo 'se indiquen el texto' (falta 'en') preservado verbatim en ambas fuentes", "action": "keep_llm"},
+    {"anchor": "p15/b13-b19", "llm_text": "Zone labels diagram (PROTECTOR, ADENDEI, MAZO, ZONA PRINCIPAL, BIO, EXTINCIÓN, EQUIPO)", "ocr_match": "partial", "divergence": "OCR solo captura PROTECTOR y EXTINCION; LLM captura los 7 labels completos", "action": "keep_llm"},
+    {"anchor": "p15/b20", "llm_text": "15", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p15/fig-01", "type": "infographic", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p15/fig-02", "type": "illustration", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"},
+    {"anchor": "p15/fig-03", "type": "icon", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p15/fig-04", "type": "diagram", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p15/fig-05-09", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": ["'se indiquen el texto' (debería ser 'se indiquen en el texto') - verbatim en ambas fuentes, preservar"],
+  "recommendation": "accept"
+}

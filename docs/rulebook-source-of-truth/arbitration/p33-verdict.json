@@ -1,0 +1,26 @@
+{
+  "page": 33,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T21:20:00-06:00",
+  "llm_confidence": 0.90,
+  "agreement_pct": 0.96,
+  "verdict": "both_agree",
+  "verdict_reason": "Excelente alineación entre LLM y OCR. Ambos preservan verbatim los typos críticos del rulebook: 'vinvular' (en vez de 'vincular') en encabezado del punto 7, y los espaciados irregulares '2 .Si', '4.Si', '5.El', '6.En', 'relteradamente' (e→l). LLM captura completos los 6 puntos de penalizaciones y abre sección 7 '¿Cómo armar mi mazo?'. OCR tiene pequeñas degradaciones adicionales ('podrd', 'nose podrá', 'definicion' sin acento) que LLM limpia.",
+  "text_blocks_review": [
+    {"anchor": "p33/b01", "llm_text": "7. Restricciones para vinvular: ...", "ocr_match": "exact", "divergence": "Ambos preservan el typo 'vinvular'. OCR dice 'podrd' por degradación; LLM 'podrá' correcto.", "action": "keep_llm"},
+    {"anchor": "p33/b02", "llm_text": "Ejemplo de restricción para vincular", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p33/b03", "llm_text": "8. Restricciones para resolver Efectos: ...", "ocr_match": "exact", "divergence": "OCR 'definicion' sin acento. LLM correcto.", "action": "keep_llm"},
+    {"anchor": "p33/b04", "llm_text": "Ejemplo de negación de efecto   Ejemplo de protección", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p33/b05", "llm_text": "PENALIZACIONES POR INCUMPLIR RESTRICCIONES + 6 puntos.", "ocr_match": "exact", "divergence": "Ambos preservan typos '2 .Si', '4.Si', '5.El', '6.En'. OCR agrega más typos propios ('relteradamente', 'nose podrá', '10 4' por '1 o 4') que LLM limpia.", "action": "keep_llm"},
+    {"anchor": "p33/b06", "llm_text": "7. ¿Cómo armar mi mazo? + párrafo intro.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p33/fig-01", "type": "illustration (Juan Galgo, Motín)", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"},
+    {"anchor": "p33/fig-02", "type": "illustration (Chapalab, El Anciano)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p33/fig-03", "type": "illustration (Ariam, Dualidad)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p33/fig-04", "type": "banner (7. ¿Cómo armar mi mazo?)", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": ["vinvular (por 'vincular' en heading §7)", "'2 .Si' (espacio antes del punto)", "'4.Si', '5.El', '6.En' (sin espacio tras punto numerado)"],
+  "recommendation": "accept"
+}

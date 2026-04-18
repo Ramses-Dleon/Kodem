@@ -1,0 +1,43 @@
+{
+  "page": 27,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:25:00-06:00",
+  "llm_confidence": 0.92,
+  "agreement_pct": 0.88,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "Reglas coinciden verbatim (límite curación por vida máxima, límite descenso requiere 1+ pto. de daño, límite descansos por estadística, Cartas Zona Principal máx 1 descanso recibido, Protector máx 2 descansos recibidos, ejemplos Zaykan/Karyn). Typos preservados en ambos. SIN EMBARGO OCR captura texto de efectos de cartas ejemplo no transcrito por LLM: (1) Nánuk 'Activa: Daño 1 pto. a 1 Adendei por cada carta en tu Extinción' + 'Pasiva: Esta carta no puede recibir marcas', (2) Zaykan 'Activa Rápida: Si una carta aliada es atacada, recibe descanso...' (parcial), (3) texto de Brazalete de Rotanio. Estos efectos son didácticamente vinculados a los ejemplos.",
+  "text_blocks_review": [
+    {"anchor": "p27/b01", "llm_text": "Los puntos de curación...limitados por ptos. de vida máxima", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p27/b02", "llm_text": "Ejemplo: Si Enis tiene 5 ptos. de vida...Ariam Curación Catrín cure 3 ptos...solo 1 pto...6 ptos de vida máxima", "ocr_match": "exact", "divergence": "Typo '6 ptos de vida' sin punto - verbatim", "action": "keep_llm"},
+    {"anchor": "p27/b03", "llm_text": "Efectos 'Desciende x ptos. de daño'...al menos 1 pto. de daño", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p27/b04-b05", "llm_text": "Ejemplo Brazalete de Rotanio + Nánuk vs Mizthe/Rhymir", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p27/b06", "llm_text": "Efectos 'Recibe x descansos'...no descansos máximos", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p27/b07-b08", "llm_text": "Una carta NO podrá recibir descansos si máxima + Los descansos limitados por máximos", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p27/b09", "llm_text": "-Cartas en Zona Principal: ...mientras estén en 1 descanso máximo", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p27/b10", "llm_text": "-Protector: ...mientras esté en 2 descansos máximo", "ocr_match": "exact", "divergence": "Typo 'descansos máximo' (falta s) verbatim ambos", "action": "keep_llm"},
+    {"anchor": "p27/b11", "llm_text": "Ejemplo Zaykan, Emboscada - máx 2 descansos Adendei", "ocr_match": "exact", "divergence": "Typos 'Ejemplo:\"Zaykan,Emboscada\"' sin espacios verbatim", "action": "keep_llm"},
+    {"anchor": "p27/b12-b13", "llm_text": "Ejemplo Karyn, Restauración - máx 3 descansos Protector", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p27/fig-05-text-Nanuk", "llm_text": "[Texto de Nánuk no transcrito]", "ocr_match": "ocr_has_more", "divergence": "OCR: 'Activa: Daño 1 pto. a 1 Adendei por cada carta en tu Extinción' + 'Pasiva: Esta carta no puede recibir marcas'", "action": "merge"},
+    {"anchor": "p27/fig-07-text-Zaykan", "llm_text": "[Texto de Zaykan no transcrito]", "ocr_match": "ocr_has_more", "divergence": "OCR parcial: 'Activa Rápida: Si una carta aliada es atacada, recibe [descanso]...'", "action": "merge"},
+    {"anchor": "p27/fig-06-text-Brazalete", "llm_text": "[Texto de Brazalete Rotanio no transcrito]", "ocr_match": "ocr_has_more", "divergence": "OCR presenta texto fragmentado cerca de la carta pero difícil de reconstruir - requiere PNG", "action": "flag_for_human"},
+    {"anchor": "p27/b14", "llm_text": "27", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p27/fig-01-02", "type": "illustration", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p27/fig-03-05", "type": "illustration", "legibility_llm": "clear", "description_quality": "good", "action": "re_extract"},
+    {"anchor": "p27/fig-06", "type": "illustration", "legibility_llm": "clear", "description_quality": "good", "action": "re_extract"},
+    {"anchor": "p27/fig-07-08", "type": "illustration", "legibility_llm": "clear", "description_quality": "good", "action": "re_extract"}
+  ],
+  "critical_discrepancies": [
+    "Texto de efectos de Nánuk Fiereza Kósmica no transcrito (Activa y Pasiva reales del juego)",
+    "Texto de Brazalete de Rotanio no transcrito completo (central al ejemplo)"
+  ],
+  "typos_confirmed": [
+    "'6 ptos de vida' (falta punto tras ptos) - verbatim ambos",
+    "'descansos máximo' (falta s) - verbatim ambos",
+    "'este' sin acento (debería 'esté') en ejemplo Zaykan - verbatim",
+    "'Ejemplo:\"Zaykan,Emboscada\"' espacios faltantes - verbatim",
+    "'ño' en OCR (debería 'no') en b06 - probable OCR-error solo"
+  ],
+  "recommendation": "re_extract"
+}

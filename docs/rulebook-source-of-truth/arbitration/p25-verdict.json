@@ -1,0 +1,31 @@
+{
+  "page": 25,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:20:00-06:00",
+  "llm_confidence": 0.88,
+  "agreement_pct": 0.88,
+  "verdict": "llm_preferred",
+  "verdict_reason": "§6.7 EFECTOS: Ataque Múltiple, Gatillo de Efectos, introducción Activa/Pasiva, y GENERALIDADES (Declarar y Resolver efectos) coinciden verbatim. LLM captura correctamente los ejemplos en recuadros Activa/Pasiva. OCR confirma texto de cartas Ulmor y Ungan que el LLM también extrajo — buena cobertura. Pequeñas divergencias en texto de cartas (Ulmor: 'daño 1 pto.' OCR vs 'daña 1 pts' LLM; flavor texts).",
+  "text_blocks_review": [
+    {"anchor": "p25/b01", "llm_text": "Ataque Múltiple: También existen cartas que pueden atacar a más de 1 carta...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p25/b02", "llm_text": "Gatillo de Efectos: El ataque también puede activar determinados efectos...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p25/b03", "llm_text": "§6.7 EFECTOS: Tus cartas tendrán diferentes efectos...Activas y Pasivas", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p25/b04", "llm_text": "Activa: Todos los Adendei...descansos iguales...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p25/b05", "llm_text": "Pasiva: Los Adendei rivales solo pueden ser curados por efectos de Adendei.", "ocr_match": "absent", "divergence": "OCR no captura ejemplo Pasiva explícitamente; LLM sí", "action": "keep_llm"},
+    {"anchor": "p25/b06", "llm_text": "GENERALIDADES: Declarar un efecto + Resolver un efecto con múltiples sub-reglas", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p25/fig-01-text-Ulmor", "llm_text": "Ulmor: Pasiva Ataca a todos los Adendei rivales + Costo daña 1 pts", "ocr_match": "partial", "divergence": "OCR: 'Costo: Esta carta se daño 1 pto. antes de atacar' (typo 'daño' vs 'daña'/'dana' + 'pto.' vs 'pts'). Flavor 'Porque nueve cerebros nunca son suficientes' no extraído por LLM", "action": "merge"},
+    {"anchor": "p25/fig-02-text-Ungan", "llm_text": "Ungan: Activa Si esta carta ataca, tu rival no puede actualizar descansos...", "ocr_match": "exact", "divergence": "Flavor 'Voladora desolación que acompaña su corazón y se hunde en el viento.' no extraído por LLM", "action": "merge"}
+  ],
+  "figures_review": [
+    {"anchor": "p25/fig-01", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "re_extract"},
+    {"anchor": "p25/fig-02", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "re_extract"},
+    {"anchor": "p25/fig-03-06", "type": "icon/infographic", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p25/fig-07", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": [
+    "Ulmor Costo: OCR dice 'se daño' (posible typo del original) vs LLM 'se daña'. Verificar PNG - probable typo verbatim",
+    "'pto.' (OCR) vs 'pts' (LLM) - verificar PNG"
+  ],
+  "recommendation": "accept"
+}

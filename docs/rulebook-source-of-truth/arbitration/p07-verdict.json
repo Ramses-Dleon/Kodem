@@ -1,0 +1,48 @@
+{
+  "page": 7,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:07:00-06:00",
+  "llm_confidence": 0.94,
+  "agreement_pct": 0.90,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "Muy buena coincidencia general en §3 y §3.1 Adendei. LLM capturó los 16 bloques de texto con callouts detallados. Sin embargo OCR revela: (1) typo en fuente 'FASES DEL DE TURNO' (LLM silenciosamente corrigió a 'Fases del Turno'); (2) nombre científico correcto es 'Therizinosaurus cheloniformis' (OCR), LLM escribió 'ctelophorus'; (3) typo en fuente 'Manifestación Fantasmal Fantasmal' (duplicado en OCR) — probable artefacto OCR pero hay que validar.",
+  "text_blocks_review": [
+    {"anchor": "p07/b01", "llm_text": "3. Tipos de cartas", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b02", "llm_text": "3.1 Adendei", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b03", "llm_text": "Los 'Jardineros' del planeta...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b04", "llm_text": "Los Adendei se consideran tus cartas principales...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b05", "llm_text": "Nombre del Adendei callout", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b06", "llm_text": "Vida: 6 puntos", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b07", "llm_text": "Subtipo Tipo de Adendei + ejemplos", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b08", "llm_text": "Energía: 7 energías primordiales", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b09", "llm_text": "Efecto: Pasivos y Activos", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b10", "llm_text": "Costo callout", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b11", "llm_text": "Daño: escalar/descender", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b12", "llm_text": "Descanso: 0 a 2", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b13", "llm_text": "Uso de los Adendei header", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b14", "llm_text": "Lista numerada 1-5 uso Adendei", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p07/b15", "llm_text": "Nota: 5. Fases del Turno y 6. Interacciones y Efectos", "ocr_match": "partial", "divergence": "OCR: '5. FASES DEL DE TURNO' con 'DE' extra — typo de fuente. LLM silenciosamente corrigió.", "action": "flag_for_human"},
+    {"anchor": "p07/b16", "llm_text": "7 (número de página)", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p07/fig-01", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p07/fig-02", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p07/fig-03", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p07/fig-04", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "re_extract", "note": "Corregir embedded_text: nombre científico es 'Therizinosaurus cheloniformis' (no 'ctelophorus')"},
+    {"anchor": "p07/fig-05", "type": "infographic", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p07/fig-06", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p07/fig-07", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [
+    "LLM silenciosamente 'corrigió' typo '5. FASES DEL DE TURNO' a 'Fases del Turno' en b15. Violación del principio verbatim.",
+    "Nombre científico de Therz incorrecto en fig-04: LLM 'ctelophorus', OCR 'cheloniformis'. Re-extraer."
+  ],
+  "typos_confirmed": [
+    "'FASES DEL DE TURNO' (b15, preservar 'DE' extra)",
+    "'Manifestación Fantasmal Fantasmal' (OCR duplicado — probable artefacto OCR, no typo de fuente)",
+    "'este' sin tilde en card text (Therz: 'mientras esta carta este')",
+    "'podran' sin tilde",
+    "'Sólo/Solo' variabilidad en card text"
+  ],
+  "recommendation": "re_extract"
+}

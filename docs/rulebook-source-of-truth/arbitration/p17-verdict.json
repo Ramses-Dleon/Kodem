@@ -1,0 +1,24 @@
+{
+  "page": 17,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:04:00-06:00",
+  "llm_confidence": 0.92,
+  "agreement_pct": 0.98,
+  "verdict": "both_agree",
+  "verdict_reason": "LLM y OCR coinciden en el 98% del contenido reglamentario. Orden de Resolución, Fase Post, Fase de Equipo y Fin de Turno (6 puntos) capturados idénticamente. Referencias cruzadas (§3.4, §5.1) preservadas. LLM añade contexto visual de 5 fotos decorativas que OCR no puede capturar.",
+  "text_blocks_review": [
+    {"anchor": "p17/b01", "llm_text": "Orden de resolución: 4 puntos", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p17/b02", "llm_text": "Nota: Una carta solo va a Extinción...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p17/b03", "llm_text": "Fase Post: Primero se envía a Extinción...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p17/b04", "llm_text": "Fase de Equipo: ...máximo 2 equipos o 1 Ixim y 1 Rot", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p17/b05", "llm_text": "Fin de Turno: 6 puntos priorizados", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p17/b06", "llm_text": "17", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p17/fig-01", "type": "photo", "legibility_llm": "needs_enhance", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p17/fig-02-05", "type": "photo", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": [],
+  "recommendation": "accept"
+}

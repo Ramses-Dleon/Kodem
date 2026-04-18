@@ -1,0 +1,37 @@
+{
+  "page": 31,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T21:14:00-06:00",
+  "llm_confidence": 0.88,
+  "agreement_pct": 0.96,
+  "verdict": "both_agree",
+  "verdict_reason": "LLM y OCR coinciden sustancialmente en la lista numerada 4.1-4.4 + 5-17 + apertura de 'Tipos de Restricciones'. LLM preserva correctamente 'Sólo' con acento (OCR también) y el typo 'vuelve a sus a estadísticas' (doble 'a' en regla 6) verbatim. LLM tiene nombres de las 3 cartas ejemplo correctos (Kayloc, Raptors, Razcel); OCR corrompe 'Razcel' como 'Rasvel'. Ambos cubren el mismo contenido.",
+  "text_blocks_review": [
+    {"anchor": "p31/b01", "llm_text": "4.1-4.4 subreglas sobre restricciones de objetivo (vida máxima, descansos, Feralizar, negación de efecto)", "ocr_match": "exact", "divergence": "OCR dice 'Energia' sin acento, LLM 'Energía' con acento. OCR también degrada '4.4' como '44'. LLM correcto.", "action": "keep_llm"},
+    {"anchor": "p31/b02", "llm_text": "5. Sólo las cartas reveladas en el campo pueden hacer uso de sus efectos.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b03", "llm_text": "6. Si una carta es ocultada por efecto, vuelve a sus a estadísticas base...", "ocr_match": "exact", "divergence": "Typo verbatim 'a sus a estadísticas' preservado por ambos.", "action": "keep_llm"},
+    {"anchor": "p31/b04", "llm_text": "7. Aún si una carta fue ocultada...", "ocr_match": "exact", "divergence": "OCR capitaliza 'Si' (error). LLM minúscula correcta.", "action": "keep_llm"},
+    {"anchor": "p31/b05", "llm_text": "8. Las cartas ocultas no podrán resolver efectos...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b06", "llm_text": "9. Las cartas ocultas no se podrán considerar...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b07", "llm_text": "10. Una carta que fue ocultada por efecto...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b08", "llm_text": "11. Una carta en mano puede ser mostrada...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b09", "llm_text": "12. Los efectos y ataques no pueden usarse ignorando...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b10", "llm_text": "13. Mientras una carta tenga una marca...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b11", "llm_text": "14. Si hay restricciones en el campo que impidan a ambos jugadores hacer daños... por más de 8 turnos...", "ocr_match": "exact", "divergence": "OCR 'enviaran' sin acento; LLM 'enviarán' correcto.", "action": "keep_llm"},
+    {"anchor": "p31/b12", "llm_text": "15. Es muy común el olvido de la actualización de descansos...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b13", "llm_text": "16. En Torneos y partidas competitivas...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b14", "llm_text": "17. Las cartas en el Mazo Principal, no se pueden revelar (solamente se pueden mostrar)...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b15", "llm_text": "Tipos de Restricciones", "ocr_match": "exact", "divergence": "OCR usa 'TIPOS DE RESTRICCIONES' en mayúsculas por stylizado small-caps. LLM normaliza.", "action": "keep_llm"},
+    {"anchor": "p31/b16", "llm_text": "1. Restricciones a declarar ataques: ... 4 frases entre comillas.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b17", "llm_text": "Ejemplos de cartas con restricciones al declarar ataque", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p31/b18", "llm_text": "31", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p31/fig-01", "type": "illustration (Kayloc, Explosión Marina)", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"},
+    {"anchor": "p31/fig-02", "type": "illustration (Raptors, Ladrón)", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"},
+    {"anchor": "p31/fig-03", "type": "illustration (Razcel, ¡Congelado!)", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": ["'vuelve a sus a estadísticas base' (doble preposición en regla 6)"],
+  "recommendation": "accept"
+}

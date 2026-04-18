@@ -1,0 +1,41 @@
+{
+  "page": 13,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:13:00-06:00",
+  "llm_confidence": 0.92,
+  "agreement_pct": 0.96,
+  "verdict": "both_agree",
+  "verdict_reason": "Excelente coincidencia. §3.6 Token completamente alineada. Estadísticas por defecto (Vida 6, Efecto/Costo ninguno, Daño 0, Descanso 0, Energía/Subtipo ninguno), reglas USO DEL TOKEN (similares a Adendei, no cuentan para condición de victoria de Extinción), GENERALIDADES (máx 2 Tokens, no ocultables). LLM usa notación markdown para énfasis que OCR no preserva pero el contenido textual es exacto. Callout 'Nombre del Token' correctamente posicionado. Folio TCOO-013S y artista 'colmillo_azul_studio' verificados por OCR.",
+  "text_blocks_review": [
+    {"anchor": "p13/b01", "llm_text": "3.6 Token header", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b02", "llm_text": "Algunas cartas tienen la capacidad de invocar criaturas...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b03", "llm_text": "Características header", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b04", "llm_text": "Las características de los Token son definidas...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b05", "llm_text": "Vida Máxima 6, Efecto sin efecto, Costo sin costo", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b06", "llm_text": "Daño 0, Descanso 0, Energía Sin Energía, Subtipo Sin subtipo", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b07", "llm_text": "Nombre del Token callout", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b08", "llm_text": "Uso del Token header", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b09", "llm_text": "Las cartas Token funcionan de forma similar a los Adendei...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b10", "llm_text": "Si la vida de un Token se reduce a 0...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b11", "llm_text": "Generalidades header", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b12", "llm_text": "4 bullets generalidades", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p13/b13", "llm_text": "13", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p13/fig-01", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p13/fig-02", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p13/fig-03", "type": "infographic", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p13/fig-04", "type": "infographic", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p13/fig-05", "type": "infographic", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p13/fig-06", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p13/fig-07", "type": "illustration", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"},
+    {"anchor": "p13/fig-08", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p13/fig-09", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": [
+    "'varlar' en OCR (por 'variar') — artefacto OCR, no typo fuente",
+    "'Energia' sin tilde en OCR — artefacto OCR"
+  ],
+  "recommendation": "accept"
+}

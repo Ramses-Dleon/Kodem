@@ -2,8 +2,11 @@
   "page": 27,
   "model": "opus-4-7",
   "extraction_date": "2026-04-18T20:30:00-06:00",
+  "re_extraction_pass": 2,
+  "re_extraction_date": "2026-04-18T15:53:00-06:00",
+  "re_extraction_focus": ["verbatim_typos", "missing_card_text"],
   "title": null,
-  "section_refs": ["§5.1"],
+  "section_refs": ["§5.1", "§6.7"],
   "text_blocks": [
     {
       "anchor": "p27/b01",
@@ -15,35 +18,35 @@
     {
       "anchor": "p27/b02",
       "heading": null,
-      "text": "Ejemplo: Si \"Enis, Giro Gélido\" tiene 5 ptos. de vida, \"Ariam, Curación Catrín\" puede curar a \"Enis\" sin embargo, aunque \"Ariam\" cure 3 ptos. a un Adendei Catrín aliado, \"Enis\" solo recibirá 1 pto. de curación dejando la carta en 6 ptos de vida, ya que es la cantidad de ptos. de vida máxima que puede tener un Adendei.",
+      "text": "*Ejemplo: Si \"Enis, Giro Gélido\" tiene 5 ptos. de vida, \"Ariam, Curación Catrín\" puede curar a \"Enis\" sin embargo, aunque \"Ariam\" cure 3 ptos. a un Adendei Catrín aliado, \"Enis\" solo recibirá 1 pto. de curación dejando la carta en 6 ptos de vida, ya que es la cantidad de ptos. de vida máxima que puede tener un Adendei.*",
       "position": "top",
-      "notes": "Ejemplo en cursiva. Typo: '6 ptos de vida' sin punto después de ptos. El máximo de vida mencionado es implícito (6)."
+      "notes": "Ejemplo en cursiva. Typo preservado: '6 ptos de vida' sin punto después de 'ptos'."
     },
     {
       "anchor": "p27/b03",
       "heading": null,
-      "text": "•Efectos que indiquen: \"Desciende \"x\" ptos. de daño...\", solo podrán aplicarse a cartas que al menos tengan 1 pto. de daño en su estadística de ataque.",
+      "text": "•Efectos que indiquen: *\"Desciende \"x\" ptos. de daño...\"*, solo podrán aplicarse a cartas que al menos tengan **1** pto. de *daño* en su estadística de ataque.",
       "position": "middle",
       "notes": "Viñeta con bullet. '1' en negrita, 'daño' y frase entre comillas en cursiva."
     },
     {
       "anchor": "p27/b04",
       "heading": null,
-      "text": "Ejemplo: Si estas son las 3 cartas que están en tu Zona Principal, para que \"Brazalete de Rotanio\" PUEDA pagar su costo y por ende utilizar su Activa-Rápida, debe descender 1 pto. a una carta aliada.",
+      "text": "*Ejemplo: Si estas son las 3 cartas que están en tu Zona Principal, para que \"Brazalete de Rotanio\" PUEDA pagar su costo y por ende utilizar su Activa-Rápida, debe descender 1 pto. a una carta aliada.*",
       "position": "middle",
       "notes": "Ejemplo en cursiva. 'PUEDA' en mayúsculas para énfasis."
     },
     {
       "anchor": "p27/b05",
       "heading": null,
-      "text": "La carta aliada elegida para descender debe ser \"Nánuk, Fiereza Kósmica\" ya que tiene 3 ptos. de daño en su estadística de ataque, contrario a \"Mizthe, Guía de Almas\" y \"Rhymir, Rayo Doble\" que no tienen ptos. de daño en su estadística de ataque.",
+      "text": "*La carta aliada elegida para descender debe ser \"Nánuk, Fiereza Kósmica\" ya que tiene 3 ptos. de daño en su estadística de ataque, contrario a \"Mizthe, Guía de Almas\" y \"Rhymir, Rayo Doble\" que no tienen ptos. de daño en su estadística de ataque.*",
       "position": "middle",
       "notes": "Continuación del ejemplo anterior, en cursiva."
     },
     {
       "anchor": "p27/b06",
       "heading": null,
-      "text": "•Efectos que indiquen: \"Recibe \"x\" descansos...\", solo podrán aplicarse a cartas en el campo siempre y cuando no se encuentren en sus descansos máximos por estadística.",
+      "text": "•Efectos que indiquen: *\"Recibe \"x\" descansos...\"*, solo podrán aplicarse a cartas en el campo siempre y cuando no se encuentren en sus descansos máximos por estadística.",
       "position": "middle",
       "notes": "Viñeta con bullet. Frase entre comillas en cursiva."
     },
@@ -64,40 +67,61 @@
     {
       "anchor": "p27/b09",
       "heading": "-Cartas en Zona Principal:",
-      "text": "-Cartas en Zona Principal: Podrán recibir descanso por efecto mientras estén en 1 descanso máximo (Ver 5.1. Descansos).",
+      "text": "**-Cartas en Zona Principal:** Podrán recibir descanso por efecto mientras estén en 1 descanso máximo *(Ver 5.1. Descansos)*.",
       "position": "middle",
       "notes": "Subtítulo en negrita. Referencia cruzada '(Ver 5.1. Descansos)' en cursiva."
     },
     {
       "anchor": "p27/b10",
       "heading": "-Protector:",
-      "text": "-Protector: Podrán recibir descanso por efecto mientras esté en 2 descansos máximo (Ver 5.1. Descansos).",
+      "text": "**-Protector:** Podrán recibir descanso por efecto mientras esté en 2 descansos máximo *(Ver 5.1. Descansos)*.",
       "position": "middle",
-      "notes": "Subtítulo en negrita. Typo: 'descansos máximo' (debería ser 'descansos máximos'). Referencia cruzada en cursiva."
+      "notes": "Subtítulo en negrita. Typo preservado: 'descansos máximo' (debería ser 'descansos máximos'). Referencia cruzada en cursiva."
     },
     {
       "anchor": "p27/b11",
       "heading": null,
-      "text": "Ejemplo:\"Zaykan,Emboscada\" puede recibir descanso siempre y cuando este disponible o en 1 descanso al momento de recibir el efecto, ya que el máximo de descansos que puede tener un Adendei es 2. Si \"Zaykan\" se encuentra en 1 descanso y recibe por efecto de una carta 2 descansos más, solo 1 se hará efectivo, llegando a su máximo de 2 descansos totales.",
+      "text": "*Ejemplo:\"Zaykan,Emboscada\" puede recibir descanso siempre y cuando este disponible o en 1 descanso al momento de recibir el efecto, ya que el máximo de descansos que puede tener un Adendei es 2. Si \"Zaykan\" se encuentra en 1 descanso y recibe por efecto de una carta 2 descansos más, solo 1 se hará efectivo, llegando a su máximo de 2 descansos totales.*",
       "position": "bottom",
-      "notes": "Ejemplo en cursiva. Typos: 'Ejemplo:\"Zaykan,Emboscada\"' sin espacios tras dos puntos y tras coma. Falta acento en 'este' (debería ser 'esté'). Establece que Adendei máx 2 descansos."
+      "notes": "Ejemplo en cursiva. Typos preservados: 'Ejemplo:\"Zaykan,Emboscada\"' sin espacios tras dos puntos y tras coma. Falta acento en 'este' (debería ser 'esté'). Establece que Adendei máx 2 descansos."
     },
     {
       "anchor": "p27/b12",
       "heading": null,
-      "text": "Ejemplo: \"Karyn, Restauración\" puede recibir descanso siempre y cuando esté disponible o en 2 descansos al momento de recibir el efecto, ya que el máximo de descansos que puede tener un Protector es 3.",
+      "text": "*Ejemplo: \"Karyn, Restauración\" puede recibir descanso siempre y cuando esté disponible o en 2 descansos al momento de recibir el efecto, ya que el máximo de descansos que puede tener un Protector es 3.*",
       "position": "bottom",
       "notes": "Ejemplo en cursiva. Establece que Protector máx 3 descansos."
     },
     {
       "anchor": "p27/b13",
       "heading": null,
-      "text": "Si Karyn se encuentra en 2 descansos y recibe por efecto de una carta 2 descansos más, solo 1 se hará efectivo llegando a su máximo de 3 descansos totales.",
+      "text": "*Si Karyn se encuentra en 2 descansos y recibe por efecto de una carta 2 descansos más, solo 1 se hará efectivo llegando a su máximo de 3 descansos totales.*",
       "position": "bottom",
       "notes": "Continuación del ejemplo anterior, en cursiva."
     },
     {
       "anchor": "p27/b14",
+      "heading": null,
+      "text": "Nánuk, Fiereza Kósmica\n\nAdendei Kósmico / Gélida\n\n**Pasiva:** Esta carta no puede recibir marcas.\n\n*El poder había sido moldeado por Nánuk tanto tiempo, que ahora era solo suya.*\n\n3 / 2\n\nBASE-003",
+      "position": "middle-right",
+      "notes": "Carta ilustrativa. Texto completo verbatim capturado con crop HD. 3 ptos. de ataque clave para ejemplo de b05."
+    },
+    {
+      "anchor": "p27/b15",
+      "heading": null,
+      "text": "Zaykan, Emboscada\n\nAdendei / Lítica\n\n**Activa Rápida:** Si una carta aliada es atacada, esta carta y una carta rival en Zona Principal reciben 1 *descanso.*\n\n*La ambición rinde sus frutos.*\n\n2 / 1\n\nKPRC-0005",
+      "position": "bottom-left",
+      "notes": "Carta ilustrativa. Texto completo verbatim. Tipo 'Lítica'. Activa Rápida SIN guión (a diferencia de Brazalete que usa 'Activa-Rápida' con guión)."
+    },
+    {
+      "anchor": "p27/b16",
+      "heading": null,
+      "text": "Brazalete de Rotanio\n\nRot\n\n**Activa-Rápida:** Copia y usa el efecto y costo de cualquier Rot en Extinción.\n\n**Costo:** El *Adendei* equipado se daña 1 pto. y 1 carta aliada con más de **0** ptos. de ataque desciende (disminuye su ataque permanentemente) 1 pto. para usar esta Activa-Rápida.\n\nRAPB-0075",
+      "position": "middle-center",
+      "notes": "Carta ilustrativa. Texto completo verbatim. Activa-Rápida CON guión. Costo con paréntesis explicativo sobre 'descender'."
+    },
+    {
+      "anchor": "p27/b17",
       "heading": null,
       "text": "27",
       "position": "bottom",
@@ -110,7 +134,7 @@
       "slug": "carta-ariam-curacion-catrin",
       "type": "illustration",
       "bbox_pct": {"x": 8, "y": 10, "w": 20, "h": 22},
-      "description_detailed": "Carta del juego Kódem titulada 'Ariam, Curación Catrín' ubicada en la parte superior izquierda de la página. Presenta un marco con estética vegetal/natural en tonos verdes oscuros y dorados, característico de la facción Catrín o afinidad curativa. La ilustración central muestra una criatura o personaje antropomorfo de tonos verdes con elementos mágicos brillantes alrededor, sugiriendo un efecto de curación o restauración.\n\nEn la parte superior de la carta aparece el nombre 'Ariam, Curación Catrín' junto con el coste de invocación (numeración en la esquina superior). Las estadísticas inferiores incluyen valores de ataque/vida en cajas separadas en la parte baja del marco. El diseño incluye un símbolo icónico de facción en la zona superior izquierda que indica su afinidad Catrín.\n\nEsta carta es usada como ejemplo textual del bloque b02 para ilustrar la regla de que la curación está limitada por los puntos de vida máxima de la carta objetivo. Se menciona que 'Ariam' cura 3 puntos pero solo se aplica el máximo permitido.",
+      "description_detailed": "Carta del juego Kódem titulada 'Ariam, Curación Catrín' ubicada en la parte superior izquierda de la página. Presenta un marco con estética vegetal/natural en tonos verdes oscuros y dorados, característico de la facción Catrín o afinidad curativa. La ilustración central muestra una criatura o personaje antropomorfo de tonos verdes con elementos mágicos brillantes alrededor, sugiriendo un efecto de curación o restauración.\n\nEn la parte superior de la carta aparece el nombre 'Ariam, Curación Catrín' junto con el coste de invocación. Las estadísticas inferiores incluyen valores de ataque/vida en cajas separadas en la parte baja del marco.\n\nEsta carta es usada como ejemplo textual del bloque b02 para ilustrar la regla de que la curación está limitada por los puntos de vida máxima de la carta objetivo. Se menciona que 'Ariam' cura 3 puntos pero solo se aplica el máximo permitido.",
       "embedded_text": ["Ariam, Curación Catrín"],
       "relation_to_text": "Ilustra el ejemplo del bloque b02 sobre límite de curación. Muestra la carta que realiza el efecto de curación.",
       "legibility": "clear",
@@ -121,7 +145,7 @@
       "slug": "carta-enis-giro-gelido",
       "type": "illustration",
       "bbox_pct": {"x": 32, "y": 10, "w": 20, "h": 22},
-      "description_detailed": "Carta del juego Kódem titulada 'Enis, Giro Gélido' ubicada en la parte superior central-derecha. Presenta un marco en tonos azul-turquesa y verde claro, con estética de hielo o frío, característico de cartas con afinidad gélida. La ilustración central muestra una criatura turquesa con movimiento giratorio, evocando una tormenta de hielo o remolino congelante.\n\nSobre la carta, en la esquina superior derecha o superpuesto al ilustración, hay un icono de corazón rojo con el número '5' dentro, que representa los puntos de vida máxima de esta carta específica (5 ptos. de vida), elemento clave para el ejemplo textual.\n\nLas estadísticas inferiores aparecen en cajas separadas (ataque, coste, vida). El diseño de la carta sigue el layout estándar de Kódem con borde superior para nombre y afinidad, ilustración central, y franja inferior con stats.\n\nEsta carta se usa como ejemplo receptor de curación en el bloque b02, donde se establece que aunque Ariam cure 3 puntos, Enis solo recibirá 1 punto porque ya tiene 5 de vida (máximo 6).",
+      "description_detailed": "Carta del juego Kódem titulada 'Enis, Giro Gélido' ubicada en la parte superior central-derecha. Presenta un marco en tonos azul-turquesa y verde claro, con estética de hielo o frío, característico de cartas con afinidad gélida. La ilustración central muestra una criatura turquesa con movimiento giratorio, evocando una tormenta de hielo o remolino congelante.\n\nSobre la carta, en la esquina superior derecha o superpuesto a la ilustración, hay un icono de corazón rojo con el número '5' dentro, que representa los puntos de vida actual de esta carta específica (5 ptos. de vida), elemento clave para el ejemplo textual.\n\nEsta carta se usa como ejemplo receptor de curación en el bloque b02, donde se establece que aunque Ariam cure 3 puntos, Enis solo recibirá 1 punto porque ya tiene 5 de vida (máximo 6).",
       "embedded_text": ["Enis, Giro Gélido", "5"],
       "relation_to_text": "Ilustra el ejemplo del bloque b02, sirviendo como receptor de curación con vida 5/6. El '5' en el corazón indica vida actual.",
       "legibility": "clear",
@@ -132,7 +156,7 @@
       "slug": "carta-rhymir-rayo-doble",
       "type": "illustration",
       "bbox_pct": {"x": 10, "y": 35, "w": 18, "h": 20},
-      "description_detailed": "Carta del juego Kódem titulada 'Rhymir, Rayo Doble' ubicada en la zona media de la página. Presenta un marco en tonos oscuros/negros con detalles metálicos, característico de cartas sin afinidad específica o con elementos eléctricos. La ilustración central muestra una criatura o personaje asociado con rayos o energía eléctrica, con efectos visuales de descargas dobles.\n\nLas estadísticas inferiores muestran valores donde el ataque aparece sin puntos de daño (0 ptos. de daño en ataque), lo cual es crucial para el ejemplo del bloque b05. Esto significa que no puede ser objetivo de efectos tipo 'Desciende x ptos. de daño'.\n\nEl diseño del borde y marco mantiene la estética unificada de Kódem TCG, con la zona superior para nombre y coste, ilustración central, y franja de stats abajo.",
+      "description_detailed": "Carta del juego Kódem titulada 'Rhymir, Rayo Doble' ubicada en la zona media de la página. Presenta un marco en tonos oscuros/negros con detalles metálicos, característico de cartas sin afinidad específica o con elementos eléctricos. La ilustración central muestra una criatura o personaje asociado con rayos o energía eléctrica, con efectos visuales de descargas dobles.\n\nLas estadísticas inferiores muestran valores donde el ataque aparece sin puntos de daño (0 ptos. de daño en ataque), lo cual es crucial para el ejemplo del bloque b05. Esto significa que no puede ser objetivo de efectos tipo 'Desciende x ptos. de daño'.",
       "embedded_text": ["Rhymir, Rayo Doble"],
       "relation_to_text": "Ejemplo negativo en bloque b05: no puede ser descendida porque no tiene puntos de daño en su estadística.",
       "legibility": "clear",
@@ -143,7 +167,7 @@
       "slug": "carta-mizthe-guia-de-almas",
       "type": "illustration",
       "bbox_pct": {"x": 32, "y": 35, "w": 18, "h": 20},
-      "description_detailed": "Carta del juego Kódem titulada 'Mizthe, Guía de Almas' ubicada en la zona media de la página. Presenta un marco en tonos rosa-morado con acentos verdes y amarillos, una combinación cromática vívida y floral que sugiere afinidad espiritual o de almas. La ilustración central muestra una criatura o personaje colorido con elementos florales y etéreos, evocando el concepto de guía de almas al más allá.\n\nLas estadísticas inferiores muestran valores donde el ataque no tiene puntos de daño, igual que Rhymir, lo cual la hace inelegible para efectos de descenso de daño. El diseño sigue el estándar de Kódem con marco colorido, nombre en la parte superior, ilustración central vívida, y franja de stats.\n\nEl uso de colores brillantes y contrastantes la diferencia visualmente de las otras cartas del ejemplo.",
+      "description_detailed": "Carta del juego Kódem titulada 'Mizthe, Guía de Almas' ubicada en la zona media de la página. Presenta un marco en tonos rosa-morado con acentos verdes y amarillos, una combinación cromática vívida y floral que sugiere afinidad espiritual o de almas. La ilustración central muestra una criatura o personaje colorido con elementos florales y etéreos, evocando el concepto de guía de almas al más allá.\n\nLas estadísticas inferiores muestran valores donde el ataque no tiene puntos de daño, igual que Rhymir, lo cual la hace inelegible para efectos de descenso de daño.",
       "embedded_text": ["Mizthe, Guía de Almas"],
       "relation_to_text": "Ejemplo negativo en bloque b05: al igual que Rhymir, no tiene puntos de daño y no puede ser objetivo del efecto.",
       "legibility": "clear",
@@ -153,47 +177,47 @@
       "anchor": "p27/fig-05",
       "slug": "carta-nanuk-fiereza-kosmica",
       "type": "illustration",
-      "bbox_pct": {"x": 53, "y": 35, "w": 18, "h": 20},
-      "description_detailed": "Carta del juego Kódem titulada 'Nánuk, Fiereza Kósmica' ubicada en la zona media-derecha. Presenta un marco en tonos rojo-anaranjado oscuro con elementos cósmicos, característico de cartas con afinidad de daño o fiereza. La ilustración central muestra una criatura cósmica oscura con detalles rojos brillantes, evocando una energía fiera y agresiva.\n\nLas estadísticas inferiores muestran 3 puntos de daño en la estadística de ataque, dato crucial mencionado explícitamente en el bloque b05. Esto la convierte en la única carta válida para ser objetivo del efecto 'Desciende x ptos. de daño' del Brazalete de Rotanio.\n\nEl diseño visual contrasta con Mizthe y Rhymir por sus tonos cálidos y presencia de valor numérico de daño en ataque.",
-      "embedded_text": ["Nánuk, Fiereza Kósmica", "3"],
-      "relation_to_text": "Ejemplo positivo en bloque b05: única carta válida para descender porque tiene 3 ptos. de daño.",
+      "bbox_pct": {"x": 63, "y": 25, "w": 30, "h": 25},
+      "description_detailed": "Carta del juego Kódem titulada 'Nánuk, Fiereza Kósmica' ubicada en la zona media-derecha. Presenta un marco en tonos rojo-anaranjado oscuro con elementos cósmicos, característico de cartas con afinidad de daño o fiereza. La ilustración central muestra una criatura cósmica oscura con detalles rojos brillantes, evocando una energía fiera y agresiva.\n\nLa etiqueta de tipo indica 'Adendei Kósmico / Gélida'. El texto Pasiva dice: 'Esta carta no puede recibir marcas.' Flavor: 'El poder había sido moldeado por Nánuk tanto tiempo, que ahora era solo suya.'\n\nLas estadísticas muestran 3 (ataque) / 2 (vida), dato crucial mencionado explícitamente en el bloque b05 (tiene 3 ptos. de daño en estadística de ataque). Esto la convierte en la única carta válida para ser objetivo del efecto 'Desciende x ptos. de daño' del Brazalete de Rotanio. Código BASE-003.",
+      "embedded_text": ["Nánuk, Fiereza Kósmica", "Adendei Kósmico / Gélida", "Pasiva", "marcas", "3", "2", "BASE-003"],
+      "relation_to_text": "Ejemplo positivo en bloque b05: única carta válida para descender porque tiene 3 ptos. de daño en ataque.",
       "legibility": "clear",
-      "legibility_notes": "Nombre y estadísticas legibles."
+      "legibility_notes": "Texto completo verbatim capturado con crop HD."
     },
     {
       "anchor": "p27/fig-06",
       "slug": "carta-brazalete-de-rotanio",
       "type": "illustration",
-      "bbox_pct": {"x": 70, "y": 20, "w": 18, "h": 22},
-      "description_detailed": "Carta del juego Kódem titulada 'Brazalete de Rotanio' ubicada en la zona derecha de la página. Presenta un marco en tonos dorados/neutros/grises, característico de cartas de equipamiento, objeto o item, diferenciándose de las cartas de Adendei por su marco distintivo. La ilustración central muestra una mano o brazo portando un brazalete dorado sobre un fondo oscuro, con detalles metalizados que refuerzan su carácter de objeto mágico.\n\nAl ser una carta tipo Activa-Rápida (mencionada en el bloque b04), su mecánica consiste en activar un efecto rápido pagando un costo. En este caso, su costo implica descender 1 punto de daño a una carta aliada.\n\nEl símbolo de diamante o icono de tipo de carta aparece en la esquina, indicando su categoría. Las estadísticas o texto de efecto se ubican en la franja inferior.",
-      "embedded_text": ["Brazalete de Rotanio"],
+      "bbox_pct": {"x": 50, "y": 40, "w": 25, "h": 22},
+      "description_detailed": "Carta del juego Kódem titulada 'Brazalete de Rotanio' ubicada en la zona derecha de la página. Presenta un marco en tonos dorados/neutros/grises, característico de cartas de tipo Rot/equipamiento. La ilustración central muestra una mano o brazo portando un brazalete dorado sobre un fondo oscuro, con detalles metalizados que refuerzan su carácter de objeto mágico.\n\nSu tipo es 'Rot'. El texto Activa-Rápida: 'Copia y usa el efecto y costo de cualquier Rot en Extinción.' Costo: 'El Adendei equipado se daña 1 pto. y 1 carta aliada con más de 0 ptos. de ataque desciende (disminuye su ataque permanentemente) 1 pto. para usar esta Activa-Rápida.' Código RAPB-0075.",
+      "embedded_text": ["Brazalete de Rotanio", "Rot", "Activa-Rápida", "Copia", "Extinción", "Costo", "Adendei", "descender", "RAPB-0075"],
       "relation_to_text": "Carta central del ejemplo en bloques b04 y b05: su costo requiere descender puntos de daño a una carta aliada.",
       "legibility": "clear",
-      "legibility_notes": "Nombre legible, marco dorado distintivo."
+      "legibility_notes": "Texto completo verbatim capturado con crop HD."
     },
     {
       "anchor": "p27/fig-07",
       "slug": "carta-zaykan-emboscada",
       "type": "illustration",
-      "bbox_pct": {"x": 10, "y": 65, "w": 18, "h": 22},
-      "description_detailed": "Carta del juego Kódem titulada 'Zaykan, Emboscada' ubicada en la zona inferior izquierda. Presenta un marco en tonos verdes oscuros con detalles naturales, característico de cartas de tipo Adendei con afinidad sigilosa o emboscada. La ilustración central muestra un personaje en posición de emboscada, posiblemente entre rocas o vegetación, evocando el concepto de ataque sorpresa.\n\nLas estadísticas inferiores incluyen valores típicos de un Adendei estándar. En el contexto del ejemplo del bloque b11, Zaykan representa un Adendei que tiene un máximo de 2 descansos (característica estándar de Adendei según la regla del bloque b11).\n\nEl marco verde y la postura del personaje comunican sigilo y agresividad controlada.",
-      "embedded_text": ["Zaykan, Emboscada"],
+      "bbox_pct": {"x": 2, "y": 75, "w": 18, "h": 22},
+      "description_detailed": "Carta del juego Kódem titulada 'Zaykan, Emboscada' ubicada en la zona inferior izquierda. Presenta un marco en tonos verdes oscuros con detalles naturales. La ilustración central muestra un personaje en posición de emboscada, evocando el concepto de ataque sorpresa.\n\nLa etiqueta de tipo indica 'Adendei / Lítica'. El texto 'Activa Rápida: Si una carta aliada es atacada, esta carta y una carta rival en Zona Principal reciben 1 descanso.' Flavor: 'La ambición rinde sus frutos.'\n\nEstadísticas: 2 / 1. Código KPRC-0005. En el contexto del ejemplo del bloque b11, Zaykan representa un Adendei con máximo 2 descansos.",
+      "embedded_text": ["Zaykan, Emboscada", "Adendei / Lítica", "Activa Rápida", "descanso", "2", "1", "KPRC-0005"],
       "relation_to_text": "Ejemplo en bloque b11 que ilustra el máximo de descansos (2) para un Adendei.",
       "legibility": "clear",
-      "legibility_notes": "Bien visible."
+      "legibility_notes": "Texto completo verbatim capturado con crop HD."
     },
     {
       "anchor": "p27/fig-08",
       "slug": "carta-karyn-restauracion",
       "type": "illustration",
       "bbox_pct": {"x": 53, "y": 65, "w": 20, "h": 22},
-      "description_detailed": "Carta del juego Kódem titulada 'Karyn, Restauración' ubicada en la zona inferior central-derecha. Presenta un marco en tonos azul-celeste con acentos blancos y dorados, característico de cartas de tipo Protector con afinidad curativa o defensiva. La ilustración central muestra un personaje femenino en posición dinámica, posiblemente realizando un gesto de restauración o protección, con efectos visuales luminosos alrededor.\n\nEn la carta aparece el símbolo de escudo o icono distintivo del tipo Protector, que la diferencia de los Adendei estándar. En el contexto del ejemplo del bloque b12, Karyn representa un Protector que tiene un máximo de 3 descansos (característica estándar de Protector, superior al Adendei).\n\nLas estadísticas inferiores siguen el layout estándar de Protector. El diseño comunica elegancia y capacidad de restauración.",
+      "description_detailed": "Carta del juego Kódem titulada 'Karyn, Restauración' ubicada en la zona inferior central-derecha. Presenta un marco en tonos azul-celeste con acentos blancos y dorados, característico de cartas de tipo Protector con afinidad curativa o defensiva. La ilustración central muestra un personaje femenino en posición dinámica, posiblemente realizando un gesto de restauración o protección, con efectos visuales luminosos alrededor.\n\nEn la carta aparece el símbolo de escudo o icono distintivo del tipo Protector, que la diferencia de los Adendei estándar. En el contexto del ejemplo del bloque b12, Karyn representa un Protector que tiene un máximo de 3 descansos.",
       "embedded_text": ["Karyn, Restauración"],
       "relation_to_text": "Ejemplo en bloque b12 y b13 que ilustra el máximo de descansos (3) para un Protector.",
       "legibility": "clear",
       "legibility_notes": "Nombre y diseño claramente legibles."
     }
   ],
-  "page_notes": "Página continúa temas de reglas generales de efectos sobre cartas: curación, descenso de puntos de daño y descansos por efecto. Establece dos reglas clave: (1) Adendei máximo 2 descansos, (2) Protector máximo 3 descansos. Incluye 8 cartas como ilustraciones de ejemplos. Múltiples typos detectados: 'este' sin acento, 'ptos de vida' sin punto tras 'ptos', 'descansos máximo' (falta 's'), espacios faltantes tras dos puntos y comas en ejemplos. El número 6 es implícito como vida máxima de Adendei en el ejemplo de Ariam/Enis.",
-  "self_confidence": 0.92
+  "page_notes": "Página continúa temas de reglas generales de efectos sobre cartas: curación, descenso de puntos de daño y descansos por efecto. Establece dos reglas clave: (1) Adendei máximo 2 descansos, (2) Protector máximo 3 descansos. Incluye 8 cartas como ilustraciones de ejemplos. Múltiples typos preservados: 'este' sin acento en b11, 'ptos de vida' sin punto tras 'ptos' en b02, 'descansos máximo' (falta 's') en b10, espacios faltantes tras dos puntos y comas en ejemplos b11. RE-EXTRACTION PASS 2: agregados los textos completos verbatim de las 3 cartas clave — Nánuk Fiereza Kósmica (b14), Zaykan Emboscada (b15), Brazalete de Rotanio (b16) — que faltaban en la extracción previa. Detalle importante: 'Activa Rápida' (sin guión) en Zaykan vs 'Activa-Rápida' (con guión) en Brazalete — diferencia tipográfica del reglamento preservada verbatim.",
+  "self_confidence": 0.93
 }

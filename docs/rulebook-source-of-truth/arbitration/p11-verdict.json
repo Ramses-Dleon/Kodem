@@ -1,0 +1,33 @@
+{
+  "page": 11,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:11:00-06:00",
+  "llm_confidence": 0.88,
+  "agreement_pct": 0.88,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "Texto principal (EQUIPOS COMPATIBLES reglas + EQUIPOS MÚLTIPLES + pies de ejemplo) coincide verbatim. Sin embargo OCR capturó flavor texts y detalles de cartas ejemplo que LLM marcó como needs_enhance: (1) lore Zaykan 'El portal se cerró tras de sí, el ojo abierto y su luz a la oscuridad'; (2) lore Draxes 'No es un dragón, es más bien un carnotaurus con alas pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...'; (3) lore Cascada 'Se trataba de un Rot con un núcleo hirviente que con sus saltos, convertía el magma en lava'; (4) En Pasiva de Draxes: 'Adendei-Pírico Titán aliado es revelado' (LLM escribió 'Titán es revelado' omitiendo 'aliado'). Re-extraer figuras con enhance.",
+  "text_blocks_review": [
+    {"anchor": "p11/b01", "llm_text": "Existen algunas cartas de equipo...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p11/b02", "llm_text": "3 viñetas compatibilidad", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p11/b03", "llm_text": "Si una carta tiene equipado un Ixim o Rot no compatible...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p11/b04", "llm_text": "Ejemplo de equipo compatible con un personaje específico", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p11/b05", "llm_text": "Ejemplo de equipo compatible con una energía específica", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p11/b06", "llm_text": "Ejemplo de equipo compatible con un tipo de carta específico", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p11/b07", "llm_text": "EQUIPOS MÚLTIPLES: 2 Ixim o 2 Rot ocultos...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p11/fig-01", "type": "infographic", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p11/fig-02", "type": "illustration", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "re_extract", "note": "Agregar flavor text Zaykan visible en OCR: 'El portal se cerró tras de sí, el ojo abierto y su luz a la oscuridad.'"},
+    {"anchor": "p11/fig-03", "type": "illustration", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "re_extract", "note": "Corregir Pasiva Draxes: 'Adendei-Pírico Titán aliado es revelado' (agregar 'aliado'). Agregar flavor texts: 'No es un dragón, es más bien un carnotaurus con alas pterodáctilo que escupe fuego...' y 'Se trataba de un Rot con un núcleo hirviente que con sus saltos, convertía el magma en lava'"},
+    {"anchor": "p11/fig-04", "type": "illustration", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "re_extract", "note": "Verificar flavor text Jane/Proliferación completo"},
+    {"anchor": "p11/fig-05", "type": "infographic", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p11/fig-06", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [
+    "LLM omitió la palabra 'aliado' en Pasiva de Draxes (fig-03): 'Si 1 Adendei-Pírico Titán aliado es revelado...'. Relevante porque afecta la lectura literal de una regla."
+  ],
+  "typos_confirmed": [
+    "'Pirico' sin tilde en flavor/restricción de Cascada de Lava (OCR)"
+  ],
+  "recommendation": "re_extract"
+}

@@ -1,0 +1,38 @@
+{
+  "page": 21,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:12:00-06:00",
+  "llm_confidence": 0.92,
+  "agreement_pct": 0.85,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "Alta concordancia en texto reglamentario (§6.1 Marcas: 3 marcas, 4 generalidades, ejemplo). Sin embargo, OCR captura texto de las Pasivas/Pasiva-Rápida visible en las cartas ilustradas que LLM omitió tratándolas solo como arte. Ejemplos: 'Pasiva: Si 1 Adender Pitico Tirón aliado es revelado, quemo 1 carta en Zona Principal.' y 'Pasiva-Rápida: Si esta carta es revelada...'. Son efectos reales de cartas (Draxes/Yogg) que funcionan como ejemplos didácticos y deben documentarse.",
+  "text_blocks_review": [
+    {"anchor": "p21/b01", "llm_text": "6.1 Marcas", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p21/b02", "llm_text": "Algunas de tus cartas podrán colocar 'marcas'...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p21/b03", "llm_text": "En Kódem TCG© encontrarás 3 marcas:", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p21/b04", "llm_text": "Quemar: Una carta quemada recibe 1 punto de daño...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p21/b05", "llm_text": "Envenenar: Una carta envenenada recibe 1 punto...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p21/b06", "llm_text": "Abismar: Una carta abismada ha sido cegada...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p21/b07", "llm_text": "Generalidades", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p21/b08-b11", "llm_text": "4 viñetas generalidades", "ocr_match": "exact", "divergence": "Typo 'marco' en OCR (OCR-error) vs 'marca' en LLM - LLM correcto", "action": "keep_llm"},
+    {"anchor": "p21/b12-b13", "llm_text": "Ejemplo Activa Quema + Situación", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p21/fig-01-text-MISSING", "llm_text": "[Texto Pasiva de Draxes no extraído]", "ocr_match": "ocr_has_more", "divergence": "OCR captura 'Pasiva: Si 1 Adender Pitico Tirón aliado es revelado, quemo 1 carta en Zona Principal.' - texto real de la carta Draxes ilustrada", "action": "merge"},
+    {"anchor": "p21/fig-03-text-MISSING", "llm_text": "[Texto Pasiva-Rápida de Yogg no extraído]", "ocr_match": "ocr_has_more", "divergence": "OCR captura 'Pasiva-Rápida: Si esta carta es revelada, [texto parcialmente truncado]' de la carta Yogg, Surgimiento", "action": "merge"},
+    {"anchor": "p21/b14", "llm_text": "21", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p21/fig-01", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "re_extract"},
+    {"anchor": "p21/fig-02", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p21/fig-03", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "re_extract"},
+    {"anchor": "p21/fig-04", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"}
+  ],
+  "critical_discrepancies": [
+    "Texto de Pasiva en carta Draxes (fig-01) no extraído: 'Pasiva: Si 1 Adender Pitico Tirón aliado es revelado, quemo 1 carta en Zona Principal.'",
+    "Texto de Pasiva-Rápida en carta Yogg (fig-03) no extraído completamente"
+  ],
+  "typos_confirmed": [
+    "'Adender' (probable OCR-error por 'Adendei') - verificar en PNG original",
+    "'Pítico Tirón' / 'Pitico Tirón' - nombre de subtipo probable"
+  ],
+  "recommendation": "re_extract"
+}

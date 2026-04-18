@@ -1,0 +1,39 @@
+{
+  "page": 6,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:06:00-06:00",
+  "llm_confidence": 0.90,
+  "agreement_pct": 0.88,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "Excelente coincidencia en §2.2 callouts y §2.2.1 Energías. LLM preservó correctamente todos los typos (Algunos efectos de sólo afectan, ataques alta y medianamente fuertes, añadiendoles, efectos estratégico). Sin embargo OCR capturó el texto de reglas impreso EN la carta ejemplo 'Shugg, Serpiente Voraz' que LLM omitió como bloque: 'Pasiva Rápida: Si 1 Adendei Abisal aliado es revelado... y niega la Pasiva de 1 carta rival hasta el fin del turno. / Costo: No podras usar la Pasiva de tu Bio mientras esta carta esté en el campo.' Merge recomendado.",
+  "text_blocks_review": [
+    {"anchor": "p06/b01", "llm_text": "2.2 Estadísticas de la carta", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p06/b02", "llm_text": "Vida Máxima callout", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p06/b03", "llm_text": "Tipo de carta con typo 'efectos de sólo afectan'", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p06/b04", "llm_text": "Subtipo de carta", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p06/b05", "llm_text": "Energía: 8 tipos", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p06/b06", "llm_text": "Daño callout con '?' y escalar/descender", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p06/b07", "llm_text": "Descanso callout con §5.1", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p06/b08", "llm_text": "2.2.1 ENERGÍAS header", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p06/b09", "llm_text": "Párrafo introductorio energías", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p06/b10-b17", "llm_text": "8 descripciones de energías", "ocr_match": "exact", "divergence": "OCR confirma typo 'eEnergla' al final de FERAL — LLM no lo preservó ('Energía')", "action": "flag_for_human"},
+    {"anchor": "p06/b-MISSING-CARD-TEXT", "llm_text": "(ausente)", "ocr_match": "ocr_has_more", "divergence": "Texto de reglas impreso en carta Shugg omitido: 'Pasiva Rápida: Si 1 / Adendei Abisal aliado es revelado, revela (coloca boca arriba) 1 carta rival y niega la Pasiva de 1 carta rival hasta el fin del turno. Costo: No podras usar la Pasiva de tu Bio mientras esta carta esté en el campo.'", "action": "merge"}
+  ],
+  "figures_review": [
+    {"anchor": "p06/fig-01", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p06/fig-02", "type": "infographic", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p06/fig-03", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [
+    "LLM omitió como bloque de texto el contenido de reglas impreso en la carta 'Shugg, Serpiente Voraz' (Pasiva Rápida + Costo). Merge como p06/b18.",
+    "Posible typo 'eEnergla' en el cierre de FERAL según OCR; LLM escribe 'Energía'. Verificar fuente."
+  ],
+  "typos_confirmed": [
+    "'Algunos efectos de sólo afectan' (b03)",
+    "'ataques alta y medianamente fuertes' (b11)",
+    "'añadiendoles' sin tilde (b12)",
+    "'efectos estratégico' (b16)",
+    "'podras' sin tilde en Costo de Shugg (OCR)"
+  ],
+  "recommendation": "spot_check_human"
+}

@@ -1,0 +1,39 @@
+{
+  "page": 24,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:18:00-06:00",
+  "llm_confidence": 0.88,
+  "agreement_pct": 0.80,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "Reglas §6.6 ATAQUE coinciden verbatim (3 conceptos numerados, fórmula Daño = Base + Aumentado + Adicional, Respuestas al ataque). OCR captura texto verbatim de las 3 cartas ejemplo (Xakros, Ariam, Zoadon) con sus Activas/Activa-Rápida y flavor text, que LLM identificó pero no transcribió completamente. Ej: Zoadon 'Activa-Rápida: Puedes desviar 1 pto. de daño de cada carta aliada atacada a esta carta' es mecánica relevante para ejemplificar Respuestas al ataque.",
+  "text_blocks_review": [
+    {"anchor": "p24/b01-b04", "llm_text": "4 viñetas continuación §6.5", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p24/b05", "llm_text": "6.6 ATAQUE", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p24/b06", "llm_text": "El ataque es el principal medio...Daño Base + Daño Aumentado + Daño Adicional", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p24/b07", "llm_text": "Los efectos que permiten 'Atacar'...reemplazara el ataque base. Ej Yanzi, precisión.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p24/b08-b11", "llm_text": "Atacar (1), 1.1, Declarar (2), Resolver (3)", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p24/b12-b13", "llm_text": "captions 'Ejemplo: NO/CONDICIONADO al ataque'", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p24/b14", "llm_text": "Respuestas al ataque: ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p24/fig-02-text-Xakros", "llm_text": "[Texto Xakros no completo]", "ocr_match": "ocr_has_more", "divergence": "'descansos iguales a los indicados en su respectiva carta' + flavor 'Toda voz se debilita con su lento trote.'", "action": "merge"},
+    {"anchor": "p24/fig-03-text-Ariam", "llm_text": "[Texto Ariam no completo]", "ocr_match": "ocr_has_more", "divergence": "'Activa: Si esta carta ataca, protege a un Adendei aliado [resto]' + flavor 'Agua y fuego, vida y muerte...' - nota: OCR dice 'Ariam' no 'Ariem'", "action": "merge"},
+    {"anchor": "p24/fig-04-text-Zoadon", "llm_text": "[Texto Zoadon no completo]", "ocr_match": "ocr_has_more", "divergence": "'Adendei Titán / Lítica' (NO 'Adendo Titán/Lútica') + 'Activa-Rápida: Puedes desviar 1 pto. de daño de cada carta aliada atacada a esta carta.' + 'A través de su cuerpo, depura el mar.'", "action": "merge"},
+    {"anchor": "p24/b15", "llm_text": "24", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p24/fig-01", "type": "icon", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p24/fig-02", "type": "illustration", "legibility_llm": "clear", "description_quality": "good", "action": "re_extract"},
+    {"anchor": "p24/fig-03", "type": "illustration", "legibility_llm": "clear", "description_quality": "good", "action": "re_extract"},
+    {"anchor": "p24/fig-04", "type": "illustration", "legibility_llm": "clear", "description_quality": "good", "action": "re_extract"}
+  ],
+  "critical_discrepancies": [
+    "LLM escribe 'Adendo' pero OCR consistentemente dice 'Adendei' - posible error terminológico LLM",
+    "'Lútica' (LLM) vs 'Lítica' (OCR) - subtipo, verificar PNG",
+    "'Punto de Cueta' (LLM, dudoso) - OCR no confirma esta leyenda",
+    "'Ariem' (LLM) vs 'Ariam' (OCR) en nombre de carta"
+  ],
+  "typos_confirmed": [
+    "'reemplazara' sin tilde en ambos fuentes (debería ser 'reemplazará')",
+    "'Yanzi, precision' sin tilde en OCR, LLM tiene 'precisión'"
+  ],
+  "recommendation": "re_extract"
+}

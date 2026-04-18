@@ -1,0 +1,34 @@
+{
+  "page": 28,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T21:01:00-06:00",
+  "llm_confidence": 0.92,
+  "agreement_pct": 0.93,
+  "verdict": "llm_preferred",
+  "verdict_reason": "LLM coincide verbatim con la imagen fuente en los puntos críticos donde el OCR falla (OCR convierte '3' en '5' dos veces en el párrafo inicial, altera 'Adendei' como 'Agdendel', introduce guiones/fragmentos ilegibles). LLM preserva typos reales verificados ('considerara', 'Extincion', 'resurecctas', 'Esta cartas', 'relaacionan', 'fecto') y texto completo. OCR ofrece bonus: capta parcialmente los efectos impresos dentro de las 3 cartas Vivificar (Mixtla/Ketzz/Ariam) que LLM trató como figuras sin transcripción; ver note abajo sobre si documentar o no in-card text.",
+  "text_blocks_review": [
+    {"anchor": "p28/b01", "llm_text": "Cartas con condiciones específicas... (1,2,3, etc)... 3 o más, etc.", "ocr_match": "partial", "divergence": "OCR dice '(1,2,5, etc)' y '5 o más' — errores de reconocimiento de dígito. Imagen confirma que el LLM (3) es correcto.", "action": "keep_llm"},
+    {"anchor": "p28/b02", "llm_text": "Ejemplo: \"Zaren, Unión\"", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p28/b03", "llm_text": "Activa: Si tu rival no tiene 1 Token en Zona Principal, regresa un Adendei rival al tope del Mazo, y coloca… (en este caso si el rival tiene 1 o más Token se considera que no cumple la condición)", "ocr_match": "partial", "divergence": "OCR corrompe 'Adendei' como 'Agdendel!' y fragmenta 'Princi-pal'. LLM limpia a ortografía correcta.", "action": "keep_llm"},
+    {"anchor": "p28/b04", "llm_text": "Costo: Debes tener 2 Rot en Extinción para usar su Activa. (En este caso si tiene 2 o más Rot en Extincion se considera que si cumple la condición).", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p28/b05", "llm_text": "Ejemplo: \"Greah, Mazo Pétreo\"", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p28/b06", "llm_text": "Efectos de un solo uso: Los efectos de un \"solo uso por juego\", se podrán usar una vez por jugador y si uno de esos efectos ya fue usado por algún jugador, ese jugador no podrá volver a declararlo aún si ese efecto es copiado por alguna de sus cartas.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p28/b07", "llm_text": "Vivificar", "ocr_match": "exact", "divergence": "OCR lo muestra como 'VIVIFICAR' en mayúsculas; ambos válidos dependiendo de interpretación de título stylizado.", "action": "keep_llm"},
+    {"anchor": "p28/b08", "llm_text": "Algunas cartas en Kódem son variantes resurecctas, de los personajes... 'VIVIFICAR'", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p28/b09", "llm_text": "Mixtla, Regreso | Ketzz, Plumas Inmortales | Ariam, Resurgimiento Fangoso", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p28/b10", "llm_text": "Vivificar: Las cartas que explícitamente no mencionen en sus textos, que pueden vivificar, enviar cartas de Extinción a otras Zonas o Intercambiar cartas con cartas en Extinción, no podrán sacar cartas de Extinción a otras Zonas.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p28/b11", "llm_text": "Si una carta cuyo efecto se haya activado en campo no especifica cuándo termina, este terminará cuando la carta ya no se encuentre revelada en el campo.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p28/b12", "llm_text": "Si la condición para activar un efecto se cumple varias veces simultáneamente, el efecto sólo se activará una vez.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p28/b13", "llm_text": "28", "ocr_match": "absent", "divergence": "OCR omite número de página — esperable.", "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p28/fig-01", "type": "illustration (carta Zaren, Unión)", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p28/fig-02", "type": "illustration (carta Greah, Mazo Pétreo)", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p28/fig-03", "type": "illustration (carta Mixtla, Regreso)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p28/fig-04", "type": "illustration (carta Ketzz, Plumas Inmortales)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p28/fig-05", "type": "illustration (carta Ariam, Resurgimiento Fangoso)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": ["considerara (falta acento)", "Extincion (falta acento)", "resurecctas (doble c)", "Esta cartas (debería 'Estas')", "relaacionan (doble a)", "fecto (falta 'e' inicial)"],
+  "recommendation": "accept"
+}

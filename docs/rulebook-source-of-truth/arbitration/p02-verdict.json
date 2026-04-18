@@ -1,0 +1,18 @@
+{
+  "page": 2,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:01:00-06:00",
+  "llm_confidence": 0.97,
+  "agreement_pct": 0.85,
+  "verdict": "llm_preferred",
+  "verdict_reason": "Tabla de contenidos con líneas punteadas. OCR altamente degradado por los puntos de guía (interpreta ruido como secuencias 'ii' o 'cc'). LLM capturó la estructura completa del TOC con números de sección, títulos y páginas correctamente. Todos los section_refs (§1 a §5.2) están presentes en ambos. Los nombres de secciones clave (Adendei, Protector, Rava, Ixim, Rot, Bio, Token, Espectros, Descansos) coinciden en ambas fuentes.",
+  "text_blocks_review": [
+    {"anchor": "p02/b01", "llm_text": "Tabla de contenidos completa (§1-§5.2)", "ocr_match": "partial", "divergence": "OCR degradado por líneas de puntos; títulos principales reconocibles pero números de página y subsecciones con ruido masivo", "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p02/fig-01", "type": "infographic", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": ["'Uso de los Espectros' escrito como 'Uso del los Espectros' (preservado verbatim en LLM)", "'Equipos Compatible' sin 's' final (preservado verbatim)", "'Carta Poseídas' en lugar de 'Cartas Poseídas' (preservado verbatim)"],
+  "recommendation": "accept"
+}

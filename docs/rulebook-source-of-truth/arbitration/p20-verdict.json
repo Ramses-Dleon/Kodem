@@ -1,0 +1,36 @@
+{
+  "page": 20,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:10:00-06:00",
+  "llm_confidence": 0.94,
+  "agreement_pct": 0.98,
+  "verdict": "both_agree",
+  "verdict_reason": "Concordancia excepcional: 7 puntos de §5.3 Reemplazo de cartas capturados idénticamente, banner §6 Interacciones y Efectos con 'Importante' y ejemplos (sí aplica / no aplica). Typo 'Prinicipal' preservado verbatim por ambas fuentes. Typo 'EXPLICITAMENTE LO CONTRARIO' (mayúsculas enfáticas) también preservado.",
+  "text_blocks_review": [
+    {"anchor": "p20/b01", "llm_text": "5.3 Reemplazo de cartas", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p20/b02", "llm_text": "1. Cuando una carta deja su espacio...Mazo Prinicipal", "ocr_match": "exact", "divergence": "Typo 'Prinicipal' verbatim en ambos", "action": "keep_llm"},
+    {"anchor": "p20/b03", "llm_text": "2. Siempre que una carta (que no sea un equipo)...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p20/b04", "llm_text": "3. En ningún momento se pueden usar como suplentes cartas rivales.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p20/b05", "llm_text": "4. Si un Protector es enviado a Extinción...12 puntos de vida", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p20/b06", "llm_text": "5. Si un jugador no puede colocar ninguna carta...perderá la partida inmediatamente", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p20/b07", "llm_text": "6. Si un jugador se queda sin cartas en su Mazo Principal...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p20/b08", "llm_text": "7. En Kódem, algunas cartas tienen efectos válidos...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p20/b09", "llm_text": "6. Interacciones y Efectos", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p20/b10", "llm_text": "Importante: Se aplicarán en todo momento...", "ocr_match": "exact", "divergence": "OCR tiene 'EXPLICITAMENTE LO CONTRARIO' en mayúsculas - podría ser énfasis editorial en el original que LLM no preservó con caps", "action": "merge"},
+    {"anchor": "p20/b11", "llm_text": "Ejemplos donde sí aplica: (2 ejemplos)", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p20/b12", "llm_text": "Ejemplos donde no aplica: (2 ejemplos)", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p20/b13", "llm_text": "20", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p20/fig-01", "type": "photo", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p20/fig-02", "type": "photo", "legibility_llm": "needs_enhance", "description_quality": "good", "action": "keep"},
+    {"anchor": "p20/fig-03", "type": "photo", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p20/fig-04", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": [
+    "'Prinicipal' (debería ser 'Principal') en b02 - verbatim en ambas fuentes",
+    "'EXPLICITAMENTE LO CONTRARIO' en mayúsculas editoriales en b10 - confirmado por OCR"
+  ],
+  "recommendation": "accept"
+}

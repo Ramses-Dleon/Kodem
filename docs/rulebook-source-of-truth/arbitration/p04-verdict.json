@@ -1,0 +1,29 @@
+{
+  "page": 4,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:03:00-06:00",
+  "llm_confidence": 0.93,
+  "agreement_pct": 0.88,
+  "verdict": "ocr_preferred",
+  "verdict_reason": "Alta coincidencia en §1, §1.2 y §1.3. Sin embargo OCR capturó un slogan/lema 'VEVAGE, PROTEGE Y VENCE!' (probablemente '¡EVOCA, PROTEGE Y VENCE!' o similar) que LLM omitió completamente. También divergencia en 'convirtiéndote' (LLM) vs 'conviertiéndote' (OCR, typo). Se debe verificar el PNG para confirmar cuál es el texto literal.",
+  "text_blocks_review": [
+    {"anchor": "p04/b01", "llm_text": "Kódem TCG© es un juego de cartas único... convirtiéndote en un Protector...", "ocr_match": "partial", "divergence": "OCR muestra 'conviertiéndote' (con i extra) — posible typo en fuente que LLM 'corrigió'", "action": "flag_for_human"},
+    {"anchor": "p04/b02", "llm_text": "En el producto de Kódem TCG podrás encontrar una gran variedad...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p04/b03", "llm_text": "Lista de componentes con 4 bullets", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p04/b-MISSING", "llm_text": "(ausente)", "ocr_match": "ocr_has_more", "divergence": "OCR contiene '¡EVAGE/EVOCA, PROTEGE Y VENCE!' (slogan/banner) entre §1.2 y §1.3 que LLM no capturó", "action": "merge"}
+  ],
+  "figures_review": [
+    {"anchor": "p04/fig-01", "type": "illustration", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p04/fig-02", "type": "photo", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p04/fig-03", "type": "photo", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p04/fig-04", "type": "illustration", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p04/fig-05", "type": "photo", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p04/fig-06", "type": "illustration", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [
+    "LLM omitió bloque de slogan/banner '¡EVOCA, PROTEGE Y VENCE!' (OCR leyó como 'VEVAGE, PROTEGE Y VENCE!'). Requiere re-extracción del PNG para confirmar texto exacto y capturar como bloque adicional.",
+    "Discrepancia 'convirtiéndote' (LLM) vs 'conviertiéndote' (OCR). Si OCR es correcto, LLM silenciosamente corrigió un typo de fuente."
+  ],
+  "typos_confirmed": [],
+  "recommendation": "spot_check_human"
+}

@@ -2,6 +2,9 @@
   "page": 23,
   "model": "opus-4-7",
   "extraction_date": "2026-04-18T20:05:00-06:00",
+  "re_extraction_pass": 2,
+  "re_extraction_date": "2026-04-18T21:55:00-06:00",
+  "re_extraction_focus": ["missing_card_text", "card_active_passive", "card_scientific_name", "card_code_correction"],
   "title": "6.3 Protección",
   "section_refs": ["§6.3", "§6.4", "§6.5"],
   "text_blocks": [
@@ -10,7 +13,7 @@
       "heading": "6.3 Protección",
       "text": "6.3 Protección",
       "position": "top",
-      "notes": "título de subsección"
+      "notes": "título de subsección, renderizado en small caps dentro de pastilla"
     },
     {
       "anchor": "p23/b02",
@@ -24,21 +27,21 @@
       "heading": null,
       "text": "• Si el efecto de carta A que protege a carta B, es negado entonces la carta B deja de estar protegida.",
       "position": "top-middle",
-      "notes": "viñeta"
+      "notes": "viñeta con espacio después de •"
     },
     {
       "anchor": "p23/b04",
       "heading": null,
       "text": "• Si un protector equipado es cambiado por el protector suplente y el protector suplente no es compatible con el equipo, el equipo regresara a Zona de equipos.",
       "position": "top-middle",
-      "notes": "viñeta"
+      "notes": "viñeta con espacio después de •"
     },
     {
       "anchor": "p23/b05",
       "heading": "6.4 Tipos de Daño",
       "text": "6.4 Tipos de Daño",
       "position": "middle",
-      "notes": "título de subsección"
+      "notes": "título de subsección, renderizado en small caps dentro de pastilla"
     },
     {
       "anchor": "p23/b06",
@@ -52,7 +55,7 @@
       "heading": "Daño por Ataque",
       "text": "1. Daño por Ataque: El total de daños que se declara durante un ataque, incluyendo daño aumentado y daño adicional siempre que el efecto de una carta mencione \"ataca\", \"aumenta el daño\" o \"daña adicionalmente\".",
       "position": "middle",
-      "notes": "entrada numerada"
+      "notes": "entrada numerada, etiqueta en small caps negrita"
     },
     {
       "anchor": "p23/b08",
@@ -66,28 +69,28 @@
       "heading": null,
       "text": "•Primero, el daño base, que es el daño indicado en las estadísticas.",
       "position": "middle",
-      "notes": "viñeta"
+      "notes": "viñeta SIN espacio después de •"
     },
     {
       "anchor": "p23/b10",
       "heading": null,
       "text": "•Segundo, el daño aumentado, que incrementa temporalmente el daño base y se añade a este.",
       "position": "middle",
-      "notes": "viñeta"
+      "notes": "viñeta SIN espacio después de •"
     },
     {
       "anchor": "p23/b11",
       "heading": null,
       "text": "•Tercero, los multiplicadores de daño, que se consideran daño aumentado y se aplican al daño base más el daño aumentado. Los multiplicadores de daño pueden ser acumulativos.",
       "position": "middle-bottom",
-      "notes": "viñeta"
+      "notes": "viñeta SIN espacio después de •"
     },
     {
       "anchor": "p23/b12",
       "heading": null,
       "text": "• Por último, el daño adicional, que se suma después del daño aumentado y no modifica el daño base ni se considera parte del daño aumentado.",
       "position": "middle-bottom",
-      "notes": "viñeta"
+      "notes": "viñeta CON espacio después de •"
     },
     {
       "anchor": "p23/b13",
@@ -155,6 +158,48 @@
     {
       "anchor": "p23/b22",
       "heading": null,
+      "text": "Kuyovi, Salto Eléctrico",
+      "position": "card-bottom-right-name",
+      "notes": "nombre impreso en carta de ejemplo (esquina inferior derecha)"
+    },
+    {
+      "anchor": "p23/b23",
+      "heading": null,
+      "text": "Adelphobates galactonotus",
+      "position": "card-bottom-right-scientific",
+      "notes": "nombre científico en cursiva bajo el nombre de la carta Kuyovi"
+    },
+    {
+      "anchor": "p23/b24",
+      "heading": null,
+      "text": "Adendei / Demótica",
+      "position": "card-bottom-right-type",
+      "notes": "tipo/categoría de la carta Kuyovi"
+    },
+    {
+      "anchor": "p23/b25",
+      "heading": null,
+      "text": "Activa: Cambia de lugar esta carta con cualquier carta en tu Zona Principal.",
+      "position": "card-bottom-right-active",
+      "notes": "texto ACTIVA de la carta Kuyovi, Salto Eléctrico"
+    },
+    {
+      "anchor": "p23/b26",
+      "heading": null,
+      "text": "Pasiva: Si esta carta atacó a una carta frente a ella, esa carta recibe 1 descanso.",
+      "position": "card-bottom-right-passive",
+      "notes": "texto PASIVA de la carta Kuyovi, Salto Eléctrico — nota: 'descanso' (singular)"
+    },
+    {
+      "anchor": "p23/b27",
+      "heading": null,
+      "text": "LGRO-077",
+      "position": "card-bottom-right-code",
+      "notes": "código de carta Kuyovi"
+    },
+    {
+      "anchor": "p23/b28",
+      "heading": null,
       "text": "23",
       "position": "bottom-center",
       "notes": "número de página (folio)"
@@ -166,13 +211,13 @@
       "slug": "kuyovi-salto-electrico-ilustracion",
       "type": "illustration",
       "bbox_pct": {"x": 60, "y": 68, "w": 36, "h": 28},
-      "description_detailed": "Ilustración de la carta 'Kuyovi, Salto Eléctrico' en orientación vertical. El marco de la carta es oscuro, con tonos negros y grises y acabado elegante. En la parte superior aparece el nombre 'Kuyovi, Salto Eléctrico' en fuente decorativa estilizada sobre un banner/banda horizontal.\n\nLa ilustración central representa una rana estilizada de aspecto fantástico/mágico en postura erguida y majestuosa. El cuerpo es de color azul oscuro/negro con marcas luminosas de color púrpura/violeta neón que recorren la piel formando patrones geométricos y orgánicos, evocando energía eléctrica o bioluminiscencia. El fondo muestra un entorno selvático/tropical en tonos verdes oscuros con agua o reflejos, atmósfera misteriosa y nocturna.\n\nEn la parte inferior de la carta se distinguen elementos mecánicos del juego: iconos de tipo (pata de animal sugiriendo categoría Adendo/Demótica), texto de habilidades (Activa y Pasiva), estadísticas numéricas con valores 2 y 1 visibles, y el código 'LGRO-027'. También aparece el logo de Kódem TCG en la parte baja.\n\nEl estilo artístico es ilustración digital de alta calidad coherente con el resto del set, con énfasis en la bioluminiscencia y el contraste violeta/azul oscuro.",
-      "embedded_text": ["Kuyovi, Salto Eléctrico", "LGRO-027", "Kódem TCG"],
-      "relation_to_text": "Ilustración de ejemplo visual, posiblemente vinculada a la sección 6.5 (Cambios entre Zonas) o como carta asociada a la temática de la página. No parece tener una relación directa textual clara con las reglas descritas.",
+      "description_detailed": "Ilustración de la carta 'Kuyovi, Salto Eléctrico' en orientación vertical. El marco de la carta es oscuro, con tonos negros y grises y acabado elegante. En la parte superior aparece el nombre 'Kuyovi, Salto Eléctrico' en fuente decorativa estilizada sobre un banner/banda horizontal, con el nombre científico 'Adelphobates galactonotus' en cursiva más pequeña debajo.\n\nLa ilustración central representa una rana estilizada (Adelphobates galactonotus / rana dardo) de aspecto fantástico/mágico en postura erguida y majestuosa. El cuerpo es de color azul oscuro/negro con marcas luminosas de color púrpura/violeta neón que recorren la piel formando patrones geométricos y orgánicos, evocando energía eléctrica o bioluminiscencia. El fondo muestra un entorno selvático/tropical en tonos verdes oscuros con agua o reflejos, atmósfera misteriosa y nocturna.\n\nEn la parte inferior de la carta se leen el tipo 'Adendei / Demótica' y dos habilidades: Activa ('Cambia de lugar esta carta con cualquier carta en tu Zona Principal.') y Pasiva ('Si esta carta atacó a una carta frente a ella, esa carta recibe 1 descanso.'). Estadísticas numéricas con valores 2 y 1 visibles, código 'LGRO-077' y el logo de Kódem TCG.\n\nEl estilo artístico es ilustración digital de alta calidad coherente con el resto del set, con énfasis en la bioluminiscencia y el contraste violeta/azul oscuro.",
+      "embedded_text": ["Kuyovi, Salto Eléctrico", "Adelphobates galactonotus", "Adendei / Demótica", "Activa: Cambia de lugar esta carta con cualquier carta en tu Zona Principal.", "Pasiva: Si esta carta atacó a una carta frente a ella, esa carta recibe 1 descanso.", "LGRO-077", "Kódem TCG", "2", "1"],
+      "relation_to_text": "Carta de ejemplo visual. Su Activa ('Cambia de lugar esta carta con cualquier carta en tu Zona Principal') ilustra directamente el tema de la subsección 6.5 'Cambios entre Zonas', mostrando un efecto que cambia la posición de una carta en el campo. Su Pasiva ejemplifica interacción de ataque con la víctima.",
       "legibility": "clear",
-      "legibility_notes": "Texto de habilidades pequeño dentro de la carta parcialmente legible."
+      "legibility_notes": "Texto de Activa y Pasiva legible tras re-extracción a crop de alta resolución."
     }
   ],
-  "page_notes": "Página densa con tres subsecciones: 6.3 Protección, 6.4 Tipos de Daño, 6.5 Cambios entre Zonas (inicio). Distingue 4 tipos de daño (Ataque, Efecto, Costo, Marca) y el orden de aplicación de daño en ataques (base → aumentado → multiplicadores → adicional). Solo una ilustración de carta visible (Kuyovi). Folio '23' al pie.",
-  "self_confidence": 0.9
+  "page_notes": "Página densa con tres subsecciones: 6.3 Protección, 6.4 Tipos de Daño, 6.5 Cambios entre Zonas (inicio). Distingue 4 tipos de daño (Ataque, Efecto, Costo, Marca) y el orden de aplicación de daño en ataques (base → aumentado → multiplicadores → adicional). Ilustración de carta Kuyovi (Adendei / Demótica, LGRO-077) con Activa y Pasiva transcritas textualmente. Folio '23' al pie. Nota verbatim: los encabezados 6.3/6.4/6.5 están renderizados en small caps dentro de pastillas de color; las entradas numeradas usan el mismo estilo small caps. Texto capturado en Title Case para preservar contenido; la estilización visual es tipográfica.",
+  "self_confidence": 0.93
 }

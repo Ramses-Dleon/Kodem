@@ -1,0 +1,18 @@
+{
+  "page": 3,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T15:02:00-06:00",
+  "llm_confidence": 0.97,
+  "agreement_pct": 0.85,
+  "verdict": "llm_preferred",
+  "verdict_reason": "Continuación de tabla de contenidos + ilustración decorativa. OCR degradado por líneas de puntos suspensivos como en p02. LLM capturó correctamente todas las secciones §5.3 a §9 con subsecciones, incluyendo estructura jerárquica. OCR confirma presencia de las mismas entradas (Reemplazo de cartas, Interacciones y Efectos, Marcas, Cambios de Estadística, Protección, Tipos de Daño, Cambios entre Zonas, Efectos, Restricciones, Formatos, Glosario).",
+  "text_blocks_review": [
+    {"anchor": "p03/b01", "llm_text": "Tabla de contenidos continuación §5.3-§9", "ocr_match": "partial", "divergence": "OCR confirma títulos principales pero con ruido en líneas de puntos; LLM tiene estructura limpia", "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p03/fig-01", "type": "illustration", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": [],
+  "recommendation": "accept"
+}

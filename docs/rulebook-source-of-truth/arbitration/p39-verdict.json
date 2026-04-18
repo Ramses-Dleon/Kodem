@@ -1,0 +1,49 @@
+{
+  "page": 39,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T21:45:00-06:00",
+  "llm_confidence": 0.90,
+  "agreement_pct": 0.98,
+  "verdict": "both_agree",
+  "verdict_reason": "Excelente extracción y arbitraje. LLM preserva TODOS los typos verbatim críticos de la zona: 'mlas Pasivas-Rápidas' (por 'las'), 'muestrala' (sin tilde), 'este negado' (sin tilde), 'vuelve a sus a estadísticas' (preposición repetida), 'to-mada(s)' (con guion dentro del ejemplo). OCR degrada caracteres ('Naya' por 'haya', 'dICe' por 'dice', 'E fecto' con espacio, 'Mayo ría' con espacio, 'JUCQO' por 'juego', '¿descansos' por '3 descansos') que LLM limpia. LLM captura correctamente las 24 entradas M-U del glosario en doble columna. Esta es la zona central de typos verbatim mencionados en la instrucción y todos están preservados.",
+  "text_blocks_review": [
+    {"anchor": "p39/b01", "llm_text": "•Mazo (Mazo Principal): Zona. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b02", "llm_text": "•Mazo General: ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b03", "llm_text": "•Mostrar: Acción de Turno. ... muestrala y cura 1 pto. ...", "ocr_match": "exact", "divergence": "Typo verbatim 'muestrala' (sin tilde) preservado por ambos.", "action": "keep_llm"},
+    {"anchor": "p39/b04", "llm_text": "•Negar: Efecto. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b05", "llm_text": "•Negar un ataque: ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b06", "llm_text": "•Negar un efecto: ... este negado ...", "ocr_match": "exact", "divergence": "Typo verbatim 'este negado' preservado por ambos.", "action": "keep_llm"},
+    {"anchor": "p39/b07", "llm_text": "•Ocultar: Efecto. ... vuelve a sus a estadísticas base ...", "ocr_match": "exact", "divergence": "Typo verbatim 'vuelve a sus a estadísticas' preservado. Nota: OCR parte en párrafos separados los sub-bullets sobre cartas ocultas/consideración/anterior/Extinción. LLM los consolida en un solo bloque.", "action": "keep_llm"},
+    {"anchor": "p39/b08", "llm_text": "•Pasiva: Efecto. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b09", "llm_text": "•Pasiva-Rápida: ... mlas Pasivas-Rápidas ...", "ocr_match": "exact", "divergence": "Typo verbatim 'mlas' preservado por ambos.", "action": "keep_llm"},
+    {"anchor": "p39/b10", "llm_text": "•Poseer: Acción. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b11", "llm_text": "•Pagar: ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b12", "llm_text": "•Protector: Carta. Carta con 12 puntos de vida...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b13", "llm_text": "•Proteger: Efecto. Efecto que se aplica...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b14", "llm_text": "•Quemar: Marca. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b15", "llm_text": "•Rava: Carta. ... 0-2 Rava ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b16", "llm_text": "•Reemplazar: Acción. ... 3 cartas del tope ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b17", "llm_text": "•Resolver el ataque: ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b18", "llm_text": "•Resolver un efecto: ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b19", "llm_text": "•Restricción: Efecto. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b20", "llm_text": "•Revelar: Efecto. Acción de Turno. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b21", "llm_text": "•Rot: Equipo. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b22", "llm_text": "•Tomar: Acción de Turno. ... to-mada(s) ...", "ocr_match": "exact", "divergence": "Guion 'to-mada(s)' preservado verbatim por ambos — posible corte de línea del rulebook preservado en el ejemplo.", "action": "keep_llm"},
+    {"anchor": "p39/b23", "llm_text": "•Turno: ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b24", "llm_text": "•Usar: Acción. ...", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p39/b25", "llm_text": "39", "ocr_match": "absent", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p39/fig-01", "type": "infographic (glosario M-U doble columna)", "legibility_llm": "clear", "description_quality": "excellent", "action": "keep"},
+    {"anchor": "p39/fig-02", "type": "icon (número página 39)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [],
+  "typos_confirmed": [
+    "'mlas Pasivas-Rápidas' (por 'las') — b09",
+    "'muestrala' (sin tilde) — b03",
+    "'este negado' (sin tilde, debería 'esté') — b06",
+    "'vuelve a sus a estadísticas' (preposición repetida) — b07",
+    "'to-mada(s)' (guion dentro del ejemplo) — b22"
+  ],
+  "recommendation": "accept"
+}

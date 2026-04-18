@@ -2,6 +2,13 @@
   "page": 7,
   "model": "opus-4-7",
   "extraction_date": "2026-04-18T20:20:00-06:00",
+  "re_extraction_pass": 2,
+  "re_extraction_date": "2026-04-18T15:55:00-06:00",
+  "re_extraction_focus": [
+    "verbatim_typos",
+    "scientific_name_correction",
+    "preserve_source_typos"
+  ],
   "title": "3. Tipos de Cartas — 3.1 Adendei",
   "section_refs": ["§3", "§3.1"],
   "text_blocks": [
@@ -52,7 +59,7 @@
       "heading": "Subtipo Tipo de Adendei",
       "text": "Subtipo Tipo de Adendei: Algunos de los Adendei se categorizan de acuerdo con su rol, su poder, su antigüedad, etc. Este apartado indica qué subtipo de Adendei es tu carta. Ej. Titán, Abisal, Equino, Lupino, Infectado, Guardián, Kósmico, Catrin, etc.",
       "position": "middle-left (callout medio izquierdo)",
-      "notes": "Callout naranja. Lista de ejemplos de subtipos en negrita cursiva. Apunta al banner medio de la carta donde aparece 'Adendei Titán / Demótica'."
+      "notes": "Callout naranja. Lista de ejemplos de subtipos en negrita cursiva. Apunta al banner medio de la carta donde aparece 'Adendei Titán / Demótica'. 'Catrin' sin tilde (verbatim)."
     },
     {
       "anchor": "p07/b08",
@@ -92,23 +99,23 @@
     {
       "anchor": "p07/b13",
       "heading": "Uso de los Adendei",
-      "text": "Uso de los Adendei",
+      "text": "USO DE LOS ADENDEI",
       "position": "bottom-center (header)",
-      "notes": "Encabezado en cápsula con bordes redondeados azul, texto en small caps/versalitas."
+      "notes": "Encabezado en cápsula con bordes redondeados azul, texto en versalitas (small caps). Preservado tal como aparece impreso."
     },
     {
       "anchor": "p07/b14",
       "heading": "Uso de los Adendei (lista)",
-      "text": "1. Oculta (coloca boca abajo) tus Adendei en Zona Principal al inicio del juego.\n2. En Fase Previa revela el número de Adendei que quieras.\n3. En Fase de Batalla puedes atacar a cartas rivales con 1 de tus Adendei.\n4. Si un Adendei atacó y/o utilizó Activa, al final de tu turno irá a descanso (Ver 5.1 Descansos)\n5. Cuando un Adendei llega a 0 puntos de vida, irá a Extinción y se reemplazará por una carta suplente (Ver 5.3 Reemplazo de cartas).",
+      "text": "1. Oculta (coloca boca abajo) tus Adendei en Zona Principal al inicio del juego.\n2. En Fase Previa revela el número de Adendei que quieras.\n3. En Fase de Batalla puedes atacar a cartas rivales con 1 de tus Adendei.\n4. Si un Adendei atacó y/o utilizó Activa, al final de tu turno irá a descanso (Ver 5.1 Descansos).\n5. Cuando un Adendei llega a 0 puntos de vida, irá a Extinción y se reemplazará por una carta suplente (Ver 5.3 Reemplazo de cartas).",
       "position": "bottom",
       "notes": "Lista numerada centrada. Palabras en cursiva: Oculta, Adendei, Fase Previa, Fase de Batalla, Activa, descanso, Extinción. Referencias entre paréntesis en cursiva más pequeña."
     },
     {
       "anchor": "p07/b15",
       "heading": "Nota",
-      "text": "Nota: Para saber más sobre el uso de efectos de los Adendei te recomendamos que leas las selecciones 5. Fases del Turno y 6. Interacciones y Efectos.",
+      "text": "Nota: Para saber más sobre el uso de efectos de los Adendei te recomendamos que leas las selecciones 5. Fases del de Turno y 6. Interacciones y Efectos.",
       "position": "bottom",
-      "notes": "Nota al pie de la página. '5. Fases del Turno' y '6. Interacciones y Efectos' en versalitas/small caps cursivas. 'Nota:' en versalitas negritas."
+      "notes": "VERBATIM: La fuente imprime 'Fases del de Turno' con 'de' redundante entre 'del' y 'Turno'. Typo confirmado en OCR y vision. LLM pass 1 silenciosamente 'corrigió' a 'Fases del Turno' — violación verbatim. '5. Fases del de Turno' y '6. Interacciones y Efectos' en versalitas/small caps cursivas. 'Nota:' en versalitas negritas. También usa 'selecciones' (probable typo de 'secciones') — preservado verbatim."
     },
     {
       "anchor": "p07/b16",
@@ -116,6 +123,76 @@
       "text": "7",
       "position": "bottom-right-corner",
       "notes": "Número de página en cápsula azul con esquina recortada."
+    },
+    {
+      "anchor": "p07/b17",
+      "heading": "Carta ejemplo — Nombre",
+      "text": "Therz, Manifestación Fantasmal",
+      "position": "card-example/title-banner",
+      "notes": "Banner superior de la carta Adendei de ejemplo. 'Manifestación Fantasmal' aparece UNA sola vez (verificado por vision). El OCR capturó duplicado 'Manifestación Fantasmal Fantasmal' — artefacto OCR, no typo de fuente."
+    },
+    {
+      "anchor": "p07/b18",
+      "heading": "Carta ejemplo — Tipo/Subtipo",
+      "text": "Adendei Titán / Demótica",
+      "position": "card-example/middle-banner",
+      "notes": "Banda media del tipo/subtipo. Incluye ícono de huella a la izquierda e ícono circular de energía a la derecha."
+    },
+    {
+      "anchor": "p07/b19",
+      "heading": "Carta ejemplo — Activa",
+      "text": "Activa: Muestra las primeras 3 cartas del Mazo rival, copia la Activa y costo de 1 de esas cartas mientras esta carta este en el campo. Esas cartas no podran usar sus efectos al ser mostradas y regresaran al fondo del Mazo rival.",
+      "position": "card-example/text-box",
+      "notes": "VERBATIM: 'este' sin tilde (debería ser 'esté'), 'podran' sin tilde (debería ser 'podrán'), 'regresaran' sin tilde (debería ser 'regresarán'). Typos confirmados en OCR. LLM pass 1 silenciosamente corrigió acentos — violación verbatim."
+    },
+    {
+      "anchor": "p07/b20",
+      "heading": "Carta ejemplo — Costo",
+      "text": "Costo: Sólo puedes usar este efecto una vez por juego.",
+      "position": "card-example/text-box",
+      "notes": "VERBATIM: 'Sólo' con tilde (preservado tal como aparece)."
+    },
+    {
+      "anchor": "p07/b21",
+      "heading": "Carta ejemplo — Código",
+      "text": "DOOC-011",
+      "position": "card-example/bottom-left",
+      "notes": "Código de set/carta."
+    },
+    {
+      "anchor": "p07/b22",
+      "heading": "Carta ejemplo — Ilustrador",
+      "text": "Kundu del Castillo",
+      "position": "card-example/bottom-left",
+      "notes": "Crédito de ilustración."
+    },
+    {
+      "anchor": "p07/b23",
+      "heading": "Carta ejemplo — Daño",
+      "text": "2",
+      "position": "card-example/bottom-center",
+      "notes": "Valor de daño en círculo."
+    },
+    {
+      "anchor": "p07/b24",
+      "heading": "Carta ejemplo — Descanso",
+      "text": "1",
+      "position": "card-example/bottom-center",
+      "notes": "Valor de descanso en círculo con flecha curva."
+    },
+    {
+      "anchor": "p07/b25",
+      "heading": "Carta ejemplo — Nombre científico",
+      "text": "Therizinosaurus cheloniformis",
+      "position": "card-example/bottom-right",
+      "notes": "CORRECCIÓN pass 1: Primera extracción escribió 'ctelophorus' — incorrecto. Nombre científico correcto verificado por OCR y vision: 'cheloniformis'. Texto en itálica pequeña al pie de la carta."
+    },
+    {
+      "anchor": "p07/b26",
+      "heading": "Carta ejemplo — Sello",
+      "text": "Kódem TCG ©",
+      "position": "card-example/bottom-right",
+      "notes": "Sello de copyright."
     }
   ],
   "figures": [
@@ -157,21 +234,22 @@
       "slug": "carta-ejemplo-therz-manifestacion-fantasmal",
       "type": "illustration",
       "bbox_pct": {"x": 30, "y": 28, "w": 40, "h": 48},
-      "description_detailed": "Carta Adendei de ejemplo completa, centrada en la página y rodeada por callouts explicativos que señalan cada uno de sus componentes mediante líneas conectoras. La carta muestra el layout estándar de los Adendei en Kódem TCG.\n\nEn la parte superior, dentro de un banner oscuro con bordes ornamentados tipo cartucho (con terminaciones triangulares hacia adentro), aparece el nombre de la carta: 'Therz, Manifestación Fantasmal'. El nombre del personaje 'Therz' va seguido de una coma y el subtítulo descriptivo 'Manifestación Fantasmal'.\n\nEl arte central ocupa la mayor parte de la carta y muestra una figura etérea/espectral de tonos rosados y magenta sobre un fondo oscuro morado-negro. La criatura parece un ser fantasmagórico con rasgos animales-humanoides estilizados: se perciben formas alargadas, posiblemente cuernos o apéndices puntiagudos, líneas fluidas que sugieren un cuerpo inmaterial desvaneciéndose en humo/niebla. Las tonalidades van desde rosa fucsia brillante hasta magenta oscuro y toques negros. Transmite una atmósfera mística, fantasmal y algo ominosa.\n\nDebajo del arte hay una banda horizontal oscura donde, a la izquierda, hay un pequeño ícono circular de huella/pata, luego el texto 'Adendei Titán / Demótica' indicando el tipo y subtipo(s) de la carta, y a la derecha un ícono circular con el símbolo de energía (aparentemente dos puntos/ojos o símbolo de energía demótica).\n\nEn la caja de texto inferior, sobre fondo gris-azulado oscuro, aparece el efecto de la carta:\n'Activa: Muestra las primeras 3 cartas del Mazo rival, copia la Activa y costo de 1 de esas cartas mientras esta carta esté en el campo. Esas cartas no podrán usar sus efectos al ser mostradas y regresarán al fondo del Mazo rival.\nCosto: Sólo puedes usar este efecto una vez por juego.'\n\nEn el pie de la carta aparecen: a la izquierda el código 'DOOC-011' y el nombre del ilustrador 'Kundu del Castillo'; en el centro los valores de estadísticas: un círculo con '2' (daño) y un círculo con '1' (costo o descanso, con flecha curva indicando descanso); a la derecha un nombre científico en itálica pequeña ('Therizinosaurus ctelophorus' o similar) y el sello 'Kódem TCG ©'.",
+      "description_detailed": "Carta Adendei de ejemplo completa, centrada en la página y rodeada por callouts explicativos que señalan cada uno de sus componentes mediante líneas conectoras. La carta muestra el layout estándar de los Adendei en Kódem TCG.\n\nEn la parte superior, dentro de un banner oscuro con bordes ornamentados tipo cartucho (con terminaciones triangulares hacia adentro), aparece el nombre de la carta: 'Therz, Manifestación Fantasmal'. El nombre del personaje 'Therz' va seguido de una coma y el subtítulo descriptivo 'Manifestación Fantasmal' (una sola vez).\n\nEl arte central ocupa la mayor parte de la carta y muestra una figura etérea/espectral de tonos rosados y magenta sobre un fondo oscuro morado-negro. La criatura parece un ser fantasmagórico con rasgos animales-humanoides estilizados: se perciben formas alargadas, posiblemente cuernos o apéndices puntiagudos, líneas fluidas que sugieren un cuerpo inmaterial desvaneciéndose en humo/niebla. Las tonalidades van desde rosa fucsia brillante hasta magenta oscuro y toques negros. Transmite una atmósfera mística, fantasmal y algo ominosa.\n\nDebajo del arte hay una banda horizontal oscura donde, a la izquierda, hay un pequeño ícono circular de huella/pata, luego el texto 'Adendei Titán / Demótica' indicando el tipo y subtipo(s) de la carta, y a la derecha un ícono circular con el símbolo de energía (aparentemente dos puntos/ojos o símbolo de energía demótica).\n\nEn la caja de texto inferior, sobre fondo gris-azulado oscuro, aparece el efecto de la carta (VERBATIM con typos de fuente):\n'Activa: Muestra las primeras 3 cartas del Mazo rival, copia la Activa y costo de 1 de esas cartas mientras esta carta este en el campo. Esas cartas no podran usar sus efectos al ser mostradas y regresaran al fondo del Mazo rival.\nCosto: Sólo puedes usar este efecto una vez por juego.'\n\nEn el pie de la carta aparecen: a la izquierda el código 'DOOC-011' y el nombre del ilustrador 'Kundu del Castillo'; en el centro los valores de estadísticas: un círculo con '2' (daño) y un círculo con '1' (descanso, con flecha curva indicando descanso); a la derecha el nombre científico en itálica pequeña 'Therizinosaurus cheloniformis' y el sello 'Kódem TCG ©'.",
       "embedded_text": [
         "Therz, Manifestación Fantasmal",
         "Adendei Titán / Demótica",
-        "Activa: Muestra las primeras 3 cartas del Mazo rival, copia la Activa y costo de 1 de esas cartas mientras esta carta esté en el campo. Esas cartas no podrán usar sus efectos al ser mostradas y regresarán al fondo del Mazo rival.",
+        "Activa: Muestra las primeras 3 cartas del Mazo rival, copia la Activa y costo de 1 de esas cartas mientras esta carta este en el campo. Esas cartas no podran usar sus efectos al ser mostradas y regresaran al fondo del Mazo rival.",
         "Costo: Sólo puedes usar este efecto una vez por juego.",
         "DOOC-011",
         "Kundu del Castillo",
         "2",
         "1",
+        "Therizinosaurus cheloniformis",
         "Kódem TCG ©"
       ],
       "relation_to_text": "Carta anatómica de referencia para todos los callouts de la página 7 (Nombre, Vida, Subtipo, Energía, Efecto, Costo, Daño, Descanso). Es el ejemplo visual sobre el que se apoyan las definiciones de cada componente del Adendei.",
       "legibility": "clear",
-      "legibility_notes": "La caja de texto de efectos es pequeña pero legible. El nombre científico al pie es muy pequeño; se infiere 'Therizinosaurus'-like."
+      "legibility_notes": "CORREGIDO pass 2: Nombre científico es 'cheloniformis' (no 'ctelophorus' como pass 1). Verificado por vision y OCR. Typos de fuente en caja de texto preservados verbatim ('este', 'podran', 'regresaran' sin tildes)."
     },
     {
       "anchor": "p07/fig-05",
@@ -216,6 +294,6 @@
       "legibility_notes": null
     }
   ],
-  "page_notes": "Página de referencia anatómica para el tipo de carta Adendei. Estructura: título de sección 3, subsección 3.1, dos párrafos introductorios narrativos/mecánicos, carta ejemplo central con 8 callouts anatómicos codificados por color (morado=identidad/efectos/costo, naranja=estadísticas, turquesa=vida), y al pie una lista de 5 pasos numerados sobre el uso mecánico en el flujo de turno. Se mencionan conceptos clave: Fase Previa, Fase de Batalla, Activa, descanso, Extinción, reemplazo, subtipos (Titán, Abisal, Equino, Lupino, Infectado, Guardián, Kósmico, Catrin), 7 energías primordiales. La carta ejemplo es 'Therz, Manifestación Fantasmal' (Adendei Titán/Demótica). Se referencian las secciones 5. Fases del Turno, 5.1 Descansos, 5.3 Reemplazo de cartas, 6. Interacciones y Efectos, 6.3 Tipos de daño.",
-  "self_confidence": 0.94
+  "page_notes": "Página de referencia anatómica para el tipo de carta Adendei. Estructura: título de sección 3, subsección 3.1, dos párrafos introductorios narrativos/mecánicos, carta ejemplo central con 8 callouts anatómicos codificados por color (morado=identidad/efectos/costo, naranja=estadísticas, turquesa=vida), y al pie una lista de 5 pasos numerados sobre el uso mecánico en el flujo de turno. Se mencionan conceptos clave: Fase Previa, Fase de Batalla, Activa, descanso, Extinción, reemplazo, subtipos (Titán, Abisal, Equino, Lupino, Infectado, Guardián, Kósmico, Catrin), 7 energías primordiales. La carta ejemplo es 'Therz, Manifestación Fantasmal' (Adendei Titán/Demótica). Se referencian las secciones 5. Fases del de Turno (verbatim), 5.1 Descansos, 5.3 Reemplazo de cartas, 6. Interacciones y Efectos, 6.3 Tipos de daño.\n\nPASS 2 NOTES: (1) Nota al pie (b15) preserva typo de fuente 'Fases del de Turno' (con 'de' redundante) — pass 1 silenciosamente había escrito 'Fases del Turno'. (2) Nombre científico (b25, fig-04) corregido a 'cheloniformis' — pass 1 había escrito 'ctelophorus'. (3) Caja de texto de la carta (b19) preserva typos verbatim: 'este' (sin tilde), 'podran' (sin tilde), 'regresaran' (sin tilde). (4) Se agregaron bloques b17-b26 con el texto impreso en la carta ejemplo como bloques separados (nombre, tipo, activa, costo, código, ilustrador, estadísticas, nombre científico, sello).",
+  "self_confidence": 0.95
 }

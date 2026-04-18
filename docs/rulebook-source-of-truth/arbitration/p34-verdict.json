@@ -1,0 +1,30 @@
+{
+  "page": 34,
+  "arbiter_model": "opus-4-7",
+  "arbitration_date": "2026-04-18T21:22:00-06:00",
+  "llm_confidence": 0.88,
+  "agreement_pct": 0.94,
+  "verdict": "both_agree",
+  "verdict_reason": "LLM y OCR coinciden en el cuerpo textual de estrategias de mazo: Mazo por Energías (pírica), Subtipos (Titanes/Abisales), Temático (Ariam ajolote). LLM normaliza encabezados en small-caps a capitalización estándar; OCR los mantiene en mayúsculas (ambos defendibles). OCR aporta: (1) texto parcial impreso en cartas visuales ('Adendei Pirico', 'Esta carta sólo puede ser equipada a un Adendei \"Draven\"' etc.) que LLM omite en text_blocks (cubre en embedded_text de figuras). LLM captura correctamente el símbolo ©. Nombres de cartas en fig-03 requieren validación (nomenclatura lovecraftiana con consonantes inusuales).",
+  "text_blocks_review": [
+    {"anchor": "p34/b01", "llm_text": "Mazo por Energías + párrafo", "ocr_match": "exact", "divergence": "OCR 'especifi-co' quebrado por OCR + 'MAZO POR ENERGÍAS' mayúsculas. LLM normaliza.", "action": "keep_llm"},
+    {"anchor": "p34/b02", "llm_text": "Ejemplo de un mazo de energía pírica", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p34/b03", "llm_text": "Mazo por Subtipos de Adendei + Dinosaurios - Adendei Titán + párrafo.", "ocr_match": "exact", "divergence": "OCR 'Titan' sin acento; LLM 'Titán' correcto. OCR 'Adende/' y 'Adendel' son degradaciones del plural 'Adendei'. LLM correcto.", "action": "keep_llm"},
+    {"anchor": "p34/b04", "llm_text": "Ejemplo de un mazo de Adendei Titanes", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p34/b05", "llm_text": "Peces abisales - Adendei Abisal + párrafo sobre Lovecraft.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p34/b06", "llm_text": "Ejemplo de un mazo de Adendei Abisales", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p34/b07", "llm_text": "MAZO TEMÁTICO + párrafo.", "ocr_match": "exact", "divergence": null, "action": "keep_llm"},
+    {"anchor": "p34/b08", "llm_text": "Ejemplo de un mazo temático de \"Ariam\" el ajolote", "ocr_match": "exact", "divergence": null, "action": "keep_llm"}
+  ],
+  "figures_review": [
+    {"anchor": "p34/fig-01", "type": "photo (fila 7 cartas energía pírica)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p34/fig-02", "type": "photo (fila 7 cartas Adendei Titanes)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"},
+    {"anchor": "p34/fig-03", "type": "photo (fila 7 cartas Adendei Abisales)", "legibility_llm": "clear", "description_quality": "good", "action": "flag"},
+    {"anchor": "p34/fig-04", "type": "photo (fila 7 cartas Ariam ajolote)", "legibility_llm": "clear", "description_quality": "good", "action": "keep"}
+  ],
+  "critical_discrepancies": [
+    "Nombres de cartas en fig-03 (Abisales) con nomenclatura lovecraftiana (Shugg, Yogg, Urogg, Atshln) — validación humana recomendada si serán indexados."
+  ],
+  "typos_confirmed": [],
+  "recommendation": "accept"
+}
