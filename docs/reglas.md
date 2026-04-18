@@ -2,7 +2,9 @@
 
 Fuentes:
 - Rulebook v5.0: https://kodem-tcg.com/howTo/rulebook_5.0.pdf (febrero 2026)
+- **Rulebook v5.1:** `docs/rulebook-pdfs/rulebook-v5.1.pdf` (febrero 2026; portada interna aún dice v5.0 — pendiente confirmar con Sergio)
 - Breve Guía: https://kodem-tcg.com/howTo/breve_guia.pdf
+- **Glosario completo:** [`docs/glosario.md`](./glosario.md) — ~60 términos oficiales (pp.37-40 rulebook v5.1)
 - Publicado por Adendei Entretenimiento S.A. de C.V., CDMX, México
 - Diseño mecánicas: Sergio Mora Camargo y Wenceslao Rodríguez
 - Universo/personajes: Alan Mac Donald
@@ -269,11 +271,29 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 
 ## 9. Tipos de Daño
 
-1. **Daño por Ataque** = Daño Base + Daño Aumentado + (Multiplicadores) + Daño Adicional
-   - **Orden de aplicación (PDF v5.0 p.23):** Base → Aumentado → Multiplicadores (se aplican sobre Base+Aumentado) → Adicional
-2. **Daño por Efecto** = Daño que no proviene de la estadística de daño ni menciona "ataca"/"aumenta daño"
-3. **Daño por Costo** = Daño para poder declarar efecto/ataque
-4. **Daño por Marca** = Daño consecuencia de Quemar/Envenenar
+### 9.1 Daño por Ataque (RB-10)
+**Definición (PDF v5.1 p.23 §6.4.1):** El total de daños que se declara durante un ataque, incluyendo *daño aumentado* y *daño adicional* siempre que el efecto de una carta mencione **"ataca"**, **"aumenta el daño"** o **"daña adicionalmente"**.
+
+**Orden exacto de aplicación (verbatim PDF v5.1 p.23):**
+1. **Primero**, el **daño base**, que es el daño indicado en las estadísticas.
+2. **Segundo**, el **daño aumentado**, que incrementa temporalmente el daño base y se añade a este.
+3. **Tercero**, los **multiplicadores de daño**, que se consideran daño aumentado y se aplican al *daño base + daño aumentado*. **Los multiplicadores pueden ser acumulativos.**
+4. **Por último**, el **daño adicional**, que se suma después del daño aumentado y **no modifica** el daño base ni se considera parte del daño aumentado.
+
+**Fórmula:** `((Base + Aumentado) × ∏Multiplicadores) + Adicional`
+
+**Ejemplo:** Carta con daño base 2, +1 aumentado, ×2 multiplicador, +1 adicional → `((2+1) × 2) + 1 = 7`.
+
+### 9.2 Daño por Efecto
+**Definición (PDF v5.1 p.23 §6.4.2):** Cualquier daño que no provenga directamente de la estadística de daño de una carta o que provenga de cualquier efecto que no mencione *"ataca"*, *"aumenta el daño"* o *"daña adicionalmente"* en su texto.
+
+**Regla de objetivo:** Si una carta no menciona a qué carta se aplica el daño por efecto, aplicará sólo a la carta declarada para el ataque.
+
+### 9.3 Daño por Costo
+**Definición (PDF v5.1 p.23 §6.4.3):** Daños que se realizan para poder resolver la declaración de un ataque y/o efecto.
+
+### 9.4 Daño por Marca
+Daño consecuencia de *Quemar* (1 dmg al atacar/usar Activa) o *Envenenar* (1 dmg al final del turno del portador). Ver §7.
 
 ---
 
@@ -564,7 +584,8 @@ _Revisión 2026-04-18: Reconciliación contra rulebook v5.1 (archivo; portada in
 - **RB-03 cerrado** — Glosario PDF p.38 confirma que Rot tiene "Activa o Activa Rápida". §10.1 actualizado.
 - **RB-08 PASAR TURNO añadido** — §10.7 con texto verbatim PDF p.16.
 - **RB-09 Efectos pre-declarados añadido** — §10.8 (declarar/resolver + efecto pre-declarado que termina antes de reemplazo).
+- **RB-10 expandido** — §9 reescrito con jerarquía completa Base→Aumentado→Multiplicadores→Adicional (PDF p.23 verbatim). Fórmula y ejemplo numérico.
 - **RB-12 expandido** — §10.1: "ataque múltiple se considera 1 solo ataque" (PDF p.25).
 - **RB-13 Regla "Y" añadida** — §10.9 con texto verbatim PDF p.26.
-- **Pendiente:** RB-17 (transcribir glosario completo de pp.37-40 del PDF v5.1 a `docs/glosario.md`).
+- **RB-17 glosario CERRADO** — `docs/glosario.md` nuevo con ~60 términos de pp.37-40 del PDF v5.1. Linkeado desde header.
 - Reporte completo: `.openclaw/workspace/kodem-audit-2026-04-17/08-rulebook-v51-vs-v50.md`
