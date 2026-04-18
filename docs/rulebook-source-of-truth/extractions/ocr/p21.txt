@@ -1,0 +1,58 @@
+Algunas de tus cartas podrán colocar “marcas” sobre sí mismas u otras cartas en el campo. Las
+
+marcas no se consideran efectos y podrán ser eliminadas con los efectos de curación y remover
+marcas aplicados sobre las cartas marcadas.
+
+En Kódem TCG® encontrarás 3 marcas:
+
+Draxes, Instinto Draconiano
+
+QUEMAR: Una carta quemada recibe 1 punto de daño
+cada vez que declare ataque o Activa. No se considera
+un daño por costo.
+
+Pasiva: Si 1 AdenderPitico Tirón aliado es
+revelado, quemo 1 carta en Zona Principal.
+
+ENVENENAR: Una carta envenenada recibe 1 punto de daño en
+Fin del Turno de la carta envenenada.
+
+Yogg. Surgimiento.
+
+>.
+
+ABISMAR: Una carta abismada ha sido cegada, por lo que
+no podrá determinar a quién atacará durante la Subfase de
+Declaración; deberá atacar de forma aleatoria, para ello se
+sugiere que, el portador asigne un valor para cada carta y se E Acc Ar Año
+
+Pasiva-Rápida: Si esta carta es revelada,
+
+lance un dado para determinar el objetivo del ataque. cba Add en Zona Pcs
+
+GENERALIDADES
+
+*Una carta no puede tener 2 marcas del mismo tipo,
+pero si puede tener 1 marca de cada tipo.
+
+*Mientras una carta tenga una marca no podrá ser obje-
+tivo de efectos o costos que coloquen la misma marco.
+
+*A pesar de que existen efectos que colocan marcas, una
+marca ya colocada en una carta NO se considera un
+efecto.
+
+*Poner una marca sobre una carta a menudo requiere
+una condición especificada en su efecto, pero cuando se
+
+coloca, la marca persistirá aunque la condición inicial
+haya cambiado.
+
+EJEMPLO: Activa: Quema 1 Adende! rival.
+
+SITUACIÓN: Si el Adendel guemado se coloca oculto (boca
+abajo), la marca permanece activa. La condición sólo es
+necesaria para la colocación inicial de la marca y esta sólo
+se removerá por un efecto específico (remover marca,
+curación) o si la carta es enviada a Extinción.
+

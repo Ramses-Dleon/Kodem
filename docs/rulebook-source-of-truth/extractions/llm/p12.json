@@ -1,0 +1,201 @@
+{
+  "page": 12,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:48:00-06:00",
+  "title": "3.5 BIO",
+  "section_refs": ["§3.4", "§3.5"],
+  "text_blocks": [
+    {
+      "anchor": "p12/b01",
+      "heading": null,
+      "text": "Esto no aplicará si dicha situación se produjo por un cambio de cartas entre la Zona Principal rival y la del jugador; en este caso se enviará uno de esos equipos a Zona de Equipos y se podrá declarar el efecto del otro si se desea.",
+      "position": "top",
+      "notes": "Continuación del texto de Equipos Múltiples de la página anterior. Texto asociado a dos diagramas/ilustraciones: EXTINCIÓN (✗) y EQUIPO (✓)."
+    },
+    {
+      "anchor": "p12/b02",
+      "heading": null,
+      "text": "• El jugador que tenga una carta equipada con 2 Ixim o 2 Rot no podrá revelar por decisión propia el segundo equipo si uno de ellos ya se encuentra revelado a menos que un efecto permita tener Ixim o Rot adicionales en una misma carta.",
+      "position": "middle-top",
+      "notes": "Bullet con regla. '2 Ixim', '2 Rot', 'Ixim', 'Rot' en negrita."
+    },
+    {
+      "anchor": "p12/b03",
+      "heading": null,
+      "text": "Si una carta fue equipada con 2 Ixim o 2 Rot no se podrá declarar el efecto de ambos equipos en un mismo turno (aún si estas cartas se encuentran ocultas).",
+      "position": "middle",
+      "notes": "'2 Ixim', '2 Rot', 'ocultas' en énfasis/negrita."
+    },
+    {
+      "anchor": "p12/b04",
+      "heading": "3.5 BIO",
+      "text": "3.5 BIO",
+      "position": "middle-left",
+      "notes": "Título de subsección en píldora azul con icono."
+    },
+    {
+      "anchor": "p12/b05",
+      "heading": "Nombre del Bio",
+      "text": "Nombre del Bio",
+      "position": "middle-left",
+      "notes": "Callout morado apuntando al banner de nombre de la carta Bio de la izquierda (Askame Reino de Vida)."
+    },
+    {
+      "anchor": "p12/b06",
+      "heading": "Nombre",
+      "text": "Nombre: En la mayoría de los casos, las cartas Bio no tienen nombre propio, por lo que sólo se considera el nombre de la carta. Existen algunas excepciones.",
+      "position": "middle-center",
+      "notes": "Callout morado. 'Bio', 'nombre de la carta' en negrita."
+    },
+    {
+      "anchor": "p12/b07",
+      "heading": "Nombre de la carta",
+      "text": "Nombre de la carta",
+      "position": "middle-right",
+      "notes": "Callout morado apuntando al banner de nombre de la carta Bio de la derecha (Laberinto de Arrecife)."
+    },
+    {
+      "anchor": "p12/b08",
+      "heading": "Efecto",
+      "text": "Efecto: Estos efectos son Pasivas. Al ser lugares de poder sus ventajas o desventajas se aplicarán muchas veces a las cartas de ambos jugadores, siempre que no se especifique si su efecto afecta a \"cartas rivales\" o \"cartas aliadas\".",
+      "position": "middle-center",
+      "notes": "Callout. 'Pasivas', 'ventajas o desventajas', 'cartas de ambos jugadores' en negrita."
+    },
+    {
+      "anchor": "p12/b09",
+      "heading": "Costo",
+      "text": "Costo: Algunos Bio requieren pagar un costo para poder usar su efecto.",
+      "position": "middle-center",
+      "notes": "Callout. 'Bio' en negrita."
+    },
+    {
+      "anchor": "p12/b10",
+      "heading": "USO DEL BIO",
+      "text": "(Ver 5. Fases de Turno)\n• La carta Bio se coloca oculta (boca abajo) en la Zona de Bio al iniciar la partida.\n• Podrás revelar tu Bio durante la Fase Previa (Opcional).\n• Podrás enviar tu Bio a Extinción una vez por turno durante la Fase Previa (Opcional).\n• Si tu Bio es enviado a Extinción por cualquier motivo puedes actualizar 1 descanso de todas tus cartas.\n. Una carta de Bio que está boca abajo se considera simplemente una carta, no un Bio. Por lo tanto, los efectos que se refieran a un Bio no podrán aplicarse a esa carta si se encuentra en esa posición.",
+      "position": "bottom",
+      "notes": "Título en píldora azul. 'Bio', 'oculta', 'boca abajo', 'Zona de Bio', 'Fase Previa', 'Extinción', '1 descanso' en negrita. Referencia a sección 5. Último bullet usa '.' en lugar de '•' (posible error tipográfico del rulebook)."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p12/fig-01",
+      "slug": "diagrama-extincion-caso-negativo",
+      "type": "infographic",
+      "bbox_pct": {"x": 3, "y": 3, "w": 95, "h": 24},
+      "description_detailed": "Diagrama explicativo horizontal de tres paneles que ilustra un caso NO válido (resultado: uno va a EXTINCIÓN) dentro del contexto de Equipos Múltiples. A la derecha aparece un gran rótulo 'EXTINCIÓN' sobre fondo rojo/naranja flamígero, con un símbolo '✗' rojo en la esquina superior derecha que marca claramente este escenario como no permitido por decisión propia.\n\nPanel izquierdo (bbox interno aprox 4-32%): Muestra una Zona Principal con una carta Adendei revelada (Draxes, Instinto Draconiano - dragón rojo) y dos cartas boca abajo (con el reverso del juego que muestra el logotipo 'KODEM TCG'), representando cartas ocultas en la zona del jugador.\n\nPanel central (bbox interno aprox 32-60%): Muestra la carta Draxes con dos cartas de equipo superpuestas/equipadas: 'Cascada de Lava' (escena de lava cayendo) y otra carta con imagen de dragón/escamas rojas ('Escamas de Lava'), ambas debajo del Adendei como equipos.\n\nPanel derecho (bbox interno aprox 60-95%): Fondo rojo/naranja flamígero con la palabra 'EXTINCIÓN' en grande, con una carta de equipo saliendo/siendo expulsada y la cruz roja ✗ marcando el resultado como caso negativo (va a Extinción forzosamente porque los dos Rot fueron revelados sin efecto habilitante).",
+      "embedded_text": [
+        "EXTINCIÓN",
+        "✗",
+        "Draxes, Instinto Draconiano",
+        "Cascada de Lava",
+        "Escamas de Lava",
+        "KODEM TCG"
+      ],
+      "relation_to_text": "Ilustra visualmente la regla del bloque b01: cuando no hay efecto que lo permita, uno de los dos equipos revelados va a Extinción y no se puede declarar efecto. Contrasta con fig-02 que muestra el caso válido.",
+      "legibility": "clear",
+      "legibility_notes": "Textos pequeños de las cartas dentro del diagrama son difíciles de leer a resolución reducida, pero los elementos de interpretación (EXTINCIÓN, ✗) son claros."
+    },
+    {
+      "anchor": "p12/fig-02",
+      "slug": "diagrama-equipo-caso-positivo",
+      "type": "infographic",
+      "bbox_pct": {"x": 3, "y": 28, "w": 95, "h": 22},
+      "description_detailed": "Diagrama explicativo horizontal de tres paneles que ilustra el caso VÁLIDO/alternativo por cambio de cartas entre Zona Principal rival y del jugador. A la derecha aparece un rótulo 'EQUIPO' sobre fondo rojo con un símbolo '✓' verde en la esquina superior derecha que marca este escenario como permitido (va a Zona de Equipos, no a Extinción).\n\nPanel izquierdo: misma configuración que fig-01: carta Draxes revelada junto a cartas boca abajo con logo KODEM.\n\nPanel central: misma imagen de las cartas 'Cascada de Lava' y 'Escamas de Lava' equipadas sobre Draxes.\n\nPanel derecho: Fondo rojo con la palabra 'EQUIPO', una carta (escamas de lava) siendo movida a zona de equipos, y el check verde ✓ marcando el resultado como caso positivo (en lugar de Extinción, se envía a Zona de Equipos y se puede declarar el efecto del otro si se desea).",
+      "embedded_text": [
+        "EQUIPO",
+        "✓",
+        "Draxes, Instinto Draconiano",
+        "Cascada de Lava",
+        "Escamas de Lava",
+        "KODEM TCG"
+      ],
+      "relation_to_text": "Ilustra visualmente la excepción del bloque b01: cuando la situación se produjo por un cambio de cartas entre Zonas Principales rivales, uno de los equipos va a Zona de Equipos (no a Extinción) y se puede declarar el efecto del otro.",
+      "legibility": "clear",
+      "legibility_notes": "Textos pequeños de las cartas son difíciles de leer a resolución reducida, pero los elementos de interpretación (EQUIPO, ✓) son claros."
+    },
+    {
+      "anchor": "p12/fig-03",
+      "slug": "encabezado-3-5-bio",
+      "type": "infographic",
+      "bbox_pct": {"x": 4, "y": 62, "w": 25, "h": 6},
+      "description_detailed": "Encabezado de subsección con formato de píldora azul/cian que contiene '3.5 BIO'. Incluye un pequeño icono (forma triangular/pirámide azul) que simboliza el concepto de 'Bio' (lugar de poder/terreno).",
+      "embedded_text": ["3.5", "BIO"],
+      "relation_to_text": "Marca inicio de la subsección 3.5 sobre cartas Bio.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p12/fig-04",
+      "slug": "carta-ejemplo-bio-askame",
+      "type": "illustration",
+      "bbox_pct": {"x": 4, "y": 72, "w": 30, "h": 23},
+      "description_detailed": "Carta Bio de ejemplo 'Askame, Reino de Vida' (caso con nombre propio). Ilustración de un paisaje natural verde con montañas, vegetación exuberante y cielo despejado, evocando un lugar de poder vital/fértil.\n\nLa carta muestra layout de Bio: banner superior con nombre, arte paisajístico central, caja de texto inferior con subtipo 'Bio' y habilidad Pasiva. Incluye texto de lore al final.\n\nPasiva visible: 'Ninguna carta en el campo puede recibir 5 o más ptos. de daño por ataque o efecto en un solo turno.' Lore: 'En estas tierras florece la vida eterna; el corazón del mundo.'\n\nEtiqueta morada (callout) apunta al banner de nombre con el texto 'Nombre del Bio', demostrando la excepción en la que un Bio sí tiene nombre propio ('Askame').",
+      "embedded_text": [
+        "Askame Reino de Vida",
+        "Bio",
+        "Pasiva: Ninguna carta en el campo puede recibir 5 o más ptos. de daño por ataque o efecto en un solo turno.",
+        "En estas tierras florece la vida eterna; el corazón del mundo."
+      ],
+      "relation_to_text": "Ejemplo anatómico para los bloques b05, b06, b08 y b09. Ejemplifica que algunos Bio tienen nombre propio.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p12/fig-05",
+      "slug": "carta-ejemplo-bio-laberinto-arrecife",
+      "type": "illustration",
+      "bbox_pct": {"x": 62, "y": 72, "w": 33, "h": 23},
+      "description_detailed": "Carta Bio de ejemplo 'Laberinto de Arrecife' (caso con nombre de carta estándar, sin nombre propio de personaje). Ilustración de un arrecife coralino submarino multicolor con tonos rosa, verde y azul que crean un ambiente marino vibrante y complejo como un laberinto bajo el agua.\n\nLa carta muestra layout de Bio: banner superior con el nombre de la carta, arte central del arrecife, caja de texto con subtipo 'Bio' y habilidad Pasiva + Costo.\n\nPasiva visible: 'Los Adendei no-Abisales, no podrán escoger la carta que atacarán.' Costo: 'Si no tienes ningún Adendei Abisal en tu Zona Principal, envía esta carta a Extinción.'\n\nEtiqueta morada (callout) apunta al banner de nombre con el texto 'Nombre de la carta', demostrando el caso típico donde la Bio no tiene nombre de personaje.",
+      "embedded_text": [
+        "Laberinto de Arrecife",
+        "Bio",
+        "Pasiva: Los Adendei no-Abisales, no podrán escoger la carta que atacarán.",
+        "Costo: Si no tienes ningún Adendei Abisal en tu Zona Principal, envía esta carta a Extinción."
+      ],
+      "relation_to_text": "Ejemplo anatómico complementario de fig-04. Apoya b07 y b09 mostrando un Bio con Costo.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p12/fig-06",
+      "slug": "callouts-anatomicos-bio",
+      "type": "infographic",
+      "bbox_pct": {"x": 36, "y": 70, "w": 28, "h": 25},
+      "description_detailed": "Conjunto de callouts/cuadros explicativos morados centrales que conectan las dos cartas Bio (fig-04 y fig-05) con las explicaciones anatómicas compartidas. Incluye los callouts para 'Nombre' (caso con nombre propio vs. caso sin nombre), 'Efecto' y 'Costo' en forma de cuadros de texto con bordes redondeados.\n\nLas líneas de conexión (delgadas, estilo morado) se extienden hacia ambas cartas laterales para indicar qué campo específico está siendo descrito por cada callout.",
+      "embedded_text": [
+        "Nombre del Bio",
+        "Nombre",
+        "Nombre de la carta",
+        "Efecto",
+        "Costo"
+      ],
+      "relation_to_text": "Conectan los bloques b05-b09 con las cartas fig-04 y fig-05.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p12/fig-07",
+      "slug": "titulo-uso-del-bio",
+      "type": "infographic",
+      "bbox_pct": {"x": 4, "y": 96, "w": 20, "h": 3},
+      "description_detailed": "Banner/título 'USO DEL BIO' en píldora azul/cian con bordes redondeados, estilo consistente con los subtítulos de reglas del rulebook.",
+      "embedded_text": ["USO DEL BIO"],
+      "relation_to_text": "Introduce el bloque b10 con las reglas de uso.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p12/fig-08",
+      "slug": "numero-de-pagina-12",
+      "type": "icon",
+      "bbox_pct": {"x": 95, "y": 97, "w": 4, "h": 3},
+      "description_detailed": "Folio de paginación. Caja azul con el número '12' en blanco en la esquina inferior derecha.",
+      "embedded_text": ["12"],
+      "relation_to_text": "Número de página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página de transición: cierra §3.4 Equipos (con un contraste visual EXTINCIÓN ✗ vs EQUIPO ✓ sobre el mismo escenario de Draxes + Cascada de Lava + Escamas de Lava) y abre §3.5 BIO con dos cartas anatómicas (Askame Reino de Vida con nombre propio, Laberinto de Arrecife sin nombre propio) y bloque de USO DEL BIO con 4 bullets + nota sobre bios boca abajo. Nota: el último bullet usa un punto '.' en lugar de '•' en el original transcrito.",
+  "self_confidence": 0.9
+}

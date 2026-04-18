@@ -1,0 +1,94 @@
+{
+  "page": 37,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:25:00-06:00",
+  "title": "9. GLOSARIO",
+  "section_refs": ["§9", "§6.1", "§6.3"],
+  "text_blocks": [
+    {
+      "anchor": "p37/b01",
+      "heading": null,
+      "text": "NOMBRE DE LA CARTA   NO. DE COPIAS",
+      "position": "top",
+      "notes": "Encabezados de la tabla de cartas en la mitad superior de la página. Continúa una tabla iniciada en páginas anteriores con el listado de cartas del mazo de muestra o set de inicio."
+    },
+    {
+      "anchor": "p37/b02",
+      "heading": "9. GLOSARIO",
+      "text": "9. GLOSARIO",
+      "position": "middle",
+      "notes": "Encabezado de sección del glosario, presentado dentro de un banner decorativo azul con chevrones hacia el centro."
+    },
+    {
+      "anchor": "p37/b03",
+      "heading": null,
+      "text": "•Abismar: Marca. Una carta abismada ataca al azar; lanza un dado para determinar el objetivo del ataque. (Ver 6.1. Marcas).",
+      "position": "bottom-left",
+      "notes": "Primera entrada del glosario. 'Marca' aparece en cursiva/itálica. 'abismada' y '(Ver 6.1. Marcas)' también en cursiva. Viñeta especial con bullet pegado a la palabra."
+    },
+    {
+      "anchor": "p37/b04",
+      "heading": null,
+      "text": "•Daño por costo: Daños que se realizan para poder resolver la declaración de un ataque y/o efecto (Ver 6.3. Tipos de Daño).",
+      "position": "bottom-right",
+      "notes": "Segunda entrada del glosario. '(Ver 6.3. Tipos de Daño)' en cursiva. El glosario aparenta estar organizado en dos columnas."
+    },
+    {
+      "anchor": "p37/b05",
+      "heading": null,
+      "text": "37",
+      "position": "bottom-right",
+      "notes": "Número de página en la esquina inferior derecha sobre fondo azul."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p37/fig-01",
+      "slug": "tabla-cartas-mazo-continuacion",
+      "type": "table",
+      "bbox_pct": {"x": 5, "y": 3, "w": 90, "h": 55},
+      "description_detailed": "Tabla de cartas del mazo de muestra que ocupa la mitad superior de la página. Encabezado con fondo azul oscuro institucional y texto blanco en mayúsculas: 'NOMBRE DE LA CARTA' en la columna izquierda y 'NO. DE COPIAS' en la columna derecha. La tabla contiene cinco filas de cartas, cada una con una imagen de carta impresa en formato miniatura a la izquierda y el número de copias (siempre 1) centrado a la derecha.\n\nPrimera fila — 'Zots, Rechazo' (1 copia): Carta con ilustración de una criatura reptiliana/dracónica en tonos azul oscuro y morado, con postura agresiva orientada hacia la izquierda, rasgos afilados y extremidades extendidas. Ambientada en un entorno oscuro y cavernoso con fondos rojizos y anaranjados que sugieren fuego o energía en la parte superior. El marco de la carta sigue el diseño estándar de Kódem TCG con nombre y tipo en la parte superior e iconos de costo en la parte inferior.\n\nSegunda fila — 'Zaykan, Anulación' (1 copia): Carta con ilustración de una criatura grande de tipo dinosaurio/dragón predominantemente en azul profundo y negro con detalles violetas. Postura erguida y dominante, mirando hacia adelante. Fondo oscuro con tonos azulados, efectos de energía o agua rodeando la figura y destellos luminosos azules alrededor. La carta muestra habilidad pasiva según su marco.\n\nTercera fila — 'Retis, Superficie' (1 copia): Carta con ilustración de una criatura verde colorida de aspecto dinámico y ágil, con tonos verdes, rosas y amarillos. Pose de salto o carrera. Fondo con colores turquesa y azul celeste, efectos de agua o energía arremolinada alrededor transmitiendo sensación de velocidad y fluidez. Marco de carta con iconos de coste visibles en la parte inferior.\n\nCuarta fila — 'Ariam, Límite' (1 copia): Carta con ilustración de una criatura en tonos amarillos, dorados y negros con aspecto poderoso. Pose de ataque o impulso con extremidades en movimiento. Fondo con destellos de luz blanca y amarilla intensa, contrastes oscuros que resaltan la figura. Transmite energía explosiva y dinamismo. Tres iconos de coste en la parte inferior de la carta.\n\nQuinta fila — 'Chapalab, El Anciano' (1 copia): Carta con ilustración de una criatura de aspecto oscuro y misterioso en tonos morados, negros y verdes. Apariencia antigua y sombría con tentáculos o apéndices extendidos. Fondo completamente oscuro/negro con pequeños detalles de luz verde que acentúan su carácter abismal y amenazante. Icono de habilidad en la carta.\n\nLa tabla utiliza filas alternadas con fondo claro/blanco para separar visualmente cada carta. Los bordes de la tabla son finos con líneas negras, y el encabezado azul contrasta fuertemente con el contenido blanco del cuerpo.",
+      "embedded_text": [
+        "NOMBRE DE LA CARTA",
+        "NO. DE COPIAS",
+        "Zots, Rechazo",
+        "1",
+        "Zaykan, Anulación",
+        "1",
+        "Retis, Superficie",
+        "1",
+        "Ariam, Límite",
+        "1",
+        "Chapalab, El Anciano",
+        "1"
+      ],
+      "relation_to_text": "Es la continuación de la tabla de composición del mazo de muestra/inicio que comenzó en páginas anteriores del rulebook. Lista las últimas cinco cartas del mazo con su número de copias.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Los nombres de cartas y el número de copias son claros. El texto de habilidades dentro de las miniaturas de cartas no es completamente legible a resolución reducida; los tipos exactos de cartas (Adendei/Protector/Rava/etc.) no pueden confirmarse sin imagen de mayor resolución."
+    },
+    {
+      "anchor": "p37/fig-02",
+      "slug": "banner-seccion-9-glosario",
+      "type": "infographic",
+      "bbox_pct": {"x": 5, "y": 60, "w": 90, "h": 10},
+      "description_detailed": "Banner decorativo de sección horizontal que atraviesa el ancho útil de la página. Fondo azul oscuro institucional del rulebook con elementos decorativos en forma de chevrones o flechas apuntando hacia el centro desde ambos extremos. Texto centrado en color blanco con tipografía en mayúsculas y estilo editorial: '9. GLOSARIO'. Los chevrones a los lados crean un efecto visual de banda ceremonial que marca el inicio de la sección final del rulebook. El banner mantiene la consistencia visual con otros banners de sección del documento (secciones anteriores usan el mismo patrón de diseño).",
+      "embedded_text": ["9. GLOSARIO"],
+      "relation_to_text": "Marca el inicio de la sección 9 del rulebook, el glosario de términos del juego Kódem TCG.",
+      "legibility": "clear",
+      "legibility_notes": "Texto completamente legible."
+    },
+    {
+      "anchor": "p37/fig-03",
+      "slug": "numero-pagina-37",
+      "type": "icon",
+      "bbox_pct": {"x": 90, "y": 95, "w": 8, "h": 4},
+      "description_detailed": "Número de página '37' en la esquina inferior derecha sobre un fondo azul oscuro institucional con forma posiblemente rectangular o redondeada. Texto en blanco, tipografía consistente con la paginación del resto del rulebook. Elemento gráfico repetitivo de diseño editorial.",
+      "embedded_text": ["37"],
+      "relation_to_text": "Indicador de paginación del documento.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página de transición: la mitad superior cierra la tabla de cartas del mazo de muestra (filas finales de una tabla multi-página) y la mitad inferior inaugura la sección 9 del glosario con un banner de sección y las primeras dos entradas organizadas en dos columnas. Los tipos específicos de las cartas (Adendei/Protector/Rava/Bio/etc.) no son legibles a la resolución procesada.",
+  "self_confidence": 0.78
+}

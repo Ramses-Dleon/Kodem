@@ -1,0 +1,78 @@
+* Si una carta es cambiada por una carta suplente (es decir, sin
+ser enviada a Extinción), la nueva carta se colocará con los
+mismos puntos de vida que tenía la carta anterior.
+
+En ningún momento se pueden usar cartas rivales como
+suplentes.
+
+- Solo se considera que una carta está en mano cuando se toma
+del Mazo, por reemplazo o por efecto de alguna carta.
+
+-- Una carta revelada que cambia entre Zona Principal original y
+
+Zona Principal rival no se considera que esté siendo revelada
+nuevamente.
+
+6.6 ATAQUE
+
+El ataque es el principal medio que tendrás para ir eliminando cartas rivales du-
+rante el juego. Su potencia está definida en la estadística de “daño” de tu carta
+más los daños aumentados y los daños adicionales (Daños de Ataque = Daño
+Base + Daño Aumentado + Daño Adicional).
+
+Los efectos que permiten “Atacar” o “atacar adicionalmente” a múltiples cartas
+
+y que mencionan el numero de puntos de daño a realizar dicho daño reempla-
+Zara el ataque base de la carta. Ej Yanzi, precision.
+
+; Po Xakros,Peste >, Xakros, Peste i. >:
+]. Atacar: Se considera que una carta esta Pe.
+
+atacando cuando se declara que va realizar
+dano (de ataque) a otra carta.
+
+1.1 El efecto de una carta esta condicionado a
+su ataque sólo si la carta lo indica.
+Ej: “Si esta carta ataca/atacó...”
+
+descansos iguales a los indicados en su
+respectiva carta,
+
+"Toda voz se debilita con su lento trote."
+
+2. Declarar un ataque: Es la acción de decirle a
+tu oponente que vas a dañar una de sus cartas
+por el daño indicado en la estadística de una de
+tus cartas, también incluye el daño aumentado
+y/o el daño adicional que la carta tuviera en ese
+
+Activa: Si esta carta ataca, protege a un
+
+Adendei aliado d fi hi
+momento. Ard lad desague y ecos ht
+
+Agua y fuego, vida y muerte...
+
+3. Resolver un ataque: Es la acción de reducir la
+vida de la carta rival por el daño del ataque
+
+Ejemplo: Efecto CONDICIONADO al ataque
+declarado.
+
+A — >. A
+
+Zoadon, Filtración >
+
+Respuestas al ataque: El jugador rival puede realizar
+diferentes acciones como respuesta al ataque, por
+ejemplo: revelar cartas y usar Activas-Rápidas.
+
+Se considera que una carta está siendo atacada cuando
+un jugador rival declara un ataque sobre ella.
+
+MEMOS Adendei Titán / Lítica ME) |
+Activa-Rápida: Puedes desviar 1 pto. de daño
+de cada carta aliada atacada a esta carta.
+
+A trovés de su cuerpo, depuro el mar.
+

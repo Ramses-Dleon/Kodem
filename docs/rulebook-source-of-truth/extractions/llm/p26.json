@@ -1,0 +1,107 @@
+{
+  "page": 26,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:32:00-06:00",
+  "title": null,
+  "section_refs": ["§6.7"],
+  "text_blocks": [
+    {
+      "anchor": "p26/b01",
+      "heading": null,
+      "text": "• Siempre que una carta menciona en su efecto una serie de acciones a realizar, será necesario que se cumplan por lo menos la primera de ellas en el orden en que dichas acciones se encuentran escritas en el texto de la carta.\n\n*(Ejemplo: Boras, Sacrificio).*",
+      "position": "top",
+      "notes": "Continúa sección GENERALIDADES de §6.7 EFECTOS desde p25."
+    },
+    {
+      "anchor": "p26/b02",
+      "heading": null,
+      "text": "• Si una carta menciona en su efecto dos o más acciones con la conjunción \"**y**\", ambas acciones se consideran como un mismo efecto. E*jemplo: \"Activa: Realiza acción A* **y** *B\"*. Si no se puede resolver cualquiera de las dos acciones (sea A o B), no se puede declarar su efecto.\n\n*(Ejemplo: Sangre Pétrea, Rot Ígneo, Planta Carnívora)*\n\n*Ejemplo: Para que \"Sangre pétrea\" PUEDA declarar su efecto , debes poder hacer ambas acciones: abismar 1 Adendei rival* **y** *regresar todos los equipos en Zona Principal a Zona de equipos.*",
+      "position": "middle",
+      "notes": "Typo preservado: 'E*jemplo' (asterisco mal colocado). Espacio extra antes de coma en 'efecto ,'."
+    },
+    {
+      "anchor": "p26/b03",
+      "heading": null,
+      "text": "•Los efectos que indiquen: *\"Daña \"x\" ptos. ...\"*, se podrán aplicar a cartas que tengan menos ptos. de vida que los ptos. de daño a realizar, siempre y cuando tengan al menos **1** pto. de vida.\n\nSin embargo no podrá recibir ptos. de daño negativos, no serán acumulativos para la carta que reemplace a la eliminadan ni transferibles a otras cartas aliadas o rivales.\n\n*Ejemplo: Si \"Enis, Giro Gélido\" tiene 1 pto. de vida podrá ser atacada por \"Ariam, Escudo de Cempasúchi\", sin embargo de los 2 ptos. de daño. que \"Ariam\" tiene en su estadística de atque solo recibirá 1 pto. de daño y \"Enis\" será enviada a Extinción.*",
+      "position": "middle",
+      "notes": "Typos preservados: '•Los' (sin espacio), 'eliminadan' (debería ser 'eliminada'), 'Cempasúchi' (falta la l final), 'atque' (debería ser 'ataque'), 'daño.' con punto extra."
+    },
+    {
+      "anchor": "p26/b04",
+      "heading": null,
+      "text": "•Efectos que indiquen: *\"Cura \"x\" ptos. a una carta...\"*, solo podrán aplicarse a cartas que tengan al menos **1** pto. de vida menos que la vida máxima de la carta.\n\n*Ejemplo: Para que \"Ariam, Balance\" PUEDA curar 1 pto. a una carta aliada, la carta aliada debe tener 5 ptos. o menos de vida al momento de ser curada (ya que la vida máxima de un Adendei es de 6 ptos.).*",
+      "position": "bottom",
+      "notes": "Typo preservado: '•Efectos' (sin espacio después de bullet)."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p26/fig-01",
+      "slug": "card-boras-sacrificio",
+      "type": "illustration",
+      "bbox_pct": {"x": 68, "y": 4, "w": 28, "h": 24},
+      "description_detailed": "Carta ilustrativa de Adendei titulada 'Boras, Sacrificio' ubicada en la zona superior derecha de la página. Marco estándar gris oscuro del TCG Kódem.\n\nLa ilustración muestra una criatura grande y peluda al estilo de un oso o bestia ártica, situada en un paisaje nevado/ártico. El fondo presenta una paleta fría dominada por azules y blancos con un acento naranja que sugiere un sol o luna en el horizonte, creando contraste cálido-frío característico del entorno Gélido.\n\nEl texto de reglas incluye una habilidad **Pasiva** que resume aproximadamente 'Si esta carta es/resuelta, una carta rival recibe 2 dócimas/décimas. Esta carta tiene su pasivo negado hasta volver a estar disponible' (texto parcialmente legible por tamaño). Incluye también una frase de sabor debajo del efecto.\n\nLa etiqueta de tipo indica 'Adendei Kosmico / Gélida' aproximadamente. Las estadísticas visibles son **2** (ataque) y **1** (defensa). Lleva el icono de pata del tipo Adendei en la esquina superior.",
+      "embedded_text": ["Boras, Sacrificio", "Adendei Kosmico / Gélida", "Pasiva", "2", "1"],
+      "relation_to_text": "Ejemplifica la regla de p26/b01: efectos con serie de acciones en orden específico.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "El texto de efecto y frase de sabor son parcialmente legibles por tamaño reducido."
+    },
+    {
+      "anchor": "p26/fig-02",
+      "slug": "card-sangre-petrea",
+      "type": "illustration",
+      "bbox_pct": {"x": 68, "y": 30, "w": 28, "h": 24},
+      "description_detailed": "Carta de tipo efecto/Rot titulada 'Sangre Pétrea' situada en la zona media-derecha de la página. Marco gris oscuro.\n\nLa ilustración presenta una criatura oscura/bestial con elementos viscosos y orgánicos, paleta dominada por verdes oscuros y negros con tonos terrosos. El aire es sombrío y orgánico, consistente con la estética del recurso Rot en el juego.\n\nEl texto de reglas muestra un efecto de tipo **Activa-Rápida** que lee aproximadamente 'Abisma 1 Adendei rival y regresa todos los equipos en Zona Principal a Zona de Equipo'. Este efecto ilustra la regla de la conjunción 'y' descrita en p26/b02.\n\nA diferencia de las cartas Adendei, Sangre Pétrea no muestra estadísticas numéricas de ataque/defensa sino indicadores de coste/energía (símbolos de recurso Rot). Incluye texto de sabor en la parte inferior, parcialmente legible.",
+      "embedded_text": ["Sangre Pétrea", "Activa-Rápida: Abisma 1 Adendei rival y regresa todos los equipos en Zona Principal a Zona de Equipo."],
+      "relation_to_text": "Ejemplifica la regla de p26/b02: efectos con conjunción 'y' que requieren ambas acciones para declararse.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto exacto del efecto parcialmente legible; costes Rot no enumerados con precisión."
+    },
+    {
+      "anchor": "p26/fig-03",
+      "slug": "card-enis-giro-gelido",
+      "type": "illustration",
+      "bbox_pct": {"x": 8, "y": 54, "w": 26, "h": 22},
+      "description_detailed": "Carta Adendei titulada 'Enis, Giro Gélido' ubicada en la zona central-izquierda inferior de la página. Marco gris oscuro.\n\nLa ilustración muestra una criatura acuática tipo pez con elementos de hielo giratorio a su alrededor. La paleta es dominada por azules, cyan y verdes agua, evocando movimiento y frescura glacial.\n\nEn el recuadro de la carta se observa un marcador rojo sobre la vida, indicando que la carta tiene **1 pto. de vida** actual (lesionada), lo cual es clave para ilustrar el ejemplo del texto. Las estadísticas base muestran **1** (ataque) y **2** (defensa/vida máxima).\n\nLa etiqueta de tipo indica 'Adendei Catrin / Gélida'. El texto **Pasiva** describe aproximadamente 'Los Adendei Catrin reciben 1 décima menos al atacar si valor Activa' (texto parcialmente legible).",
+      "embedded_text": ["Enis, Giro Gélido", "Adendei Catrin / Gélida", "Pasiva", "1", "2"],
+      "relation_to_text": "Ejemplifica la regla de p26/b03 sobre daño a cartas con vida menor que el daño entrante.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto del efecto parcialmente legible; marcador rojo de vida visible."
+    },
+    {
+      "anchor": "p26/fig-04",
+      "slug": "card-ariam-escudo-cempasuchil",
+      "type": "illustration",
+      "bbox_pct": {"x": 36, "y": 54, "w": 26, "h": 22},
+      "description_detailed": "Carta Adendei titulada 'Ariam, Escudo de Cempasúchil' ubicada junto a 'Enis, Giro Gélido' en la zona central inferior de la página. Marco gris oscuro.\n\nLa ilustración presenta una criatura con temática floral de muerte (flores de cempasúchil y elementos protectores). La paleta combina morados, naranjas vibrantes (por el cempasúchil) y negros, evocando la iconografía mexicana del Día de Muertos.\n\nLa etiqueta de tipo indica 'Adendei Catrin / Atlos'. El texto **Pasiva** describe aproximadamente 'Si esta carta es turnada del Mazo, protege 1 carta en el campo hasta el fin del siguiente turno' (parcialmente legible).\n\nLas estadísticas visibles son **2** (ataque) y **1** (defensa). Incluye el icono de pata de Adendei y texto de sabor.",
+      "embedded_text": ["Ariam, Escudo de Cempasúchil", "Adendei Catrin / Atlos", "Pasiva", "2", "1"],
+      "relation_to_text": "Atacante del ejemplo en p26/b03; demuestra cómo un atacante con 2 ptos. de ataque solo inflige 1 pto. de daño cuando su objetivo (Enis) tiene solo 1 pto. de vida.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto del efecto parcialmente legible por tamaño."
+    },
+    {
+      "anchor": "p26/fig-05",
+      "slug": "card-ariam-balance",
+      "type": "illustration",
+      "bbox_pct": {"x": 8, "y": 80, "w": 26, "h": 18},
+      "description_detailed": "Carta Adendei titulada 'Ariam, Balance' ubicada en la zona inferior-izquierda de la página. Marco gris oscuro.\n\nLa ilustración muestra una criatura felina/mística con elementos de balance o dualidad. La paleta es dominada por rosas, magentas y morados oscuros con acentos negros, evocando una estética espiritual/elegante.\n\nLa etiqueta de tipo indica 'Adendei / Atlos'. El texto **Activa** describe aproximadamente 'Si esta carta ataca, cura 1 pto. a una carta aliada'. Este efecto ilustra la regla de curación condicionada.\n\nLas estadísticas visibles son **1** (ataque) y **0** (defensa/o similar). Incluye texto de sabor parcialmente legible debajo del efecto.",
+      "embedded_text": ["Ariam, Balance", "Adendei / Atlos", "Activa: Si esta carta ataca, cura 1 pto. a una carta aliada.", "1", "0"],
+      "relation_to_text": "Ejemplifica la regla de p26/b04 sobre curación: solo aplicable a cartas con al menos 1 pto. menos de su vida máxima.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto de efecto y sabor parcialmente legibles por tamaño reducido."
+    },
+    {
+      "anchor": "p26/fig-06",
+      "slug": "paginador-26",
+      "type": "icon",
+      "bbox_pct": {"x": 8, "y": 95, "w": 6, "h": 4},
+      "description_detailed": "Pequeño recuadro cuadrado con esquinas redondeadas en color naranja/coral que contiene el número '26' centrado en blanco. Foliador/paginador estándar del rulebook, ubicado en la esquina inferior izquierda de la página.",
+      "embedded_text": ["26"],
+      "relation_to_text": "Número de página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página del rulebook Kódem TCG v5.1 que continúa la subsección GENERALIDADES de §6.7 EFECTOS con cuatro reglas sobre: orden de acciones (ejemplificado con Boras, Sacrificio), conjunción 'y' para efectos múltiples (Sangre Pétrea), aplicación de daño con vida insuficiente (Enis vs Ariam Escudo de Cempasúchil), y aplicación de curación con vida máxima (Ariam, Balance). Contiene 5 cartas ilustrativas acompañando los textos. Se preservan varios typos: 'eliminadan', 'Cempasúchi' (falta la l), 'atque', espacios faltantes en bullets '•Los' y '•Efectos', y un asterisco mal colocado en 'E*jemplo'.",
+  "self_confidence": 0.85
+}

@@ -1,0 +1,204 @@
+{
+  "page": 8,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:22:00-06:00",
+  "title": "3.2 Protector — Uso del Protector: Generalidades — Vínculo Odémico",
+  "section_refs": ["§3.2"],
+  "text_blocks": [
+    {
+      "anchor": "p08/b01",
+      "heading": "3.2 Protector",
+      "text": "3.2 Protector",
+      "position": "top-left",
+      "notes": "Encabezado de subsección 3.2 dentro de cápsula/pastilla azul, acompañado a la derecha por un ícono de ojo estilizado en color azul (símbolo de los Protectores)."
+    },
+    {
+      "anchor": "p08/b02",
+      "heading": null,
+      "text": "Los Protectores son humanos y otras razas conscientes que han logrado encontrar su vínculo con un Adendei. En el juego, tu carta de Protector tendrá un poderoso efecto que podrá usarse a través de una carta de Adendei.",
+      "position": "top",
+      "notes": "Párrafo introductorio. 'Protectores', 'Adendei', 'Protector' en cursiva."
+    },
+    {
+      "anchor": "p08/b03",
+      "heading": "Nombre del Protector",
+      "text": "Nombre del Protector: Cada carta de Protector es una faceta o poder del personaje, por lo que primero se indicará el nombre de este y posteriormente el resto del nombre de la carta. Algunas cartas requieren Protectores específicos para poder utilizarse.",
+      "position": "middle-left (callout superior izquierdo)",
+      "notes": "Callout morado. 'Protector' y 'Protectores' en cursiva. Apunta al banner superior de la carta ejemplo donde aparece 'Yanzi, Precisión'."
+    },
+    {
+      "anchor": "p08/b04",
+      "heading": "Vida",
+      "text": "Vida: Cada Protector tiene 12 puntos de vida máxima (Aunque este valor no se encuentra impreso en la carta).",
+      "position": "middle-right (callout superior derecho)",
+      "notes": "Callout celeste/turquesa. '12' en negrita, 'vida máxima' en negrita cursiva. 'Protector' en cursiva. Apunta a la zona superior del retrato de la carta."
+    },
+    {
+      "anchor": "p08/b05",
+      "heading": "Descansos",
+      "text": "Descansos: Tu Protector tendrá 3 descansos e iniciará el juego de esta forma. Aunque este valor no se encuentre impreso en la carta, todos los Protectores tienen un máximo 3 descansos. (Ver 5.1 Descansos).",
+      "position": "middle-right (callout medio derecho)",
+      "notes": "Callout naranja. '3' en negrita. 'Protector', 'Protectores', 'descansos' en cursiva. Referencia '(Ver 5.1 Descansos)' en cursiva pequeña. Apunta al área media-derecha de la carta."
+    },
+    {
+      "anchor": "p08/b06",
+      "heading": "Efecto",
+      "text": "Efecto: El Protector posee un efecto que podrá ser usado a través del vínculo con un Adendei disponible.",
+      "position": "middle-left (callout medio izquierdo)",
+      "notes": "Callout morado. 'Protector' y 'Adendei' en cursiva. Apunta a la caja de texto de efectos de la carta."
+    },
+    {
+      "anchor": "p08/b07",
+      "heading": "Uso del Protector: Generalidades",
+      "text": "Uso del Protector: Generalidades",
+      "position": "middle",
+      "notes": "Encabezado en cápsula con contorno azul marino y fondo blanco; texto en versalitas azul marino."
+    },
+    {
+      "anchor": "p08/b08",
+      "heading": "Generalidades del Protector (lista)",
+      "text": "·Tu Protector no se considerará oculto o revelado en ningún momento, y no puede ser ocultado ni relevado por ningún efecto.\n·Sólo pueden ser dañados por cartas que lo especifiquen en su texto, al decir que pueden dañar al Protector o a cualquier carta sin especificar el tipo.\n·Si un Protector llega a 0 puntos de vida deberá ir a Extinción y una vez que esté en Extinción, se enviarán a esta Zona las 3 cartas del tope de tu Mazo.\n·Si un Protector abandona el campo sin ser enviado a Extinción, podrá ingresar tu Protector suplente conservando la vida y los mismos descansos que tenía tu Protector anterior.\n·Si un Protector es enviado a Extinción, podrá ingresar tu Protector suplente con 12 puntos de vida, conservando los mismos descansos que tenía tu Protector anterior.",
+      "position": "middle",
+      "notes": "Lista con 5 viñetas de punto medio (·). Palabras en cursiva: Protector, oculto, revelado, ocultado, relevado, dañados, dañar, Extinción, Mazo, descansos. Números en negrita: 0, 3, 12."
+    },
+    {
+      "anchor": "p08/b09",
+      "heading": "Vínculo Odémico",
+      "text": "Vínculo Odémico",
+      "position": "middle-bottom",
+      "notes": "Encabezado de subsección en cápsula con contorno azul y fondo blanco, texto en versalitas azul marino."
+    },
+    {
+      "anchor": "p08/b10",
+      "heading": null,
+      "text": "Durante la Fase de Batalla, si tu Protector está disponible, puedes vincularlo a un Adendei disponible, a menos de que el texto del Protector o Adendei indiquen lo contrario (Ver 5. Fases del Turno).",
+      "position": "bottom",
+      "notes": "Párrafo introductorio de Vínculo Odémico. 'Fase de Batalla', 'Protector', 'Adendei' en cursiva. 'vincularlo' en negrita. Referencia en cursiva pequeña."
+    },
+    {
+      "anchor": "p08/b11",
+      "heading": "Vínculo Odémico (lista)",
+      "text": "·Selecciona el Adendei para vincular.\n·Usa el efecto de tu Protector.\n·Al final del turno, el Protector recibe 3 descansos y el Adendei vinculado recibe 1 descanso (Ver 5.1 Descansos).",
+      "position": "bottom",
+      "notes": "Lista de 3 viñetas con punto medio (·). 'Adendei', 'Protector', 'descansos', 'descanso' en cursiva. '3' y '1' en negrita. Referencia '(Ver 5.1 Descansos)' en cursiva pequeña."
+    },
+    {
+      "anchor": "p08/b12",
+      "heading": "Importante",
+      "text": "Importante: En el turno que utilizas tu vínculo NO podrás atacar o utilizar la Activa de ninguna otra carta en Zona Principal.",
+      "position": "bottom",
+      "notes": "Nota al pie de página en formato destacado. 'Importante:' en versalitas negrita azul marino. 'NO' en mayúsculas/negrita. 'Activa' y 'Zona Principal' en cursiva."
+    },
+    {
+      "anchor": "p08/b13",
+      "heading": null,
+      "text": "8",
+      "position": "bottom-right-corner",
+      "notes": "Número de página en cápsula azul con esquina recortada."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p08/fig-01",
+      "slug": "cabecera-3-2-protector",
+      "type": "icon",
+      "bbox_pct": {"x": 4, "y": 4, "w": 20, "h": 4},
+      "description_detailed": "Cápsula/pastilla alargada horizontal con fondo azul marino sólido y bordes redondeados. En la parte izquierda de la cápsula hay un pequeño rectángulo celeste/turquesa más claro que contiene el número '3.2' en negritas blancas. Después del número, separados por una línea diagonal decorativa, aparece la palabra 'PROTECTOR' en versalitas blancas con tipografía serif condensada estilizada. El conjunto funciona como encabezado de nivel 2 para la subsección 3.2 sobre Protectores, siguiendo el mismo patrón visual que el encabezado '3.1 ADENDEI' de la página 7.",
+      "embedded_text": ["3.2", "PROTECTOR"],
+      "relation_to_text": "Encabezado de la subsección 3.2 dedicada al tipo de carta Protector.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p08/fig-02",
+      "slug": "icono-ojo-protector",
+      "type": "icon",
+      "bbox_pct": {"x": 24, "y": 4, "w": 7, "h": 4},
+      "description_detailed": "Ícono vectorial de un ojo estilizado en color azul saturado. Compuesto por una forma almendrada/ojival que representa el contorno del ojo, con un círculo concéntrico más pequeño en el centro (iris/pupila). El diseño es limpio, geométrico, sin sombreados. Funciona como símbolo identificador de los Protectores, posiblemente aludiendo a su rol de 'guardianes' que observan y protegen, y a la temática de consciencia/percepción que define a esta raza según la narrativa del juego.",
+      "embedded_text": [],
+      "relation_to_text": "Glifo visual del tipo de carta Protector, análogo a la pata para Adendei.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p08/fig-03",
+      "slug": "carta-ejemplo-yanzi-precision",
+      "type": "illustration",
+      "bbox_pct": {"x": 28, "y": 14, "w": 40, "h": 50},
+      "description_detailed": "Carta Protector de ejemplo completa, centrada en la parte superior de la página y rodeada por callouts explicativos que señalan sus componentes mediante líneas conectoras.\n\nEn la parte superior, dentro de un banner oscuro con bordes ornamentados (cartucho con terminaciones triangulares), aparece el nombre de la carta: 'Yanzi, Precisión'. Sigue el mismo patrón del Adendei: primero el nombre del personaje (Yanzi), coma, y luego el rasgo/faceta (Precisión).\n\nEl arte central ocupa la mayor parte de la carta y muestra a una mujer joven de cabello castaño-rojizo corto y ondulado, de piel clara, vestida con una blusa amarilla/ocre de mangas cortas y shorts/falda corta en tono verde oliva. Está en pose dinámica, con los brazos extendidos a los lados en una postura de equilibrio o lanzamiento; su mirada está enfocada hacia adelante con expresión concentrada, sugiriendo que es una arquera o lanzadora de cuchillos/proyectiles. Alrededor de ella se ven varios proyectiles negros/plumados (flechas o dardos) volando en distintas direcciones y una estela dinámica. El fondo es una selva/jungla brumosa de tonos verde azulado con troncos de árboles oscuros y vegetación difuminada. La iluminación es cinematográfica con contraluz.\n\nDebajo del arte, una banda oscura horizontal con el texto 'Protector' centrado (etiquetando el tipo de carta) y a los lados íconos decorativos (aparentemente pequeñas formas ojivales/ojos).\n\nEn la caja de texto inferior, sobre fondo gris-azulado oscuro, aparece el efecto:\n'Activa: El Adendei vinculado no recibe descanso al vincularse, y podrá atacar con 6 ptos. a un Adendei rival en tu siguiente turno.'\n\nEn el pie de la carta aparecen: a la izquierda el código 'LGRO-067' y el nombre del ilustrador o referencia ('cripticus' o similar, en itálica pequeña); en el centro un ícono circular grande con el símbolo del ojo (de los Protectores), sin valores numéricos visibles de daño/costo como los Adendei; a la derecha el sello 'Kódem TCG ©'.",
+      "embedded_text": [
+        "Yanzi, Precisión",
+        "Protector",
+        "Activa: El Adendei vinculado no recibe descanso al vincularse, y podrá atacar con 6 ptos. a un Adendei rival en tu siguiente turno.",
+        "LGRO-067",
+        "cripticus",
+        "Kódem TCG ©"
+      ],
+      "relation_to_text": "Carta anatómica de referencia para los callouts 'Nombre del Protector', 'Vida', 'Descansos' y 'Efecto' en la página 8.",
+      "legibility": "clear",
+      "legibility_notes": "El nombre del ilustrador es muy pequeño y está interpretado como 'cripticus' por proximidad visual."
+    },
+    {
+      "anchor": "p08/fig-04",
+      "slug": "callouts-anatomia-protector",
+      "type": "infographic",
+      "bbox_pct": {"x": 3, "y": 14, "w": 94, "h": 50},
+      "description_detailed": "Sistema de callouts anatómicos alrededor de la carta Protector ejemplo, siguiendo el mismo patrón de codificación por color que la página 7.\n\nLado izquierdo (de arriba hacia abajo):\n- Callout 'Nombre del Protector' — recuadro con borde morado y fondo blanco, línea conectora morada hacia el banner superior del nombre.\n- Callout 'Efecto' — recuadro con borde morado y fondo blanco, línea morada hacia la caja de texto de efectos.\n\nLado derecho (de arriba hacia abajo):\n- Callout 'Vida' — recuadro con borde celeste/turquesa y fondo blanco, línea celeste hacia la zona superior del retrato.\n- Callout 'Descansos' — recuadro con borde naranja y fondo blanco, línea naranja hacia la zona media de la carta.\n\nSe observa que a diferencia del Adendei (página 7), el Protector no tiene callouts para Subtipo, Energía, Costo o Daño — solo tiene 4 componentes anatómicos (Nombre, Vida, Descansos, Efecto), lo cual es coherente con su rol mecánico distinto (no ataca directamente, actúa mediante vínculo).",
+      "embedded_text": [
+        "Nombre del Protector:",
+        "Efecto:",
+        "Vida:",
+        "Descansos:"
+      ],
+      "relation_to_text": "Anatomía visual del tipo Protector descrito en los bloques b03 a b06.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p08/fig-05",
+      "slug": "cabecera-uso-protector-generalidades",
+      "type": "icon",
+      "bbox_pct": {"x": 5, "y": 66, "w": 40, "h": 4},
+      "description_detailed": "Cápsula/pastilla ovalada horizontal con contorno azul marino grueso y fondo blanco. En su interior, el texto 'USO DEL PROTECTOR: GENERALIDADES' en versalitas azul marino con tipografía serif robusta. Mantiene consistencia visual con la cápsula 'USO DE LOS ADENDEI' de la página 7 pero más ancha para acomodar el texto más largo.",
+      "embedded_text": ["USO DEL PROTECTOR: GENERALIDADES"],
+      "relation_to_text": "Encabezado de la lista con viñetas (b08) que describe reglas mecánicas específicas del Protector.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p08/fig-06",
+      "slug": "cabecera-vinculo-odemico",
+      "type": "icon",
+      "bbox_pct": {"x": 5, "y": 86, "w": 28, "h": 4},
+      "description_detailed": "Cápsula/pastilla ovalada horizontal con contorno azul marino grueso y fondo blanco. Contiene el texto 'VÍNCULO ODÉMICO' en versalitas azul marino con tipografía serif consistente con los otros encabezados de la página. La palabra 'Odémico' es un término propio del universo Kódem, posiblemente relacionado con la raíz de Kódem mismo y el concepto de vínculo espiritual entre Protector y Adendei.",
+      "embedded_text": ["VÍNCULO ODÉMICO"],
+      "relation_to_text": "Encabezado de la subsección final que explica la mecánica de vínculo entre Protector y Adendei (b10-b12).",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p08/fig-07",
+      "slug": "ilustracion-protector-adendei-silueta",
+      "type": "illustration",
+      "bbox_pct": {"x": 70, "y": 87, "w": 28, "h": 12},
+      "description_detailed": "Ilustración artística en la esquina inferior derecha de la página que muestra a un humano (Protector) con una criatura animal (Adendei), recortada como silueta semi-transparente con efecto de aura rosa/magenta luminosa.\n\nSe distingue una figura humana masculina o andrógina de pie, con ropa urbana (chaqueta, pantalones), cabeza con cabello corto o capucha y una tela/bandana oscura cubriendo la parte inferior del rostro. A sus pies, hacia el lado derecho, aparece una criatura cuadrúpeda tipo félido/cánido pequeño con orejas puntiagudas, mirada directa al frente y expresión alerta — posiblemente un Adendei de subtipo lupino o felino.\n\nLa escena parece envuelta en un halo/aura de luz rosa magenta vibrante que se desvanece en los bordes, evocando el 'vínculo odémico' del que habla el texto adyacente. Es una ilustración temática que refuerza visualmente el concepto de pareja Protector-Adendei vinculados por energía mística.",
+      "embedded_text": [],
+      "relation_to_text": "Ilustración decorativa que refuerza visualmente el concepto de 'Vínculo Odémico' entre Protector y Adendei tratado en los bloques b09-b12.",
+      "legibility": "clear",
+      "legibility_notes": "Los detalles específicos del personaje y la criatura están algo difuminados por el efecto de aura/silueta; interpretación basada en siluetas y contexto narrativo."
+    },
+    {
+      "anchor": "p08/fig-08",
+      "slug": "numero-pagina-8",
+      "type": "icon",
+      "bbox_pct": {"x": 93, "y": 96, "w": 6, "h": 3},
+      "description_detailed": "Número de página '8' en blanco sobre etiqueta/cápsula azul marino con esquina superior izquierda recortada diagonalmente. Colocado en la esquina inferior derecha, consistente con el sistema de numeración del libro.",
+      "embedded_text": ["8"],
+      "relation_to_text": "Numeración de página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página dedicada al tipo de carta Protector (sección 3.2). Estructura: encabezado 3.2, párrafo introductorio narrativo/mecánico, carta ejemplo central 'Yanzi, Precisión' con 4 callouts anatómicos (Nombre del Protector, Vida, Descansos, Efecto — menos componentes que el Adendei porque el Protector no tiene Subtipo/Energía/Costo/Daño directos), sección 'Uso del Protector: Generalidades' con lista de 5 viñetas sobre reglas mecánicas (oculto/revelado, daños, Extinción con envío de 3 cartas del Mazo, suplentes), y sección final 'Vínculo Odémico' con párrafo introductorio + lista de 3 pasos + nota Importante. Conceptos clave: vínculo odémico, Adendei vinculado, descansos (3 máx para Protector, +1 al Adendei vinculado), 12 puntos de vida máxima, Protector suplente, Extinción, Zona Principal, Fase de Batalla, Activa. Referencias a secciones 5.1 Descansos y 5. Fases del Turno. Ilustración decorativa de pareja humano+animal con aura magenta en esquina inferior derecha refuerza el tema.",
+  "self_confidence": 0.93
+}

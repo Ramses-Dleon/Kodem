@@ -1,0 +1,185 @@
+{
+  "page": 16,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:55:00-06:00",
+  "title": "5. Fases del Turno",
+  "section_refs": ["§5"],
+  "text_blocks": [
+    {
+      "anchor": "p16/b01",
+      "heading": "5. Fases del Turno",
+      "text": "5. Fases del Turno",
+      "position": "top",
+      "notes": "Chapter banner header with diagonal chevron decorations (same style as p15)."
+    },
+    {
+      "anchor": "p16/b02",
+      "heading": "Fase de Inicio",
+      "text": "Fase de Inicio:",
+      "position": "top-right",
+      "notes": "Subsection heading."
+    },
+    {
+      "anchor": "p16/b03",
+      "heading": null,
+      "text": "Comienza el turno del jugador.\nEl primer turno se decide al jugador inicial de forma aleatoria.",
+      "position": "top-right",
+      "notes": "Description of Fase de Inicio."
+    },
+    {
+      "anchor": "p16/b04",
+      "heading": "Fase Previa",
+      "text": "Fase Previa:",
+      "position": "middle-left",
+      "notes": "Subsection heading."
+    },
+    {
+      "anchor": "p16/b05",
+      "heading": null,
+      "text": "Durante la Fase Previa, puedes realizar las siguientes acciones:",
+      "position": "middle-left",
+      "notes": "Intro line for Fase Previa bullet list."
+    },
+    {
+      "anchor": "p16/b06",
+      "heading": null,
+      "text": "• **Pasar turno:** Ir a Fin de Turno saltándote todas las Fases intermedias y sin activar efectos a excepción de los *efectos* con el costo, condición o indicación de \"*pasar turno*\" que deberán declararse en esta Fase. También puedes indicar en la Fase Previa que \"*pasas turno*\" y saltar a \"Fin de Turno\" para cumplir con el costo de \"*pasar turno*\" de 1 carta que lo establezca como condición para atacar.\n• **Revelar** las cartas que desees.\n• Declarar y resolver **Pasivas** (que cumplan su condición y/o Pasivas Opcionales).\n• **Enviar cartas a Extinción** cuya vida llegue a **0** ptos. o por *efecto* o *costo* de alguna carta.\n• **Reemplazar** cartas que dejen el campo.\n• **Enviar** tu *Bio* a Extinción y actualizar **1** *descanso* de cada una de tus cartas.\n• **Regresar 1** *Rava* de *Zona Principal* al fondo del Mazo.",
+      "position": "middle-left",
+      "notes": "Bulleted list of Fase Previa actions."
+    },
+    {
+      "anchor": "p16/b07",
+      "heading": "Fase de Batalla",
+      "text": "**Fase de Batalla:**",
+      "position": "middle-right",
+      "notes": "Subsection heading."
+    },
+    {
+      "anchor": "p16/b08",
+      "heading": null,
+      "text": "En esta Fase sólo se podrá atacar y/o usar la Activa de 1 carta por turno (excepción de cartas equipadas con Rot ya que se puede considerar su Activa y la de la carta equipada como 1 sola Activa. *(Ver 3.4. Equipos)* y se compone de las siguientes subfases:",
+      "position": "middle-right",
+      "notes": "Intro paragraph for Fase de Batalla. Source has unbalanced parentheses (opens '(excepción ...' and never explicitly closes before '*(Ver 3.4. Equipos)*'). Transcribed verbatim."
+    },
+    {
+      "anchor": "p16/b09",
+      "heading": "Declaración",
+      "text": "**Declaración:** Elige un Adendei o Protector disponible y declara ataque *(Ver 6.5. Ataque)* y/o Activa hacia una de las cartas rivales, podrás atacar cartas rivales ocultas (boca abajo). En esta subfase debes indicar las cartas involucradas, daños y Activas a realizar.",
+      "position": "middle-right",
+      "notes": "First subphase of Fase de Batalla."
+    },
+    {
+      "anchor": "p16/b10",
+      "heading": "Pago de costos",
+      "text": "**Pago de costos:** Algunas cartas requieren un *costo* para atacar o usar su *Activa*, el cual debe pagarse en esta *subfase*, también se realiza el daño de *quemadura* (aunque el daño por quemadura no se considera un costo*(Ver 6.6.3 Costos).*",
+      "position": "middle-right",
+      "notes": "Second subphase. Source has unbalanced parentheses / missing close paren. Transcribed verbatim."
+    },
+    {
+      "anchor": "p16/b11",
+      "heading": "Respuesta Rival",
+      "text": "**Respuesta Rival:** El rival puede revelar cartas y/o usar *Activas Rápidas* que tengan interacción en ataque o *Activa (Ver 6.6.1 Activas).*",
+      "position": "middle-right",
+      "notes": "Third subphase of Fase de Batalla."
+    },
+    {
+      "anchor": "p16/b12",
+      "heading": null,
+      "text": "16",
+      "position": "bottom-right",
+      "notes": "Page number in dark rounded badge."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p16/fig-01",
+      "slug": "chapter-banner-fases-del-turno",
+      "type": "infographic",
+      "bbox_pct": {"x": 0, "y": 0, "w": 100, "h": 6},
+      "description_detailed": "Full-width horizontal chapter banner identical in style to the one on p15. Blue-to-dark-blue gradient background with diagonal chevron/slash decorations on both ends in varying tones of blue and cyan. The centered white bold title reads '5. Fases del Turno', signaling the beginning of Chapter 5.",
+      "embedded_text": ["5. Fases del Turno"],
+      "relation_to_text": "Opens Chapter 5 (turn phases).",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p16/fig-02",
+      "slug": "left-slash-decoration",
+      "type": "illustration",
+      "bbox_pct": {"x": 0, "y": 0, "w": 12, "h": 6},
+      "description_detailed": "Cluster of diagonal parallel slash marks in varying shades of blue and cyan forming a dynamic chevron/speed-lines motif on the left side of the chapter banner. Bold strokes angled ~45°.",
+      "embedded_text": [],
+      "relation_to_text": "Decorative element of the chapter banner.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p16/fig-03",
+      "slug": "right-slash-decoration",
+      "type": "illustration",
+      "bbox_pct": {"x": 88, "y": 0, "w": 12, "h": 6},
+      "description_detailed": "Mirror of fig-02: diagonal parallel lines in blue and cyan on the right side of the banner, pointing inward toward the title.",
+      "embedded_text": [],
+      "relation_to_text": "Decorative element of the chapter banner.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p16/fig-04",
+      "slug": "hand-holding-crystal-die",
+      "type": "photo",
+      "bbox_pct": {"x": 22, "y": 6, "w": 22, "h": 11},
+      "description_detailed": "Photograph of an open human palm facing upward holding a small translucent blue gemstone or crystal die. The photograph uses soft natural lighting and is placed beside the 'Fase de Inicio' block.\n\nThe image illustrates the randomness mechanic used to decide which player starts — 'El primer turno se decide al jugador inicial de forma aleatoria.' The choice of a crystal/die rather than a coin gives the image a thematic flavor consistent with Kódem's fantasy-naturalist aesthetic.",
+      "embedded_text": [],
+      "relation_to_text": "Illustrates the Fase de Inicio random-start mechanic.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p16/fig-05",
+      "slug": "card-fan-back-photo-upper",
+      "type": "photo",
+      "bbox_pct": {"x": 58, "y": 20, "w": 40, "h": 11},
+      "description_detailed": "Photograph of a hand reaching toward three face-down dark-gray Kódem cards arranged in a fan or spread on a surface. The card backs display the 'KÓDEM' game logo in teal/cyan. Lighting is warm and overhead.\n\nThis image accompanies the 'Fase Previa' intro and visually echoes the player's options to reveal, draw or reorganize hidden cards during the phase.",
+      "embedded_text": ["KÓDEM"],
+      "relation_to_text": "Visual flavor for the Fase Previa / 'Revelar cartas' action.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Logo on card backs recognizable but small."
+    },
+    {
+      "anchor": "p16/fig-06",
+      "slug": "card-fan-reveal-photo-lower",
+      "type": "photo",
+      "bbox_pct": {"x": 58, "y": 36, "w": 40, "h": 13},
+      "description_detailed": "Photograph of a hand holding or placing three cards, one face-up revealing colorful fantasy artwork (creature/dragon illustration), with the others face-down showing the 'KÓDEM' logo. Represents the moment of revealing a card from an ocultar state during the Fase Previa.",
+      "embedded_text": ["KÓDEM"],
+      "relation_to_text": "Illustrates the 'Revelar las cartas que desees' action of Fase Previa.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Face-up art is visible but small; backs are clearer than faces."
+    },
+    {
+      "anchor": "p16/fig-07",
+      "slug": "card-layout-board-photo",
+      "type": "photo",
+      "bbox_pct": {"x": 3, "y": 67, "w": 45, "h": 30},
+      "description_detailed": "Photograph of a hand pointing at an arrangement of dark Kódem cards laid out on a white surface, with several cyan/teal dice scattered among them. The scene simulates an active play board with cards placed in their zones and dice used as descanso/life markers.\n\nThe image accompanies the 'Fase de Batalla' block on the right side of the page and gives a real-table view of an in-combat layout, complementing the abstract board diagram shown on page 15.",
+      "embedded_text": [],
+      "relation_to_text": "Real-table visual reference for the Fase de Batalla section.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Cards visible but their names and text are too small to read; dice and gesture clearly visible."
+    },
+    {
+      "anchor": "p16/fig-08",
+      "slug": "page-number-16",
+      "type": "icon",
+      "bbox_pct": {"x": 92, "y": 95, "w": 6, "h": 4},
+      "description_detailed": "Dark navy/teal filled rounded rectangle with white bold page number '16' in the bottom-right corner.",
+      "embedded_text": ["16"],
+      "relation_to_text": "Page number indicator.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Chapter 5 opener: 'Fases del Turno'. The page introduces three of the five phases: Fase de Inicio (top-right, short description + crystal photo), Fase Previa (middle-left, bulleted action list + two card photographs), Fase de Batalla (middle-right, intro + three subphases Declaración / Pago de costos / Respuesta Rival + board photograph). The remaining phases (Post-Batalla and Fin) are not on this page (likely continue on p17). Source has several unbalanced parentheses and minor punctuation quirks in blocks b08 and b10; all transcribed verbatim.",
+  "self_confidence": 0.88
+}

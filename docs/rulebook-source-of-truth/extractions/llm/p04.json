@@ -1,0 +1,100 @@
+{
+  "page": 4,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:50:00-06:00",
+  "title": "1. ¿Qué es Kódem TCG?",
+  "section_refs": ["§1", "§1.2", "§1.3"],
+  "text_blocks": [
+    {
+      "anchor": "p04/b01",
+      "heading": "1. ¿Qué es Kódem TCG?",
+      "text": "Kódem TCG© es un juego de cartas único en su clase donde crearás tu estrategia antes de iniciar tu partida.\nEn Kódem decidirás el destino del mundo convirtiéndote en un Protector y lucharás contra otros Protectores haciendo un mazo con un ejército de criaturas mágicas; los Adendei, equipadas con el poder del reino fungi, vegetal y mineral además podrás incluir lugares ancestrales de poder en la partida, enfrentándote en emocionantes batallas donde tu estrategia será la clave para la victoria.\n\n¡Bienvenido a esta gran aventura!",
+      "position": "top",
+      "notes": "Sección introductoria de la sección 1."
+    },
+    {
+      "anchor": "p04/b02",
+      "heading": "1.2 Abriendo tu producto y conociendo tu juego",
+      "text": "En el producto de Kódem TCG podrás encontrar una gran variedad de cartas y estrategias. Ya sea que eres novato o un experto veterano, te recomendamos revisar este libro de reglas que podrá ayudarte a empezar a jugar o a consultar dudas particulares.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p04/b03",
+      "heading": "1.3 Componentes de Juego",
+      "text": "• Mazo GENERAL de juego: Como todo juego de cartas estratégico, en Kódem TCG llevarás un mazo general compuesto por diferentes tipos de cartas. Este mazo general será tu componente principal y con el que jugarás tus partidas.\n\n•Contadores de vida: Se puede usar cualquier método para contar la vida de tus cartas principales, como 6 dados de seis caras, un tablero con contadores de vida, etc.\n\n• Tapete de juego (opcional): A pesar de que no es necesario para el desarrollo de tu partida, recomendamos llevar 1 tapete oficial de neopreno o de papel de Kódem TCG para proteger tus cartas.\n\n•Monedas o indicadores de estado (opcional): Algunas cartas colocarán marcas en el juego, por lo que a través de monedas o algún indicador de tu preferencia, podrás indicar el estado de tus cartas para recordar aplicar sus efectos correspondientes.",
+      "position": "bottom",
+      "notes": "Lista de componentes del juego con bullets. Notar el espaciado irregular en algunos bullets (ej. '•Contadores', '•Monedas' sin espacio después del bullet)."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p04/fig-01",
+      "slug": "personaje-protector-mujer-cabello-azul",
+      "type": "illustration",
+      "bbox_pct": {"x": 62, "y": 5, "w": 36, "h": 22},
+      "description_detailed": "Ilustración estilo anime/manga de un personaje femenino que representa a un Protector del universo Kódem TCG. La figura es una mujer joven con cabello largo de color azul brillante que le cae sobre los hombros. Lleva gogles o lentes protectores sobre la frente y viste un atuendo futurista o de aventurera con detalles tecnológicos/místicos. Sostiene en sus manos una esfera u orbe que emite un resplandor azul luminoso, sugiriendo energía mágica o elemento místico conectado al mundo del juego. El estilo es anime contemporáneo con línea limpia, sombreado suave y colores saturados. La paleta predominante es azul claro y celeste.",
+      "embedded_text": [],
+      "relation_to_text": "Representación visual del concepto de 'Protector' introducido en el texto §1, donde se menciona que el jugador se convertirá en un Protector para luchar contra otros Protectores.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p04/fig-02",
+      "slug": "caja-mazo-estructura-y-sobres",
+      "type": "photo",
+      "bbox_pct": {"x": 2, "y": 28, "w": 38, "h": 18},
+      "description_detailed": "Imagen de producto que muestra una caja de Mazo Estructura de Kódem TCG (color azul oscuro con ilustración de una criatura verde/turquesa en el frente y el logo KÓDEM en la parte superior). Junto a la caja aparecen tres sobres o booster packs con diseño rojo y elementos gráficos de calavera/luna. La caja incluye una etiqueta de clasificación por edad '8+'. El conjunto representa el producto físico inicial que el jugador abre para comenzar a jugar.",
+      "embedded_text": ["KÓDEM", "Mazo Estructura", "8+"],
+      "relation_to_text": "Ilustra los productos mencionados en §1.2 'Abriendo tu producto y conociendo tu juego'.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p04/fig-03",
+      "slug": "dorso-cartas-kodem",
+      "type": "photo",
+      "bbox_pct": {"x": 62, "y": 48, "w": 34, "h": 12},
+      "description_detailed": "Dos cartas de Kódem TCG mostradas de dorso, en abanico. El dorso es de color negro intenso con el logotipo KÓDEM estampado en azul brillante al centro. Representa el componente 'Mazo GENERAL de juego'.",
+      "embedded_text": ["KÓDEM"],
+      "relation_to_text": "Ilustración del componente 'Mazo GENERAL de juego' descrito en §1.3.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p04/fig-04",
+      "slug": "dado-d6-contador-vida",
+      "type": "illustration",
+      "bbox_pct": {"x": 2, "y": 62, "w": 12, "h": 8},
+      "description_detailed": "Un dado de seis caras (d6) de color púrpura o violeta, mostrado en perspectiva 3D con varias caras visibles. Representa los contadores de vida que pueden usarse durante el juego.",
+      "embedded_text": [],
+      "relation_to_text": "Ilustración del componente 'Contadores de vida' descrito en §1.3.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p04/fig-05",
+      "slug": "tapete-de-juego-neopreno",
+      "type": "photo",
+      "bbox_pct": {"x": 60, "y": 73, "w": 38, "h": 12},
+      "description_detailed": "Tapete de juego oficial de Kódem TCG en neopreno que muestra las zonas de juego oficiales delimitadas con marcos y etiquetas: área del PROTECTOR, ZONA PRINCIPAL (donde se juegan las criaturas), EXTINCIÓN (zona de descarte) y sección de EQUIPO. El arte del tapete incluye una criatura azul ilustrada de fondo y los textos de las zonas en blanco sobre fondo oscuro.",
+      "embedded_text": ["PROTECTOR", "ZONA PRINCIPAL", "EXTINCIÓN", "EQUIPO"],
+      "relation_to_text": "Ilustración del componente 'Tapete de juego (opcional)' descrito en §1.3.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p04/fig-06",
+      "slug": "moneda-indicador-estado",
+      "type": "illustration",
+      "bbox_pct": {"x": 2, "y": 85, "w": 12, "h": 10},
+      "description_detailed": "Moneda o ficha circular de color púrpura/violeta con un símbolo o criatura estilizada grabada en relieve en la parte central. Representa los indicadores de estado/marcas que se colocan sobre las cartas.",
+      "embedded_text": [],
+      "relation_to_text": "Ilustración del componente 'Monedas o indicadores de estado (opcional)' descrito en §1.3.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página 4 del rulebook Kódem TCG v5.1. Contiene la sección introductoria §1 (¿Qué es Kódem TCG?) junto con §1.2 (Abriendo tu producto) y §1.3 (Componentes de Juego). Incluye múltiples ilustraciones/fotos de componentes físicos del producto distribuidas alrededor del texto. El número de página '4' aparece en la esquina inferior derecha.",
+  "self_confidence": 0.93
+}

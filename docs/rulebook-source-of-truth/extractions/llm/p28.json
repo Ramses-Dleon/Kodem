@@ -1,0 +1,159 @@
+{
+  "page": 28,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:35:00-06:00",
+  "title": null,
+  "section_refs": [],
+  "text_blocks": [
+    {
+      "anchor": "p28/b01",
+      "heading": "Cartas con condiciones específicas:",
+      "text": "Cartas con condiciones específicas: Una carta que tenga una condición ligada a un número de cartas (1,2,3, etc) en cuyo texto no especifique con palabras \"exactamente\", \"solo\", \"Si y solo si\", se considerara como que ese número es el número mínimo necesario para cumplir o no cumplir la condición mencionada en su texto, es decir como si fuera un \"1 o más\", \"2 o más\", \"3 o más, etc.",
+      "position": "top",
+      "notes": "Subtítulo en negrita. Typos: 'considerara' sin acento (debería ser 'considerará'), '3 o más, etc.' falta comilla de cierre tras 'más'."
+    },
+    {
+      "anchor": "p28/b02",
+      "heading": null,
+      "text": "Ejemplo: \"Zaren, Unión\"",
+      "position": "top",
+      "notes": "Ejemplo en cursiva, introduce la carta Zaren, Unión."
+    },
+    {
+      "anchor": "p28/b03",
+      "heading": "Activa:",
+      "text": "Activa: Si tu rival no tiene 1 Token en Zona Principal, regresa un Adendei rival al tope del Mazo, y coloca… (en este caso si el rival tiene 1 o más Token se considera que no cumple la condición)",
+      "position": "top",
+      "notes": "'Activa:' en negrita. 'Token' y 'Adendei' en cursiva. 'no' en negrita dentro de la aclaración parentética en cursiva."
+    },
+    {
+      "anchor": "p28/b04",
+      "heading": "Costo:",
+      "text": "Costo: Debes tener 2 Rot en Extinción para usar su Activa. (En este caso si tiene 2 o más Rot en Extincion se considera que si cumple la condición).",
+      "position": "middle",
+      "notes": "'Costo:' en negrita. 'Rot' en cursiva. 'si' en negrita dentro de la aclaración. Typo: 'Extincion' sin acento (debería ser 'Extinción')."
+    },
+    {
+      "anchor": "p28/b05",
+      "heading": null,
+      "text": "Ejemplo: \"Greah, Mazo Pétreo\"",
+      "position": "middle",
+      "notes": "Ejemplo en cursiva, introduce la carta Greah, Mazo Pétreo."
+    },
+    {
+      "anchor": "p28/b06",
+      "heading": "Efectos de un solo uso:",
+      "text": "Efectos de un solo uso: Los efectos de un \"solo uso por juego\", se podrán usar una vez por jugador y si uno de esos efectos ya fue usado por algún jugador, ese jugador no podrá volver a declararlo aún si ese efecto es copiado por alguna de sus cartas.",
+      "position": "middle",
+      "notes": "Subtítulo en negrita. 'una vez por jugador' en negrita."
+    },
+    {
+      "anchor": "p28/b07",
+      "heading": "Vivificar",
+      "text": "Vivificar",
+      "position": "middle",
+      "notes": "Encabezado de sección en negrita."
+    },
+    {
+      "anchor": "p28/b08",
+      "heading": null,
+      "text": "Algunas cartas en Kódem son variantes resurecctas, de los personajes, es decir, que fueron traídas de regreso del Reino de la muerte. Esta cartas normalmente se relaacionan con el fecto de \"VIVIFICAR\"",
+      "position": "middle",
+      "notes": "Múltiples typos: 'resurecctas' (debería ser 'resurrectas'), 'Esta cartas' (debería ser 'Estas cartas'), 'relaacionan' con doble 'a' (debería ser 'relacionan'), 'fecto' (debería ser 'efecto'). 'VIVIFICAR' en mayúsculas."
+    },
+    {
+      "anchor": "p28/b09",
+      "heading": null,
+      "text": "Mixtla, Regreso | Ketzz, Plumas Inmortales | Ariam, Resurgimiento Fangoso",
+      "position": "middle",
+      "notes": "Nombres de cartas en cursiva separados por pipes '|', como pie de figura agrupando las 3 cartas de ejemplo mostradas abajo."
+    },
+    {
+      "anchor": "p28/b10",
+      "heading": "Vivificar:",
+      "text": "Vivificar: Las cartas que explícitamente no mencionen en sus textos, que pueden vivificar, enviar cartas de Extinción a otras Zonas o Intercambiar cartas con cartas en Extinción, no podrán sacar cartas de Extinción a otras Zonas.",
+      "position": "bottom",
+      "notes": "Subtítulo 'Vivificar:' en negrita. 'no' en negrita."
+    },
+    {
+      "anchor": "p28/b11",
+      "heading": null,
+      "text": "Si una carta cuyo efecto se haya activado en campo no especifica cuándo termina, este terminará cuando la carta ya no se encuentre revelada en el campo.",
+      "position": "bottom",
+      "notes": null
+    },
+    {
+      "anchor": "p28/b12",
+      "heading": null,
+      "text": "Si la condición para activar un efecto se cumple varias veces simultáneamente, el efecto sólo se activará una vez.",
+      "position": "bottom",
+      "notes": "'sólo' con acento (uso tradicional)."
+    },
+    {
+      "anchor": "p28/b13",
+      "heading": null,
+      "text": "28",
+      "position": "bottom",
+      "notes": "Número de página en negrita."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p28/fig-01",
+      "slug": "carta-zaren-union",
+      "type": "illustration",
+      "bbox_pct": {"x": 10, "y": 12, "w": 22, "h": 28},
+      "description_detailed": "Carta del juego Kódem titulada 'Zaren, Unión' ubicada en la zona superior izquierda-central de la página. Presenta un marco característico de tipo Protector, con bordes distintivos y un esquema cromático que combina tonos azules oscuros con acentos rojos en la capa del personaje. La ilustración central muestra a un personaje masculino vistiendo una capa roja dramática, acompañado o controlando una criatura oscura a su lado, proyectando una estética de unión mágica entre humano y entidad.\n\nEl fondo de la ilustración presenta tonos azul oscuro y elementos atmosféricos que refuerzan el sentido místico del personaje. Al ser tipo Protector, la carta muestra el icono/símbolo distintivo de escudo o marca característica de Protectores en la parte superior.\n\nLas estadísticas inferiores siguen el layout estándar de Kódem con cajas para ataque, coste y vida. En el contexto textual, esta carta se usa como ejemplo de 'condiciones específicas' en los bloques b02-b04, donde se analizan sus efectos 'Activa' y 'Costo' para ilustrar la regla de interpretación numérica (1 o más, 2 o más, etc.).\n\nLa composición visual enfatiza la capa roja como elemento focal contra el fondo oscuro, creando un contraste narrativo potente.",
+      "embedded_text": ["Zaren, Unión"],
+      "relation_to_text": "Ejemplo central del bloque b02, b03 y b04 sobre condiciones específicas. Su texto 'Activa' y 'Costo' ilustran la regla.",
+      "legibility": "clear",
+      "legibility_notes": "Nombre y elementos principales bien visibles."
+    },
+    {
+      "anchor": "p28/fig-02",
+      "slug": "carta-greah-mazo-petreo",
+      "type": "illustration",
+      "bbox_pct": {"x": 55, "y": 18, "w": 22, "h": 28},
+      "description_detailed": "Carta del juego Kódem titulada 'Greah, Mazo Pétreo' ubicada en la zona superior derecha-central. Presenta un marco de tipo Adendei con estética lítica/pétrea, característica de afinidad Titán o roca. La ilustración central muestra una criatura grande y robusta en tonos naranja y marrón, con elementos botánicos atípicos: flores o hongos púrpuras creciendo de su espalda/cuerpo, sugiriendo una simbiosis entre roca y naturaleza.\n\nEl fondo es oscuro, lo cual resalta los tonos cálidos de la criatura principal y los destellos púrpuras de las flores/hongos. El diseño comunica fuerza bruta y conexión con el entorno natural rocoso.\n\nEn el contexto textual, Greah se usa como ejemplo en el bloque b05 para ilustrar la sección de 'Cartas con condiciones específicas' referenciada en b01-b04. Probablemente tiene un costo o efecto ligado a una cantidad específica de cartas.\n\nLas estadísticas inferiores siguen el layout estándar con recuadros de stats. El marco y colores la identifican claramente como Adendei pétreo o de afinidad Lítica.",
+      "embedded_text": ["Greah, Mazo Pétreo"],
+      "relation_to_text": "Segundo ejemplo del bloque b05 en la sección de condiciones específicas. Ilustra casos donde el número mínimo aplica.",
+      "legibility": "clear",
+      "legibility_notes": "Legible con claridad; tonos cálidos y ornamentación llamativa."
+    },
+    {
+      "anchor": "p28/fig-03",
+      "slug": "carta-mixtla-regreso",
+      "type": "illustration",
+      "bbox_pct": {"x": 8, "y": 58, "w": 20, "h": 26},
+      "description_detailed": "Carta del juego Kódem titulada 'Mixtla, Regreso' ubicada en la zona inferior izquierda. Presenta un marco de tipo Adendei con estética resurrecta o espectral, asociada probablemente a la afinidad Chiádesca o similar. La ilustración central muestra un murciélago o criatura voladora de tonos marrones y oscuros sobre un fondo verde-boscoso, con atmósfera nocturna y misteriosa, evocando el concepto de regreso desde el Reino de la muerte.\n\nEl fondo verde-oscuro genera un contraste que realza la silueta del personaje volador, mientras que la textura boscosa refuerza la sensación de retorno desde un reino oscuro. Las estadísticas inferiores muestran valores aproximados 2/1 u otros pequeños, típicos de cartas de soporte o baja inversión.\n\nEsta carta funciona como una de las tres ilustraciones del concepto 'Vivificar' mencionado en bloques b07-b10, representando una variante resurrecta del personaje original Mixtla. Su aparición aquí ilustra visualmente cómo el juego crea variantes resurrectas de personajes existentes, un tema central de la sección Vivificar.",
+      "embedded_text": ["Mixtla, Regreso"],
+      "relation_to_text": "Una de las tres cartas del bloque b09 que ilustran el concepto de Vivificar como variante resurrecta.",
+      "legibility": "clear",
+      "legibility_notes": "Bien visible; nombre legible."
+    },
+    {
+      "anchor": "p28/fig-04",
+      "slug": "carta-ketzz-plumas-inmortales",
+      "type": "illustration",
+      "bbox_pct": {"x": 40, "y": 58, "w": 20, "h": 26},
+      "description_detailed": "Carta del juego Kódem titulada 'Ketzz, Plumas Inmortales' ubicada en la zona inferior central. Presenta un marco de tipo Adendei con estética resurrecta, asociada probablemente a la afinidad Háumca o similar (alada/inmortal). La ilustración central muestra una criatura híbrida entre reptil y ave con plumas verdes brillantes y ojos rojos intensos, sobre un fondo oscuro con efectos de luz verde o energía mística, evocando el regreso desde la muerte con poder sobrenatural.\n\nEl contraste entre las plumas verdes luminosas y el fondo oscuro crea una composición visualmente impactante que refuerza el concepto de inmortalidad resurrecta. Los ojos rojos brillantes aportan un elemento siniestro pero poderoso.\n\nLas estadísticas inferiores muestran valores típicos de Adendei resurrecto (aproximadamente 2/1). Esta carta forma parte del trío de ejemplos visuales del concepto Vivificar descrito en los bloques b07-b10, mostrando cómo las variantes resurrectas reciben nuevos nombres y atributos.",
+      "embedded_text": ["Ketzz, Plumas Inmortales"],
+      "relation_to_text": "Una de las tres cartas del bloque b09 que ejemplifican variantes resurrectas ligadas al efecto Vivificar.",
+      "legibility": "clear",
+      "legibility_notes": "Nombre claro; ilustración vívida."
+    },
+    {
+      "anchor": "p28/fig-05",
+      "slug": "carta-ariam-resurgimiento-fangoso",
+      "type": "illustration",
+      "bbox_pct": {"x": 72, "y": 58, "w": 20, "h": 26},
+      "description_detailed": "Carta del juego Kódem titulada 'Ariam, Resurgimiento Fangoso' ubicada en la zona inferior derecha. Presenta un marco de tipo Adendei con estética resurrecta y fangosa, asociada probablemente a la afinidad Pirca o Catrín corrompida. La ilustración central muestra una criatura verde fantasmal o espectral emergiendo entre vegetación oscura, con tonos verdes y negros dominantes que sugieren putrefacción o resurgimiento desde lo pantanoso.\n\nEsta es claramente una variante resurrecta del personaje Ariam (originalmente mostrado en la página 27 como 'Ariam, Curación Catrín'), lo que refuerza el concepto narrativo de que los personajes regresan del Reino de la muerte con nuevas formas y afinidades. La transformación de una curandera Catrín a una entidad fangosa resurrecta es un elemento narrativo potente.\n\nEl contraste visual con la versión anterior de Ariam es notable: de colores verdes vivos/luminosos a tonos oscuros y putrefactos. Las estadísticas inferiores muestran valores típicos de Adendei resurrecto (aproximadamente 2/1).",
+      "embedded_text": ["Ariam, Resurgimiento Fangoso"],
+      "relation_to_text": "Una de las tres cartas del bloque b09 que ejemplifican el concepto Vivificar. Variante resurrecta de la Ariam mostrada en p27.",
+      "legibility": "clear",
+      "legibility_notes": "Nombre legible, atmósfera visual distintiva."
+    }
+  ],
+  "page_notes": "Página con tres secciones reguladas: (1) Cartas con condiciones específicas (interpretación numérica como 'N o más' salvo palabras clave 'exactamente', 'solo', 'Si y solo si'), (2) Efectos de un solo uso (una vez por jugador, no duplicables por copia), (3) Vivificar (mecánica de variantes resurrectas que regresan del Reino de la muerte). También contiene dos reglas finales sin heading explícito: duración de efectos sin especificación y activación única cuando condición se cumple simultáneamente. Múltiples typos detectados: 'considerara' sin acento, 'Extincion' sin acento, 'resurecctas' con doble c, 'Esta cartas' (falta s), 'relaacionan' con doble a, 'fecto' (falta e). Cinco cartas ilustradas: Zaren Unión y Greah Mazo Pétreo (arriba, ejemplos de condiciones), Mixtla Regreso, Ketzz Plumas Inmortales y Ariam Resurgimiento Fangoso (abajo, ejemplos de Vivificar).",
+  "self_confidence": 0.92
+}

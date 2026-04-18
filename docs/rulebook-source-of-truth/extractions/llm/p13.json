@@ -1,0 +1,203 @@
+{
+  "page": 13,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:55:00-06:00",
+  "title": "3.6 Token",
+  "section_refs": ["§3.6"],
+  "text_blocks": [
+    {
+      "anchor": "p13/b01",
+      "heading": "3.6 Token",
+      "text": "3.6 Token",
+      "position": "top-left",
+      "notes": "Section header badge, teal/cyan rounded rectangle with '3.6' in darker teal circle and 'TOKEN' in bold white uppercase."
+    },
+    {
+      "anchor": "p13/b02",
+      "heading": null,
+      "text": "Algunas cartas tienen la capacidad de invocar criaturas o seres, como *Token*, a la Zona Principal durante el juego. Estos *Token* representan cartas que no están en tu Mazo Principal, como animales u otro tipo de criaturas.",
+      "position": "top",
+      "notes": "Intro paragraph below the section header."
+    },
+    {
+      "anchor": "p13/b03",
+      "heading": "Características",
+      "text": "Características",
+      "position": "middle-left",
+      "notes": "Subsection header."
+    },
+    {
+      "anchor": "p13/b04",
+      "heading": null,
+      "text": "Las características de los *Token* son definidas por el efecto de la carta que los invoca; a diferencia de otras cartas, sus estadísticas pueden variar.\n**Si el efecto invocador no especifica lo contrario**, un **Token** tiene las siguientes **estadísticas**:",
+      "position": "middle-left",
+      "notes": "Introductory paragraph to the stat list."
+    },
+    {
+      "anchor": "p13/b05",
+      "heading": null,
+      "text": "•Vida Máxima: **6** puntos\n•**Efecto:** Sin efecto\n•**Costo:** Sin costo",
+      "position": "middle-left",
+      "notes": "Bullet list inside purple-bordered stats box (left column, upper)."
+    },
+    {
+      "anchor": "p13/b06",
+      "heading": null,
+      "text": "• **Daño: 0**\n• **Descanso: 0**\n• **Energía:** Sin Energía.\n• **Subtipo:** Sin subtipo.",
+      "position": "middle-left",
+      "notes": "Bullet list inside orange-bordered stats box (left column, lower)."
+    },
+    {
+      "anchor": "p13/b07",
+      "heading": null,
+      "text": "*Nombre del Token:* No se refiere al nombre de la carta o del personaje.\nEn este caso el nombre *\"Token\"* sólo indica el tipo de carta.",
+      "position": "middle-right",
+      "notes": "Purple annotation callout box pointing to the card's name bar."
+    },
+    {
+      "anchor": "p13/b08",
+      "heading": "Uso del Token",
+      "text": "Uso del Token",
+      "position": "middle-left",
+      "notes": "Subsection header badge (white rounded rectangle with teal border)."
+    },
+    {
+      "anchor": "p13/b09",
+      "heading": null,
+      "text": "Las cartas *Token* funcionan de forma similar a los *Adendei*; pueden atacar en *Batalla* y si lo hacen, descansan al final del turno. En tu partida, cuando una carta abandone el campo puede colocarse un *Token* en su lugar si el efecto de una carta en juego lo especifica.",
+      "position": "middle",
+      "notes": "First paragraph of 'Uso del Token' section."
+    },
+    {
+      "anchor": "p13/b10",
+      "heading": null,
+      "text": "Si la *vida* de un *Token* se reduce a **0** irá a *Extinción*, también puede ir a *Extinción* por *efectos* de otras cartas pero posteriormente saldrá del juego y en **ningún momento contará** como carta en *Extinción* para la **condición de victoria**.",
+      "position": "middle",
+      "notes": "Second paragraph of 'Uso del Token'."
+    },
+    {
+      "anchor": "p13/b11",
+      "heading": "Generalidades",
+      "text": "Generalidades",
+      "position": "bottom-left",
+      "notes": "Subsection header badge."
+    },
+    {
+      "anchor": "p13/b12",
+      "heading": null,
+      "text": "· Los *Token* son también considerados cartas (al igual que los *Protectores* y cartas boca abajo).\n· **No** tienen una Zona dentro del campo antes de entrar en juego.\n· **No** pueden ser *ocultados* ni pueden ingresar al juego *ocultos*.\n- Cada jugador puede tener un **máximo** de **2 cartas** Token en su campo.",
+      "position": "bottom",
+      "notes": "Bullet list under 'Generalidades'."
+    },
+    {
+      "anchor": "p13/b13",
+      "heading": null,
+      "text": "13",
+      "position": "bottom-right",
+      "notes": "Page number in dark rounded badge."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p13/fig-01",
+      "slug": "section-header-badge-token",
+      "type": "icon",
+      "bbox_pct": {"x": 3, "y": 1, "w": 22, "h": 4},
+      "description_detailed": "Teal/cyan rounded rectangle section-header badge located at the top-left corner of the page. The badge is divided in two visual regions: on the left, a darker teal circular disc contains the section number '3.6' rendered in white bold numerals; on the right, the word 'TOKEN' is set in bold white uppercase letters on the cyan field. The overall palette uses two tones of teal that match the rulebook's section-header system. The badge has soft rounded corners and no drop-shadow.\n\nThe badge is functional and decorative simultaneously: it serves as the visual anchor for the Token subsection (§3.6) while introducing the chapter's teal color accent. Its compact size keeps the top-left margin clean and lets the intro paragraph run at full width beneath it.",
+      "embedded_text": ["3.6", "TOKEN"],
+      "relation_to_text": "Opens the §3.6 Token subsection and sets the color accent for the whole page.",
+      "legibility": "clear",
+      "legibility_notes": "High contrast white text on cyan background."
+    },
+    {
+      "anchor": "p13/fig-02",
+      "slug": "token-card-dinosaur-hydra",
+      "type": "illustration",
+      "bbox_pct": {"x": 27, "y": 22, "w": 46, "h": 42},
+      "description_detailed": "A full Kódem TCG card illustration occupies the central zone of the page. The card depicts a multi-headed green scaled dinosaur-like or hydra-like creature with several open-mouthed necks emerging from a volcanic landscape. The background shows red-orange lava flows, dark rocks, glowing embers and a smoky sky, producing a high-contrast scene dominated by emerald greens, oranges and reds.\n\nThe card itself follows standard Kódem TCG card anatomy: a name bar along the top reads 'Token', the central art panel contains the creature illustration framed by a warm beige/tan border, and there is a bottom bar with small card-credits text. Because the bottom stats area is intentionally minimal, this card is used as the canonical example of the default Token card (no effect, no cost, no energy, no subtype).\n\nThe card works as the visual anchor that the surrounding annotation boxes and callouts reference: the purple 'Nombre del Token' callout points to the name bar, and the left-column stats boxes correspond to the stats block that would normally appear on the card's frame.",
+      "embedded_text": ["Token", "TCOO-013S", "colmillo_azul_studio", "Kódem TCG ©"],
+      "relation_to_text": "Primary example of a default Token card, referenced by every callout on the page.",
+      "legibility": "clear",
+      "legibility_notes": "Main illustration and name bar are fully legible; bottom credits text (TCOO-013S / colmillo_azul_studio / Kódem TCG ©) is small but readable."
+    },
+    {
+      "anchor": "p13/fig-03",
+      "slug": "callout-nombre-del-token",
+      "type": "infographic",
+      "bbox_pct": {"x": 62, "y": 26, "w": 35, "h": 14},
+      "description_detailed": "A light purple/lavender rectangular annotation box sits to the upper-right of the card illustration. A thin pointer/leader line connects the box to the card's 'Token' name bar, explicitly tying the note to the card-name field. The box uses a soft lavender fill with rounded corners and black body copy.\n\nIts content clarifies a common misconception for new players: the word 'Token' shown on the card is a card-type label, not the name of the depicted creature. The callout therefore couples visual pointer + explanatory text to make the rules distinction concrete.",
+      "embedded_text": ["*Nombre del Token:* No se refiere al nombre de la carta o del personaje.", "En este caso el nombre *\"Token\"* sólo indica el tipo de carta."],
+      "relation_to_text": "Supports the 'Características' section by anchoring the 'sin nombre propio' concept to the example card.",
+      "legibility": "clear",
+      "legibility_notes": "Text is sharp; pointer line clearly visible."
+    },
+    {
+      "anchor": "p13/fig-04",
+      "slug": "stats-box-purple-vida-efecto-costo",
+      "type": "infographic",
+      "bbox_pct": {"x": 3, "y": 37, "w": 28, "h": 12},
+      "description_detailed": "A purple-bordered rounded rectangle on the left column containing a bulleted list of three default Token statistics. The box uses a white interior with purple outline, and the bullets are rendered as small dots. Labels are set in bold, values follow in regular weight.\n\nThis is one of two paired stat-boxes (purple + orange) that together present the complete default statline of a Token. The purple/orange pairing color-codes the stats into two groups, mirroring the rulebook's broader stat-color convention.",
+      "embedded_text": ["•Vida Máxima: 6 puntos", "•Efecto: Sin efecto", "•Costo: Sin costo"],
+      "relation_to_text": "Provides the upper half of the default Token stat list referenced in 'Características'.",
+      "legibility": "clear",
+      "legibility_notes": "All three bullets fully legible."
+    },
+    {
+      "anchor": "p13/fig-05",
+      "slug": "stats-box-orange-dano-descanso-energia-subtipo",
+      "type": "infographic",
+      "bbox_pct": {"x": 3, "y": 50, "w": 28, "h": 14},
+      "description_detailed": "An orange-bordered rounded rectangle on the left column directly below the purple stats box. It follows the same visual grammar: white interior, colored outline, bulleted list with bold labels and regular-weight values. The orange accent differentiates it from the purple box above.\n\nTogether with fig-04, this box completes the default Token stat block. The ordering (Daño → Descanso → Energía → Subtipo) mirrors the stat order used elsewhere in the rulebook for Adendei and Equipment cards.",
+      "embedded_text": ["• Daño: 0", "• Descanso: 0", "• Energía: Sin Energía.", "• Subtipo: Sin subtipo."],
+      "relation_to_text": "Completes the default Token stat list referenced in 'Características'.",
+      "legibility": "clear",
+      "legibility_notes": "All four bullets fully legible."
+    },
+    {
+      "anchor": "p13/fig-06",
+      "slug": "subsection-badge-uso-del-token",
+      "type": "icon",
+      "bbox_pct": {"x": 3, "y": 68, "w": 25, "h": 3},
+      "description_detailed": "A white rounded-rectangle badge outlined in teal containing bold dark-teal uppercase text. Matches the styling of the 'Generalidades' badge below, establishing a consistent visual rhythm for subsection dividers on this page.",
+      "embedded_text": ["USO DEL TOKEN"],
+      "relation_to_text": "Marks the start of the 'Uso del Token' rules block.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p13/fig-07",
+      "slug": "token-cards-fan-decoration",
+      "type": "illustration",
+      "bbox_pct": {"x": 62, "y": 68, "w": 36, "h": 28},
+      "description_detailed": "Three overlapping Token cards fanned out decoratively on the right side of the page. The fan shows partial card faces rather than full cards: one card shows a teal/turquoise desert scene with multiple small creatures, another shows a pink/salmon crocodilian creature in a blue water environment, and a third peeks from behind.\n\nEach visible card carries the 'Token' card-name bar along its top and the beige/tan Kódem card frame. Because the cards are overlapped at an angle, only fragments of their art and borders are visible, giving the impression of a small collection of diverse Tokens that a player could have in play.\n\nThe fan has no textual callout lines and functions primarily as visual flavor reinforcing the idea that Tokens can take many creature forms.",
+      "embedded_text": ["Token"],
+      "relation_to_text": "Illustrates the 'Uso del Token' rules by showing that Token cards come in different creature designs.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Card name bars are visible but internal card text, credits and folios are too small to read reliably."
+    },
+    {
+      "anchor": "p13/fig-08",
+      "slug": "subsection-badge-generalidades",
+      "type": "icon",
+      "bbox_pct": {"x": 3, "y": 87, "w": 25, "h": 3},
+      "description_detailed": "White rounded-rectangle badge with teal outline and bold dark uppercase text, identical in style to the 'Uso del Token' badge. Serves as the divider for the final subsection of the page.",
+      "embedded_text": ["GENERALIDADES"],
+      "relation_to_text": "Marks the 'Generalidades' bullet list that closes the §3.6 Token section.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p13/fig-09",
+      "slug": "page-number-13",
+      "type": "icon",
+      "bbox_pct": {"x": 93, "y": 95, "w": 5, "h": 4},
+      "description_detailed": "Small dark navy/teal rounded rectangle in the bottom-right corner containing the page number '13' in bold white. Matches the pagination style used across the rulebook.",
+      "embedded_text": ["13"],
+      "relation_to_text": "Page number indicator.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Full page describes §3.6 Token: what Tokens represent, their default statline (Vida 6, Daño 0, Descanso 0, sin efecto/costo/energía/subtipo), rules for usage (similar to Adendei, attacks use descanso, removed from game and NOT counted toward Extinción victory condition), and generalities (max 2 Tokens per player, counted as cards, cannot be hidden). Layout follows a stats-on-left / example-card-center / callouts-on-right pattern with subsection badges marking the three blocks.",
+  "self_confidence": 0.92
+}

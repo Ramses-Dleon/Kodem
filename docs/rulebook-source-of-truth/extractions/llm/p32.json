@@ -1,0 +1,212 @@
+{
+  "page": 32,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:13:00-06:00",
+  "title": null,
+  "section_refs": ["§6.8"],
+  "text_blocks": [
+    {
+      "anchor": "p32/b01",
+      "heading": null,
+      "text": "2. Restricciones para la declaración de efectos: Este tipo de restricción impide que algunas cartas sean objetivo de efectos de otras, o que ciertas cartas puedan usar sus propios efectos. Algunas frases y cartas que identifican estas restricciones son:\n· \"No puede ser dañados por efectos\"\n· \"No puede usar efectos/Pasiva/Activa\"\n· \"No puede ser Curada/Protegida/Dañada\"\n· \"Solo puedes usar este efecto/Pasiva/Activa\"\n· \"No puede escalar/descender\"\n· \"No puede ser copiada/o\"",
+      "position": "top-left",
+      "notes": "Tipo 2 de restricción. '2. Restricciones para la declaración de efectos:' en negritas; las frases-ejemplo en cursiva entre comillas."
+    },
+    {
+      "anchor": "p32/b02",
+      "heading": null,
+      "text": "Ejemplos de cartas con restricciones para la declaración de efectos",
+      "position": "middle-center",
+      "notes": "Pie de imagen para el grupo de cartas de la sección 2 (Arion, Hypos, Mizhe). En cursiva."
+    },
+    {
+      "anchor": "p32/b03",
+      "heading": null,
+      "text": "3. Restricción para ocultar: Impide que ciertas cartas estén ocultas en el campo, ya sea por su tipo específico de carta como los Tokens y Protectores o por consecuencia de algún efecto o costo.",
+      "position": "middle-left",
+      "notes": "Tipo 3 de restricción. '3. Restricción para ocultar:' en negritas; 'Tokens' y 'Protectores' en cursiva."
+    },
+    {
+      "anchor": "p32/b04",
+      "heading": null,
+      "text": "Ejemplo de carta con restricción para ocultar",
+      "position": "middle-right",
+      "notes": "Pie de imagen para la carta Zekan, Retorno del Ermitaño. En cursiva."
+    },
+    {
+      "anchor": "p32/b05",
+      "heading": null,
+      "text": "4. Restricción a enviar a Extinción: Impide que ciertas cartas vayan a Extinción, aún cuando su vida sea reducida a 0.",
+      "position": "middle-right",
+      "notes": "Tipo 4 de restricción. '4. Restricción a enviar a Extinción:' en negritas; '0' en negritas."
+    },
+    {
+      "anchor": "p32/b06",
+      "heading": null,
+      "text": "Ejemplo de carta con restricción para enviar a Extinción",
+      "position": "middle-left",
+      "notes": "Pie de imagen para la carta Tolei, Responsabilidad. En cursiva."
+    },
+    {
+      "anchor": "p32/b07",
+      "heading": null,
+      "text": "5. Restricción para equipar: Hace que algunas cartas no se puedan equipar o sólo se puedan equipar a cartas específicas. Algunas frases para identificar la restricción: \"No puede ser equipada/o\", \"Sólo puede ser equipado a…\" (Ver 3.4 Equipos)",
+      "position": "bottom-left",
+      "notes": "Tipo 5 de restricción. '5. Restricción para equipar:' en negritas; frases-ejemplo en cursiva entre comillas; '(Ver 3.4 Equipos)' en cursiva como referencia cruzada."
+    },
+    {
+      "anchor": "p32/b08",
+      "heading": null,
+      "text": "Ejemplo de carta con restricción para equipar",
+      "position": "bottom-right",
+      "notes": "Pie de imagen para la carta Zekan, Reclutamiento. En cursiva."
+    },
+    {
+      "anchor": "p32/b09",
+      "heading": null,
+      "text": "6. Restricción para actualizar descansos: Este tipo de restricciones hacen que ciertas cartas no puedan actualizar sus descansos. Algunas frases para identificar la restricción: \"No puede/podrá actualizar descanso(s)\".",
+      "position": "bottom-right",
+      "notes": "Tipo 6 de restricción. '6. Restricción para actualizar descansos:' en negritas; 'descansos' en cursiva; frase-ejemplo en cursiva."
+    },
+    {
+      "anchor": "p32/b10",
+      "heading": null,
+      "text": "Ejemplo de carta con restricción para actualizar descansos",
+      "position": "bottom-left",
+      "notes": "Pie de imagen para la carta Ungos, Aleteo Glacial. En cursiva."
+    },
+    {
+      "anchor": "p32/b11",
+      "heading": null,
+      "text": "32",
+      "position": "bottom-footer",
+      "notes": "Número de página en negritas."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p32/fig-01",
+      "slug": "carta-arion-jugada-maestra",
+      "type": "illustration",
+      "bbox_pct": {"x": 43, "y": 5, "w": 19, "h": 23},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Arion, Jugada Maestra'. La ilustración muestra una figura de apariencia tentaculada o multibrazos con elementos mágicos azules, evocando un aire siniestro o estratégico. Los tonos predominantes son oscuros (azul profundo, violeta, negro) con destellos de energía brillante en tonalidades cian o turquesa, lo que sugiere una temática arcana y táctica, alineada con 'Jugada Maestra'.\n\nEl personaje tiene una pose dinámica, posiblemente moviendo varias extremidades simultáneamente para representar la idea de múltiples jugadas o movimientos estratégicos. El fondo es oscuro con chispas o destellos de energía mágica que refuerzan la atmósfera sobrenatural.\n\nLa carta pertenece a los subtipos 'Adendei / Ático' (o similar) y posee una habilidad Pasiva que afecta a Adendei aliados equipados, relacionada con protección o daño por efectos. Esta habilidad la convierte en un ejemplo perfecto del tipo 2 de restricciones: 'Restricciones para la declaración de efectos'.\n\nLas estadísticas muestran valores de 2 de ataque, 1 de descanso y 0 de vida (o configuración similar). El marco es el estándar del TCG Kódem, con el nombre en la parte superior y el espacio para efecto debajo de la ilustración.\n\nEstá colocada en la fila superior de ejemplos de la sección 2, junto a Hypos y Mizhe.",
+      "embedded_text": [
+        "Arion, Jugada Maestra",
+        "Adendei / Ático",
+        "Pasiva",
+        "2 / 1 / 0"
+      ],
+      "relation_to_text": "Ejemplo visual del tipo 2 de restricciones: 'Restricciones para la declaración de efectos'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno difícil de leer con precisión en resolución reducida."
+    },
+    {
+      "anchor": "p32/fig-02",
+      "slug": "carta-hypos-guia-jurasico",
+      "type": "illustration",
+      "bbox_pct": {"x": 62, "y": 5, "w": 19, "h": 23},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Hypos, Guía Jurásico'. Representa a una criatura titánica de aspecto jurásico o dinosáurico, con una postura imponente y fuerte presencia. La paleta de colores combina marrones tierra, naranjas cálidos, amarillos y algunos acentos verdes, todo en un ambiente que evoca paisajes prehistóricos, posiblemente volcánicos o desérticos.\n\nLa criatura tiene características reminiscentes de un gran titán: cuerpo robusto, posiblemente con armaduras naturales (escamas gruesas, placas óseas), y una cabeza prominente. El estilo artístico es detallado con énfasis en la anatomía imponente del ser. El fondo muestra posiblemente un cielo al atardecer con tonos cálidos que destacan la silueta del titán.\n\nLa carta pertenece a los subtipos 'Adendei / Titán / Huanca' (o similar, combinando varias clases). Su texto incluye una restricción con la palabra 'Contra:' relacionada con escalar/descender o con la protección, alineándose con el tipo 2 de restricciones.\n\nLas estadísticas muestran 4 de ataque, 1 de descanso y 0 de vida (o configuración comparable). Es una carta de alto poder ofensivo que se restringe en ciertas interacciones.\n\nEstá en el centro de la fila superior de cartas ejemplo de la sección 2, entre Arion y Mizhe, completando una tríada visual que ilustra distintas restricciones de efecto.",
+      "embedded_text": [
+        "Hypos, Guía Jurásico",
+        "Adendei / Titán / Huanca",
+        "Contra",
+        "4 / 1 / 0"
+      ],
+      "relation_to_text": "Ejemplo visual del tipo 2 de restricciones: 'Restricciones para la declaración de efectos'. Incluye restricciones sobre escalar/descender.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno difícil de leer con precisión."
+    },
+    {
+      "anchor": "p32/fig-03",
+      "slug": "carta-mizhe-guia-de-almas",
+      "type": "illustration",
+      "bbox_pct": {"x": 80, "y": 5, "w": 19, "h": 23},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Mizhe, Guía de Almas'. Muestra a una criatura o entidad de aspecto floral/espiritual con predominancia de tonos rosados, magenta y violetas luminosos, transmitiendo una estética etérea, onírica y mágica. La figura sugiere una naturaleza más espiritual o divina, coherente con el rol de 'Guía de Almas'.\n\nLa composición central resalta a la entidad como una figura iluminada desde adentro, con destellos de luz y posibles pétalos, hojas o energías que flotan a su alrededor. El fondo es soñador, con colores difuminados y atmosférico, lo que refuerza la temática mística.\n\nEl estilo artístico es más suave y luminoso que otras cartas ejemplificadas en la página, lo que la diferencia visualmente. Hay elementos que podrían interpretarse como flores espirituales, rostros angelicales o siluetas espectrales.\n\nLa carta pertenece a los subtipos 'Adendei / Guardián / Peral' (o similar) y posee una habilidad Activa que no puede ser copiada, más un 'Contra' que reitera la restricción de no ser copiada. Esto la hace un ejemplo excelente del tipo 2 de restricciones, específicamente 'No puede ser copiada/o'.\n\nLas estadísticas muestran valores bajos (0, 0, 0 aproximadamente), lo que sugiere que es una carta de apoyo o utilidad más que de combate directo. Completa la tríada superior de cartas de la sección 2.",
+      "embedded_text": [
+        "Mizhe, Guía de Almas",
+        "Adendei / Guardián / Peral",
+        "Activa",
+        "Este efecto no puede ser copiado",
+        "Contra",
+        "Esta carta no puede ser copiada",
+        "0 / 0 / 0"
+      ],
+      "relation_to_text": "Ejemplo visual del tipo 2 de restricciones: 'Restricciones para la declaración de efectos'. Ilustra 'No puede ser copiada/o'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno difícil de leer con precisión."
+    },
+    {
+      "anchor": "p32/fig-04",
+      "slug": "carta-zekan-retorno-del-ermitano",
+      "type": "illustration",
+      "bbox_pct": {"x": 55, "y": 33, "w": 25, "h": 22},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Zekan, Retorno del Ermitaño'. La ilustración presenta a una criatura o personaje místico con tonalidades púrpuras, violetas y magenta, con destellos luminosos de energía que le otorgan un aura sobrenatural y etérea. La figura transmite poder arcano, sabiduría ancestral y un aire de misterio propio de un ermitaño poderoso que regresa al campo de batalla.\n\nLa composición muestra al personaje en pose dramática con elementos de energía a su alrededor, posiblemente con cabello o tela flotante, bastones o artefactos mágicos, sugiriendo su naturaleza de maestro arcano retirado que vuelve. El fondo es oscuro con brillos de energía violeta que resaltan el contorno del personaje.\n\nEl estilo artístico enfatiza la iluminación interna y los contrastes dramáticos entre luz y sombra, dándole un aspecto casi espectral. La criatura tiene rasgos que combinan elementos humanos con elementos feéricos o demoníacos.\n\nLa carta pertenece a los subtipos 'Adendei / Linco' (o similar). Su habilidad Pasiva afecta la zona del rival impidiendo que ciertas cartas estén Boca Abajo (ocultas) en Zona Principal, lo que la convierte en un ejemplo claro del tipo 3 de restricciones: 'Restricción para ocultar'.\n\nLas estadísticas muestran 2 de ataque, 2 de descanso y 0 de vida (o configuración similar). Se encuentra en el centro-derecha de la página como ejemplo asociado al tipo 3 de restricción.",
+      "embedded_text": [
+        "Zekan, Retorno del Ermitaño",
+        "Adendei / Linco",
+        "Pasiva",
+        "Ninguna carta en Zona Principal podrá estar Boca abajo",
+        "2 / 2 / 0"
+      ],
+      "relation_to_text": "Ejemplo visual del tipo 3 de restricciones: 'Restricción para ocultar'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno difícil de leer con precisión; la habilidad completa se infiere del contexto."
+    },
+    {
+      "anchor": "p32/fig-05",
+      "slug": "carta-tolei-responsabilidad",
+      "type": "illustration",
+      "bbox_pct": {"x": 8, "y": 48, "w": 30, "h": 24},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Tolei, Responsabilidad'. La ilustración presenta a un ciervo/venado majestuoso con cornamenta prominente, situado en un ambiente invernal con tonos predominantemente rojos, blancos y grises. La paleta transmite solemnidad, protección y majestuosidad, consistente con el concepto de 'Responsabilidad' del nombre.\n\nLa composición centra al ciervo con pose erguida y noble, probablemente mirando de frente o ligeramente de perfil, con la cornamenta detallada que le da un aire de guardián del bosque o protector espiritual. El fondo evoca un paisaje invernal con nieve, posibles árboles desnudos o cielos crepusculares en tonos rojizos.\n\nEl estilo artístico es detallado y dramático, con énfasis en la textura del pelaje, la estructura ósea de las astas y la iluminación ambiental que da profundidad al paisaje. Los destellos de luz sobre el pelaje del ciervo sugieren su naturaleza sagrada o protectora.\n\nLa carta pertenece a los subtipos 'Adendei / Huanca' (o similar) y su habilidad Pasiva protege a los Adendei aliados de ser enviados a Extinción, siendo un ejemplo ideal del tipo 4 de restricciones: 'Restricción a enviar a Extinción'.\n\nLas estadísticas muestran 1 de ataque, 0 de descanso y 0 de vida (o configuración similar). Está ubicada en el centro-izquierda de la página, junto al pie de imagen que la identifica como ejemplo del tipo 4.",
+      "embedded_text": [
+        "Tolei, Responsabilidad",
+        "Adendei / Huanca",
+        "Pasiva",
+        "Adendei aliados no pueden ser enviados a Extinción",
+        "1 / 0 / 0"
+      ],
+      "relation_to_text": "Ejemplo visual del tipo 4 de restricciones: 'Restricción a enviar a Extinción'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno difícil de leer con precisión."
+    },
+    {
+      "anchor": "p32/fig-06",
+      "slug": "carta-zekan-reclutamiento",
+      "type": "illustration",
+      "bbox_pct": {"x": 55, "y": 63, "w": 27, "h": 22},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Zekan, Reclutamiento'. La ilustración muestra una criatura azul/teal, posiblemente con rasgos reptilianos o anfibios, en una pose firme y autoritaria que sugiere liderazgo o convocatoria. La paleta fría de azules y verdes se combina con un fondo nevado o ambiente invernal, creando un ambiente de acción disciplinada y fría.\n\nLa composición centra a la criatura con postura erguida, posiblemente con brazos o extremidades extendidas en gesto de reclutar o convocar. El estilo artístico es detallado y dramático, con atención a la anatomía única del personaje y a los detalles del entorno invernal. Los contrastes fríos refuerzan la sensación de disciplina y convocatoria forzada.\n\nEl fondo nevado, posibles montañas al fondo y la iluminación uniforme crean una atmósfera de campaña militar o reunión táctica. Es una carta de la misma serie 'Zekan' que la de 'Retorno del Ermitaño', compartiendo estilo y linaje visual aunque con arte distinto.\n\nLa carta pertenece a los subtipos 'Adendei / Linco' y tiene una habilidad Pasiva que otorga puntos a Adendei cuando se revelan, además de restricciones tipo 'Contra' que indican que la carta no puede ser atacada ni equipada. La restricción a equipar la hace ejemplo adecuado del tipo 5 de restricciones: 'Restricción para equipar'.\n\nLas estadísticas muestran 3 de ataque, 1 de descanso y 0 de vida. Está posicionada en el centro-derecha de la página como ejemplo del tipo 5.",
+      "embedded_text": [
+        "Zekan, Reclutamiento",
+        "Adendei / Linco",
+        "Pasiva",
+        "Contra",
+        "Esta carta no puede ser atacada",
+        "Esta carta no puede ser equipada",
+        "3 / 1 / 0"
+      ],
+      "relation_to_text": "Ejemplo visual del tipo 5 de restricciones: 'Restricción para equipar'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno difícil de leer con precisión."
+    },
+    {
+      "anchor": "p32/fig-07",
+      "slug": "carta-ungos-aleteo-glacial",
+      "type": "illustration",
+      "bbox_pct": {"x": 8, "y": 80, "w": 28, "h": 19},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Ungos, Aleteo Glacial'. La ilustración presenta a una criatura alada con apariencia galáctica/cósmica, cuyas alas parecen formadas por energía o polvo estelar en tonos azules y morados brillantes. El fondo es un ambiente estelar o cósmico con destellos de luz, lo que crea una atmósfera etérea y sobrenatural.\n\nLa composición muestra a la criatura en pleno vuelo o aleteo, con las alas extendidas ocupando gran parte de la ilustración. Los colores fríos (azul, morado, violeta) se combinan con toques brillantes que sugieren energía glacial cósmica, consistente con el nombre 'Aleteo Glacial'. El estilo artístico es onírico, con énfasis en la luminosidad y las texturas etéreas de las alas.\n\nEl personaje tiene características que combinan elementos aviares con algo más abstracto o espiritual, como si fuera una entidad planetaria o astral. Posibles partículas de hielo o estrellas flotan alrededor, reforzando la temática.\n\nLa carta pertenece a los subtipos 'Adendei / Galos' (o similar) y su habilidad Activa afecta al rival haciendo que sus descansos no puedan ser actualizados, siendo un ejemplo ideal del tipo 6 de restricciones: 'Restricción para actualizar descansos'. Incluye además una sección 'Contra' con restricciones adicionales.\n\nLas estadísticas muestran 1 de ataque, 2 de descanso y 0 de vida (o configuración similar). Está colocada en la parte inferior izquierda de la página como ejemplo del tipo 6.",
+      "embedded_text": [
+        "Ungos, Aleteo Glacial",
+        "Adendei / Galos",
+        "Activa",
+        "Sus descansos no pueden ser actualizados",
+        "Contra",
+        "1 / 2 / 0"
+      ],
+      "relation_to_text": "Ejemplo visual del tipo 6 de restricciones: 'Restricción para actualizar descansos'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno difícil de leer con precisión."
+    }
+  ],
+  "page_notes": "Página muy visual que enumera los tipos 2 al 6 de 'Tipos de Restricciones' (continuación del tipo 1 iniciado en p31). Cada tipo tiene su propia carta(s) ejemplo y pie de imagen en cursiva. Layout complejo con cartas distribuidas en varias filas y columnas entrelazadas con el texto de reglas. Total de 7 cartas ejemplo en la página (Arion, Hypos, Mizhe arriba; Zekan Retorno y Tolei en medio; Zekan Reclutamiento y Ungos abajo). Incluye referencia cruzada a §3.4 Equipos.",
+  "self_confidence": 0.85
+}

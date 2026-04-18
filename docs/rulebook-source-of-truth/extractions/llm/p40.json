@@ -1,0 +1,242 @@
+{
+  "page": 40,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:48:00-06:00",
+  "title": "9. GLOSARIO (cierre) + Contacto + Créditos",
+  "section_refs": ["§9", "§4"],
+  "text_blocks": [
+    {
+      "anchor": "p40/b01",
+      "heading": null,
+      "text": "•Usar una carta: Se considera usar una carta al momento de declarar su efecto desde cualquier Zona o de declarar su ataque.",
+      "position": "top-left",
+      "notes": "'usar' en cursiva."
+    },
+    {
+      "anchor": "p40/b02",
+      "heading": null,
+      "text": "•Usar un efecto: Se considera que un efecto está en uso si se está resolviendo en ese momento.",
+      "position": "top-left",
+      "notes": "'uso' en cursiva."
+    },
+    {
+      "anchor": "p40/b03",
+      "heading": null,
+      "text": "•Vincular: Uso del efecto del Protector a través de un Adendei disponible. También conocido como \"Vínculo Odémico\".",
+      "position": "top-left",
+      "notes": "'\"Vínculo Odémico\"' en cursiva."
+    },
+    {
+      "anchor": "p40/b04",
+      "heading": null,
+      "text": "•Vivificar: Efecto. Es un efecto que hace que una carta deje la zona Extinción, cualquier carta que deje la zona de extinción se considera que está siendo vivificada.",
+      "position": "top-left",
+      "notes": "'Efecto' en cursiva. Inconsistencia en capitalización: 'zona Extinción' vs 'zona de extinción'."
+    },
+    {
+      "anchor": "p40/b05",
+      "heading": null,
+      "text": "•Zona de Bio: Zona. Lugar donde va la carta Bio.",
+      "position": "top-right",
+      "notes": "'Zona' en cursiva."
+    },
+    {
+      "anchor": "p40/b06",
+      "heading": null,
+      "text": "•Zona de Equipo: Zona. Lugar donde se colocan tus cartas de Equipo (Ixim y Rot) al inicio del juego (Ver 4. Preparación del Ecosistema).",
+      "position": "top-right",
+      "notes": "'Zona', 'Equipo (Ixim y Rot)' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p40/b07",
+      "heading": null,
+      "text": "•Zona de Extinción: Zona. Lugar del Ecosistema donde se colocan las cartas eliminadas. Cuando una carta llegue a 0 puntos de vida, irá a Extinción (Ver 4. Preparación del Ecosistema).",
+      "position": "top-right",
+      "notes": "'Zona' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p40/b08",
+      "heading": null,
+      "text": "•Zona de Protector: Zona. Lugar del Ecosistema donde se coloca la carta Protector con 12 puntos de vida y 3 descansos al inicio del juego (Ver 4. Preparación del Ecosistema).",
+      "position": "middle-right",
+      "notes": "'Zona', 'Protector' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p40/b09",
+      "heading": null,
+      "text": "•Zona Principal: Zona. Lugar del Ecosistema con 3 espacios de carta, en estos espacios irán Adendei boca abajo con 6 puntos de vida al inicio del juego (Ver 4. Preparación del Ecosistema).",
+      "position": "middle-right",
+      "notes": "'Zona', 'Adendei' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p40/b10",
+      "heading": "¿Dudas?",
+      "text": "¿Dudas?",
+      "position": "middle-center",
+      "notes": "Encabezado de la sección de contacto, en tipografía negrita con pequeños elementos decorativos."
+    },
+    {
+      "anchor": "p40/b11",
+      "heading": null,
+      "text": "E-MAIL: admin@kodem.com.mx",
+      "position": "middle-center",
+      "notes": "Línea de contacto por correo electrónico."
+    },
+    {
+      "anchor": "p40/b12",
+      "heading": null,
+      "text": "ATENCIÓN AL CLIENTE: +521 55 64 91 21 59",
+      "position": "middle-center",
+      "notes": "Línea de contacto telefónico con clave de país +52 y prefijo móvil 1."
+    },
+    {
+      "anchor": "p40/b13",
+      "heading": null,
+      "text": "¡Escríbenos a Redes Sociales!",
+      "position": "middle-center",
+      "notes": "Llamada a redes sociales, precede la fila de 4 íconos (Facebook, Instagram, YouTube, TikTok)."
+    },
+    {
+      "anchor": "p40/b14",
+      "heading": null,
+      "text": "Diseño de Mecánicas de Juego: Sergio Mora Camargo y Wenceslao Rodríguez",
+      "position": "bottom-center",
+      "notes": "Línea de créditos. 'Diseño de Mecánicas de Juego:' en negrita."
+    },
+    {
+      "anchor": "p40/b15",
+      "heading": null,
+      "text": "Personajes y universo creados por: Alan Mac Donald",
+      "position": "bottom-center",
+      "notes": "Línea de créditos."
+    },
+    {
+      "anchor": "p40/b16",
+      "heading": null,
+      "text": "Edición y Diseño Gráfico: Itzel Soto",
+      "position": "bottom-center",
+      "notes": "Línea de créditos."
+    },
+    {
+      "anchor": "p40/b17",
+      "heading": null,
+      "text": "Agradecimientos especiales a: El equipo de arte e ilustración de Kódem TCG©, el equipo de Testeo, Nayeli Hernández y Regina Rodríguez; con su apoyo este proyecto sea ha hecho posible y se fortalece día a día.",
+      "position": "bottom-center",
+      "notes": "TYPO preservado: 'sea ha hecho posible' (debería ser 'se ha hecho posible'). 'Kódem TCG©' con símbolo de copyright."
+    },
+    {
+      "anchor": "p40/b18",
+      "heading": null,
+      "text": "Este reglamento es publicado en febrero de 2026. ©2026 Adendei Entretenimiento S.A. de C.V., Del. Cuauhtémoc, Ciudad de México, 01180. México. Diseñado, conceptualizado y administrado en México. 'Kódem TCG', sus logotipos, símbolos y el aspecto distintivo de sus personajes son propiedad de Adendei Entretenimiento S.A. de C.V. en México y en otros países",
+      "position": "bottom",
+      "notes": "Bloque de copyright y declaración de propiedad intelectual."
+    },
+    {
+      "anchor": "p40/b19",
+      "heading": null,
+      "text": "40",
+      "position": "bottom-right",
+      "notes": "Número de página."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p40/fig-01",
+      "slug": "glosario-cierre-doble-columna-U-a-Z",
+      "type": "infographic",
+      "bbox_pct": {"x": 5, "y": 3, "w": 90, "h": 28},
+      "description_detailed": "Cierre del glosario organizado en dos columnas verticales en la parte superior de la página. La columna izquierda contiene cuatro entradas finales de la letra U y V: 'Usar una carta', 'Usar un efecto', 'Vincular' (con referencia a 'Vínculo Odémico' entre comillas) y 'Vivificar' (efecto relacionado con la zona de Extinción). La columna derecha contiene las cinco entradas de la letra Z que cubren todas las zonas del tablero de juego: 'Zona de Bio', 'Zona de Equipo', 'Zona de Extinción', 'Zona de Protector' y 'Zona Principal'.\n\nCada entrada mantiene el formato visual consistente del glosario: viñeta circular (•) pegada a la palabra en negrita, seguida del tipo de término en cursiva ('Zona' para todas las entradas del lado derecho, 'Efecto' para 'Vivificar') y la definición con referencias cruzadas en cursiva entre paréntesis al final. Las cinco entradas de zonas comparten la referencia '(Ver 4. Preparación del Ecosistema)' lo que consolida visualmente la información del tablero.\n\nLa tipografía es sans-serif sobre fondo blanco/cremoso, idéntica al resto del glosario. El separador entre columnas es espacio blanco, sin líneas visibles.",
+      "embedded_text": [
+        "Usar una carta", "Usar un efecto", "Vincular", "Vivificar",
+        "Zona de Bio", "Zona de Equipo", "Zona de Extinción",
+        "Zona de Protector", "Zona Principal"
+      ],
+      "relation_to_text": "Es el cierre del glosario de la sección 9 que inició en la página 37.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p40/fig-02",
+      "slug": "seccion-contacto-dudas",
+      "type": "infographic",
+      "bbox_pct": {"x": 15, "y": 35, "w": 70, "h": 20},
+      "description_detailed": "Sección de contacto centrada horizontalmente. Encabezado '¿Dudas?' en tipografía negrita con pequeños elementos decorativos (posibles florituras o asteriscos) a los costados del título. Debajo del encabezado se presentan dos líneas de contacto: 'E-MAIL: admin@kodem.com.mx' y 'ATENCIÓN AL CLIENTE: +521 55 64 91 21 59' en tipografía limpia alineada al centro.\n\nMás abajo, con un pequeño separador visual, aparece la invitación '¡Escríbenos a Redes Sociales!' seguida de una fila horizontal de cuatro íconos de redes sociales con estética personalizada incorporando mascotas/criaturas del juego Kódem TCG encima del ícono estándar de cada plataforma.\n\nLos íconos corresponden en orden a: 1) Facebook — círculo/cuadrado azul con la letra 'f'; 2) Instagram — cuadrado con degradado característico naranja-rosa-morado; 3) YouTube — rectángulo rojo con triángulo blanco de reproducción; 4) TikTok — fondo oscuro con la nota musical estilizada en cian/magenta. Cada ícono lleva una ilustración pequeña de criatura del juego en la parte superior, personalizando la identidad visual de Kódem.\n\nLa paleta de colores es variada en los íconos pero el texto de la sección mantiene negro sobre blanco como el resto del documento.",
+      "embedded_text": [
+        "¿Dudas?",
+        "E-MAIL: admin@kodem.com.mx",
+        "ATENCIÓN AL CLIENTE: +521 55 64 91 21 59",
+        "¡Escríbenos a Redes Sociales!"
+      ],
+      "relation_to_text": "Proporciona canales de atención al cliente y redes sociales oficiales del juego.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p40/fig-03",
+      "slug": "iconos-redes-sociales",
+      "type": "icon",
+      "bbox_pct": {"x": 30, "y": 50, "w": 40, "h": 8},
+      "description_detailed": "Fila horizontal de cuatro íconos de redes sociales con estética personalizada Kódem TCG. Cada ícono combina el logo estándar de la plataforma con una pequeña ilustración de criatura/mascota del juego superpuesta, creando una identidad visual única.\n\nDe izquierda a derecha:\n1. Facebook: fondo azul clásico de Facebook (#1877F2 aproximado) con la 'f' blanca, coronado por una figura de criatura Kódem.\n2. Instagram: cuadrado con degradado característico amarillo-naranja-rosa-morado de la marca, con silueta de cámara blanca en el centro y criatura encima.\n3. YouTube: rectángulo rojo brillante con triángulo blanco de 'play' al centro, criatura Kódem encima.\n4. TikTok: fondo negro con la nota musical estilizada en cian (#25F4EE) y magenta (#FE2C55), criatura Kódem encima.\n\nEstas mascotas personalizadas refuerzan la identidad de Kódem TCG en cada canal social.",
+      "embedded_text": [],
+      "relation_to_text": "Visualiza las cuatro plataformas de redes sociales oficiales del juego: Facebook, Instagram, YouTube, TikTok.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p40/fig-04",
+      "slug": "ilustracion-criatura-creditos",
+      "type": "illustration",
+      "bbox_pct": {"x": 45, "y": 62, "w": 10, "h": 15},
+      "description_detailed": "Ilustración central ornamental en la sección de créditos: figura de criatura tipo dragón/serpiente estilizada en tonos morados/lila, de aspecto minimalista y trazo artístico fluido. Orientación vertical con cuerpo sinuoso que sugiere movimiento. Actúa como elemento decorativo separador entre el bloque de créditos y el copyright. El color morado-lila contrasta con el fondo blanco y la tipografía negra de la página, aportando un acento visual de la identidad del juego sin competir con la jerarquía de lectura.",
+      "embedded_text": [],
+      "relation_to_text": "Elemento decorativo de cierre del rulebook que refuerza la identidad visual del juego Kódem TCG en la última página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p40/fig-05",
+      "slug": "bloque-creditos",
+      "type": "infographic",
+      "bbox_pct": {"x": 10, "y": 60, "w": 80, "h": 25},
+      "description_detailed": "Bloque de créditos centrado verticalmente al pie del glosario, en la sección inferior de la página. Tres líneas principales de créditos con los roles en negrita y los nombres en texto regular:\n\n- 'Diseño de Mecánicas de Juego:' — Sergio Mora Camargo y Wenceslao Rodríguez.\n- 'Personajes y universo creados por:' — Alan Mac Donald.\n- 'Edición y Diseño Gráfico:' — Itzel Soto.\n\nDebajo de los créditos principales aparece un párrafo de agradecimientos especiales: 'Agradecimientos especiales a: El equipo de arte e ilustración de Kódem TCG©, el equipo de Testeo, Nayeli Hernández y Regina Rodríguez; con su apoyo este proyecto sea ha hecho posible y se fortalece día a día.' (incluye typo 'sea ha hecho' por 'se ha hecho'). El símbolo © aparece junto al nombre del juego.\n\nTipografía sans-serif legible, centrada, con espaciado generoso entre líneas. No hay marcos ni líneas divisorias; la separación es puramente por espacio en blanco.",
+      "embedded_text": [
+        "Diseño de Mecánicas de Juego: Sergio Mora Camargo y Wenceslao Rodríguez",
+        "Personajes y universo creados por: Alan Mac Donald",
+        "Edición y Diseño Gráfico: Itzel Soto",
+        "Agradecimientos especiales a: El equipo de arte e ilustración de Kódem TCG©, el equipo de Testeo, Nayeli Hernández y Regina Rodríguez; con su apoyo este proyecto sea ha hecho posible y se fortalece día a día."
+      ],
+      "relation_to_text": "Reconoce autoría y colaboradores del rulebook y del juego Kódem TCG v5.1.",
+      "legibility": "clear",
+      "legibility_notes": "Typo 'sea ha hecho posible' preservado."
+    },
+    {
+      "anchor": "p40/fig-06",
+      "slug": "bloque-copyright",
+      "type": "infographic",
+      "bbox_pct": {"x": 8, "y": 85, "w": 84, "h": 10},
+      "description_detailed": "Bloque de copyright centrado al pie de página, en tipografía más pequeña que el resto del contenido, justificado al centro. Incluye fecha de publicación ('febrero de 2026'), símbolo de copyright y año ('©2026'), razón social completa ('Adendei Entretenimiento S.A. de C.V.'), dirección ('Del. Cuauhtémoc, Ciudad de México, 01180. México'), declaración de producción nacional ('Diseñado, conceptualizado y administrado en México') y reserva de derechos sobre 'Kódem TCG', sus logotipos, símbolos y aspecto distintivo de personajes como propiedad de Adendei Entretenimiento S.A. de C.V. en México y en otros países.\n\nTipografía sans-serif en negro sobre blanco, texto compacto que cierra la página y el documento.",
+      "embedded_text": [
+        "Este reglamento es publicado en febrero de 2026.",
+        "©2026 Adendei Entretenimiento S.A. de C.V., Del. Cuauhtémoc, Ciudad de México, 01180. México.",
+        "Diseñado, conceptualizado y administrado en México.",
+        "'Kódem TCG', sus logotipos, símbolos y el aspecto distintivo de sus personajes son propiedad de Adendei Entretenimiento S.A. de C.V. en México y en otros países"
+      ],
+      "relation_to_text": "Declaración legal de copyright y propiedad intelectual que cierra el rulebook.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p40/fig-07",
+      "slug": "numero-pagina-40",
+      "type": "icon",
+      "bbox_pct": {"x": 90, "y": 95, "w": 8, "h": 4},
+      "description_detailed": "Número de página '40' en la esquina inferior derecha dentro de un recuadro oscuro (negro/azul oscuro) con el número en color blanco. Mantiene el patrón de paginación del resto del rulebook.",
+      "embedded_text": ["40"],
+      "relation_to_text": "Indicador de paginación final del documento.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Última página del rulebook Kódem TCG v5.1. Cierra el glosario (sección 9) con 4 entradas de la letra U/V en columna izquierda y 5 entradas de la letra Z (zonas del ecosistema) en columna derecha. La mitad inferior contiene tres bloques: contacto con íconos de redes sociales personalizados, créditos del equipo y copyright. Typos preservados: 'sea ha hecho posible' (por 'se ha hecho posible'). Fecha de publicación: febrero de 2026. Razón social: Adendei Entretenimiento S.A. de C.V.",
+  "self_confidence": 0.9
+}

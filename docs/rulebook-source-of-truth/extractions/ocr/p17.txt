@@ -1,0 +1,47 @@
+Orden de resolución:
+
+1. Activas-Rápidas del jugador en turno.
+2. Activas-Rápidas del jugador rival.
+
+3. Daños por ataque.
+
+4. Activas del jugador en turno.
+
+Nota: Una carta solo va a Extinción durante la Fase de Batalla para pagar un costo o si su Activa lo indica (las
+cartas que lleguen a O puntos de vida irán a Extinción hasta la Fase Post).
+
+FASE POST:
+
+Primero se envía a Extinción y reemplaza cualquier carta
+que haya llegado a O puntos de vida durante la Fase de
+Batalla. Se pueden declarar y resolver las Pasivas que
+cumplan sus condiciones de activación durante Batalla y
+cualquier otro momento.
+
+FASE DE EQUIPO:
+El jugador puede equipar (oculta o revelada) 1 carta de
+su Zona de Equipo a la carta que haya atacado o usado
+Activa durante este turno. Las cartas pueden equiparse
+
+con máximo 2 equipos o 1 /xim y 1 Rot (Ver 3.4 Equipos).
+
+FIN DE TURNO:
+El orden de prioridad de las interacciones y efectos que se apliquen en el Fin de Turno será el siguiente:
+
+1. Pago de costos que se hayan declarado en turnos o Fases anteriores cuyo costo deba pagarse al final
+del turno.
+
+2. Resolución de Activas y Pasivas que se hayan declarado en turnos o Fases anteriores cuyo efecto
+aplique en Fin de Turno (primero Activas, posteriormente Pasivas).
+
+3. Fin de Activas y/o Pasivas que se hayan declarado en turnos o Fases anteriores cuyo efecto finalice
+en Fin de Turno (primero Activas, posteriormente Pasivas).
+
+4. Dano de “Veneno”.
+5. Declaración y resolución de Pasivas.
+
+6. Actualización de descansos: Actualiza 1 descanso de las cartas que comenzaron el turno en des-
+canso y que no atacaron, usaron Activa o recibieron descansos por efecto. Las cartas que atacaron O
+usaron Activa se colocarán en el número de descansos que indica la carta por lo cual no podrán atacar
+o usar Activas hasta volver a estar disponibles (Ver 5.1. Descansos).
+

@@ -1,0 +1,99 @@
+{
+  "page": 33,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:15:00-06:00",
+  "title": null,
+  "section_refs": ["§7"],
+  "text_blocks": [
+    {
+      "anchor": "p33/b01",
+      "heading": "7. Restricciones para vinvular",
+      "text": "7. Restricciones para vinvular: Este tipo de restricciones hacen que ciertas cartas no se puedan vincular. Algunas frases para identificar la restricción: \"Sólo puede/podrá vincularse con…\", \"Se vincula sólo con…\".",
+      "position": "top",
+      "notes": "Typo intencional preservado: 'vinvular' (debería ser 'vincular') en el heading según aparece en el texto original."
+    },
+    {
+      "anchor": "p33/b02",
+      "heading": null,
+      "text": "Ejemplo de restricción para vincular",
+      "position": "top",
+      "notes": "Caption/pie de figura"
+    },
+    {
+      "anchor": "p33/b03",
+      "heading": "8. Restricciones para resolver Efectos",
+      "text": "8. Restricciones para resolver Efectos: A diferencia de las restricciones para declarar efecto, una restricción para resolver efecto sí permite que lo declares, pero su restricción no permite resolver. Por lo general aquí se encuentran todas las negaciones de efectos, las cartas con efectos negados por definición no pueden resolver sus efectos mientras se encuentren negados, también en esta categoría se encuentran las protecciones.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p33/b04",
+      "heading": null,
+      "text": "Ejemplo de negación de efecto          Ejemplo de protección",
+      "position": "middle",
+      "notes": "Dos captions contiguos lado a lado"
+    },
+    {
+      "anchor": "p33/b05",
+      "heading": "PENALIZACIONES POR INCUMPLIR RESTRICCIONES",
+      "text": "PENALIZACIONES POR INCUMPLIR RESTRICCIONES\n\n1. Si un jugador declara un efecto o ataque ignorando una restricción, no resolverá y se perderá, es decir, no se podrá declarar nuevamente a otra carta durante ese turno. Además, si la carta declaró un ataque o Activa, no podrá equiparse durante la fase de equipos y deberá descansar al final del turno.\n\n2 .Si un jugador incumple una restricción, el jugador debe notificarlo al rival (y/o juez en partidas competitivas); se aplicará el punto 1 o 4, según corresponda.\n\n3. Los jugadores tienen como máximo el siguiente turno para señalar el incumplimiento de una restricción.\n\n4.Si se ignora una restricción en el turno actual o anterior, las acciones posteriores se cancelan, los Ecosistemas retroceden al momento previo a la infracción, y se aplica la sanción del punto 1 (si aplica).\n\n5.El incumplimiento de una restricción no reclamada durante 2 turnos (el turno de la infracción y el siguiente a este), hace que la acción prescriba, eximiendo de penalización (excepto en torneos/juegos competitivos, donde el juez puede intervenir y penalizar a su criterio), ya que es responsabilidad de los jugadores conocer las restricciones.\n\n6.En torneos oficiales, cuando un jugador ignore restricciones reiteradamente se puede informar al juez, quien a su criterio decidirá si resuelve alguna penalización adicional; que podrá ir desde amonestación verbal, carta en Extinción, pérdida de turno, pérdida de partida o hasta descalificación.",
+      "position": "middle",
+      "notes": "Typos preservados: '2 .Si' (espacio antes del punto), '4.Si', '5.El', '6.En' (sin espacio tras el punto)."
+    },
+    {
+      "anchor": "p33/b06",
+      "heading": "7. ¿CÓMO ARMAR MI MAZO?",
+      "text": "7.¿Cómo armar mi mazo?\n\nAl comenzar a construir tu mazo de juego es importante que conozcas que existen diferentes estrategias que puedes contemplar para poder armarlo de una forma más rápida y eficiente. Si estás buscando recomendaciones para empezar a jugar, esta sección es para ti.",
+      "position": "bottom",
+      "notes": "Banner de sección + párrafo introductorio"
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p33/fig-01",
+      "slug": "ejemplo-restriccion-vincular-juan-galgo",
+      "type": "illustration",
+      "bbox_pct": {"x": 10, "y": 12, "w": 35, "h": 22},
+      "description_detailed": "Ejemplo de carta física de Kódem TCG mostrado como referencia visual de una restricción para vincular. La carta está titulada 'Juan Galgo, Motín' y pertenece al tipo Protector. Presenta la ilustración de un personaje masculino de aspecto desafiante y urbano, con ropas ajustadas y postura combativa: levanta uno de los brazos con gesto retador mientras el otro se mantiene cerca del torso, sobre un fondo de escenario nocturno urbano con tonos oscuros, azulados y destellos de luz que sugieren una atmósfera de disturbio o motín ciudadano.\n\nEl marco de la carta es característico del tipo Protector, con un diseño metálico/gris y detalles ornamentales en las esquinas. La parte superior muestra el nombre del personaje en tipografía bold, mientras que la parte media-baja contiene el bloque de habilidades. Un recuadro rojo dibujado sobre la carta destaca específicamente la línea de 'Costo' donde aparece la restricción para vincularse, señalando visualmente al lector qué parte del texto constituye este tipo de restricción.\n\nEn la zona inferior del marco se observan los indicadores numéricos de estadísticas y posiblemente el costo energético del Protector, junto con iconografía del juego. La estética de la carta combina elementos modernos-urbanos con el estilo fantástico propio del universo Kódem TCG. Esta ilustración sirve como apoyo visual inmediato al texto del punto 7 que explica las restricciones de vinculación entre cartas.",
+      "embedded_text": ["Juan Galgo, Motín", "Protector", "Activa: El Adende vinculado podrá atacar con doble daño a cartas que no estén frente a ella, hasta que esta carta esté (ilegible).", "Costo: Esta carta sólo puede vincularse con Adende-Feral."],
+      "relation_to_text": "Sirve como ejemplo visual directo al punto 7 'Restricciones para vincular'. El recuadro rojo destaca la línea de Costo que contiene la frase restrictiva 'Esta carta sólo puede vincularse con Adende-Feral'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto de la Activa parcialmente ilegible al final; parte del bloque de texto aparece recortado o borroso."
+    },
+    {
+      "anchor": "p33/fig-02",
+      "slug": "ejemplo-negacion-efecto-chapalab",
+      "type": "illustration",
+      "bbox_pct": {"x": 8, "y": 40, "w": 30, "h": 20},
+      "description_detailed": "Ejemplo de carta de Kódem TCG usada como referencia para ilustrar 'negación de efecto'. La carta está titulada 'Chapalab, El Anciano' y pertenece a la clasificación 'Adende Titán / Feral'. La ilustración central muestra una criatura oscura, masiva y amenazante con múltiples tentáculos o apéndices alargados que emergen de su cuerpo, con una silueta que recuerda a un ser lovecraftiano o a un monstruo ancestral.\n\nEl fondo predominante es verde oscuro con matices pantanosos y áreas de sombra profunda, lo que refuerza la sensación de antigüedad y peligro asociada al subtipo Titán/Feral del universo Kódem. La composición enfatiza la escala colosal de la criatura al ocupar gran parte del marco ilustrado de la carta, con los apéndices extendiéndose hacia los bordes.\n\nUn recuadro rojo destaca la zona inferior de la carta donde se encuentra el texto de habilidad 'Pasiva-Rápida', que es precisamente donde se describe el efecto de negación referido en el texto del reglamento. Bajo el texto de habilidad aparece una cita narrativa en cursiva que complementa el lore del personaje. El marco de la carta presenta los indicadores numéricos y el icono de tipo característicos del formato Kódem TCG.",
+      "embedded_text": ["Chapalab, El Anciano", "Adende Titán / Feral", "Pasiva-Rápida: Niega la Pasiva de 1 carta hasta el Fin del turno rival.", "Un millar de patas amenazantes acelera el andar de su atleta."],
+      "relation_to_text": "Ejemplo visual del primer tipo de restricción para resolver efectos descrito en el punto 8: negaciones de efecto. El recuadro rojo destaca la habilidad Pasiva-Rápida que niega la Pasiva de otra carta.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p33/fig-03",
+      "slug": "ejemplo-proteccion-ariam-dualidad",
+      "type": "illustration",
+      "bbox_pct": {"x": 55, "y": 40, "w": 30, "h": 20},
+      "description_detailed": "Ejemplo de carta de Kódem TCG titulada 'Ariam, Dualidad', perteneciente a la clasificación 'Adende / Ática', utilizada como referencia del concepto de 'protección' como restricción para resolver efectos. La ilustración central muestra una criatura dracónica o bestia mística con coloración dual: una mitad del cuerpo es predominantemente roja (asociada al elemento fuego) y la otra mitad es azul (asociada al elemento agua), lo que refleja directamente el epíteto 'Dualidad'.\n\nEl entorno representa una escena submarina con tonalidades azul profundo en el fondo, al tiempo que la parte roja del cuerpo genera explosiones o burbujas de fuego y lava que contrastan dramáticamente con el agua circundante. Este choque visual entre los dos elementos refuerza el tema de dualidad. La criatura está en una pose dinámica, aparentemente en acción o movimiento, con alas o apéndices extendidos.\n\nUn recuadro rojo destaca específicamente el bloque de texto de la habilidad Activa, que es donde se describe el efecto de protección. En la zona inferior aparece una cita narrativa en cursiva ('Agua y fuego, solo y nuestro...') que da color temático al personaje. El marco mantiene la estética estándar del juego con indicadores de estadísticas en la parte inferior y el icono de tipo correspondiente.",
+      "embedded_text": ["Ariam, Dualidad", "Adende / Ática", "Activa: Si esta carta ataca, protege a un Adende aliado de ataques y efectos hasta el final de tu siguiente turno.", "Agua y fuego, solo y nuestro..."],
+      "relation_to_text": "Ejemplo visual del segundo tipo de restricción para resolver efectos (protecciones) según el punto 8. El recuadro rojo destaca la Activa que otorga protección.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p33/fig-04",
+      "slug": "banner-seccion-7-como-armar-mi-mazo",
+      "type": "infographic",
+      "bbox_pct": {"x": 8, "y": 85, "w": 85, "h": 7},
+      "description_detailed": "Banner rectangular utilizado como encabezado de sección principal en el reglamento. El fondo presenta un degradado azul (azul medio a azul más oscuro) con detalles decorativos en los extremos izquierdo y derecho formados por líneas diagonales paralelas de color azul más oscuro combinadas con tonos celestes, que generan un efecto visual de profundidad, dinamismo o movimiento.\n\nEl texto central se muestra en blanco puro con tipografía bold en mayúsculas, con un tamaño prominente que lo convierte en el elemento focal del banner. El diseño sigue la línea gráfica consistente del manual Kódem TCG v5.1 para los encabezados de secciones numeradas principales.\n\nFunciona como separador visual entre la sección 6 (penalizaciones) y la nueva sección 7 dedicada a la construcción de mazos, anunciando un cambio de tema del contenido legalista/reglamentario hacia contenido estratégico/constructivo para el jugador.",
+      "embedded_text": ["7.¿CÓMO ARMAR MI MAZO?"],
+      "relation_to_text": "Encabezado principal que introduce la sección 7 del reglamento.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página mixta que cierra la sección de restricciones y penalizaciones (puntos 7-8 de restricciones y lista de 6 penalizaciones) y abre la sección 7 general '¿Cómo armar mi mazo?'. Contiene 3 cartas de ejemplo (Juan Galgo, Chapalab, Ariam Dualidad) con recuadros rojos destacando las habilidades relevantes. Preservados los typos originales: 'vinvular' en el heading del punto 7, espaciado irregular tras puntos numerados ('2 .Si', '4.Si', '5.El', '6.En').",
+  "self_confidence": 0.9
+}

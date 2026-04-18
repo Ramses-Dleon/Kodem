@@ -1,0 +1,141 @@
+{
+  "page": 9,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:45:00-06:00",
+  "title": "3.3 RAVA",
+  "section_refs": ["§3.3"],
+  "text_blocks": [
+    {
+      "anchor": "p09/b01",
+      "heading": "3.3 RAVA",
+      "text": "Los Rava son poderosas manifestaciones de las 7 energías del universo de Kódem, ellos son las energías materializadas en colosales dragones. Dentro de la batalla darán soporte a las cartas que posean el mismo tipo de energía.",
+      "position": "top-left",
+      "notes": "Heading con número de sección 3.3 en píldora azul/cian. '7 energías', 'materializadas' y 'colosales dragones' en negrita."
+    },
+    {
+      "anchor": "p09/b02",
+      "heading": "Nombre del Rava",
+      "text": "Nombre del Rava: Cada carta de Rava es una faceta o poder del personaje, por lo que primero se indicará el nombre de este y posteriormente el resto del nombre de la carta.",
+      "position": "top-left",
+      "notes": "Callout morado conectado a la carta de ejemplo Nok, Frío Magno (banner superior de la carta)."
+    },
+    {
+      "anchor": "p09/b03",
+      "heading": "Efecto",
+      "text": "Efecto: Los Rava tienen mayormente habilidades Pasivas. Por su naturaleza neutral, sus ventajas o desventajas se aplicarán a las cartas de ambos jugadores siempre que no mencionen \"cartas aliadas\" o \"cartas rivales\" de forma específica.",
+      "position": "middle-left",
+      "notes": "Callout morado. 'Pasivas' en negrita."
+    },
+    {
+      "anchor": "p09/b04",
+      "heading": "Vida",
+      "text": "Vida: Cada Rava tiene 6 puntos de vida máxima, aunque este valor no se encuentra impreso en la carta.",
+      "position": "middle-right",
+      "notes": "Callout cian apuntando a la zona superior de la carta. '6' y 'vida máxima' en negrita."
+    },
+    {
+      "anchor": "p09/b05",
+      "heading": "Energía",
+      "text": "Energía: Cada Rava está diseñado para dar soporte a los Adendei de su misma Energía.",
+      "position": "middle-right",
+      "notes": "Callout naranja apuntando al icono de energía en la carta."
+    },
+    {
+      "anchor": "p09/b06",
+      "heading": "Costo",
+      "text": "Costo: Algunos Rava requieren pagar un costo para poder atacar o usar su efecto.",
+      "position": "bottom-right",
+      "notes": "Callout naranja."
+    },
+    {
+      "anchor": "p09/b07",
+      "heading": "Daño",
+      "text": "Daño",
+      "position": "bottom-center",
+      "notes": "Etiqueta corta naranja apuntando a un número (0) de la parte inferior de la carta."
+    },
+    {
+      "anchor": "p09/b08",
+      "heading": "Descanso",
+      "text": "Descanso: Pueden tener de 0 a 2 descansos máximos.",
+      "position": "bottom-right",
+      "notes": "Callout naranja. '0 a 2' en negrita."
+    },
+    {
+      "anchor": "p09/b09",
+      "heading": "USO DEL RAVA",
+      "text": "• Los Rava se colocarán en el Mazo Principal.\n• No podrás iniciar el juego con un Rava en tu Zona Principal.\n• Cada Rava podrá regresar de Zona Principal al fondo del Mazo Principal una vez por juego en Fase Previa (Ver 5. Fases del Turno).\n• El jugador podrá regresar 1 Rava de Extinción a la Zona Principal, enviando 2 cartas de su Zona Principal a Extinción en Previa (Ver 5. Fases del Turno).\n• Los Ravas no pueden ser equipados con cartas que no lo indiquen en su texto.",
+      "position": "bottom",
+      "notes": "Título 'USO DEL RAVA' en píldora cian. 'Mazo Principal', 'No', 'iniciar', 'juego', 'equipados' en negrita. Referencias a sección 5."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p09/fig-01",
+      "slug": "encabezado-seccion-3-3-rava",
+      "type": "infographic",
+      "bbox_pct": {"x": 3, "y": 1, "w": 27, "h": 8},
+      "description_detailed": "Encabezado decorativo de sección con formato de doble píldora horizontal en color azul oscuro/cian. La primera píldora contiene el número de sección '3.3' en tipografía blanca bold; la segunda píldora, conectada visualmente, contiene el título 'RAVA' también en blanco mayúscula. A la derecha del conjunto aparece un pequeño icono circular azul con un símbolo estilizado interpretable como la cabeza/silueta de un dragón o lobo en blanco. Este elemento se usa consistentemente como marca de apertura de subsección dentro del capítulo 3 del rulebook.\n\nEl icono circular funciona como glifo de navegación visual que distingue la subsección dentro del libro.\n\nEl estilo tipográfico coincide con los encabezados de otras subsecciones del capítulo 3 (Adendei, Protector, etc.), indicando consistencia de diseño.",
+      "embedded_text": ["3.3", "RAVA"],
+      "relation_to_text": "Marca el inicio de la subsección 3.3 sobre los Rava y conecta con el bloque b01 que describe qué son los Rava.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p09/fig-02",
+      "slug": "carta-ejemplo-nok-frio-magno",
+      "type": "illustration",
+      "bbox_pct": {"x": 30, "y": 18, "w": 68, "h": 58},
+      "description_detailed": "Carta de ejemplo 'Nok, Frío Magno' — un Rava de energía Gélida mostrado a gran tamaño como ejemplo de layout de carta Rava. El marco de la carta presenta un patrón de escamas en degradado de colores cálidos intensos (naranja, rojo, amarillo, con toques morados y azules), lo cual es notable porque la energía del Rava es Gélida, sugiriendo que el marco es decorativo/neutral en lugar de atado a la energía.\n\nEn el centro superior se observa una ilustración de un dragón colosal: cabeza verde-turquesa con fauces abiertas mostrando dientes afilados blancos, ojo rojo brillante, cuerpo largo serpentino cubierto de escamas, garras y detalles en tonos naranjas/dorados, todo sobre un fondo de cielo con nubes.\n\nBanner blanco superior con el nombre del Rava 'Nok, Frío Magno'. Debajo del arte, una caja de texto blanca semitransparente contiene la descripción de habilidades: subtipo 'Rava / Gélida', la Pasiva y el Costo.\n\nEn la parte inferior izquierda y derecha hay dos círculos con el número '0' (costo/ataque y daño acumulado); entre ellos, en la franja inferior, símbolos de energía e iconos de descanso. El pie inferior incluye código de colección y metadatos.\n\nEl conjunto se usa como referencia para apuntar con callouts a los campos anatómicos de una carta Rava: nombre, efecto, vida (oculta), energía, costo, daño, descanso.",
+      "embedded_text": [
+        "Nok, Frío Magno",
+        "Rava / Gélida",
+        "Pasiva: Aumenta 1 pto. de ataque a los Adendei-Gélido mientras esta carta esté en campo. Si un Adendei-Gélido aliado atacó, cura 1 pto. a un Adendei-Gélido aliado.",
+        "Costo: Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Gélido en campo.",
+        "IDRMA-001",
+        "Kódem TCG ©",
+        "Edgaritual_re",
+        "0",
+        "0"
+      ],
+      "relation_to_text": "Carta anatómica base para los callouts b02-b08 que describen cada componente de una carta Rava (Nombre, Efecto, Vida, Energía, Costo, Daño, Descanso).",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p09/fig-03",
+      "slug": "arte-decorativo-etereo",
+      "type": "illustration",
+      "bbox_pct": {"x": 0, "y": 58, "w": 45, "h": 42},
+      "description_detailed": "Ilustración decorativa ambiental a sangrado de página izquierda con figura etérea/espectral. Se distinguen tonos verdes, turquesa y morados/magenta que forman una silueta encapuchada o criatura envuelta en humo/niebla con destellos luminosos rosados y verdes.\n\nEl arte tiene apariencia mística con efectos de partículas y bruma que se difuminan hacia los bordes, sugiriendo una entidad espiritual o un dragón en forma espectral, consistente con el tema de los Rava como manifestaciones de energía.\n\nFuncionalmente, actúa como fondo temático para el bloque de USO DEL RAVA y separador visual entre la anatomía de la carta y las reglas de uso.",
+      "embedded_text": [],
+      "relation_to_text": "Ambientación decorativa que acompaña al bloque 'USO DEL RAVA'. No contiene información reglamentaria.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p09/fig-04",
+      "slug": "titulo-uso-del-rava",
+      "type": "infographic",
+      "bbox_pct": {"x": 60, "y": 78, "w": 30, "h": 5},
+      "description_detailed": "Banner/encabezado estilizado para el bloque de reglas. Texto en mayúsculas tipo versalitas 'USO DEL RAVA' dentro de un marco/píldora con bordes curvos en color cian/azul claro, consistente con el estilo de subtítulos del rulebook.",
+      "embedded_text": ["USO DEL RAVA"],
+      "relation_to_text": "Introduce las reglas de uso descritas en el bloque b09.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p09/fig-05",
+      "slug": "numero-de-pagina-9",
+      "type": "icon",
+      "bbox_pct": {"x": 95, "y": 97, "w": 4, "h": 3},
+      "description_detailed": "Folio de paginación en la esquina inferior derecha. Caja pequeña en color azul cian con el número '9' en blanco, siguiendo el estilo de numeración del rulebook.",
+      "embedded_text": ["9"],
+      "relation_to_text": "Indica número de página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Subsección 3.3 RAVA. La página usa una carta anatómica (Nok, Frío Magno) con callouts de colores (morado, cian, naranja) que apuntan a los campos: Nombre, Efecto, Vida, Energía, Costo, Daño, Descanso. Incluye reglas de USO DEL RAVA con 5 bullets.",
+  "self_confidence": 0.93
+}

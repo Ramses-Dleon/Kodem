@@ -1,0 +1,113 @@
+{
+  "page": 34,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:16:00-06:00",
+  "title": null,
+  "section_refs": ["§7"],
+  "text_blocks": [
+    {
+      "anchor": "p34/b01",
+      "heading": "Mazo por Energías",
+      "text": "Mazo por Energías\n\nAl construir tu mazo, tienes la opción estratégica de seleccionar un atributo de energía específico para potenciarlo y convertirlo en la base de tu estrategia. Para complementar y fortalecer este enfoque, puedes incluir otras energías que actúen como apoyo y brinden versatilidad a tu juego (Ver 2.2.1. Energías). Es importante destacar que no estás limitado a una sola energía; tienes la libertad de combinar todas las energías que consideres necesarias y estratégicas dentro de tu Mazo Principal, lo que te permite crear sinergias poderosas y adaptarte a diferentes situaciones de juego.",
+      "position": "top",
+      "notes": "Referencia interna: Ver 2.2.1. Energías"
+    },
+    {
+      "anchor": "p34/b02",
+      "heading": null,
+      "text": "Ejemplo de un mazo de energía pírica",
+      "position": "top",
+      "notes": "Pie de figura"
+    },
+    {
+      "anchor": "p34/b03",
+      "heading": "Mazo por Subtipos de Adendei",
+      "text": "Mazo por Subtipos de Adendei\n\nDinosaurios - Adendei Titán\n\nEn el universo de Kódem TCG©, los Adendei han estado presentes en todas las Eras del planeta. Durante el Mesozoico, estos Adendei fueron conocidos como Adendei Titanes, debido a su tamaño colosal. Este subtipo destaca por su inmenso poder y agresividad.\n¡La opción perfecta para los amantes de los dinosaurios!",
+      "position": "middle",
+      "notes": "Incluye símbolo de copyright ©"
+    },
+    {
+      "anchor": "p34/b04",
+      "heading": null,
+      "text": "Ejemplo de un mazo de Adendei Titanes",
+      "position": "middle",
+      "notes": "Pie de figura"
+    },
+    {
+      "anchor": "p34/b05",
+      "heading": "Peces abisales - Adendei Abisal",
+      "text": "Peces abisales - Adendei Abisal\n\nLos Adendei Abisales emergen de las profundidades del océano, donde han permanecido ocultos durante millones de años. Su poder devastador los mantiene recluidos en los abismos marinos. Inspirados en los mitos de H. P. Lovecraft, estos Adendei son criaturas destructivas que carecen de empatía y conexión con la naturaleza, habiendo sido moldeados en el frío vacío abisal. Si te atrae el caos y la destrucción sin límites, los Adendei Abisales son una excelente adición para tu Mazo.",
+      "position": "middle",
+      "notes": "Referencia cultural a H. P. Lovecraft"
+    },
+    {
+      "anchor": "p34/b06",
+      "heading": null,
+      "text": "Ejemplo de un mazo de Adendei Abisales",
+      "position": "middle",
+      "notes": "Pie de figura"
+    },
+    {
+      "anchor": "p34/b07",
+      "heading": "MAZO TEMÁTICO",
+      "text": "MAZO TEMÁTICO\n\n¿Te gustan los ajolotes? ¿Los lobos? ¿Los reptiles feroces? ¡Encuentra un mazo más afín a tu animal favorito! ¡Es lo más cercano que tendrás en el juego a personalizar tu propia experiencia de juego combinándola como quieras!",
+      "position": "bottom",
+      "notes": null
+    },
+    {
+      "anchor": "p34/b08",
+      "heading": null,
+      "text": "Ejemplo de un mazo temático de \"Ariam\" el ajolote",
+      "position": "bottom",
+      "notes": "Pie de figura"
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p34/fig-01",
+      "slug": "mazo-energia-pirica-7-cartas",
+      "type": "photo",
+      "bbox_pct": {"x": 5, "y": 15, "w": 90, "h": 15},
+      "description_detailed": "Fila horizontal compuesta por siete cartas físicas del juego Kódem TCG dispuestas con ligera superposición, ilustrando un ejemplo de mazo construido en torno a la energía pírica (fuego). Las cartas muestran personajes y criaturas con temática claramente ígnea: dragones, bestias de fuego, deidades piricas y elementos como llamas, lava y magma dominan tanto las ilustraciones centrales como los fondos.\n\nLa paleta cromática del conjunto es cálida y cohesiva: predominan los rojos intensos, naranjas vibrantes, dorados y negros que refuerzan visualmente la identidad de la energía pírica. Los marcos de las cartas (principalmente tipo Adende) presentan bordes oscuros con detalles metálicos, mientras que en algunas cartas de equipo/efecto los marcos son más claros. Los nombres de las cartas aparecen en la parte superior de cada una en tipografía bold.\n\nLa composición incluye tanto Adendei (personajes-criatura de combate) como cartas de equipo/efecto al final de la fila, representando la mezcla típica de un mazo funcional: criaturas principales para atacar y respaldo con equipos o efectos temáticos. Bajo la fila hay una leyenda en cursiva que identifica el ejemplo.",
+      "embedded_text": ["Eisen, Ardienia Vergaza", "Draven, Ancestral", "Draven, Rugido de Poder", "Pyrodon, Aura Pírica", "Hori, Deidad Pírica", "Escamas de Lava", "Cascada de Lava", "Ejemplo de un mazo de energía pírica"],
+      "relation_to_text": "Ejemplifica visualmente la estrategia 'Mazo por Energías' descrita en el bloque superior, mostrando una selección coherente de cartas con energía pírica.",
+      "legibility": "clear",
+      "legibility_notes": "Los nombres de algunas cartas requieren contexto del universo del juego para confirmar ortografía exacta."
+    },
+    {
+      "anchor": "p34/fig-02",
+      "slug": "mazo-adendei-titanes-7-cartas",
+      "type": "photo",
+      "bbox_pct": {"x": 5, "y": 42, "w": 90, "h": 15},
+      "description_detailed": "Fila horizontal de siete cartas del juego Kódem TCG que representa un ejemplo de mazo construido con Adendei Titanes, el subtipo de dinosaurios del universo Kódem. Las ilustraciones muestran criaturas de gran tamaño con morfologías claramente dinosaurianas o bestias prehistóricas: formas masivas, posturas agresivas, pieles escamosas o coriáceas, y detalles que evocan al Mesozoico descrito en el texto.\n\nLa paleta cromática es variada pero distinta a la del mazo pírico: incluye púrpuras profundos, verdes selváticos, azules metálicos, naranjas y tonos de marrón-tierra. Las ilustraciones transmiten sensación de poder bruto y agresividad, alineadas con la descripción textual del subtipo Titán.\n\nAlgunas cartas presentan etiquetas de subtipo híbrido visibles (como 'Titán/Chásmica' o similares), reflejando la mecánica del juego donde los Adendei pueden combinar múltiples categorías. La fila también incluye cartas de equipo/efecto al final (p. ej. 'Bomba de Clorofila', 'Desviación Pétres') que complementan la estrategia del mazo temático. Debajo del arreglo aparece el pie de figura en cursiva que identifica el ejemplo.",
+      "embedded_text": ["Ni-Nirgi, Inimante", "Grolon, Versatilidad", "Drigel, Refracción", "Rapsoc, Velocidad Prehistórica", "Hypex, Atardecer", "Bomba de Clorofila", "Desviación Pétres", "Ejemplo de un mazo de Adendei Titanes"],
+      "relation_to_text": "Ejemplifica visualmente la estrategia 'Mazo por Subtipos de Adendei' en su variante de Adendei Titanes (dinosaurios).",
+      "legibility": "clear",
+      "legibility_notes": "Algunos nombres de cartas pueden requerir validación (p. ej. 'Desviación Pétres' podría ser 'Pétrea')."
+    },
+    {
+      "anchor": "p34/fig-03",
+      "slug": "mazo-adendei-abisales-7-cartas",
+      "type": "photo",
+      "bbox_pct": {"x": 5, "y": 70, "w": 90, "h": 15},
+      "description_detailed": "Fila horizontal de siete cartas del juego correspondientes al mazo de Adendei Abisales. Las ilustraciones muestran criaturas marinas de apariencia terrorífica y claramente inspiradas en la estética lovecraftiana mencionada en el texto: pulpos gigantes, seres con múltiples tentáculos, criaturas de las profundidades con ojos luminiscentes, estrellas de mar abisales bioluminiscentes, monstruos amorfos de las tinieblas oceánicas y seres coralinos retorcidos.\n\nLa paleta cromática es dramáticamente oscura, con tonos predominantes de azul profundo, morado/violeta, negro abisal y destellos puntuales de luz neón bioluminiscente (verde, cian, magenta) que evocan las profundidades del océano donde la luz solar no penetra. Esta elección cromática refuerza la atmósfera de caos y destrucción sin empatía descrita textualmente.\n\nCada carta presenta su marco característico con estadísticas numéricas en la parte inferior y texto de habilidades. Algunas cartas muestran subtipos combinados (p. ej. 'Adendei Abisal / Feral', 'Adendei Abisal / Pirata', 'Adendei Abisal / Altea', 'Adendei Abisal / Demoníaco'), indicando la variedad de fusiones posibles dentro del subtipo Abisal. Debajo aparece el pie de figura en cursiva.",
+      "embedded_text": ["Shugg, Fuga", "Urogg, Coloso del Terror", "Shugg, Acecho Submarino", "Digg, Reflejos Abisales", "Yogg, Oscuridad", "Digg, Apetito Abisal", "Atshln, Desde las Profundidades", "Adendei Abisal / Feral", "Adendei Abisal / Pirata", "Adendei Abisal / Altea", "Adendei Abisal / Demoníaco", "Ejemplo de un mazo de Adendei Abisales"],
+      "relation_to_text": "Ejemplifica visualmente la variante 'Peces abisales - Adendei Abisal' de la estrategia 'Mazo por Subtipos de Adendei'.",
+      "legibility": "clear",
+      "legibility_notes": "Nombres con nomenclatura lovecraftiana (Shugg, Yogg, Urogg) y con consonantes inusuales que podrían contener errores tipográficos."
+    },
+    {
+      "anchor": "p34/fig-04",
+      "slug": "mazo-tematico-ariam-ajolote-7-cartas",
+      "type": "photo",
+      "bbox_pct": {"x": 5, "y": 90, "w": 90, "h": 8},
+      "description_detailed": "Fila horizontal de siete cartas del juego correspondientes al mazo temático centrado en 'Ariam', el personaje ajolote del universo Kódem TCG. Cada carta representa una versión o variante distinta del mismo personaje, ilustrando cómo se puede construir un mazo personalizado alrededor de una figura favorita del jugador.\n\nLas ilustraciones muestran al ajolote con colores vibrantes y variados: rosas (asociado tradicionalmente con el ajolote mexicano), verdes, naranjas, azules, tonos pastel y combinaciones más dramáticas. Las poses y atuendos varían considerablemente: algunas versiones muestran a Ariam en posturas combativas con efectos de fuego ('Carga Física'), otra versión especial celebra el primer aniversario del juego con un pastel de cumpleaños ('1st Anniversary'), una variante presenta un diseño de inspiración azteca/prehispánica con máscara ornamental ('Leyenda'), y una versión final muestra a Ariam en una forma más pequeña y tierna en tonos rosados ('Vitalidad').\n\nCada carta muestra subtipos distintos que reflejan la diversidad de roles posibles para un solo personaje: 'Adendei Cosm / Altea', 'Adendei / Pirata', 'Adendei / Altea', 'Adendei / Carga', 'Adendei / Pirata recargada'. Esta figura ilustra de forma clara la idea de personalización por animal/personaje favorito.",
+      "embedded_text": ["Ariam, Nigromante", "Ariam, Fuerza del Más Allá", "Ariam, 1st Anniversary", "Ariam, Carga Física", "Ariam, Carga Física", "Ariam, Leyenda", "Ariam, Vitalidad", "Adendei Cosm / Altea", "Adendei / Pirata", "Adendei / Altea", "Adendei / Carga", "Adendei / Pirata recargada", "Ejemplo de un mazo temático de \"Ariam\" el ajolote"],
+      "relation_to_text": "Ejemplifica visualmente la estrategia 'MAZO TEMÁTICO' descrita en el bloque inferior, usando al personaje Ariam (ajolote) como eje temático.",
+      "legibility": "clear",
+      "legibility_notes": "La cercanía entre cartas puede dificultar leer algunos subtipos con precisión."
+    }
+  ],
+  "page_notes": "Página de estrategias de construcción de mazos. Presenta tres enfoques: Mazo por Energías (ejemplo: pírica), Mazo por Subtipos de Adendei (ejemplos: Titanes/dinosaurios y Abisales/lovecraftianos) y Mazo Temático (ejemplo: Ariam el ajolote). Cada enfoque tiene una fila horizontal de 7 cartas como ejemplo visual. Se menciona expresamente a H. P. Lovecraft como inspiración de los Adendei Abisales. El símbolo de copyright © aparece tras 'Kódem TCG' en una de las menciones.",
+  "self_confidence": 0.88
+}

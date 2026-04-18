@@ -1,0 +1,81 @@
+* Siempre que una carta menciona en su efecto una serie de acciones a realizar, sera necesario que
+se cumplan por to menos ta primera de ellas en el orden en que dichas acciones se encuentran
+
+escritas en el texto de la carta.
+
+(Ejemplo: Boras, Sacrificio). A
+RO Boras, Sacrificio Y
+
+Paslver a: Si esta carta es revelada, una carta rival
+recibe 2 descansos. Esa carta tiene su pasiva
+negada hasta volver a estar disponible.
+
+Su finel fue onunciado; Bords tenia una última tereo pendiente
+
+* Si una carta menciona en su efecto dos o más acciones con la conjunción "y", ambas acciones se
+consideran como un mismo efecto. Ejemplo: “Activa: Realiza accion A y B”. Si no se puede resolver
+cualquiera de las dos acciones [sea A o B), no se puede declarar su efecto.
+
+(Ejemplo: Sangre Pétrea, Rot igneo, Planta Carnivora)
+
+”
+
+Ejemplo: Para que “Sangre pétrea
+PUEDA declarar su efecto , debes poder
+hacer ambas acciones: abismar 1 Ad-
+endei rival y regresar todos los equipos
+en Zona Principal a Zona de
+
+equipos.
+
+"Los efectos que indiquen: “Dafa “x” ptos. ..”, se podrán aplicar a cartas que tengan menos ptos. de
+vida que los ptos. de daño a realizar, siempre Y cuando tengan al menos 1 pto. de vida.
+
+Sin embargo no podrá recibir ptos. de daño negativos, no serán acumulativos para la carta que
+reemplace a la eliminadan ni transferibles a otras cartas alladas o rivales.
+
+Enis, Giro Gélido y
+
+Ariam, Escudo de Cempasúchil
+
+Ejemplo: Si “Enis, Giro Gélido” tiene 1
+pto. de vida podrá ser atacada por
+"Ariam, Escudo de Cempasuchi”, sin
+embargo de los 2 ptos. de daño. que
+“Ariam” tiene en su estadística de
+atque solo recibirá 1 pto. de daño y ES
+
+“Enis” será enviada au Extinción. A
+
+\
+
+a. race Adenda Catrin | Átlica Sz
+
+Pasiva: Si esta carta es tomada del Mazo, protege
+1 carta en el campo hasta el fin del siguiente turno.
+
+e frío viento fueron convocados por la voluntad de
+eger lugores.a po m los Geodomos.
+
+“Efectos que indiquen: “Cura "x" ptos. a una carta...”, solo podrán aplicarse a cartas que tengan al
+menos 1 pto. de vida menos que la vida máxima de la carta,
+
+A
+
+E Ariam, Balance >
+
+Ejemplo: Para que “Ariam, Balance”
+PUEDA curar 1 pto. a una carta aliada, la
+carta aliada debe tener 5 ptos. o menos
+de vida al momento de ser curada (ya
+que la vida máxima de un Adendei es de
+6 ptos.).
+
+Activa: Si esta carta ataca, cura 1 pto. a una
+carta aliada.
+
+Toda gran historia tiene un inicio, la tuya comienza en estos
+vestigios secretos y ¿Quién sabe?_. tol vez este camino podria
+
+ser tu primer paso en un viaje más grande de lo que imaginas..
+

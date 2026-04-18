@@ -1,0 +1,185 @@
+{
+  "page": 31,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:12:00-06:00",
+  "title": null,
+  "section_refs": ["§6.8"],
+  "text_blocks": [
+    {
+      "anchor": "p31/b01",
+      "heading": null,
+      "text": "4.1 No se pueden declarar ataques a carta que no tengan estadística de vida máxima.\n4.2 No se puede dar descansos a cartas que no tengan estadística de descanso. Sin embargo, sí se pueden dar descansos a cartas que se encuentren ocultas en Zona Principal siempre que no sean equipos.\n4.3 No se puede Feralizar a una carta que no tiene Energía.\n4.4 No es posible negar un efecto de una carta que no tenga efecto.",
+      "position": "top-left",
+      "notes": "Subreglas 4.1 a 4.4 (continuación del punto 4 de la página anterior). Los números '4.1', '4.2', '4.3', '4.4' en cursiva; 'descansos', 'descanso', 'negar' en cursiva."
+    },
+    {
+      "anchor": "p31/b02",
+      "heading": null,
+      "text": "5. Sólo las cartas reveladas en el campo pueden hacer uso de sus efectos.",
+      "position": "top-left",
+      "notes": "Regla 5. '5.' en negritas."
+    },
+    {
+      "anchor": "p31/b03",
+      "heading": null,
+      "text": "6. Si una carta es ocultada por efecto, vuelve a sus a estadísticas base y finalizará la negación de su efecto si se encuentra negado.",
+      "position": "top-left",
+      "notes": "Regla 6. '6.' en negritas; 'ocultada', 'negación' en cursiva. Nota: 'vuelve a sus a estadísticas' parece un typo en el original (doble 'a')."
+    },
+    {
+      "anchor": "p31/b04",
+      "heading": null,
+      "text": "7. Aún si una carta fue ocultada se debe resolver la declaración de su ataque.",
+      "position": "top-left",
+      "notes": "Regla 7. '7.' en negritas; 'ocultada' en cursiva."
+    },
+    {
+      "anchor": "p31/b05",
+      "heading": null,
+      "text": "8. Las cartas ocultas no podrán resolver efectos excepto si su declaración se hizo ese turno y su resolución durará máximo hasta el final del mismo turno.",
+      "position": "middle-left",
+      "notes": "Regla 8. '8.' en negritas; 'ocultas' en cursiva."
+    },
+    {
+      "anchor": "p31/b06",
+      "heading": null,
+      "text": "9. Las cartas ocultas no se podrán considerar un tipo de carta en específico.",
+      "position": "middle-left",
+      "notes": "Regla 9. '9.' en negritas; 'ocultas' en cursiva."
+    },
+    {
+      "anchor": "p31/b07",
+      "heading": null,
+      "text": "10. Una carta que fue ocultada por efecto en el turno anterior deberá volver a declarar su efecto para que resuelva.",
+      "position": "middle-left",
+      "notes": "Regla 10. '10.' en negritas; 'ocultada' en cursiva."
+    },
+    {
+      "anchor": "p31/b08",
+      "heading": null,
+      "text": "11. Una carta en mano puede ser mostrada y se considerarán todas sus características y estadísticas impresas, una vez que la carta vuelve al Mazo Principal, o es colocada oculta en el campo, estas características y estadísticas impresas dejan de considerarse.",
+      "position": "middle-left",
+      "notes": "Regla 11. '11.' en negritas; 'oculta' en cursiva."
+    },
+    {
+      "anchor": "p31/b09",
+      "heading": null,
+      "text": "12. Los efectos y ataques no pueden usarse ignorando las restricciones presentes en ese momento.",
+      "position": "middle-left",
+      "notes": "Regla 12. '12.' en negritas."
+    },
+    {
+      "anchor": "p31/b10",
+      "heading": null,
+      "text": "13. Mientras una carta tenga una marca no podrá ser objetivo de efectos o costos que coloquen la misma marca.",
+      "position": "middle-left",
+      "notes": "Regla 13. '13.' en negritas."
+    },
+    {
+      "anchor": "p31/b11",
+      "heading": null,
+      "text": "14. Si hay restricciones en el campo que impidan a ambos jugadores hacer daños (de cualquier tipo) y donde además ambos jugadores no puedan usar efectos para salir de esta situación por más de 8 turnos, ambos jugadores enviarán todas sus cartas en Zona Principal al fondo del Mazo y Zona de Equipos, cada jugador reemplazará sus cartas de forma normal.",
+      "position": "middle-left",
+      "notes": "Regla 14. '14.' y '8' en negritas; 'daños' en cursiva."
+    },
+    {
+      "anchor": "p31/b12",
+      "heading": null,
+      "text": "15. Es muy común el olvido de la actualización de descansos de las cartas, por lo que cuando un jugador haga notar que olvidó actualizar los descansos de alguna de sus cartas, podrá actualizar en ese momento dichos descansos.",
+      "position": "middle-left",
+      "notes": "Regla 15. '15.' en negritas; 'descansos' en cursiva."
+    },
+    {
+      "anchor": "p31/b13",
+      "heading": null,
+      "text": "16. En Torneos y partidas competitivas si un jugador olvida actualizar en reiteradas ocasiones los descansos de sus cartas, es posible comentar de esta situación al juez en turno y quedará a discreción del juez aplicar o no alguna penalización.",
+      "position": "middle-left",
+      "notes": "Regla 16. '16.' en negritas; 'descansos' en cursiva."
+    },
+    {
+      "anchor": "p31/b14",
+      "heading": null,
+      "text": "17. Las cartas en el Mazo Principal, no se pueden revelar (solamente se pueden mostrar) y no pueden tener ninguna característica o estadística particular.",
+      "position": "middle-left",
+      "notes": "Regla 17. '17.' en negritas; 'revelar' y 'mostrar' en cursiva."
+    },
+    {
+      "anchor": "p31/b15",
+      "heading": "Tipos de Restricciones",
+      "text": "Tipos de Restricciones",
+      "position": "bottom-left",
+      "notes": "Encabezado de subsección en negritas."
+    },
+    {
+      "anchor": "p31/b16",
+      "heading": null,
+      "text": "1. Restricciones a declarar ataques: Esta clase de limitación imposibilita que algunas cartas sean objetivo de ataques provenientes de otras. Algunas frases y cartas que indican esta restricción son:\n· \"No puede ser atacada/o...\"\n· \"Sólo puede atacar...\"\n· \"No puede atacar...\"\n· \"No puede ser dañado...\"",
+      "position": "bottom-left",
+      "notes": "Tipo 1 de restricción. '1. Restricciones a declarar ataques:' en negritas; las frases-ejemplo en cursiva entre comillas."
+    },
+    {
+      "anchor": "p31/b17",
+      "heading": null,
+      "text": "Ejemplos de cartas con restricciones al declarar ataque",
+      "position": "bottom-center",
+      "notes": "Pie de imagen para las cartas del grupo de figuras. En cursiva."
+    },
+    {
+      "anchor": "p31/b18",
+      "heading": null,
+      "text": "31",
+      "position": "bottom-footer",
+      "notes": "Número de página"
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p31/fig-01",
+      "slug": "carta-kayloc-explosion-marina",
+      "type": "illustration",
+      "bbox_pct": {"x": 22, "y": 80, "w": 20, "h": 18},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Kayloc, Explosión Marina'. Muestra a una criatura marina en plena acción explosiva, con tonos predominantes rojos, naranjas y amarillos brillantes que sugieren fuego o explosión submarina, un contraste inusual con el entorno acuático. La ilustración transmite energía, agresividad y movimiento violento.\n\nLa composición presenta a la criatura en una pose dinámica, con destellos de luz y posiblemente chorros de agua o lava elevándose alrededor. El fondo mezcla azules profundos (para el agua/océano) con estallidos cálidos que centran la atención en el personaje principal. El estilo artístico es detallado y cinemático, típico del TCG.\n\nLa carta pertenece al tipo 'Adendei / Pesca' (o similar clasificación), indicando su pertenencia al ecosistema acuático del juego. Su texto de habilidad o costo incluye una restricción específica: esta carta solo puede atacar a ciertos tipos ('Adendei-Acuáticos' u otro subtipo), lo que la hace perfecta como ejemplo visual de 'Restricciones a declarar ataques' de la subsección 'Tipos de Restricciones'.\n\nLas estadísticas visibles en la parte inferior muestran valores de ataque y vida del tipo usual en cartas de criatura. La tipografía del nombre aparece en la parte superior con estilo estilizado característico del juego.\n\nLa carta se encuentra en la fila inferior de la página junto con otras dos cartas ejemplo (Raptors, Ladrón; Razcel, ¡Congelado!) bajo el pie de imagen que las agrupa.",
+      "embedded_text": [
+        "Kayloc, Explosión Marina",
+        "Adendei / Pesca",
+        "5 / 2"
+      ],
+      "relation_to_text": "Ejemplo visual del tipo 1 de restricciones: 'Restricciones a declarar ataques'. Muestra una carta con restricción de objetivo de ataque.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno de habilidad y estadísticas difícil de leer con precisión."
+    },
+    {
+      "anchor": "p31/fig-02",
+      "slug": "carta-raptors-ladron",
+      "type": "illustration",
+      "bbox_pct": {"x": 40, "y": 80, "w": 20, "h": 18},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Raptors, Ladrón'. La ilustración presenta a una criatura de apariencia reptiliana o dinosaurio (raptor) con tonalidades vibrantes que combinan verdes selváticos, azules y acentos morados/rosas, creando una paleta exótica. La pose de la criatura sugiere sigilo, agilidad y naturaleza astuta, acorde a su nombre 'Ladrón'.\n\nEl fondo muestra un entorno selvático, posiblemente con follaje denso o jungla prehistórica, que refuerza la estética jurásica y silvestre del personaje. La iluminación es dramática con contrastes entre sombras y luces vibrantes que destacan los músculos y texturas de la piel/escamas del raptor.\n\nLa carta pertenece al subtipo 'Adendei Tejón / Charisma' (o clasificación similar) y su texto incluye un costo o restricción relacionada con la capacidad de atacar ('Esta carta no puede atacar...' seguido de alguna condición). Esto la convierte en un ejemplo representativo de la regla de 'Restricciones a declarar ataques'.\n\nLas estadísticas en la base muestran tres valores numéricos (3, 1, 0 aprox.) que corresponden a ataque, descansos y vida u otras mecánicas del juego. El marco de la carta es el estándar del TCG Kódem, con espacios claros para nombre, arte, efecto y estadísticas.\n\nEstá colocada en el centro del grupo inferior de cartas ejemplo, flanqueada por Kayloc a la izquierda y Razcel a la derecha.",
+      "embedded_text": [
+        "Raptors, Ladrón",
+        "Adendei Tejón / Charisma",
+        "3 / 1 / 0"
+      ],
+      "relation_to_text": "Ejemplo visual del tipo 1 de restricciones: 'Restricciones a declarar ataques'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno de habilidad y estadísticas difícil de leer con precisión."
+    },
+    {
+      "anchor": "p31/fig-03",
+      "slug": "carta-razcel-congelado",
+      "type": "illustration",
+      "bbox_pct": {"x": 58, "y": 80, "w": 20, "h": 18},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Razcel, ¡Congelado!'. Muestra a una criatura alada, posiblemente un ave o dragón de aspecto majestuoso, en pose imponente con alas extendidas. La paleta cromática está dominada por tonos fríos: blancos, azules hielo, grises y celestes luminosos, reforzando la temática del congelamiento y el hielo señalada por el título.\n\nEl fondo presenta cielos nublados, probablemente montañas nevadas o atmósfera glacial, con partículas de hielo o escarcha flotando alrededor del personaje. La iluminación es limpia y etérea, con destellos plateados que refuerzan la sensación de frío intenso.\n\nEl estilo artístico es detallado y dinámico, con énfasis en la majestuosidad del personaje. Las alas parecen extenderse hacia los bordes de la ilustración, ocupando el espacio de forma imponente. La criatura proyecta poder sobrenatural y una presencia de guardián o ente divino del hielo.\n\nLa carta pertenece al subtipo 'Adendei Tejón / Golde' (o similar) y presenta un efecto de tipo 'Pulso' o 'Pasiva' relacionado con la mecánica 'Protector', sugiriendo que esta carta interactúa con el rol defensivo de los Protectores en el campo. Su restricción hace referencia a limitaciones en cuanto a ataques o interacciones defensivas, coherente con su colocación como ejemplo de restricciones al declarar ataque.\n\nLas estadísticas muestran valores bajos (1, 0), lo que sugiere que es una carta más utilitaria que ofensiva. Está en la esquina inferior derecha del grupo de tres cartas ejemplo, completando la ilustración de la sección.",
+      "embedded_text": [
+        "Razcel, ¡Congelado!",
+        "Adendei Tejón / Golde",
+        "Pulso",
+        "1 / 0"
+      ],
+      "relation_to_text": "Ejemplo visual del tipo 1 de restricciones: 'Restricciones a declarar ataques'. Ilustra una carta con efecto que interactúa con Protectores.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno de habilidad y estadísticas difícil de leer con precisión."
+    }
+  ],
+  "page_notes": "Página densa en reglas numeradas (4.1-4.4, luego 5-17) que extiende las 'Generalidades de las Restricciones e Interacciones' iniciadas en p30. Abre la subsección 'Tipos de Restricciones' con el tipo 1 ('Restricciones a declarar ataques'). Incluye tres cartas ejemplo en la parte inferior (Kayloc, Raptors, Razcel) bajo un pie de imagen agrupador. Se detectó un probable typo en la regla 6: 'vuelve a sus a estadísticas base' (doble preposición 'a').",
+  "self_confidence": 0.88
+}

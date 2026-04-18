@@ -1,0 +1,104 @@
+Los puntos de curación que una carta recibe, están limitados por los ptos. de vida máxima que tiene
+la carta.
+
+w | eon, .. Y
+|
+
+Ejemplo: Si “Enis, Giro Gélido” tiene 5
+ptos. de vida, “Ariam, Curación Catrin”
+puede curar a “Enis” sin embargo,
+aunque “Ariam” cure 3 ptos. a un
+Adendei Catrín aliado, “Enis” solo
+recibirá 1 pto. de curación dejando la
+
+. A Sn carta en 6 ptos de vida, ya que es la
+A tae pda pose rates cantidad de ptos. de vida mdxima que
+puede tener un Adendel.
+
+envocados por la voluntad de
+s Ge e
+
+Ariam otorgó a Jos Adendej ef boder curativo que su gran ataque E
+
+omo:
+Koden TCG ©
+
+“Efectos que indiquen: “Desciende "x" ptos. de daño..”, solo podrán aplicarse a cartas que al menos
+tengan Tpto. de daño en su estadistica de ataque.
+
+TA an omer a
+
+Ejemplo: Si estas son las 3 cartas que están en tu Zona , >. 0) US
+Principal, para que “Brazalete de Rotanio” PUEDA >» NS | |
+pagar su costo y por ende utilizar su Activa-Rápida, <6 TN a ; Ya meee
+
+2 pros a Y Adendei rival: > Activa: Daño Y pto. a 1 Adendes por cada carta Pasiva: Esta carta no puedo recibir marcas,
+en tu Extinción.
+
+debe descender 1 pto. a una carta aliada. | Com tn ión pr
+
+, a > $ 7
+La y & &
+¿ : 5 bs A
+i th ode ! AN ~
+Ay ~ e A,
+( . % e Y J
+E e
+
+ES poder Había 19to moldeado per Ndauk tomo tiempo. que
+ab er wel wipe
+
+La carta aliada elegida para descender debe ser
+“Nánuk, Fiereza Kósmica” ya que tiene 3 ptos. de daño
+en su estadística de ataque, contrario a “Mizthe, Guía
+de Almas” y “Rhymir, Rayo Doble” que no tienen ptos.
+de daño en su estadística de ataque.
+
+“Efectos que indiquen: “Recibe "x" descansos...”, solo podrán aplicarse a cartas en el campo siempre y
+cuando ño se encuentren en sus descansos máximos por estadistica.
+
+Una carta NO podrá recibir descansos por efecto si ya se encuentra en sus descansos máximos por
+estadistica.
+
+Los descansos que una carta recibe están limitados por los descansos máximos que tiene la carta.
+
+-Cartas en Zona Principal: Podrán recibir descanso por efecto mientras estén en | descanso máximo
+(Ver 5.1. Descansos).
+
+-Protector: Podrán recibir descanso por efecto mientras esté en 2 descansos máximo
+(Ver 5.1. Descansos).
+
+”
+
+Ejemplo: “Karyn, Restauración” puede
+recibir descanso siempre y cuando
+esté disponible o en 2 descansos al
+momento de recibir el efecto, ya que
+el máximo de descansos que puede
+tener un Protector es 3.
+
+ayan Emboscada Ejemplo:“Zaykan,Emboscada
+
+ul puede recibir descanso siempre y
+cuando este disponible o en 1
+descanso al momento de recibir el
+efecto, ya que el máximo de
+descansos que puede tener un
+Adendel es 2.
+
+Si “Zaykan” se encuentra en 1 Si Karyn se encuentra en 2 descansos
+
+y recibe por efecto de una carta 2
+descansos más, solo 1 se hará efectivo
+llegando a su máximo de 3 descansos
+totales.
+
+Activa Rápida: Si una carta altada es atacada,
+
+recben OS descanso y recibe por efecto de
+
+leia o SSS una carta 2 descansos más, solo 1
+ID se hará efectivo, llegando a su
+
+máximo de 2 descansos totales.
+

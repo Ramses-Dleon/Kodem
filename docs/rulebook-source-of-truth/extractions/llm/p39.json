@@ -1,0 +1,216 @@
+{
+  "page": 39,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:40:00-06:00",
+  "title": "9. GLOSARIO (continuación)",
+  "section_refs": ["§9", "§1.3", "§3.2", "§3.3", "§3.4", "§4", "§5", "§5.2", "§5.3", "§6.1", "§6.6", "§6.7"],
+  "text_blocks": [
+    {
+      "anchor": "p39/b01",
+      "heading": null,
+      "text": "•Mazo (Mazo Principal): Zona. Las cartas de Adendei y/o Rava que no se encuentren en la Zona de Extinción o en la Zona Principal irán aquí y entrarán en juego como cartas suplentes. Estas cartas irán estructuradas, no revueltas. Si una carta se devuelve al Mazo por efecto de alguna otra carta, la nueva carta se colocará en la Zona Principal con los mismos puntos de vida que tenía la carta devuelta (Ver 4. Preparación del Ecosistema).",
+      "position": "top-left",
+      "notes": "'Zona', 'Adendei', 'Rava' y la referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b02",
+      "heading": null,
+      "text": "•Mazo General: Conjunto de cartas compuesto por los diferentes tipos de cartas de Kódem (Adendei, Ravas, Protectores, Equipos, Bio y Tokens) (Ver 1.3. Componentes de Juego).",
+      "position": "top-left",
+      "notes": "Lista de tipos de cartas y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b03",
+      "heading": null,
+      "text": "•Mostrar: Acción de Turno. Enseñar la carta al rival. Mostrar una carta no implica revelar una carta. Algunas cartas pueden declarar sus efectos al ser mostradas. Ej. \"Si esta carta es tomada del mazo muestrala y cura 1 pto. a una carta aliada\".",
+      "position": "top-left",
+      "notes": "'Acción de Turno', 'revelar', 'mostradas' y el ejemplo en cursiva. Typo: 'muestrala' sin tilde."
+    },
+    {
+      "anchor": "p39/b04",
+      "heading": null,
+      "text": "•Negar: Efecto. Su significado cambia dependiendo de si se niega un ataque o un efecto.",
+      "position": "middle-left",
+      "notes": "'Efecto' en cursiva."
+    },
+    {
+      "anchor": "p39/b05",
+      "heading": null,
+      "text": "•Negar un ataque: Es un efecto que hace que la declaración de un ataque resuelva como si el ataque y/o múltiples ataques no se hubieran declarado, sin embargo, la carta deberá descansar al final del turno.",
+      "position": "middle-left",
+      "notes": null
+    },
+    {
+      "anchor": "p39/b06",
+      "heading": null,
+      "text": "•Negar un efecto: Significa que un efecto declarado no podrá resolver mientras se encuentre negado. Si la duración de un efecto dura más de un turno y es negado, se considerará que el efecto no puede resolver mientras este negado, sin embargo, al terminarse el efecto de la negación ya no será necesario volver a declarar el efecto para que resuelva.",
+      "position": "middle-left",
+      "notes": "Typo: 'este negado' (debería ser 'esté negado')."
+    },
+    {
+      "anchor": "p39/b07",
+      "heading": null,
+      "text": "•Ocultar: Efecto. Acción de turno. Colocar boca abajo una carta. Los Token y Protectores no pueden ser ocultos por efecto. Las cartas ocultas no podrán resolver efectos excepto si su declaración se hizo ese turno y su resolución durará máximo hasta el final del mismo turno. Aún si una carta fue ocultada se debe resolver la declaración de su ataque. Si una carta es ocultada por efecto, vuelve a sus a estadísticas base y finalizará la negación de su efecto si se encuentra negado. Las cartas ocultas no se podrán considerar un tipo de carta en específico. Una carta que fue ocultada por efecto en el turno anterior deberá volver a declarar su efecto para que resuelva. Las cartas en Zona de Extinción no pueden ser ocultadas.",
+      "position": "middle-left",
+      "notes": "Typo: 'vuelve a sus a estadísticas base' (repetición de preposición 'a'). Varias palabras en cursiva: 'Efecto. Acción de turno', 'Token', 'Protectores', 'ocultos', 'ocultas', 'ocultada', 'negación', 'negado'."
+    },
+    {
+      "anchor": "p39/b08",
+      "heading": null,
+      "text": "•Pasiva: Efecto. Se pueden usar múltiples veces por turno, no se actualizan descansos al usarlos (Ver 6.6 Efectos). Si no especifica tiempo de Activación, es opcional y se Activa una vez por turno durante Fase Previa.",
+      "position": "bottom-left",
+      "notes": "'Efecto' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b09",
+      "heading": null,
+      "text": "•Pasiva-Rápida: Efecto. A diferencia de las Pasivas, mlas Pasivas-Rápidas sólo se pueden declarar en respuesta a otras Pasivas, revelación de cartas o eliminación de cartas, también se pueden usar en turno rival y resuelven tan pronto se declaran (Ver 6.6 Efectos).",
+      "position": "bottom-left",
+      "notes": "TYPO preservado: 'mlas Pasivas-Rápidas' (debería ser 'las'). 'Efecto' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b10",
+      "heading": null,
+      "text": "•Poseer: Acción. Enviar un Adendei a Extinción para colocar una carta de Extinción debajo de un Espectro.",
+      "position": "top-right",
+      "notes": "'Acción', 'Adendei', 'Espectro' en cursiva."
+    },
+    {
+      "anchor": "p39/b11",
+      "heading": null,
+      "text": "•Pagar: Son acciones especificadas en un costo que se deben de realizar (Ver 6.6 Efectos).",
+      "position": "top-right",
+      "notes": "'costo' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b12",
+      "heading": null,
+      "text": "•Protector: Carta. Carta con 12 puntos de vida. Inicia con 3 descansos, en la Zona de equipos. Para usar su efecto debe usar el vínculo con algún Adendei disponible (Ver 3.2 Protector).",
+      "position": "top-right",
+      "notes": "'Carta', 'vínculo', 'Adendei' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b13",
+      "heading": null,
+      "text": "•Proteger: Efecto. Efecto que se aplica a una carta la carta protegida es inmune a ataques y/o efectos de otras cartas hacia ella, también se considera proteger una carta el hecho de evitar (una vez que ya han sido declarados) ataques, todos los daños y/o efectos de otras cartas hacia ella.",
+      "position": "middle-right",
+      "notes": "'Efecto' y 'proteger' en cursiva. Redacción redundante 'Efecto. Efecto que se aplica...'."
+    },
+    {
+      "anchor": "p39/b14",
+      "heading": null,
+      "text": "•Quemar: Marca. Una carta quemada recibe 1 punto de daño cada vez que ataque o use su Activa (Ver 6.1. Marcas).",
+      "position": "middle-right",
+      "notes": "'Marca', 'quemada' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b15",
+      "heading": null,
+      "text": "•Rava: Carta. Manifestaciones de las energías. Puedes llevar 0-2 Rava en tu Mazo General (Ver 3.3. Rava).",
+      "position": "middle-right",
+      "notes": "'Carta', 'Rava', 'Mazo General' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b16",
+      "heading": null,
+      "text": "•Reemplazar: Acción. Sustituir la carta que haya abandonado el campo, tomando 3 cartas del tope del Mazo Principal, eligiendo 1 y colocándola oculta o revelada sustituyendo a la carta eliminada (Ver 5.3. Reemplazo de Cartas).",
+      "position": "middle-right",
+      "notes": "'Acción', 'Mazo Principal', 'oculta', 'revelada' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b17",
+      "heading": null,
+      "text": "•Resolver el ataque: Es la acción de reducir la vida de la carta rival por el daño del ataque declarado (Ver Sección 5.2.).",
+      "position": "middle-right",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b18",
+      "heading": null,
+      "text": "•Resolver un efecto: Es la acción de ejecutar/llevar a cabo dentro del juego lo que el efecto de la carta dice (Ver Sección 5.2.).",
+      "position": "middle-right",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b19",
+      "heading": null,
+      "text": "•Restricción: Efecto. Las cartas con restricciones indican que una carta no puede realizar determinadas acciones o efectos (Ver 6.7. Restricciones e interacciones).",
+      "position": "bottom-right",
+      "notes": "'Efecto' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b20",
+      "heading": null,
+      "text": "•Revelar: Efecto. Acción de Turno. Se considera \"revelar\" una carta si se coloca boca arriba en el campo (Ver 5. Fases de Turno).",
+      "position": "bottom-right",
+      "notes": "'Efecto. Acción de Turno' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b21",
+      "heading": null,
+      "text": "•Rot: Equipo. Basado en el reino mineral. Posee efectos \"Activa\" o \"Activa Rápida\" en su mayoría (Ver 3.4. Equipos).",
+      "position": "bottom-right",
+      "notes": "'Equipo' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b22",
+      "heading": null,
+      "text": "•Tomar: Acción de Turno. Cuando una carta deja la Zona Principal o por indicación de algún efecto, deberás reemplazar tu carta. Esta acción también puede gatillar efectos que indiquen toma o involucren a la(s) carta(s) to-mada(s). Solo se considera que una carta está en mano cuando se toma del Mazo, por reemplazo o por efecto de alguna carta.",
+      "position": "bottom-right",
+      "notes": "'Acción de Turno', 'toma', 'to-mada(s)' en cursiva. Guion 'to-mada(s)' preservado como aparece por corte de línea posible."
+    },
+    {
+      "anchor": "p39/b23",
+      "heading": null,
+      "text": "•Turno: Conjunto de acciones que el jugador puede realizar en cierto orden. Cada turno se divide en diferentes fases (Ver 5. Fases del Turno).",
+      "position": "bottom-right",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p39/b24",
+      "heading": null,
+      "text": "•Usar: Acción. Su significado cambia dependiendo si se usa una carta o un efecto.",
+      "position": "bottom-right",
+      "notes": "'Acción' en cursiva."
+    },
+    {
+      "anchor": "p39/b25",
+      "heading": null,
+      "text": "39",
+      "position": "bottom-right",
+      "notes": "Número de página."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p39/fig-01",
+      "slug": "glosario-doble-columna-M-a-U",
+      "type": "infographic",
+      "bbox_pct": {"x": 5, "y": 3, "w": 90, "h": 92},
+      "description_detailed": "La página entera es continuación del glosario iniciado en la página 37, organizada en dos columnas verticales. Tipografía sans-serif negra sobre fondo blanco/cremoso. Cada entrada inicia con viñeta redonda (•) pegada a la palabra en negrita, seguida de tipo del término en cursiva ('Efecto', 'Carta', 'Zona', 'Acción', 'Acción de Turno', 'Marca', 'Equipo') y luego la definición en texto normal. Las referencias cruzadas aparecen en cursiva entre paréntesis al final.\n\nLa columna izquierda cubre desde M hasta P: Mazo (Mazo Principal) — entrada extensa con información sobre reposición de cartas en Zona Principal —, Mazo General, Mostrar (con ejemplo de uso entre comillas), Negar, Negar un ataque, Negar un efecto, Ocultar (entrada especialmente larga con múltiples reglas sobre cartas boca abajo), Pasiva y Pasiva-Rápida. Hay un typo notable en 'mlas' (por 'las') en la entrada de Pasiva-Rápida.\n\nLa columna derecha continúa desde P hasta U: Poseer (acción de enviar un Adendei a Extinción para colocar una carta debajo de un Espectro), Pagar, Protector, Proteger, Quemar, Rava (con el detalle de llevar 0-2 en el Mazo General), Reemplazar, Resolver el ataque, Resolver un efecto, Restricción, Revelar, Rot, Tomar (con el corte de palabra 'to-mada(s)'), Turno, Usar.\n\nLa página mantiene consistencia visual con la página 38 del glosario. No hay banners ni ilustraciones adicionales. Número de página '39' en esquina inferior derecha sobre fondo azul institucional.",
+      "embedded_text": [
+        "Mazo (Mazo Principal)", "Mazo General", "Mostrar", "Negar",
+        "Negar un ataque", "Negar un efecto", "Ocultar", "Pasiva", "Pasiva-Rápida",
+        "Poseer", "Pagar", "Protector", "Proteger", "Quemar", "Rava", "Reemplazar",
+        "Resolver el ataque", "Resolver un efecto", "Restricción", "Revelar", "Rot",
+        "Tomar", "Turno", "Usar", "39"
+      ],
+      "relation_to_text": "Esta figura es el cuerpo del glosario de la página y a la vez su estructura visual en doble columna.",
+      "legibility": "clear",
+      "legibility_notes": "Todo el texto es legible. Se detectaron typos que se preservan verbatim: 'mlas' (por 'las'), 'muestrala' (sin tilde), 'este negado' (falta tilde), 'vuelve a sus a estadísticas' (preposición repetida)."
+    },
+    {
+      "anchor": "p39/fig-02",
+      "slug": "numero-pagina-39",
+      "type": "icon",
+      "bbox_pct": {"x": 90, "y": 95, "w": 8, "h": 4},
+      "description_detailed": "Número de página '39' en la esquina inferior derecha sobre fondo azul oscuro institucional.",
+      "embedded_text": ["39"],
+      "relation_to_text": "Indicador de paginación.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página completa de glosario M-U. Preservar typos: 'mlas Pasivas-Rápidas', 'muestrala', 'este negado', 'vuelve a sus a estadísticas', 'to-mada(s)'. Las entradas 'Ocultar' y 'Mazo (Mazo Principal)' son las más extensas.",
+  "self_confidence": 0.9
+}

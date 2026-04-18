@@ -1,0 +1,86 @@
+Cartas con condiciones específicas: Una carta que tenga una condición ligada a un número de
+cartas (1,2,5, etc) en cuyo texto no especifique con palabras “exactamente”, “solo”, “Si y solo sI”, se
+considerara como que ese número es el número mínimo necesario para cumplir ono cumplir
+
+la condición mencionada en su texto, es decir como si fuera un “1o más”, “2 o más”, “5.0 más, etc.
+
+Activa: Si tu rival no tiene 1 Token en Zona Princi-
+pal, regresa un Agdendel! rival al tope del Mazo, y
+coloca... (en este caso si el rival tiene | o más
+Token se considera que no cumple la condición)
+
+TS
+Activa: Usa 1 de los siguientes efectos.
+
+- Regresa todas las cartas en - su Zon
+
+Prin cies riginal.
+
+- Si tu rival no tien ne 1J0ken.en Zona Principal, regresa 1
+
+pd dei wal altope desu Mazo y coloca dToken con el
+nismo ipadoinea 2 NA y O des
+
+3 a 3 ptos. a 1 carta en pa
+
+COD-04 A > | ed Kódem TCC
+2
+Dore art j
+
+Ejemplo: “Zaren, Unión”
+
+E a ce 3)
+Costo: Debes tener 2 Rot en Extinción para usar su Activa: Doo 4 pros.a carta rival en
+
+Zona Principal.
+
+Activa. (En este caso si tiene 20 mas Rot en Extincion Costo: Debes tener 2 Rot en Extinción para
+
+usar su Activa.
+
+se con sidera que si CUM p le la condición). | y dl mundo suben guardé del cs ac
+
+id >» 4 D
+TCOO-022 | Y } TCG ©
+
+Ejemplo: “Greah, Mazo Pétreo”
+
+Efectos de un solo uso: Los efectos de un “solo uso por juego”, se podrán usar una vez por jugador
+
+y sIuno de esos efectos ya fue usado por algun jugador, ese jugador no podra volver a declararlo aun
+sI ese efecto es copiado por alguna de sus cartas.
+
+VIVIFICAR
+
+Algunas cartas en Kódem son variantes resurecctas, de los personajes, es decir, que fueron traídas de
+regreso del Reino de la muerte. Esta cartas normalmente se relaacionan con el fecto de “VIVIFICAR”
+
+Ar, ED “
+
+E in O > 4 Py - . . Ne A
+4 Ketzz, Plumas Inmortales Y £ Ariam,Resurgimiento Fangoso 38
+
+7 ——
+(x by ere Es;
+A va Adendei Resurrecto / Cháaktica iis
+
+Pasiva: $ Si esta carta es vivificada, TT E "Pasiva: Si esta carta es vivificada, nombra 2 cartas;  Pasiva:S Si esta carta es vivificada, todos los Adende
+Activa-Rápida adicional en turno rival durante el las cartas nombradas no podrán ser vivificadas "Ariam" aliados podrán dañar 1 pto. adicional al atacar
+resto del juego. por el resto del juego. y no podrán curar por sus propios efectos por el resto
+Costo: No podrás usar Activas-Rápidas en tu turno del juego.
+
+durante el resto del juego. caos de los sehes Costo: Solo puedes usar este efecto una vez por
+
+ste atención a su voz en el silencio? juego, Esta Pasiva no puede ser negada.
+
+Vivificar: Las cartas que explícitamente no mencionen en sus textos, que pueden vivificar, enviar
+
+cartas de Extinción a otras Zonas o Intercambiar cartas con cartas en Extinción, no podran sacar
+cartas de Extinción a otras Zonas.
+
+Si una carta cuyo efecto se haya activado en campo no especifica cuándo termina, este terminará
+cuando la carta ya no se encuentre revelada en el campo.
+
+Si la condición para activar un efecto se cumple varias veces simultáneamente, el efecto sólo se acti-
+vará una vez.
+

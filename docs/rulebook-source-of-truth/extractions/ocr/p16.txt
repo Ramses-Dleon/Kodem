@@ -1,0 +1,73 @@
+FASE PREVIA:
+Durante la Fase Previa, puedes realizar las siguientes ac-
+ciones:
+
+- Pasar turno: Ir a Fin de Turno saltandote todas las Fases
+intermedias y sin activar efectos a excepción de los efec-
+tos con el costo, condición o indicación de “pasar turno”
+que deberán declararse en esta Fase. También puedes
+indicar en la Fase Previa que "pasas turno" y saltar a "Fin
+de Turno" para cumplir con el costo de "pasar turno" de 1
+carta que lo establezca como condición para atacar.
+
+- Revelar las cartas que desees.
+
+- Declarar y resolver Pasivas (que cumplan su condición
+y/o Pasivas Opcionales).
+
+- Enviar cartas a Extinción cuya vida llegue a O ptos. o por
+efecto o costo de alguna carta.
+
+- Reemplazar cartas que dejen el campo.
+
+- Enviar tu Bio a Extinción y actualizar 1 descanso de cada
+una de tus cartas.
+
+- Regresar 1 Rava de Zona Principal al fondo del Mazo.
+
+- Enviar 2 cartas de Zona Principal a Extinción para regre-
+sar 1 Rava de Extinción a Zona Principal.
+
+NOTA: El jugador rival solo puede revelar cartas con
+Pasiva-Rápida durante esta fase y usarlas como respues-
+ta, también puede usar las pasivas de cartas que cum-
+plan su condición si ya se encuentran reveladas.
+
+‘NA 5. FASES DEL TURNO
+
+El primer turno se decide al jugador inicial de forma aleatoria.
+
+77
+
+FASE DE INICIO:
+Comienza el turno del jugador.
+
+(Ver Pasivas-Rápidas en 6.6.2 Pasivas).
+
+FASE DE BATALLA:
+
+En esta Fase sólo se podrá atacar y/o usar la Activa de 1
+carta por turno (excepción de cartas equipadas con Rot
+ya que se puede considerar su Activa y la de la carta eq-
+
+Uipada como 1 sola Activa. (Ver 3.4. Equipos) y se compone
+de las siguientes subfases:
+
+DECLARACIÓN: Elige un Adendei o Protector disponible y
+declara ataque (Ver 6.5. Ataque) y/o Activa hacia una de las
+cartas rivales, podrás atacar cartas rivales ocultas (boca
+abajo). En esta subfase debes indicar las cartas involu-
+
+cradas, daños y Activas a realizar.
+
+PAGO DE COSTOS: Algunas cartas requieren un costo para
+atacar o usar su Activa, el cual debe pagarse en esta
+subfase, también se realiza el daño de quemadura
+(aunque el daño por quemadura no se considera un
+
+costO(Ver 6.6.3 Costos).
+
+RESPUESTA RIVAL: El rival puede revelar cartas y/o usar
+Activas Rápidas que tengan interacción en ataque oO
+Activa (Ver 6.6.1 Activas).
+

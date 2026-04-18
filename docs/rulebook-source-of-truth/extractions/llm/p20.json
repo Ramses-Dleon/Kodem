@@ -1,0 +1,148 @@
+{
+  "page": 20,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:50:00-06:00",
+  "title": "5.3 Reemplazo de cartas",
+  "section_refs": ["§5.3", "§6"],
+  "text_blocks": [
+    {
+      "anchor": "p20/b01",
+      "heading": "5.3 Reemplazo de cartas",
+      "text": "5.3 Reemplazo de cartas",
+      "position": "top",
+      "notes": null
+    },
+    {
+      "anchor": "p20/b02",
+      "heading": null,
+      "text": "1. Cuando una carta deja su espacio en la Zona Principal, el jugador tomará 3 cartas del Mazo Principal, y elegirá 1 para reemplazarla. La carta elegida se colocará en el espacio vacío, revelada (boca arriba) u oculta (boca abajo), y con 6 puntos de vida. Las 2 cartas restantes se regresarán al fondo del Mazo Prinicipal en cualquier orden. Esta acción se repetirá por cada carta que haya dejado el campo.",
+      "position": "top",
+      "notes": "Typo presente en el original: 'Prinicipal' en lugar de 'Principal'. Preservado verbatim."
+    },
+    {
+      "anchor": "p20/b03",
+      "heading": null,
+      "text": "2. Siempre que una carta (que no sea un equipo) deje la Zona Principal, deberá colocarse una carta suplente inmediatamente, antes de declarar cualquier otro efecto, excepto si se trata de un efecto que haya sido declarado antes de que la carta dejase el campo, en cuyo caso podrá terminar de resolverse antes de realizar el reemplazo.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p20/b04",
+      "heading": null,
+      "text": "3. En ningún momento se pueden usar como suplentes cartas rivales.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p20/b05",
+      "heading": null,
+      "text": "4. Si un Protector es enviado a Extinción, podrá ingresar tu Protector suplente conservando los mismos descansos que tenía el Protector anterior y 12 puntos de vida.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p20/b06",
+      "heading": null,
+      "text": "5. Si un jugador no puede colocar ninguna carta en el campo al realizar un reemplazo, deberá mostrar las cartas tomadas al oponente y colocarlas en la parte inferior del mazo. Los efectos de esas cartas tomadas no podrán usarse durante ese turno. Luego, el jugador realizará la acción de reemplazo nuevamente. Esta acción puede repetirse un máximo de 2 veces. Si después del tercer reemplazo el jugador aún no puede colocar una carta en el campo, perderá la partida inmediatamente.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p20/b07",
+      "heading": null,
+      "text": "6. Si un jugador se queda sin cartas en su Mazo Principal, deberá colocar todas las cartas fuera del juego (excepto Tokens) que originalmente estaban en la Zona Principal, en la parte inferior del Mazo Principal.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p20/b08",
+      "heading": null,
+      "text": "7. En Kódem, algunas cartas tienen efectos válidos al ser tomadas. Un efecto de este tipo solo puede usarse una vez por cada reemplazo de cartas.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p20/b09",
+      "heading": "6. Interacciones y Efectos",
+      "text": "6. Interacciones y Efectos",
+      "position": "middle",
+      "notes": "Banner de sección."
+    },
+    {
+      "anchor": "p20/b10",
+      "heading": null,
+      "text": "Importante: Se aplicarán en todo momento los lineamientos de este documento a menos que el texto de una carta indique explícitamente lo contrario.",
+      "position": "bottom",
+      "notes": null
+    },
+    {
+      "anchor": "p20/b11",
+      "heading": null,
+      "text": "Ejemplos donde sí aplica:\n•Libro de Reglas: Los Tokens no pueden ser ocultados. / Efecto de carta: Oculta un Token rival.\n•Libro de Reglas: No se puede curar una carta con 0 puntos de vida. / Efecto de Carta: Cura 1 pto. a 1 carta con 0 ptos de vida.",
+      "position": "bottom",
+      "notes": null
+    },
+    {
+      "anchor": "p20/b12",
+      "heading": null,
+      "text": "Ejemplos donde no aplica:\n•Libro de Reglas: Los Tokens no pueden ser ocultados. / Efecto de carta: Oculta 1 carta rival.\n•Libro de Reglas: No se puede curar una carta con 0 puntos de vida. / Efecto de Carta: Cura 1 pto. a 1 carta.",
+      "position": "bottom",
+      "notes": null
+    },
+    {
+      "anchor": "p20/b13",
+      "heading": null,
+      "text": "20",
+      "position": "bottom",
+      "notes": "Número de página."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p20/fig-01",
+      "slug": "foto-mano-tomando-cartas-mazo",
+      "type": "photo",
+      "bbox_pct": {"x": 2, "y": 12, "w": 30, "h": 18},
+      "description_detailed": "Fotografía ilustrativa en el encabezado visual de la sección 5.3. Muestra una mano humana de tez clara tomando cartas del tope de un mazo apilado sobre una superficie neutra. El mazo lleva una etiqueta visible con la palabra 'MAZO' en letras rojas/anaranjadas, probablemente rotulada sobre la pila para efectos didácticos.\n\nLas cartas muestran el reverso oscuro (patrón ornamental típico de Kódem en tonos marrones/dorados). Fondo blanco/crema que contrasta con el mazo.\n\nLa imagen ilustra el acto físico descrito en el punto 1 del texto: 'el jugador tomará 3 cartas del Mazo Principal'.",
+      "embedded_text": ["MAZO"],
+      "relation_to_text": "Ilustra directamente la acción de tomar cartas del Mazo Principal descrita en el primer punto de 5.3 Reemplazo de cartas.",
+      "legibility": "clear",
+      "legibility_notes": "La etiqueta 'MAZO' es perfectamente legible."
+    },
+    {
+      "anchor": "p20/fig-02",
+      "slug": "foto-mano-abanico-tres-cartas",
+      "type": "photo",
+      "bbox_pct": {"x": 33, "y": 12, "w": 33, "h": 18},
+      "description_detailed": "Fotografía ilustrativa en el encabezado de la sección, que muestra una mano humana sosteniendo 3 cartas en abanico con las caras visibles al espectador. Las cartas presentan el estilo visual de Kódem, con ilustraciones de personajes/criaturas en tonalidades frías (azules, verdes, oscuros) y acentos cálidos.\n\nEsta imagen representa visualmente el 'abanico de 3 cartas tomadas' del que el jugador debe elegir 1 para el reemplazo según el punto 1 del texto. Fondo neutro blanco/crema.\n\nEl texto dentro de cada carta (nombre, estadísticas, efectos) no es legible a la escala impresa.",
+      "embedded_text": [],
+      "relation_to_text": "Ilustra el paso intermedio del reemplazo: las 3 cartas que el jugador sostiene antes de elegir 1 para ocupar el espacio vacío.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Las imágenes son claras; el texto interno de las cartas requiere ampliación para leerse."
+    },
+    {
+      "anchor": "p20/fig-03",
+      "slug": "foto-mano-sosteniendo-mazo-logo-kodem",
+      "type": "photo",
+      "bbox_pct": {"x": 66, "y": 12, "w": 31, "h": 18},
+      "description_detailed": "Fotografía ilustrativa que cierra el encabezado visual. Una mano humana sostiene un mazo completo de cartas boca abajo, mostrando el reverso al espectador. El reverso presenta el logo 'KÓDEM' en letras doradas/metálicas con acabado ornamental sobre fondo oscuro (negro/marrón profundo).\n\nLa imagen refuerza la marca del juego y representa visualmente 'las 2 cartas restantes que se regresarán al fondo del Mazo Principal'.",
+      "embedded_text": ["KÓDEM"],
+      "relation_to_text": "Ilustra el acto de devolver cartas al Mazo Principal y refuerza visualmente la identidad de marca del juego.",
+      "legibility": "clear",
+      "legibility_notes": "El logo 'KÓDEM' es perfectamente legible."
+    },
+    {
+      "anchor": "p20/fig-04",
+      "slug": "banner-interacciones-y-efectos",
+      "type": "illustration",
+      "bbox_pct": {"x": 5, "y": 72, "w": 90, "h": 5},
+      "description_detailed": "Banner decorativo horizontal que funciona como separador y título de la sección 6. Tiene fondo negro con sutil degradado. A ambos lados (izquierdo y derecho) presenta elementos ornamentales en forma de chevrons/triángulos apuntando hacia el centro, dibujados en color blanco/gris claro.\n\nEn el centro del banner se lee el título 'INTERACCIONES Y EFECTOS' (precedido por un '6.') en tipografía serif elegante, en color blanco, probablemente con kerning amplio para efecto editorial.\n\nEste banner es consistente con el estilo visual de encabezados de sección del rulebook.",
+      "embedded_text": ["6. INTERACCIONES Y EFECTOS"],
+      "relation_to_text": "Marca el inicio de la sección 6 del rulebook, que continúa en las páginas siguientes con el bloque 'Importante' y ejemplos.",
+      "legibility": "clear",
+      "legibility_notes": "Título perfectamente legible."
+    }
+  ],
+  "page_notes": "Página contiene el cierre de la sección 5 con 5.3 Reemplazo de cartas (7 puntos normativos) y el arranque de la sección 6 Interacciones y Efectos con un banner decorativo y el bloque 'Importante' + dos tablas de ejemplos (sí aplica / no aplica). Se preservan typos del original ('Prinicipal' en b02). Fotografías del encabezado son ilustrativas, no normativas.",
+  "self_confidence": 0.94
+}

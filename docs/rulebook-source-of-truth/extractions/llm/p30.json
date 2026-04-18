@@ -1,0 +1,98 @@
+{
+  "page": 30,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:11:00-06:00",
+  "title": null,
+  "section_refs": ["§6.7.3", "§6.8"],
+  "text_blocks": [
+    {
+      "anchor": "p30/b01",
+      "heading": "6.7.3 Costos",
+      "text": "6.7.3 Costos",
+      "position": "top-left",
+      "notes": "Encabezado de sección. 'Costos' en negritas."
+    },
+    {
+      "anchor": "p30/b02",
+      "heading": null,
+      "text": "Los costos son requisitos para usar efectos o atacar y se pagan al declarar el efecto o ataque.\n· No se consideran efectos.\n· Un costo no puede ser pagado para más de 1 efecto al mismo tiempo.\n· Si el costo especifica dañar puntos de vida, las cartas deben tener al menos 1 punto de vida para que se considere pagado.\n· Los costos son pagados posterior a la Subfase de Declaración, antes de llevar a cabo el efecto/ataque.\n· Si un costo no especifica si se paga al atacar o al usar su efecto, se entenderá que el costo aplica al declarar cualquiera de las dos acciones. Si ambas acciones se declaran simultáneamente, el costo se pagará solo una vez.\n· Para pagar un costo que permita declarar un ataque y/o Activa, la carta deberá estar disponible.",
+      "position": "top-left-column",
+      "notes": "Lista de reglas con viñetas sobre Costos. 'no' en negritas en 'Un costo no puede'; 'dañar' en cursiva; '1' en negritas; 'Activa' en negritas."
+    },
+    {
+      "anchor": "p30/b03",
+      "heading": null,
+      "text": "Los costos siempre deben pagarse de forma íntegra, si por algún motivo no hay posibilidad de pagar un costo en su totalidad no se puede declarar la acción o el efecto en cuestión.",
+      "position": "middle-left",
+      "notes": "Recuadro destacado con texto entero en negritas."
+    },
+    {
+      "anchor": "p30/b04",
+      "heading": "6.8 Restricciones e Interacciones",
+      "text": "6.8 Restricciones e Interacciones",
+      "position": "middle-left",
+      "notes": "Encabezado de sección. 'Restricciones e Interacciones' en negritas."
+    },
+    {
+      "anchor": "p30/b05",
+      "heading": null,
+      "text": "Existen situaciones en el juego que no permiten determinadas jugadas.\nEstas restricciones se dan principalmente por las interacciones de los efectos, costos o por las características particulares de cierto tipo de cartas por ejemplo Tokens, Protectores, etc. Dichas restricciones no pueden ser ignoradas una vez que se establecen. En caso de que existan 2 o más situaciones donde estas restricciones se contrapongan, predominará aquella restricción que se haya puesto primero en juego.\nRestringir: Bajo ciertas condiciones, se limita el uso de los efectos o condiciones de la(s) carta(s) restringida(s).",
+      "position": "middle-left",
+      "notes": "'Tokens', 'Protectores' y 'Restringir:' en cursiva. '2' en negritas."
+    },
+    {
+      "anchor": "p30/b06",
+      "heading": "Generalidades de las Restricciones e Interacciones",
+      "text": "Generalidades de las Restricciones e Interacciones",
+      "position": "middle-center",
+      "notes": "Encabezado de subsección en recuadro/destacado en negritas."
+    },
+    {
+      "anchor": "p30/b07",
+      "heading": null,
+      "text": "1. No pueden existir 2 o más cartas con el mismo nombre, arte y/o efecto impreso en tu Mazo General.",
+      "position": "middle-left",
+      "notes": "Regla 1 de la sección. '1.' y 'No' en negritas."
+    },
+    {
+      "anchor": "p30/b08",
+      "heading": null,
+      "text": "Ejemplo: Carta impresa con diferente arte, pero mismo nombre y efecto.",
+      "position": "middle-center",
+      "notes": "Pie de imagen en cursiva para la figura de las dos cartas Arian: Balance."
+    },
+    {
+      "anchor": "p30/b09",
+      "heading": null,
+      "text": "2. Si un jugador tiene 2 cartas con el mismo nombre, arte y/o efecto reveladas en su Ecosistema, debe seleccionar una de ellas y enviarla al fondo del Mazo (Generalmente esta situación se da al realizar cambio de cartas entre tú Zona Principal y la del rival).\n3. Ninguna carta ajena al jugador puede estar en su Mazo o en su Extinción.\n4. No se pueden seleccionar como objetivo de ataques o efectos a cartas que no tengan la característica o estadística necesaria para aplicarlos. Ejemplos:",
+      "position": "bottom-left",
+      "notes": "Reglas 2, 3 y 4. '2.', '3.', '4.' y '2' en negritas. 'Ejemplos:' en cursiva."
+    },
+    {
+      "anchor": "p30/b10",
+      "heading": null,
+      "text": "30",
+      "position": "bottom-footer",
+      "notes": "Número de página"
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p30/fig-01",
+      "slug": "dos-cartas-arian-balance-mismo-nombre-diferente-arte",
+      "type": "illustration",
+      "bbox_pct": {"x": 28, "y": 58, "w": 44, "h": 24},
+      "description_detailed": "Ilustración comparativa que muestra dos cartas del juego Kódem TCG colocadas una al lado de la otra. Ambas tienen exactamente el mismo nombre 'Arian: Balance' y comparten el mismo efecto impreso, pero presentan ilustraciones artísticas completamente diferentes. Esta figura funciona como ejemplo didáctico directo de la regla 1 del apartado 'Generalidades de las Restricciones e Interacciones'.\n\nLa carta de la izquierda muestra a una criatura de apariencia marina/acuática con cuerpo serpentino o dragónico en tonos azulados y turquesa, emergiendo de o nadando en un entorno acuático con ondulaciones azules. La iluminación es fría y sugiere profundidad marina. El arte tiene estilo orgánico fluido con énfasis en movimiento acuático.\n\nLa carta de la derecha presenta al mismo personaje o entidad 'Arian: Balance' pero con una ilustración radicalmente distinta: una criatura alada, posiblemente dracónica, con alas extendidas en un fondo vibrante con tonalidades moradas, rojizas y ámbar, sugiriendo un ambiente más cálido o etéreo/celestial. La pose es más imponente y frontal.\n\nAmbas cartas comparten el mismo diseño de frame/borde, tipografía del nombre, tipo/subtipo (Adendei/Ático o similar), y probablemente las mismas estadísticas numéricas en la parte inferior (ataque, descansos, vida). El único elemento que varía entre ellas es la ilustración artística central.\n\nLa composición de la figura refuerza visualmente el mensaje de la regla: aunque el arte sea distinto, mientras el nombre y el efecto sean idénticos, la regla de 'no puede haber dos cartas iguales en el Mazo General' se aplica. Es una imagen de alto valor pedagógico porque muestra un caso concreto que podría generar confusión a jugadores principiantes.\n\nLas dos cartas están centradas en la página horizontalmente, ligeramente inclinadas o en pose frontal, con separación visual clara entre ellas. Debajo aparece el pie de imagen que explicita la lectura correcta del ejemplo.",
+      "embedded_text": [
+        "Arian: Balance",
+        "Adendei / Ático",
+        "Activa"
+      ],
+      "relation_to_text": "Ejemplo visual directo de la regla 1 de §6.8 (Generalidades de las Restricciones e Interacciones): ilustra que dos cartas con mismo nombre y efecto pero distinto arte siguen considerándose la misma carta y no pueden coexistir en el Mazo General.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "El texto interno de las cartas (efectos, estadísticas exactas) es difícil de leer con precisión en la resolución disponible; el nombre y los elementos principales son legibles."
+    }
+  ],
+  "page_notes": "Página que cierra la subsección §6.7.3 sobre Costos y abre §6.8 Restricciones e Interacciones, con sus Generalidades enumeradas. Contiene un único bloque visual importante: dos cartas Arian: Balance con distinto arte pero mismo nombre, usado como ejemplo de la regla 1. El layout es mayormente textual con listas numeradas y con viñetas, y un recuadro de énfasis para la regla de pago íntegro de costos.",
+  "self_confidence": 0.9
+}

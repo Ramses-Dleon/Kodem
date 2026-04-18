@@ -1,0 +1,259 @@
+{
+  "page": 38,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:30:00-06:00",
+  "title": "9. GLOSARIO (continuación)",
+  "section_refs": ["§9", "§3.1", "§3.4", "§3.5", "§4", "§5", "§6.1", "§6.2", "§6.3", "§6.4", "§6.5", "§6.6"],
+  "text_blocks": [
+    {
+      "anchor": "p38/b01",
+      "heading": null,
+      "text": "•Activa: Efecto. Puede estar ligado al ataque si indica \"cuando esta carta ataca.../ si esta carta atacó...\" Su uso es obligatorio cuando no indica \"puede\". Su uso requiere aplicación de descansos. (Ver 6.6 Efectos).",
+      "position": "top-left",
+      "notes": "Palabras 'Efecto', 'cuando esta carta ataca...', 'si esta carta atacó...' y '(Ver 6.6 Efectos)' en cursiva."
+    },
+    {
+      "anchor": "p38/b02",
+      "heading": null,
+      "text": "•Activa-Rápida: Efecto. A diferencia de la Activa también puede usarse durante el turno del rival como respuesta y resuelve tan pronto se declara. Su uso requiere aplicación de descansos. (Ver 6.6 Efectos).",
+      "position": "top-left",
+      "notes": "'Efecto' y '(Ver 6.6 Efectos)' en cursiva."
+    },
+    {
+      "anchor": "p38/b03",
+      "heading": null,
+      "text": "•Adendei: Carta. Carta Principal en el juego. Cada una cuenta con 6 puntos de vida. (Ver 3.1. Adendei).",
+      "position": "top-left",
+      "notes": "'Carta' y '(Ver 3.1. Adendei)' en cursiva."
+    },
+    {
+      "anchor": "p38/b04",
+      "heading": null,
+      "text": "•Atacar: Se considera que una carta está atacando cuando se declara que va realizar daño (de ataque) a otra carta (ver 6.5. Ataques). El efecto de una carta está condicionado a su ataque solo si la carta lo indica. Ej: Efecto: Si esta carta ataca/atacó...",
+      "position": "left",
+      "notes": "'(ver 6.5. Ataques)' y el ejemplo en cursiva."
+    },
+    {
+      "anchor": "p38/b05",
+      "heading": null,
+      "text": "•Bio: Carta. Carta de campo. No posee puntos de vida ni descansos. (Ver 3.5. Bio).",
+      "position": "left",
+      "notes": "'Carta' y '(Ver 3.5. Bio)' en cursiva."
+    },
+    {
+      "anchor": "p38/b06",
+      "heading": null,
+      "text": "•Campo: Conjunto de zonas que incluye: Zona de Protector, Zona Principal y Zona de Bio. (Ver 4.Preparación del Ecosistema).",
+      "position": "left",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b07",
+      "heading": null,
+      "text": "•Cambiar: Efecto. Movimiento de una carta de un espacio a otro dentro del campo de un jugador, así como el movimiento entre los campos de diferentes jugadores. (Ver 6.4. Cambios entre Zonas).",
+      "position": "middle-left",
+      "notes": "'Efecto' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b08",
+      "heading": null,
+      "text": "•Carta Aliada: Carta. Cuando una carta especifica \"aliado\", significa que su efecto aplica para cualquier carta del lado de su campo pero no para ella misma. Si el efecto de la carta no especifica \"aliada\" o \"rival\", su efecto puede aplicarse a cualquier carta.",
+      "position": "middle-left",
+      "notes": "'Carta' en cursiva."
+    },
+    {
+      "anchor": "p38/b09",
+      "heading": null,
+      "text": "•Carta Rival: Cualquier carta del jugador rival que esté en su Ecosistema.",
+      "position": "middle-left",
+      "notes": null
+    },
+    {
+      "anchor": "p38/b10",
+      "heading": null,
+      "text": "•Colocar en campo: Efecto. Acción de turno. Una carta se considera colocada en el campo al entrar a este desde cualquier otra Zona.",
+      "position": "middle-left",
+      "notes": "'Efecto. Acción de turno.' en cursiva."
+    },
+    {
+      "anchor": "p38/b11",
+      "heading": null,
+      "text": "•Copiar: Efecto. Añade temporalmente el efecto de otra carta especificada a su efecto original. El efecto copiado no es acumulativo. Si se copia un nuevo efecto, el efecto copiado anterior se reemplaza por el nuevo.",
+      "position": "middle-left",
+      "notes": "'Efecto' en cursiva."
+    },
+    {
+      "anchor": "p38/b12",
+      "heading": null,
+      "text": "•Costo: No se considera efecto. Son acciones que se deben pagar al declarar el efecto o ataque para usar efectos o atacar (Ver 6.6 Efectos).",
+      "position": "middle-left",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b13",
+      "heading": null,
+      "text": "•Curar: Efecto. Incrementa los puntos de vida de una carta, sin exceder su máximo (Ver 6.2. Cambios de Estadísticas).",
+      "position": "bottom-left",
+      "notes": "'Efecto' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b14",
+      "heading": null,
+      "text": "•Daño: Reduce los puntos de vida de una carta (Ver 6.2. Cambios de Estadísticas).",
+      "position": "bottom-left",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b15",
+      "heading": null,
+      "text": "•Daño por Ataque: Total de daño de un ataque declarado (incluye escalas y daños adicionales) (Ver 6.3. Tipos de Daño).",
+      "position": "bottom-left",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b16",
+      "heading": null,
+      "text": "•Daño por efecto: Cualquier daño que no provenga directamente de la estadística de daño de una carta o que provenga de cualquier efecto que no mencione \"ataca\", \"aumenta el daño\" o \"daña adicionalmente\" en su texto. Si una carta no menciona a qué carta se aplica el daño por efecto, aplicará sólo a la carta declarada para el ataque (Ver 6.3. Tipos de Daño).",
+      "position": "top-right",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b17",
+      "heading": null,
+      "text": "•Daño por marca: Los daños que se realizan como parte de una marca (Ver 6.1. Marcas).",
+      "position": "top-right",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b18",
+      "heading": null,
+      "text": "•Declaración: Subfase. Se declara el ataque a la(s) carta(s) rival(es) deseadas por el portador del turno (Ver 5. Fases de Turno).",
+      "position": "top-right",
+      "notes": "'Subfase' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b19",
+      "heading": null,
+      "text": "•Declarar un ataque: Es la acción de decirle a tu rival que vas a dañar una de sus cartas por el daño marcado en la estadística de una de tus cartas, también incluye el daño aumentado y/o el daño adicional que la carta tuviera en ese momento (Ver 5. Fases de Turno).",
+      "position": "middle-right",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b20",
+      "heading": null,
+      "text": "•Declarar un efecto: Es la acción de decirle a tu rival que vas a utilizar el efecto de una carta. Si la condición de uso de un efecto no se cumple el efecto no podrá ser declarado. Los efectos declarados en cualquier zona o fuera de ellas (Ej. cartas tomadas o vivificadas) se considerarán que resuelven como si la carta aun estuviera en dicho lugar aun si la carta ya no se encuentra en la misma zona o lugar donde se declaró el efecto (Ver 5. Fases de Turno).",
+      "position": "middle-right",
+      "notes": "'(Ej. cartas tomadas o vivificadas)' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b21",
+      "heading": null,
+      "text": "•Descender: Efecto. Disminuye permanentemente los puntos de daño de una carta (Ver 6.2. Cambios de Estadísticas).",
+      "position": "middle-right",
+      "notes": "'Efecto' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b22",
+      "heading": null,
+      "text": "•Desviar: Efecto. Redirige el daño, Ataque o efecto respectivo a la carta especificada en el texto. Si una carta desvía daño, se considera que desvía tipo de daño original (de ataque o efecto).",
+      "position": "middle-right",
+      "notes": "'Efecto' en cursiva."
+    },
+    {
+      "anchor": "p38/b23",
+      "heading": null,
+      "text": "•Eliminar: Acción de Turno. Una carta es enviada a la Zona de Extinción (Ver 5. Fases de Turno).",
+      "position": "middle-right",
+      "notes": "'Acción de Turno' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b24",
+      "heading": null,
+      "text": "•Ecosistema: Espacio de juego que incluye todos los elementos de tu tablero y las Zonas que lo conforman (Ver 4.Preparación del Ecosistema).",
+      "position": "middle-right",
+      "notes": "Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b25",
+      "heading": null,
+      "text": "•Envenenar: Marca. Una carta envenenada recibe 1 punto de daño al final del turno del portador (Ver 6.1. Marcas).",
+      "position": "bottom-right",
+      "notes": "'Marca', 'envenenada' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b26",
+      "heading": null,
+      "text": "•Equipo: Carta. Son cartas \"Ixim\" o \"Rot\" que puedes equipar a Adendei o cartas que especifiquen dichos equipos por su texto para añadir efectos durante el juego (Ver 3.4. Equipos).",
+      "position": "bottom-right",
+      "notes": "'Carta', '\"Ixim\"', '\"Rot\"', 'Adendei' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b27",
+      "heading": null,
+      "text": "•Escalar: Efecto. Aumenta permanentemente los puntos de daño de una carta (Ver 6.2. Cambios de Estadísticas).",
+      "position": "bottom-right",
+      "notes": "'Efecto' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b28",
+      "heading": null,
+      "text": "•Feralizar: Efecto. Una carta feralizada pierde 1 de sus energías originales y se considera energía Feral (Ver 6.2. Cambios de Estadísticas).",
+      "position": "bottom-right",
+      "notes": "'Efecto' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b29",
+      "heading": null,
+      "text": "•Ixim: Equipo. Basados en los reinos vegetal y fungi. Posee efectos \"Pasiva\" o \"Pasiva Rápida\" en su mayoría (Ver 3.4. Equipos).",
+      "position": "bottom-right",
+      "notes": "'Equipo' y referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b30",
+      "heading": null,
+      "text": "•Marca: \"Quemar\", \"Abismar\" y \"Envenenar\" se consideran Marcas. Las Marcas pueden eliminarse con el efecto de \"Remover\" y \"Curar\" (Ver 6.1. Marcas).",
+      "position": "bottom-right",
+      "notes": "Las palabras de marcas entre comillas en cursiva. Referencia cruzada en cursiva."
+    },
+    {
+      "anchor": "p38/b31",
+      "heading": null,
+      "text": "38",
+      "position": "bottom-right",
+      "notes": "Número de página."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p38/fig-01",
+      "slug": "glosario-doble-columna-A-a-M",
+      "type": "infographic",
+      "bbox_pct": {"x": 5, "y": 3, "w": 90, "h": 92},
+      "description_detailed": "La página entera está dedicada al glosario de términos del juego Kódem TCG, organizado en dos columnas verticales de igual ancho con separación central. Tipografía sans-serif en negro sobre fondo blanco/cremoso del papel. Cada entrada inicia con una viñeta circular sólida (•) pegada a la palabra definida, la cual aparece en negrita. Después viene el tipo de término en cursiva ('Efecto', 'Carta', 'Marca', 'Acción de Turno', 'Subfase', 'Equipo'), seguido de la definición en texto normal. Las referencias cruzadas aparecen siempre al final entre paréntesis en cursiva con formato '(Ver X.Y. Nombre)'.\n\nLa columna izquierda abarca desde la letra A (Activa, Activa-Rápida, Adendei, Atacar) pasa por B (Bio) y C (Campo, Cambiar, Carta Aliada, Carta Rival, Colocar en campo, Copiar, Costo, Curar) hasta llegar al inicio de D (Daño, Daño por Ataque).\n\nLa columna derecha continúa con D (Daño por efecto, Daño por marca, Declaración, Declarar un ataque, Declarar un efecto, Descender, Desviar), E (Eliminar, Ecosistema, Envenenar, Equipo, Escalar), F (Feralizar), I (Ixim) y termina con M (Marca).\n\nEl diseño del glosario mantiene la consistencia visual del rulebook con márgenes amplios y ninguna ilustración o icono adicional dentro del contenido del glosario. No hay banners de sección en esta página ya que la sección 9 fue introducida en la página 37.\n\nEn la esquina inferior derecha se observa el número de página '38' sobre fondo azul institucional, manteniendo el patrón de paginación del documento.",
+      "embedded_text": [
+        "Activa", "Activa-Rápida", "Adendei", "Atacar", "Bio", "Campo", "Cambiar",
+        "Carta Aliada", "Carta Rival", "Colocar en campo", "Copiar", "Costo", "Curar",
+        "Daño", "Daño por Ataque", "Daño por efecto", "Daño por marca", "Declaración",
+        "Declarar un ataque", "Declarar un efecto", "Descender", "Desviar", "Eliminar",
+        "Ecosistema", "Envenenar", "Equipo", "Escalar", "Feralizar", "Ixim", "Marca",
+        "38"
+      ],
+      "relation_to_text": "Esta figura ES el texto principal de la página; es el cuerpo del glosario organizado visualmente en dos columnas.",
+      "legibility": "clear",
+      "legibility_notes": "Texto plenamente legible en la extracción."
+    },
+    {
+      "anchor": "p38/fig-02",
+      "slug": "numero-pagina-38",
+      "type": "icon",
+      "bbox_pct": {"x": 90, "y": 95, "w": 8, "h": 4},
+      "description_detailed": "Número de página '38' en la esquina inferior derecha sobre fondo azul oscuro institucional. Elemento gráfico repetitivo del diseño editorial del rulebook.",
+      "embedded_text": ["38"],
+      "relation_to_text": "Indicador de paginación.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página íntegra de glosario en doble columna. Abarca desde 'Activa' hasta 'Marca'. Todas las entradas siguen patrón: viñeta • + término en negrita + tipo en cursiva + definición + referencia cruzada en cursiva.",
+  "self_confidence": 0.88
+}

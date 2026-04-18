@@ -1,0 +1,53 @@
+5.3 REEMPLAZO DE CARTAS
+
+1. Cuando una carta deja su espacio en la Zona Principal, el ¡jugador tomará 3 cartas del Mazo Princi-
+pal, y elegirá 1 para reemplazarla. La carta elegida se colocará en el espacio vacío, revelada (boca
+arriba) u oculta (boca abajo), y con 6 puntos de vida. Las 2 cartas restantes se regresarán al fondo del
+Mazo Prinicipal en cualquier orden. Esta accion se repetirá por cada carta que haya dejado el campo.
+
+2. Siempre que una carta (que no sea un equipo) deje la Zona Principal, deberá colocarse una carta
+suplente inmediatamente, antes de declarar cualquier otro efecto, excepto si se trata de un efecto
+
+que haya sido declarado antes de que la carta dejase el campo, en cuyo caso podrá terminar de
+resolverse antes de realizar el reemplazo.
+
+3. En ningún momento se pueden usar como suplentes cartas rivales.
+
+4. Si un Protector es enviado a Extinción, podrá ingresar tu Protector suplente conservando los
+mismos descansos que tenía el Protector anterior y 12 puntos de vida.
+
+5. Si un jugador no puede colocar ninguna carta en el campo al realizar un reemplazo, deberá
+mostrar las cartas tomadas al oponente y colocarlas en la parte inferior del mazo. Los efectos de esas
+cartas tomadas no podrán usarse durante ese turno. Luego, el jugador realizará la acción de
+reemplazo nuevamente. Esta acción puede repetirse un máximo de 2 veces. Si después del tercer
+
+reemplazo el jugador aún no puede colocar una carta en el campo, perderá la partida
+Inmediatamente.
+
+6. Si un jugador se queda sin cartas en su Mazo Principal, deberá colocar todas las cartas fuera del
+
+juego (excepto Tokens) que originalmente estaban en la Zona Principal, en la parte inferior del Mazo
+Principal.
+
+7. En Kódem, algunas cartas tienen efectos válidos al ser tomadas. Un efecto de este tipo solo puede
+usarse una vez por cada reemplazo de cartas.
+
+NAN 6. INTERACCIONES Y EFECTOS 4p
+
+IMPORTANTE: Se aplicaran en todo momento los lineamientos de este documento a menos que el
+texto de una carta indique EXPLICITAMENTE LO CONTRARIO.
+
+EJEMPLOS DONDE SÍ APLICA:
+
+"LIBRO DE REGLAS: Los Tokens no pueden ser ocultados. / EFECTO DE CARTA: Oculta un Token rival.
+
+"LIBRO DE REGLAS: No se puede curar una carta con O puntos de vida. / EFECTO DE CARTA: Cura 1 pto.
+a 1 carta con O ptos de vida.
+
+EJEMPLOS DONDE NO APLICA:
+
+"LIBRO DE REGLAS: Los Tokens no pueden ser ocultados. / EFECTO DE CARTA: Oculta 1 carta rival.
+
+pe DE REGLAS: No se puede curar una carta con O puntos de vida. / EFECTO DE CARTA: Cura 1 pto.
+a l carta.
+

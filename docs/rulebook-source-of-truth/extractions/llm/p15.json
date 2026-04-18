@@ -1,0 +1,252 @@
+{
+  "page": 15,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:55:00-06:00",
+  "title": "4. Preparación del Ecosistema",
+  "section_refs": ["§4"],
+  "text_blocks": [
+    {
+      "anchor": "p15/b01",
+      "heading": "4. Preparación del Ecosistema",
+      "text": "4. Preparación del Ecosistema",
+      "position": "top",
+      "notes": "Large blue banner header with diagonal chevron decorations on both sides."
+    },
+    {
+      "anchor": "p15/b02",
+      "heading": null,
+      "text": "**¡Prepara tu Ecosistema para el combate!** Tu *Ecosistema* de juego incluye todos los elementos de tu tablero y las **Zonas** que lo conforman. En **ningún momento**, las cartas podrán colocarse en otros espacios fuera de sus zonas designadas. **Ejemplo:** los Token no pueden ir en el Mazo Principal, ni los *Adendei* en la Zona de Equipo.",
+      "position": "top",
+      "notes": "Intro paragraph below the banner."
+    },
+    {
+      "anchor": "p15/b03",
+      "heading": null,
+      "text": "¡En Kódem **cada carta es única, así que no puedes llevar copias**! (En el Modo de Juego Estándar).",
+      "position": "top",
+      "notes": "Emphasis line continuing the intro."
+    },
+    {
+      "anchor": "p15/b04",
+      "heading": "1. Elige:",
+      "text": "**1. Elige:**",
+      "position": "middle-left",
+      "notes": "Numbered step header, top step of the preparation sequence."
+    },
+    {
+      "anchor": "p15/b05",
+      "heading": null,
+      "text": "· **15-24** *Adendei*\n· **0-2** *Rava*\n· **1-2** *Protectores*\n· **0-1** *Bio*\n· **0-5** *Ixim*\n· **0-5** *Rot*\n· Los *Token* que quieras",
+      "position": "middle-left",
+      "notes": "Bullet list of deck-component ranges for step 1."
+    },
+    {
+      "anchor": "p15/b06",
+      "heading": null,
+      "text": "**2.** Selecciona **3** cartas de *Adendei* y colócalas *ocultas* (boca abajo) en los **3** espacios de tu *Zona Principal*. Estas serán las cartas con las que iniciarás tu partida.",
+      "position": "middle",
+      "notes": "Step 2 instruction block."
+    },
+    {
+      "anchor": "p15/b07",
+      "heading": null,
+      "text": "**3.** Selecciona **15-21** *Adendei*, **0** - **2** *Rava* **y 0 o más Espectros**: Este será tu *Mazo Principal* e irá colocado boca abajo en el orden que desees en la *Zona de Mazo*, considerando que las cartas se tomarán en **tercias** desde su tope para elegir una carta de reemplazo para cuando una de tus cartas deje la *Zona Principal*. Su tamaño no podrá rebasar el límite de 24 cartas totales entre *Adendei* y Espectros.",
+      "position": "middle-right",
+      "notes": "Step 3 instruction block."
+    },
+    {
+      "anchor": "p15/b08",
+      "heading": null,
+      "text": "**4.** Selecciona **1** o **2** *Protectores* y colócalos boca abajo y girado 180° en la zona de *Protector*, esto indica que tu *Protector* comenzará con **3** *descansos*. Ten en cuenta que harás más uso del *Protector* que coloques en el tope.",
+      "position": "middle-left",
+      "notes": "Step 4 instruction block."
+    },
+    {
+      "anchor": "p15/b09",
+      "heading": null,
+      "text": "**5.** Selecciona **0** o **1** *Bio* y colócalo boca abajo en la Zona de Bio. Ten en cuenta que solamente podrás llevar uno en todo el juego.",
+      "position": "bottom",
+      "notes": "Step 5 instruction (paired with ecosystem board diagram)."
+    },
+    {
+      "anchor": "p15/b10",
+      "heading": null,
+      "text": "**6.** Selecciona **0** a **10** *Equipos* (máximo **5** *Ixim* y máximo **5** *Rot*) y colócalos boca abajo en la *Zona de Equipo*. Estos no se tomarán del tope, sino que los seleccionarás cuando llegue el momento de equipar tus cartas *(Ver 5. Fases del Turno)*.",
+      "position": "bottom",
+      "notes": "Step 6 instruction."
+    },
+    {
+      "anchor": "p15/b11",
+      "heading": null,
+      "text": "**7.** La Extinción será la Zona a la que irán tus cartas una vez que se hayan llegado a **0** puntos de vida o cuando una carta lo indique. Las cartas en Extinción se consideran de información pública por lo que las cartas en Extinción deberán estar reveladas.",
+      "position": "bottom",
+      "notes": "Step 7 instruction about Extinción zone."
+    },
+    {
+      "anchor": "p15/b12",
+      "heading": "Condición de Victoria",
+      "text": "**Condición de Victoria:** Si logras enviar **10** cartas del rival a su Zona de Extinción o cumplir condiciones de victoria que se indiquen el texto de las cartas: *¡GANARÁS EL JUEGO!*\nTodas las cartas en Extinción cuentan: *Adendei, Rava, Bio, Rot, Ixim y Protectores* a excepción de los *Token*.",
+      "position": "bottom",
+      "notes": "Victory condition block closing the page."
+    },
+    {
+      "anchor": "p15/b13",
+      "heading": null,
+      "text": "PROTECTOR",
+      "position": "diagram",
+      "notes": "Zone label on the ecosystem board diagram (left side)."
+    },
+    {
+      "anchor": "p15/b14",
+      "heading": null,
+      "text": "ADENDEI",
+      "position": "diagram",
+      "notes": "Zone label on the ecosystem board diagram (upper-center)."
+    },
+    {
+      "anchor": "p15/b15",
+      "heading": null,
+      "text": "MAZO",
+      "position": "diagram",
+      "notes": "Zone label on the ecosystem board diagram (upper-right)."
+    },
+    {
+      "anchor": "p15/b16",
+      "heading": null,
+      "text": "ZONA PRINCIPAL",
+      "position": "diagram",
+      "notes": "Zone label on the ecosystem board diagram (center)."
+    },
+    {
+      "anchor": "p15/b17",
+      "heading": null,
+      "text": "BIO",
+      "position": "diagram",
+      "notes": "Zone label on the ecosystem board diagram (center, below Adendei)."
+    },
+    {
+      "anchor": "p15/b18",
+      "heading": null,
+      "text": "EXTINCIÓN",
+      "position": "diagram",
+      "notes": "Zone label on the ecosystem board diagram (lower-left)."
+    },
+    {
+      "anchor": "p15/b19",
+      "heading": null,
+      "text": "EQUIPO",
+      "position": "diagram",
+      "notes": "Zone label on the ecosystem board diagram (lower-right)."
+    },
+    {
+      "anchor": "p15/b20",
+      "heading": null,
+      "text": "15",
+      "position": "bottom-right",
+      "notes": "Page number in dark rounded badge."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p15/fig-01",
+      "slug": "chapter-banner-preparacion-del-ecosistema",
+      "type": "infographic",
+      "bbox_pct": {"x": 0, "y": 0, "w": 100, "h": 6},
+      "description_detailed": "Full-width horizontal chapter banner with a blue-to-dark-blue gradient background. Both ends carry diagonal chevron/slash decorative motifs in varying tones of blue and cyan creating a dynamic speed-line effect. The centered title '4. Preparación del Ecosistema' is set in bold white serif text.\n\nBanner style is more emphatic than the rounded §3.x sub-badges used on previous pages, signaling that Chapter 4 is a higher-level division of the rulebook than the subsections. The slash motif is repeated on page 16 ('5. Fases del Turno') confirming it is the Chapter-level visual mark.",
+      "embedded_text": ["4. Preparación del Ecosistema"],
+      "relation_to_text": "Opens Chapter 4.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p15/fig-02",
+      "slug": "card-deck-3d-stack",
+      "type": "illustration",
+      "bbox_pct": {"x": 40, "y": 19, "w": 35, "h": 20},
+      "description_detailed": "A 3D rendered stack of Kódem cards shown in perspective, fanned to suggest depth. The topmost card is dark (near-black) with a textured stone-like surface and displays the 'KÓDEM' game logo in teal/cyan at its center along with a small emblem.\n\nThe stack is paired with a large cyan curly bracket on its left, visually grouping it with the bulleted deck-composition list and suggesting that the list defines what goes into 'this' deck of cards. The stack acts as flavor illustration for the deck-building step (step 1).",
+      "embedded_text": ["KÓDEM"],
+      "relation_to_text": "Supports step 1 ('Elige:') by visualizing the physical deck produced by the selected card counts.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Logo visible but card texture details are dark and small."
+    },
+    {
+      "anchor": "p15/fig-03",
+      "slug": "cyan-curly-bracket",
+      "type": "icon",
+      "bbox_pct": {"x": 36, "y": 19, "w": 4, "h": 22},
+      "description_detailed": "Large cyan/teal curly brace '{' rendered as a bold typographic/illustrative element connecting the step-1 bullet list on the left to the card-deck illustration on the right. Acts as a visual equals-sign: bullet totals on the left 'equal' the deck illustration on the right.",
+      "embedded_text": [],
+      "relation_to_text": "Visual connector between the numeric bullet list and the deck illustration.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p15/fig-04",
+      "slug": "ecosystem-board-diagram",
+      "type": "diagram",
+      "bbox_pct": {"x": 11, "y": 48, "w": 85, "h": 34},
+      "description_detailed": "Large ecosystem-board diagram showing the full Kódem TCG play mat in a deep purple/magenta background with orange accents. A fantasy dragon-like silhouette provides atmospheric background art.\n\nZone layout (as labeled in white bold caps):\n- PROTECTOR — left side, upper-left area, outlined with a bracket and a numbered scale (1–12) indicating descanso track positions\n- ADENDEI — three card slots side by side in the upper-center, each with its own 1–6 numbered descanso scale\n- MAZO — right side, upper-right area, with simple label and bracket outline\n- BIO — center, just below the Adendei slots, marked with a small blue dot indicator\n- ZONA PRINCIPAL — large rectangular central area outlined in cyan/teal containing the Adendei slots and Bio position\n- EXTINCIÓN — lower-left corner, orange bracket outline\n- EQUIPO — lower-right corner, orange bracket outline\n\nBlue dot callouts connect several zone labels to explanatory text paragraphs (steps 5, 6 and 7) distributed around the diagram. The overall aesthetic uses purple base with cyan and orange accent strokes; all zone names are rendered in bold white caps for maximum legibility against the dark backdrop.\n\nThe diagram is the physical counterpart to the numbered-steps list: each step on the page (2 through 7) corresponds to one or more zones highlighted on the board.",
+      "embedded_text": ["PROTECTOR", "ADENDEI", "MAZO", "ZONA PRINCIPAL", "BIO", "EXTINCIÓN", "EQUIPO"],
+      "relation_to_text": "Primary visual reference for the entire preparation procedure; every numbered step (2–7) ties to one of the labeled zones.",
+      "legibility": "clear",
+      "legibility_notes": "Zone labels all legible; numeric descanso scales on Protector (1–12) and Adendei (1–6) visible but small."
+    },
+    {
+      "anchor": "p15/fig-05",
+      "slug": "step-number-badge-1",
+      "type": "icon",
+      "bbox_pct": {"x": 5, "y": 17, "w": 4, "h": 3},
+      "description_detailed": "Bold dark numeral '1.' serving as the step indicator header above the first bullet list.",
+      "embedded_text": ["1."],
+      "relation_to_text": "Marks step 1 of the preparation sequence.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p15/fig-06",
+      "slug": "step-number-badge-2",
+      "type": "icon",
+      "bbox_pct": {"x": 38, "y": 32, "w": 4, "h": 3},
+      "description_detailed": "Bold dark numeral '2.' marking step 2 of the preparation sequence.",
+      "embedded_text": ["2."],
+      "relation_to_text": "Marks step 2.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p15/fig-07",
+      "slug": "step-number-badge-3",
+      "type": "icon",
+      "bbox_pct": {"x": 63, "y": 28, "w": 4, "h": 3},
+      "description_detailed": "Bold dark numeral '3.' marking step 3 of the preparation sequence.",
+      "embedded_text": ["3."],
+      "relation_to_text": "Marks step 3.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p15/fig-08",
+      "slug": "step-number-badge-4",
+      "type": "icon",
+      "bbox_pct": {"x": 2, "y": 33, "w": 4, "h": 3},
+      "description_detailed": "Bold dark numeral '4.' marking step 4 of the preparation sequence.",
+      "embedded_text": ["4."],
+      "relation_to_text": "Marks step 4.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p15/fig-09",
+      "slug": "page-number-15",
+      "type": "icon",
+      "bbox_pct": {"x": 92, "y": 95, "w": 6, "h": 4},
+      "description_detailed": "Dark navy/teal filled rounded rectangle with white bold page number '15' in the bottom-right corner.",
+      "embedded_text": ["15"],
+      "relation_to_text": "Page number indicator.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Chapter 4 opener: 'Preparación del Ecosistema'. The page is split vertically into two regions. Upper region: chapter banner, intro paragraph, and four numbered setup steps (1-4) paired with a 3D card-deck illustration and a cyan curly-brace connector. Lower region: the full ecosystem-board diagram showing 7 zones (Protector, Adendei ×3, Mazo, Zona Principal, Bio, Extinción, Equipo), paired with steps 5-7 and the 'Condición de Victoria' block. Step 2 appears visually between steps 3 and 4 in the layout grid. The diagram's descanso scales (Protector 1-12, Adendei 1-6) are visible but small. Source note: 'se indiquen el texto' (b12) transcribed verbatim (should be 'se indiquen en el texto').",
+  "self_confidence": 0.89
+}

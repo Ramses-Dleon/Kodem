@@ -1,0 +1,58 @@
+7. Restricciones para vinvular: Este
+tipo de restricciones hacen que cier-
+tas cartas no se puedan vincular. Al-
+gunas frases para identificar la restric-
+ción: “Sólo puede/podrd vincularse
+
+con...” “Se vincula sólo con...”
+
+Ejemplo de restricción para vincular
+
+8. Restricciones para resolver Efectos: A diferen- 9 i
+
+cia de las restricciones para declarar efecto, una CA IS
+
+restricción para resolver efecto sí permite que lo 142 pr Y
+
+declares, pero su restricción no permite resolver. Al] ar 4 MÁ
+Por lo general aquí se encuentran todas las nega- a ©) PC) ee E) Y
+ciones de efectos, las cartas con efectos negados EEE re
+por definicion no pueden resolver sus efectos drt promi te at tony foc y eg
+
+mientras se encuentren negados, también en
+esta categoría se encuentran las protecciones.
+
+PENALIZACIONES POR INCUMPLIR RESTRICCIONES
+
+1. Si un jugador declara un efecto o ataque ignorando una restricción, no resolverá y se perderá, es
+decir, nose podrá declarar nuevamente a otra carta durante ese turno. Además, si la carta declaró un
+ataque o Activa, no podrá equiparse durante la fase de equipos y deberá descansar al final del turno.
+
+Ejemplo de negación de efecto Ejemplo de protección
+
+2 .Si un jugador incumple una restricción, el jugador debe notificarlo al rival (y/o juez en partidas
+competitivas); se aplicará el punto 10 4, según corresponda.
+
+3. Los jugadores tienen como máximo el siguiente turno para señalar el incumplimiento de una re-
+stricción.
+
+4.Si se ignora una restricción en el turno actual o anterior, las acciones posteriores se cancelan, los
+Ecosistemas retroceden al momento previo a la infracción, y se aplica la sanción del punto 1 (si
+
+aplica).
+
+5.El incumplimiento de una restricción no reclamada durante 2 turnos (el turno de la infracción y el
+siguiente a este), hace que la acción prescriba, eximiendo de penalización (excepto en torneos/-
+juegos competitivos, donde el juez puede intervenir y penalizar a su criterio), ya que es responsabili-
+dad de los jugadores conocer las restricciones.
+
+6.En torneos oficiales, cuando un jugador ignore restricciones relteradamente se puede informar al
+juez, quien a su criterio decidirá si resuelve alguna penalización adicional; que podrá ir desde amon-
+estación verbal, carta en Extinción, pérdida de turno, pérdida de partida o hasta descalificación.
+
+‘NA 7.¿CÓMO ARMAR MI MAZO?
+
+Al comenzar a construir tu mazo de juego es importante que conozcas que existen diferentes
+estrategias que puedes contemplar para poder armarlo de una forma más rápida y eficiente. Si
+estás buscando recomendaciones para empezar a jugar, esta sección es para ti.
+

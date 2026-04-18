@@ -1,0 +1,134 @@
+ta
+
+Lt
+
+Algunas criaturas en el universo de Kódem TCG logran manifestarse a través de diferentes Esferas,
+una de ellas es la forma espectral que se encuentra ligada a la Esfera Morfeica. Las cartas Espectro
+funcionarán como dobles espectrales de personajes en el campo, poseyendo cartas para jugar con
+
+sus atributos.
+
+VIDA de e los ted == a
+maximos de vida que puede “py : SE
+
+tener una carta. Al llegar a O, la P Jeeta pul Capas Had
+
+carta se enviará a Extinción.
+
+La vida máxima de una carta se
+considera una estadística. El
+valor de vida de una carta en un
+momento dado durante el
+juego NO se considera una
+estadística.
+
+Requisito: Condición que se
+necesita cumplir para colocar
+
+NOMBRE DE LA CARTA: El
+nombre de cada carta es lo que
+la distingue de las demás. En la
+mayoría de los casos comienza
+con el nombre del personaje,
+seguido del complemento del
+nombre de la carta. El nombre
+
+del personaje no se considera
+por sí mismo el nombre de la
+carta. Por ejemplo, en la carta
+"Nánuk, Garras Heladas", el
+nombre del personaje es
+"Nánuk" y el nombre la carta es:
+"Garras Heladas".
+
+al Espectro en el campo.
+
+Va? «Jal we 1) =
+
+y. AA Vida máx. HRS, Espero
+Di EF Exa
+
+Energia: Sin energia
+
+Subtipo: Sin subtipo
+
+Efecto y Costo: Se anadira de
+forma obligatoria el de la carta
+poselda por el Espectro.
+
+Requisito: 2 o más Adendei "Nanuk" en tu
+Extinción.
+
+FOLIO: Te ayuda a saber
+el número de carta
+dentro de la expasión.
+
+DEL ARTISTA
+USO DE LOS ESPECTROS
+
+* Una carta Espectro solo podrá ser colocada en el campo si los Requisitos de cartas en Extinción marcadas
+en su texto se cumplen.
+
+- Las cartas Espectro deberán entrar reveladas al campo y no podrán ser ocultadas.
+
+* En tu Fase Previa, un Espectro puede poseer una (solo una) de las cartas mencionadas en su Requisito, en-
+viando a un Adendel aliado en Zona Principal original a Extinción sin que esto se considere un costo.
+
+- El Espectro deberá usar su propio Efecto, así como el Efecto, Daño, Descanso, Costo y Energia de la
+carta Poseída como si fueran suyos. Sin embargo, no se considera que el efecto esté siendo copiado.
+
+* Las cartas Espectro no tienen un daño definido mas que el de la carta que posean.
+
+- Si una carta Espectro no tiene poseída a una carta para causar daño, deberá pagar el doble de puntos de
+vida a las cartas aliadas en su Zona Principal original por cada punto de daño que ¡intente infligir.
+
+- Las cartas Espectro no se pueden cambiar de jugador.
+
+« Si un Espectro es intercambiado por una carta fuera del campo que no sea un Espectro, la nueva carta
+tendrá los mismos puntos de vida que el Espectro, hasta un máximo de 6 puntos.
+
+CARTAS POSEÍDAS
+
+Poseer significa colocar una carta de Extinción bajo una carta en el campo.
+
+Las carta poseída se colocará debajo del Espectro en Zona Principal.
+
+- Las cartas que hayan sido poseídas se consideran de este tipo (poseídas) perdiendo su tipo y subtipo origi-
+nal mientras se encuentren sobre un Espectro.
+
+« Siun Espectro abandona el campo, su carta Poseída ira a Extinción.
+
+* La unica zona donde pueden existir cartas poseídas es la Zona Principal.
+
+*« Cuando una carta poseída es enviada a Extinción, regresa a su tipo y subtipo originales, por lo tanto,
+pueden disparan los efectos normales que requieran que Adendel, Ixim, Rot, etc. sean enviados a Extinción.
+
+GENERALIDADES
+
+« Se podrán incluir cualquier número de cartas Espectro en el Mazo,
+respetando un máximo de 24 cartas Adendel y Espectros en el Mazo
+Principal, aunque se recomienda llevar máximo 4.
+
+* Una carta Espectro tendrá la vida máxima marcada en su texto.
+
+ASS
+
+DAS
+> y AY y,
+
+Daño: Dependerá
+de la carta poseída. -
+
+NOMBRE CIENTÍFICO DEL ANIMAL,
+PLANTA O MINERAL:
+
+Los personajes de Kodem están
+inspirados en flora, fauna y
+
+Q Kédem TCG O
+
+minerales principalmente en
+peligro de extinción, en este
+apartado podrá conocer la base
+científica del personaje.
+

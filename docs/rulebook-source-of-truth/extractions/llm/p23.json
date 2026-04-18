@@ -1,0 +1,178 @@
+{
+  "page": 23,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:05:00-06:00",
+  "title": "6.3 Protección",
+  "section_refs": ["§6.3", "§6.4", "§6.5"],
+  "text_blocks": [
+    {
+      "anchor": "p23/b01",
+      "heading": "6.3 Protección",
+      "text": "6.3 Protección",
+      "position": "top",
+      "notes": "título de subsección"
+    },
+    {
+      "anchor": "p23/b02",
+      "heading": null,
+      "text": "Una carta está protegida si el efecto de otra carta lo indica. También se considera \"proteger\", cualquier carta que evite ataques y/o efectos de otras cartas hacia la carta protegida. Las cartas protegidas no podrán ser objetivo de ataques incluyendo los ataques de cartas abismadas, desvios de ataques y daños por ataque.",
+      "position": "top",
+      "notes": null
+    },
+    {
+      "anchor": "p23/b03",
+      "heading": null,
+      "text": "• Si el efecto de carta A que protege a carta B, es negado entonces la carta B deja de estar protegida.",
+      "position": "top-middle",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p23/b04",
+      "heading": null,
+      "text": "• Si un protector equipado es cambiado por el protector suplente y el protector suplente no es compatible con el equipo, el equipo regresara a Zona de equipos.",
+      "position": "top-middle",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p23/b05",
+      "heading": "6.4 Tipos de Daño",
+      "text": "6.4 Tipos de Daño",
+      "position": "middle",
+      "notes": "título de subsección"
+    },
+    {
+      "anchor": "p23/b06",
+      "heading": null,
+      "text": "Existen diferentes tipos de daño, es importante saber distinguirlos ya que pueden interactuar de formas distintas con los efectos de tus cartas, en esta sección analizaremos cada uno de ellos:",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p23/b07",
+      "heading": "Daño por Ataque",
+      "text": "1. Daño por Ataque: El total de daños que se declara durante un ataque, incluyendo daño aumentado y daño adicional siempre que el efecto de una carta mencione \"ataca\", \"aumenta el daño\" o \"daña adicionalmente\".",
+      "position": "middle",
+      "notes": "entrada numerada"
+    },
+    {
+      "anchor": "p23/b08",
+      "heading": null,
+      "text": "El orden para considerar el daño (base, aumentado y adicional) es el siguiente:",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p23/b09",
+      "heading": null,
+      "text": "•Primero, el daño base, que es el daño indicado en las estadísticas.",
+      "position": "middle",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p23/b10",
+      "heading": null,
+      "text": "•Segundo, el daño aumentado, que incrementa temporalmente el daño base y se añade a este.",
+      "position": "middle",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p23/b11",
+      "heading": null,
+      "text": "•Tercero, los multiplicadores de daño, que se consideran daño aumentado y se aplican al daño base más el daño aumentado. Los multiplicadores de daño pueden ser acumulativos.",
+      "position": "middle-bottom",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p23/b12",
+      "heading": null,
+      "text": "• Por último, el daño adicional, que se suma después del daño aumentado y no modifica el daño base ni se considera parte del daño aumentado.",
+      "position": "middle-bottom",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p23/b13",
+      "heading": "Daño por Efecto",
+      "text": "2. Daño por Efecto: Cualquier daño que no provenga directamente de la estadística de daño de una carta o que provenga de cualquier efecto que no mencione \"ataca\", \"aumenta el daño\" o \"daña adicionalmente\" en su texto. Si una carta no menciona a qué carta se aplica el daño por efecto, aplicará sólo a la carta declarada para el ataque.",
+      "position": "middle-bottom",
+      "notes": "entrada numerada"
+    },
+    {
+      "anchor": "p23/b14",
+      "heading": "Daño por Costo",
+      "text": "3. Daño por Costo: Daños que se realizan para poder resolver la declaración de un ataque y/o efecto.",
+      "position": "bottom",
+      "notes": "entrada numerada"
+    },
+    {
+      "anchor": "p23/b15",
+      "heading": "Daño por Marca",
+      "text": "4. Daño por Marca: Daño que se realiza como parte de una marca.",
+      "position": "bottom",
+      "notes": "entrada numerada"
+    },
+    {
+      "anchor": "p23/b16",
+      "heading": "6.5 Cambios entre Zonas",
+      "text": "6.5 Cambios entre Zonas",
+      "position": "bottom",
+      "notes": "título de subsección"
+    },
+    {
+      "anchor": "p23/b17",
+      "heading": null,
+      "text": "En Kódem TCG©, la posición de tus cartas con respecto a las cartas rivales es importante, por lo que existen cartas que permiten cambiar su lugar en el campo.",
+      "position": "bottom",
+      "notes": null
+    },
+    {
+      "anchor": "p23/b18",
+      "heading": null,
+      "text": "• Si una o más cartas son intercambiadas en la Zona Principal, las cartas cambiadas conservarán las mismas estadísticas y condiciones que tenían originalmente antes del cambio (incluyendo equipos y vida).",
+      "position": "bottom",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p23/b19",
+      "heading": null,
+      "text": "• Si la situación de juego impide que una carta conserve sus estadísticas y condiciones actuales, no se podrá realizar el cambio.",
+      "position": "bottom",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p23/b20",
+      "heading": null,
+      "text": "• Si una carta aliada que ha sido cambiada, se encuentra en el campo del rival y llega a 0 puntos de vida, se colocará en la Extinción de su jugador original.",
+      "position": "bottom",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p23/b21",
+      "heading": null,
+      "text": "• Cualquier equipo intercambiado a una carta, debe poder ser equipado a ese tipo de carta, de lo contrario no se podrá realizar el cambio.",
+      "position": "bottom",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p23/b22",
+      "heading": null,
+      "text": "23",
+      "position": "bottom-center",
+      "notes": "número de página (folio)"
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p23/fig-01",
+      "slug": "kuyovi-salto-electrico-ilustracion",
+      "type": "illustration",
+      "bbox_pct": {"x": 60, "y": 68, "w": 36, "h": 28},
+      "description_detailed": "Ilustración de la carta 'Kuyovi, Salto Eléctrico' en orientación vertical. El marco de la carta es oscuro, con tonos negros y grises y acabado elegante. En la parte superior aparece el nombre 'Kuyovi, Salto Eléctrico' en fuente decorativa estilizada sobre un banner/banda horizontal.\n\nLa ilustración central representa una rana estilizada de aspecto fantástico/mágico en postura erguida y majestuosa. El cuerpo es de color azul oscuro/negro con marcas luminosas de color púrpura/violeta neón que recorren la piel formando patrones geométricos y orgánicos, evocando energía eléctrica o bioluminiscencia. El fondo muestra un entorno selvático/tropical en tonos verdes oscuros con agua o reflejos, atmósfera misteriosa y nocturna.\n\nEn la parte inferior de la carta se distinguen elementos mecánicos del juego: iconos de tipo (pata de animal sugiriendo categoría Adendo/Demótica), texto de habilidades (Activa y Pasiva), estadísticas numéricas con valores 2 y 1 visibles, y el código 'LGRO-027'. También aparece el logo de Kódem TCG en la parte baja.\n\nEl estilo artístico es ilustración digital de alta calidad coherente con el resto del set, con énfasis en la bioluminiscencia y el contraste violeta/azul oscuro.",
+      "embedded_text": ["Kuyovi, Salto Eléctrico", "LGRO-027", "Kódem TCG"],
+      "relation_to_text": "Ilustración de ejemplo visual, posiblemente vinculada a la sección 6.5 (Cambios entre Zonas) o como carta asociada a la temática de la página. No parece tener una relación directa textual clara con las reglas descritas.",
+      "legibility": "clear",
+      "legibility_notes": "Texto de habilidades pequeño dentro de la carta parcialmente legible."
+    }
+  ],
+  "page_notes": "Página densa con tres subsecciones: 6.3 Protección, 6.4 Tipos de Daño, 6.5 Cambios entre Zonas (inicio). Distingue 4 tipos de daño (Ataque, Efecto, Costo, Marca) y el orden de aplicación de daño en ataques (base → aumentado → multiplicadores → adicional). Solo una ilustración de carta visible (Kuyovi). Folio '23' al pie.",
+  "self_confidence": 0.9
+}

@@ -1,0 +1,110 @@
+{
+  "page": 35,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:17:00-06:00",
+  "title": null,
+  "section_refs": ["§7", "§8", "§8.1"],
+  "text_blocks": [
+    {
+      "anchor": "p35/b01",
+      "heading": "Mazo por Mecánica",
+      "text": "Mazo por Mecánica\n\nElige tu estrategia favorita. Reúne las cartas que tengan tu mecánica favorita y ¡Manos a la obra! Algunos mazos creados por mecánica de juego son los mazos de ataque al Protector, de juego con cartas en Extinción o de juego con equipos aunque hay muchísimos más dentro de Kódem TCG©.",
+      "position": "top",
+      "notes": "Incluye símbolo de copyright ©"
+    },
+    {
+      "anchor": "p35/b02",
+      "heading": null,
+      "text": "Ejemplo de un mazo con estrategia de Ataque al Protector",
+      "position": "top",
+      "notes": "Pie de figura"
+    },
+    {
+      "anchor": "p35/b03",
+      "heading": "8. Formatos de Juego",
+      "text": "8. Formatos de Juego",
+      "position": "middle",
+      "notes": "Banner de sección principal"
+    },
+    {
+      "anchor": "p35/b04",
+      "heading": "8.1 Formato Multijugador",
+      "text": "8.1 Formato Multijugador\n\nEste modo de juego permite enfrentamientos estratégicos entre varios jugadores, hasta un máximo de 8 y se estima que el juego tomará 10 minutos por cada jugador en la partida.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p35/b05",
+      "heading": "Reglas Generales",
+      "text": "Reglas Generales\n\n1. Orden de Juego: Al iniciar la partida, el orden de turnos se determina de forma aleatoria.\n\n2. Interacción por Turno: Al comienzo de cada turno, el jugador en turno elige un jugador rival con el que interactuará exclusivamente durante ese turno y podrá elegir jugadores rivales diferentes cada turno. Los efectos de cartas y mecánicas se aplicarán únicamente entre ambos jugadores y sólo las cartas que mencionan en su texto \"jugador(es)\" , podrán interactuar con otros jugadores fuera del rival elegido al inicio de turno.\n\n3. Selección de Rivales: Cada turno, los jugadores pueden escoger a un rival diferente.\n\n4. Aplicación de Cartas y Efectos: Cualquier carta o efecto que interactúe con múltiples cartas rivales se aplicará solo al jugador rival elegido ese turno.",
+      "position": "middle",
+      "notes": "Espacio irregular preservado antes de coma: '\"jugador(es)\" ,'"
+    },
+    {
+      "anchor": "p35/b06",
+      "heading": "Variantes",
+      "text": "Variantes\n\n• Jungla: Todos los jugadores lucharán entre sí y ganará el último en pie.\n\na) Condición de Eliminación: Un jugador queda fuera de la partida al acumular 6 cartas en Extinción.\n\nb) Condición de Victoria: El último jugador en pie es el ganador de la partida.\n\n\n• Cazador: Al inicio de la partida, los jugadores elegirán un número de cartas rivales a vencer.\n\na) Condición de Victoria: El primer jugador que envíe a Extinción el número de cartas rivales acordado, será el vencedor.",
+      "position": "bottom",
+      "notes": null
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p35/fig-01",
+      "slug": "mazo-ataque-al-protector-7-cartas",
+      "type": "photo",
+      "bbox_pct": {"x": 5, "y": 10, "w": 90, "h": 15},
+      "description_detailed": "Fila horizontal compuesta por siete cartas del juego Kódem TCG dispuestas a modo de ejemplo de un mazo con estrategia de 'Ataque al Protector'. Las cartas muestran una variedad intencional de tipos que se complementan para ejercer presión directa sobre el Protector rival: al menos una carta Protector propia al inicio, varias cartas Adendei de distintos subtipos (Equino, Perro en varias versiones, un monstruo abismal grande), una carta de mecánica especial y una carta de aspecto vegetal/criatura roja enroscada.\n\nCada carta exhibe ilustraciones coloridas con fondos variados y distintos: escenario urbano/ciudad, fondo de fuego, naturaleza selvática, oscuridad submarina, fondo tecnológico azul y fondo verde selvático. Esta variedad visual refuerza el mensaje de que un mazo por mecánica no requiere homogeneidad temática sino coherencia funcional alrededor de una estrategia común.\n\nLos marcos de las cartas alternan entre blanco/gris (característico del tipo Protector) y oscuros/negros (característicos de Adendei), con indicadores numéricos de ataque y defensa visibles en las esquinas inferiores. Debajo de la fila aparece el pie de figura en cursiva que identifica este arreglo.",
+      "embedded_text": ["Dars, Inspiración", "Zagil, Ramas", "Kitze, Cola de Fuego", "Alc, Venas de Lava", "Urugg, Coloso del Terror", "Petrología Emergente", "Enroscada Escarlata", "Ejemplo de un mazo con estrategia de Ataque al Protector"],
+      "relation_to_text": "Ejemplifica visualmente la estrategia 'Mazo por Mecánica' usando el ataque al Protector como caso. Los nombres sugieren mezcla de varios subtipos pero coherentes en función.",
+      "legibility": "clear",
+      "legibility_notes": "Algunos nombres como 'Urugg' podrían ser 'Urogg' (coherente con otras menciones en p34)."
+    },
+    {
+      "anchor": "p35/fig-02",
+      "slug": "banner-seccion-8-formatos-de-juego",
+      "type": "infographic",
+      "bbox_pct": {"x": 8, "y": 28, "w": 85, "h": 6},
+      "description_detailed": "Banner rectangular utilizado como encabezado de sección principal. Mantiene la misma estética de los banners de sección usados en el manual: fondo azul en degradado (azul medio a oscuro) con líneas decorativas diagonales paralelas en blanco o celeste a ambos extremos, que generan una sensación de dinamismo y modernidad.\n\nEl texto central está en blanco con tipografía elegante en mayúsculas y un tamaño prominente. El '8.' inicial y el texto 'Formatos de Juego' están alineados horizontalmente en un solo renglón. El banner funciona como separador claro entre la sección 7 (Cómo armar mi mazo) y la nueva sección 8 dedicada a los formatos de juego alternativos.\n\nLa consistencia gráfica con otros banners del manual (como el de la sección 7) refuerza la jerarquía visual del documento y facilita la navegación al lector.",
+      "embedded_text": ["8. Formatos de Juego"],
+      "relation_to_text": "Encabezado principal que introduce la sección 8 del reglamento.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p35/fig-03",
+      "slug": "etiqueta-8-1-formato-multijugador",
+      "type": "infographic",
+      "bbox_pct": {"x": 8, "y": 36, "w": 40, "h": 4},
+      "description_detailed": "Etiqueta o pestaña ovalada/redondeada de color azul intenso con texto en blanco que marca la subsección 8.1 del reglamento. El diseño es compacto y más pequeño que los banners de sección principal, actuando como etiqueta de nivel secundario en la jerarquía visual del manual.\n\nLa tipografía es en mayúsculas/versalitas, con la pequeña numeración '8.1' a la izquierda del título 'Formato Multijugador'. El relleno azul contrasta con el blanco del texto, manteniendo alto nivel de legibilidad. Este estilo de etiqueta se repite a lo largo del manual para introducir las subsecciones.",
+      "embedded_text": ["8.1 Formato Multijugador"],
+      "relation_to_text": "Encabezado visual para la primera subsección de Formatos de Juego.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p35/fig-04",
+      "slug": "etiqueta-reglas-generales",
+      "type": "infographic",
+      "bbox_pct": {"x": 8, "y": 45, "w": 35, "h": 4},
+      "description_detailed": "Etiqueta secundaria con diseño de contorno redondeado, borde visible y fondo blanco o muy claro, que contiene el texto 'Reglas Generales' en tipografía negrita con mayúsculas versales. Actúa como separador visual dentro de la subsección 8.1 para introducir específicamente las reglas del formato multijugador.\n\nA diferencia de las etiquetas de subsección principal (como 8.1), esta etiqueta tiene un estilo más sobrio: solo contorno azul sin relleno pleno, lo que indica una jerarquía visual inferior. Sirve para agrupar las 4 reglas numeradas que vienen a continuación.",
+      "embedded_text": ["Reglas Generales"],
+      "relation_to_text": "Introduce el bloque de 4 reglas generales del Formato Multijugador.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p35/fig-05",
+      "slug": "iguana-azul-decorativa",
+      "type": "illustration",
+      "bbox_pct": {"x": 70, "y": 80, "w": 28, "h": 18},
+      "description_detailed": "Ilustración decorativa ubicada en el margen inferior derecho de la página que muestra una criatura fantástica con apariencia de iguana o lagarto de gran tamaño en tonos azul turquesa brillante. La criatura está representada en posición semierguida, con una cresta de púas doradas o amarillas que corre por su cabeza y espalda, y marcas ornamentales anaranjadas/doradas distribuidas por el cuerpo que sugieren bioluminiscencia o decoración ritual.\n\nLa expresión del personaje es feroz e intimidante, con ojos amarillos intensos, fauces abiertas mostrando dientes afilados y una musculatura bien definida que transmite poder físico. Las escamas o pelaje azulado están renderizados con efectos de luz que generan volumen y realismo.\n\nEl estilo es artístico y estilizado, coherente con la estética general de las ilustraciones de personajes del universo Kódem TCG. Al estar posicionada en el margen derecho y ocupando parcialmente el fondo inferior, la figura funciona como elemento decorativo para enriquecer visualmente la página del reglamento, más que como contenido informativo directo. No tiene texto embebido visible.",
+      "embedded_text": [],
+      "relation_to_text": "Elemento decorativo sin relación directa con el texto de reglas; probablemente un arte de un Adendei del juego usado como adorno de página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página de transición: cierra la sección 7 (Mazo por Mecánica, con ejemplo de Ataque al Protector) y abre la sección 8 'Formatos de Juego', desarrollando 8.1 'Formato Multijugador' con 4 reglas generales y dos variantes (Jungla y Cazador). La página termina con la variante 'Cazador' incompleta (continúa en p36). Decoración con ilustración de iguana/lagarto azul en margen inferior derecho.",
+  "self_confidence": 0.9
+}

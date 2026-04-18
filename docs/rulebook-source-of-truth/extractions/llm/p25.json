@@ -1,0 +1,132 @@
+{
+  "page": 25,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:30:00-06:00",
+  "title": null,
+  "section_refs": ["§6.7"],
+  "text_blocks": [
+    {
+      "anchor": "p25/b01",
+      "heading": null,
+      "text": "***Ataque Múltiple:*** También existen cartas que pueden *atacar* a más de **1** carta durante la Fase de Batalla, sin embargo, se considerará como **1** solo ataque.",
+      "position": "top",
+      "notes": "Continuación de explicación de ataque desde página previa."
+    },
+    {
+      "anchor": "p25/b02",
+      "heading": null,
+      "text": "***Gatillo de Efectos:*** El ataque también puede activar determinados efectos que lo indiquen en su texto *\"Si esta carta ataca / atacó...\"*.",
+      "position": "top",
+      "notes": null
+    },
+    {
+      "anchor": "p25/b03",
+      "heading": "6.7 EFECTOS",
+      "text": "Tus cartas tendrán diferentes efectos en el juego descritos por su texto. El texto iniciará en **negritas**, indicando su tipo de efecto. Existen dos efectos principales: **Activas** y **Pasivas**.",
+      "position": "middle",
+      "notes": "Encabezado de sección con badge naranja '6.7 EFECTOS'."
+    },
+    {
+      "anchor": "p25/b04",
+      "heading": null,
+      "text": "**Activa:** Todos los *Adendei* en el campo reciben *descansos* iguales a los indicados en su respectiva carta.",
+      "position": "middle",
+      "notes": "Ejemplo de efecto Activa (recuadro con borde rojo)."
+    },
+    {
+      "anchor": "p25/b05",
+      "heading": null,
+      "text": "**Pasiva:** Los *Adendei* rivales solo pueden ser curados por efectos de *Adendei*.",
+      "position": "middle",
+      "notes": "Ejemplo de efecto Pasiva (recuadro con borde rojo)."
+    },
+    {
+      "anchor": "p25/b06",
+      "heading": "GENERALIDADES",
+      "text": "**• Declarar un efecto:** Es la acción de decirle a tu rival que vas a utilizar el *efecto* de una carta.\n\nSi la condición de uso de un *efecto* no se cumple el *efecto* no podrá ser declarado.\n\nLos *efectos* declarados en cualquier Zona o fuera de ellas (*Ej.* cartas *tomadas* o *vivificadas*) se considerarán que resuelven como si la carta aún estuviera en dicho lugar aun si la carta ya no se encuentra en la misma zona o lugar donde se declaró el efecto.\n\nSi una carta no menciona en su texto cuando termina su efecto, terminará cuando la carta ya no se encuentre en campo.\n\n**• Resolver un efecto:** Es la acción de llevar a cabo lo que dice el efecto de la carta.\n\nLas cartas que no especifiquen **explícitamente** que su efecto se aplica cuando ellas mismas sean enviadas a Extinción, no podrán activar sus efectos cuando sean enviadas a Extinción.\n\nSi una carta deja el campo y su efecto está condicionado a \"*estar disponible*\", el efecto no continuará en uso.\n\nSólo las cartas reveladas en el campo podrán hacer uso de sus efectos.",
+      "position": "bottom",
+      "notes": "Subsección GENERALIDADES dentro de §6.7. La frase 'Si una carta no menciona...' aparece subrayada en el original."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p25/fig-01",
+      "slug": "card-ulmor-ataque-fugaz",
+      "type": "illustration",
+      "bbox_pct": {"x": 68, "y": 4, "w": 28, "h": 26},
+      "description_detailed": "Carta ilustrativa de Adendei titulada 'Ulmor, Ataque Fugaz', ubicada en la esquina superior derecha de la página. El marco de la carta es gris oscuro casi negro con acabados que evocan un marco estándar del TCG Kódem.\n\nLa ilustración central muestra una criatura acuática tentaculada de tipo pulpo/calamar, con tentáculos curvados y oscuros. En el centro de la composición destaca una forma luminosa similar a una mariposa o flor en tonos rosa-magenta brillante que contrasta con el fondo azul marino profundo. Hay partículas de luz y burbujas dispersas que sugieren un entorno submarino.\n\nLa carta incluye texto de reglas con dos efectos: una habilidad **Pasiva** que indica 'Ataca a todos los Adendei rivales' y un **Costo** que señala 'Esta carta se daña 1 pts antes de atacar'. Abajo aparece una frase de sabor en cursiva parcialmente legible. En la esquina superior izquierda se ve un icono de pata característico del tipo Adendei.\n\nLas estadísticas visibles en la parte inferior son **1** (ataque) y **0** (defensa), representadas con iconos tipo dado/escudo. La etiqueta de tipo indica 'Adendei / Ártica'.",
+      "embedded_text": ["Ulmor, Ataque Fugaz", "Adendei / Ártica", "Pasiva: Ataca a todos los Adendei rivales.", "Costo: Esta carta se daña 1 pts antes de atacar.", "1", "0"],
+      "relation_to_text": "Ejemplifica visualmente el concepto de 'Ataque Múltiple' descrito en p25/b01, ya que es una carta que ataca a más de un objetivo pero se considera un solo ataque.",
+      "legibility": "clear",
+      "legibility_notes": "Frase de sabor en cursiva parcialmente legible por tamaño."
+    },
+    {
+      "anchor": "p25/fig-02",
+      "slug": "card-ungan-aleteo-glacial",
+      "type": "illustration",
+      "bbox_pct": {"x": 8, "y": 14, "w": 28, "h": 28},
+      "description_detailed": "Carta ilustrativa de Adendei titulada 'Ungan, Aleteo Glacial', situada en la zona central-izquierda de la página. Su marco es gris oscuro al estilo de las otras cartas Kódem.\n\nLa ilustración presenta una criatura alada con aletas translúcidas en tonos azules y violetas, con un cuerpo oscuro central. La figura aparece rodeada por espirales de energía luminosa rosa-magenta y azul que sugieren movimiento giratorio rápido. El fondo es violeta/rosa intenso con destellos azules y blancos que evocan una tormenta de hielo o magia glacial.\n\nEl texto de reglas muestra un efecto **Activa** que lee 'Si esta carta ataca, tu rival no puede actualizar descansos durante su siguiente turno'. La etiqueta de tipo indica 'Adendei / Gélida'. En la esquina superior izquierda se ve el icono de pata del tipo Adendei, y hay un código/indicador de rareza en la esquina inferior.\n\nLas estadísticas visibles son **1** (ataque) y **2** (defensa). Esta carta ilustra el concepto de 'Gatillo de Efectos' porque su efecto se activa con la frase 'Si esta carta ataca...'.",
+      "embedded_text": ["Ungan, Aleteo Glacial", "Adendei / Gélida", "Activa: Si esta carta ataca, tu rival no puede actualizar descansos durante su siguiente turno.", "1", "2"],
+      "relation_to_text": "Ejemplifica el 'Gatillo de Efectos' (p25/b02) ya que su texto usa el patrón 'Si esta carta ataca...' que activa un efecto.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p25/fig-03",
+      "slug": "badge-seccion-6-7-efectos",
+      "type": "icon",
+      "bbox_pct": {"x": 6, "y": 46, "w": 20, "h": 4},
+      "description_detailed": "Etiqueta/badge bicolor de sección con forma de píldora redondeada. El lado izquierdo es un cuadrado naranja oscuro con el número '6.7' en blanco; el lado derecho es un rectángulo naranja más claro con el texto 'EFECTOS' en blanco mayúsculas. Este badge marca el inicio de la subsección 6.7 del rulebook.\n\nEs el estilo gráfico consistente usado en todo el manual para introducir secciones numeradas, con la paleta naranja/coral característica de la identidad visual de Kódem TCG.",
+      "embedded_text": ["6.7", "EFECTOS"],
+      "relation_to_text": "Marca el inicio de la sección §6.7 EFECTOS (p25/b03).",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p25/fig-04",
+      "slug": "ejemplo-efecto-activa",
+      "type": "infographic",
+      "bbox_pct": {"x": 8, "y": 52, "w": 40, "h": 8},
+      "description_detailed": "Recuadro rectangular con bordes redondeados que ilustra un ejemplo de efecto 'Activa' tal como aparecería en una carta real. El fondo es blanco/gris muy claro y el borde izquierdo tiene una línea o marca roja que resalta la palabra 'Activa:'.\n\nLa palabra 'Activa:' aparece en negritas al inicio, destacada con un contorno/subrayado rojo, seguido del texto explicativo del efecto. Este formato replica visualmente cómo se muestran los textos de efecto en las cartas del juego.",
+      "embedded_text": ["Activa: Todos los Adendei en el campo reciben descansos iguales a los indicados en su respectiva carta."],
+      "relation_to_text": "Corresponde al text_block p25/b04; es la representación visual del ejemplo de efecto Activa.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p25/fig-05",
+      "slug": "ejemplo-efecto-pasiva",
+      "type": "infographic",
+      "bbox_pct": {"x": 52, "y": 52, "w": 40, "h": 8},
+      "description_detailed": "Recuadro rectangular con bordes redondeados que ilustra un ejemplo de efecto 'Pasiva'. Mismo estilo gráfico que el ejemplo 'Activa': fondo blanco/gris claro con borde izquierdo marcado en rojo que resalta la palabra 'Pasiva:'.\n\nLa palabra 'Pasiva:' aparece en negritas con contorno/subrayado rojo al inicio, seguida del texto descriptivo. El formato imita la apariencia del texto de efecto en las cartas de juego reales.",
+      "embedded_text": ["Pasiva: Los Adendei rivales solo pueden ser curados por efectos de Adendei."],
+      "relation_to_text": "Corresponde al text_block p25/b05; es la representación visual del ejemplo de efecto Pasiva.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p25/fig-06",
+      "slug": "badge-generalidades",
+      "type": "icon",
+      "bbox_pct": {"x": 38, "y": 62, "w": 24, "h": 4},
+      "description_detailed": "Etiqueta/badge de subsección 'GENERALIDADES' con forma de píldora/cápsula alargada de bordes redondeados. A diferencia del badge de §6.7, este tiene solo contorno en naranja/coral sin relleno sólido (fondo blanco).\n\nEl texto 'GENERALIDADES' está centrado en tipografía serif mayúsculas, en color negro o naranja oscuro. Este estilo 'outline only' parece ser el formato estándar para subsecciones dentro de una sección numerada.",
+      "embedded_text": ["GENERALIDADES"],
+      "relation_to_text": "Introduce la subsección de generalidades dentro de §6.7 EFECTOS (p25/b06).",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p25/fig-07",
+      "slug": "paginador-25",
+      "type": "icon",
+      "bbox_pct": {"x": 92, "y": 95, "w": 6, "h": 4},
+      "description_detailed": "Pequeño recuadro cuadrado con esquinas redondeadas en color naranja/coral que contiene el número '25' centrado en blanco. Es el foliador/paginador estándar del rulebook, ubicado en la esquina inferior derecha de la página.",
+      "embedded_text": ["25"],
+      "relation_to_text": "Número de página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página del rulebook Kódem TCG v5.1 que cierra el tema de Ataque Múltiple y Gatillo de Efectos, e inicia la sección §6.7 EFECTOS con la introducción al sistema Activa/Pasiva y la subsección GENERALIDADES sobre cómo declarar y resolver efectos. Incluye dos cartas de ejemplo (Ulmor y Ungan) y dos recuadros de ejemplo de texto de efecto.",
+  "self_confidence": 0.88
+}

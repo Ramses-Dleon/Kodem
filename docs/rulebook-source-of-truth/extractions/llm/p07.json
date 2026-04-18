@@ -1,0 +1,221 @@
+{
+  "page": 7,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:20:00-06:00",
+  "title": "3. Tipos de Cartas — 3.1 Adendei",
+  "section_refs": ["§3", "§3.1"],
+  "text_blocks": [
+    {
+      "anchor": "p07/b01",
+      "heading": "3. Tipos de cartas",
+      "text": "3. Tipos de cartas",
+      "position": "top-header",
+      "notes": "Encabezado principal de sección dentro de banner azul con ornamentación triangular en ambos extremos."
+    },
+    {
+      "anchor": "p07/b02",
+      "heading": "3.1 Adendei",
+      "text": "3.1 Adendei",
+      "position": "top-left",
+      "notes": "Encabezado de subsección 3.1 dentro de cápsula/pastilla azul, acompañado a la derecha por un ícono de huella animal (pata) en color azul que identifica al tipo de carta Adendei."
+    },
+    {
+      "anchor": "p07/b03",
+      "heading": null,
+      "text": "Los \"Jardineros\" del planeta; guían todo aquello que no puede guiarse a sí mismo. Esta raza mística ha existido desde el inicio de formación del planeta, siendo llamados \"nahuales\", \"compañeros\", \"Kalan\" o \"animales espirituales\" por diferentes civilizaciones humanas.",
+      "position": "top",
+      "notes": "Párrafo introductorio narrativo sobre los Adendei."
+    },
+    {
+      "anchor": "p07/b04",
+      "heading": null,
+      "text": "Los Adendei se consideran tus cartas principales durante tu combate, con ellas atacarás, harás efectos y podrás reforzarlas para vencer a tu rival.",
+      "position": "top",
+      "notes": "Párrafo de rol mecánico de las cartas Adendei; la palabra 'Adendei' aparece en cursiva."
+    },
+    {
+      "anchor": "p07/b05",
+      "heading": "Nombre del Adendei",
+      "text": "Nombre del Adendei: Cada carta de Adendei es una faceta o poder del personaje, por lo que primero se indicará el nombre de este y posteriormente el resto del nombre de la carta. Algunas cartas requieren Adendei específicos para poder utilizarse.",
+      "position": "middle-left (callout superior izquierdo)",
+      "notes": "Callout morado conectado por línea al nombre en la parte superior de la carta ejemplo. 'Adendei' en cursiva."
+    },
+    {
+      "anchor": "p07/b06",
+      "heading": "Vida",
+      "text": "Vida: Cada Adendei tiene 6 puntos de vida máxima, aunque este valor no se encuentra impreso en la carta.",
+      "position": "middle-right (callout superior derecho)",
+      "notes": "Callout celeste/turquesa. 'vida máxima' en negrita cursiva; '6' en negrita. Apunta hacia la zona superior/retrato de la carta ejemplo."
+    },
+    {
+      "anchor": "p07/b07",
+      "heading": "Subtipo Tipo de Adendei",
+      "text": "Subtipo Tipo de Adendei: Algunos de los Adendei se categorizan de acuerdo con su rol, su poder, su antigüedad, etc. Este apartado indica qué subtipo de Adendei es tu carta. Ej. Titán, Abisal, Equino, Lupino, Infectado, Guardián, Kósmico, Catrin, etc.",
+      "position": "middle-left (callout medio izquierdo)",
+      "notes": "Callout naranja. Lista de ejemplos de subtipos en negrita cursiva. Apunta al banner medio de la carta donde aparece 'Adendei Titán / Demótica'."
+    },
+    {
+      "anchor": "p07/b08",
+      "heading": "Energía",
+      "text": "Energía: Para cumplir su resguardo de la vida, cada Adendei fue dotado con el poder de dominio sobre una (o más) de las 7 energías primordiales de la naturaleza en nuestro planeta, en algunos casos estas energías determinan su forma de juego durante la partida.",
+      "position": "middle-right (callout medio derecho)",
+      "notes": "Callout naranja. '7' en negrita. Apunta al ícono circular de energía en la banda media-derecha de la carta."
+    },
+    {
+      "anchor": "p07/b09",
+      "heading": "Efecto",
+      "text": "Efecto: En la caja de texto de las cartas, podremos encontrar los efectos de los Adendei: se dividen entre efectos Pasivos y Activos. Algunos Adendei no cuentan con efecto.",
+      "position": "middle-left (callout inferior izquierdo)",
+      "notes": "Callout morado. 'Pasivos y Activos' mencionados como categorías. Apunta a la caja de texto de efectos de la carta."
+    },
+    {
+      "anchor": "p07/b10",
+      "heading": "Costo",
+      "text": "Costo: Algunos Adendei requieren pagar un costo para poder atacar o usar su habilidad Activa.",
+      "position": "middle-right (callout inferior derecho)",
+      "notes": "Callout morado. Apunta al círculo de costo (1) en la parte inferior-central de la carta, junto al valor de daño."
+    },
+    {
+      "anchor": "p07/b11",
+      "heading": "Daño",
+      "text": "Daño: Indicado en su estadística, el daño puede variar por efectos que modifiquen la estadística de daño como escalar o descender (Ver 6.3 Tipos de daño).",
+      "position": "bottom-left (callout inferior)",
+      "notes": "Callout naranja. 'escalar o descender' en cursiva. 'Ver 6.3 Tipos de daño' en cursiva más pequeña. Apunta al valor numérico '2' (daño) en la parte inferior de la carta."
+    },
+    {
+      "anchor": "p07/b12",
+      "heading": "Descanso",
+      "text": "Descanso: Indicado en su estadística, un Adendei puede tener desde 0 hasta un máximo de 2 descansos.",
+      "position": "bottom-right (callout inferior)",
+      "notes": "Callout naranja. '0' y '2' en negrita. Apunta al ícono circular con flecha curva (símbolo de descanso) junto al valor '1' en la parte inferior derecha de la carta."
+    },
+    {
+      "anchor": "p07/b13",
+      "heading": "Uso de los Adendei",
+      "text": "Uso de los Adendei",
+      "position": "bottom-center (header)",
+      "notes": "Encabezado en cápsula con bordes redondeados azul, texto en small caps/versalitas."
+    },
+    {
+      "anchor": "p07/b14",
+      "heading": "Uso de los Adendei (lista)",
+      "text": "1. Oculta (coloca boca abajo) tus Adendei en Zona Principal al inicio del juego.\n2. En Fase Previa revela el número de Adendei que quieras.\n3. En Fase de Batalla puedes atacar a cartas rivales con 1 de tus Adendei.\n4. Si un Adendei atacó y/o utilizó Activa, al final de tu turno irá a descanso (Ver 5.1 Descansos)\n5. Cuando un Adendei llega a 0 puntos de vida, irá a Extinción y se reemplazará por una carta suplente (Ver 5.3 Reemplazo de cartas).",
+      "position": "bottom",
+      "notes": "Lista numerada centrada. Palabras en cursiva: Oculta, Adendei, Fase Previa, Fase de Batalla, Activa, descanso, Extinción. Referencias entre paréntesis en cursiva más pequeña."
+    },
+    {
+      "anchor": "p07/b15",
+      "heading": "Nota",
+      "text": "Nota: Para saber más sobre el uso de efectos de los Adendei te recomendamos que leas las selecciones 5. Fases del Turno y 6. Interacciones y Efectos.",
+      "position": "bottom",
+      "notes": "Nota al pie de la página. '5. Fases del Turno' y '6. Interacciones y Efectos' en versalitas/small caps cursivas. 'Nota:' en versalitas negritas."
+    },
+    {
+      "anchor": "p07/b16",
+      "heading": null,
+      "text": "7",
+      "position": "bottom-right-corner",
+      "notes": "Número de página en cápsula azul con esquina recortada."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p07/fig-01",
+      "slug": "banner-seccion-3-tipos-cartas",
+      "type": "illustration",
+      "bbox_pct": {"x": 0, "y": 0, "w": 100, "h": 6},
+      "description_detailed": "Banner horizontal decorativo en la parte superior de la página que contiene el título de la sección. El banner tiene un fondo azul marino oscuro con ornamentaciones geométricas: a ambos lados del texto central se extienden patrones de rayas diagonales blancas/azul claro en forma de triángulos escalonados que evocan motivos prehispánicos o art-decó. En el centro, dentro de un contorno azul más claro con esquinas cortadas y redondeadas, aparece el texto '3. TIPOS DE CARTAS' en versalitas blancas con tipografía serif robusta, donde la 'T' y la letra inicial de cada palabra principal son ligeramente más grandes.\n\nEl diseño del banner es coherente con el lenguaje visual del libro de reglas Kódem, funcionando como separador visual fuerte que indica el inicio de un capítulo completo dedicado a la tipología de cartas del juego. Los ornamentos laterales dan sensación de anchura y autoridad, como un estandarte ceremonial.",
+      "embedded_text": ["3. TIPOS DE CARTAS"],
+      "relation_to_text": "Encabezado de la sección 3 completa, que abarcará los tipos de cartas del juego (Adendei, Protector, etc.).",
+      "legibility": "clear",
+      "legibility_notes": "Texto blanco sobre fondo azul oscuro, contraste alto."
+    },
+    {
+      "anchor": "p07/fig-02",
+      "slug": "icono-seccion-3-1-pata-adendei",
+      "type": "icon",
+      "bbox_pct": {"x": 23, "y": 8, "w": 8, "h": 4},
+      "description_detailed": "Ícono vectorial de una huella animal (pata) en color azul vibrante, compuesto por cuatro almohadillas digitales pequeñas en forma oval dispuestas en arco sobre una almohadilla plantar central más grande de forma trapezoidal redondeada. La figura aparece justo a la derecha de la cápsula azul que contiene '3.1 ADENDEI', funcionando como símbolo/glifo identificador del tipo de carta Adendei (dado su carácter de 'animales espirituales' y 'nahuales' según la narrativa). El color es un azul cian saturado, coherente con la paleta de encabezados de Kódem.",
+      "embedded_text": [],
+      "relation_to_text": "Refuerza visualmente la sección 3.1 Adendei; el glifo de pata simboliza a los 'animales espirituales'/'nahuales' descritos en el texto introductorio.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p07/fig-03",
+      "slug": "cabecera-3-1-adendei",
+      "type": "icon",
+      "bbox_pct": {"x": 4, "y": 8, "w": 20, "h": 4},
+      "description_detailed": "Cápsula/pastilla alargada horizontal con fondo azul marino sólido y bordes redondeados. En la parte izquierda de la cápsula hay un pequeño rectángulo celeste/turquesa más claro que contiene el número '3.1' en negritas blancas. Después del número, separados por una línea diagonal decorativa, aparece la palabra 'ADENDEI' en versalitas blancas con tipografía ligeramente estilizada (serif condensada). El conjunto funciona como encabezado de nivel 2 para la subsección 3.1 sobre Adendei.",
+      "embedded_text": ["3.1", "ADENDEI"],
+      "relation_to_text": "Encabezado de la subsección 3.1 dedicada al tipo de carta Adendei.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p07/fig-04",
+      "slug": "carta-ejemplo-therz-manifestacion-fantasmal",
+      "type": "illustration",
+      "bbox_pct": {"x": 30, "y": 28, "w": 40, "h": 48},
+      "description_detailed": "Carta Adendei de ejemplo completa, centrada en la página y rodeada por callouts explicativos que señalan cada uno de sus componentes mediante líneas conectoras. La carta muestra el layout estándar de los Adendei en Kódem TCG.\n\nEn la parte superior, dentro de un banner oscuro con bordes ornamentados tipo cartucho (con terminaciones triangulares hacia adentro), aparece el nombre de la carta: 'Therz, Manifestación Fantasmal'. El nombre del personaje 'Therz' va seguido de una coma y el subtítulo descriptivo 'Manifestación Fantasmal'.\n\nEl arte central ocupa la mayor parte de la carta y muestra una figura etérea/espectral de tonos rosados y magenta sobre un fondo oscuro morado-negro. La criatura parece un ser fantasmagórico con rasgos animales-humanoides estilizados: se perciben formas alargadas, posiblemente cuernos o apéndices puntiagudos, líneas fluidas que sugieren un cuerpo inmaterial desvaneciéndose en humo/niebla. Las tonalidades van desde rosa fucsia brillante hasta magenta oscuro y toques negros. Transmite una atmósfera mística, fantasmal y algo ominosa.\n\nDebajo del arte hay una banda horizontal oscura donde, a la izquierda, hay un pequeño ícono circular de huella/pata, luego el texto 'Adendei Titán / Demótica' indicando el tipo y subtipo(s) de la carta, y a la derecha un ícono circular con el símbolo de energía (aparentemente dos puntos/ojos o símbolo de energía demótica).\n\nEn la caja de texto inferior, sobre fondo gris-azulado oscuro, aparece el efecto de la carta:\n'Activa: Muestra las primeras 3 cartas del Mazo rival, copia la Activa y costo de 1 de esas cartas mientras esta carta esté en el campo. Esas cartas no podrán usar sus efectos al ser mostradas y regresarán al fondo del Mazo rival.\nCosto: Sólo puedes usar este efecto una vez por juego.'\n\nEn el pie de la carta aparecen: a la izquierda el código 'DOOC-011' y el nombre del ilustrador 'Kundu del Castillo'; en el centro los valores de estadísticas: un círculo con '2' (daño) y un círculo con '1' (costo o descanso, con flecha curva indicando descanso); a la derecha un nombre científico en itálica pequeña ('Therizinosaurus ctelophorus' o similar) y el sello 'Kódem TCG ©'.",
+      "embedded_text": [
+        "Therz, Manifestación Fantasmal",
+        "Adendei Titán / Demótica",
+        "Activa: Muestra las primeras 3 cartas del Mazo rival, copia la Activa y costo de 1 de esas cartas mientras esta carta esté en el campo. Esas cartas no podrán usar sus efectos al ser mostradas y regresarán al fondo del Mazo rival.",
+        "Costo: Sólo puedes usar este efecto una vez por juego.",
+        "DOOC-011",
+        "Kundu del Castillo",
+        "2",
+        "1",
+        "Kódem TCG ©"
+      ],
+      "relation_to_text": "Carta anatómica de referencia para todos los callouts de la página 7 (Nombre, Vida, Subtipo, Energía, Efecto, Costo, Daño, Descanso). Es el ejemplo visual sobre el que se apoyan las definiciones de cada componente del Adendei.",
+      "legibility": "clear",
+      "legibility_notes": "La caja de texto de efectos es pequeña pero legible. El nombre científico al pie es muy pequeño; se infiere 'Therizinosaurus'-like."
+    },
+    {
+      "anchor": "p07/fig-05",
+      "slug": "callouts-anatomia-adendei",
+      "type": "infographic",
+      "bbox_pct": {"x": 3, "y": 28, "w": 94, "h": 52},
+      "description_detailed": "Sistema de callouts anatómicos alrededor de la carta ejemplo, organizados en pares a ambos lados, con líneas conectoras de colores que llegan a puntos específicos de la carta.\n\nLado izquierdo (de arriba hacia abajo):\n- Callout 'Nombre del Adendei' — recuadro con borde morado y fondo blanco, conectado por línea morada a la franja superior del nombre de la carta.\n- Callout 'Subtipo Tipo de Adendei' — recuadro con borde naranja y fondo blanco, conectado por línea naranja a la banda media con 'Adendei Titán / Demótica'.\n- Callout 'Efecto' — recuadro con borde morado y fondo blanco, conectado por línea morada a la caja de texto de efectos de la carta.\n\nLado derecho (de arriba hacia abajo):\n- Callout 'Vida' — recuadro con borde celeste/turquesa y fondo blanco, conectado por línea celeste a la zona superior del retrato de la carta.\n- Callout 'Energía' — recuadro con borde naranja y fondo blanco, conectado por línea naranja al ícono circular de energía en la banda media derecha.\n- Callout 'Costo' — recuadro con borde morado y fondo blanco, conectado por línea morada al círculo de costo ('1') en la parte inferior.\n\nParte inferior (bajo la carta):\n- Callout 'Daño' — recuadro con borde naranja, conectado al número '2' (daño) con línea naranja.\n- Callout 'Descanso' — recuadro con borde naranja, conectado al ícono de descanso con línea naranja.\n\nEl sistema de codificación por color (morado, naranja, turquesa) parece agrupar conceptualmente: morado para identidad/reglas (nombre, efecto, costo), naranja para estadísticas/atributos mecánicos (subtipo, energía, daño, descanso), turquesa para un atributo único (vida máxima).",
+      "embedded_text": [
+        "Nombre del Adendei:",
+        "Subtipo Tipo de Adendei:",
+        "Efecto:",
+        "Vida:",
+        "Energía:",
+        "Costo:",
+        "Daño:",
+        "Descanso:"
+      ],
+      "relation_to_text": "Visualización anatómica de cada componente del Adendei descrito en los bloques de texto b05 a b12.",
+      "legibility": "clear",
+      "legibility_notes": "Todos los textos de los callouts son legibles; líneas conectoras finas pero visibles."
+    },
+    {
+      "anchor": "p07/fig-06",
+      "slug": "cabecera-uso-adendei",
+      "type": "icon",
+      "bbox_pct": {"x": 28, "y": 83, "w": 44, "h": 4},
+      "description_detailed": "Cápsula/pastilla ovalada horizontal con borde azul marino grueso y fondo blanco. En el centro aparece el texto 'USO DE LOS ADENDEI' en versalitas azul marino, tipografía serif con trazos robustos. Funciona como encabezado de la subsección sobre cómo se juegan mecánicamente los Adendei. La forma redondeada y el contorno distintivo evocan un botón o etiqueta ceremonial.",
+      "embedded_text": ["USO DE LOS ADENDEI"],
+      "relation_to_text": "Encabezado de la lista numerada (b14) que explica el flujo de uso de Adendei en el juego.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p07/fig-07",
+      "slug": "numero-pagina-7",
+      "type": "icon",
+      "bbox_pct": {"x": 93, "y": 96, "w": 6, "h": 3},
+      "description_detailed": "Número de página '7' en blanco sobre una etiqueta/cápsula azul marino con la esquina superior izquierda recortada diagonalmente. Colocado en la esquina inferior derecha. Forma parte del sistema de numeración consistente del libro de reglas Kódem.",
+      "embedded_text": ["7"],
+      "relation_to_text": "Numeración de página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página de referencia anatómica para el tipo de carta Adendei. Estructura: título de sección 3, subsección 3.1, dos párrafos introductorios narrativos/mecánicos, carta ejemplo central con 8 callouts anatómicos codificados por color (morado=identidad/efectos/costo, naranja=estadísticas, turquesa=vida), y al pie una lista de 5 pasos numerados sobre el uso mecánico en el flujo de turno. Se mencionan conceptos clave: Fase Previa, Fase de Batalla, Activa, descanso, Extinción, reemplazo, subtipos (Titán, Abisal, Equino, Lupino, Infectado, Guardián, Kósmico, Catrin), 7 energías primordiales. La carta ejemplo es 'Therz, Manifestación Fantasmal' (Adendei Titán/Demótica). Se referencian las secciones 5. Fases del Turno, 5.1 Descansos, 5.3 Reemplazo de cartas, 6. Interacciones y Efectos, 6.3 Tipos de daño.",
+  "self_confidence": 0.94
+}

@@ -1,0 +1,45 @@
+CRITERIOS DE RESOLUCIÓN DE MÚLTIPLES PASIVAS
+
+Si múltiples Pasivas en cartas de ambos jugadores pueden usarse en la misma Fase y al mismo
+tiempo, la activación y resolución de los efectos alternará entre jugadores, comenzando con el jugador
+
+en turno.
+
+Nota: Durante las Fases Previa, Post, Equipos y Fin de turno, el jugador rival solo puede revelar cartas
+con Pasiva-Rápida y usarlas como respuesta (Ver Pasivas Rápidas en 6.6. Efectos), también puede usar las
+Pasivas de cartas que cumplan su condición si ya se encuentran reveladas.
+
+Después de utilizar tus cartas, la carta deberá esperar un número de turnos determinado por el
+número de la estadística de “Descansos” en la carta. Una carta en descanso no podrá usar su
+ataque ni Activa, pero sí podrá usar las Pasivas que se cumplan y podrá ser atacada. Cuando una
+carta no se encuentra en descanso se denomina “disponible”.
+
+GENERALIDADES
+
+-Las cartas Adendei, Rava y Token poseen una estadística de descanso de O a 2 máximo y no podrán
+añadirse más de 2 descansos.
+
+APLICAR DESCANSOS
+
+DISPONIBLE RS 1 DESCANSO NS
+
+ACTUALIZAR DESCANSOS
+
+.Los Protectores siempre tendrán 3 turnos de descanso (aunque no tengan indicador de esta estadisti-
+ca) y comenzarán el juego de esta forma.
+
+APLICAR DESCANSOS
+
+DISPONIBLE Ay TDESCANSO XJ  2Descansos “J 3 DESCANSOS
+
+ACTUALIZAR DESCANSOS
+
+-La declaración de Activa de las cartas equipo Rot NO aplicarán descansos para la carta Rot ni para su
+carta equipada en Fin de Turno.
+
+ACTUALIZACION DE DESCANSOS
+
+Al final del turno si se declaró ataque o Activa de una carta, esa carta deberá colocarse en los descan-
+sos especificados en la Fase de Fin de Turno y las cartas que hayan iniciado el turno en descanso actu-
+alizarán 1 descanso durante esta misma Fase hasta estar disponibles.
+

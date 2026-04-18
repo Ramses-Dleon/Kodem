@@ -1,0 +1,66 @@
+4.1 No se pueden declarar ataques a carta que no tengan estadística de vida máxima.
+
+4.2 No se puede dar descansos a cartas que no tengan estadística de descanso. Sin embargo, sí se
+pueden dar descansos a cartas que se encuentren ocultas en Zona Principal siempre que no sean
+equipos.
+
+4.3 No se puede Feralizar a una carta que no tiene Energia.
+
+44 No es posible negar un efecto de una carta que no tenga efecto.
+
+5. Sólo las cartas reveladas en el campo pueden hacer uso de sus efectos.
+
+6. Si una carta es ocultada por efecto, vuelve a sus a estadísticas base y finalizará la negación de su
+efecto si se encuentra negado.
+
+7. Aún Si una carta fue ocultada se debe resolver la declaración de su ataque.
+
+8. Las cartas ocultas no podrán resolver efectos excepto si su declaración se hizo ese turno y su reso-
+lución durará máximo hasta el final del mismo turno.
+
+9. Las cartas ocultas no se podrán considerar un tipo de carta en específico.
+
+10. Una carta que fue ocultada por efecto en el turno anterior deberá volver a declarar su efecto para
+que resuelva.
+
+11. Una carta en mano puede ser mostrada y se considerarán todas sus características y estadísticas
+impresas, una vez que la carta vuelve al Mazo Principal, o es colocada oculta en el campo, estas ca-
+racterísticas y estadísticas impresas dejan de considerarse.
+
+12. Los efectos y ataques no pueden usarse ignorando las restricciones presentes en ese momento.
+
+13. Mientras una carta tenga una marca no podrá ser objetivo de efectos o costos que coloquen la
+misma marca.
+
+14. Si hay restricciones en el campo que impidan a ambos jugadores hacer daños (de cualquier tipo)
+y donde además ambos jugadores no puedan usar efectos para salir de esta situación por más de 8
+turnos, ambos jugadores enviaran todas sus cartas en Zona Principal al fondo del Mazo y Zona de
+Equipos, cada jugador reemplazará sus cartas de forma normal.
+
+15. Es muy común el olvido de la actualización de descansos de las cartas, por lo que cuando un ju-
+gador haga notar que olvidó actualizar los descansos de alguna de sus cartas, podrá actualizar en
+ese momento dichos descansos.
+
+16. En Torneos y partidas competitivas si un jugador olvida actualizar en reiteradas ocasiones los des-
+cansos de sus cartas, es posible comentar de esta situación al juez en turno y quedará a discreción
+del juez aplicar o no alguna penalización.
+
+17. Las cartas en el Mazo Principal, no se pueden revelar (solamente se pueden mostrar) y no pueden
+tener ninguna característica o estadística particular.
+
+TIPOS DE RESTRICCIONES
+
+1. Restricciones a declarar ataques: Esta clase de limitación imposibilita que algunas cartas sean
+objetivo de ataques provenientes de otras. Algunas frases y cartas que indican esta restricción son:
+
+- “No puede ser atacada/o...”
+- “Sólo puede atacar...”
+
+- “No puede atacar...”
+
+- “No puede ser dañado...”
+
+4 Rasvel, ¡Congelado! $
+
+Ejemplos de cartas con restricciones al declarar ataque
+

@@ -1,0 +1,184 @@
+{
+  "page": 10,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:46:00-06:00",
+  "title": "3.4 Equipos: Ixim y Rot",
+  "section_refs": ["§3.4"],
+  "text_blocks": [
+    {
+      "anchor": "p10/b01",
+      "heading": "3.4 Equipos: Ixim y Rot",
+      "text": "Los Adendei tienen la capacidad de dominar el reino animal, fungi, vegetal y mineral, por lo que podrán invocar las contrapartes mágicas o naturales de cada reino como un equipo. Durante el juego, tus cartas Equipo serán los Ixim y Rot.",
+      "position": "top-left",
+      "notes": "'equipo', 'Ixim' y 'Rot' en énfasis/negrita."
+    },
+    {
+      "anchor": "p10/b02",
+      "heading": null,
+      "text": "• Ixim: Son la manifestación en el reino fungi y vegetal del ser supremo del planeta: \"El Árbol de la Savia Sagrada\".\n• Rot: Son la manifestación del \"Árbol de la Savia Sagrada\" en el reino mineral y podrás encontrarlos en bruto, durmientes o refinados como poderosas armaduras.",
+      "position": "top",
+      "notes": "Lista bullets con bullets cuadrados. 'Ixim', 'Rot', 'reino fungi', 'vegetal', 'mineral' en negrita."
+    },
+    {
+      "anchor": "p10/b03",
+      "heading": "Nombre",
+      "text": "Nombre: En la mayoría de los casos, las cartas Equipo no tienen nombre de personaje, por lo que sólo se considera el nombre de la carta. Existen algunas excepciones.",
+      "position": "middle-left",
+      "notes": "Callout morado. 'nombre de la carta' en negrita."
+    },
+    {
+      "anchor": "p10/b04",
+      "heading": "Subtipo de carta",
+      "text": "Subtipo de carta",
+      "position": "middle-center",
+      "notes": "Etiqueta que conecta con líneas al subtipo (Ixim / Rot) de ambas cartas de ejemplo."
+    },
+    {
+      "anchor": "p10/b05",
+      "heading": "Efecto",
+      "text": "Efecto: Los Ixim siempre tendrán Pasivas y los Rot siempre tendrán Activas.",
+      "position": "middle",
+      "notes": "Callout naranja. 'Pasivas' y 'Activas' en negrita."
+    },
+    {
+      "anchor": "p10/b06",
+      "heading": "Costo",
+      "text": "Costo: Algunos equipos requieren pagar un costo para poder usar sus efectos.",
+      "position": "middle-bottom",
+      "notes": "Callout naranja."
+    },
+    {
+      "anchor": "p10/b07",
+      "heading": "Uso de Equipos: Generalidades",
+      "text": "Colocar un Ixim o Rot oculto o revelado debajo de una carta hace que esa carta se considere \"equipada\".\n• Sólo los Adendei pueden ser equipados (a menos que la carta indique lo contrario).\n• Cada carta puede ser equipada con un máximo de 1 Ixim y 1 Rot o un máximo de 2 equipos ya sea que estén ocultos o revelados.\n• Si un equipo se equipa oculto, se considera \"equipo\" en lugar de Ixim o Rot específicamente.\n• Una carta puede ser equipada con 2 Ixim o 2 Rot siempre que uno de ellos se encuentre oculto.\n• Si una carta equipada es ocultada (colocada boca abajo) sus equipos regresan a la Zona de Equipos.",
+      "position": "bottom",
+      "notes": "Subtítulo en píldora azul. 'Colocar', 'equipada', '1 Ixim', '1 Rot', '2 equipos', 'oculto', 'equipo', '2 Ixim', '2 Rot', 'oculto', 'ocultada' en negrita. Bullets cuadrados."
+    },
+    {
+      "anchor": "p10/b08",
+      "heading": "Equipar",
+      "text": "Durante la Fase de Equipo (Ver 5. Fases de Turno):\n1. Elige el equipo que quieras de tu Zona de Equipos.\n2. Selecciona una carta que haya atacado o usado su Activa en Batalla.\n3. Coloca el equipo debajo de esa carta (oculto o revelado).\n4. Si una carta equipada se envía a Extinción, los equipos también son enviados a Extinción.",
+      "position": "bottom",
+      "notes": "Subtítulo en píldora azul. Lista numerada. 'Fase de Equipo', 'Batalla', 'equipo' en negrita/énfasis. Referencia a sección 5."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p10/fig-01",
+      "slug": "encabezado-3-4-equipos-ixim-rot",
+      "type": "infographic",
+      "bbox_pct": {"x": 4, "y": 3, "w": 41, "h": 5},
+      "description_detailed": "Encabezado de sección con formato de píldora azul/cian que contiene el número '3.4' y el título 'Equipos: Ixim y Rot'. Acompañado por dos pequeños iconos simbólicos a la derecha: uno azul interpretable como copo de nieve/hoja (para Ixim) y un cristal/diamante azul (para Rot), que evocan el reino vegetal/fungi y el reino mineral respectivamente.",
+      "embedded_text": ["3.4", "Equipos: Ixim y Rot"],
+      "relation_to_text": "Inicio de la subsección, ligado al bloque b01.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p10/fig-02",
+      "slug": "carta-ejemplo-ixim-ceiba-raices-cosmicas",
+      "type": "illustration",
+      "bbox_pct": {"x": 5, "y": 28, "w": 28, "h": 38},
+      "description_detailed": "Carta Ixim de ejemplo 'Ceiba, Raíces Cósmicas' con código RMR-014. Ilustración de un árbol ceiba místico con un tronco imponente y copa amplia, rodeado de luces/partículas azules y cósmicas que sugieren raíces al inframundo y copa al cosmos.\n\nLa carta muestra el layout anatómico de un Ixim: banner de nombre en la parte superior, arte centrado, caja de texto inferior con subtipo 'Ixim' y habilidad Pasiva, con cita de lore en cursiva al final.\n\nMarco en tonos vegetales/verdes consistente con el tema fungi/vegetal del Ixim. Metadata inferior con código de colección, artista (Nether_art31), copyright Kódem TCG, y nombre científico 'Ceiba pentandra'.\n\nAlrededor de la carta hay callouts: uno morado superior etiquetado 'Nombre del Ixim' apuntando al banner de nombre; uno naranja inferior apuntando al subtipo 'Ixim'.",
+      "embedded_text": [
+        "Ceiba, Raíces Cósmicas",
+        "Ixim",
+        "Pasiva: Durante tu Previa, puedes enviar este equipo a Extinción. La carta que estaba equipada escala 1 pto.",
+        "Sus raíces, al inframundo, y su copa, al cosmos...",
+        "RMR-014",
+        "Nether_art31",
+        "Kódem TCG ©",
+        "Ceiba pentandra"
+      ],
+      "relation_to_text": "Carta anatómica de referencia para el subtipo Ixim. Demuestra que los Ixim tienen Pasiva (b05).",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p10/fig-03",
+      "slug": "carta-ejemplo-rot-pruebas-de-campo",
+      "type": "illustration",
+      "bbox_pct": {"x": 63, "y": 28, "w": 29, "h": 38},
+      "description_detailed": "Carta Rot de ejemplo 'Pruebas de Campo' con código LGRO-001R. Ilustración de una figura/pieza cristalina/mineral de obsidiana con destellos púrpuras, sugiriendo una armadura o mineral bruto.\n\nLa carta muestra el layout anatómico de un Rot: banner superior de nombre, arte central, caja de texto con subtipo 'Rot' y habilidad Activa Rápida con su Costo.\n\nMarco en tonos mineral/oscuros consistente con el tema del reino mineral. Metadata inferior con código de colección, artista 'AbuShield', copyright y 'Obsidiano' como referencia al material.\n\nAlrededor de la carta hay callouts: uno morado superior etiquetado 'Nombre de la carta' apuntando al banner; uno naranja inferior apuntando al subtipo 'Rot'.",
+      "embedded_text": [
+        "Pruebas de Campo",
+        "Rot",
+        "Activa Rápida: Si una carta aliada es atacada, puedes regresar esta carta a la Zona de Equipo y negar el ataque.",
+        "Costo: Solo puedes usar esta carta 1 vez por juego.",
+        "LGRO-001R",
+        "AbuShield",
+        "Kódem TCG ©",
+        "Obsidiano"
+      ],
+      "relation_to_text": "Carta anatómica de referencia para el subtipo Rot. Demuestra que los Rot tienen Activa (b05).",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p10/fig-04",
+      "slug": "callouts-anatomicos-centrales",
+      "type": "infographic",
+      "bbox_pct": {"x": 34, "y": 31, "w": 30, "h": 45},
+      "description_detailed": "Conjunto de cuadros/callouts centrales que conectan visualmente (mediante líneas delgadas) las dos cartas (Ixim a la izquierda, Rot a la derecha) con las explicaciones anatómicas compartidas.\n\nLos callouts se diferencian por color: los morados identifican el nombre (b03 'Nombre') y los naranjas identifican el subtipo (b04 'Subtipo de carta'), el efecto (b05 'Efecto') y el costo (b06 'Costo'). Cada callout tiene contornos redondeados y flechas/líneas apuntando al elemento correspondiente en las cartas.",
+      "embedded_text": [
+        "Nombre del Ixim",
+        "Nombre de la carta",
+        "Nombre",
+        "Subtipo de carta",
+        "Ixim",
+        "Rot",
+        "Efecto",
+        "Costo"
+      ],
+      "relation_to_text": "Conectan los bloques b03-b06 con las cartas anatómicas fig-02 y fig-03.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p10/fig-05",
+      "slug": "titulo-uso-equipos-generalidades",
+      "type": "infographic",
+      "bbox_pct": {"x": 5, "y": 73, "w": 38, "h": 4},
+      "description_detailed": "Banner/título de subsección 'Uso de Equipos: Generalidades' en píldora azul/cian, estilo consistente con los subtítulos del rulebook.",
+      "embedded_text": ["Uso de Equipos: Generalidades"],
+      "relation_to_text": "Introduce el bloque de reglas b07.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p10/fig-06",
+      "slug": "titulo-equipar",
+      "type": "infographic",
+      "bbox_pct": {"x": 5, "y": 86, "w": 15, "h": 4},
+      "description_detailed": "Banner/título de subsección 'Equipar' en píldora azul/cian.",
+      "embedded_text": ["Equipar"],
+      "relation_to_text": "Introduce el procedimiento b08.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p10/fig-07",
+      "slug": "ejemplo-visual-equipar-aram",
+      "type": "photo",
+      "bbox_pct": {"x": 63, "y": 85, "w": 32, "h": 14},
+      "description_detailed": "Composición/render 3D de cartas físicas mostrando una carta Adendei (personaje Aram) con una carta de equipo colocada parcialmente debajo sobre un tapete de juego. Ilustra el acto físico de 'equipar' descrito en b08, con la carta del equipo deslizándose por debajo del borde inferior de la carta del Adendei.\n\nLa composición incluye efectos de iluminación/sombra para dar sensación de realismo y la perspectiva es ligeramente en diagonal, dejando ver el arte tanto del Adendei como del equipo.",
+      "embedded_text": [],
+      "relation_to_text": "Apoya visualmente el procedimiento del bloque b08.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p10/fig-08",
+      "slug": "numero-de-pagina-10",
+      "type": "icon",
+      "bbox_pct": {"x": 93, "y": 97, "w": 4, "h": 3},
+      "description_detailed": "Folio de paginación. Caja azul con el número '10' en blanco en la esquina inferior derecha.",
+      "embedded_text": ["10"],
+      "relation_to_text": "Número de página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Subsección 3.4. Presenta dos cartas ejemplo (Ixim 'Ceiba, Raíces Cósmicas' y Rot 'Pruebas de Campo') con callouts anatómicos compartidos. Incluye 'Uso de Equipos: Generalidades' y el procedimiento 'Equipar'. Nota importante: los Ixim siempre tienen Pasivas y los Rot siempre tienen Activas.",
+  "self_confidence": 0.93
+}

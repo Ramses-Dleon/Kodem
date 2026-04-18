@@ -1,0 +1,49 @@
+Los costos son requisitos para usar efectos o atacar y se pagan al declarar el efecto o ataque.
+
+- No se consideran efectos.
+- Un costo no puede ser pagado para más de 1 efecto al mismo tiempo.
+
+- Si el costo especifica dañar puntos de vida, las cartas deben tener al menos 1 punto de vida para que
+se considere pagado.
+
+- Los costos son pagados posterior a la Subfase de Declaración, antes de llevar a cabo el efecto/ataque.
+
+- Si un costo no especifica si se paga al atacar o al usar su efecto, se entenderá que el costo aplica al
+declarar cualquiera de las dos acciones. Si ambas acciones se declaran simultáneamente, el costo se
+
+pagará solo una vez.
+
+. Para pagar un costo que permita declarar un ataque y/o Activa, la carta deberá estar disponible.
+
+Los costos siempre deben pagarse de forma íntegra, si por algún motivo no hay posibilidad
+de pagar un costo en su totalidad no se puede declarar la acción o el efecto en cuestión.
+
+6.8 RESTRICCIONES E INTERACCIONES
+
+Existen situaciones en el juego que no permiten determinadas jugadas.
+
+Estas restricciones se dan principalmente por las interacciones de los efectos, costos o por las
+características particulares de cierto tipo de cartas por ejemplo Tokens, Protectores, etc. Dichas
+restricciones no pueden ser ignoradas una vez que se establecen. En caso de que existan 2 o más
+situaciones donde estas restricciones se contrapongan, predominará aquella restricción que se
+haya puesto primero en juego.
+
+Restringir: Bajo ciertas condiciones, se limita el uso de los efectos o condiciones de la(s) carta(s)
+restringida(s).
+
+GENERALIDADES DE LAS RESTRICCIONES E INTERACCIONES
+
+1. No pueden existir 20 más cartas con el mismo nombre, arte y/o efecto impreso en tu Mazo
+General.
+
+Ejemplo: Carta impresa con diferente arte, pero mismo nombre y efecto.
+
+2. Si un jugador tiene 2 cartas con el mismo nombre, arte y/o efecto reveladas en su Ecosistema,
+debe seleccionar una de ellas y enviarla al fondo del Mazo (Generalmente está situación se da al
+realizar cambio de cartas entre tú Zona Principal y la del rival).
+
+3. Ninguna carta ajena al jugador puede estar en su Mazo o en su Extinción.
+
+4. No se pueden seleccionar como objetivo de ataques o efectos a cartas que no tengan la carac-
+terística o estadística necesaria para aplicarlos. Ejemplos:
+

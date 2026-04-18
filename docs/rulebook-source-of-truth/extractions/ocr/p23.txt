@@ -1,0 +1,79 @@
+6.3 PROTECCIÓN
+
+Una carta está protegida si el efecto de otra carta lo indica. También se considera “proteger”, cualquier
+Carta que evite ataques y/o efectos de otras cartas hacia la carta protegida. |
+
+Las cartas protegidas no podrán ser objetivo de ataques incluyendo los ataques de cartas abismadas,
+desvíos de ataques y daños por ataque. | |
+
+- Si el efecto de carta A que protege a carta B, es negado entonces la carta B deja de estar protegida.
+
+- Si un protector equipado es cambiado por el protector suplente y el protector suplente no es compat-
+¡ble con el equipo, el equipo regresara a Zona de equipos.
+
+6.4 TIPOS DE DANO
+
+Existen diferentes tipos de daño, es importante saber distinguirlos ya que pueden interactuar de
+formas distintas con los efectos de tus cartas, en esta sección analizaremos cada uno de ellos:
+
+1. DAÑO POR ATAQUE: El total de daños que se declara durante un ataque, incluyendo daño aumenta-
+
+” tl
+
+do y daño adicional siempre que el efecto de una carta mencione “ataca”, “aumenta el daño” o “dana
+adicionalmente”.
+
+El orden para considerar el daño (base, aumentado y adicional) es el siguiente:
+
+«Primero, el daño base, que es el daño indicado en las estadísticas.
+«Segundo, el daño aumentado, que incrementa temporalmente el daño base y se añade a este.
+
+«Tercero, los multiplicadores de daño, que se consideran daño aumentado y se aplican al daño base
+más el daño aumentado. Los multiplicadores de daño pueden ser acumulativos.
+
+- Por último, el daño adicional, que se suma después del daño aumentado y no modifica el daño base
+ni se considera parte del daño aumentado.
+
+2. DAÑO POR EFECTO: Cualquier daño que no provenga directamente de la estadística de daño de una
+carta o que provenga de cualquier efecto que no mencione “ataca”, “aumenta el daño "o daña adi-
+cionalmente” en su texto. Si una carta no menciona a qué carta se aplica el daño por efecto, aplicará
+
+sólo a la carta declarada para el ataque.
+
+3. DAÑO POR CostTo: Daños que se realizan para poder resolver la declaración de un ataque y/o efecto.
+
+4. DAÑO POR MARCA: Daño que se realiza como parte de una marca.
+
+6.5 CAMBIOS ENTRE ZONAS
+
+Kuyovi, Salto Eléctrico
+
+En Kódem TCG®, la posición de tus cartas con respecto a las
+cartas rivales es importante, por lo que existen cartas que per-
+miten cambiar su lugar en el campo.
+
+« Si una O más cartas son intercambiadas en la Zona Principal,
+las cartas cambiadas conservarán las mismas estadísticas y
+condiciones que tenían originalmente antes del cambio (incluy-
+endo equipos y vida).
+
+* Si la situación de juego impide que una carta conserve sus es- ÚS TA
+7 bn > . £ . . «(0 q No
+tadísticas y condiciones actuales, no se podrá realizar el cambio. bi — ¡
+
+Activa: Cambia de lugar esta carta con
+
+cualquier carta en tu Zona Principal.
+
+| | | ¡ ; , frente a
+« Si una carta aliada que ha sido cambiada, se encuentra en el Pasiva: Si esta carta atacó a una sora "E"
+
+ella, esa carta recibe 1 descanso.
+
+campo del rival y llega a O puntos de vida, se colocará en la Ex-
+tinción de su jugador original.
+
+* Cualquier equipo intercambiado a una carta, debe poder ser
+equipado a ese tipo de carta, de lo contrario no se podrá realizar
+el cambio.
+

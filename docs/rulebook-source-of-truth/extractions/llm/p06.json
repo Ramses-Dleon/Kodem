@@ -1,0 +1,165 @@
+{
+  "page": 6,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:20:00-06:00",
+  "title": "2.2 Estadísticas de la carta",
+  "section_refs": ["§2.2", "§2.2.1", "§5.1", "§6.2"],
+  "text_blocks": [
+    {
+      "anchor": "p06/b01",
+      "heading": "2.2 Estadísticas de la carta",
+      "text": "2.2 Estadísticas de la carta",
+      "position": "top",
+      "notes": "Subsección principal que introduce las estadísticas impresas en cada carta."
+    },
+    {
+      "anchor": "p06/b02",
+      "heading": "Vida Máxima:",
+      "text": "Vida Máxima: Son los puntos máximos de vida que puede tener una carta. Al llegar a 0, la carta se enviará a Extinción. La vida máxima de una carta se considera una estadística. El valor de vida de una carta en un momento dado durante el juego NO se considera una estadística.",
+      "position": "top-left",
+      "notes": "Callout con 'NO' enfatizado en mayúsculas/negritas. Referencia a 'Extinción' como mecánica de descarte."
+    },
+    {
+      "anchor": "p06/b03",
+      "heading": "Tipo de carta:",
+      "text": "Tipo de carta:\nEj. Adendei, Ixim, Rot, Bio, Token o Protector. Algunos efectos de sólo afectan a un tipo específico de carta (Ej. \"Activa: Daña a 1 Adendei disponible.\"), mientras que otros pueden afectar a cualquier tipo de carta. (Ej. \"Activa: Daña a 3 cartas en el campo rival\").",
+      "position": "top-right",
+      "notes": "Typo preservado: 'Algunos efectos de sólo afectan' (parece faltar una palabra o sobrar 'de'). Lista taxonómica de tipos: Adendei, Ixim, Rot, Bio, Token, Protector."
+    },
+    {
+      "anchor": "p06/b04",
+      "heading": "Subtipo de carta:",
+      "text": "Subtipo de carta:\nEj. Adendei Equino, Adendei Abisal, Adendei Titán, etc.",
+      "position": "middle-right",
+      "notes": "Callout breve con ejemplos de subtipos Adendei."
+    },
+    {
+      "anchor": "p06/b05",
+      "heading": "Energía:",
+      "text": "Energía: Átlica, Pírica, Gélida, Lítica, Cháaktica, Húumica, Demótica o Feral (Ver 2.2.1 Energías)",
+      "position": "middle",
+      "notes": "Enumeración canónica de las ocho energías con referencia cruzada a 2.2.1."
+    },
+    {
+      "anchor": "p06/b06",
+      "heading": "Daño:",
+      "text": "Daño: Indica cuántos puntos de vida se reducirá la carta atacada por esta carta. Si una carta tiene un signo de interrogación \"?\" en este apartado; el daño no tiene un valor fijo y el efecto de la carta proporcionará más información respecto a esta estadística. El daño puede modificarse por efectos que lo cambien como escalar o descender (Ver 6.2. Cambios de Estadísticas).",
+      "position": "middle-left",
+      "notes": "Referencia cruzada a §6.2. Introduce verbos 'escalar' y 'descender' como modificadores de estadística."
+    },
+    {
+      "anchor": "p06/b07",
+      "heading": "Descanso:",
+      "text": "Descanso: Número de turnos que una carta tiene que esperar después de atacar o usar una Activa para estar nuevamente disponible (Ver 5.1. Descansos). Se puede encontrar un signo de interrogación \"?\" en este apartado; no tendrá un valor fijo y el efecto de la carta proporcionará más información respecto a esta estadística.",
+      "position": "middle-left",
+      "notes": "Referencia cruzada a §5.1 Descansos."
+    },
+    {
+      "anchor": "p06/b08",
+      "heading": "2.2.1 ENERGÍAS",
+      "text": "2.2.1 ENERGÍAS",
+      "position": "middle",
+      "notes": "Encabezado en versalitas que abre la subsección de energías."
+    },
+    {
+      "anchor": "p06/b09",
+      "heading": null,
+      "text": "En Kódem, puedes combinar cualquier tipo de energía para jugar, así que ¡experimenta y encuentra tu estilo!. Aunque cada Energía se relaciona con un estilo de juego distinto, el juego no restringe su uso.",
+      "position": "middle",
+      "notes": "Párrafo introductorio a las energías. Signo '¡' inicial y punto después del cierre '!' preservados."
+    },
+    {
+      "anchor": "p06/b10",
+      "heading": "ÁTLICA:",
+      "text": "ÁTLICA:\nRepresenta el control sobre la materia líquida. Su juego es fluido y adaptable, enfocándose en habilidades curativas y defensivas.",
+      "position": "middle-left",
+      "notes": "Primera energía. Palabras clave en negritas: 'materia líquida', 'curativas', 'defensivas'."
+    },
+    {
+      "anchor": "p06/b11",
+      "heading": "PÍRICA:",
+      "text": "PÍRICA:\nDominio del calor y el fuego.\nEs potencia y agresión puras, brindándote ataques alta y medianamente fuertes junto a marcas de quemadura que debilitan a tus rivales con cada golpe que intentan dar.",
+      "position": "middle-right",
+      "notes": "Typo preservado: 'ataques alta y medianamente fuertes' (concordancia rota). Introduce marcas de 'quemadura'."
+    },
+    {
+      "anchor": "p06/b12",
+      "heading": "GÉLIDA:",
+      "text": "GÉLIDA:\nControla el aire frío y el hielo. Aunque sus ataques son bajos, tiene un poderoso efecto que limita los movimientos rivales, añadiendoles descansos.",
+      "position": "middle-left",
+      "notes": "Typo preservado: 'añadiendoles' (sin tilde, debería ser 'añadiéndoles')."
+    },
+    {
+      "anchor": "p06/b13",
+      "heading": "LÍTICA:",
+      "text": "LÍTICA:\nRepresenta el poder de la materia sólida. Con alta cadencia de ataque y poder físico, esta energía puede neutralizar efectos rivales, aunque suelen ser cartas lentas.",
+      "position": "middle-right",
+      "notes": "Énfasis en 'alta cadencia', 'ataque', 'cartas lentas'."
+    },
+    {
+      "anchor": "p06/b14",
+      "heading": "CHÁAKTICA:",
+      "text": "CHÁAKTICA:\nEl dominio de la electricidad. Reflejos y velocidad caracterizan a esta energía, que permite responder ágilmente a los ataques y lanzar ofensivas constantes con descansos mínimos o nulos.",
+      "position": "bottom-left",
+      "notes": "Nombre con doble 'a' preservado: 'CHÁAKTICA'."
+    },
+    {
+      "anchor": "p06/b15",
+      "heading": "HÚUMICA:",
+      "text": "HÚUMICA:\nConecta con la vibración y dominio de los cuatro elementos. La paciencia es clave aquí; esta energía potencia tus cartas progresivamente, aumentando sus estadísticas de ataque mediante el efecto escalar, también suelen tener efectos de control.",
+      "position": "bottom-right",
+      "notes": "Nombre con doble 'u' preservado: 'HÚUMICA'. Introduce efecto 'escalar'."
+    },
+    {
+      "anchor": "p06/b16",
+      "heading": "DEMÓTICA:",
+      "text": "DEMÓTICA:\nManipula la densidad de la materia. Reposiciona tus cartas para potenciar sus efectos estratégico.\nSi eres principiante no sugerimos crear un mazo demótico ya que la energía sirve más como soporte para estrategias previas.",
+      "position": "bottom-left",
+      "notes": "Typo preservado: 'efectos estratégico' (concordancia rota, debería ser 'estratégicos')."
+    },
+    {
+      "anchor": "p06/b17",
+      "heading": "FERAL:",
+      "text": "FERAL:\nAquellos Adendei con ausencia de dominio elemental, a pesar de ello, compensan esto con poder de manada, y reacciones rápidas o altas cadencias de ataque. Dentro del juego, también se considera una Energía.",
+      "position": "bottom-right",
+      "notes": "Cierra la enumeración aclarando que Feral, aunque es 'ausencia de energía elemental', cuenta como una Energía a efectos de reglas."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p06/fig-01",
+      "slug": "card-shugg-serpiente-voraz-anatomia-stats",
+      "type": "illustration",
+      "bbox_pct": {"x": 32, "y": 10, "w": 40, "h": 38},
+      "description_detailed": "La página presenta como eje visual de la sección 2.2 un render grande de la carta 'Shugg, Serpiente Voraz', ubicada en la franja superior central. Funciona como pivote anatómico: líneas guía delgadas la conectan con los callouts periféricos que explican cada estadística (Vida Máxima, Tipo, Subtipo, Energía, Daño, Descanso).\n\nEl marco de la carta utiliza tonos grises oscuros con vetas plateadas y detalles dorados sutiles, consistente con la identidad visual de la expansión. En la franja superior hay un listón gris claro con el nombre 'Shugg, Serpiente Voraz' en tipografía serif oscura y decorativa. En la esquina superior izquierda del listón se observa el ícono de expansión (sello circular con huella); en la superior derecha, el complemento ornamental.\n\nLa ilustración principal representa a una criatura serpentiforme monumental, de tonalidades verde-azuladas con reflejos turquesas, de aspecto abisal y amenazante. Su cabeza domina el encuadre: ojos dorados brillantes, mandíbulas entreabiertas revelando colmillos y una lengua bífida insinuada; el cuerpo emerge del fondo como volutas serpenteantes. El fondo es oscuro, con destellos anaranjados/dorados que sugieren magma o luminiscencia profunda, sumando sensación de caverna abisal.\n\nBajo la ilustración, la caja de texto de la carta muestra una habilidad marcada como 'Pasiva-Rápida' con un costo asociado, seguida del flavor text en itálicas. En la franja inferior de la caja se aprecian dos iconos circulares de energía (sugiriendo combinación Abisal/Feral) flanqueando dos valores numéricos: '2' (daño) a la izquierda y '1' (descanso) a la derecha, más un símbolo adicional que corresponde a la ranura de descanso.\n\nEn la base del marco se lee el nombre científico (asociado al concepto de serpiente abisal), el folio de colección ('DOOC-015') y los créditos del artista en tipografía pequeña. Toda la carta funciona como ejemplo pedagógico: cada callout textual alrededor apunta con una flecha fina a la zona específica donde aparece impresa la estadística correspondiente.",
+      "embedded_text": ["Shugg, Serpiente Voraz", "Pasiva-Rápida", "DOOC-015"],
+      "relation_to_text": "Es la carta de ejemplo para TODA la sección 2.2 'Estadísticas de la carta'. Cada callout (b02-b07) está conectado por una línea guía a la parte correspondiente del render.",
+      "legibility": "clear",
+      "legibility_notes": "Valores numéricos y el folio legibles; los iconos pequeños de energía en la franja inferior se distinguen por color pero podrían requerir enhance para lectura ultra-precisa del símbolo interno."
+    },
+    {
+      "anchor": "p06/fig-02",
+      "slug": "iconos-ocho-energias",
+      "type": "infographic",
+      "bbox_pct": {"x": 6, "y": 52, "w": 88, "h": 44},
+      "description_detailed": "Conjunto de ocho bloques distribuidos en dos columnas (izquierda y derecha) y cuatro filas, cada uno dedicado a una Energía del juego. Cada bloque combina un ícono circular coloreado, el nombre de la energía en versalitas (p. ej. ÁTLICA) y un breve párrafo descriptivo. Los iconos comparten una silueta circular uniforme, diferenciándose por color dominante y símbolo interior; esta uniformidad funciona como leyenda visual para que el jugador reconozca el tipo de energía en cualquier carta.\n\nÁTLICA (columna izquierda, fila 1): disco azul medio con destellos celestes, símbolo interior que sugiere una gota o espiral líquida. Representa materia líquida, juego fluido, habilidades curativas y defensivas.\n\nPÍRICA (columna derecha, fila 1): disco rojo intenso con halo anaranjado, símbolo de llama estilizada. Representa fuego y calor; agresión y marcas de quemadura.\n\nGÉLIDA (columna izquierda, fila 2): disco azul pálido casi blanco con destellos plateados, símbolo de copo de nieve o cristal de hielo. Representa aire frío y hielo; limita movimientos rivales.\n\nLÍTICA (columna derecha, fila 2): disco marrón-rojizo terroso con texturas pétreas, símbolo de roca o fragmento mineral. Representa materia sólida; cartas lentas pero poderosas.\n\nCHÁAKTICA (columna izquierda, fila 3): disco violeta/púrpura eléctrico con halos luminosos, símbolo de rayo o zigzag eléctrico. Representa electricidad; reflejos, velocidad y descansos mínimos.\n\nHÚUMICA (columna derecha, fila 3): disco dorado/amarillo con destellos cálidos, símbolo que remite a los cuatro elementos o vibración (ondas concéntricas o espiral). Representa vibración y cuatro elementos; efecto escalar y control.\n\nDEMÓTICA (columna izquierda, fila 4): disco verde oscuro con matices turquesa/azulado, símbolo que sugiere densidad, átomo o espiral densa. Reposiciona cartas; recomendada para jugadores avanzados.\n\nFERAL (columna derecha, fila 4): disco gris-beige neutro, más sobrio, símbolo de huella/garra animal. Carece de dominio elemental; poder de manada y altas cadencias; cuenta como Energía.\n\nLos ocho iconos mantienen proporción idéntica y comparten una misma plantilla de marco, lo que refuerza la lectura comparativa. En conjunto constituyen el lexicón cromático que el jugador debe memorizar para identificar afiliación elemental en cualquier carta del juego.",
+      "embedded_text": ["ÁTLICA", "PÍRICA", "GÉLIDA", "LÍTICA", "CHÁAKTICA", "HÚUMICA", "DEMÓTICA", "FERAL"],
+      "relation_to_text": "Cada ícono acompaña al bloque de texto descriptivo correspondiente (b10 a b17), formando pares icono+descripción que permiten identificar visualmente cada energía.",
+      "legibility": "clear",
+      "legibility_notes": "El contraste en los iconos permite diferenciarlos por color; los símbolos internos son legibles aunque reducidos."
+    },
+    {
+      "anchor": "p06/fig-03",
+      "slug": "chevrones-decorativos-cabecera",
+      "type": "icon",
+      "bbox_pct": {"x": 2, "y": 2, "w": 96, "h": 5},
+      "description_detailed": "Banda decorativa superior idéntica en estilo a la de la página 5: chevrones azules cuneiformes flanquean el número y título de la sección '2.2 Estadísticas de la carta'. La decoración refuerza la identidad gráfica mesoamericana del manual y delimita la jerarquía visual del documento.\n\nLos chevrones son tres a cada lado del título, con color azul oscuro degradado hacia azul medio, apuntando hacia el centro del encabezado. El fondo detrás de ellos es crema-blanco con posibles texturas sutiles.",
+      "embedded_text": [],
+      "relation_to_text": "Elemento estructural/decorativo del encabezado de página; no aporta contenido normativo.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página 6 del rulebook: cubre la sección 2.2 'Estadísticas de la carta' y la subsección 2.2.1 'Energías'. La mitad superior organiza callouts anatómicos alrededor de la carta ejemplo 'Shugg, Serpiente Voraz' para enseñar las seis estadísticas (Vida Máxima, Tipo, Subtipo, Energía, Daño, Descanso). La mitad inferior presenta una retícula 2×4 con los ocho tipos de Energía del juego, cada uno con ícono cromático y descripción breve de su estilo de juego. Se preservan varios typos/rupturas de concordancia: 'Algunos efectos de sólo afectan' (b03), 'ataques alta y medianamente fuertes' (b11), 'añadiendoles' sin tilde (b12), 'efectos estratégico' (b16). Layout de dos columnas en la parte inferior con fondo blanco-crema y chevrones azules en la cabecera. Contexto del juego presente explícitamente: Adendei, Ixim, Rot, Bio, Token, Protector, Extinción, Descansos, Activa, Pasiva-Rápida, escalar/descender como modificadores de estadística, marcas de quemadura.",
+  "self_confidence": 0.9
+}

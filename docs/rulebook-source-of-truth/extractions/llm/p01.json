@@ -1,0 +1,70 @@
+{
+  "page": 1,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:50:00-06:00",
+  "title": "Kódem Trading Card Game – Libro de Reglas Oficial Versión 5.0 (Portada)",
+  "section_refs": [],
+  "text_blocks": [
+    {
+      "anchor": "p01/b01",
+      "heading": "Nombre del juego",
+      "text": "KÓDEM\nTRADING CARD GAME",
+      "position": "bottom-center",
+      "notes": "Logotipo principal con tipografía estilizada en blanco; incluye ícono de criatura/máscara dentro de la letra O"
+    },
+    {
+      "anchor": "p01/b02",
+      "heading": "Título del documento",
+      "text": "Libro de Reglas Oficial",
+      "position": "bottom-center",
+      "notes": "Tipografía grande en blanco, debajo del logotipo"
+    },
+    {
+      "anchor": "p01/b03",
+      "heading": "Versión",
+      "text": "Versión 5.0",
+      "position": "bottom-center",
+      "notes": "Texto en blanco, debajo del título del documento"
+    },
+    {
+      "anchor": "p01/b04",
+      "heading": "Copyright",
+      "text": "©2026 Adender Entretenimiento S.A. de C.V. Todos los derechos reservados",
+      "position": "bottom",
+      "notes": "Texto pequeño en la franja inferior de la página"
+    },
+    {
+      "anchor": "p01/b05",
+      "heading": "Número de página",
+      "text": "1",
+      "position": "bottom-right",
+      "notes": "Número de página en recuadro azul pequeño en la esquina inferior derecha"
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p01/fig-01",
+      "slug": "portada-ilustracion-criatura",
+      "type": "illustration",
+      "bbox_pct": {"x": 0, "y": 0, "w": 100, "h": 85},
+      "description_detailed": "Ilustración de portada digital de gran formato que ocupa aproximadamente el 85% superior de la página. Representa a una criatura fantástica de apariencia feroz y oscura, con cuerpo robusto de pelaje oscuro/negro. La criatura tiene dos cabezas visibles o una cabeza grande con múltiples rasgos: ojos que emiten un brillo amarillo-dorado intenso. Sobre su cabeza/cuerpo brotan llamas de colores variados: llamas anaranjadas y rojas predominantes a la izquierda, una llama de color azul turquesa en el centro superior, y llamas magenta/rosa en la parte derecha superior. La criatura tiene marcas o runas de color azul cian en su cuerpo, incluyendo un símbolo de luna creciente en el flanco izquierdo y pequeños glifos cuadrados. El fondo es de tonos cálidos marrones y naranjas que sugieren fuego o explosión en la parte baja. La paleta general combina oscuros profundos con acentos brillantes de fuego. El estilo es digital painting de alta calidad, reminiscente de arte de TCG japonés o coreano. La criatura parece estar en postura agresiva o de ataque, con una pata delantera extendida hacia el espectador.",
+      "embedded_text": [],
+      "relation_to_text": "Ilustración de portada del Libro de Reglas Oficial de Kódem TCG; establece la identidad visual del juego y presenta una criatura característica del universo del juego",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p01/fig-02",
+      "slug": "logotipo-kodem-tcg",
+      "type": "icon",
+      "bbox_pct": {"x": 15, "y": 78, "w": 70, "h": 12},
+      "description_detailed": "Logotipo oficial de Kódem Trading Card Game. La palabra 'KÓDEM' aparece en tipografía sans-serif bold estilizada de color blanco con borde/sombra oscura. La letra O central contiene integrado un ícono de una máscara o cara de criatura con cuernos y rasgos de fuego, en color blanco. Debajo del nombre principal, en letras más pequeñas y espaciadas, aparece 'TRADING CARD GAME' en el mismo color blanco, flanqueado por líneas decorativas horizontales que forman una especie de escudo o banner en forma de trapecio invertido. El conjunto tiene un diseño dinámico que evoca energía y fantasía.",
+      "embedded_text": ["KÓDEM", "TRADING CARD GAME"],
+      "relation_to_text": "Logotipo oficial del juego, elemento de identidad de marca en la portada",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página de portada del Libro de Reglas Oficial de Kódem TCG versión 5.0. No contiene secciones numeradas ni referencias §X.Y. El número de página '1' aparece en la esquina inferior derecha dentro de un pequeño recuadro azul. El año de copyright es 2026. NOTA: El título del documento dice 'Versión 5.0' aunque el proyecto se referencia como v5.1 — discrepancia verbatim.",
+  "self_confidence": 0.97
+}

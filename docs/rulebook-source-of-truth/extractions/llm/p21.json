@@ -1,0 +1,155 @@
+{
+  "page": 21,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:05:00-06:00",
+  "title": "6.1 Marcas",
+  "section_refs": ["§6.1"],
+  "text_blocks": [
+    {
+      "anchor": "p21/b01",
+      "heading": "6.1 Marcas",
+      "text": "6.1 Marcas",
+      "position": "top-left",
+      "notes": "título de sección, numeración destacada"
+    },
+    {
+      "anchor": "p21/b02",
+      "heading": null,
+      "text": "Algunas de tus cartas podrán colocar \"marcas\" sobre sí mismas u otras cartas en el campo. Las marcas no se consideran efectos y podrán ser eliminadas con los efectos de curación y remover marcas aplicados sobre las cartas marcadas.",
+      "position": "top",
+      "notes": null
+    },
+    {
+      "anchor": "p21/b03",
+      "heading": null,
+      "text": "En Kódem TCG© encontrarás 3 marcas:",
+      "position": "top-middle",
+      "notes": null
+    },
+    {
+      "anchor": "p21/b04",
+      "heading": "Quemar",
+      "text": "Quemar: Una carta quemada recibe 1 punto de daño cada vez que declare ataque o Activa. No se considera un daño por costo.",
+      "position": "middle",
+      "notes": "entrada de lista asociada a icono/ilustración de la marca Quemar"
+    },
+    {
+      "anchor": "p21/b05",
+      "heading": "Envenenar",
+      "text": "Envenenar: Una carta envenenada recibe 1 punto de daño en Fin del Turno de la carta envenenada.",
+      "position": "middle",
+      "notes": "entrada de lista asociada a icono/ilustración de la marca Envenenar"
+    },
+    {
+      "anchor": "p21/b06",
+      "heading": "Abismar",
+      "text": "Abismar: Una carta abismada ha sido cegada, por lo que no podrá determinar a quién atacará durante la Subfase de Declaración; deberá atacar de forma aleatoria, para ello se sugiere que, el portador asigne un valor para cada carta y se lance un dado para determinar el objetivo del ataque.",
+      "position": "middle",
+      "notes": "entrada de lista asociada a icono/ilustración de la marca Abismar"
+    },
+    {
+      "anchor": "p21/b07",
+      "heading": "Generalidades",
+      "text": "Generalidades",
+      "position": "middle-bottom",
+      "notes": "subtítulo de sección"
+    },
+    {
+      "anchor": "p21/b08",
+      "heading": null,
+      "text": "•Una carta no puede tener 2 marcas del mismo tipo, pero sí puede tener 1 marca de cada tipo.",
+      "position": "middle-bottom",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p21/b09",
+      "heading": null,
+      "text": "•Mientras una carta tenga una marca no podrá ser objetivo de efectos o costos que coloquen la misma marca.",
+      "position": "middle-bottom",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p21/b10",
+      "heading": null,
+      "text": "•A pesar de que existen efectos que colocan marcas, una marca ya colocada en una carta NO se considera un efecto.",
+      "position": "middle-bottom",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p21/b11",
+      "heading": null,
+      "text": "•Poner una marca sobre una carta a menudo requiere una condición especificada en su efecto, pero cuando se coloca, la marca persistirá aunque la condición inicial haya cambiado.",
+      "position": "bottom",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p21/b12",
+      "heading": null,
+      "text": "Ejemplo: Activa: Quema 1 Adendei rival.",
+      "position": "bottom",
+      "notes": "ejemplo en cuadro/callout"
+    },
+    {
+      "anchor": "p21/b13",
+      "heading": null,
+      "text": "Situación: Si el Adendei quemado se coloca oculto (boca abajo), la marca permanece activa. La condición sólo es necesaria para la colocación inicial de la marca y esta sólo se removerá por un efecto específico (remover marca, curación) o si la carta es enviada a Extinción.",
+      "position": "bottom",
+      "notes": "cierre de ejemplo, posiblemente en callout/ejemplo destacado"
+    },
+    {
+      "anchor": "p21/b14",
+      "heading": null,
+      "text": "21",
+      "position": "bottom-center",
+      "notes": "número de página (folio)"
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p21/fig-01",
+      "slug": "draxes-instinto-draconiano-marca-quemar",
+      "type": "illustration",
+      "bbox_pct": {"x": 62, "y": 14, "w": 30, "h": 22},
+      "description_detailed": "Ilustración de la carta del juego titulada 'Draxes, Instinto Draconiano'. La imagen muestra una criatura reptiliana/draconiana en tonos rojizos y anaranjados vívidos que dominan toda la composición. La criatura presenta rasgos imponentes propios de un dragón, con piel escamosa y silueta agresiva, enmarcada por el borde superior derecho de la página.\n\nLa carta está envuelta en un efecto visual de llamas y chispas que salen hacia los lados, representando gráficamente la marca de Quemar. El halo de fuego naranja-rojo rodea el arte central y se desdibuja hacia el fondo claro de la página, creando una sensación de combustión activa. En la esquina superior derecha de la propia carta se observa el icono identificativo de la marca Quemar (una llama estilizada sobre fondo rojo circular) que conecta visualmente el arte con la regla descrita.\n\nEl estilo artístico es ilustración digital de alta saturación cromática, con iluminación dramática y contrastes fuertes entre los rojos cálidos de la criatura y el halo ígneo. La carta sirve como ejemplo visual inmediato y complementario del texto del bullet 'Quemar', mostrando a un Adendei/criatura bajo el efecto de la marca de fuego.",
+      "embedded_text": ["Draxes, Instinto Draconiano"],
+      "relation_to_text": "Acompaña directamente la explicación del bullet 'Quemar' (b04), ilustrando visualmente cómo se ve una carta afectada por la marca Quemar mediante su icono rojo y efecto de llamas.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p21/fig-02",
+      "slug": "zenith-veneno-susurrante-marca-envenenar",
+      "type": "illustration",
+      "bbox_pct": {"x": 4, "y": 34, "w": 30, "h": 22},
+      "description_detailed": "Ilustración de la carta 'Zenith, Veneno Susurrante'. Presenta una criatura de aspecto acuático o tentacular con morfología orgánica y serpentina, renderizada en una paleta dominada por morados, violetas y magentas profundos que refuerzan la temática tóxica/venenosa.\n\nLa carta aparece envuelta en un halo de humo o niebla púrpura que se esparce desde el arte central hacia los bordes, simulando emanaciones tóxicas. La bruma violácea presenta remolinos y partículas suspendidas, creando una atmósfera densa y amenazante. En la esquina superior derecha de la carta se aprecia el icono de la marca Envenenar (una gota/veneno de color púrpura), que referencia directamente el estado aplicado.\n\nEl estilo artístico es ilustración digital detallada con gradientes suaves entre violetas claros y oscuros, y contraste con el fondo blanco de la página que hace destacar la criatura y su aura. La imagen cumple función didáctica: sirve de referencia visual al bullet 'Envenenar', mostrando la apariencia característica de una carta bajo esa marca.",
+      "embedded_text": ["Zenith, Veneno Susurrante"],
+      "relation_to_text": "Acompaña la explicación del bullet 'Envenenar' (b05), mostrando visualmente el estado de Envenenado con el icono morado y la niebla púrpura alrededor de la criatura.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p21/fig-03",
+      "slug": "yogg-surgimiento-marca-abismar",
+      "type": "illustration",
+      "bbox_pct": {"x": 62, "y": 40, "w": 30, "h": 22},
+      "description_detailed": "Ilustración de la carta 'Yogg, Surgimiento'. Muestra una criatura oscura de aspecto abisal y enigmático, con morfología que sugiere origen en profundidades marinas o dimensionales. La paleta dominante combina azules oscuros, negros y grises fríos, evocando profundidad y penumbra.\n\nAlrededor de la carta se extiende un efecto de humo o niebla grisácea-oscura con matices apenas perceptibles, que simulan sombras vivas o emanaciones abisales. Los bordes del efecto son difusos, mezclándose con el fondo blanco de la página de forma gradual. En la esquina superior derecha de la carta aparece el icono de la marca Abismar (un ojo/símbolo abismal negro sobre fondo circular), identificando el estado aplicado.\n\nEl estilo artístico mantiene coherencia con las otras cartas: ilustración digital detallada, pero en este caso con una paleta notablemente más fría y oscura para subrayar el tema del abismo y la ceguera que la marca provoca. Sirve como referencia visual al bullet 'Abismar', vinculando la iconografía, el nombre de la carta y el efecto narrativo de cegamiento descrito en el texto.",
+      "embedded_text": ["Yogg, Surgimiento"],
+      "relation_to_text": "Acompaña la explicación del bullet 'Abismar' (b06), representando gráficamente el estado Abismado con el icono negro y atmósfera oscura.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p21/fig-04",
+      "slug": "shuge-invulnerabilidad-tres-marcas",
+      "type": "illustration",
+      "bbox_pct": {"x": 60, "y": 72, "w": 32, "h": 24},
+      "description_detailed": "Ilustración de la carta 'Shuge, Invulnerabilidad'. Representa una criatura de aspecto abisal o acuático con estética consistente con el resto del set: tonos oscuros azulados combinados con reflejos y destellos en tonos más cálidos que crean contraste dramático.\n\nEl elemento clave de esta figura son los tres tokens/fichas circulares visibles sobre la carta, uno de cada color correspondiente a las tres marcas del juego: un token rojo (Quemar), un token morado/púrpura (Envenenar) y un token negro/gris oscuro (Abismar). Los tokens están distribuidos sobre el borde o área superior de la carta, funcionando como indicadores del estado del Adendei. Esta superposición visual es el punto didáctico central: demuestra de forma concreta que una carta puede portar las tres marcas distintas al mismo tiempo.\n\nEl estilo artístico combina la ilustración digital de la carta con la superposición de elementos de juego (los tokens), dejando clara la diferencia entre el arte de la carta y los marcadores físicos/visuales que se colocan durante una partida. Esta figura sirve específicamente como ilustración de la regla del bullet 'Una carta no puede tener 2 marcas del mismo tipo, pero sí puede tener 1 marca de cada tipo' y refuerza el concepto de acumulación de marcas heterogéneas.",
+      "embedded_text": ["Shuge, Invulnerabilidad"],
+      "relation_to_text": "Ilustra la regla del bullet b08 ('una carta puede tener 1 marca de cada tipo'), mostrando la coexistencia simultánea de las 3 marcas sobre una misma carta.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página de regla 6.1 Marcas. Layout típico del rulebook Kódem: texto a la izquierda en bloques, ilustraciones de cartas alternadas a la derecha/izquierda como ejemplos visuales. Usa iconografía de colores distintos (rojo Quemar, morado Envenenar, negro Abismar). El último ejemplo (Shuge, Invulnerabilidad) destaca visualmente porque porta las tres marcas a la vez. Folio '21' en el pie de página.",
+  "self_confidence": 0.92
+}

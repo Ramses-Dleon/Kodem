@@ -1,0 +1,44 @@
+MAZO POR MECÁNICA
+
+Elige tu estrategia favorita. Reúne las cartas que tengan tu mecánica favorita y ¡Manos a la obra!
+Algunos mazos creados por mecánica de juego son los mazos de ataque al Protector, de juego
+con cartas en Extinción o de juego con equipos aunque hay muchísimos más dentro de Kódem
+TEA,
+
+8.1 FORMATO MULTIJUGADOR
+
+Este modo de juego permite enfrentamientos estratégicos entre varios jugadores, hasta un máximo
+de 8 y se estima que el juego tomará 10 minutos por cada jugador en la partida.
+
+REGLAS GENERALES
+
+1. Orden de Juego: Al iniciar la partida, el orden de turnos se determina de forma aleatoria.
+
+2. Interacción por Turno: Al comienzo de cada turno, el jugador en turno elige un jugador rival con
+el que interactuará exclusivamente durante ese turno y podrá elegir jugadores rivales diferentes
+cada turno. Los efectos de cartas y mecánicas se aplicarán únicamente entre ambos jugadores y
+sólo las cartas que mencionan en su texto “jugador(es)” , podrán interactuar con otros jugadores
+fuera del rival elegido al inicio de turno.
+
+3. Selección de Rivales: Cada turno, los jugadores pueden escoger a un rival diferente.
+
+4. Aplicación de Cartas y Efectos: Cualquier carta o efecto que interactúe con múltiples cartas riva-
+les se aplicará solo al jugador rival elegido ese turno.
+
+VARIANTES
+
+e JUNGLA: TODOS LOS JUGADORES LUCHARÁN ENTRE SÍ Y GANARÁ
+EL ÚLTIMO EN PIE.
+
+a) Condición de Eliminación: Un jugador queda fuera de la partida
+al acumular 6 cartas en Extinción.
+
+b) Condición de Victoria: El último jugador en pie es el ganador de
+la partida.
+
+* CAZADOR: AL INICIO DE LA PARTIDA, LOS JUGADORES ELEGIRÁN UN
+NÚMERO DE CARTAS RIVALES A VENCER.
+
+a) Condición de Victoria: El primer jugador que envíe a Extinción el
+número de cartas rivales acordado, será el vencedor.
+

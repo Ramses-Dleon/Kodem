@@ -1,0 +1,162 @@
+{
+  "page": 24,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:05:00-06:00",
+  "title": "6.6 ATAQUE",
+  "section_refs": ["§6.5", "§6.6"],
+  "text_blocks": [
+    {
+      "anchor": "p24/b01",
+      "heading": null,
+      "text": "· Si una carta es cambiada por una carta suplente (es decir, sin ser enviada a Extinción), la nueva carta se colocará con los mismos puntos de vida que tenía la carta anterior.",
+      "position": "top",
+      "notes": "viñeta, continuación de §6.5 desde página anterior"
+    },
+    {
+      "anchor": "p24/b02",
+      "heading": null,
+      "text": "· En ningún momento se pueden usar cartas rivales como suplentes.",
+      "position": "top",
+      "notes": "viñeta"
+    },
+    {
+      "anchor": "p24/b03",
+      "heading": null,
+      "text": "- Solo se considera que una carta está en mano cuando se toma del Mazo, por reemplazo o por efecto de alguna carta.",
+      "position": "top",
+      "notes": "viñeta (guion como marca)"
+    },
+    {
+      "anchor": "p24/b04",
+      "heading": null,
+      "text": "-- Una carta revelada que cambia entre Zona Principal original y Zona Principal rival no se considera que esté siendo revelada nuevamente.",
+      "position": "top-middle",
+      "notes": "viñeta anidada (doble guion)"
+    },
+    {
+      "anchor": "p24/b05",
+      "heading": "6.6 ATAQUE",
+      "text": "6.6 ATAQUE",
+      "position": "middle",
+      "notes": "título de subsección en mayúsculas, numeración destacada"
+    },
+    {
+      "anchor": "p24/b06",
+      "heading": null,
+      "text": "El ataque es el principal medio que tendrás para ir eliminando cartas rivales durante el juego. Su potencia está definida en la estadística de \"daño\" de tu carta más los daños aumentados y los daños adicionales (Daños de Ataque = Daño Base + Daño Aumentado + Daño Adicional).",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p24/b07",
+      "heading": null,
+      "text": "Los efectos que permiten \"Atacar\" o \"atacar adicionalmente\" a múltiples cartas y que mencionan el número de puntos de daño a realizar dicho daño reemplazara el ataque base de la carta. Ej Yanzi, precisión.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p24/b08",
+      "heading": "Atacar",
+      "text": "1. Atacar: Se considera que una carta está atacando cuando se declara que va realizar daño (de ataque) a otra carta.",
+      "position": "middle",
+      "notes": "entrada numerada"
+    },
+    {
+      "anchor": "p24/b09",
+      "heading": null,
+      "text": "1.1 El efecto de una carta está condicionado a su ataque sólo si la carta lo indica. Ej: \"Si esta carta ataca/atacó...\"",
+      "position": "middle",
+      "notes": "sub-entrada numerada"
+    },
+    {
+      "anchor": "p24/b10",
+      "heading": "Declarar un ataque",
+      "text": "2. Declarar un ataque: Es la acción de decirle a tu oponente que vas a dañar una de sus cartas por el daño indicado en la estadística de una de tus cartas, también incluye el daño aumentado y/o el daño adicional que la carta tuviera en ese momento.",
+      "position": "middle-bottom",
+      "notes": "entrada numerada"
+    },
+    {
+      "anchor": "p24/b11",
+      "heading": "Resolver un ataque",
+      "text": "3. Resolver un ataque: Es la acción de reducir la vida de la carta rival por el daño del ataque declarado.",
+      "position": "middle-bottom",
+      "notes": "entrada numerada"
+    },
+    {
+      "anchor": "p24/b12",
+      "heading": null,
+      "text": "Ejemplo: Efecto NO condicionado al ataque",
+      "position": "middle-bottom",
+      "notes": "caption / etiqueta de ilustración (cursiva o estilo destacado)"
+    },
+    {
+      "anchor": "p24/b13",
+      "heading": null,
+      "text": "Ejemplo: Efecto CONDICIONADO al ataque",
+      "position": "middle-bottom",
+      "notes": "caption / etiqueta de ilustración (cursiva o estilo destacado)"
+    },
+    {
+      "anchor": "p24/b14",
+      "heading": "Respuestas al ataque",
+      "text": "Respuestas al ataque: El jugador rival puede realizar diferentes acciones como respuesta al ataque, por ejemplo: revelar cartas y usar Activas-Rápidas. Se considera que una carta está siendo atacada cuando un jugador rival declara un ataque sobre ella.",
+      "position": "bottom",
+      "notes": null
+    },
+    {
+      "anchor": "p24/b15",
+      "heading": null,
+      "text": "24",
+      "position": "bottom-center",
+      "notes": "número de página (folio)"
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p24/fig-01",
+      "slug": "icono-ataque-garras-rojas",
+      "type": "icon",
+      "bbox_pct": {"x": 72, "y": 28, "w": 12, "h": 10},
+      "description_detailed": "Icono decorativo asociado al título de sección 6.6 ATAQUE. Consiste en dos formas curvas alargadas, similares a garras o plumas estilizadas, orientadas en diagonal. Los trazos son de color rojo intenso con degradados hacia tonos más oscuros en los extremos, sobre fondo blanco.\n\nEl estilo es moderno y dinámico, evocando movimiento o velocidad, coherente con la temática de ataque. No contiene texto embebido. Funciona como elemento decorativo/identificativo de la sección.\n\nColor rojo saturado consistente con la iconografía del rulebook para acciones ofensivas; sirve como ancla visual para que el lector reconozca rápidamente la sección de 'Ataque'.",
+      "embedded_text": [],
+      "relation_to_text": "Elemento decorativo que acompaña el título '6.6 ATAQUE' (b05), reforzando visualmente la temática ofensiva.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p24/fig-02",
+      "slug": "xakros-peste-ejemplo-no-condicionado",
+      "type": "illustration",
+      "bbox_pct": {"x": 52, "y": 42, "w": 22, "h": 22},
+      "description_detailed": "Ilustración de la carta 'Xakros, Peste'. Muestra un caballo oscuro de aspecto misterioso y amenazante, con crines que se dispersan como humo o energía. Fondo en tonos púrpura y magenta intensos. Estilo digital, alto contraste, atmosférico.\n\nEn la parte inferior de la carta se ven estadísticas del juego con iconos de energías y valores numéricos (se distinguen los números 2 en los marcadores de ataque/vida), junto con texto de efecto que menciona 'Adendo Equino / Feral'. Marco oscuro típico de TCG.\n\nDebajo de la carta aparece la leyenda 'Ejemplo: Efecto NO condicionado al ataque' en cursiva, usando esta carta como ilustración del concepto de efecto independiente del acto de atacar (contraparte al ejemplo condicionado).",
+      "embedded_text": ["Xakros, Peste", "Adendo Equino / Feral", "2"],
+      "relation_to_text": "Ejemplo visual para la regla §6.6 (Atacar), específicamente caption b12 'Ejemplo: Efecto NO condicionado al ataque'. Ilustra un efecto que NO está condicionado al ataque de la carta.",
+      "legibility": "clear",
+      "legibility_notes": "Texto de efecto pequeño parcialmente legible."
+    },
+    {
+      "anchor": "p24/fig-03",
+      "slug": "ariam-dualidad-ejemplo-condicionado",
+      "type": "illustration",
+      "bbox_pct": {"x": 68, "y": 52, "w": 22, "h": 22},
+      "description_detailed": "Ilustración de la carta 'Ariam, Dualidad'. Presenta un personaje femenino rodeado de elementos mágicos y luminosos, con destellos naranjas, rojos y dorados que evocan fuego o energía explosiva. Fondo en tonos azules oscuros que contrastan con los brillos cálidos alrededor del personaje. Estilo digital de alta calidad, muy dinámico visualmente.\n\nEn la parte inferior se leen estadísticas con valores 2, 1 y texto de efecto que menciona condiciones de ataque ('Si esta carta ataca, protege a un Adendo aliado...'). Marco oscuro típico de TCG.\n\nDebajo de la carta aparece la leyenda 'Ejemplo: Efecto CONDICIONADO al ataque' en cursiva. Sirve como ejemplo visual del concepto opuesto a la figura anterior: un efecto que sí está condicionado al acto de atacar de la carta.",
+      "embedded_text": ["Ariam, Dualidad", "Si esta carta ataca, protege a un Adendo aliado", "2", "1"],
+      "relation_to_text": "Ejemplo visual para la regla §6.6, específicamente caption b13 'Ejemplo: Efecto CONDICIONADO al ataque'. Ilustra un efecto que SÍ está condicionado al ataque, con el clásico disparador 'Si esta carta ataca'.",
+      "legibility": "clear",
+      "legibility_notes": "Texto de efecto parcialmente legible."
+    },
+    {
+      "anchor": "p24/fig-04",
+      "slug": "zoadon-filtracion-ilustracion",
+      "type": "illustration",
+      "bbox_pct": {"x": 5, "y": 68, "w": 25, "h": 25},
+      "description_detailed": "Ilustración de la carta 'Zoadon, Filtración'. Muestra una criatura acuática titánica y tentacular, inspirada en seres del abismo marino. Estilo digital oscuro con tonos azules profundos, verdes y negros que simulan las profundidades del océano. La criatura presenta múltiples apéndices y una presencia imponente.\n\nEn la parte inferior de la carta se lee el tipo 'Adendo: Titán / Lútica', con efecto de habilidad 'Activa-Rápida' que permite desviar daño, y estadísticas mostrando 2, 0 junto al icono de 'Punto de Cueta'. Marco oscuro elegante.\n\nPosicionada en la zona inferior izquierda de la página, parece vincularse al concepto 'Respuestas al ataque' (b14), específicamente el uso de Activa-Rápida para desviar o modificar daño cuando una carta está siendo atacada.",
+      "embedded_text": ["Zoadon, Filtración", "Adendo: Titán / Lútica", "Activa-Rápida", "2", "0"],
+      "relation_to_text": "Ejemplo visual probablemente vinculado al bloque b14 'Respuestas al ataque', mostrando una Activa-Rápida como herramienta de respuesta.",
+      "legibility": "clear",
+      "legibility_notes": "Texto de efecto parcialmente legible; 'Punto de Cueta' podría ser 'Punto de Cuenta' o glifo alternativo, requiere validación a 300dpi."
+    }
+  ],
+  "page_notes": "Página que completa §6.5 (Cambios entre Zonas, últimas 4 viñetas) e inicia §6.6 ATAQUE. Introduce la fórmula de daño total (Daños de Ataque = Daño Base + Daño Aumentado + Daño Adicional) y distingue tres conceptos numerados: Atacar, Declarar un ataque, Resolver un ataque. Contiene dos ilustraciones-ejemplo que contrastan efecto NO condicionado (Xakros) vs CONDICIONADO (Ariam) al ataque. La carta Zoadon ilustra respuestas al ataque. Folio '24' al pie.",
+  "self_confidence": 0.88
+}

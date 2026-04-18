@@ -1,0 +1,193 @@
+{
+  "page": 22,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:05:00-06:00",
+  "title": "6.2 CAMBIOS DE ESTADÍSTICAS",
+  "section_refs": ["§6.2"],
+  "text_blocks": [
+    {
+      "anchor": "p22/b01",
+      "heading": "6.2 CAMBIOS DE ESTADÍSTICAS",
+      "text": "6.2 CAMBIOS DE ESTADÍSTICAS",
+      "position": "top",
+      "notes": "título de sección en mayúsculas, numeración destacada"
+    },
+    {
+      "anchor": "p22/b02",
+      "heading": null,
+      "text": "Algunas cartas también podrán modificar las estadísticas de tus cartas. Aquí te compartimos cómo funcionan dichos efectos:",
+      "position": "top",
+      "notes": null
+    },
+    {
+      "anchor": "p22/b03",
+      "heading": "ESCALAR",
+      "text": "•ESCALAR: Incrementar los puntos de daño de una carta permanentemente.",
+      "position": "top-middle",
+      "notes": "viñeta, término en mayúsculas"
+    },
+    {
+      "anchor": "p22/b04",
+      "heading": null,
+      "text": "⌀ = 3",
+      "position": "middle",
+      "notes": "notación numérica al lado del icono de ESCALAR. El símbolo ⌀ aparece como un círculo con diagonal; posible glifo estilizado de estadística de daño"
+    },
+    {
+      "anchor": "p22/b05",
+      "heading": "CURAR",
+      "text": "•CURAR: Incrementa los puntos de vida de una carta. No se puede curar a una carta con 0 puntos de vida o a una carta que tenga completos sus puntos de vida máxima (6 puntos). Curar no incrementa la vida máxima de una carta.",
+      "position": "middle",
+      "notes": "viñeta, término en mayúsculas"
+    },
+    {
+      "anchor": "p22/b06",
+      "heading": null,
+      "text": "⌀ = 2",
+      "position": "middle",
+      "notes": "notación numérica al lado del icono de DESCENDER"
+    },
+    {
+      "anchor": "p22/b07",
+      "heading": "DESCENDER",
+      "text": "•DESCENDER: Disminuir los puntos de daño de una carta permanentemente.",
+      "position": "middle",
+      "notes": "viñeta, término en mayúsculas"
+    },
+    {
+      "anchor": "p22/b08",
+      "heading": "FERALIZAR",
+      "text": "•FERALIZAR: Es un efecto que hace que una carta pierda 1 de sus energías originales y se considera Feral (que no es considerada una Energía).",
+      "position": "middle-bottom",
+      "notes": "viñeta, término en mayúsculas"
+    },
+    {
+      "anchor": "p22/b09",
+      "heading": "DAÑAR",
+      "text": "•DAÑAR: Disminuir los puntos de vida de una carta. Dañar no disminuye la vida máxima de una carta.",
+      "position": "bottom",
+      "notes": "viñeta, término en mayúsculas"
+    },
+    {
+      "anchor": "p22/b10",
+      "heading": null,
+      "text": "22",
+      "position": "bottom-center",
+      "notes": "número de página (folio)"
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p22/fig-01",
+      "slug": "icono-escalar-flecha-roja",
+      "type": "icon",
+      "bbox_pct": {"x": 60, "y": 18, "w": 14, "h": 12},
+      "description_detailed": "Icono asociado al término ESCALAR. Consiste en una flecha estilizada con dirección ascendente (o descendente con rayas, según lectura) en tonos rojos intensos, renderizada con un estilo dinámico que sugiere movimiento y poder ofensivo. Las líneas son limpias, con gradientes del rojo claro al rojo oscuro.\n\nEl icono aparece al lado o por encima de la notación '⌀ = 3' y funciona como símbolo visual de la acción de incrementar permanentemente los puntos de daño de una carta. El fondo blanco de la página hace destacar el icono, que tiene una presencia gráfica fuerte.\n\nEl estilo coincide con la iconografía general del rulebook Kódem: iconos planos/semi-planos, colores saturados, con función identificativa inmediata del mecanismo de cambio de estadística.",
+      "embedded_text": ["⌀ = 3"],
+      "relation_to_text": "Refuerza visualmente el bullet 'ESCALAR' (b03); la cifra acompañante ('3') indica ejemplo del incremento aplicado.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "El glifo preciso del icono (flecha, número estilizado) y el símbolo '⌀' podrían interpretarse con mayor seguridad a 300dpi."
+    },
+    {
+      "anchor": "p22/fig-02",
+      "slug": "icono-descender-flecha-azul",
+      "type": "icon",
+      "bbox_pct": {"x": 60, "y": 48, "w": 14, "h": 12},
+      "description_detailed": "Icono asociado al término DESCENDER. Es una flecha estilizada de dirección descendente en tonos azules, con trazos que sugieren velocidad o caída controlada. Los colores fríos contrastan con el icono rojo de ESCALAR, marcando visualmente la oposición de funciones (incrementar vs disminuir daño).\n\nAcompaña a la notación '⌀ = 2'. La presencia conjunta de ambos iconos (ESCALAR/DESCENDER) crea un par visual que comunica la idea de modificación permanente del daño en direcciones opuestas.\n\nEstilo plano/semi-plano, con gradientes suaves, consistente con el lenguaje visual del rulebook. El icono destaca sobre el fondo blanco.",
+      "embedded_text": ["⌀ = 2"],
+      "relation_to_text": "Refuerza visualmente el bullet 'DESCENDER' (b07); la cifra '2' indica ejemplo del decremento aplicado.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Confirmación exacta del glifo y del símbolo '⌀' requiere inspección a mayor resolución."
+    },
+    {
+      "anchor": "p22/fig-03",
+      "slug": "icono-curar-corazon-verde",
+      "type": "icon",
+      "bbox_pct": {"x": 60, "y": 30, "w": 12, "h": 12},
+      "description_detailed": "Icono asociado al término CURAR. Se compone de un corazón de color verde con un signo '+' (cruz médica) en el centro o superpuesto, simbolizando sanación y restitución de vida. Los tonos verdes son brillantes y saturados, fácilmente identificables como categoría de beneficio/curación.\n\nEl icono funciona como marcador visual del mecanismo CURAR, indicando al lector que un efecto con esta iconografía restaura puntos de vida. La cruz del signo '+' refuerza la lectura de 'incremento' o 'sanación'.\n\nEstilo plano, coherente con el resto del conjunto de iconos de la página (ESCALAR, DESCENDER, FERALIZAR, DAÑAR), con función didáctica clara.",
+      "embedded_text": [],
+      "relation_to_text": "Acompaña y refuerza el bullet 'CURAR' (b05) que describe el incremento de puntos de vida.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Composición exacta (corazón + cruz vs otro símbolo) podría confirmarse con mayor resolución."
+    },
+    {
+      "anchor": "p22/fig-04",
+      "slug": "icono-feralizar-circulo-gris",
+      "type": "icon",
+      "bbox_pct": {"x": 60, "y": 64, "w": 12, "h": 12},
+      "description_detailed": "Icono asociado al término FERALIZAR. Consiste en un círculo gris con un símbolo de garras/ondas o marca estilizada en su interior, indicando degradación a estado feral. Los tonos grises fríos transmiten neutralidad o pérdida, coherente con el efecto descrito (pérdida de una energía original).\n\nEl icono funciona como marcador del mecanismo FERALIZAR y visualmente se distingue de los iconos de estadísticas (ESCALAR/DESCENDER) por su forma circular y paleta desaturada.\n\nEstilo plano, con detalles interiores que sugieren naturaleza salvaje o transformación. Coherente con el resto del conjunto iconográfico del rulebook.",
+      "embedded_text": [],
+      "relation_to_text": "Refuerza el bullet 'FERALIZAR' (b08) que describe la pérdida de una energía original.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Interpretación del símbolo interior (garras vs marca alternativa) requiere validación a 300dpi."
+    },
+    {
+      "anchor": "p22/fig-05",
+      "slug": "icono-danar-corazon-roto",
+      "type": "icon",
+      "bbox_pct": {"x": 60, "y": 80, "w": 12, "h": 12},
+      "description_detailed": "Icono asociado al término DAÑAR. Muestra un corazón parcialmente roto o agrietado, posiblemente con un elemento de rayo o marca de impacto, en tonos naranjas o rojo-anaranjados, simbolizando pérdida de puntos de vida.\n\nEl icono contrasta con el corazón verde de CURAR: mientras este último representa sanación (verde, cruz +), DAÑAR representa pérdida (naranja/rojo, corazón roto/rayo). Este par visual refuerza la dualidad de efectos sobre la vida de la carta.\n\nEstilo plano, consistente con el lenguaje gráfico de la página. Función didáctica evidente: identificar rápidamente el mecanismo de daño sin costo por ataque.",
+      "embedded_text": [],
+      "relation_to_text": "Refuerza el bullet 'DAÑAR' (b09) que describe la disminución de puntos de vida sin afectar vida máxima.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Composición exacta del corazón (grieta, rayo, otro elemento) podría precisarse con mayor resolución."
+    },
+    {
+      "anchor": "p22/fig-06",
+      "slug": "jokokan-guardian-corteza-ilustracion",
+      "type": "illustration",
+      "bbox_pct": {"x": 4, "y": 14, "w": 30, "h": 22},
+      "description_detailed": "Ilustración de la carta 'Jokokan, Guardián de la Corteza'. La imagen presenta una criatura reptiliana o anfibia grande y robusta, con postura erguida, texturas rugosas en la piel que recuerdan a corteza de árbol. Los tonos dominantes son verdes y marrones terrosos, coherentes con el nombre 'Guardián de la Corteza'.\n\nEl fondo muestra un bosque denso con luz filtrada entre los árboles, creando una atmósfera de misterio selvático y profundidad natural. La composición enfatiza la imponencia de la criatura en su hábitat.\n\nEstilo de ilustración digital con colores saturados, contornos definidos y contraste alto entre la criatura y el fondo forestal. Encuadre vertical tipo carta. Funciona como ejemplo visual asociado (probablemente) al concepto ESCALAR o un efecto de la página.",
+      "embedded_text": ["Jokokan, Guardián de la Corteza"],
+      "relation_to_text": "Ejemplo visual de carta asociada al mecanismo ESCALAR (incremento de daño permanente).",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p22/fig-07",
+      "slug": "xilan-calma-ilustracion",
+      "type": "illustration",
+      "bbox_pct": {"x": 68, "y": 32, "w": 28, "h": 20},
+      "description_detailed": "Ilustración de la carta 'Xilan, Calma'. Muestra una criatura pequeña y redondeada tipo armadillo o tatú, con concha dorsal prominente en colores cálidos anaranjados y marrones. La criatura interactúa con un pequeño elemento vegetal (flor), transmitiendo tranquilidad y docilidad.\n\nEl fondo presenta tonos azules y verdes vibrantes con hierbas altas y cielo despejado, creando un ambiente sereno y campestre. El estilo es ilustración digital colorida con líneas suaves y alta saturación.\n\nLa composición general transmite paz y equilibrio, reforzando el concepto temático de la carta ('Calma'). Posiblemente asociada visualmente al mecanismo CURAR dado su aire pacífico/restaurador.",
+      "embedded_text": ["Xilan, Calma"],
+      "relation_to_text": "Ejemplo visual asociado posiblemente al mecanismo CURAR (restauración de vida), por su temática de serenidad.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p22/fig-08",
+      "slug": "ariem-balance-ilustracion",
+      "type": "illustration",
+      "bbox_pct": {"x": 4, "y": 42, "w": 28, "h": 22},
+      "description_detailed": "Ilustración de la carta 'Ariem, Balance'. Muestra una criatura acuática elegante tipo plesiosaurio o serpiente marina, con cuerpo alargado y cuello esbelto. Colores predominantes: azules turquesa y violetas profundos, con destellos bioluminiscentes.\n\nEl ambiente es subacuático o de transición agua-aire, con burbujas y ondulaciones que envuelven a la criatura. Estilo digital con fondos oscuros y criatura luminosa en primer plano.\n\nComposición circular del cuerpo que refuerza el concepto 'Balance'. Encuadre vertical típico de carta. Asociada posiblemente a DESCENDER o FERALIZAR según el flujo de la página.",
+      "embedded_text": ["Ariem, Balance"],
+      "relation_to_text": "Ejemplo visual asociado al concepto DESCENDER o FERALIZAR según posicionamiento en la página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p22/fig-09",
+      "slug": "yakert-encuentro-ilustracion",
+      "type": "illustration",
+      "bbox_pct": {"x": 68, "y": 52, "w": 28, "h": 22},
+      "description_detailed": "Ilustración de la carta 'Yakert, Encuentro'. Escena nocturna en tonos azul-negros profundos, iluminada por una luna llena en el horizonte. Criatura protagonista tipo felino/cánido grande de pelaje oscuro, en movimiento con dinamismo.\n\nAmbiente: claro o paisaje nocturno abierto, con siluetas de árboles y atmósfera misteriosa feral. La iluminación lunar crea halo dramático detrás de la criatura, enfatizando su naturaleza salvaje.\n\nEstilo digital oscuro y atmosférico, con énfasis en el movimiento. Asociado posiblemente al mecanismo FERALIZAR (pérdida de energía original → estado feral).",
+      "embedded_text": ["Yakert, Encuentro"],
+      "relation_to_text": "Ejemplo visual probablemente vinculado al mecanismo FERALIZAR.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p22/fig-10",
+      "slug": "boras-poder-kosmico-ilustracion",
+      "type": "illustration",
+      "bbox_pct": {"x": 60, "y": 76, "w": 32, "h": 22},
+      "description_detailed": "Ilustración de la carta 'Boras, Poder Kósmico'. Criatura voladora etérea y poderosa, tipo dragón o ser alado de gran envergadura, con alas y cuerpo compuestos de elementos naturales como nubes, nieve y rayos de luz. Tonos blancos, plateados y azules fríos que evocan hielo, viento y energía cósmica.\n\nFondo: cielo dramático con fenómeno celeste, nubes dinámicas y destellos de luz que refuerzan el 'Poder Kósmico'. Estilo digital de alta energía, colores fríos y explosivos.\n\nTransmite escala épica y poder sobrenatural. Posición en la zona inferior de la página la asocia visualmente al mecanismo DAÑAR.",
+      "embedded_text": ["Boras, Poder Kósmico"],
+      "relation_to_text": "Ejemplo visual probablemente vinculado al mecanismo DAÑAR, dada su energía agresiva y su posición inferior en la página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página de la sección 6.2 CAMBIOS DE ESTADÍSTICAS. Lista 5 mecanismos (ESCALAR, CURAR, DESCENDER, FERALIZAR, DAÑAR) cada uno acompañado de icono y, en algunos casos, ilustración de carta ejemplo. Dos notaciones '⌀ = 3' y '⌀ = 2' acompañan los iconos de ESCALAR y DESCENDER, mostrando ejemplos numéricos. El símbolo '⌀' podría ser un glifo estilizado para 'estadística base'. Asociación exacta entre cada ilustración de carta y cada mecanismo requiere confirmación visual a 300dpi. Folio '22' en el pie.",
+  "self_confidence": 0.84
+}

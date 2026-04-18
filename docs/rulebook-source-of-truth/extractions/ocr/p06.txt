@@ -1,0 +1,129 @@
+2.2 ESTADÍSTICAS DE LA CARTA
+
+VIDA MÁXIMA: Son los puntos
+
+máximos de vida que puede
+
+tener una carta. Al llegar a O, la AAA ~
+carta se enviará a Extinción. ¢ __Shugg,SerpienteVoraz
+La vida maxima de una carta se o
+considera una estadística. El
+valor de vida de una carta en un
+momento dado durante el
+juego NO se considera una
+estadística.
+
+SUBTIPO DE CARTA:
+Ej. Adendei Equino, Adendei
+Abisal, Adendel Titán, etc.
+
+TIPO DE CARTA:
+Ej. Adendei, Ixim, Rot, Bio,
+Token o Protector. Algunos
+efectos de solo afectan a un
+tipo específico de carta (Ej.
+“Activa: Dana a 1 Adendei dis-
+ponible.”), mientras que otros
+pueden afectar a cualquier
+tipo de carta. (Ej. “Activa: Daña a 3
+cartas en el campo rival”).
+
+ENERGIA: Atlica, Pírica,
+Gélida, Litica, Cháaktica,
+Húumica, Demótica o
+Feral (Ver 2.2.1 Energías)
+
+Pasiva Rápida: Si 1 / Adendei Abisal aliado es
+revelado, revela (coloca boca arriba) 1 carta rival
+y niega la Pasiva de 1 carta rival hasta el fin del
+turno.
+
+Costo: No podras usar la Pasiva de tu Bio
+mientras esta carta esté en el campo.
+
+DESCANSO: Número de turnos
+que una carta tiene que esperar
+después de atacar o usar una
+Activa para estar nuevamente
+disponible (Ver 5.1. Descansos). Se
+puede encontrar un signo de
+interrogación "?" en este
+apartado; no tendrá un valor fijo y
+el efecto de la carta proporcionará
+más información respecto a esta
+estadística.
+
+DAÑO: Indica cuántos puntos de
+vida se reducirá la carta atacada
+por esta carta. Si una carta tiene
+un signo de interrogación *?” en
+este apartado; el daño no tiene
+un valor fijo y el efecto de la carta
+proporcionará más información
+respecto a esta estadística. El
+daño puede modificarse por
+efectos que lo cambien como
+escalar o descender (Ver 6.2.
+Cambios de Estadísticas).
+
+En Kódem, puedes combinar cualquier tipo de energía para jugar, así que
+¡experimenta y encuentra tu estilo!. Aunque cada Energía se relaciona con
+un estilo de juego distinto, el juego no restringe su uso.
+
+ATLICA:
+
+Representa el control sobre la materia
+liquida. Su juego es fluido y adaptable,
+enfocandose en habilidades curativas
+y defensivas.
+
+PÍRICA:
+
+Dominio del calor y el fuego.
+
+Es potencia y agresión puras, brindán-
+dote ataques alta y medianamente
+fuertes junto a marcas de quemadura
+que debilitan a tus rivales con cada
+golpe que intentan dar.
+
+GÉLIDA:
+
+Controla el aire frío y el hielo. Aunque sus
+ataques son bajos, tiene un poderoso
+efecto que limita los movimientos rivales,
+añadiendoles descansos.
+
+LÍTICA:
+Representa el poder de la materia sólida.
+Con alta cadencia de ataque y poder
+físico, esta energía puede neutralizar
+efectos rivales, aunque suelen ser cartas
+lentas.
+
+CHÁAKTICA: _
+El dominio de la electricidad. Reflejos y
+velocidad caracterizan a esta energía,
+
+| que permite responder agilmente a los“; clave aquí, esta energía potencia tus
+ataques y lanzar ofensivas constantes con . cartas progresivamente, aumentando
+descansos mínimos o nulos. sus estadísticas de ataque mediante el
+efecto escalar, también suelen tener
+efectos de control.
+
+HÚUMICA: o o
+Conecta con la vibración y dominio de
+los cuatro elementos. La paciencia es
+
+DEMÓTICA:
+
+Manipula la densidad de la materia. FERAL:
+
+Reposiciona tus cartas para potenciar sus Aquellos Adendei con ausencia de
+efectos estratégico. ¿qua dominio elemental, a pesar de ello,
+Si eres principiante no sugerimos crear un ( a. compensan esto con poder de manada,
+mazo demótico ya que la energía sirve más ás y reacciones rápidas o altas cadencias
+como soporte para estrategias previas. de ataque. Dentro del juego, también se
+
+considera una eEnergla.
+

@@ -1,0 +1,132 @@
+{
+  "page": 18,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:50:00-06:00",
+  "title": "5.1 DESCANSOS",
+  "section_refs": ["§5.1", "§6.6"],
+  "text_blocks": [
+    {
+      "anchor": "p18/b01",
+      "heading": "CRITERIOS DE RESOLUCIÓN DE MÚLTIPLES PASIVAS",
+      "text": "CRITERIOS DE RESOLUCIÓN DE MÚLTIPLES PASIVAS",
+      "position": "top",
+      "notes": "Encabezado enmarcado."
+    },
+    {
+      "anchor": "p18/b02",
+      "heading": null,
+      "text": "Si múltiples Pasivas en cartas de ambos jugadores pueden usarse en la misma Fase y al mismo tiempo, la activación y resolución de los efectos alternará entre jugadores, comenzando con el jugador en turno.",
+      "position": "top",
+      "notes": null
+    },
+    {
+      "anchor": "p18/b03",
+      "heading": null,
+      "text": "Nota: Durante las Fases Previa, Post, Equipos y Fin de turno, el jugador rival solo puede revelar cartas con Pasiva-Rápida y usarlas como respuesta (Ver Pasivas Rápidas en 6.6. Efectos), también puede usar las Pasivas de cartas que cumplan su condición si ya se encuentran reveladas.",
+      "position": "top",
+      "notes": "Referencia explícita a §6.6."
+    },
+    {
+      "anchor": "p18/b04",
+      "heading": "5.1 DESCANSOS",
+      "text": "5.1 DESCANSOS",
+      "position": "middle",
+      "notes": "Encabezado de sección numerada."
+    },
+    {
+      "anchor": "p18/b05",
+      "heading": null,
+      "text": "Después de utilizar tus cartas, la carta deberá esperar un número de turnos determinado por el número de la estadística de \"Descansos\" en la carta. Una carta en descanso no podrá usar su ataque ni Activa, pero sí podrá usar las Pasivas que se cumplan y podrá ser atacada. Cuando una carta no se encuentra en descanso se denomina \"disponible\".",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p18/b06",
+      "heading": "GENERALIDADES",
+      "text": "GENERALIDADES",
+      "position": "middle",
+      "notes": "Encabezado enmarcado."
+    },
+    {
+      "anchor": "p18/b07",
+      "heading": null,
+      "text": "·Las cartas Adendei, Rava y Token poseen una estadística de descanso de 0 a 2 máximo y no podrán añadirse más de 2 descansos.",
+      "position": "middle",
+      "notes": "Viñeta 1."
+    },
+    {
+      "anchor": "p18/b08",
+      "heading": null,
+      "text": "·Los Protectores siempre tendrán 3 turnos de descanso (aunque no tengan indicador de esta estadística) y comenzarán el juego de esta forma.",
+      "position": "middle",
+      "notes": "Viñeta 2."
+    },
+    {
+      "anchor": "p18/b09",
+      "heading": null,
+      "text": "·La declaración de Activa de las cartas equipo Rot NO aplicarán descansos para la carta Rot ni para su carta equipada en Fin de Turno.",
+      "position": "bottom",
+      "notes": "Viñeta 3."
+    },
+    {
+      "anchor": "p18/b10",
+      "heading": "ACTUALIZACIÓN DE DESCANSOS",
+      "text": "ACTUALIZACIÓN DE DESCANSOS",
+      "position": "bottom",
+      "notes": "Encabezado enmarcado."
+    },
+    {
+      "anchor": "p18/b11",
+      "heading": null,
+      "text": "Al final del turno si se declaró ataque o Activa de una carta, esa carta deberá colocarse en los descansos especificados en la Fase de Fin de Turno y las cartas que hayan iniciado el turno en descanso actualizarán 1 descanso durante esta misma Fase hasta estar disponibles.",
+      "position": "bottom",
+      "notes": null
+    },
+    {
+      "anchor": "p18/b12",
+      "heading": null,
+      "text": "18",
+      "position": "bottom",
+      "notes": "Número de página."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p18/fig-01",
+      "slug": "diagrama-aplicar-actualizar-descansos-adendei-rava-token",
+      "type": "infographic",
+      "bbox_pct": {"x": 15, "y": 42, "w": 70, "h": 18},
+      "description_detailed": "Diagrama ilustrativo de los descansos para cartas con estadística máxima de 2 (Adendei, Rava, Token). Muestra una secuencia horizontal de tres cartas del juego en estados progresivos de rotación, conectadas por flechas curvas rojas que indican la dirección del flujo 'APLICAR DESCANSOS' (de izquierda a derecha, de disponible a 2 descansos).\n\nCarta 1 (izquierda): La carta aparece en posición vertical recta ('disponible'). La ilustración interna muestra un personaje dinámico con colores rojos, naranjas y azules, consistente con el estilo visual de Kódem. Se ven estadísticas y texto en la carta.\n\nCarta 2 (centro): La misma carta girada aproximadamente 45° en sentido horario (quedando inclinada), que representa '1 descanso'. La inclinación diagonal es el símbolo visual estándar de 'tapped'/descansado.\n\nCarta 3 (derecha): La misma carta girada aproximadamente 90° hasta quedar horizontal ('2 descansos').\n\nDebajo de cada carta hay etiquetas en azul oscuro en mayúsculas indicando el estado. Iconos circulares verdes (flechas de rotación) aparecen entre cada par de cartas indicando el movimiento. Debajo del diagrama aparece un segundo rótulo rojo 'ACTUALIZAR DESCANSOS' para indicar que el proceso puede invertirse en cada Fin de Turno.\n\nEl fondo es blanco y la composición es limpia/editorial.",
+      "embedded_text": [
+        "APLICAR DESCANSOS",
+        "DISPONIBLE",
+        "1 DESCANSO",
+        "2 DESCANSOS",
+        "ACTUALIZAR DESCANSOS"
+      ],
+      "relation_to_text": "Ilustra visualmente la viñeta 'Las cartas Adendei, Rava y Token poseen una estadística de descanso de 0 a 2 máximo'.",
+      "legibility": "clear",
+      "legibility_notes": "Títulos y etiquetas claros; el texto interno de las cartas (estadísticas y efectos) es pequeño y requiere zoom para leerse."
+    },
+    {
+      "anchor": "p18/fig-02",
+      "slug": "diagrama-aplicar-actualizar-descansos-protector",
+      "type": "infographic",
+      "bbox_pct": {"x": 10, "y": 67, "w": 82, "h": 18},
+      "description_detailed": "Diagrama ilustrativo de los descansos para cartas Protectoras (que siempre tienen 3 turnos de descanso). Muestra una secuencia horizontal de cuatro cartas con rotaciones progresivas conectadas por flechas curvas rojas, ilustrando el paso de 'DISPONIBLE' a '3 DESCANSOS'.\n\nCarta 1 (izquierda): Carta vertical disponible. La ilustración muestra un personaje femenino con traje oscuro/negro sobre fondo rojo/magenta intenso, consistente con una carta Protectora. Se aprecian estadísticas y texto.\n\nCarta 2: La misma carta girada 45° (1 descanso).\n\nCarta 3: La misma carta girada 90° horizontal (2 descansos).\n\nCarta 4 (derecha): La carta completamente dada vuelta mostrando el reverso (no solo rotada). El reverso es oscuro con el logo del juego (marrón/dorado ornamental). Esto representa '3 DESCANSOS'.\n\nDebajo de cada carta etiquetas en azul oscuro indican el estado. Entre cada par de cartas hay iconos circulares verdes de rotación. El título superior dice 'APLICAR DESCANSOS' en rojo; debajo aparece un segundo rótulo 'ACTUALIZAR DESCANSOS' en rojo.\n\nFondo blanco, composición editorial.",
+      "embedded_text": [
+        "APLICAR DESCANSOS",
+        "DISPONIBLE",
+        "1 DESCANSO",
+        "2 DESCANSOS",
+        "3 DESCANSOS",
+        "ACTUALIZAR DESCANSOS"
+      ],
+      "relation_to_text": "Ilustra visualmente la viñeta 'Los Protectores siempre tendrán 3 turnos de descanso'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Etiquetas y títulos legibles; el texto interno de la carta Protectora requiere ampliación para leerse con detalle."
+    }
+  ],
+  "page_notes": "La página introduce formalmente la sección 5.1 DESCANSOS con su explicación conceptual, tres viñetas de Generalidades y dos diagramas paralelos que muestran respectivamente el ciclo de descansos para cartas con máximo 2 descansos (Adendei/Rava/Token) y para Protectores (con 3 descansos). Cierra con el bloque 'ACTUALIZACIÓN DE DESCANSOS'.",
+  "self_confidence": 0.94
+}

@@ -1,0 +1,70 @@
+2. Restricciones para la declaración de efectos: Este tipo de restricción impide que algunas cartas
+
+sean objetivo de efectos de otras, o que ciertas cartas puedan usar sus propios efectos. Algunas
+frases y cartas que identifican estas restricciones son:
+
+- “No puede ser dañados por efectos"
+
+- "No puede usar efectos/Pasiva/Activa" ATT
+- "No puede ser Curada/Protegida/Danada" ” a y
+- "Solo puedes usar este efecto/Pasiva/Activa" (SS
+
+- "No puede escalar/descender" NA
+
+- "No puede ser copiada/o"
+
+Hypex, Guía Jurásico bY Mizthe, Guia de Almas x
+
+sz a a)
+
+Costo: Esta carta no puede escolar, ser curada
+ni protegida.
+
+Ejemplos de cartas con restricciones para la declaración de efectos
+
+KO Zaykan, Retorno del Ermitaño Y
+
+3. Restricción para ocultar: Impide que ciertas
+cartas estén ocultas en el campo, ya sea por su tipo
+específico de carta como los Tokens y Protectores o
+por consecuencia de algún efecto o costo. «> as RECIEN E mm
+
+Pasiva: Si esta carta es revelada, revela todas
+las cartas en Zona Principal. Ninguna carta en
+Zona Principal puede estar boca abajo.
+
+E) portal ze cerró tras de sí el ojo abierto y 2u verdod para oer
+|
+
+Ejemplo de carta con restricción para ocultar
+
+z Tekei, Responsabilidad
+
+4. Restricción a envíar a Extinción: Impide
+que ciertas cartas vayan a Extinción, aún
+cuando su vida sea reducida a O.
+
+Ejemplo de carta con restricción para envíar a Extinción
+
+Pa
+
+Zaykan, Reclutamiento N
+
+5. Restricción para equipar: Hace que algunas cartas
+no se puedan equipar o sólo se puedan equipar a
+
+cartas específicas. Algunas frases para identificar la == -=0-
+restricción: “No puede ser equipada/o”, “Sólo puede a
+
+ser equipado a...” (Ver 3.4 Equipos)
+
+Ejemplo de carta con restricción para equipar
+
+6. Restricción para actualizar descansos: Este
+tipo de restricciones hacen que ciertas cartas no
+puedan actualizar sus descansos. Algunas frases
+para identificar la restricción: “No puede/oodrá
+actualizar descanso(s)”.
+
+Ejemplo de carta con restricción para actualizar descansos
+

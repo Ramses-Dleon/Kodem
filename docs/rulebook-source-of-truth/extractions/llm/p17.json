@@ -1,0 +1,110 @@
+{
+  "page": 17,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:50:00-06:00",
+  "title": null,
+  "section_refs": ["§3.4", "§5.1"],
+  "text_blocks": [
+    {
+      "anchor": "p17/b01",
+      "heading": "Orden de resolución",
+      "text": "Orden de resolución:\n1. Activas-Rápidas del jugador en turno.\n2. Activas-Rápidas del jugador rival.\n3. Daños por ataque.\n4. Activas del jugador en turno.",
+      "position": "top",
+      "notes": "Continuación de la sección de Fase de Batalla iniciada en página anterior."
+    },
+    {
+      "anchor": "p17/b02",
+      "heading": null,
+      "text": "Nota: Una carta solo va a Extinción durante la Fase de Batalla para pagar un costo o si su Activa lo indica (las cartas que lleguen a 0 puntos de vida irán a Extinción hasta la Fase Post).",
+      "position": "top",
+      "notes": "Nota aclaratoria en cursiva."
+    },
+    {
+      "anchor": "p17/b03",
+      "heading": "Fase Post",
+      "text": "Fase Post:\nPrimero se envía a Extinción y reemplaza cualquier carta que haya llegado a 0 puntos de vida durante la Fase de Batalla. Se pueden declarar y resolver las Pasivas que cumplan sus condiciones de activación durante Batalla y cualquier otro momento.",
+      "position": "middle",
+      "notes": null
+    },
+    {
+      "anchor": "p17/b04",
+      "heading": "Fase de Equipo",
+      "text": "Fase de Equipo:\nEl jugador puede equipar (oculta o revelada) 1 carta de su Zona de Equipo a la carta que haya atacado o usado Activa durante este turno. Las cartas pueden equiparse con máximo 2 equipos o 1 Ixim y 1 Rot (Ver 3.4 Equipos).",
+      "position": "middle",
+      "notes": "Referencia explícita a sección 3.4."
+    },
+    {
+      "anchor": "p17/b05",
+      "heading": "Fin de Turno",
+      "text": "Fin de Turno:\nEl orden de prioridad de las interacciones y efectos que se apliquen en el Fin de Turno será el siguiente:\n1. Pago de costos que se hayan declarado en turnos o Fases anteriores cuyo costo deba pagarse al final del turno.\n2. Resolución de Activas y Pasivas que se hayan declarado en turnos o Fases anteriores cuyo efecto aplique en Fin de Turno (primero Activas, posteriormente Pasivas).\n3. Fin de Activas y/o Pasivas que se hayan declarado en turnos o Fases anteriores cuyo efecto finalice en Fin de Turno (primero Activas, posteriormente Pasivas).\n4. Daño de \"Veneno\".\n5. Declaración y resolución de Pasivas.\n6. Actualización de descansos: Actualiza 1 descanso de las cartas que comenzaron el turno en descanso y que no atacaron, usaron Activa o recibieron descansos por efecto. Las cartas que atacaron o usaron Activa se colocarán en el número de descansos que indica la carta por lo cual no podrán atacar o usar Activas hasta volver a estar disponibles (Ver 5.1. Descansos).",
+      "position": "bottom",
+      "notes": "Referencia explícita a sección 5.1."
+    },
+    {
+      "anchor": "p17/b06",
+      "heading": null,
+      "text": "17",
+      "position": "bottom",
+      "notes": "Número de página."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p17/fig-01",
+      "slug": "foto-tablero-juego-iluminacion-neon",
+      "type": "photo",
+      "bbox_pct": {"x": 55, "y": 18, "w": 42, "h": 18},
+      "description_detailed": "Fotografía ambiental que muestra una porción de un tablero o mesa de juego en acción. Se observan cartas dispuestas sobre una superficie con iluminación dramática en tonos neón: azules, rosados/magenta y púrpuras bañan la escena, dando un aspecto cinematográfico/ambiental. Las cartas muestran bordes brillantes con reflejos azulados.\n\nAparecen etiquetas impresas sobre el área de juego que identifican zonas del tablero: 'ADENDEI' (aparentemente repetida en más de un lugar), 'EXTINCIÓN', 'BIO', 'SECTOR' y lo que parece ser 'ERA'. Estas etiquetas sirven de referencia visual para que el lector ubique las zonas descritas en el texto (Fase Post habla de envío a Extinción, por ejemplo).\n\nLa composición es horizontal, ocupa la esquina superior derecha de la página y funciona como imagen decorativa/ilustrativa, no como diagrama normativo.",
+      "embedded_text": ["ADENDEI", "EXTINCIÓN", "BIO", "SECTOR", "ERA"],
+      "relation_to_text": "Ilustra ambientalmente las zonas del tablero mencionadas en las Fases (Post, Equipo, Fin de Turno).",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Las etiquetas son legibles a simple vista pero el texto de cartas individuales es difuso por efecto de iluminación."
+    },
+    {
+      "anchor": "p17/fig-02",
+      "slug": "foto-mano-abanico-cartas",
+      "type": "photo",
+      "bbox_pct": {"x": 2, "y": 38, "w": 30, "h": 18},
+      "description_detailed": "Fotografía decorativa: una mano humana de tez clara sostiene un abanico de aproximadamente 3 cartas de juego con la cara hacia el espectador. Las cartas presentan ilustraciones fantásticas en una paleta fría: predominan azules, verdes y acentos blancos. Detrás del abanico o al borde se aprecia el dorso ornamental característico del juego en tonos marrones y dorados.\n\nEl fondo es neutro (blanco/crema) para destacar las cartas. La imagen es ilustrativa del acto de 'mantener cartas en mano' durante las fases del turno descritas en la página.\n\nLos textos y estadísticas de las cartas son muy pequeños y no se leen con claridad a la escala de la página.",
+      "embedded_text": [],
+      "relation_to_text": "Decorativa. Acompaña la explicación de cómo el jugador gestiona sus cartas durante las Fases Post / Equipo / Fin de Turno.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Imagen general clara; textos internos de las cartas ilegibles a esta escala."
+    },
+    {
+      "anchor": "p17/fig-03",
+      "slug": "foto-carta-individual-marco-dorado",
+      "type": "photo",
+      "bbox_pct": {"x": 2, "y": 83, "w": 22, "h": 13},
+      "description_detailed": "Fotografía de una carta individual mostrada frontalmente, apoyada/flotando sobre fondo neutro. El marco decorativo es elaborado en tonos marrones y dorados, con ornamentación característica del estilo visual del juego. La ilustración central usa colores cálidos: rojos, naranjas y dorados.\n\nLa carta muestra la estructura típica: marco, ilustración central, posibles estadísticas y texto, pero a la escala impresa el texto interno no es legible.",
+      "embedded_text": [],
+      "relation_to_text": "Decorativa. Refuerza el concepto de 'carta' en la explicación de Fases.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Se ve clara la carta, pero el texto y estadísticas internas son ilegibles."
+    },
+    {
+      "anchor": "p17/fig-04",
+      "slug": "foto-mano-sosteniendo-cartas-centro",
+      "type": "photo",
+      "bbox_pct": {"x": 35, "y": 83, "w": 28, "h": 13},
+      "description_detailed": "Fotografía de una mano humana sosteniendo una o dos cartas del juego, posiblemente una con la cara hacia el espectador y otra vista parcialmente. El dorso visible muestra el patrón ornamental en marrones y dorados del reverso de las cartas Kódem. Fondo neutro blanco.\n\nComposición horizontal, como imagen decorativa que rompe la monotonía del texto.",
+      "embedded_text": [],
+      "relation_to_text": "Decorativa. Ilustra la interacción física con las cartas durante el turno.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Imagen general clara; texto en cartas ilegible."
+    },
+    {
+      "anchor": "p17/fig-05",
+      "slug": "foto-mano-sosteniendo-carta-detalle",
+      "type": "photo",
+      "bbox_pct": {"x": 68, "y": 83, "w": 28, "h": 13},
+      "description_detailed": "Fotografía de una mano humana sosteniendo una sola carta con la cara visible. El marco es ornamental en dorado/marrón y la ilustración interna presenta la paleta cálida característica (rojos, dorados). En las esquinas de la carta se distinguen números pequeños que corresponden a estadísticas del juego (no legibles con precisión).\n\nLa imagen cierra la página por el lado inferior derecho, junto al número de página '17' sobre fondo oscuro.",
+      "embedded_text": [],
+      "relation_to_text": "Decorativa. Refuerza visualmente las acciones de la Fase de Equipo / Fin de Turno.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Números de estadísticas en esquinas ilegibles a esta escala."
+    }
+  ],
+  "page_notes": "Página cierra las descripciones del Orden de Resolución de Fase de Batalla, Fase Post, Fase de Equipo y Fin de Turno. Contiene dos referencias cruzadas (§3.4 Equipos y §5.1 Descansos). Las cinco figuras son fotografías decorativas/ambientales, no diagramas normativos.",
+  "self_confidence": 0.92
+}

@@ -1,0 +1,154 @@
+{
+  "page": 11,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T19:47:00-06:00",
+  "title": "EQUIPOS COMPATIBLES / EQUIPOS MÚLTIPLES",
+  "section_refs": ["§3.4"],
+  "text_blocks": [
+    {
+      "anchor": "p11/b01",
+      "heading": "EQUIPOS COMPATIBLES",
+      "text": "Existen algunas cartas de equipo que funcionan como armaduras o equipos únicos por lo que sólo podrán equiparse a Adendei o cartas específicas, es decir, a cartas compatibles, estos equipos especifican en su texto a qué cartas pueden ser equipadas.",
+      "position": "top",
+      "notes": "Título en píldora azul. 'armaduras', 'equipos únicos', 'sólo', 'cartas específicas', 'compatibles' en negrita."
+    },
+    {
+      "anchor": "p11/b02",
+      "heading": null,
+      "text": "· Una carta solo podrá ser equipada con equipos que sean compatibles.\n· Si un equipo se pretende cambiar de carta, el equipo debe ser compatible con la carta nueva.\n· Si una carta equipada abandona el campo sin ser enviada a Extinción (por ejemplo, si regresa al Mazo o se envía al campo rival), debe colocarse una carta suplente compatible revelada en el campo para mantener el equipo; de lo contrario, el equipo volverá a la Zona de Equipo.",
+      "position": "top",
+      "notes": "Bullets con reglas de compatibilidad. 'compatibles', 'compatible', 'revelada' en negrita."
+    },
+    {
+      "anchor": "p11/b03",
+      "heading": null,
+      "text": "Si una carta tiene equipado un Ixim o Rot no compatible que está oculto y un efecto revela dicho equipo, este equipo irá a la Extinción y no podrá usar su efecto.",
+      "position": "middle",
+      "notes": "'Ixim', 'Rot', 'no compatible', 'oculto', 'Extinción', 'no podrá usar' en énfasis/negrita."
+    },
+    {
+      "anchor": "p11/b04",
+      "heading": null,
+      "text": "Ejemplo de equipo compatible con un personaje específico.",
+      "position": "middle-left",
+      "notes": "Pie de ejemplo en cursiva."
+    },
+    {
+      "anchor": "p11/b05",
+      "heading": null,
+      "text": "Ejemplo de equipo compatible con una energía específica.",
+      "position": "middle-right",
+      "notes": "Pie de ejemplo en cursiva."
+    },
+    {
+      "anchor": "p11/b06",
+      "heading": null,
+      "text": "Ejemplo de equipo compatible con un tipo de carta específico.",
+      "position": "bottom-center",
+      "notes": "Pie de ejemplo en cursiva."
+    },
+    {
+      "anchor": "p11/b07",
+      "heading": "EQUIPOS MÚLTIPLES",
+      "text": "Un jugador puede equipar 2 Ixim o 2 Rot ocultos a una carta por decisión propia, pero, si dichos equipos son revelados y no existe una condición que lo permita, el jugador deberá enviar uno de ellos a Extinción y no podrá declarar el efecto de ninguno de ellos por el resto del turno.",
+      "position": "bottom",
+      "notes": "Título en píldora azul. '2', 'Ixim', '2', 'Rot', 'ocultos' en negrita."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p11/fig-01",
+      "slug": "titulo-equipos-compatibles",
+      "type": "infographic",
+      "bbox_pct": {"x": 4, "y": 2, "w": 35, "h": 5},
+      "description_detailed": "Banner/título 'EQUIPOS COMPATIBLES' en píldora azul/cian con el estilo característico de encabezados del rulebook.",
+      "embedded_text": ["EQUIPOS COMPATIBLES"],
+      "relation_to_text": "Introduce el bloque b01.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p11/fig-02",
+      "slug": "ejemplo-compatible-personaje-zaykan",
+      "type": "illustration",
+      "bbox_pct": {"x": 8, "y": 35, "w": 37, "h": 33},
+      "description_detailed": "Par de cartas superpuestas que ejemplifican un equipo compatible con un personaje específico. La carta izquierda/principal es un Adendei encapuchado (figura con capucha, aspecto ermitaño) y a su derecha/superpuesta una carta de equipo con ilustración de criatura reptil humanoide con armadura.\n\nLa carta Adendei se identifica como 'Zaykan, Retorno del Ermitaño', subtipo 'Adendei / Lítica'. Su Pasiva comienza con 'Si esta carta es revelada...'.\n\nLa carta de equipo se identifica como 'Protección Selectiva', subtipo 'Rot', con una Activa Rápida que permite negar un ataque a un Adendei aliado, con Costo donde la carta equipada se daña 1 pto y no podrá atacar ni ser curada. La última línea de la caja de texto, resaltada en rojo, indica la restricción de compatibilidad: 'Solo puede ser equipada a un Adendei \"Zaykan\"'.\n\nLos resaltados en rojo destacan el nombre de la compatibilidad ('Zaykan') en la carta Adendei y la cláusula de restricción en la carta equipo.\n\nEste conjunto ilustra un 'equipo compatible con un personaje específico'.",
+      "embedded_text": [
+        "Zaykan, Retorno del Ermitaño",
+        "Adendei / Lítica",
+        "Pasiva: Si esta carta es revelada...",
+        "Protección Selectiva",
+        "Rot",
+        "Activa Rápida: Si un Adendei aliado es atacado, niega el ataque.",
+        "Costo: La carta equipada se daña 1 pto. si niega el ataque. La carta equipada no podrá atacar, ni ser curada.",
+        "Solo puede ser equipada a un Adendei \"Zaykan\""
+      ],
+      "relation_to_text": "Ejemplo referenciado por el pie b04 'Ejemplo de equipo compatible con un personaje específico'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Algunas líneas de texto de habilidades se ven pequeñas a esta resolución; para recuperar literal exacto de toda la Pasiva de Zaykan puede requerirse la imagen original a mayor resolución. Los resaltados rojos son las partes visibles con mayor confianza."
+    },
+    {
+      "anchor": "p11/fig-03",
+      "slug": "ejemplo-compatible-energia-draxes",
+      "type": "illustration",
+      "bbox_pct": {"x": 50, "y": 35, "w": 42, "h": 33},
+      "description_detailed": "Par de cartas superpuestas que ejemplifican un equipo compatible con una energía específica. La carta izquierda/principal muestra un dragón/carnotauro de tonos rojos intensos y la carta derecha/superpuesta muestra una escena de cascada de lava fluyendo.\n\nLa carta Adendei es 'Draxes, Instinto Draconiano', subtipo 'Adendei Titán / Pírica' (con 'Pírica' destacado en rojo). Su Pasiva indica 'Si 1 Adendei-Pírico Titán es revelado, quema 1 carta en Zona Principal...'.\n\nLa carta de equipo es 'Cascada de Lava', subtipo 'Rot', con Activa-Rápida que 'Si 1 Adendei-Pírico aliado es atacado, quema a 1 Adendei rival.' y Costo con la restricción resaltada en rojo: 'Esta carta sólo puede ser equipada a 1 Adendei-Pírico'.\n\nEste conjunto ilustra un 'equipo compatible con una energía específica' (Pírica).",
+      "embedded_text": [
+        "Draxes, Instinto Draconiano",
+        "Adendei Titán / Pírica",
+        "Pasiva: Si 1 Adendei-Pírico Titán es revelado, quema 1 carta en Zona Principal...",
+        "Cascada de Lava",
+        "Rot",
+        "Activa-Rápida: Si 1 Adendei-Pírico aliado es atacado, quema a 1 Adendei rival.",
+        "Costo: Esta carta sólo puede ser equipada a 1 Adendei-Pírico"
+      ],
+      "relation_to_text": "Ejemplo referenciado por el pie b05 'Ejemplo de equipo compatible con una energía específica'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Ver observación fig-02: algunos detalles menores de texto de habilidades podrían requerir la imagen original para verificación literal completa."
+    },
+    {
+      "anchor": "p11/fig-04",
+      "slug": "ejemplo-compatible-tipo-carta-jane-proliferacion",
+      "type": "illustration",
+      "bbox_pct": {"x": 28, "y": 68, "w": 42, "h": 24},
+      "description_detailed": "Par de cartas superpuestas que ejemplifican un equipo compatible con un tipo de carta específico. La carta izquierda/principal muestra a una mujer con cabello sobre una motocicleta roja en actitud dinámica; la carta derecha/superpuesta muestra a una mujer de cabello oscuro rodeada de vegetación densa.\n\nLa carta izquierda es 'Jane, Maniobra', subtipo 'Protector' (destacado en rojo). Su Activa: 'Cura toda la vida del Adendei vinculado. Si ese Adendei es enviado a Extinción, un aliado escala 1 pto. y cura 1 pto. a todas las cartas en tu Zona Principal'.\n\nLa carta derecha es 'Proliferación', subtipo 'Ixim', con Pasiva: 'Si el Protector equipado es vinculado, se cura 2 ptos. Solo puedes equipar esta carta a un Protector' (última cláusula resaltada en rojo como la restricción). Incluye cita de lore: 'Lograr el vínculo con tu Adendei era tener también el dominio de algunos Ixim'.\n\nEste conjunto ilustra un 'equipo compatible con un tipo de carta específico' (tipo Protector).",
+      "embedded_text": [
+        "Jane, Maniobra",
+        "Protector",
+        "Activa: Cura toda la vida del Adendei vinculado. Si ese Adendei es enviado a Extinción, un aliado escala 1 pto. y cura 1 pto. a todas las cartas en tu Zona Principal",
+        "Proliferación",
+        "Ixim",
+        "Pasiva: Si el Protector equipado es vinculado, se cura 2 ptos.",
+        "Solo puedes equipar esta carta a un Protector",
+        "Lograr el vínculo con tu Adendei era tener también el dominio de algunos Ixim"
+      ],
+      "relation_to_text": "Ejemplo referenciado por el pie b06 'Ejemplo de equipo compatible con un tipo de carta específico'.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto de habilidades parcialmente pequeño; los elementos resaltados en rojo (restricciones de compatibilidad y tipo 'Protector') son la clave del ejemplo y se leen con alta confianza."
+    },
+    {
+      "anchor": "p11/fig-05",
+      "slug": "titulo-equipos-multiples",
+      "type": "infographic",
+      "bbox_pct": {"x": 4, "y": 86, "w": 32, "h": 5},
+      "description_detailed": "Banner/título 'EQUIPOS MÚLTIPLES' en píldora azul/cian, estilo consistente con los encabezados del rulebook.",
+      "embedded_text": ["EQUIPOS MÚLTIPLES"],
+      "relation_to_text": "Introduce el bloque b07.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p11/fig-06",
+      "slug": "numero-de-pagina-11",
+      "type": "icon",
+      "bbox_pct": {"x": 95, "y": 97, "w": 4, "h": 3},
+      "description_detailed": "Folio de paginación. Caja azul con número '11' en blanco en la esquina inferior derecha.",
+      "embedded_text": ["11"],
+      "relation_to_text": "Número de página.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página continúa 3.4 con reglas de compatibilidad (armaduras/equipos únicos) y equipos múltiples. Presenta tres pares de cartas como ejemplos de compatibilidad: por personaje (Zaykan + Protección Selectiva), por energía (Draxes + Cascada de Lava), por tipo de carta (Jane + Proliferación). Las restricciones están resaltadas en rojo sobre las cartas.",
+  "self_confidence": 0.88
+}

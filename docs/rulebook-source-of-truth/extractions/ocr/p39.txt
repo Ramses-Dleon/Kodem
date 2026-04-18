@@ -1,0 +1,155 @@
+«Mazo (Mazo Principal): Zona. Las cartas
+de Adendei y/o Rava que no se encuen-
+tren en la Zona de Extinción o en la Zona
+Principal irán aquí y entrarán en juego
+como cartas suplentes. Estas cartas iran
+estructuradas, no revueltas. Si una carta se
+devuelve al Mazo por efecto de alguna otra
+carta, la nueva carta se colocará en la Zona
+Principal con los mismos puntos de vida
+que tenía la carta devuelta (ver 4. Preparación del
+
+Ecosistema).
+
+«Mazo General: Conjunto de cartas com-
+puesto por los diferentes tipos de cartas de
+Kodem (Adendei, Ravas, Protectores, Equi-
+pos, Bio y Tokens) (Ver 1.3. Componentes de Juego).
+
+«Mostrar: Acción de Turno. Enseñar la carta
+al rival. Mostrar una carta no implica reve-
+lar una carta. Algunas cartas pueden
+declarar sus efectos al ser mostradas. Ej. “Si
+esta carta es tomada del mazo muestrala y cura
+1 pto. a una carta aliada”.
+
+«Negar: Efecto. Su significado cambia de-
+pendiendo de si se niega un ataque o un
+efecto.
+
+«Negar un ataque: Es un efecto que hace
+que la declaración de un ataque resuelva
+como si el ataque y/o múltiples ataques no
+se hubieran declarado, sin embargo, la
+carta deberá descansar al final del turno.
+
+«Negar un efecto: Significa que un efecto
+declarado no podrá resolver mientras se
+encuentre negado. Si la duración de un
+efecto dura más de un turno y es negado,
+se considerará que el efecto no puede re-
+solver mientras este negado, sin embargo,
+al terminarse el efecto de la negación ya
+no será necesario volver a declarar el efecto
+para que resuelva.
+
+«Ocultar: Efecto. Acción de turno. Colocar
+boca abajo una carta. Los Token y Protec-
+tores no pueden ser ocultos por efecto. Las
+cartas ocultas no podrán resolver efectos
+excepto si su declaración se hizo ese turno
+y su resolución durará máximo hasta el
+final del mismo turno. Aún si una carta fue
+ocultada se debe resolver la declaración de
+su ataque. Si una carta es ocultada por
+efecto, vuelve a sus a estadísticas base y fi-
+nalizará la negación de su efecto si se en-
+cuentra negado.
+
+Las cartas ocultas no se podrán considerar
+un tipo de carta en específico.
+
+Una carta que fue ocultada por efecto en
+el turno anterior deberá volver a declarar
+su efecto para que resuelva.
+
+Las cartas en Zona de Extinción no pueden
+ser ocultadas.
+
+«Pasiva: Efecto. Se pueden usar múltiples
+veces por turno, no se actualizan descan-
+sos al usarlos (ver 6.6 Efectos). Si NO especifica
+tiempo de Activación, es opcional y se
+Activa una vez por turno durante Fase
+Previa.
+
+«Pasiva-Rápida: Efecto. A diferencia de las
+Pasivas, mlas Pasivas-Rápidas sólo se
+pueden declarar en respuesta a otras
+
+Pasivas, revelación de cartas o eliminación de
+cartas, también se pueden usar en turno rival y
+resuelven tan pronto se declaran (ver 6.6 Efectos).
+
+«Poseer: Acción. Enviar un Adendel/ a Extinción
+para colocar una carta de Extinción debajo de
+un Espectro.
+
+«Pagar: Son acciones especificadas en un
+costo que se deben de realizar (ver 6.6 Efectos).
+
+«Protector: Carta. Carta con 12 puntos de vida.
+Inicia con 3 descansos, en la Zona de equipos.
+Para usar su efecto debe usar el vínculo con
+algún Adendel/ disponible (ver 3.2 Protector).
+
+«Proteger: Efecto. Efecto que se aplica a una
+carta la carta protegida es inmune a ataques
+y/o efectos de otras cartas hacia ella, también
+se considera proteger una carta el hecho de
+evitar (una vez que ya han sido declarados)
+ataques, todos los daños y/o efectos de otras
+cartas hacia ella.
+
+«Quemar: Marca. Una carta quemada recibe 1
+punto de daño cada vez que ataque o use su
+Activa (Ver 6.1. Marcas).
+
+*«Rava: Carta. Manifestaciones de las energías.
+Puedes llevar 0-2 Rava en tu Mazo General
+(Ver 3.3. Rava).
+
+«Reemplazar: Acción. Sustituir la carta que
+Naya abandonado el campo, tomando 3 cartas
+del tope del Mazo Principal, eligiendo 1 y co-
+ocándola oculta o revelada sustituyendo a la
+carta eliminada (Ver 5.3. Reemplazo de Cartas).
+
+«Resolver el ataque: Es la acción de reducir la
+vida de la carta rival por el daño del ataque
+declarado (Ver Sección 5.2.).
+
+«Resolver un efecto: Es la acción de ejecutar/
+llevar a cabo dentro del juego lo que el efecto
+de la carta dICe (ver Sección 5.2.).
+
+«Restricción: E fecto. Las cartas con
+restricciones indican que una carta no puede
+realizar determinadas acciones o efectos (ver 6.7.
+
+Restricciones e interacciones).
+
+«Revelar: Efecto. Acción de Turno. Se considera
+"revelar" una carta si se coloca boca arriba en el
+campo (Ver 5. Fases de Turno).
+
+«Rot: Equipo. Basado en el reino mineral.
+Posee efectos “Activa” o “Activa Rápida” en su
+Mayo ría (Ver 3.4. Equipos).
+
+«Tomar: Acción de Turno. Cuando una carta
+deja la Zona Principal o por indicación de
+algún efecto, deberás reemplazar tu carta. Esta
+acción también puede gatillar efectos que in-
+diquen toma o involucren a la(s) carta(s)
+to-mada(s). Solo se considera que una carta
+está en mano cuando se toma del Mazo, por
+reemplazo o por efecto de alguna carta.
+
+«Turno: Conjunto de acciones que el jugador
+puede realizar en cierto orden. Cada turno se
+divide en diferentes fases (ver 5. Fases del Turno).
+
+«Usar: Acción. Su significado cambia dependi-
+endo si se usa una carta o un efecto.
+

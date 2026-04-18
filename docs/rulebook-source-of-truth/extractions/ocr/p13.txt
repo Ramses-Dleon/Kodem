@@ -1,0 +1,60 @@
+Algunas cartas tienen la capacidad de invocar criaturas o seres, como Token, a la Zona Principal
+durante el juego. Estos Token representan cartas que no están en tu Mazo Principal, como
+
+animales u otro tipo de criaturas.
+
+CARACTERÍSTICAS
+
+Las características de los Token son definidas por el efecto de la carta que los invoca; a diferencia
+
+de otras cartas, sus estadísticas pueden varlar. | | o o
+Si el efecto invocador no especifica lo contrario, un Token tiene las siguientes estadísticas:
+
+Nombre del Token: No se
+refiere al nombre de la
+carta o del personaje.
+
+E Bale cast) E ES
+. zs , “Token” sólo indica el tipo
+“Vida Máxima: 6 puntos | — de carta,
+
+«Efecto: Sin efecto
+
+«Costo: Sin costo
+
+- Daño: O
+* Descanso: O
+* Energia: Sin Energia.
+
+- Subtipo: Sin subtipo.
+
+TCOO-OI3S
+Di colmillo azul studio
+
+USO DEL TOKEN
+
+Las cartas Token funcionan de forma similar a los Adende/; pueden
+atacar en Batalla y si lo hacen, descansan al final del turno. En tu partida,
+cuando una carta abandone el campo puede colocarse un Token en su
+lugar si el efecto de una carta en juego lo especifica.
+
+Si la vida de un Token se reduce a O ira a Extinción, también puede ir a
+Extinción por efectos de otras cartas pero posteriormente saldrá del
+juego y en ningún momento contará como carta en Extinción para la
+
+condición de victoria.
+
+GENERALIDADES
+
+- Los Token son también considerados cartas (al igual que
+los Protectores y cartas boca abajo).
+
+- No tienen una Zona dentro del campo antes de entrar en
+juego.
+
+- No pueden ser ocultados ni pueden ingresar al juego
+ocultos.
+
+- Cada jugador puede tener un máximo de 2 cartas Token
+en su campo.
+

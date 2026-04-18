@@ -1,0 +1,159 @@
+{
+  "page": 29,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:10:00-06:00",
+  "title": null,
+  "section_refs": ["§6.7.1", "§6.7.2"],
+  "text_blocks": [
+    {
+      "anchor": "p29/b01",
+      "heading": "6.7.1 ACTIVAS",
+      "text": "6.7.1 ACTIVAS",
+      "position": "top-left",
+      "notes": "Encabezado de sección en color azul/destacado"
+    },
+    {
+      "anchor": "p29/b02",
+      "heading": null,
+      "text": "· Se usan una vez por turno.\n· Se declaran solamente durante la Fase de Batalla.\n· Son opcionales sólo si en su texto se especifica \"puede\", de otra forma se deben declarar al momento de declarar ataque durante la Subfase de Declaración.\n· Se puede declarar una Activa sin atacar sólo cuando su efecto no esté condicionado a su ataque.\n· Si la Activa tiene condiciones y no se cumplen, se podrá atacar sin usar dicha Activa.\n· La Activa de una carta y la de sus cartas Equipo pueden considerarse una única Activa. Esto permite usar ambas cartas en el mismo turno o sólo 1 de ellas (respetando los tiempos de uso individualmente).\n· Las cartas con estadística de descanso entran a sus descansos respectivos al final del turno si usaron su Activa.",
+      "position": "top-left-column",
+      "notes": "Lista de reglas con viñetas sobre las Activas. 'opcionales' en negritas; 'puede' en cursiva; 'atacar', 'descanso(s)' en cursiva."
+    },
+    {
+      "anchor": "p29/b03",
+      "heading": null,
+      "text": "Activa-Rápida: Si 1 carta aliada es atacada, desvia el ataque a esta carta.",
+      "position": "middle-left",
+      "notes": "Recuadro destacado mostrando un ejemplo de texto tal como aparecería en una carta. 'Activa-Rápida' en negritas."
+    },
+    {
+      "anchor": "p29/b04",
+      "heading": null,
+      "text": "· Las Activas-Rápidas funcionan igual que las Activas, pero también se pueden usar durante el turno del rival (como respuesta) y se resuelven tan pronto son declaradas.",
+      "position": "middle-center",
+      "notes": "'Activas-Rápidas', 'también' y 'se resuelven tan pronto son declaradas' en negritas."
+    },
+    {
+      "anchor": "p29/b05",
+      "heading": "6.7.2 PASIVAS",
+      "text": "6.7.2 PASIVAS",
+      "position": "middle-left",
+      "notes": "Encabezado de sección en color azul/destacado"
+    },
+    {
+      "anchor": "p29/b06",
+      "heading": null,
+      "text": "· Se pueden usar varias y múltiples veces por turno.\n· A diferencia de las Activas, una carta no descansará al final del turno por declarar una Pasiva.\n· En caso de que se cumplan condiciones para el uso de una o más Pasivas al mismo tiempo, el jugador en turno tiene prioridad para la declaración y resolución de una Pasiva y posteriormente se intercalarán las declaraciones y resoluciones de una Pasiva por jugador (Este criterio aplicará también para la resolución de una o más Pasivas-Rápidas).",
+      "position": "middle-left-column",
+      "notes": "'no descansará', 'por declarar', 'mismo tiempo', 'jugador en turno tiene prioridad' en negritas."
+    },
+    {
+      "anchor": "p29/b07",
+      "heading": "Cartas Tomadas",
+      "text": "Cartas Tomadas: Las Pasivas de cartas tomadas en Fase de Batalla podrán ser declaradas en Fase Post siempre y cuando las cartas hayan cumplido sus condiciones durante Batalla y no podrán ser declaradas si son colocadas en el campo.",
+      "position": "bottom-left",
+      "notes": "'Cartas Tomadas' en negritas como subsección."
+    },
+    {
+      "anchor": "p29/b08",
+      "heading": "Pasivas Opcionales",
+      "text": "Pasivas Opcionales: Estas no se encuentran indicadas en negritas, pero se identifican porque no indican un momento preciso de uso y pueden ser declaradas exclusivamente durante tu Fase Previa una vez por turno.",
+      "position": "bottom-left",
+      "notes": "'Pasivas Opcionales' en negritas como subsección."
+    },
+    {
+      "anchor": "p29/b09",
+      "heading": "Pasivas-Rápidas",
+      "text": "Pasivas-Rápidas: Se usan durante cualquier turno, únicamente en respuesta a revelación, eliminación de cartas o declaración de otras Pasivas.\nSe resuelven tan pronto son declaradas.\nSi no indican el momento preciso de uso, solo podrán ser declaradas una vez por turno, en fase previa o en cualquier fase posterior a Fase de Batalla.",
+      "position": "bottom-left",
+      "notes": "'Pasivas-Rápidas' en negritas como subsección."
+    },
+    {
+      "anchor": "p29/b10",
+      "heading": null,
+      "text": "29",
+      "position": "bottom-footer",
+      "notes": "Número de página"
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p29/fig-01",
+      "slug": "carta-yogg-vs-rhymir-rayo-contra-luz",
+      "type": "illustration",
+      "bbox_pct": {"x": 62, "y": 4, "w": 36, "h": 22},
+      "description_detailed": "Ilustración de una carta del juego Kódem TCG, colocada en la esquina superior derecha de la página como ejemplo visual de la sección 6.7.1 ACTIVAS. La carta muestra un combate épico entre dos figuras mitológicas o divinas en medio de un choque de energías contrastantes: un rayo de luz dorada/blanca enfrentándose a una energía oscura/violeta, evocando la naturaleza dualista del título 'Rayo Contra Luz'.\n\nLa composición presenta a las dos entidades (Yogg y Rhymir) en planos opuestos, separadas por una explosión de energía central que actúa como punto focal. El estilo artístico es dramático y detallado, con contrastes fuertes entre luces y sombras que refuerzan la temática de oposición. Los colores dominantes son dorados, blancos y azules luminosos para la sección de luz, contrastando con morados oscuros, negros y rojizos para la sección de oscuridad/energía.\n\nEn la parte inferior de la carta se observan las estadísticas típicas del juego: valores de ataque, descansos y vida separados por iconos característicos. El nombre de la carta aparece en la parte superior en tipografía estilizada, junto con el tipo/subtipo de carta (Adendei-Activa o similar, probablemente 'Adendei/Chakrica-Activa').\n\nLa carta incluye texto de habilidad tipo Activa que ilustra cómo funciona esta mecánica en la práctica, complementando visualmente las reglas escritas sobre Activas que se exponen en la página. El borde de la carta tiene el diseño estándar del juego con marcos decorativos y frames propios del TCG Kódem.\n\nLa iluminación dramática y el estilo pictórico sugieren una estética de fantasía épica/mitológica consistente con la ambientación del juego. La carta sirve como referencia visual para que los jugadores puedan identificar cómo se presenta una habilidad Activa en una carta real.",
+      "embedded_text": [
+        "Yogg vs Rhymir, Rayo Contra Luz",
+        "Adendei / Chakrica-Activa",
+        "Activa",
+        "Costo",
+        "1 | 0 | 4"
+      ],
+      "relation_to_text": "Ejemplo visual de la sección 6.7.1 ACTIVAS. Muestra cómo aparece una habilidad Activa en una carta real del juego.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "El texto interno de la carta es pequeño y difícil de leer completamente en la resolución disponible; los valores de estadísticas son aproximaciones."
+    },
+    {
+      "anchor": "p29/fig-02",
+      "slug": "recuadro-ejemplo-activa-rapida",
+      "type": "infographic",
+      "bbox_pct": {"x": 3, "y": 35, "w": 42, "h": 10},
+      "description_detailed": "Recuadro destacado con borde decorativo (posiblemente rojo o con elementos de marco de carta) que muestra un ejemplo literal de cómo se imprime el texto de una habilidad Activa-Rápida en una carta del juego. Funciona como pieza didáctica para que el lector identifique la sintaxis exacta de este tipo de habilidad cuando la vea en el campo de juego.\n\nEl contenido del recuadro es exclusivamente textual, presentando 'Activa-Rápida:' como cabecera en negritas seguida del efecto descrito. El formato emula fielmente cómo aparece el texto en una carta real del TCG, con 'Activa-Rápida' resaltada tipográficamente para diferenciarla del resto del texto de habilidad.\n\nEste tipo de recuadro es común en manuales de juegos de cartas para mostrar ejemplos sin necesidad de reproducir la carta completa. Se coloca estratégicamente entre los párrafos de reglas para reforzar el entendimiento visual inmediato.\n\nLa tipografía es consistente con el estilo del rulebook y probablemente usa la misma fuente que el cuerpo del documento, diferenciándose solo en el fondo/borde que lo delimita como un ejemplo.",
+      "embedded_text": [
+        "Activa-Rápida: Si 1 carta aliada es atacada, desvia el ataque a esta carta."
+      ],
+      "relation_to_text": "Apoya visualmente el párrafo b04 sobre Activas-Rápidas, mostrando cómo se ve este texto en una carta.",
+      "legibility": "clear",
+      "legibility_notes": null
+    },
+    {
+      "anchor": "p29/fig-03",
+      "slug": "carta-kaykas-sorpresa-pirica",
+      "type": "illustration",
+      "bbox_pct": {"x": 62, "y": 50, "w": 36, "h": 22},
+      "description_detailed": "Carta del juego Kódem TCG que muestra a 'Kaykas, Sorpresa Pirica', una criatura relacionada con el elemento fuego/pirotecnia. La ilustración presenta una figura felina, ígnea o dragónica rodeada por un aura de llamas intensas en tonos rojizos, anaranjados y amarillos brillantes, que sugiere explosividad y movimiento.\n\nLa criatura aparece en una pose dinámica, posiblemente saltando o atacando, con estelas de fuego que refuerzan la sensación de sorpresa y velocidad implícita en su nombre 'Sorpresa Pirica'. El fondo contrasta con los tonos cálidos del sujeto central, mostrando probablemente un ambiente oscuro que hace resaltar el resplandor del fuego.\n\nEl estilo artístico es característico del TCG: ilustración digital o pintura detallada con iluminación dramática y énfasis en los elementos de poder mágico/elemental. Los efectos de partículas de fuego y chispas alrededor del personaje le dan profundidad y dinamismo.\n\nLa carta muestra en su tipo/subtipo 'Adendei / Pirca' (o similar), marcando su pertenencia a la familia de cartas Adendei relacionadas con el elemento pirico. Incluye una habilidad Pasiva que se activa cuando la carta es tomada del Mazo, con efecto de ganar cartas rivales.\n\nEn la parte inferior se aprecian las estadísticas estándar de la carta y el texto de sabor en cursiva que da contexto narrativo al personaje. La composición es vertical estándar del formato TCG.",
+      "embedded_text": [
+        "Kaykas, Sorpresa Pirica",
+        "Adendei / Pirca",
+        "Pasiva",
+        "1 | 0 | 4"
+      ],
+      "relation_to_text": "Ejemplo visual para la sección 6.7.2 PASIVAS, mostrando una carta con habilidad Pasiva.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno de la carta difícil de leer con precisión en resolución reducida."
+    },
+    {
+      "anchor": "p29/fig-04",
+      "slug": "carta-curacion-vegetal",
+      "type": "illustration",
+      "bbox_pct": {"x": 3, "y": 60, "w": 35, "h": 20},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Curación Vegetal', que representa un hechizo o efecto de soporte de tipo vegetal/naturaleza. La ilustración principal muestra un gran árbol luminoso, majestuoso y antiguo, en medio de un bosque místico iluminado por luces suaves y doradas que atraviesan las ramas.\n\nLas tonalidades dominantes son verdes esmeralda, dorados cálidos y toques de ámbar, creando una atmósfera etérea y sanadora. Pequeñas partículas luminosas o esporas flotan alrededor del árbol, reforzando el concepto de curación natural y energía vital. El follaje del árbol parece brillar con luz propia.\n\nEl estilo artístico combina fantasía natural con un toque onírico: el bosque tiene profundidad visual con capas de vegetación y atmósfera brumosa. La composición guía el ojo hacia el tronco central del árbol, que actúa como fuente de energía curativa.\n\nLa carta, al ser de tipo hechizo/apoyo, probablemente no tiene estadísticas de combate sino únicamente texto de habilidad Pasiva describiendo su efecto curativo. Incluye un texto de sabor en cursiva que contextualiza narrativamente la relación del personaje/efecto con los bosques.\n\nEl estilo del arte es consistente con la estética general del juego: ilustración detallada, profesional, con narrativa visual clara. Se coloca en la columna izquierda inferior como contrapeso visual a la carta Kaykas del lado derecho.",
+      "embedded_text": [
+        "Curación Vegetal",
+        "Pasiva"
+      ],
+      "relation_to_text": "Ejemplo visual para la sección 6.7.2 PASIVAS, mostrando una carta con efecto de Pasiva tipo curación.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto interno pequeño y difícil de leer con precisión."
+    },
+    {
+      "anchor": "p29/fig-05",
+      "slug": "carta-chapalob-el-anciano",
+      "type": "illustration",
+      "bbox_pct": {"x": 62, "y": 78, "w": 36, "h": 20},
+      "description_detailed": "Carta del juego Kódem TCG titulada 'Chapalob, El Anciano', que muestra a un personaje de aspecto chamánico o sabio anciano, vinculado con el tipo 'Adendei Tejón / Feral'. La ilustración presenta a una figura envejecida con rasgos que combinan lo humano con elementos animales, particularmente del tejón (característica del subtipo Tejón).\n\nEl personaje lleva adornos tribales, incluyendo un collar de piedras ancestrales que aparece mencionado en el texto de sabor de la carta. Los tonos predominantes son oscuros: marrones, grises, negros y algún destello de energía mágica (azul, verde o violeta) que indica la presencia de magia ancestral o shamánica.\n\nLa composición enfatiza el rostro del anciano, con expresión de sabiduría o solemnidad, y sus manos posiblemente sosteniendo artefactos mágicos o ejecutando gestos rituales. La iluminación es de bajo contraste con luces puntuales que destacan elementos clave como los ojos y el collar.\n\nEl estilo artístico es más sombrío y místico que otras cartas de la página, transmitiendo la seriedad y profundidad que caracteriza al personaje como figura de poder espiritual. La ambientación sugiere una choza, cueva o bosque nocturno, con elementos que evocan tradición indígena o tribal.\n\nLa habilidad de la carta es una Pasiva-Rápida que niega la Pasiva de otra carta hasta el final del turno rival, siendo un ejemplo visual directo de la subsección 'Pasivas-Rápidas' descrita en el bloque b09.",
+      "embedded_text": [
+        "Chapalob, El Anciano",
+        "Adendei Tejón / Feral",
+        "Pasiva-Rápida",
+        "1 | 0 | 4"
+      ],
+      "relation_to_text": "Ejemplo visual clave para la subsección 'Pasivas-Rápidas', mostrando una carta real con este tipo de habilidad.",
+      "legibility": "needs_enhance",
+      "legibility_notes": "Texto de la habilidad y texto de sabor difíciles de leer con precisión en resolución reducida."
+    }
+  ],
+  "page_notes": "Página dedicada a las reglas de ACTIVAS (§6.7.1) y PASIVAS (§6.7.2). Contiene 5 elementos visuales: una carta principal Yogg vs Rhymir arriba-derecha, un recuadro textual con ejemplo de Activa-Rápida, y tres cartas más distribuidas (Kaykas, Curación Vegetal, Chapalob) como ejemplos visuales de las reglas expuestas. El diseño alterna columnas de texto con cartas ilustrativas. Los encabezados de sección (6.7.1 y 6.7.2) usan un color distintivo (azul/destacado).",
+  "self_confidence": 0.88
+}

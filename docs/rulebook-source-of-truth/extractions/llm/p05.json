@@ -1,0 +1,138 @@
+{
+  "page": 5,
+  "model": "opus-4-7",
+  "extraction_date": "2026-04-18T20:10:00-06:00",
+  "title": "2. Partes de la carta",
+  "section_refs": ["§2", "§2.1", "§2.1.1", "§6"],
+  "text_blocks": [
+    {
+      "anchor": "p05/b01",
+      "heading": "2. Partes de la carta",
+      "text": "2. Partes de la carta",
+      "position": "top",
+      "notes": "Encabezado principal de sección."
+    },
+    {
+      "anchor": "p05/b02",
+      "heading": "2.1 Características Generales",
+      "text": "2.1 Características Generales",
+      "position": "top",
+      "notes": "Subsección de la página."
+    },
+    {
+      "anchor": "p05/b03",
+      "heading": "Ícono de expansión:",
+      "text": "Ícono de expansión:\nTe ayuda a identificar la expansión a la cuál pertenece tu carta así como su rareza.\n(Consultar sección 2.1.1 Rarezas)",
+      "position": "top-left",
+      "notes": "Callout con línea hacia la carta ejemplo."
+    },
+    {
+      "anchor": "p05/b04",
+      "heading": "Nombre de la carta:",
+      "text": "Nombre de la carta: El nombre de cada carta es lo que la distingue de las demás. En la mayoría de los casos comienza con el nombre del personaje, seguido del complemento del nombre de la carta. El nombre del personaje no se considera por sí mismo el nombre de la carta. Por ejemplo, en la carta \"Ozet, Amante Lunar\", el nombre del personaje es \"Ozet\" y el nombre completo de la carta es:\n\"Ozet, Amante Lunar\".",
+      "position": "top-right",
+      "notes": "Callout que señala la franja del nombre en la carta ejemplo."
+    },
+    {
+      "anchor": "p05/b05",
+      "heading": "Texto:",
+      "text": "Texto: El texto describe la habilidad de tu carta y la fase en la que se puede declarar con palabras específicas en negritas:\n•Activa\n•Pasiva\n•Activa-Rápida\n•Pasiva-Rápida\n\nTambién aquí se indica el costo que una carta deberá pagar para usar su efecto o atacar (Ver 6. Interacciones y efectos). Algunas cartas no cuentan con efectos o costos.",
+      "position": "middle-left",
+      "notes": "Bullet list con los cuatro tipos de palabras clave de fase."
+    },
+    {
+      "anchor": "p05/b06",
+      "heading": "Flavor Text:",
+      "text": "Flavor Text:\nTexto de complemento narrativo (no afecta la jugabilidad).",
+      "position": "middle-right",
+      "notes": "Callout corto."
+    },
+    {
+      "anchor": "p05/b07",
+      "heading": "Nombre científico del animal, planta o mineral:",
+      "text": "Nombre científico del animal, planta o mineral:\nLos personajes de Kodem están inspirados en flora, fauna y minerales principalmente en peligro de extinción, en este apartado podrá conocer la base científica del personaje.",
+      "position": "middle-right",
+      "notes": "Nota: aquí la marca se escribe 'Kodem' sin tilde, distinto a 'Kódem' del título del manual."
+    },
+    {
+      "anchor": "p05/b08",
+      "heading": "Créditos del Artista",
+      "text": "Créditos del Artista",
+      "position": "bottom-center",
+      "notes": "Callout pequeño apuntando al crédito en la parte baja de la carta."
+    },
+    {
+      "anchor": "p05/b09",
+      "heading": "Folio:",
+      "text": "Folio: Te ayuda a saber el número de carta dentro de la expasión.",
+      "position": "bottom-center",
+      "notes": "Typo preservado: 'expasión' en lugar de 'expansión'."
+    },
+    {
+      "anchor": "p05/b10",
+      "heading": "2.1.1 Rarezas",
+      "text": "2.1.1 Rarezas",
+      "position": "middle",
+      "notes": "Subsección que introduce los seis niveles de rareza."
+    },
+    {
+      "anchor": "p05/b11",
+      "heading": null,
+      "text": "Algunas cartas producidas por Kódem tienen un tiraje mucho mayor o menor que otras. Las cartas raras tienen patrones holográficos que las distinguen y su nivel de rareza se puede identificar por el color del ícono de expansión o por el folio.",
+      "position": "bottom",
+      "notes": "Párrafo introductorio a la lista de rarezas."
+    },
+    {
+      "anchor": "p05/b12",
+      "heading": null,
+      "text": "Carta común\n\nCarta Rara\n\nCarta Súper Rara\n\nCarta Ultra Rara\n\nCarta Kósmica\n\nCarta Titán Kósmica\n*Aplica sólo para la expansión \"Titanes de la Corteza\"",
+      "position": "bottom",
+      "notes": "Lista vertical de rarezas acompañada por los iconos de expansión coloreados. Nota al pie marcada con asterisco para la Titán Kósmica."
+    }
+  ],
+  "figures": [
+    {
+      "anchor": "p05/fig-01",
+      "slug": "card-ozet-amante-lunar-anatomia",
+      "type": "illustration",
+      "bbox_pct": {"x": 28, "y": 12, "w": 44, "h": 52},
+      "description_detailed": "La figura central y protagonista de la página es un render a tamaño grande de una carta de Kódem TCG utilizada como ejemplo anatómico. La carta se titula 'Ozet, Amante Lunar' y representa a un felino tipo ocelote (Leopardus pardalis) estilizado con una estética mística y nocturna. La carta aparece ligeramente desplazada del centro, ocupando aproximadamente la mitad vertical izquierda del área de contenido, dejando espacio en ambos lados para los callouts explicativos que apuntan hacia distintas regiones del diseño.\n\nEl borde exterior de la carta es negro azabache con acabado metalizado, y un listón dorado recorre la parte superior sosteniendo el nombre 'Ozet, Amante Lunar' en tipografía serif dorada con ligeras sombras. En la esquina superior izquierda, dentro del listón, se observa el ícono de expansión (un disco estilizado con huella de pata) acompañado por la letra inicial del set. En la esquina superior derecha está el complemento simétrico del listón con un ornamento geométrico azul-turquesa.\n\nLa ilustración principal muestra al felino en pose sigilosa, recostado sobre una rama o roca, con la cabeza ligeramente girada hacia el espectador. El pelaje exhibe rosetones oscuros clásicos del ocelote pero con detalles luminiscentes azul turquesa que simulan constelaciones o marcas lunares, reforzando el epíteto 'Amante Lunar'. Los ojos son dorados-ambar con brillo intenso. El fondo muestra un paisaje nocturno con vegetación selvática en silueta, una luna llena brillante arriba a la derecha y partículas luminosas flotando como polvo estelar.\n\nDebajo de la ilustración se encuentra la caja de reglas con el texto (Activa/Pasiva/Activa-Rápida/Pasiva-Rápida) —la parte donde se describirían las habilidades— y, más abajo, el flavor text en itálicas. En la franja inferior de la caja de texto aparecen dos iconos circulares a los lados (una huella de pata a la izquierda y un símbolo en espiral/remolino a la derecha) que flanquean los valores numéricos de estadísticas centrales (se ven dos dígitos pequeños, consistentes con valores de ataque/defensa o costo/Bio propios del sistema Kódem).\n\nEn la base de la carta, integrado al marco, se lee el nombre científico ('Leopardus pardalis' implícito por el texto del manual), seguido por el folio de colección (número de carta dentro de la expansión) y los créditos del artista en letra pequeña. Este render está rodeado por líneas guía delgadas en gris que conectan cada región anatómica con un callout numerado o titulado en la periferia de la página: ícono de expansión, nombre, texto, flavor text, nombre científico, créditos y folio.",
+      "embedded_text": ["Ozet, Amante Lunar"],
+      "relation_to_text": "Es la carta pivote de toda la sección 2.1 'Características Generales'. Cada callout de texto (b03 a b09) apunta a una zona distinta del render para enseñar al lector la anatomía y las partes normativas de cualquier carta del juego.",
+      "legibility": "clear",
+      "legibility_notes": "El render principal está nítido; los valores numéricos pequeños dentro de la caja inferior se leen pero podrían confirmarse con zoom adicional en la página fuente original."
+    },
+    {
+      "anchor": "p05/fig-02",
+      "slug": "iconos-rareza-expansion",
+      "type": "infographic",
+      "bbox_pct": {"x": 30, "y": 76, "w": 20, "h": 22},
+      "description_detailed": "Bloque visual de seis filas verticales que cataloga los niveles de rareza de las cartas de Kódem TCG. Cada fila está compuesta por un ícono circular del sello de expansión en un color distintivo, acompañado a la derecha por el texto que nombra el nivel correspondiente. El conjunto está alineado en columna con interlineado uniforme y con el mismo tamaño de punto para cada nombre, reforzando una jerarquía horizontal.\n\nEl primer ícono es gris plateado mate, con la silueta característica del sello del set y la huella de pata Kódem integrada; lo acompaña la leyenda 'Carta común'. El segundo ícono es dorado-naranja brillante con reflejos cálidos y corresponde a 'Carta Rara'. El tercero es azul cian/aqua con un acabado vidrioso, correspondiente a 'Carta Súper Rara'.\n\nEl cuarto es rojo intenso escarlata y se vincula con 'Carta Ultra Rara'. El quinto es morado/violeta con leves destellos (sugiriendo holografía cósmica) y está etiquetado como 'Carta Kósmica'. El sexto y último es un dorado especial más luminoso y saturado que el de la rara común, acompañado por la leyenda 'Carta Titán Kósmica' y, debajo, una nota al pie en tipografía menor e itálicas que aclara '*Aplica sólo para la expansión \"Titanes de la Corteza\"'.\n\nTodos los iconos mantienen la misma silueta base, variando únicamente el color, lo que ilustra visualmente el principio explicado en el párrafo B11: 'su nivel de rareza se puede identificar por el color del ícono de expansión o por el folio'. La infografía funciona como leyenda visual normativa para que el jugador aprenda a reconocer la rareza en cualquier carta del juego.",
+      "embedded_text": [
+        "Carta común",
+        "Carta Rara",
+        "Carta Súper Rara",
+        "Carta Ultra Rara",
+        "Carta Kósmica",
+        "Carta Titán Kósmica",
+        "*Aplica sólo para la expansión \"Titanes de la Corteza\""
+      ],
+      "relation_to_text": "Leyenda visual que acompaña a los bloques b10-b12 (sección 2.1.1 Rarezas). Cada ícono es el referente cromático que el texto describe.",
+      "legibility": "clear",
+      "legibility_notes": "Colores distinguibles; el ícono Titán Kósmica podría confundirse con el dorado Rara si no se observa la saturación extra."
+    },
+    {
+      "anchor": "p05/fig-03",
+      "slug": "chevrones-decorativos-cabecera",
+      "type": "icon",
+      "bbox_pct": {"x": 2, "y": 2, "w": 96, "h": 5},
+      "description_detailed": "A lo largo de la franja superior de la página corre una banda decorativa compuesta por tres chevrones (ángulos cuneiformes) a cada lado que flanquean el título de sección. Los chevrones son de color azul oscuro con un ligero degradado hacia azul medio, dando sensación de profundidad.\n\nLa banda funciona como firma gráfica recurrente del rulebook Kódem: delimita visualmente el encabezado, separa la marca/numeración de sección del cuerpo de la página y aporta un ritmo visual tribal/geométrico alineado con la estética mesoamericana del juego. Detrás de los chevrones se percibe un patrón tenue de textura que puede ser ruido o motivos vegetales estilizados.\n\nEn el centro de la banda se ubica la numeración '2.' seguida del título 'Partes de la carta' en tipografía de palo seco condensada. Los chevrones de la izquierda apuntan hacia adentro (hacia el texto) y los de la derecha también apuntan hacia el texto, creando una composición simétrica y equilibrada.",
+      "embedded_text": [],
+      "relation_to_text": "Decoración estructural del encabezado de la sección 2; no aporta reglas pero marca la jerarquía del documento.",
+      "legibility": "clear",
+      "legibility_notes": null
+    }
+  ],
+  "page_notes": "Página 5 del rulebook: introducción a la anatomía de las cartas (sección 2 Partes de la carta). Layout a dos columnas implícitas con una carta central muy grande como pivote visual y callouts radiales con líneas guía que apuntan a cada parte. Tipografía mixta: títulos con serif decorativa y cuerpo en palo seco. Fondo blanco cremoso con sutiles vetas claras. Incluye un typo preservado ('expasión' en b09) y una variación de marca ('Kodem' sin tilde en b07). La sección 2.1.1 Rarezas se inicia en la mitad baja de la página y continúa con la infografía cromática de seis niveles. Contexto del juego (Adendei, Protector, Rava, Ixim/Rot, Bio, Token, ZP, Extinción, Descansos, Marcas, Fases) no aparece explícitamente en esta página; la página es puramente didáctica sobre lectura de cartas.",
+  "self_confidence": 0.88
+}
