@@ -3,7 +3,9 @@
   "model": "opus-4-7",
   "extraction_date": "2026-04-18T19:50:00-06:00",
   "title": "5.2 Diagrama Estructura de turno",
-  "section_refs": ["§5.2"],
+  "section_refs": [
+    "§5.2"
+  ],
   "text_blocks": [
     {
       "anchor": "p19/b01",
@@ -32,7 +34,12 @@
       "anchor": "p19/fig-01",
       "slug": "leyenda-colores-estructura-turno",
       "type": "table",
-      "bbox_pct": {"x": 3, "y": 16, "w": 16, "h": 20},
+      "bbox_pct": {
+        "x": 3,
+        "y": 16,
+        "w": 16,
+        "h": 20
+      },
       "description_detailed": "Leyenda cromática vertical ubicada en el lateral izquierdo superior que explica el código de colores usado en el diagrama principal de estructura de turno. Consiste en una lista de seis pares 'rectángulo de color + etiqueta de texto'.\n\nDe arriba a abajo: (1) cuadrado azul → 'Declaración'; (2) cuadrado rosa/magenta → 'Acción'; (3) cuadrado rojo → 'Resolución'; (4) cuadrado negro → 'Fin de efecto'; (5) cuadrado amarillo → 'Efectos del rival'; (6) cuadrado verde → 'Efectos que pueden usar jugador en turno y rival'.\n\nLa leyenda es esencial para interpretar cada nodo coloreado del flowchart principal, ya que el tipo de efecto se codifica por color.",
       "embedded_text": [
         "Declaración",
@@ -50,7 +57,12 @@
       "anchor": "p19/fig-02",
       "slug": "flowchart-estructura-completa-turno",
       "type": "flowchart",
-      "bbox_pct": {"x": 13, "y": 8, "w": 82, "h": 58},
+      "bbox_pct": {
+        "x": 13,
+        "y": 8,
+        "w": 82,
+        "h": 58
+      },
       "description_detailed": "Diagrama de flujo principal que describe la estructura completa de un turno de Kódem TCG. Se organiza como una secuencia vertical de bandas grises (Fases) con nodos coloreados en su interior, interconectados por flechas y líneas punteadas que muestran flujos principales y alternativos.\n\nEstructura jerárquica: El diagrama arranca en un óvalo gris superior etiquetado 'Inicio del turno' y culmina en otro óvalo gris etiquetado 'Inicio del Turno Rival'.\n\nFase Previa (banda gris): contiene nodos — Pasivas (azul: Declaración), Revelar Cartas (azul), Pasivas Opcionales (azul), Costo (rosa: Acción), Pasivas Rápidas (verde: efectos compartidos), Pasivas (rojo: Resolución), Pasivas Opcionales (rojo), Reemplazo (rosa).\n\nFase de Batalla (banda gris): nodos — Daño (azul), Activas (azul), Activas Rápidas (azul), Vínculo Odémico (azul), Costo y/o Quemadura (rosa), Revelar (amarillo: Efectos del rival), Activa Rápida Rival (amarillo), Reemplazo (rosa), Daño (rojo), Activa (rojo).\n\nFase Post (banda gris): nodos — 'Cartas con 0 ptos. de vida van a Extinción' (verde), Pasivas (azul), Costo (rosa), Pasivas Rápidas (verde), Pasivas (rojo), Reemplazo (rosa).\n\nFase de Equipo (banda gris): nodos — Equipa (azul), Pasivas (azul), Costo (rosa), Pasivas Rápidas (verde), Pasivas (rojo), Reemplazo (rosa).\n\nFin de Turno (banda gris): nodos en dos subfilas — Costo de Fin de Turno (rosa), Activas de Fin de Turno (rosa), Pasivas de Fin de Turno (rosa), Fin de Activas de Fin de Turno (negro: Fin de efecto), Fin de Pasivas de Fin de Turno (negro), Veneno (rosa), Pasivas (verde/otra subfila con Costo, Pasivas Rápidas, Pasivas, Reemplazo, Descansos).\n\nConexiones: flechas sólidas negras describen el flujo principal. Líneas punteadas rojas y verdes muestran bucles y flujos alternativos (respuesta del rival, retornos a Pasivas).\n\nEn el lateral derecho aparecen óvalos/cajas adicionales con texto que describe casos de 'Pasar Turno' (ver fig-03). Dentro de la banda de Fase de Batalla puede apreciarse una marca de agua tenue con texto tipo 'AZTIIIA' o similar (probablemente marca visual/watermark, no normativa).",
       "embedded_text": [
         "Inicio del turno",
@@ -91,7 +103,12 @@
       "anchor": "p19/fig-03",
       "slug": "flowchart-pasar-turno",
       "type": "flowchart",
-      "bbox_pct": {"x": 13, "y": 63, "w": 80, "h": 35},
+      "bbox_pct": {
+        "x": 13,
+        "y": 63,
+        "w": 80,
+        "h": 35
+      },
       "description_detailed": "Diagrama de flujo secundario ubicado en la parte inferior de la página, que ilustra el caso particular de 'Pasar Turno'. Es independiente del flujo principal (fig-02) y describe la ruta abreviada cuando el jugador decide pasar.\n\nEstructura: arranca en un óvalo gris 'Pasar Turno' y culmina en otro óvalo gris 'Fin de turno'. Entre ambos aparecen los siguientes nodos y bloques de texto:\n\n- Rectángulo azul: 'Revelar Cartas: únicamente cartas con costo y/o Pasivas que indiquen pasar turno.'\n- Rectángulo azul: 'Pasivas que requieran pasar Turno'\n- Nodos coloreados en secuencia: Costo (rosa), Pasivas Rápidas (amarillo), Pasivas (rojo), Reemplazo (rosa/óvalo).\n\nSe conectan mediante flechas sólidas negras para el flujo principal y líneas punteadas rojas/verdes para flujos alternativos (respuesta del rival o bucles).\n\nEn el lateral derecho aparecen conectores verticales con texto adicional que refuerza la lógica del 'pasar turno' (se menciona condiciones de revelar cartas con costo y/o pasivas, y pasivas que requieren pasar turno).",
       "embedded_text": [
         "Pasar Turno",
@@ -109,5 +126,22 @@
     }
   ],
   "page_notes": "Página dedicada casi exclusivamente a la sección 5.2 'Diagrama Estructura de turno'. El contenido visual (el flowchart completo + leyenda + flowchart de 'Pasar Turno') es el núcleo normativo; el texto verbatim es mínimo (título + nota). La transcripción completa de cada nodo requiere zoom sobre el PNG original y probablemente una segunda pasada de validación.",
-  "self_confidence": 0.88
+  "self_confidence": 0.88,
+  "spot_check_pass": 3,
+  "spot_check_date": "2026-04-18T22:47:02.116987",
+  "spot_check_status": "POST_VALIDATION_PENDING",
+  "spot_check_notes": [
+    "⚠️ POST-VALIDACIÓN CONJUNTA PENDIENTE — Ramsés y Logos deben extraer juntos el flowchart al final del proceso.",
+    "Nodos canónicos confirmados por Ramsés: Inicio del Turno, Fase Previa, Fase de Batalla, Fase Post, Fase de Equipo, Fin de Turno, Inicio del Turno Rival, (lateral) Pasar Turno."
+  ],
+  "canonical_nodes": [
+    "Inicio del Turno",
+    "Fase Previa",
+    "Fase de Batalla",
+    "Fase Post",
+    "Fase de Equipo",
+    "Fin de Turno",
+    "Inicio del Turno Rival",
+    "Pasar Turno (lateral)"
+  ]
 }

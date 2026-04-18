@@ -1,23 +1,47 @@
 {
   "rulebook_version": "5.1",
   "pdf_sha256": "05672af59629e1e8c7ead6d9487aba107506d239c4863eec49fc28ab45479b03",
-  "generated_at": "2026-04-18T22:21:05+00:00",
-  "methodology": "Pipeline de 3 capas: (1) Extracción LLM (opus-4-7) página por página sobre imágenes PNG — produce text_blocks y figures con anchors estables pNN/bXX y pNN/fig-NN. (2) OCR (tesseract español) como verificación paralela del texto plano. (3) Arbitraje LLM compara ambas extracciones y emite verdict ∈ {both_agree, llm_preferred, ocr_preferred, needs_human} + lista de typos verbatim. Para verdicts ocr_preferred en páginas densas, la extracción LLM se re-ejecutó (pass=2) con foco en texto. Consolidación usa LLM como fuente canónica (descripciones de figuras más ricas) preservando typos verbatim detectados por el árbitro.",
+  "generated_at": "2026-04-18T22:50:34+00:00",
+  "methodology": "Pipeline de 4 capas: (1) Extracción LLM (opus-4-7) página por página sobre imágenes PNG — produce text_blocks y figures con anchors estables pNN/bXX y pNN/fig-NN. (2) OCR (tesseract español) como verificación paralela del texto plano. (3) Arbitraje LLM compara ambas extracciones y emite verdict ∈ {both_agree, llm_preferred, ocr_preferred, needs_human} + lista de typos verbatim. Para verdicts ocr_preferred en páginas densas y needs_human, la extracción LLM se re-ejecutó (pass=2) con foco en texto. (4) Spot-check pass 3 humano (Ramsés) sobre páginas seleccionadas — aporta notas verbatim y nodos canónicos; una página queda marcada POST_VALIDATION_PENDING (p19, diagrama de turno) para extracción conjunta final. Consolidación usa LLM como fuente canónica (descripciones de figuras más ricas) preservando typos verbatim detectados por árbitro y humano.",
   "stats": {
     "total_pages": 40,
-    "total_blocks": 558,
+    "total_blocks": 562,
     "total_figures": 207,
+    "re_extracted_pages": 9,
+    "re_extracted_list": [
+      7,
+      11,
+      16,
+      21,
+      22,
+      23,
+      24,
+      26,
+      27
+    ],
+    "avg_confidence": 0.9008,
+    "avg_confidence_pass2": 0.89,
+    "total_typos_preserved": 75,
+    "spot_check_pass3_count": 8,
+    "spot_check_pass3_pages": [
+      4,
+      5,
+      6,
+      14,
+      19,
+      32,
+      36,
+      40
+    ],
+    "post_validation_pending_pages": [
+      19
+    ],
     "verdicts": {
       "both_agree": 14,
       "llm_preferred": 13,
       "ocr_preferred": 12,
       "needs_human": 1
-    },
-    "re_extracted_pages": 9,
-    "avg_confidence": 0.9073,
-    "avg_confidence_pass2": 0.9189,
-    "total_typos_preserved": 75,
-    "human_review_count": 1
+    }
   },
   "pages": [
     {
@@ -26,10 +50,13 @@
       "section_refs": [],
       "verdict": "llm_preferred",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.97,
+      "llm_confidence": 0.97,
       "agreement_pct": 1.0,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p01/b01",
@@ -133,10 +160,13 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.97,
+      "llm_confidence": 0.97,
       "agreement_pct": 0.85,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p02/b01",
@@ -193,10 +223,13 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.97,
+      "llm_confidence": 0.97,
       "agreement_pct": 0.85,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p03/b01",
@@ -236,10 +269,15 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "spot_check_human",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.93,
+      "llm_confidence": 0.93,
       "agreement_pct": 0.88,
+      "re_extracted": false,
+      "spot_check_pass": 3,
+      "spot_check_status": null,
+      "spot_check_notes": [
+        "Slogan \"EVOCA, PROTEGE Y VENCE\" NO existe en el PDF (alucinación OCR confirmada por humano)."
+      ],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p04/b01",
@@ -385,10 +423,13 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "spot_check_human",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.88,
+      "llm_confidence": 0.88,
       "agreement_pct": 0.85,
+      "re_extracted": false,
+      "spot_check_pass": 3,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p05/b01",
@@ -435,9 +476,9 @@
         {
           "anchor": "p05/b07",
           "heading": "Nombre científico del animal, planta o mineral:",
-          "text": "Nombre científico del animal, planta o mineral:\nLos personajes de Kodem están inspirados en flora, fauna y minerales principalmente en peligro de extinción, en este apartado podrá conocer la base científica del personaje.",
+          "text": "Nombre científico del animal, planta o mineral",
           "position": "middle-right",
-          "notes": "Nota: aquí la marca se escribe 'Kodem' sin tilde, distinto a 'Kódem' del título del manual."
+          "notes": "Nota: aquí la marca se escribe 'Kodem' sin tilde, distinto a 'Kódem' del título del manual. [spot-check fix: texto corregido por Ramsés]"
         },
         {
           "anchor": "p05/b08",
@@ -473,6 +514,13 @@
           "text": "Carta común\n\nCarta Rara\n\nCarta Súper Rara\n\nCarta Ultra Rara\n\nCarta Kósmica\n\nCarta Titán Kósmica\n*Aplica sólo para la expansión \"Titanes de la Corteza\"",
           "position": "bottom",
           "notes": "Lista vertical de rarezas acompañada por los iconos de expansión coloreados. Nota al pie marcada con asterisco para la Titán Kósmica."
+        },
+        {
+          "anchor": "p05/b13",
+          "heading": "Ozet — Costo",
+          "text": "Costo: Daña 1 pto. a otra carta aliada.",
+          "position": "card-example",
+          "notes": "[spot-check pass 3] Agregado por Ramsés — texto impreso en carta ejemplo Ozet, omitido por LLM pass 1."
         }
       ],
       "figures": [
@@ -548,10 +596,15 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "spot_check_human",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.9,
+      "llm_confidence": 0.9,
       "agreement_pct": 0.88,
+      "re_extracted": false,
+      "spot_check_pass": 3,
+      "spot_check_status": null,
+      "spot_check_notes": [
+        "Confirmado 'Energía' (LLM correcto, OCR alucinó typo eEnergla)."
+      ],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p06/b01",
@@ -671,6 +724,20 @@
           "text": "FERAL:\nAquellos Adendei con ausencia de dominio elemental, a pesar de ello, compensan esto con poder de manada, y reacciones rápidas o altas cadencias de ataque. Dentro del juego, también se considera una Energía.",
           "position": "bottom-right",
           "notes": "Cierra la enumeración aclarando que Feral, aunque es 'ausencia de energía elemental', cuenta como una Energía a efectos de reglas."
+        },
+        {
+          "anchor": "p06/b18",
+          "heading": "Shugg — Pasiva-Rápida",
+          "text": "Pasiva-Rápida: Si 1 Adendei Abisal aliado es revelado, revela (coloca boca arriba) 1 carta rival y niega la Pasiva de 1 carta rival hasta el fin del turno.",
+          "position": "card-example",
+          "notes": "[spot-check pass 3] Agregado por Ramsés (texto enviado vía imagen) — omitido por LLM pass 1."
+        },
+        {
+          "anchor": "p06/b19",
+          "heading": "Shugg — Costo",
+          "text": "Costo: No podrás usar la Pasiva de tu Bio mientras esta carta esté en el campo.",
+          "position": "card-example",
+          "notes": "[spot-check pass 3] Agregado por Ramsés (texto enviado vía imagen) — omitido por LLM pass 1."
         }
       ],
       "figures": [
@@ -747,10 +814,13 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "re_extract",
-      "re_extracted": true,
-      "re_extraction_pass": 2,
-      "self_confidence": 0.95,
+      "llm_confidence": 0.94,
       "agreement_pct": 0.9,
+      "re_extracted": true,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p07/b01",
@@ -1088,10 +1158,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.93,
+      "llm_confidence": 0.93,
       "agreement_pct": 0.96,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p08/b01",
@@ -1346,10 +1419,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.93,
+      "llm_confidence": 0.93,
       "agreement_pct": 0.95,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p09/b01",
@@ -1524,10 +1600,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.93,
+      "llm_confidence": 0.93,
       "agreement_pct": 0.97,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p10/b01",
@@ -1762,10 +1841,13 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "re_extract",
-      "re_extracted": true,
-      "re_extraction_pass": 2,
-      "self_confidence": 0.92,
+      "llm_confidence": 0.88,
       "agreement_pct": 0.88,
+      "re_extracted": true,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p11/b01",
@@ -2150,10 +2232,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.9,
+      "llm_confidence": 0.9,
       "agreement_pct": 0.95,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p12/b01",
@@ -2403,10 +2488,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.92,
+      "llm_confidence": 0.92,
       "agreement_pct": 0.96,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p13/b01",
@@ -2684,10 +2772,15 @@
       ],
       "verdict": "both_agree",
       "recommendation": "spot_check_human",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.9,
+      "llm_confidence": 0.9,
       "agreement_pct": 0.95,
+      "re_extracted": false,
+      "spot_check_pass": 3,
+      "spot_check_status": null,
+      "spot_check_notes": [
+        "Confirmado 'Morféica' con acento (LLM correcto)."
+      ],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p14/b01",
@@ -3185,10 +3278,13 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.89,
+      "llm_confidence": 0.89,
       "agreement_pct": 0.97,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p15/b01",
@@ -3514,10 +3610,13 @@
       ],
       "verdict": "needs_human",
       "recommendation": "re_extract",
-      "re_extracted": true,
-      "re_extraction_pass": 2,
-      "self_confidence": 0.94,
+      "llm_confidence": 0.88,
       "agreement_pct": 0.78,
+      "re_extracted": true,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p16/b01",
@@ -3760,10 +3859,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.92,
+      "llm_confidence": 0.92,
       "agreement_pct": 0.98,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p17/b01",
@@ -3907,10 +4009,13 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.94,
+      "llm_confidence": 0.94,
       "agreement_pct": 0.96,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p18/b01",
@@ -4054,10 +4159,25 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "spot_check_human",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.88,
+      "llm_confidence": 0.88,
       "agreement_pct": 0.7,
+      "re_extracted": false,
+      "spot_check_pass": 3,
+      "spot_check_status": "POST_VALIDATION_PENDING",
+      "spot_check_notes": [
+        "⚠️ POST-VALIDACIÓN CONJUNTA PENDIENTE — Ramsés y Logos deben extraer juntos el flowchart al final del proceso.",
+        "Nodos canónicos confirmados por Ramsés: Inicio del Turno, Fase Previa, Fase de Batalla, Fase Post, Fase de Equipo, Fin de Turno, Inicio del Turno Rival, (lateral) Pasar Turno."
+      ],
+      "canonical_nodes": [
+        "Inicio del Turno",
+        "Fase Previa",
+        "Fase de Batalla",
+        "Fase Post",
+        "Fase de Equipo",
+        "Fin de Turno",
+        "Inicio del Turno Rival",
+        "Pasar Turno (lateral)"
+      ],
       "text_blocks": [
         {
           "anchor": "p19/b01",
@@ -4188,10 +4308,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.94,
+      "llm_confidence": 0.94,
       "agreement_pct": 0.98,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p20/b01",
@@ -4367,10 +4490,13 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "re_extract",
-      "re_extracted": true,
-      "re_extraction_pass": 2,
-      "self_confidence": 0.88,
+      "llm_confidence": 0.92,
       "agreement_pct": 0.85,
+      "re_extracted": true,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p21/b01",
@@ -4679,10 +4805,13 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "re_extract",
-      "re_extracted": true,
-      "re_extraction_pass": 2,
-      "self_confidence": 0.86,
+      "llm_confidence": 0.84,
       "agreement_pct": 0.75,
+      "re_extracted": true,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p22/b01",
@@ -5090,10 +5219,13 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "re_extract",
-      "re_extracted": true,
-      "re_extraction_pass": 2,
-      "self_confidence": 0.93,
+      "llm_confidence": 0.9,
       "agreement_pct": 0.94,
+      "re_extracted": true,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p23/b01",
@@ -5331,10 +5463,13 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "re_extract",
-      "re_extracted": true,
-      "re_extraction_pass": 2,
-      "self_confidence": 0.92,
+      "llm_confidence": 0.88,
       "agreement_pct": 0.8,
+      "re_extracted": true,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p24/b01",
@@ -5647,10 +5782,13 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.88,
+      "llm_confidence": 0.88,
       "agreement_pct": 0.88,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p25/b01",
@@ -5843,10 +5981,13 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "re_extract",
-      "re_extracted": true,
-      "re_extraction_pass": 2,
-      "self_confidence": 0.94,
+      "llm_confidence": 0.85,
       "agreement_pct": 0.82,
+      "re_extracted": true,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p26/b01",
@@ -6060,10 +6201,13 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "re_extract",
-      "re_extracted": true,
-      "re_extraction_pass": 2,
-      "self_confidence": 0.93,
+      "llm_confidence": 0.92,
       "agreement_pct": 0.88,
+      "re_extracted": true,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p27/b01",
@@ -6360,10 +6504,13 @@
       "section_refs": [],
       "verdict": "llm_preferred",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.92,
+      "llm_confidence": 0.92,
       "agreement_pct": 0.93,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p28/b01",
@@ -6560,10 +6707,13 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.88,
+      "llm_confidence": 0.88,
       "agreement_pct": 0.94,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p29/b01",
@@ -6750,10 +6900,13 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.9,
+      "llm_confidence": 0.9,
       "agreement_pct": 0.95,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p30/b01",
@@ -6858,10 +7011,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.88,
+      "llm_confidence": 0.88,
       "agreement_pct": 0.96,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p31/b01",
@@ -7063,10 +7219,16 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "spot_check_human",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.85,
+      "llm_confidence": 0.85,
       "agreement_pct": 0.9,
+      "re_extracted": false,
+      "spot_check_pass": 3,
+      "spot_check_status": null,
+      "spot_check_notes": [
+        "Carta corregida a 'Tekei, Responsabilidad' (LLM tenía Tekei, OCR/verificación humana inicial tenía Telei). 0 bloques actualizados.",
+        "Confirmado 'enviar' sin tilde (LLM correcto)."
+      ],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p32/b01",
@@ -7108,7 +7270,7 @@
           "heading": null,
           "text": "Ejemplo de carta con restricción para enviar a Extinción",
           "position": "middle-left",
-          "notes": "Pie de imagen para la carta Tolei, Responsabilidad. En cursiva."
+          "notes": "Pie de imagen para la carta Tekei, Responsabilidad. En cursiva."
         },
         {
           "anchor": "p32/b07",
@@ -7245,9 +7407,9 @@
             "w": 30,
             "h": 24
           },
-          "description_detailed": "Carta del juego Kódem TCG titulada 'Tolei, Responsabilidad'. La ilustración presenta a un ciervo/venado majestuoso con cornamenta prominente, situado en un ambiente invernal con tonos predominantemente rojos, blancos y grises. La paleta transmite solemnidad, protección y majestuosidad, consistente con el concepto de 'Responsabilidad' del nombre.\n\nLa composición centra al ciervo con pose erguida y noble, probablemente mirando de frente o ligeramente de perfil, con la cornamenta detallada que le da un aire de guardián del bosque o protector espiritual. El fondo evoca un paisaje invernal con nieve, posibles árboles desnudos o cielos crepusculares en tonos rojizos.\n\nEl estilo artístico es detallado y dramático, con énfasis en la textura del pelaje, la estructura ósea de las astas y la iluminación ambiental que da profundidad al paisaje. Los destellos de luz sobre el pelaje del ciervo sugieren su naturaleza sagrada o protectora.\n\nLa carta pertenece a los subtipos 'Adendei / Huanca' (o similar) y su habilidad Pasiva protege a los Adendei aliados de ser enviados a Extinción, siendo un ejemplo ideal del tipo 4 de restricciones: 'Restricción a enviar a Extinción'.\n\nLas estadísticas muestran 1 de ataque, 0 de descanso y 0 de vida (o configuración similar). Está ubicada en el centro-izquierda de la página, junto al pie de imagen que la identifica como ejemplo del tipo 4.",
+          "description_detailed": "Carta del juego Kódem TCG titulada 'Tekei, Responsabilidad'. La ilustración presenta a un ciervo/venado majestuoso con cornamenta prominente, situado en un ambiente invernal con tonos predominantemente rojos, blancos y grises. La paleta transmite solemnidad, protección y majestuosidad, consistente con el concepto de 'Responsabilidad' del nombre.\n\nLa composición centra al ciervo con pose erguida y noble, probablemente mirando de frente o ligeramente de perfil, con la cornamenta detallada que le da un aire de guardián del bosque o protector espiritual. El fondo evoca un paisaje invernal con nieve, posibles árboles desnudos o cielos crepusculares en tonos rojizos.\n\nEl estilo artístico es detallado y dramático, con énfasis en la textura del pelaje, la estructura ósea de las astas y la iluminación ambiental que da profundidad al paisaje. Los destellos de luz sobre el pelaje del ciervo sugieren su naturaleza sagrada o protectora.\n\nLa carta pertenece a los subtipos 'Adendei / Huanca' (o similar) y su habilidad Pasiva protege a los Adendei aliados de ser enviados a Extinción, siendo un ejemplo ideal del tipo 4 de restricciones: 'Restricción a enviar a Extinción'.\n\nLas estadísticas muestran 1 de ataque, 0 de descanso y 0 de vida (o configuración similar). Está ubicada en el centro-izquierda de la página, junto al pie de imagen que la identifica como ejemplo del tipo 4.",
           "embedded_text": [
-            "Tolei, Responsabilidad",
+            "Tekei, Responsabilidad",
             "Adendei / Huanca",
             "Pasiva",
             "Adendei aliados no pueden ser enviados a Extinción",
@@ -7305,7 +7467,7 @@
           "legibility_notes": "Texto interno difícil de leer con precisión."
         }
       ],
-      "page_notes": "Página muy visual que enumera los tipos 2 al 6 de 'Tipos de Restricciones' (continuación del tipo 1 iniciado en p31). Cada tipo tiene su propia carta(s) ejemplo y pie de imagen en cursiva. Layout complejo con cartas distribuidas en varias filas y columnas entrelazadas con el texto de reglas. Total de 7 cartas ejemplo en la página (Arion, Hypos, Mizhe arriba; Zekan Retorno y Tolei en medio; Zekan Reclutamiento y Ungos abajo). Incluye referencia cruzada a §3.4 Equipos."
+      "page_notes": "Página muy visual que enumera los tipos 2 al 6 de 'Tipos de Restricciones' (continuación del tipo 1 iniciado en p31). Cada tipo tiene su propia carta(s) ejemplo y pie de imagen en cursiva. Layout complejo con cartas distribuidas en varias filas y columnas entrelazadas con el texto de reglas. Total de 7 cartas ejemplo en la página (Arion, Hypos, Mizhe arriba; Zekan Retorno y Tekei en medio; Zekan Reclutamiento y Ungos abajo). Incluye referencia cruzada a §3.4 Equipos."
     },
     {
       "page": 33,
@@ -7315,10 +7477,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.9,
+      "llm_confidence": 0.9,
       "agreement_pct": 0.96,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p33/b01",
@@ -7456,10 +7621,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.88,
+      "llm_confidence": 0.88,
       "agreement_pct": 0.94,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p34/b01",
@@ -7641,10 +7809,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.9,
+      "llm_confidence": 0.9,
       "agreement_pct": 0.97,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p35/b01",
@@ -7797,10 +7968,16 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "spot_check_human",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.87,
+      "llm_confidence": 0.87,
       "agreement_pct": 0.93,
+      "re_extracted": false,
+      "spot_check_pass": 3,
+      "spot_check_status": null,
+      "spot_check_notes": [
+        "Adendei → Adendei en 0 ocurrencias (LLM alucinó 'Adendei').",
+        "Confirmado: la carta 'Tekei' de p36 es la misma que aparece en p32 (no cartas distintas)."
+      ],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p36/b01",
@@ -7879,16 +8056,16 @@
             "w": 22,
             "h": 18
           },
-          "description_detailed": "Ilustración de la carta 'Zotz, Absorción de Energía' del juego Kódem TCG, mostrada como referencia visual en la tabla de cartas limitadas con 0 copias permitidas en Formato Extendido. La ilustración central muestra una criatura tipo dragón o murciélago de gran tamaño con alas extendidas, de coloración marrón-rojiza oscura, posado sobre una superficie oscura y rocosa.\n\nLa criatura está rodeada de una energía azul brillante que emana de sus garras o del entorno inmediato, generando un efecto luminoso dramático que contrasta con la atmósfera oscura general. El fondo combina tonos púrpura profundo, azul oscuro y negro, creando una escena de aire nocturno y sobrenatural, coherente con el nombre 'Absorción de Energía' que sugiere un acto mágico-vampírico.\n\nEn la parte inferior de la carta se aprecia el marco estándar con iconos de estadísticas y el texto de habilidad. La clasificación de tipo parece indicar 'Adonde / Háumsca' (posible variante ortográfica o error de lectura del OCR). La Pasiva descrita permite copiar la Activa y el Combo de una carta en Extinción una vez por turno, lo que explica por qué está limitada a 0 copias en Formato Extendido (es demasiado poderosa). En la parte inferior aparece un texto narrativo en cursiva sobre la absorción de energía de seres vencidos.",
+          "description_detailed": "Ilustración de la carta 'Zotz, Absorción de Energía' del juego Kódem TCG, mostrada como referencia visual en la tabla de cartas limitadas con 0 copias permitidas en Formato Extendido. La ilustración central muestra una criatura tipo dragón o murciélago de gran tamaño con alas extendidas, de coloración marrón-rojiza oscura, posado sobre una superficie oscura y rocosa.\n\nLa criatura está rodeada de una energía azul brillante que emana de sus garras o del entorno inmediato, generando un efecto luminoso dramático que contrasta con la atmósfera oscura general. El fondo combina tonos púrpura profundo, azul oscuro y negro, creando una escena de aire nocturno y sobrenatural, coherente con el nombre 'Absorción de Energía' que sugiere un acto mágico-vampírico.\n\nEn la parte inferior de la carta se aprecia el marco estándar con iconos de estadísticas y el texto de habilidad. La clasificación de tipo parece indicar 'Adendei / Háumsca' (posible variante ortográfica o error de lectura del OCR). La Pasiva descrita permite copiar la Activa y el Combo de una carta en Extinción una vez por turno, lo que explica por qué está limitada a 0 copias en Formato Extendido (es demasiado poderosa). En la parte inferior aparece un texto narrativo en cursiva sobre la absorción de energía de seres vencidos.",
           "embedded_text": [
             "Zotz, Absorción de Energía",
-            "Adonde / Háumsca",
+            "Adendei / Háumsca",
             "Pasiva: Esta carta puede copiar la Activa y el Combo de una carta en Extinción, una vez en el turno.",
             "Absorbe la energía de los seres que caen vencidos y establece para volverse Áhntzi... sin ser Āhn Zotz algo pasó por ahí."
           ],
           "relation_to_text": "Referencia visual para la entrada 'Zotz, Absorción de Energía' en la tabla de CARTAS LIMITADAS con 0 copias.",
           "legibility": "needs_enhance",
-          "legibility_notes": "El texto narrativo de la parte inferior contiene grafías poco legibles ('Áhntzi', 'Āhn Zotz') que podrían ser errores de lectura del OCR o nombres propios del universo Kódem. La clasificación de tipo 'Adonde' podría ser 'Adende' (variante ortográfica)."
+          "legibility_notes": "El texto narrativo de la parte inferior contiene grafías poco legibles ('Áhntzi', 'Āhn Zotz') que podrían ser errores de lectura del OCR o nombres propios del universo Kódem. La clasificación de tipo 'Adendei' podría ser 'Adende' (variante ortográfica)."
         },
         {
           "anchor": "p36/fig-03",
@@ -7900,20 +8077,20 @@
             "w": 22,
             "h": 18
           },
-          "description_detailed": "Ilustración de la carta 'Tekei, Responsabilidad' del juego Kódem TCG, mostrada como referencia visual para la entrada de la tabla de cartas limitadas con 1 copia permitida en Formato Extendido. La ilustración central presenta una criatura elegante con apariencia de ciervo, antílope o ser etéreo con grandes astas ramificadas, de pie en pose noble y solemne.\n\nEl personaje irradia una aura blanca-azulada luminosa que contrasta dramáticamente con el fondo, generando una sensación de divinidad o poder espiritual. El fondo está compuesto por tonos rosados y rojos cálidos que evocan pétalos de flores cayendo, llamas ritualísticas o partículas mágicas flotando alrededor del personaje.\n\nLa atmósfera general es mística y solemne, coherente con el epíteto 'Responsabilidad' que sugiere un rol de liderazgo o carga sagrada en la narrativa del juego. El estilo artístico es más pictórico y etéreo que otras cartas del manual, reforzando su estatus especial (solo 1 copia permitida).\n\nEn la parte inferior de la carta se ven los iconos de estadísticas y texto de habilidades. La clasificación de tipo aparece como 'Adonde / Háumsca' (coherente con la carta Zotz de la misma sección). La Pasiva protege a todas las cartas aliadas de ser enviadas a Extinción, y el Costo indica que la carta misma no puede ser enviada ni protegida, reforzando su naturaleza de 'ancla' protectora. El texto narrativo final hace referencia al 'antiguo Linaje de Mák'.",
+          "description_detailed": "Ilustración de la carta 'Tekei, Responsabilidad' del juego Kódem TCG, mostrada como referencia visual para la entrada de la tabla de cartas limitadas con 1 copia permitida en Formato Extendido. La ilustración central presenta una criatura elegante con apariencia de ciervo, antílope o ser etéreo con grandes astas ramificadas, de pie en pose noble y solemne.\n\nEl personaje irradia una aura blanca-azulada luminosa que contrasta dramáticamente con el fondo, generando una sensación de divinidad o poder espiritual. El fondo está compuesto por tonos rosados y rojos cálidos que evocan pétalos de flores cayendo, llamas ritualísticas o partículas mágicas flotando alrededor del personaje.\n\nLa atmósfera general es mística y solemne, coherente con el epíteto 'Responsabilidad' que sugiere un rol de liderazgo o carga sagrada en la narrativa del juego. El estilo artístico es más pictórico y etéreo que otras cartas del manual, reforzando su estatus especial (solo 1 copia permitida).\n\nEn la parte inferior de la carta se ven los iconos de estadísticas y texto de habilidades. La clasificación de tipo aparece como 'Adendei / Háumsca' (coherente con la carta Zotz de la misma sección). La Pasiva protege a todas las cartas aliadas de ser enviadas a Extinción, y el Costo indica que la carta misma no puede ser enviada ni protegida, reforzando su naturaleza de 'ancla' protectora. El texto narrativo final hace referencia al 'antiguo Linaje de Mák'.",
           "embedded_text": [
             "Tekei, Responsabilidad",
-            "Adonde / Háumsca",
+            "Adendei / Háumsca",
             "Pasiva: Las cartas aliadas no pueden ser enviadas a Extinción.",
             "Costo: Esta carta no puede ser enviada ni protegida.",
             "Controla a los demás de Tekei del origen fino del antiguo Linaje de Mák."
           ],
           "relation_to_text": "Referencia visual para la entrada 'Tekei, Responsabilidad' en la tabla de CARTAS LIMITADAS con 1 copia permitida.",
           "legibility": "needs_enhance",
-          "legibility_notes": "El texto narrativo de la parte inferior tiene construcción gramatical extraña ('Controla a los demás de Tekei...') que sugiere posible error de lectura del OCR o estilo narrativo estilizado del juego. La clasificación 'Adonde' probablemente debería ser 'Adende'."
+          "legibility_notes": "El texto narrativo de la parte inferior tiene construcción gramatical extraña ('Controla a los demás de Tekei...') que sugiere posible error de lectura del OCR o estilo narrativo estilizado del juego. La clasificación 'Adendei' probablemente debería ser 'Adende'."
         }
       ],
-      "page_notes": "Página con tres secciones: cierre de variantes del Formato Multijugador con la variante 'Manada' (inicio de p36), subsección 8.2 Formato Extendido completa (composición del mazo, suplentes, condición de victoria) y el inicio de una tabla de CARTAS LIMITADAS que muestra 2 entradas (Zotz: 0 copias, Tekei: 1 copia) con ilustraciones de referencia de ambas cartas. El texto original tenía palabras partidas por guiones de fin de línea ('Protec-tor', 'pri-meras') que fueron reconstruidas conservando el contenido. La clasificación 'Adonde / Háumsca' aparece dos veces pero probablemente debería ser 'Adende' (posible variante ortográfica del manual o error de transcripción OCR)."
+      "page_notes": "Página con tres secciones: cierre de variantes del Formato Multijugador con la variante 'Manada' (inicio de p36), subsección 8.2 Formato Extendido completa (composición del mazo, suplentes, condición de victoria) y el inicio de una tabla de CARTAS LIMITADAS que muestra 2 entradas (Zotz: 0 copias, Tekei: 1 copia) con ilustraciones de referencia de ambas cartas. El texto original tenía palabras partidas por guiones de fin de línea ('Protec-tor', 'pri-meras') que fueron reconstruidas conservando el contenido. La clasificación 'Adendei / Háumsca' aparece dos veces pero probablemente debería ser 'Adende' (posible variante ortográfica del manual o error de transcripción OCR)."
     },
     {
       "page": 37,
@@ -7925,10 +8102,13 @@
       ],
       "verdict": "llm_preferred",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.78,
+      "llm_confidence": 0.78,
       "agreement_pct": 0.88,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p37/b01",
@@ -8054,10 +8234,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.88,
+      "llm_confidence": 0.88,
       "agreement_pct": 0.97,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p38/b01",
@@ -8366,10 +8549,13 @@
       ],
       "verdict": "both_agree",
       "recommendation": "accept",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.9,
+      "llm_confidence": 0.9,
       "agreement_pct": 0.98,
+      "re_extracted": false,
+      "spot_check_pass": null,
+      "spot_check_status": null,
+      "spot_check_notes": [],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p39/b01",
@@ -8620,10 +8806,16 @@
       ],
       "verdict": "ocr_preferred",
       "recommendation": "spot_check_human",
-      "re_extracted": false,
-      "re_extraction_pass": null,
-      "self_confidence": 0.9,
+      "llm_confidence": 0.9,
       "agreement_pct": 0.95,
+      "re_extracted": false,
+      "spot_check_pass": 3,
+      "spot_check_status": null,
+      "spot_check_notes": [
+        "Encabezado 'Créditos' confirmado (Ramsés).",
+        "Copyright correcto: 'Kodem TCG' (no TCC, OCR alucinó)."
+      ],
+      "canonical_nodes": [],
       "text_blocks": [
         {
           "anchor": "p40/b01",
@@ -8757,6 +8949,13 @@
           "text": "40",
           "position": "bottom-right",
           "notes": "Número de página."
+        },
+        {
+          "anchor": "p40/b20",
+          "heading": "Créditos",
+          "text": "Créditos",
+          "position": "between-social-and-team-names",
+          "notes": "[spot-check pass 3] Agregado por Ramsés — encabezado entre redes sociales y nombres del equipo, omitido por LLM."
         }
       ],
       "figures": [
@@ -8906,3518 +9105,3460 @@
   "anchors_index": {
     "p01/b01": {
       "page": 1,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p01/b02": {
       "page": 1,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p01/b03": {
       "page": 1,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p01/b04": {
       "page": 1,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p01/b05": {
       "page": 1,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p01/fig-01": {
       "page": 1,
-      "type": "figure"
+      "kind": "figure"
     },
     "p01/fig-02": {
       "page": 1,
-      "type": "figure"
+      "kind": "figure"
     },
     "p02/b01": {
       "page": 2,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p02/fig-01": {
       "page": 2,
-      "type": "figure"
+      "kind": "figure"
     },
     "p03/b01": {
       "page": 3,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p03/fig-01": {
       "page": 3,
-      "type": "figure"
+      "kind": "figure"
     },
     "p04/b01": {
       "page": 4,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p04/b02": {
       "page": 4,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p04/b03": {
       "page": 4,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p04/fig-01": {
       "page": 4,
-      "type": "figure"
+      "kind": "figure"
     },
     "p04/fig-02": {
       "page": 4,
-      "type": "figure"
+      "kind": "figure"
     },
     "p04/fig-03": {
       "page": 4,
-      "type": "figure"
+      "kind": "figure"
     },
     "p04/fig-04": {
       "page": 4,
-      "type": "figure"
+      "kind": "figure"
     },
     "p04/fig-05": {
       "page": 4,
-      "type": "figure"
+      "kind": "figure"
     },
     "p04/fig-06": {
       "page": 4,
-      "type": "figure"
+      "kind": "figure"
     },
     "p05/b01": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b02": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b03": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b04": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b05": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b06": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b07": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b08": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b09": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b10": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b11": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p05/b12": {
       "page": 5,
-      "type": "text_block"
+      "kind": "text_block"
+    },
+    "p05/b13": {
+      "page": 5,
+      "kind": "text_block"
     },
     "p05/fig-01": {
       "page": 5,
-      "type": "figure"
+      "kind": "figure"
     },
     "p05/fig-02": {
       "page": 5,
-      "type": "figure"
+      "kind": "figure"
     },
     "p05/fig-03": {
       "page": 5,
-      "type": "figure"
+      "kind": "figure"
     },
     "p06/b01": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b02": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b03": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b04": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b05": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b06": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b07": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b08": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b09": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b10": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b11": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b12": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b13": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b14": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b15": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b16": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p06/b17": {
       "page": 6,
-      "type": "text_block"
+      "kind": "text_block"
+    },
+    "p06/b18": {
+      "page": 6,
+      "kind": "text_block"
+    },
+    "p06/b19": {
+      "page": 6,
+      "kind": "text_block"
     },
     "p06/fig-01": {
       "page": 6,
-      "type": "figure"
+      "kind": "figure"
     },
     "p06/fig-02": {
       "page": 6,
-      "type": "figure"
+      "kind": "figure"
     },
     "p06/fig-03": {
       "page": 6,
-      "type": "figure"
+      "kind": "figure"
     },
     "p07/b01": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b02": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b03": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b04": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b05": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b06": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b07": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b08": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b09": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b10": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b11": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b12": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b13": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b14": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b15": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b16": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b17": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b18": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b19": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b20": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b21": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b22": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b23": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b24": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b25": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/b26": {
       "page": 7,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p07/fig-01": {
       "page": 7,
-      "type": "figure"
+      "kind": "figure"
     },
     "p07/fig-02": {
       "page": 7,
-      "type": "figure"
+      "kind": "figure"
     },
     "p07/fig-03": {
       "page": 7,
-      "type": "figure"
+      "kind": "figure"
     },
     "p07/fig-04": {
       "page": 7,
-      "type": "figure"
+      "kind": "figure"
     },
     "p07/fig-05": {
       "page": 7,
-      "type": "figure"
+      "kind": "figure"
     },
     "p07/fig-06": {
       "page": 7,
-      "type": "figure"
+      "kind": "figure"
     },
     "p07/fig-07": {
       "page": 7,
-      "type": "figure"
+      "kind": "figure"
     },
     "p08/b01": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b02": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b03": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b04": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b05": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b06": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b07": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b08": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b09": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b10": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b11": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b12": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/b13": {
       "page": 8,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p08/fig-01": {
       "page": 8,
-      "type": "figure"
+      "kind": "figure"
     },
     "p08/fig-02": {
       "page": 8,
-      "type": "figure"
+      "kind": "figure"
     },
     "p08/fig-03": {
       "page": 8,
-      "type": "figure"
+      "kind": "figure"
     },
     "p08/fig-04": {
       "page": 8,
-      "type": "figure"
+      "kind": "figure"
     },
     "p08/fig-05": {
       "page": 8,
-      "type": "figure"
+      "kind": "figure"
     },
     "p08/fig-06": {
       "page": 8,
-      "type": "figure"
+      "kind": "figure"
     },
     "p08/fig-07": {
       "page": 8,
-      "type": "figure"
+      "kind": "figure"
     },
     "p08/fig-08": {
       "page": 8,
-      "type": "figure"
+      "kind": "figure"
     },
     "p09/b01": {
       "page": 9,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p09/b02": {
       "page": 9,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p09/b03": {
       "page": 9,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p09/b04": {
       "page": 9,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p09/b05": {
       "page": 9,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p09/b06": {
       "page": 9,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p09/b07": {
       "page": 9,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p09/b08": {
       "page": 9,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p09/b09": {
       "page": 9,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p09/fig-01": {
       "page": 9,
-      "type": "figure"
+      "kind": "figure"
     },
     "p09/fig-02": {
       "page": 9,
-      "type": "figure"
+      "kind": "figure"
     },
     "p09/fig-03": {
       "page": 9,
-      "type": "figure"
+      "kind": "figure"
     },
     "p09/fig-04": {
       "page": 9,
-      "type": "figure"
+      "kind": "figure"
     },
     "p09/fig-05": {
       "page": 9,
-      "type": "figure"
+      "kind": "figure"
     },
     "p10/b01": {
       "page": 10,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p10/b02": {
       "page": 10,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p10/b03": {
       "page": 10,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p10/b04": {
       "page": 10,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p10/b05": {
       "page": 10,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p10/b06": {
       "page": 10,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p10/b07": {
       "page": 10,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p10/b08": {
       "page": 10,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p10/fig-01": {
       "page": 10,
-      "type": "figure"
+      "kind": "figure"
     },
     "p10/fig-02": {
       "page": 10,
-      "type": "figure"
+      "kind": "figure"
     },
     "p10/fig-03": {
       "page": 10,
-      "type": "figure"
+      "kind": "figure"
     },
     "p10/fig-04": {
       "page": 10,
-      "type": "figure"
+      "kind": "figure"
     },
     "p10/fig-05": {
       "page": 10,
-      "type": "figure"
+      "kind": "figure"
     },
     "p10/fig-06": {
       "page": 10,
-      "type": "figure"
+      "kind": "figure"
     },
     "p10/fig-07": {
       "page": 10,
-      "type": "figure"
+      "kind": "figure"
     },
     "p10/fig-08": {
       "page": 10,
-      "type": "figure"
+      "kind": "figure"
     },
     "p11/b01": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b02": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b03": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b04": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b05": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b06": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b07": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b08": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b09": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b10": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b11": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b12": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b13": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b14": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b15": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b16": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b17": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b18": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b19": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b20": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b21": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b22": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b23": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b24": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b25": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b26": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b27": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b28": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b29": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b30": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b31": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b32": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b33": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/b34": {
       "page": 11,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p11/fig-01": {
       "page": 11,
-      "type": "figure"
+      "kind": "figure"
     },
     "p11/fig-02": {
       "page": 11,
-      "type": "figure"
+      "kind": "figure"
     },
     "p11/fig-03": {
       "page": 11,
-      "type": "figure"
+      "kind": "figure"
     },
     "p11/fig-04": {
       "page": 11,
-      "type": "figure"
+      "kind": "figure"
     },
     "p11/fig-05": {
       "page": 11,
-      "type": "figure"
+      "kind": "figure"
     },
     "p11/fig-06": {
       "page": 11,
-      "type": "figure"
+      "kind": "figure"
     },
     "p12/b01": {
       "page": 12,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p12/b02": {
       "page": 12,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p12/b03": {
       "page": 12,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p12/b04": {
       "page": 12,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p12/b05": {
       "page": 12,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p12/b06": {
       "page": 12,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p12/b07": {
       "page": 12,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p12/b08": {
       "page": 12,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p12/b09": {
       "page": 12,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p12/b10": {
       "page": 12,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p12/fig-01": {
       "page": 12,
-      "type": "figure"
+      "kind": "figure"
     },
     "p12/fig-02": {
       "page": 12,
-      "type": "figure"
+      "kind": "figure"
     },
     "p12/fig-03": {
       "page": 12,
-      "type": "figure"
+      "kind": "figure"
     },
     "p12/fig-04": {
       "page": 12,
-      "type": "figure"
+      "kind": "figure"
     },
     "p12/fig-05": {
       "page": 12,
-      "type": "figure"
+      "kind": "figure"
     },
     "p12/fig-06": {
       "page": 12,
-      "type": "figure"
+      "kind": "figure"
     },
     "p12/fig-07": {
       "page": 12,
-      "type": "figure"
+      "kind": "figure"
     },
     "p12/fig-08": {
       "page": 12,
-      "type": "figure"
+      "kind": "figure"
     },
     "p13/b01": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b02": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b03": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b04": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b05": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b06": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b07": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b08": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b09": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b10": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b11": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b12": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/b13": {
       "page": 13,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p13/fig-01": {
       "page": 13,
-      "type": "figure"
+      "kind": "figure"
     },
     "p13/fig-02": {
       "page": 13,
-      "type": "figure"
+      "kind": "figure"
     },
     "p13/fig-03": {
       "page": 13,
-      "type": "figure"
+      "kind": "figure"
     },
     "p13/fig-04": {
       "page": 13,
-      "type": "figure"
+      "kind": "figure"
     },
     "p13/fig-05": {
       "page": 13,
-      "type": "figure"
+      "kind": "figure"
     },
     "p13/fig-06": {
       "page": 13,
-      "type": "figure"
+      "kind": "figure"
     },
     "p13/fig-07": {
       "page": 13,
-      "type": "figure"
+      "kind": "figure"
     },
     "p13/fig-08": {
       "page": 13,
-      "type": "figure"
+      "kind": "figure"
     },
     "p13/fig-09": {
       "page": 13,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/b01": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b02": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b03": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b04": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b05": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b06": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b07": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b08": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b09": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b10": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b11": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b12": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b13": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b14": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b15": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b16": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b17": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b18": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b19": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b20": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b21": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/b22": {
       "page": 14,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p14/fig-01": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-02": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-03": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-04": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-05": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-06": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-07": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-08": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-09": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-10": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-11": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-12": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-13": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-14": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-15": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-16": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-17": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p14/fig-18": {
       "page": 14,
-      "type": "figure"
+      "kind": "figure"
     },
     "p15/b01": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b02": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b03": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b04": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b05": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b06": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b07": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b08": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b09": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b10": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b11": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b12": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b13": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b14": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b15": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b16": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b17": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b18": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b19": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/b20": {
       "page": 15,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p15/fig-01": {
       "page": 15,
-      "type": "figure"
+      "kind": "figure"
     },
     "p15/fig-02": {
       "page": 15,
-      "type": "figure"
+      "kind": "figure"
     },
     "p15/fig-03": {
       "page": 15,
-      "type": "figure"
+      "kind": "figure"
     },
     "p15/fig-04": {
       "page": 15,
-      "type": "figure"
+      "kind": "figure"
     },
     "p15/fig-05": {
       "page": 15,
-      "type": "figure"
+      "kind": "figure"
     },
     "p15/fig-06": {
       "page": 15,
-      "type": "figure"
+      "kind": "figure"
     },
     "p15/fig-07": {
       "page": 15,
-      "type": "figure"
+      "kind": "figure"
     },
     "p15/fig-08": {
       "page": 15,
-      "type": "figure"
+      "kind": "figure"
     },
     "p15/fig-09": {
       "page": 15,
-      "type": "figure"
+      "kind": "figure"
     },
     "p16/b01": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b02": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b03": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b04": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b05": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b06": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b06b": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b07": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b08": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b09": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b10": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b11": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/b12": {
       "page": 16,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p16/fig-01": {
       "page": 16,
-      "type": "figure"
+      "kind": "figure"
     },
     "p16/fig-02": {
       "page": 16,
-      "type": "figure"
+      "kind": "figure"
     },
     "p16/fig-03": {
       "page": 16,
-      "type": "figure"
+      "kind": "figure"
     },
     "p16/fig-04": {
       "page": 16,
-      "type": "figure"
+      "kind": "figure"
     },
     "p16/fig-05": {
       "page": 16,
-      "type": "figure"
+      "kind": "figure"
     },
     "p16/fig-06": {
       "page": 16,
-      "type": "figure"
+      "kind": "figure"
     },
     "p16/fig-07": {
       "page": 16,
-      "type": "figure"
+      "kind": "figure"
     },
     "p16/fig-08": {
       "page": 16,
-      "type": "figure"
+      "kind": "figure"
     },
     "p17/b01": {
       "page": 17,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p17/b02": {
       "page": 17,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p17/b03": {
       "page": 17,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p17/b04": {
       "page": 17,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p17/b05": {
       "page": 17,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p17/b06": {
       "page": 17,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p17/fig-01": {
       "page": 17,
-      "type": "figure"
+      "kind": "figure"
     },
     "p17/fig-02": {
       "page": 17,
-      "type": "figure"
+      "kind": "figure"
     },
     "p17/fig-03": {
       "page": 17,
-      "type": "figure"
+      "kind": "figure"
     },
     "p17/fig-04": {
       "page": 17,
-      "type": "figure"
+      "kind": "figure"
     },
     "p17/fig-05": {
       "page": 17,
-      "type": "figure"
+      "kind": "figure"
     },
     "p18/b01": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b02": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b03": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b04": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b05": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b06": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b07": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b08": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b09": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b10": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b11": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/b12": {
       "page": 18,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p18/fig-01": {
       "page": 18,
-      "type": "figure"
+      "kind": "figure"
     },
     "p18/fig-02": {
       "page": 18,
-      "type": "figure"
+      "kind": "figure"
     },
     "p19/b01": {
       "page": 19,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p19/b02": {
       "page": 19,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p19/b03": {
       "page": 19,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p19/fig-01": {
       "page": 19,
-      "type": "figure"
+      "kind": "figure"
     },
     "p19/fig-02": {
       "page": 19,
-      "type": "figure"
+      "kind": "figure"
     },
     "p19/fig-03": {
       "page": 19,
-      "type": "figure"
+      "kind": "figure"
     },
     "p20/b01": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b02": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b03": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b04": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b05": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b06": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b07": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b08": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b09": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b10": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b11": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b12": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/b13": {
       "page": 20,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p20/fig-01": {
       "page": 20,
-      "type": "figure"
+      "kind": "figure"
     },
     "p20/fig-02": {
       "page": 20,
-      "type": "figure"
+      "kind": "figure"
     },
     "p20/fig-03": {
       "page": 20,
-      "type": "figure"
+      "kind": "figure"
     },
     "p20/fig-04": {
       "page": 20,
-      "type": "figure"
+      "kind": "figure"
     },
     "p21/b01": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b02": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b03": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b04": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b05": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b06": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b07": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b08": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b09": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b10": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b11": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b12": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b13": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b14": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b15": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b16": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b17": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b18": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b19": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b20": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b21": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b22": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b23": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b24": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b25": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b26": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b27": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b28": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b29": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/b30": {
       "page": 21,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p21/fig-01": {
       "page": 21,
-      "type": "figure"
+      "kind": "figure"
     },
     "p21/fig-02": {
       "page": 21,
-      "type": "figure"
+      "kind": "figure"
     },
     "p21/fig-03": {
       "page": 21,
-      "type": "figure"
+      "kind": "figure"
     },
     "p21/fig-04": {
       "page": 21,
-      "type": "figure"
+      "kind": "figure"
     },
     "p22/b01": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b02": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b03": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b04": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b05": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b06": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b07": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b08": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b09": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b10": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b11": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b12": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b13": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b14": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b15": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b16": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b17": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b18": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b19": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b20": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b21": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b22": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b23": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b24": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b25": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b26": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b27": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b28": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/b29": {
       "page": 22,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p22/fig-01": {
       "page": 22,
-      "type": "figure"
+      "kind": "figure"
     },
     "p22/fig-02": {
       "page": 22,
-      "type": "figure"
+      "kind": "figure"
     },
     "p22/fig-03": {
       "page": 22,
-      "type": "figure"
+      "kind": "figure"
     },
     "p22/fig-04": {
       "page": 22,
-      "type": "figure"
+      "kind": "figure"
     },
     "p22/fig-05": {
       "page": 22,
-      "type": "figure"
+      "kind": "figure"
     },
     "p22/fig-06": {
       "page": 22,
-      "type": "figure"
+      "kind": "figure"
     },
     "p22/fig-07": {
       "page": 22,
-      "type": "figure"
+      "kind": "figure"
     },
     "p22/fig-08": {
       "page": 22,
-      "type": "figure"
+      "kind": "figure"
     },
     "p22/fig-09": {
       "page": 22,
-      "type": "figure"
+      "kind": "figure"
     },
     "p22/fig-10": {
       "page": 22,
-      "type": "figure"
+      "kind": "figure"
     },
     "p23/b01": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b02": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b03": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b04": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b05": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b06": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b07": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b08": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b09": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b10": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b11": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b12": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b13": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b14": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b15": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b16": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b17": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b18": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b19": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b20": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b21": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b22": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b23": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b24": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b25": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b26": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b27": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/b28": {
       "page": 23,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p23/fig-01": {
       "page": 23,
-      "type": "figure"
+      "kind": "figure"
     },
     "p24/b01": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b02": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b03": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b04": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b05": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b06": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b07": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b08": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b09": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b10": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b11": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b12": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b13": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b14": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b15": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b16": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b17": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b18": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b19": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b20": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b21": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b22": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b23": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b24": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b25": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b26": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b27": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b28": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b29": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/b30": {
       "page": 24,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p24/fig-01": {
       "page": 24,
-      "type": "figure"
+      "kind": "figure"
     },
     "p24/fig-02": {
       "page": 24,
-      "type": "figure"
+      "kind": "figure"
     },
     "p24/fig-03": {
       "page": 24,
-      "type": "figure"
+      "kind": "figure"
     },
     "p24/fig-04": {
       "page": 24,
-      "type": "figure"
+      "kind": "figure"
     },
     "p25/b01": {
       "page": 25,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p25/b02": {
       "page": 25,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p25/b03": {
       "page": 25,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p25/b04": {
       "page": 25,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p25/b05": {
       "page": 25,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p25/b06": {
       "page": 25,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p25/fig-01": {
       "page": 25,
-      "type": "figure"
+      "kind": "figure"
     },
     "p25/fig-02": {
       "page": 25,
-      "type": "figure"
+      "kind": "figure"
     },
     "p25/fig-03": {
       "page": 25,
-      "type": "figure"
+      "kind": "figure"
     },
     "p25/fig-04": {
       "page": 25,
-      "type": "figure"
+      "kind": "figure"
     },
     "p25/fig-05": {
       "page": 25,
-      "type": "figure"
+      "kind": "figure"
     },
     "p25/fig-06": {
       "page": 25,
-      "type": "figure"
+      "kind": "figure"
     },
     "p25/fig-07": {
       "page": 25,
-      "type": "figure"
+      "kind": "figure"
     },
     "p26/b01": {
       "page": 26,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p26/b02": {
       "page": 26,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p26/b03": {
       "page": 26,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p26/b04": {
       "page": 26,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p26/b05": {
       "page": 26,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p26/b06": {
       "page": 26,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p26/b07": {
       "page": 26,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p26/b08": {
       "page": 26,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p26/b09": {
       "page": 26,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p26/fig-01": {
       "page": 26,
-      "type": "figure"
+      "kind": "figure"
     },
     "p26/fig-02": {
       "page": 26,
-      "type": "figure"
+      "kind": "figure"
     },
     "p26/fig-03": {
       "page": 26,
-      "type": "figure"
+      "kind": "figure"
     },
     "p26/fig-04": {
       "page": 26,
-      "type": "figure"
+      "kind": "figure"
     },
     "p26/fig-05": {
       "page": 26,
-      "type": "figure"
+      "kind": "figure"
     },
     "p26/fig-06": {
       "page": 26,
-      "type": "figure"
+      "kind": "figure"
     },
     "p27/b01": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b02": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b03": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b04": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b05": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b06": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b07": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b08": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b09": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b10": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b11": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b12": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b13": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b14": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b15": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b16": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/b17": {
       "page": 27,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p27/fig-01": {
       "page": 27,
-      "type": "figure"
+      "kind": "figure"
     },
     "p27/fig-02": {
       "page": 27,
-      "type": "figure"
+      "kind": "figure"
     },
     "p27/fig-03": {
       "page": 27,
-      "type": "figure"
+      "kind": "figure"
     },
     "p27/fig-04": {
       "page": 27,
-      "type": "figure"
+      "kind": "figure"
     },
     "p27/fig-05": {
       "page": 27,
-      "type": "figure"
+      "kind": "figure"
     },
     "p27/fig-06": {
       "page": 27,
-      "type": "figure"
+      "kind": "figure"
     },
     "p27/fig-07": {
       "page": 27,
-      "type": "figure"
+      "kind": "figure"
     },
     "p27/fig-08": {
       "page": 27,
-      "type": "figure"
+      "kind": "figure"
     },
     "p28/b01": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b02": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b03": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b04": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b05": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b06": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b07": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b08": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b09": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b10": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b11": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b12": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/b13": {
       "page": 28,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p28/fig-01": {
       "page": 28,
-      "type": "figure"
+      "kind": "figure"
     },
     "p28/fig-02": {
       "page": 28,
-      "type": "figure"
+      "kind": "figure"
     },
     "p28/fig-03": {
       "page": 28,
-      "type": "figure"
+      "kind": "figure"
     },
     "p28/fig-04": {
       "page": 28,
-      "type": "figure"
+      "kind": "figure"
     },
     "p28/fig-05": {
       "page": 28,
-      "type": "figure"
+      "kind": "figure"
     },
     "p29/b01": {
       "page": 29,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p29/b02": {
       "page": 29,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p29/b03": {
       "page": 29,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p29/b04": {
       "page": 29,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p29/b05": {
       "page": 29,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p29/b06": {
       "page": 29,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p29/b07": {
       "page": 29,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p29/b08": {
       "page": 29,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p29/b09": {
       "page": 29,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p29/b10": {
       "page": 29,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p29/fig-01": {
       "page": 29,
-      "type": "figure"
+      "kind": "figure"
     },
     "p29/fig-02": {
       "page": 29,
-      "type": "figure"
+      "kind": "figure"
     },
     "p29/fig-03": {
       "page": 29,
-      "type": "figure"
+      "kind": "figure"
     },
     "p29/fig-04": {
       "page": 29,
-      "type": "figure"
+      "kind": "figure"
     },
     "p29/fig-05": {
       "page": 29,
-      "type": "figure"
+      "kind": "figure"
     },
     "p30/b01": {
       "page": 30,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p30/b02": {
       "page": 30,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p30/b03": {
       "page": 30,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p30/b04": {
       "page": 30,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p30/b05": {
       "page": 30,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p30/b06": {
       "page": 30,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p30/b07": {
       "page": 30,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p30/b08": {
       "page": 30,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p30/b09": {
       "page": 30,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p30/b10": {
       "page": 30,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p30/fig-01": {
       "page": 30,
-      "type": "figure"
+      "kind": "figure"
     },
     "p31/b01": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b02": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b03": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b04": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b05": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b06": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b07": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b08": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b09": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b10": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b11": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b12": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b13": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b14": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b15": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b16": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b17": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/b18": {
       "page": 31,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p31/fig-01": {
       "page": 31,
-      "type": "figure"
+      "kind": "figure"
     },
     "p31/fig-02": {
       "page": 31,
-      "type": "figure"
+      "kind": "figure"
     },
     "p31/fig-03": {
       "page": 31,
-      "type": "figure"
+      "kind": "figure"
     },
     "p32/b01": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/b02": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/b03": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/b04": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/b05": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/b06": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/b07": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/b08": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/b09": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/b10": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/b11": {
       "page": 32,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p32/fig-01": {
       "page": 32,
-      "type": "figure"
+      "kind": "figure"
     },
     "p32/fig-02": {
       "page": 32,
-      "type": "figure"
+      "kind": "figure"
     },
     "p32/fig-03": {
       "page": 32,
-      "type": "figure"
+      "kind": "figure"
     },
     "p32/fig-04": {
       "page": 32,
-      "type": "figure"
+      "kind": "figure"
     },
     "p32/fig-05": {
       "page": 32,
-      "type": "figure"
+      "kind": "figure"
     },
     "p32/fig-06": {
       "page": 32,
-      "type": "figure"
+      "kind": "figure"
     },
     "p32/fig-07": {
       "page": 32,
-      "type": "figure"
+      "kind": "figure"
     },
     "p33/b01": {
       "page": 33,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p33/b02": {
       "page": 33,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p33/b03": {
       "page": 33,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p33/b04": {
       "page": 33,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p33/b05": {
       "page": 33,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p33/b06": {
       "page": 33,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p33/fig-01": {
       "page": 33,
-      "type": "figure"
+      "kind": "figure"
     },
     "p33/fig-02": {
       "page": 33,
-      "type": "figure"
+      "kind": "figure"
     },
     "p33/fig-03": {
       "page": 33,
-      "type": "figure"
+      "kind": "figure"
     },
     "p33/fig-04": {
       "page": 33,
-      "type": "figure"
+      "kind": "figure"
     },
     "p34/b01": {
       "page": 34,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p34/b02": {
       "page": 34,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p34/b03": {
       "page": 34,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p34/b04": {
       "page": 34,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p34/b05": {
       "page": 34,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p34/b06": {
       "page": 34,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p34/b07": {
       "page": 34,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p34/b08": {
       "page": 34,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p34/fig-01": {
       "page": 34,
-      "type": "figure"
+      "kind": "figure"
     },
     "p34/fig-02": {
       "page": 34,
-      "type": "figure"
+      "kind": "figure"
     },
     "p34/fig-03": {
       "page": 34,
-      "type": "figure"
+      "kind": "figure"
     },
     "p34/fig-04": {
       "page": 34,
-      "type": "figure"
+      "kind": "figure"
     },
     "p35/b01": {
       "page": 35,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p35/b02": {
       "page": 35,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p35/b03": {
       "page": 35,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p35/b04": {
       "page": 35,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p35/b05": {
       "page": 35,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p35/b06": {
       "page": 35,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p35/fig-01": {
       "page": 35,
-      "type": "figure"
+      "kind": "figure"
     },
     "p35/fig-02": {
       "page": 35,
-      "type": "figure"
+      "kind": "figure"
     },
     "p35/fig-03": {
       "page": 35,
-      "type": "figure"
+      "kind": "figure"
     },
     "p35/fig-04": {
       "page": 35,
-      "type": "figure"
+      "kind": "figure"
     },
     "p35/fig-05": {
       "page": 35,
-      "type": "figure"
+      "kind": "figure"
     },
     "p36/b01": {
       "page": 36,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p36/b02": {
       "page": 36,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p36/b03": {
       "page": 36,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p36/b04": {
       "page": 36,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p36/b05": {
       "page": 36,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p36/b06": {
       "page": 36,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p36/fig-01": {
       "page": 36,
-      "type": "figure"
+      "kind": "figure"
     },
     "p36/fig-02": {
       "page": 36,
-      "type": "figure"
+      "kind": "figure"
     },
     "p36/fig-03": {
       "page": 36,
-      "type": "figure"
+      "kind": "figure"
     },
     "p37/b01": {
       "page": 37,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p37/b02": {
       "page": 37,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p37/b03": {
       "page": 37,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p37/b04": {
       "page": 37,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p37/b05": {
       "page": 37,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p37/fig-01": {
       "page": 37,
-      "type": "figure"
+      "kind": "figure"
     },
     "p37/fig-02": {
       "page": 37,
-      "type": "figure"
+      "kind": "figure"
     },
     "p37/fig-03": {
       "page": 37,
-      "type": "figure"
+      "kind": "figure"
     },
     "p38/b01": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b02": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b03": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b04": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b05": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b06": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b07": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b08": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b09": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b10": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b11": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b12": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b13": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b14": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b15": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b16": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b17": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b18": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b19": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b20": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b21": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b22": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b23": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b24": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b25": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b26": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b27": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b28": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b29": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b30": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/b31": {
       "page": 38,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p38/fig-01": {
       "page": 38,
-      "type": "figure"
+      "kind": "figure"
     },
     "p38/fig-02": {
       "page": 38,
-      "type": "figure"
+      "kind": "figure"
     },
     "p39/b01": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b02": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b03": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b04": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b05": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b06": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b07": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b08": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b09": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b10": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b11": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b12": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b13": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b14": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b15": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b16": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b17": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b18": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b19": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b20": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b21": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b22": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b23": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b24": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/b25": {
       "page": 39,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p39/fig-01": {
       "page": 39,
-      "type": "figure"
+      "kind": "figure"
     },
     "p39/fig-02": {
       "page": 39,
-      "type": "figure"
+      "kind": "figure"
     },
     "p40/b01": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b02": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b03": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b04": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b05": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b06": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b07": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b08": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b09": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b10": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b11": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b12": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b13": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b14": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b15": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b16": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b17": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b18": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
     },
     "p40/b19": {
       "page": 40,
-      "type": "text_block"
+      "kind": "text_block"
+    },
+    "p40/b20": {
+      "page": 40,
+      "kind": "text_block"
     },
     "p40/fig-01": {
       "page": 40,
-      "type": "figure"
+      "kind": "figure"
     },
     "p40/fig-02": {
       "page": 40,
-      "type": "figure"
+      "kind": "figure"
     },
     "p40/fig-03": {
       "page": 40,
-      "type": "figure"
+      "kind": "figure"
     },
     "p40/fig-04": {
       "page": 40,
-      "type": "figure"
+      "kind": "figure"
     },
     "p40/fig-05": {
       "page": 40,
-      "type": "figure"
+      "kind": "figure"
     },
     "p40/fig-06": {
       "page": 40,
-      "type": "figure"
+      "kind": "figure"
     },
     "p40/fig-07": {
       "page": 40,
-      "type": "figure"
+      "kind": "figure"
     }
   },
   "typos_verbatim": [
     {
       "page": 1,
-      "anchor": null,
-      "typo": "Título indica 'Versión 5.0' pero proyecto se referencia como v5.1 (preservar verbatim como 5.0)",
-      "context": "Kódem Trading Card Game – Libro de Reglas Oficial Versión 5.0 (Portada)"
+      "title": "Kódem Trading Card Game – Libro de Reglas Oficial Versión 5.0 (Portada)",
+      "typo": "Título indica 'Versión 5.0' pero proyecto se referencia como v5.1 (preservar verbatim como 5.0)"
     },
     {
       "page": 2,
-      "anchor": null,
-      "typo": "'Uso de los Espectros' escrito como 'Uso del los Espectros' (preservado verbatim en LLM)",
-      "context": "CONTENIDO"
+      "title": "CONTENIDO",
+      "typo": "'Uso de los Espectros' escrito como 'Uso del los Espectros' (preservado verbatim en LLM)"
     },
     {
       "page": 2,
-      "anchor": null,
-      "typo": "'Equipos Compatible' sin 's' final (preservado verbatim)",
-      "context": "CONTENIDO"
+      "title": "CONTENIDO",
+      "typo": "'Equipos Compatible' sin 's' final (preservado verbatim)"
     },
     {
       "page": 2,
-      "anchor": null,
-      "typo": "'Carta Poseídas' en lugar de 'Cartas Poseídas' (preservado verbatim)",
-      "context": "CONTENIDO"
+      "title": "CONTENIDO",
+      "typo": "'Carta Poseídas' en lugar de 'Cartas Poseídas' (preservado verbatim)"
     },
     {
       "page": 5,
-      "anchor": null,
-      "typo": "'expasión' en b09 (preservado correctamente)",
-      "context": "2. Partes de la carta"
+      "title": "2. Partes de la carta",
+      "typo": "'expasión' en b09 (preservado correctamente)"
     },
     {
       "page": 5,
-      "anchor": null,
-      "typo": "'Dana' (sic) en lugar de 'Daña' según OCR — preservar si es literal",
-      "context": "2. Partes de la carta"
+      "title": "2. Partes de la carta",
+      "typo": "'Dana' (sic) en lugar de 'Daña' según OCR — preservar si es literal"
     },
     {
       "page": 6,
-      "anchor": null,
-      "typo": "'Algunos efectos de sólo afectan' (b03)",
-      "context": "2.2 Estadísticas de la carta"
+      "title": "2.2 Estadísticas de la carta",
+      "typo": "'Algunos efectos de sólo afectan' (b03)"
     },
     {
       "page": 6,
-      "anchor": null,
-      "typo": "'ataques alta y medianamente fuertes' (b11)",
-      "context": "2.2 Estadísticas de la carta"
+      "title": "2.2 Estadísticas de la carta",
+      "typo": "'ataques alta y medianamente fuertes' (b11)"
     },
     {
       "page": 6,
-      "anchor": null,
-      "typo": "'añadiendoles' sin tilde (b12)",
-      "context": "2.2 Estadísticas de la carta"
+      "title": "2.2 Estadísticas de la carta",
+      "typo": "'añadiendoles' sin tilde (b12)"
     },
     {
       "page": 6,
-      "anchor": null,
-      "typo": "'efectos estratégico' (b16)",
-      "context": "2.2 Estadísticas de la carta"
+      "title": "2.2 Estadísticas de la carta",
+      "typo": "'efectos estratégico' (b16)"
     },
     {
       "page": 6,
-      "anchor": null,
-      "typo": "'podras' sin tilde en Costo de Shugg (OCR)",
-      "context": "2.2 Estadísticas de la carta"
+      "title": "2.2 Estadísticas de la carta",
+      "typo": "'podras' sin tilde en Costo de Shugg (OCR)"
     },
     {
       "page": 7,
-      "anchor": null,
-      "typo": "'FASES DEL DE TURNO' (b15, preservar 'DE' extra)",
-      "context": "3. Tipos de Cartas — 3.1 Adendei"
+      "title": "3. Tipos de Cartas — 3.1 Adendei",
+      "typo": "'FASES DEL DE TURNO' (b15, preservar 'DE' extra)"
     },
     {
       "page": 7,
-      "anchor": null,
-      "typo": "'Manifestación Fantasmal Fantasmal' (OCR duplicado — probable artefacto OCR, no typo de fuente)",
-      "context": "3. Tipos de Cartas — 3.1 Adendei"
+      "title": "3. Tipos de Cartas — 3.1 Adendei",
+      "typo": "'Manifestación Fantasmal Fantasmal' (OCR duplicado — probable artefacto OCR, no typo de fuente)"
     },
     {
       "page": 7,
-      "anchor": null,
-      "typo": "'este' sin tilde en card text (Therz: 'mientras esta carta este')",
-      "context": "3. Tipos de Cartas — 3.1 Adendei"
+      "title": "3. Tipos de Cartas — 3.1 Adendei",
+      "typo": "'este' sin tilde en card text (Therz: 'mientras esta carta este')"
     },
     {
       "page": 7,
-      "anchor": null,
-      "typo": "'podran' sin tilde",
-      "context": "3. Tipos de Cartas — 3.1 Adendei"
+      "title": "3. Tipos de Cartas — 3.1 Adendei",
+      "typo": "'podran' sin tilde"
     },
     {
       "page": 7,
-      "anchor": null,
-      "typo": "'Sólo/Solo' variabilidad en card text",
-      "context": "3. Tipos de Cartas — 3.1 Adendei"
+      "title": "3. Tipos de Cartas — 3.1 Adendei",
+      "typo": "'Sólo/Solo' variabilidad en card text"
     },
     {
       "page": 8,
-      "anchor": null,
-      "typo": "'relevado' en vez de 'revelado' (b08, preservado en ambos)",
-      "context": "3.2 Protector — Uso del Protector: Generalidades — Vínculo Odémico"
+      "title": "3.2 Protector — Uso del Protector: Generalidades — Vínculo Odémico",
+      "typo": "'relevado' en vez de 'revelado' (b08, preservado en ambos)"
     },
     {
       "page": 8,
-      "anchor": null,
-      "typo": "'máximo 3 descansos' (falta 'de', b05)",
-      "context": "3.2 Protector — Uso del Protector: Generalidades — Vínculo Odémico"
+      "title": "3.2 Protector — Uso del Protector: Generalidades — Vínculo Odémico",
+      "typo": "'máximo 3 descansos' (falta 'de', b05)"
     },
     {
       "page": 8,
-      "anchor": null,
-      "typo": "'a menos de que' (en vez de 'a menos que', b10)",
-      "context": "3.2 Protector — Uso del Protector: Generalidades — Vínculo Odémico"
+      "title": "3.2 Protector — Uso del Protector: Generalidades — Vínculo Odémico",
+      "typo": "'a menos de que' (en vez de 'a menos que', b10)"
     },
     {
       "page": 9,
-      "anchor": null,
-      "typo": "'Ravas' plural anglicizado en la última viñeta (ambos preservan)",
-      "context": "3.3 RAVA"
+      "title": "3.3 RAVA",
+      "typo": "'Ravas' plural anglicizado en la última viñeta (ambos preservan)"
     },
     {
       "page": 9,
-      "anchor": null,
-      "typo": "Texto Nok: 'Adendei-Gélido' con guion (formato del juego)",
-      "context": "3.3 RAVA"
+      "title": "3.3 RAVA",
+      "typo": "Texto Nok: 'Adendei-Gélido' con guion (formato del juego)"
     },
     {
       "page": 11,
-      "anchor": null,
-      "typo": "'Pirico' sin tilde en flavor/restricción de Cascada de Lava (OCR)",
-      "context": "EQUIPOS COMPATIBLES / EQUIPOS MÚLTIPLES"
+      "title": "EQUIPOS COMPATIBLES / EQUIPOS MÚLTIPLES",
+      "typo": "'Pirico' sin tilde en flavor/restricción de Cascada de Lava (OCR)"
     },
     {
       "page": 12,
-      "anchor": null,
-      "typo": "'aun' sin tilde en b03 según OCR",
-      "context": "3.5 BIO"
+      "title": "3.5 BIO",
+      "typo": "'aun' sin tilde en b03 según OCR"
     },
     {
       "page": 12,
-      "anchor": null,
-      "typo": "Último bullet USO DEL BIO usa '.' en lugar de '•' (preservado en ambos)",
-      "context": "3.5 BIO"
+      "title": "3.5 BIO",
+      "typo": "Último bullet USO DEL BIO usa '.' en lugar de '•' (preservado en ambos)"
     },
     {
       "page": 13,
-      "anchor": null,
-      "typo": "'varlar' en OCR (por 'variar') — artefacto OCR, no typo fuente",
-      "context": "3.6 Token"
+      "title": "3.6 Token",
+      "typo": "'varlar' en OCR (por 'variar') — artefacto OCR, no typo fuente"
     },
     {
       "page": 13,
-      "anchor": null,
-      "typo": "'Energia' sin tilde en OCR — artefacto OCR",
-      "context": "3.6 Token"
+      "title": "3.6 Token",
+      "typo": "'Energia' sin tilde en OCR — artefacto OCR"
     },
     {
       "page": 14,
-      "anchor": null,
-      "typo": "'expasión' en b06 (Folio callout)",
-      "context": "3.7 Espectros"
+      "title": "3.7 Espectros",
+      "typo": "'expasión' en b06 (Folio callout)"
     },
     {
       "page": 14,
-      "anchor": null,
-      "typo": "'Kodem' sin tilde en b14 (Nombre científico callout)",
-      "context": "3.7 Espectros"
+      "title": "3.7 Espectros",
+      "typo": "'Kodem' sin tilde en b14 (Nombre científico callout)"
     },
     {
       "page": 14,
-      "anchor": null,
-      "typo": "'Las carta poseída' en b18 (falta 's')",
-      "context": "3.7 Espectros"
+      "title": "3.7 Espectros",
+      "typo": "'Las carta poseída' en b18 (falta 's')"
     },
     {
       "page": 14,
-      "anchor": null,
-      "typo": "'pueden disparan' en b19 (concordancia rota)",
-      "context": "3.7 Espectros"
+      "title": "3.7 Espectros",
+      "typo": "'pueden disparan' en b19 (concordancia rota)"
     },
     {
       "page": 14,
-      "anchor": null,
-      "typo": "'el nombre la carta es' en b11 (falta 'de')",
-      "context": "3.7 Espectros"
+      "title": "3.7 Espectros",
+      "typo": "'el nombre la carta es' en b11 (falta 'de')"
     },
     {
       "page": 15,
-      "anchor": null,
-      "typo": "'se indiquen el texto' (debería ser 'se indiquen en el texto') - verbatim en ambas fuentes, preservar",
-      "context": "4. Preparación del Ecosistema"
+      "title": "4. Preparación del Ecosistema",
+      "typo": "'se indiquen el texto' (debería ser 'se indiquen en el texto') - verbatim en ambas fuentes, preservar"
     },
     {
       "page": 16,
-      "anchor": null,
-      "typo": "'costO(Ver 6.6.3 Costos)' - falta espacio entre 'costo' y paréntesis, verbatim en ambas fuentes",
-      "context": "5. Fases del Turno"
+      "title": "5. Fases del Turno",
+      "typo": "'costO(Ver 6.6.3 Costos)' - falta espacio entre 'costo' y paréntesis, verbatim en ambas fuentes"
     },
     {
       "page": 20,
-      "anchor": null,
-      "typo": "'Prinicipal' (debería ser 'Principal') en b02 - verbatim en ambas fuentes",
-      "context": "5.3 Reemplazo de cartas"
+      "title": "5.3 Reemplazo de cartas",
+      "typo": "'Prinicipal' (debería ser 'Principal') en b02 - verbatim en ambas fuentes"
     },
     {
       "page": 20,
-      "anchor": null,
-      "typo": "'EXPLICITAMENTE LO CONTRARIO' en mayúsculas editoriales en b10 - confirmado por OCR",
-      "context": "5.3 Reemplazo de cartas"
+      "title": "5.3 Reemplazo de cartas",
+      "typo": "'EXPLICITAMENTE LO CONTRARIO' en mayúsculas editoriales en b10 - confirmado por OCR"
     },
     {
       "page": 21,
-      "anchor": null,
-      "typo": "'Adender' (probable OCR-error por 'Adendei') - verificar en PNG original",
-      "context": "6.1 Marcas"
+      "title": "6.1 Marcas",
+      "typo": "'Adender' (probable OCR-error por 'Adendei') - verificar en PNG original"
     },
     {
       "page": 21,
-      "anchor": null,
-      "typo": "'Pítico Tirón' / 'Pitico Tirón' - nombre de subtipo probable",
-      "context": "6.1 Marcas"
+      "title": "6.1 Marcas",
+      "typo": "'Pítico Tirón' / 'Pitico Tirón' - nombre de subtipo probable"
     },
     {
       "page": 22,
-      "anchor": null,
-      "typo": "'Yakerr' (¿vs 'Yakert'?) - OCR dice 'Yakerr', LLM dice 'Yakert'. Verificar PNG",
-      "context": "6.2 CAMBIOS DE ESTADÍSTICAS"
+      "title": "6.2 CAMBIOS DE ESTADÍSTICAS",
+      "typo": "'Yakerr' (¿vs 'Yakert'?) - OCR dice 'Yakerr', LLM dice 'Yakert'. Verificar PNG"
     },
     {
       "page": 22,
-      "anchor": null,
-      "typo": "'Bora' vs 'Boras' - inconsistencia entre OCR y LLM",
-      "context": "6.2 CAMBIOS DE ESTADÍSTICAS"
+      "title": "6.2 CAMBIOS DE ESTADÍSTICAS",
+      "typo": "'Bora' vs 'Boras' - inconsistencia entre OCR y LLM"
     },
     {
       "page": 23,
-      "anchor": null,
-      "typo": "OCR tiene 'TIPOS DE DANO' (sin Ñ) y 'DAÑO POR ATAQUE' mezclado - OCR-errors de tilde, LLM correcto",
-      "context": "6.3 Protección"
+      "title": "6.3 Protección",
+      "typo": "OCR tiene 'TIPOS DE DANO' (sin Ñ) y 'DAÑO POR ATAQUE' mezclado - OCR-errors de tilde, LLM correcto"
     },
     {
       "page": 24,
-      "anchor": null,
-      "typo": "'reemplazara' sin tilde en ambos fuentes (debería ser 'reemplazará')",
-      "context": "6.6 ATAQUE"
+      "title": "6.6 ATAQUE",
+      "typo": "'reemplazara' sin tilde en ambos fuentes (debería ser 'reemplazará')"
     },
     {
       "page": 24,
-      "anchor": null,
-      "typo": "'Yanzi, precision' sin tilde en OCR, LLM tiene 'precisión'",
-      "context": "6.6 ATAQUE"
+      "title": "6.6 ATAQUE",
+      "typo": "'Yanzi, precision' sin tilde en OCR, LLM tiene 'precisión'"
     },
     {
       "page": 25,
-      "anchor": null,
-      "typo": "Ulmor Costo: OCR dice 'se daño' (posible typo del original) vs LLM 'se daña'. Verificar PNG - probable typo verbatim",
-      "context": null
+      "title": "(sin título)",
+      "typo": "Ulmor Costo: OCR dice 'se daño' (posible typo del original) vs LLM 'se daña'. Verificar PNG - probable typo verbatim"
     },
     {
       "page": 25,
-      "anchor": null,
-      "typo": "'pto.' (OCR) vs 'pts' (LLM) - verificar PNG",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'pto.' (OCR) vs 'pts' (LLM) - verificar PNG"
     },
     {
       "page": 26,
-      "anchor": null,
-      "typo": "'eliminadan' (debería ser 'eliminada') - verbatim en ambas fuentes",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'eliminadan' (debería ser 'eliminada') - verbatim en ambas fuentes"
     },
     {
       "page": 26,
-      "anchor": null,
-      "typo": "'Cempasuchi'/'Cempasúchil' inconsistencia en el original (falta 'l' a veces)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'Cempasuchi'/'Cempasúchil' inconsistencia en el original (falta 'l' a veces)"
     },
     {
       "page": 26,
-      "anchor": null,
-      "typo": "'atque' (debería 'ataque') - verbatim en ambas",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'atque' (debería 'ataque') - verbatim en ambas"
     },
     {
       "page": 26,
-      "anchor": null,
-      "typo": "Espacios faltantes '•Los', '•Efectos'",
-      "context": null
+      "title": "(sin título)",
+      "typo": "Espacios faltantes '•Los', '•Efectos'"
     },
     {
       "page": 27,
-      "anchor": null,
-      "typo": "'6 ptos de vida' (falta punto tras ptos) - verbatim ambos",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'6 ptos de vida' (falta punto tras ptos) - verbatim ambos"
     },
     {
       "page": 27,
-      "anchor": null,
-      "typo": "'descansos máximo' (falta s) - verbatim ambos",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'descansos máximo' (falta s) - verbatim ambos"
     },
     {
       "page": 27,
-      "anchor": null,
-      "typo": "'este' sin acento (debería 'esté') en ejemplo Zaykan - verbatim",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'este' sin acento (debería 'esté') en ejemplo Zaykan - verbatim"
     },
     {
       "page": 27,
-      "anchor": null,
-      "typo": "'Ejemplo:\"Zaykan,Emboscada\"' espacios faltantes - verbatim",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'Ejemplo:\"Zaykan,Emboscada\"' espacios faltantes - verbatim"
     },
     {
       "page": 27,
-      "anchor": null,
-      "typo": "'ño' en OCR (debería 'no') en b06 - probable OCR-error solo",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'ño' en OCR (debería 'no') en b06 - probable OCR-error solo"
     },
     {
       "page": 28,
-      "anchor": null,
-      "typo": "considerara (falta acento)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "considerara (falta acento)"
     },
     {
       "page": 28,
-      "anchor": null,
-      "typo": "Extincion (falta acento)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "Extincion (falta acento)"
     },
     {
       "page": 28,
-      "anchor": null,
-      "typo": "resurecctas (doble c)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "resurecctas (doble c)"
     },
     {
       "page": 28,
-      "anchor": null,
-      "typo": "Esta cartas (debería 'Estas')",
-      "context": null
+      "title": "(sin título)",
+      "typo": "Esta cartas (debería 'Estas')"
     },
     {
       "page": 28,
-      "anchor": null,
-      "typo": "relaacionan (doble a)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "relaacionan (doble a)"
     },
     {
       "page": 28,
-      "anchor": null,
-      "typo": "fecto (falta 'e' inicial)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "fecto (falta 'e' inicial)"
     },
     {
       "page": 29,
-      "anchor": null,
-      "typo": "desvia (sin acento, debería ser 'desvía')",
-      "context": null
+      "title": "(sin título)",
+      "typo": "desvia (sin acento, debería ser 'desvía')"
     },
     {
       "page": 30,
-      "anchor": null,
-      "typo": "tú Zona Principal (tilde incorrecta sobre 'tu')",
-      "context": null
+      "title": "(sin título)",
+      "typo": "tú Zona Principal (tilde incorrecta sobre 'tu')"
     },
     {
       "page": 30,
-      "anchor": null,
-      "typo": "desvia (ya visto en p29 pero no aquí)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "desvia (ya visto en p29 pero no aquí)"
     },
     {
       "page": 31,
-      "anchor": null,
-      "typo": "'vuelve a sus a estadísticas base' (doble preposición en regla 6)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'vuelve a sus a estadísticas base' (doble preposición en regla 6)"
     },
     {
       "page": 32,
-      "anchor": null,
-      "typo": "envíar (tilde incorrecta en Extinción, pies de figura y regla 4) — verbatim preservar",
-      "context": null
+      "title": "(sin título)",
+      "typo": "envíar (tilde incorrecta en Extinción, pies de figura y regla 4) — verbatim preservar"
     },
     {
       "page": 33,
-      "anchor": null,
-      "typo": "vinvular (por 'vincular' en heading §7)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "vinvular (por 'vincular' en heading §7)"
     },
     {
       "page": 33,
-      "anchor": null,
-      "typo": "'2 .Si' (espacio antes del punto)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'2 .Si' (espacio antes del punto)"
     },
     {
       "page": 33,
-      "anchor": null,
-      "typo": "'4.Si', '5.El', '6.En' (sin espacio tras punto numerado)",
-      "context": null
+      "title": "(sin título)",
+      "typo": "'4.Si', '5.El', '6.En' (sin espacio tras punto numerado)"
     },
     {
       "page": 35,
-      "anchor": null,
-      "typo": "espacio irregular antes de coma: '\"jugador(es)\" ,'",
-      "context": null
+      "title": "(sin título)",
+      "typo": "espacio irregular antes de coma: '\"jugador(es)\" ,'"
     },
     {
       "page": 39,
-      "anchor": null,
-      "typo": "'mlas Pasivas-Rápidas' (por 'las') — b09",
-      "context": "9. GLOSARIO (continuación)"
+      "title": "9. GLOSARIO (continuación)",
+      "typo": "'mlas Pasivas-Rápidas' (por 'las') — b09"
     },
     {
       "page": 39,
-      "anchor": null,
-      "typo": "'muestrala' (sin tilde) — b03",
-      "context": "9. GLOSARIO (continuación)"
+      "title": "9. GLOSARIO (continuación)",
+      "typo": "'muestrala' (sin tilde) — b03"
     },
     {
       "page": 39,
-      "anchor": null,
-      "typo": "'este negado' (sin tilde, debería 'esté') — b06",
-      "context": "9. GLOSARIO (continuación)"
+      "title": "9. GLOSARIO (continuación)",
+      "typo": "'este negado' (sin tilde, debería 'esté') — b06"
     },
     {
       "page": 39,
-      "anchor": null,
-      "typo": "'vuelve a sus a estadísticas' (preposición repetida) — b07",
-      "context": "9. GLOSARIO (continuación)"
+      "title": "9. GLOSARIO (continuación)",
+      "typo": "'vuelve a sus a estadísticas' (preposición repetida) — b07"
     },
     {
       "page": 39,
-      "anchor": null,
-      "typo": "'to-mada(s)' (guion dentro del ejemplo) — b22",
-      "context": "9. GLOSARIO (continuación)"
+      "title": "9. GLOSARIO (continuación)",
+      "typo": "'to-mada(s)' (guion dentro del ejemplo) — b22"
     },
     {
       "page": 40,
-      "anchor": null,
-      "typo": "'sea ha hecho posible' (por 'se ha hecho posible') — b17",
-      "context": "9. GLOSARIO (cierre) + Contacto + Créditos"
+      "title": "9. GLOSARIO (cierre) + Contacto + Créditos",
+      "typo": "'sea ha hecho posible' (por 'se ha hecho posible') — b17"
     },
     {
       "page": 40,
-      "anchor": null,
-      "typo": "inconsistencia 'zona Extinción' vs 'zona de extinción' en entrada Vivificar — b04",
-      "context": "9. GLOSARIO (cierre) + Contacto + Créditos"
+      "title": "9. GLOSARIO (cierre) + Contacto + Créditos",
+      "typo": "inconsistencia 'zona Extinción' vs 'zona de extinción' en entrada Vivificar — b04"
     }
   ],
-  "human_review_pending": [
-    16
+  "human_review_pending": [],
+  "post_validation_pending": [
+    19
   ]
 }

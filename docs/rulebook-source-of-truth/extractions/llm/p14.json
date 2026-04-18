@@ -3,7 +3,9 @@
   "model": "opus-4-7",
   "extraction_date": "2026-04-18T19:55:00-06:00",
   "title": "3.7 Espectros",
-  "section_refs": ["§3.7"],
+  "section_refs": [
+    "§3.7"
+  ],
   "text_blocks": [
     {
       "anchor": "p14/b01",
@@ -165,9 +167,17 @@
       "anchor": "p14/fig-01",
       "slug": "section-header-badge-espectros",
       "type": "icon",
-      "bbox_pct": {"x": 1, "y": 1, "w": 22, "h": 5},
+      "bbox_pct": {
+        "x": 1,
+        "y": 1,
+        "w": 22,
+        "h": 5
+      },
       "description_detailed": "Teal rounded rectangle section-header badge at the top-left. Left side shows '3.7' in white bold, right side shows 'ESPECTROS' in bold dark uppercase. Matches the visual grammar of other §3 subsection headers.",
-      "embedded_text": ["3.7", "ESPECTROS"],
+      "embedded_text": [
+        "3.7",
+        "ESPECTROS"
+      ],
       "relation_to_text": "Opens §3.7 Espectros.",
       "legibility": "clear",
       "legibility_notes": null
@@ -176,7 +186,12 @@
       "anchor": "p14/fig-02",
       "slug": "ghost-icon-espectro",
       "type": "icon",
-      "bbox_pct": {"x": 23, "y": 1, "w": 5, "h": 5},
+      "bbox_pct": {
+        "x": 23,
+        "y": 1,
+        "w": 5,
+        "h": 5
+      },
       "description_detailed": "Small stylized ghost/spirit creature icon in teal-blue tones positioned immediately to the right of the section-header badge. Its rounded body and wispy tail reinforce the 'spectral' theme of the subsection and serve as the thematic marker for §3.7.",
       "embedded_text": [],
       "relation_to_text": "Thematic decoration that emphasizes the 'Espectro' subject.",
@@ -187,9 +202,23 @@
       "anchor": "p14/fig-03",
       "slug": "card-anatomy-espectro-nanuk",
       "type": "illustration",
-      "bbox_pct": {"x": 33, "y": 14, "w": 34, "h": 55},
+      "bbox_pct": {
+        "x": 33,
+        "y": 14,
+        "w": 34,
+        "h": 55
+      },
       "description_detailed": "Central card illustration used as the canonical anatomy example for Espectro cards. The card depicts 'Nánuk, Garras Heladas' — a glowing teal/green spectral wolf or bear-like creature made of swirling ethereal energy on a dark background. The card follows standard Kódem TCG layout: vida máxima indicator in the top-left, name bar across the upper area, central art panel with beige/tan border, requisito text block, and a footer row with folio code, damage icon, rest icon and credits.\n\nAround the card, annotation callout boxes (orange and purple) fan outward with connector lines pointing at specific anatomy regions: vida máxima, nombre de la carta, requisito, efecto y costo, folio, créditos del artista, daño, descanso, energía, subtipo and nombre científico. The orange lines connect stats callouts, while purple lines connect mechanical callouts — a deliberate color-coded system to guide reading.\n\nThis is the most information-dense figure on the page: it doubles as a card-anatomy reference and as a living example of an Espectro with a concrete Requisito ('2 o más Adendei \"Nánuk\" en tu Extinción').",
-      "embedded_text": ["Nánuk, Garras Heladas", "Vida máx. 9", "Espectro", "Requisito: 2 o más Adendei \"Nánuk\" en tu Extinción.", "FYTE-052", "Kódem TCG ©", "cabritosentado", "Ursus maritimus"],
+      "embedded_text": [
+        "Nánuk, Garras Heladas",
+        "Vida máx. 9",
+        "Espectro",
+        "Requisito: 2 o más Adendei \"Nánuk\" en tu Extinción.",
+        "FYTE-052",
+        "Kódem TCG ©",
+        "cabritosentado",
+        "Ursus maritimus"
+      ],
       "relation_to_text": "Central reference that every surrounding callout annotates; supports the Espectro card-anatomy teaching layer of the page.",
       "legibility": "clear",
       "legibility_notes": "Main labels and art are clear; some very small icons in the card footer (damage/cost glyphs) rendered as '?' and '0' in the extraction."
@@ -198,9 +227,16 @@
       "anchor": "p14/fig-04",
       "slug": "callout-vida-maxima",
       "type": "infographic",
-      "bbox_pct": {"x": 2, "y": 17, "w": 28, "h": 21},
+      "bbox_pct": {
+        "x": 2,
+        "y": 17,
+        "w": 28,
+        "h": 21
+      },
       "description_detailed": "Orange-outlined rounded rectangle on the upper-left connected by an orange diagonal leader line to the card's top-left vida-máxima icon. White interior with justified black body copy. Labels 'Vida Máxima' in italic/bold and explains its mechanical status (a stat that triggers Extinción at 0 and is considered a stat for rule lookups).",
-      "embedded_text": ["Vida Máxima: Son los puntos máximos de vida que puede tener una carta. Al llegar a 0, la carta se enviará a Extinción. La vida máxima de una carta se considera una estadística. El valor de vida de una carta en un momento dado durante el juego NO se considera una estadística."],
+      "embedded_text": [
+        "Vida Máxima: Son los puntos máximos de vida que puede tener una carta. Al llegar a 0, la carta se enviará a Extinción. La vida máxima de una carta se considera una estadística. El valor de vida de una carta en un momento dado durante el juego NO se considera una estadística."
+      ],
       "relation_to_text": "Supports the card-anatomy explanation of vida máxima.",
       "legibility": "clear",
       "legibility_notes": null
@@ -209,9 +245,17 @@
       "anchor": "p14/fig-05",
       "slug": "callout-requisito-efecto-costo",
       "type": "infographic",
-      "bbox_pct": {"x": 2, "y": 40, "w": 28, "h": 13},
+      "bbox_pct": {
+        "x": 2,
+        "y": 40,
+        "w": 28,
+        "h": 13
+      },
       "description_detailed": "Purple-outlined rounded rectangle annotation box linked by a purple leader line to the requisito/efecto area of the card. Contains two labeled entries: 'Requisito' and 'Efecto y Costo', each in bold followed by one-line explanations.",
-      "embedded_text": ["Requisito: Condición que se necesita cumplir para colocar al Espectro en el campo.", "Efecto y Costo: Se añadirá de forma obligatoria el de la carta poseída por el Espectro."],
+      "embedded_text": [
+        "Requisito: Condición que se necesita cumplir para colocar al Espectro en el campo.",
+        "Efecto y Costo: Se añadirá de forma obligatoria el de la carta poseída por el Espectro."
+      ],
       "relation_to_text": "Teaches two interlocked Espectro-specific mechanics: the placement prerequisite and the fact that possession carries the victim's effect/cost.",
       "legibility": "clear",
       "legibility_notes": null
@@ -220,9 +264,16 @@
       "anchor": "p14/fig-06",
       "slug": "callout-folio",
       "type": "infographic",
-      "bbox_pct": {"x": 2, "y": 55, "w": 28, "h": 6},
+      "bbox_pct": {
+        "x": 2,
+        "y": 55,
+        "w": 28,
+        "h": 6
+      },
       "description_detailed": "Small rounded-rectangle callout pointing to the folio number on the card. White interior with a short italic/bold explanatory sentence.",
-      "embedded_text": ["Folio: Te ayuda a saber el número de carta dentro de la expasión."],
+      "embedded_text": [
+        "Folio: Te ayuda a saber el número de carta dentro de la expasión."
+      ],
       "relation_to_text": "Explains the folio field on every card, using FYTE-052 on the example card.",
       "legibility": "clear",
       "legibility_notes": "Source typo 'expasión' transcribed verbatim."
@@ -231,9 +282,16 @@
       "anchor": "p14/fig-07",
       "slug": "callout-creditos-del-artista",
       "type": "infographic",
-      "bbox_pct": {"x": 2, "y": 62, "w": 28, "h": 5},
+      "bbox_pct": {
+        "x": 2,
+        "y": 62,
+        "w": 28,
+        "h": 5
+      },
       "description_detailed": "Small callout label pointing to the artist credits row on the card's footer. Minimal content — just a labeled line.",
-      "embedded_text": ["Créditos del Artista"],
+      "embedded_text": [
+        "Créditos del Artista"
+      ],
       "relation_to_text": "Identifies the artist credit line (here 'cabritosentado').",
       "legibility": "clear",
       "legibility_notes": null
@@ -242,9 +300,16 @@
       "anchor": "p14/fig-08",
       "slug": "callout-dano",
       "type": "infographic",
-      "bbox_pct": {"x": 68, "y": 16, "w": 28, "h": 6},
+      "bbox_pct": {
+        "x": 68,
+        "y": 16,
+        "w": 28,
+        "h": 6
+      },
       "description_detailed": "Small annotation box in the right column referencing the Daño stat on the card. Bold label followed by a short sentence that makes the Espectro-specific rule explicit.",
-      "embedded_text": ["Daño: Dependerá de la carta poseída."],
+      "embedded_text": [
+        "Daño: Dependerá de la carta poseída."
+      ],
       "relation_to_text": "Teaches that an Espectro's damage is inherited from the possessed card.",
       "legibility": "clear",
       "legibility_notes": null
@@ -253,9 +318,16 @@
       "anchor": "p14/fig-09",
       "slug": "callout-descanso",
       "type": "infographic",
-      "bbox_pct": {"x": 68, "y": 23, "w": 28, "h": 5},
+      "bbox_pct": {
+        "x": 68,
+        "y": 23,
+        "w": 28,
+        "h": 5
+      },
       "description_detailed": "Compact annotation near the upper-right of the card pointing at the Descanso indicator. Single-line content.",
-      "embedded_text": ["Descanso: 0"],
+      "embedded_text": [
+        "Descanso: 0"
+      ],
       "relation_to_text": "States the base descanso for this example Espectro.",
       "legibility": "clear",
       "legibility_notes": null
@@ -264,9 +336,16 @@
       "anchor": "p14/fig-10",
       "slug": "callout-nombre-de-la-carta",
       "type": "infographic",
-      "bbox_pct": {"x": 68, "y": 30, "w": 30, "h": 22},
+      "bbox_pct": {
+        "x": 68,
+        "y": 30,
+        "w": 30,
+        "h": 22
+      },
       "description_detailed": "Large orange-outlined callout box on the right column. Contains the most text of any callout on the page: a multi-line explanation of how card names are constructed (personaje + complemento), using 'Nánuk, Garras Heladas' as a worked example where 'Nánuk' is the character and 'Garras Heladas' is the card name.",
-      "embedded_text": ["Nombre de la Carta: El nombre de cada carta es lo que la distingue de las demás. En la mayoría de los casos comienza con el nombre del personaje, seguido del complemento del nombre de la carta. El nombre del personaje no se considera por sí mismo el nombre de la carta. Por ejemplo, en la carta 'Nánuk, Garras Heladas', el nombre del personaje es 'Nánuk' y el nombre la carta es: 'Garras Heladas'."],
+      "embedded_text": [
+        "Nombre de la Carta: El nombre de cada carta es lo que la distingue de las demás. En la mayoría de los casos comienza con el nombre del personaje, seguido del complemento del nombre de la carta. El nombre del personaje no se considera por sí mismo el nombre de la carta. Por ejemplo, en la carta 'Nánuk, Garras Heladas', el nombre del personaje es 'Nánuk' y el nombre la carta es: 'Garras Heladas'."
+      ],
       "relation_to_text": "Clarifies the card-name convention used throughout the game.",
       "legibility": "clear",
       "legibility_notes": null
@@ -275,9 +354,16 @@
       "anchor": "p14/fig-11",
       "slug": "callout-energia",
       "type": "infographic",
-      "bbox_pct": {"x": 68, "y": 53, "w": 28, "h": 5},
+      "bbox_pct": {
+        "x": 68,
+        "y": 53,
+        "w": 28,
+        "h": 5
+      },
       "description_detailed": "Small orange-outlined box, italic/bold label followed by value. Compact inline design.",
-      "embedded_text": ["Energía: Sin energía"],
+      "embedded_text": [
+        "Energía: Sin energía"
+      ],
       "relation_to_text": "States the base Energía of the example Espectro card.",
       "legibility": "clear",
       "legibility_notes": null
@@ -286,9 +372,16 @@
       "anchor": "p14/fig-12",
       "slug": "callout-subtipo",
       "type": "infographic",
-      "bbox_pct": {"x": 68, "y": 59, "w": 28, "h": 5},
+      "bbox_pct": {
+        "x": 68,
+        "y": 59,
+        "w": 28,
+        "h": 5
+      },
       "description_detailed": "Orange-outlined small callout parallel to Energía. Same visual style.",
-      "embedded_text": ["Subtipo: Sin subtipo"],
+      "embedded_text": [
+        "Subtipo: Sin subtipo"
+      ],
       "relation_to_text": "States the base Subtipo of the example Espectro card.",
       "legibility": "clear",
       "legibility_notes": null
@@ -297,9 +390,16 @@
       "anchor": "p14/fig-13",
       "slug": "callout-nombre-cientifico",
       "type": "infographic",
-      "bbox_pct": {"x": 68, "y": 64, "w": 30, "h": 9},
+      "bbox_pct": {
+        "x": 68,
+        "y": 64,
+        "w": 30,
+        "h": 9
+      },
       "description_detailed": "Callout at the lower-right that explains the scientific-name footer line of cards. References the broader design intention: Kódem characters are inspired by flora, fauna and minerals, often in danger of extinction, and the scientific name anchors each card to a real species.",
-      "embedded_text": ["Nombre científico del animal, planta o mineral: Los personajes de Kodem están inspirados en flora, fauna y minerales principalmente en peligro de extinción, en este apartado podrá conocer la base científica del personaje."],
+      "embedded_text": [
+        "Nombre científico del animal, planta o mineral: Los personajes de Kodem están inspirados en flora, fauna y minerales principalmente en peligro de extinción, en este apartado podrá conocer la base científica del personaje."
+      ],
       "relation_to_text": "Links the card footer (here 'Ursus maritimus' for Nánuk) to the ecological/educational angle of Kódem.",
       "legibility": "clear",
       "legibility_notes": "Source uses 'Kodem' without accent; transcribed verbatim."
@@ -308,9 +408,16 @@
       "anchor": "p14/fig-14",
       "slug": "subsection-badge-uso-de-los-espectros",
       "type": "icon",
-      "bbox_pct": {"x": 2, "y": 72, "w": 28, "h": 3},
+      "bbox_pct": {
+        "x": 2,
+        "y": 72,
+        "w": 28,
+        "h": 3
+      },
       "description_detailed": "White rounded-rectangle badge outlined in teal with bold dark uppercase text 'USO DE LOS ESPECTROS'. Matches the other subsection badges on this and other §3 pages.",
-      "embedded_text": ["USO DE LOS ESPECTROS"],
+      "embedded_text": [
+        "USO DE LOS ESPECTROS"
+      ],
       "relation_to_text": "Introduces the bulleted rules list on how Espectros are used in play.",
       "legibility": "clear",
       "legibility_notes": null
@@ -319,9 +426,16 @@
       "anchor": "p14/fig-15",
       "slug": "subsection-badge-cartas-poseidas",
       "type": "icon",
-      "bbox_pct": {"x": 2, "y": 85, "w": 22, "h": 3},
+      "bbox_pct": {
+        "x": 2,
+        "y": 85,
+        "w": 22,
+        "h": 3
+      },
       "description_detailed": "White rounded-rectangle badge with teal outline and bold dark uppercase text. Same visual style as the other subsection dividers.",
-      "embedded_text": ["CARTAS POSEÍDAS"],
+      "embedded_text": [
+        "CARTAS POSEÍDAS"
+      ],
       "relation_to_text": "Marks the 'Cartas Poseídas' rules block.",
       "legibility": "clear",
       "legibility_notes": null
@@ -330,9 +444,16 @@
       "anchor": "p14/fig-16",
       "slug": "subsection-badge-generalidades",
       "type": "icon",
-      "bbox_pct": {"x": 2, "y": 94, "w": 19, "h": 3},
+      "bbox_pct": {
+        "x": 2,
+        "y": 94,
+        "w": 19,
+        "h": 3
+      },
       "description_detailed": "White rounded-rectangle badge with teal outline and bold dark uppercase text for 'GENERALIDADES'. Closing subsection divider of the page.",
-      "embedded_text": ["GENERALIDADES"],
+      "embedded_text": [
+        "GENERALIDADES"
+      ],
       "relation_to_text": "Marks the final Generalidades bullet list (deck-building limits, vida máxima).",
       "legibility": "clear",
       "legibility_notes": null
@@ -341,7 +462,12 @@
       "anchor": "p14/fig-17",
       "slug": "annotation-connector-lines",
       "type": "diagram",
-      "bbox_pct": {"x": 30, "y": 15, "w": 40, "h": 55},
+      "bbox_pct": {
+        "x": 30,
+        "y": 15,
+        "w": 40,
+        "h": 55
+      },
       "description_detailed": "A system of thin diagonal leader lines that connect each annotation box to the corresponding region of the Nánuk card. Orange lines tie the 'stat' callouts (Vida Máxima, Nombre de la Carta, Energía, Subtipo, Nombre científico, Daño, Descanso) to their card regions. Purple lines tie the 'mechanic' callouts (Requisito, Efecto y Costo, Folio) to the respective card fields.\n\nThe two-color line system visually separates stats-reading annotations from mechanical-rules annotations, helping the reader distinguish 'what the symbol means' vs 'how the rule works'.",
       "embedded_text": [],
       "relation_to_text": "Pedagogical connector system for the card-anatomy infographic.",
@@ -352,14 +478,26 @@
       "anchor": "p14/fig-18",
       "slug": "page-number-14",
       "type": "icon",
-      "bbox_pct": {"x": 91, "y": 95, "w": 6, "h": 4},
+      "bbox_pct": {
+        "x": 91,
+        "y": 95,
+        "w": 6,
+        "h": 4
+      },
       "description_detailed": "Dark navy/teal filled rounded rectangle with white bold page number '14' in the bottom-right corner.",
-      "embedded_text": ["14"],
+      "embedded_text": [
+        "14"
+      ],
       "relation_to_text": "Page number indicator.",
       "legibility": "clear",
       "legibility_notes": null
     }
   ],
   "page_notes": "Page presents §3.7 Espectros in two layers: (1) a full card-anatomy infographic using 'Nánuk, Garras Heladas' as the example, annotated by ~10 color-coded callouts explaining card fields (Vida Máxima, Nombre de la Carta, Requisito, Efecto y Costo, Folio, Créditos, Daño, Descanso, Energía, Subtipo, Nombre científico); and (2) a trio of bulleted rules blocks for 'Uso de los Espectros', 'Cartas Poseídas' and 'Generalidades'. Source has minor typos preserved verbatim: 'expasión' (fig-06), 'Kodem' without accent (fig-13), 'Las carta poseída' (b18), 'pueden disparan' (b19).",
-  "self_confidence": 0.9
+  "self_confidence": 0.9,
+  "spot_check_pass": 3,
+  "spot_check_date": "2026-04-18T22:47:02.116987",
+  "spot_check_notes": [
+    "Confirmado 'Morféica' con acento (LLM correcto)."
+  ]
 }

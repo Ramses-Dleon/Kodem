@@ -1,16 +1,18 @@
 {
   "rulebook_version": "5.1",
-  "generated_at": "2026-04-18T22:21:05+00:00",
+  "generated_at": "2026-04-18T22:50:34+00:00",
   "pdf_sha256": "05672af59629e1e8c7ead6d9487aba107506d239c4863eec49fc28ab45479b03",
   "stats": {
     "total_pages": 40,
-    "total_blocks": 558,
+    "total_blocks": 562,
     "total_figures": 207,
     "re_extracted_pages": 9,
-    "avg_confidence": 0.9073,
-    "avg_confidence_pass2": 0.9189,
+    "avg_confidence": 0.9008,
+    "avg_confidence_pass2": 0.89,
     "total_typos_preserved": 75,
-    "human_review_count": 1,
+    "spot_check_pass3_count": 8,
+    "post_validation_pending_count": 1,
+    "human_review_count": 0,
     "verdicts": {
       "both_agree": 14,
       "llm_preferred": 13,
@@ -21,20 +23,21 @@
   "files": [
     {
       "path": "master-rulebook-v5.1.md",
-      "size_bytes": 489898,
-      "sha256": "e2a14fe23b0701e2b51af7c11437ce5a283991b033ba19f169cf1bfda00d95d5",
+      "size_bytes": 493827,
+      "sha256": "ff288055054db651dca9fce7eb28e59d36411dbf47e03c836eb96c7e82dee018",
       "format": "markdown",
-      "description": "Documento legible humano con TOC, bloques, figuras y apéndices"
+      "description": "Documento legible humano con TOC, bloques, figuras, spot-check pass 3 y apéndices."
     },
     {
       "path": "master-rulebook-v5.1.json",
-      "size_bytes": 643638,
-      "sha256": "ad8d60ddc59a58832a9bc761770857ddf86b99904280f0678f00242a265968de",
+      "size_bytes": 649123,
+      "sha256": "d5c6079f831742693a4ed10d3531f9b1a0878a49aa3403ef4dd8f9f8746e31be",
       "format": "json",
-      "description": "JSON estructurado con todas las páginas, anchors_index, typos y human_review_pending"
+      "description": "JSON estructurado con páginas, anchors_index, typos, human_review_pending y post_validation_pending."
     }
   ],
-  "human_review_pending": [
-    16
+  "human_review_pending": [],
+  "post_validation_pending": [
+    19
   ]
 }

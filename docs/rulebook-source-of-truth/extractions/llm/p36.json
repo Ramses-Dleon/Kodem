@@ -3,7 +3,10 @@
   "model": "opus-4-7",
   "extraction_date": "2026-04-18T20:18:00-06:00",
   "title": null,
-  "section_refs": ["§8.1", "§8.2"],
+  "section_refs": [
+    "§8.1",
+    "§8.2"
+  ],
   "text_blocks": [
     {
       "anchor": "p36/b01",
@@ -53,9 +56,21 @@
       "anchor": "p36/fig-01",
       "slug": "tres-copias-tun-mensajero-celestial",
       "type": "photo",
-      "bbox_pct": {"x": 60, "y": 30, "w": 35, "h": 25},
+      "bbox_pct": {
+        "x": 60,
+        "y": 30,
+        "w": 35,
+        "h": 25
+      },
       "description_detailed": "Fotografía en perspectiva que muestra tres cartas físicas del juego Kódem TCG idénticas superpuestas y ligeramente escalonadas en abanico, ilustrando visualmente la regla del Formato Extendido que permite llevar hasta 3 copias de cada carta Adendei. La carta repetida es 'Tun, Mensajero Celestial'.\n\nLa ilustración central de cada copia muestra un colibrí o ave mitológica con plumaje de colores vibrantes: verdes iridiscentes, morados, dorados y anaranjados que se combinan en efectos de luz dramáticos. El ave aparece en movimiento o vuelo, con las alas desplegadas y una silueta elegante. El fondo es cálido, con tonos anaranjados y rojos que generan destellos y efectos de aura, sugiriendo un entorno celestial o divino coherente con el epíteto 'Mensajero Celestial'.\n\nEl diseño de la carta sigue el formato estándar de Kódem TCG: marco ornamentado con iconografía del juego, nombre en la parte superior ('Tun, Mensajero Celestial'), clasificación de tipo debajo del nombre ('Adendei / Chaskita'), texto de habilidad en la parte media-baja (Pasiva: 'Esta carta no puede recibir daño por elección'), y en la esquina inferior los indicadores numéricos de estadísticas (aparecen los valores 2, 1 y 4, que probablemente corresponden a costos/ataque/defensa según la mecánica del juego).\n\nLa disposición escalonada de las tres copias refuerza visualmente el mensaje principal del texto adyacente: en Formato Extendido, a diferencia del Estándar, se permiten múltiples copias de Adendei. El ligero desplazamiento entre cartas permite leer parcialmente los nombres y confirmar que se trata de la misma carta repetida tres veces.",
-      "embedded_text": ["Tun, Mensajero Celestial", "Adendei / Chaskita", "Pasiva: Esta carta no puede recibir daño por elección", "2", "1", "4"],
+      "embedded_text": [
+        "Tun, Mensajero Celestial",
+        "Adendei / Chaskita",
+        "Pasiva: Esta carta no puede recibir daño por elección",
+        "2",
+        "1",
+        "4"
+      ],
       "relation_to_text": "Ilustra directamente la regla 'Puedes llevar hasta 3 copias de cada carta Adendei' del Formato Extendido. La imagen muestra exactamente 3 copias de la misma carta.",
       "legibility": "clear",
       "legibility_notes": "Los indicadores numéricos y el texto de habilidad se leen bien; el saborcito narrativo de la parte inferior no es visible con claridad debido al escalonamiento."
@@ -64,25 +79,52 @@
       "anchor": "p36/fig-02",
       "slug": "carta-zotz-absorcion-de-energia",
       "type": "illustration",
-      "bbox_pct": {"x": 12, "y": 78, "w": 22, "h": 18},
-      "description_detailed": "Ilustración de la carta 'Zotz, Absorción de Energía' del juego Kódem TCG, mostrada como referencia visual en la tabla de cartas limitadas con 0 copias permitidas en Formato Extendido. La ilustración central muestra una criatura tipo dragón o murciélago de gran tamaño con alas extendidas, de coloración marrón-rojiza oscura, posado sobre una superficie oscura y rocosa.\n\nLa criatura está rodeada de una energía azul brillante que emana de sus garras o del entorno inmediato, generando un efecto luminoso dramático que contrasta con la atmósfera oscura general. El fondo combina tonos púrpura profundo, azul oscuro y negro, creando una escena de aire nocturno y sobrenatural, coherente con el nombre 'Absorción de Energía' que sugiere un acto mágico-vampírico.\n\nEn la parte inferior de la carta se aprecia el marco estándar con iconos de estadísticas y el texto de habilidad. La clasificación de tipo parece indicar 'Adonde / Háumsca' (posible variante ortográfica o error de lectura del OCR). La Pasiva descrita permite copiar la Activa y el Combo de una carta en Extinción una vez por turno, lo que explica por qué está limitada a 0 copias en Formato Extendido (es demasiado poderosa). En la parte inferior aparece un texto narrativo en cursiva sobre la absorción de energía de seres vencidos.",
-      "embedded_text": ["Zotz, Absorción de Energía", "Adonde / Háumsca", "Pasiva: Esta carta puede copiar la Activa y el Combo de una carta en Extinción, una vez en el turno.", "Absorbe la energía de los seres que caen vencidos y establece para volverse Áhntzi... sin ser Āhn Zotz algo pasó por ahí."],
+      "bbox_pct": {
+        "x": 12,
+        "y": 78,
+        "w": 22,
+        "h": 18
+      },
+      "description_detailed": "Ilustración de la carta 'Zotz, Absorción de Energía' del juego Kódem TCG, mostrada como referencia visual en la tabla de cartas limitadas con 0 copias permitidas en Formato Extendido. La ilustración central muestra una criatura tipo dragón o murciélago de gran tamaño con alas extendidas, de coloración marrón-rojiza oscura, posado sobre una superficie oscura y rocosa.\n\nLa criatura está rodeada de una energía azul brillante que emana de sus garras o del entorno inmediato, generando un efecto luminoso dramático que contrasta con la atmósfera oscura general. El fondo combina tonos púrpura profundo, azul oscuro y negro, creando una escena de aire nocturno y sobrenatural, coherente con el nombre 'Absorción de Energía' que sugiere un acto mágico-vampírico.\n\nEn la parte inferior de la carta se aprecia el marco estándar con iconos de estadísticas y el texto de habilidad. La clasificación de tipo parece indicar 'Adendei / Háumsca' (posible variante ortográfica o error de lectura del OCR). La Pasiva descrita permite copiar la Activa y el Combo de una carta en Extinción una vez por turno, lo que explica por qué está limitada a 0 copias en Formato Extendido (es demasiado poderosa). En la parte inferior aparece un texto narrativo en cursiva sobre la absorción de energía de seres vencidos.",
+      "embedded_text": [
+        "Zotz, Absorción de Energía",
+        "Adendei / Háumsca",
+        "Pasiva: Esta carta puede copiar la Activa y el Combo de una carta en Extinción, una vez en el turno.",
+        "Absorbe la energía de los seres que caen vencidos y establece para volverse Áhntzi... sin ser Āhn Zotz algo pasó por ahí."
+      ],
       "relation_to_text": "Referencia visual para la entrada 'Zotz, Absorción de Energía' en la tabla de CARTAS LIMITADAS con 0 copias.",
       "legibility": "needs_enhance",
-      "legibility_notes": "El texto narrativo de la parte inferior contiene grafías poco legibles ('Áhntzi', 'Āhn Zotz') que podrían ser errores de lectura del OCR o nombres propios del universo Kódem. La clasificación de tipo 'Adonde' podría ser 'Adende' (variante ortográfica)."
+      "legibility_notes": "El texto narrativo de la parte inferior contiene grafías poco legibles ('Áhntzi', 'Āhn Zotz') que podrían ser errores de lectura del OCR o nombres propios del universo Kódem. La clasificación de tipo 'Adendei' podría ser 'Adende' (variante ortográfica)."
     },
     {
       "anchor": "p36/fig-03",
       "slug": "carta-tekei-responsabilidad",
       "type": "illustration",
-      "bbox_pct": {"x": 38, "y": 78, "w": 22, "h": 18},
-      "description_detailed": "Ilustración de la carta 'Tekei, Responsabilidad' del juego Kódem TCG, mostrada como referencia visual para la entrada de la tabla de cartas limitadas con 1 copia permitida en Formato Extendido. La ilustración central presenta una criatura elegante con apariencia de ciervo, antílope o ser etéreo con grandes astas ramificadas, de pie en pose noble y solemne.\n\nEl personaje irradia una aura blanca-azulada luminosa que contrasta dramáticamente con el fondo, generando una sensación de divinidad o poder espiritual. El fondo está compuesto por tonos rosados y rojos cálidos que evocan pétalos de flores cayendo, llamas ritualísticas o partículas mágicas flotando alrededor del personaje.\n\nLa atmósfera general es mística y solemne, coherente con el epíteto 'Responsabilidad' que sugiere un rol de liderazgo o carga sagrada en la narrativa del juego. El estilo artístico es más pictórico y etéreo que otras cartas del manual, reforzando su estatus especial (solo 1 copia permitida).\n\nEn la parte inferior de la carta se ven los iconos de estadísticas y texto de habilidades. La clasificación de tipo aparece como 'Adonde / Háumsca' (coherente con la carta Zotz de la misma sección). La Pasiva protege a todas las cartas aliadas de ser enviadas a Extinción, y el Costo indica que la carta misma no puede ser enviada ni protegida, reforzando su naturaleza de 'ancla' protectora. El texto narrativo final hace referencia al 'antiguo Linaje de Mák'.",
-      "embedded_text": ["Tekei, Responsabilidad", "Adonde / Háumsca", "Pasiva: Las cartas aliadas no pueden ser enviadas a Extinción.", "Costo: Esta carta no puede ser enviada ni protegida.", "Controla a los demás de Tekei del origen fino del antiguo Linaje de Mák."],
+      "bbox_pct": {
+        "x": 38,
+        "y": 78,
+        "w": 22,
+        "h": 18
+      },
+      "description_detailed": "Ilustración de la carta 'Tekei, Responsabilidad' del juego Kódem TCG, mostrada como referencia visual para la entrada de la tabla de cartas limitadas con 1 copia permitida en Formato Extendido. La ilustración central presenta una criatura elegante con apariencia de ciervo, antílope o ser etéreo con grandes astas ramificadas, de pie en pose noble y solemne.\n\nEl personaje irradia una aura blanca-azulada luminosa que contrasta dramáticamente con el fondo, generando una sensación de divinidad o poder espiritual. El fondo está compuesto por tonos rosados y rojos cálidos que evocan pétalos de flores cayendo, llamas ritualísticas o partículas mágicas flotando alrededor del personaje.\n\nLa atmósfera general es mística y solemne, coherente con el epíteto 'Responsabilidad' que sugiere un rol de liderazgo o carga sagrada en la narrativa del juego. El estilo artístico es más pictórico y etéreo que otras cartas del manual, reforzando su estatus especial (solo 1 copia permitida).\n\nEn la parte inferior de la carta se ven los iconos de estadísticas y texto de habilidades. La clasificación de tipo aparece como 'Adendei / Háumsca' (coherente con la carta Zotz de la misma sección). La Pasiva protege a todas las cartas aliadas de ser enviadas a Extinción, y el Costo indica que la carta misma no puede ser enviada ni protegida, reforzando su naturaleza de 'ancla' protectora. El texto narrativo final hace referencia al 'antiguo Linaje de Mák'.",
+      "embedded_text": [
+        "Tekei, Responsabilidad",
+        "Adendei / Háumsca",
+        "Pasiva: Las cartas aliadas no pueden ser enviadas a Extinción.",
+        "Costo: Esta carta no puede ser enviada ni protegida.",
+        "Controla a los demás de Tekei del origen fino del antiguo Linaje de Mák."
+      ],
       "relation_to_text": "Referencia visual para la entrada 'Tekei, Responsabilidad' en la tabla de CARTAS LIMITADAS con 1 copia permitida.",
       "legibility": "needs_enhance",
-      "legibility_notes": "El texto narrativo de la parte inferior tiene construcción gramatical extraña ('Controla a los demás de Tekei...') que sugiere posible error de lectura del OCR o estilo narrativo estilizado del juego. La clasificación 'Adonde' probablemente debería ser 'Adende'."
+      "legibility_notes": "El texto narrativo de la parte inferior tiene construcción gramatical extraña ('Controla a los demás de Tekei...') que sugiere posible error de lectura del OCR o estilo narrativo estilizado del juego. La clasificación 'Adendei' probablemente debería ser 'Adende'."
     }
   ],
-  "page_notes": "Página con tres secciones: cierre de variantes del Formato Multijugador con la variante 'Manada' (inicio de p36), subsección 8.2 Formato Extendido completa (composición del mazo, suplentes, condición de victoria) y el inicio de una tabla de CARTAS LIMITADAS que muestra 2 entradas (Zotz: 0 copias, Tekei: 1 copia) con ilustraciones de referencia de ambas cartas. El texto original tenía palabras partidas por guiones de fin de línea ('Protec-tor', 'pri-meras') que fueron reconstruidas conservando el contenido. La clasificación 'Adonde / Háumsca' aparece dos veces pero probablemente debería ser 'Adende' (posible variante ortográfica del manual o error de transcripción OCR).",
-  "self_confidence": 0.87
+  "page_notes": "Página con tres secciones: cierre de variantes del Formato Multijugador con la variante 'Manada' (inicio de p36), subsección 8.2 Formato Extendido completa (composición del mazo, suplentes, condición de victoria) y el inicio de una tabla de CARTAS LIMITADAS que muestra 2 entradas (Zotz: 0 copias, Tekei: 1 copia) con ilustraciones de referencia de ambas cartas. El texto original tenía palabras partidas por guiones de fin de línea ('Protec-tor', 'pri-meras') que fueron reconstruidas conservando el contenido. La clasificación 'Adendei / Háumsca' aparece dos veces pero probablemente debería ser 'Adende' (posible variante ortográfica del manual o error de transcripción OCR).",
+  "self_confidence": 0.87,
+  "spot_check_pass": 3,
+  "spot_check_date": "2026-04-18T22:47:02.116987",
+  "spot_check_notes": [
+    "Adendei → Adendei en 0 ocurrencias (LLM alucinó 'Adendei').",
+    "Confirmado: la carta 'Tekei' de p36 es la misma que aparece en p32 (no cartas distintas)."
+  ]
 }
