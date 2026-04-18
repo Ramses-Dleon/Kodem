@@ -284,9 +284,10 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 - Se declara en Fase de Batalla
 - Obligatoria a menos que diga "puede"
 - Genera descansos
-- **Efectos de "atacar múltiples cartas" con daño específico:** Si un efecto permite atacar (o atacar adicionalmente) a múltiples cartas y menciona puntos de daño específicos, ese daño **REEMPLAZA** el ataque base (no se suma). Ejemplo oficial: *Yanzi, Precisión*.
+- **Efectos de "atacar múltiples cartas" con daño específico (RB-12):** Si un efecto permite atacar (o atacar adicionalmente) a múltiples cartas y menciona puntos de daño específicos, ese daño **REEMPLAZA** el ataque base (no se suma). Ejemplo oficial: *Yanzi, Precisión*. (PDF v5.1 p.24)
+- **Ataque Múltiple (RB-12):** Las cartas que pueden atacar a más de 1 carta durante la Fase de Batalla, **se considera 1 solo ataque** — no "ataque normal + ataques extras". (PDF v5.1 p.25)
 - Puede declararse sin atacar (si efecto no está condicionado al ataque)
-- Activa de carta + Activa de Rot equipado = pueden usarse ambas (cuenta como 1 Activa)
+- **Activa de carta + Activa de Rot equipado = pueden usarse ambas (cuenta como 1 Activa) (RB-03)**: Los equipos Rot pueden tener efectos **Activa** o **Activa Rápida** (confirmado en glosario PDF v5.1 p.38: *"Rot: Equipo. Posee efectos 'Activa' o 'Activa Rápida' en su mayoría"*).
 
 ### 10.2 Activa-Rápida
 - Como Activa, pero usable en turno del rival (como respuesta)
@@ -318,6 +319,39 @@ Solo 1 carta puede atacar/usar Activa por turno (excepción: Adendei + Rot equip
 
 ### 10.6 Requisito
 - Condición para colocar carta en el campo (ej. Espectros)
+
+### 10.7 Pasar Turno (RB-08)
+**Definición (PDF v5.1 p.16):**
+> Pasar turno: Ir a Fin de Turno saltándote todas las Fases intermedias y sin activar efectos a excepción de los efectos con el costo, condición o indicación de "pasar turno" que deberán declararse en esta Fase. También puedes indicar en la Fase Previa que "pasas turno" y saltar a "Fin de Turno" para cumplir con el costo de "pasar turno" de 1 carta que lo establezca como condición para atacar.
+
+**Implicaciones:**
+- Se declara en Fase Previa
+- Excepción: sí se activan efectos/costos con cláusula "pasar turno"
+- Permite pagar costo "pasar turno" que otras cartas establezcan como condición para ataque en turno posterior
+
+### 10.8 Declarar y resolver efectos (RB-09)
+**Declarar un efecto (PDF v5.1 p.25-26):**
+- Es la acción de decirle a tu rival que vas a utilizar el efecto de una carta
+- Si la condición de uso no se cumple, el efecto no puede ser declarado
+- **Efectos declarados en cualquier zona o fuera de ella (ej. cartas tomadas o vivificadas) resuelven como si la carta aún estuviera en dicho lugar, aun si la carta ya no está en la misma zona**
+- Si una carta no menciona cuándo termina su efecto, termina cuando la carta deja el campo
+
+**Resolver un efecto:**
+- Cartas que NO especifiquen explícitamente que su efecto aplica cuando son enviadas a Extinción, no pueden activar efectos en ese momento
+- Si el efecto está condicionado a "estar disponible" y la carta deja el campo, el efecto no continúa
+- Solo cartas reveladas en campo pueden usar efectos
+
+**Efectos pre-declarados con prioridad (PDF v5.1 p.20 §5.3 punto 2):**
+> Siempre que una carta (que no sea un equipo) deje la Zona Principal, deberá colocarse una carta suplente inmediatamente, antes de declarar cualquier otro efecto, **excepto si se trata de un efecto que haya sido declarado antes de que la carta dejase el campo, en cuyo caso podrá terminar de resolverse antes de realizar el reemplazo**.
+
+### 10.9 Regla "Y" entre acciones simultáneas (RB-13)
+**PDF v5.1 p.26:**
+> Si una carta menciona en su efecto dos o más acciones con la conjunción "**y**", ambas acciones se consideran como un mismo efecto. Ejemplo: *"Activa: Realiza acción A **y** B"*. Si no se puede resolver cualquiera de las dos acciones (sea A o B), no se puede declarar su efecto.
+
+**Ejemplos oficiales:** Sangre Pétrea, Rot Ígneo, Planta Carnívora.
+
+**Orden de acciones encadenadas:**
+> Siempre que una carta menciona en su efecto una serie de acciones a realizar, será necesario que se cumplan por lo menos la primera de ellas en el orden en que dichas acciones se encuentran escritas en el texto de la carta. Ejemplo: *Boras, Sacrificio*.
 
 ---
 
@@ -525,3 +559,12 @@ En cada fase:
 
 _Guardado: 2026-04-17 | Fuentes: Rulebook v5.0 (40pp) + Breve Guía (19pp)_
 _Revisión 2026-04-17: Auditoría vs PDF oficial. Correcciones RB-01 (Feral como Energía), RB-02 (Vínculo restricción), RB-04/05 (equipos múltiples), RB-06 (Espectro sin poseída), RB-10 (orden daño), RB-11 (cambio entre ZP), RB-12 (atacar múltiples reemplaza), RB-14 (efectos copiados), RB-15 (Vivificar definición universal), RB-16 (costos compartidos). Reporte: `.openclaw/workspace/kodem-audit-2026-04-17/07-rulebook-vs-md.md`_
+
+_Revisión 2026-04-18: Reconciliación contra rulebook v5.1 (archivo; portada interna dice v5.0 — confirmar con Sergio)._
+- **RB-03 cerrado** — Glosario PDF p.38 confirma que Rot tiene "Activa o Activa Rápida". §10.1 actualizado.
+- **RB-08 PASAR TURNO añadido** — §10.7 con texto verbatim PDF p.16.
+- **RB-09 Efectos pre-declarados añadido** — §10.8 (declarar/resolver + efecto pre-declarado que termina antes de reemplazo).
+- **RB-12 expandido** — §10.1: "ataque múltiple se considera 1 solo ataque" (PDF p.25).
+- **RB-13 Regla "Y" añadida** — §10.9 con texto verbatim PDF p.26.
+- **Pendiente:** RB-17 (transcribir glosario completo de pp.37-40 del PDF v5.1 a `docs/glosario.md`).
+- Reporte completo: `.openclaw/workspace/kodem-audit-2026-04-17/08-rulebook-v51-vs-v50.md`
