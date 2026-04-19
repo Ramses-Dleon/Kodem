@@ -397,7 +397,7 @@ O agregar al glosario:
 ## D20. Espectros — vida máxima, posesión y requisitos
 
 **Fecha:** 2026-04-19
-**Status:** ✅ RESUELTO (con refinamientos D21, D22 pendientes)
+**Status:** ✅ RESUELTO (+ D21 cerrada, D22 refinada)
 
 **Ruling:**
 1. **Vida máxima:** cada carta Espectro declara su vida en la propia carta (no hay regla general, es caso por caso).
@@ -416,17 +416,73 @@ O agregar al glosario:
 
 - `Tlahuelpuchi, Invocación Espectral` (FYTE-007R, Protector) tiene efecto que bloquea a Espectros: *"Los Espectros aliados no envían cartas a Extinción para poseer hasta que este Protector..."* → implica que **poseer envía la carta a Extinción**.
 
-**Dudas derivadas pendientes (D21, D22):**
-- **D21:** Al poseer, el Adendei de Extinción ¿se consume / se envía a Fuera del Juego / queda marcado?
-- **D22:** ¿El Espectro hereda alguna stat del Adendei poseído o solo usa el nombre como ancla de requisito?
+**Dudas derivadas:**
+- **D21:** Al poseer, el Adendei de Extinción ¿se consume? → **✅ RESUELTA (ver D21 abajo)**
+- **D22:** ¿El Espectro hereda alguna stat del Adendei poseído? → **✅ REFINADA (ver D22 abajo)**
 
-**Sugerencia v5.2:** agregar sección formal sobre Espectros con:
+**Sugerencia v5.2:** agregar sección formal §3.7 Espectros con:
 - Declaración de que vida se lee de cada carta
-- Mecánica de posesión (consumo de Adendei en Extinción)
-- Interacción con Fuera del Juego
+- Mecánica de posesión como VIVIFICACIÓN (ver D21)
+- Adendei poseído se coloca BAJO el Espectro en Zona Principal
+- Al llegar a 0 de vida, ambos a Extinción
+- Intercambio instantáneo como operación atómica
 - Que la mecánica de copia de Ruk sigue D16 (snapshot único)
 
 ---
+
+## D21. Posesión de Espectros = Vivificación atómica
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO (Ramses)
+
+**Ruling oficial:**
+
+> **Todo efecto que saca, regresa o intercambia una carta desde Extincion al campo es VIVIFICAR** — aunque no use la palabra literalmente. El texto debe indicar expresamente que "saca/regresa/intercambia" para que cuente como vivificación.
+
+> **Al poseer, el Espectro está VIVIFICANDO al Adendei.** Se coloca el Adendei poseído en Zona Principal y el Espectro encima de él (bajo el Espectro).
+
+> **Cuando la vida del Espectro llega a 0**, se rompe la unión de posesión y **ambas cartas (Espectro + Adendei poseído) se envían a Extinción**.
+
+> **Posesión normal con sacrificio** (enviar un Adendei a Extinción para poseer a otro): es un **intercambio instantáneo atómico**. La carta que sale de Extinción y la que entra se mueven en **una misma acción, no secuencialmente**. El conteo de cartas en Extinción permanece igual.
+
+**Ejemplos de efectos que ahora se consideran Vivificar (implicaciones retroactivas):**
+- "Regresa 1 carta de tu Extinción al campo" → vivificar
+- "Intercambia 1 Adendei en ZP con 1 en Extinción" → vivificar (la carta que entra)
+- "Saca 1 Equipo de Extinción" → vivificar equipo
+- "Intercambiar" (mecánica de Ariam Resurrección, Mizthe Arconte, Therz Guardián) → vivificar la carta que entra al campo
+
+**Conexiones con otras dudas:**
+- **M2 "Intercambiar"** (audit-T3): ya no es mecánica huérfana. Es una forma de vivificación atómica.
+- **D5 "Fuera del Juego"**: Quam (TCOO-006U) es distinto del intercambio de posesión; la carta "fuera del juego" NO es vivificable.
+- **Tlahuelpuchi (FYTE-007R/023)** *"Los Espectros aliados no envían cartas a Extincion para poseer"*: coherente — bloquea el **sacrificio** como componente del intercambio, dejando la posesión dependiente solo de Adendei ya en Extinción.
+
+**Implicaciones v5.2:**
+- Añadir entrada formal al glosario §9: **Vivificar** — expandir definición para incluir "sacar, regresar, intercambiar una carta de Extinción al campo"
+- Definir **Intercambio Instantáneo** como operación atómica
+- Sección §3.7 Espectros documentar el stack visual (Espectro encima del Adendei) y el co-envio a Extinción al morir
+- Regla meta propagable: todos los textos tipo "Regresa / Saca / Intercambia desde Extinción" disparan efectos que respondan a "si es vivificada"
+
+---
+
+## D22. Herencia de stats del Adendei poseído — ✅ REFINADA por D21
+
+**Fecha:** 2026-04-19
+**Status:** ✅ CLARIFICADA (no hay herencia)
+
+**Ruling derivado de D21:**
+
+Dado que el Adendei poseído se coloca **BAJO** el Espectro (stack físico), **NO hay herencia de stats**. Las dos cartas coexisten en el mismo slot de Zona Principal pero mantienen sus propias estadísticas:
+
+- **El Espectro usa su propia vida** (declarada en la carta Espectro) — no la del Adendei.
+- **El Espectro usa su propio Daño/Descansos** — no los del Adendei.
+- **El Adendei sirve como "ancla" física** para: (1) cumplir el requisito de posesión, (2) ser co-enviado a Extinción cuando el Espectro muere.
+
+**Pregunta abierta menor:** cuando el Espectro muere, ¿el Adendei poseído llega a Extinción con vida plena (6 pts) o mantiene el estado que tenía antes de ser poseído? Asumiendo coherencia con "el intercambio de posesión es atómico", el Adendei se mueve al campo al ser poseído y luego a Extinción al morir el Espectro, así que **no interactúa con daño mientras está poseído** — queda inerte bajo el Espectro.
+
+**Implicación v5.2:** clarificar en §3.7 que las cartas bajo un Espectro están en estado INACTIVO (no reciben daño, no atacan, no contribuyen efectos) hasta que el Espectro es eliminado.
+
+---
+
 ## D23. Ariam, Dualidad (BETA-001) — pieza histórica
 
 **Fecha:** 2026-04-19
@@ -548,11 +604,13 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 | D23 | BETA-001 pieza histórica | ✅ |
 | D24 | Cap de vida máxima por tipo (regla meta dispersa) | ✅ |
 
-**Dudas derivadas pendientes (5):**
+**Dudas derivadas pendientes (3):**
 - **D21** Consumo de Adendei al poseer (¿se envía a Fuera del Juego / Extinción?)
 - **D22** Herencia de stats al poseer (¿Espectro hereda vida del Adendei poseído?)
 - **D25** Hori (¿Costo de Extinción aplica a toda la carta o solo SRMR?) 🚩
-- **D26** Nozi (grafia oficial "Átlico" vs "Átlíco")
+
+**Dudas derivadas resueltas (+1):**
+- **D26** ✅ Nozi — grafía oficial: **Átlico** (una tilde, en la Á). Ruling Ramsés 2026-04-19. Las 4 variantes con `Átlíco` son errata; SRMR-005 es canónica.
 
 **Dudas de proceso pendientes:**
 - **P2** ¿Generar doc separado "Inconsistencias v5.1 + Changelog v5.2"?

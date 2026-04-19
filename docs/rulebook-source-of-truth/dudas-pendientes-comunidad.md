@@ -71,7 +71,7 @@ El mismo patrón aparece en Nozi y Zaren, sugiriendo que las variantes SRMR de I
 
 ---
 
-## D26. Grafía oficial de "Átlico" — ¿con o sin tilde en la í?
+## D26. Grafía oficial de "Átlico" — ¿con o sin tilde en la í? ✅ RESUELTA
 
 **Cartas relevantes:** las 5 variantes de Nozi, Corona Marina: **EXPO-0004**, **IDRMA-001**, **KPRC-023**, **SRMR-005**, **TKD-2022-008**.
 
@@ -85,6 +85,16 @@ El mismo patrón aparece en Nozi y Zaren, sugiriendo que las variantes SRMR de I
 - Relacionado: ¿el rulebook debería documentar formalmente las 8 energías en el glosario con su grafía correcta, para evitar este tipo de inconsistencias?
 
 **Nota:** en cards.json la mayoría de textos están sin tildes por normalización del engine; esta duda aplica a la grafía oficial del rulebook v5.2.
+
+### 🟢 Ruling oficial (Ramsés D'León, 2026-04-19)
+
+> **Átlico** — una sola tilde, en la Á.
+
+**Implicaciones:**
+- Las 4 variantes con `Átlíco` (EXPO-0004, IDRMA-001, KPRC-023, TKD-2022-008) son **errata** y deben corregirse en futuras reimpresiones.
+- SRMR-005 (`Átlico`) es la grafía canónica.
+- Consistente con ortografía española (una sola sílaba tónica).
+- **Pendiente:** documentar las 8 Energías formalmente en el glosario del rulebook v5.2 con grafía canónica, para prevenir el mismo problema con Pírico, Lítico, etc.
 
 ---
 
