@@ -609,8 +609,15 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 - **D22** Herencia de stats al poseer (¿Espectro hereda vida del Adendei poseído?)
 - **D25** Hori (¿Costo de Extinción aplica a toda la carta o solo SRMR?) 🚩
 
-**Dudas derivadas resueltas (+1):**
+**Dudas derivadas resueltas (+2):**
 - **D26** ✅ Nozi — grafía oficial: **Átlico** (una tilde, en la Á). Ruling Ramsés 2026-04-19. Las 4 variantes con `Átlíco` son errata; SRMR-005 es canónica.
+- **M1** ✅ Fuera del Juego — zona aislada + pública. Ruling Ramsés 2026-04-19:
+  - No es objetivo de efectos (intercambiar/copiar/vivificar): **No**
+  - No cuenta como Extinción: **No**
+  - No cuenta como Mazo: **No**
+  - Inspeccionable por ambos jugadores siempre: **Sí**
+  - Efecto latente "(aún si esta carta ya no está en el campo)" no se puede negar retroactivamente: **No**
+  - Formalizar en glosario v5.2 como zona oficial.
 
 **Dudas de proceso pendientes:**
 - **P2** ¿Generar doc separado "Inconsistencias v5.1 + Changelog v5.2"?

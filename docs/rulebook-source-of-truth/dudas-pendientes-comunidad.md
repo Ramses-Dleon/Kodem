@@ -100,7 +100,7 @@ El mismo patrón aparece en Nozi y Zaren, sugiriendo que las variantes SRMR de I
 
 # 🟡 Mecánicas sin definición formal en el rulebook
 
-## M1. Zona "Fuera del Juego"
+## M1. Zona "Fuera del Juego" ✅ RESUELTA
 
 **Carta única:** **TCOO-006U** Quam, Detrás de la Materia (+ reimpresión **TCOO-081**, versión EN: **TCEO-006U** y **TCEO-081**).
 
@@ -113,6 +113,22 @@ Su efecto Pasiva dice:
 3. ¿Cuenta como "carta en Mazo" para efectos que buscan en el Mazo?
 4. ¿Los jugadores pueden inspeccionar esta zona en cualquier momento?
 5. ¿El efecto latente "(aún si esta carta ya no está en el campo)" puede ser negado retroactivamente?
+
+### 🟢 Ruling oficial (Ramsés D'León, 2026-04-19)
+
+| # | Pregunta | Ruling |
+|---|---|---|
+| 1 | ¿Objetivo válido de otros efectos (intercambiar/copiar/vivificar)? | **No** |
+| 2 | ¿Cuenta como carta en Extinción? | **No** |
+| 3 | ¿Cuenta como carta en Mazo? | **No** |
+| 4 | ¿Inspeccionable por ambos jugadores en cualquier momento? | **Sí** |
+| 5 | ¿El efecto latente "aún si esta carta ya no está en el campo" puede negarse retroactivamente? | **No** |
+
+**Implicaciones mecánicas:**
+- "Fuera del Juego" es una **zona aislada**: cartas allí quedan fuera del alcance de cualquier efecto (ni objetivable, ni pertenece a Extinción ni al Mazo).
+- Es una zona **pública** (inspección libre por ambos jugadores en cualquier momento) — a diferencia del Mazo, que es privado.
+- Los efectos latentes que ya se dispararon (como el de Quam al vivificar con 6 PV) **no pueden cancelarse retroactivamente** aunque la carta origen salga del campo.
+- **Pendiente v5.2:** formalizar "Fuera del Juego" en el glosario del rulebook como zona oficial con estas 5 propiedades.
 
 ---
 
