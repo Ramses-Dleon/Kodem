@@ -335,7 +335,78 @@ Prioridad P0 = crítico (gap + violación), P1 = importante (gap en regla resuel
 
 ## Top 5 mejoras estratégicas (Pasada 2-3)
 
-1. **Reestructurar `possess` en engine para respetar D21/D22.** Cambiar `apply_action` caso `'possess'`:
-   - **NO** copiar `base_damage`/`base_rests` del poseído al Espectro.
-   - **NO** enviar el poseído a Extinción al poseer.
-   - **SÍ** agregar `FieldCard.possessed_card: FieldCard | None` como stack físico (el poseído queda "bajo" el Espectro, inactivo: no recibe daño, no ataca, no dispara p
+1. **Reestructurar `possess` en engine para respetar D21/D22.** Cambiar `apply_action` caso `'possess'` (`engine.py:2753-2790`):
+   - **NO** copiar `base_damage`/`base_rests` del poseído al Espectro (borrar L2772-2774).
+   - **NO** enviar el poseído a Extinción al poseer (borrar L2764-2765).
+   - **SÍ** agregar `FieldCard.possessed_card: FieldCard | None` como stack físico (el poseído queda "bajo" el Espectro, inactivo: no recibe daño, no ataca, no dispara Pasivas).
+   - Al morir el Espectro (`_sweep_dead`): enviar **ambos** (Espectro + possessed_card) a Extinción atómicamente (D34).
+   - Update `_compute_damage` para usar **el damage impreso del Espectro**, no del poseído (revertir L197-206).
+   - Impacto: `score_state` valuation de Espectros cambia (su damage real es menor; pero su efecto propio + efecto poseído aditivo D35 los mantiene fuertes). Strategies `_espectro_effective_damage` debe repensarse como "damage impreso del Espectro + bonus por efecto copiado".
+   - Impacto AI: `adaptive_strategy` Espectro archetype prioriza "high damage ally" para poseer; esto debe cambiar a "ally cuyo nombre cumpla requisito para vivificarlo como ancla". Cambio de heurística no trivial.
+
+2. **Implementar empate D45 como condición de terminación.** `engine.py:3086`:
+   - Cambiar `_check_victory` signature a `-> Optional[Literal['p1', 'p2', 'draw']]`.
+   - Agregar check: `if s.turns_without_damage >= 8: return 'draw'`.
+   - Opcional: mantener field reset como mecánica **alternativa** (opt-in por flag), pero D45 dice claro "8 turnos totales → empate".
+   - `score_state`: añadir `if state.winner == 'draw': return 0` (neutral).
+   - AI debe evitar empates cuando va ganando (penalty por turns_without_damage cuando `opp_ext > my_ext`) y buscar empates cuando va perdiendo (bonus por turns_without_damage cuando `my_ext > opp_ext + 2`). Es **estrategia nueva** que actualmente no existe.
+   - Considerar regression: field reset puede ser la intención original de diseño y D45 la reinterpretación. Validar con Ramsés antes de cambiar.
+
+3. **Arreglar triggers "si ataca" con ataque negado (FAQ-03).** Dos cambios:
+   - **Capa resolve_effect:** cambiar Z1 (`effects.py:5498`) para **NO** aplicar `damage_bonus += bonus` de forma estática al leer la Pasiva. En su lugar, encolar un `pending_on_attack_trigger` que se dispara **solo al resolver el daño del ataque** (post-verificación `attack_cancelled`).
+   - **Capa apply_action:** en `engine.py:2012-2016` cuando `s.attack_cancelled=True`:
+     - NO setear `attacked_this_turn = True` (o separar los conceptos: `declared_attack_this_turn` para descanso, `resolved_attack_this_turn` para triggers).
+     - NO llamar `check_passive_triggers('attack_resolved')` (L2066).
+   - Aislar el efecto de Yanzi Precisión (FAQ-04): cuando ataque negado, los 6 puntos se pierden → el buff no debe persistir al siguiente turno.
+   - AI impact: `score_state` ya considera marks/HP post-acción vía `evaluate_actions` simulación; al corregir esto, delta real de acciones bloqueadas por AR rival será más negativo, AI aprenderá a evitar ataques predecibles cuando rival tiene AR defensivas.
+
+4. **Expandir regex HandTrap para cubrir variante "Si tomas esta carta" (M4).** `engine.py:447, 1713`:
+   - Cambiar: `if 'al ser tomada' in et` → `if re.search(r'(al\s+ser\s+tomada|si\s+tomas\s+esta\s+carta)', et)`.
+   - Agregar test de Kap KPRC-017 → verificar que cura 3 HP al protector al tomarse.
+   - Mejorar handler `on_draw` para respetar D44 (HandTrap negable): antes de aplicar efecto, check `fc.cant_be_negated` en la carta tomada y estado de negación activa del rival.
+   - AI impact: `smart_strategy` podría aprender a sacrificar HandTrap como carta "de draw" (si tiene ventaja en la tercia, preferir tomar HandTrap para disparar el efecto). Hoy la AI no ve HandTrap como ventaja.
+
+5. **Implementar scoring de condiciones de victoria alternativas (D27 Draxes) + penalty por turnos sin daño (D45-aware).** `suggest_turn.py:181 score_state`:
+   - Añadir check: si `player.protector.hp <= my_lethal_damage` Y un Adendei revelado aliado tiene "ganas el juego" en su effect_text Y la Pasiva no está negada → bonus `+5000` (prácticamente priorizar ese ataque letal).
+   - Añadir penalty: `score -= state.turns_without_damage * 50 * sign(opp_ext - my_ext)` — castiga turnos pasivos cuando va ganando, recompensa cuando va perdiendo.
+   - Exponer en `describe_action`: marcar ataques que pueden activar `¡GANAS EL JUEGO!` con emoji distintivo (e.g. `👑`) para telemetría/debug.
+   - Integrar con `adaptive_strategy`: si el deck tiene Draxes (`deck_traits['has_alt_victory'] = True`), priorizar reveal Draxes + setup ataque al Protector.
+
+---
+
+## Recap de hallazgos accionables
+
+| Severidad | Hallazgo | Archivo:línea | Acción |
+|-----------|----------|---------------|--------|
+| 🔴 Crítico | D21 Adendei poseído va a Extinción prematuramente | `engine.py:2764-2765` | Refactor `possess` |
+| 🔴 Crítico | D22 Espectro hereda stats del poseído | `engine.py:2772-2774`, `engine.py:197-206` | Revertir herencia stats |
+| 🔴 Crítico | D45 empate 8 turnos no implementado | `engine.py:3075-3117` | Añadir `winner='draw'` |
+| 🔴 Crítico | FAQ-03 ataque negado dispara triggers | `engine.py:2012-2016`, `effects.py:5498` | Separar declared vs resolved attack |
+| 🔴 Crítico | M4 Kap HandTrap variante no detectada | `engine.py:447, 1713` | Expandir regex |
+| 🟠 Alto | D16 Gloku sin handler | `effects.py` (ninguno) | Implementar + test |
+| 🟠 Alto | D27 Draxes negación sin test | `engine.py:551` | Añadir test |
+| 🟠 Alto | D34 conteo duplicado vía bug D21 | N/A (derivado) | Resuelve con #1 |
+| 🟡 Medio | D32 Nahual sin handler | `effects.py` (grep vacío) | Implementar |
+| 🟡 Medio | M11 "frente a" sin test | — | Añadir |
+| 🟡 Medio | FAQ-05 AR priority simultánea sin test | — | Añadir |
+| 🟡 Medio | D4 suplente cambio sin muerte sin test | `engine.py:208` | Añadir |
+| 🟡 Medio | D41 ventana AR solo en respuesta a ataque | `engine.py:2400-2432` | Revisar con Ramsés |
+| 🟢 Bajo | E8 subtypes: AI usa name.lower() en vez de subtypes[] | `strategies.py:1395` | Migrar filtros |
+
+---
+
+## Notas finales
+
+- El engine pasa 436/436 tests, lo cual indica **baseline funcional**, pero la suite no cubre los rulings resueltos el 2026-04-19. La deuda de tests es concentrada en Espectros (D20-D22, D34, D36-D39), empate D45, triggers FAQ-03, y HandTraps M4/D44.
+- La AI (strategies) **respeta la semántica actual del engine**, no la semántica oficial del rulebook. Cuando se corrijan los bugs D21/D22, varias heurísticas de `adaptive_strategy` Espectro archetype fallarán hasta ajustarse.
+- `score_state` es consistente internamente pero no incorpora (a) condiciones alternativas de victoria, (b) penalty por turnos sin progreso, (c) valor de cartas Fuera del Juego (Quam).
+- Prioridad sugerida para siguiente sprint:
+  1. Implementar los 10 tests nuevos (P0 especialmente).
+  2. Corregir bugs D21/D22/D34 con refactor de `possess`.
+  3. Implementar empate D45.
+  4. Arreglar FAQ-03 triggers.
+  5. Expandir regex HandTrap (M4 Kap).
+
+---
+
+_Audit generado 2026-04-19 por subagente Logos. Baseline de referencia: commit previo a este documento, 436/436 tests passing._
