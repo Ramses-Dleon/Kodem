@@ -624,6 +624,14 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
   - 🚩 Bug doc: glosario "Cambiar" apunta a §6.4 cuando debería ser §6.5 — corregir en v5.2.
   - Sugerencia editorial: unificar en `Cambiar` para diseños futuros.
 
+### 📌 Meta-regla (Ramsés 2026-04-19)
+
+> **El rulebook impreso es canon pero admite erratas editoriales.** Igual que las cartas, el manual puede contener referencias cruzadas erróneas, typos, o puntos obsoletos. Criterio de resolución cuando hay conflicto:
+> 1. El **contenido real** de la sección tiene prioridad sobre la **referencia cruzada**.
+> 2. Si dos secciones se contradicen: ruling del equipo de diseño.
+> 3. Si una carta contradice al rulebook: aplica la meta-regla "efectos de carta superceden reglas generales" (D17).
+> 4. Erratas detectadas se acumulan en la lista de correcciones para la próxima versión del rulebook.
+
 **Dudas de proceso pendientes:**
 - **P2** ¿Generar doc separado "Inconsistencias v5.1 + Changelog v5.2"?
 - **P3** ¿Existe FAQ oficial/rulings previos para integrar?
