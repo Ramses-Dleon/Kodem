@@ -1096,3 +1096,180 @@ KPRC-072 (Zinawe, Vacío Etéreo) tenía `subtype: "Titan"` sin tilde — **conf
 ---
 
 _Plan actualizado: 2026-04-19 07:12 UTC — 12 rulings cerrados esta sesión: D27, D28, D29, D32, M2.3, M2.4, M2.6, M12, M13, M14, E7, E8._
+
+---
+
+## Bloque M15–M23 — Mecánicas resolubles por lectura del rulebook
+
+**Fecha:** 2026-04-19 (auditoría consolidada, sesión 07:30 UTC)
+**Status:** 🟡 Rulings **tentativos** con evidencia textual directa. Pendientes de confirmación final por Ramsés antes de marcarse como `✅ RESUELTO`.
+
+**Metodología:** los 9 ítems fueron extraídos del consolidado `dudas-consolidadas-2026-04-19.md` (sección 3). Cada uno incluye:
+- Evidencia textual del propio rulebook que permite resolverlo sin consulta externa.
+- Ruling tentativo propuesto por Logos.
+- Sugerencia de parche editorial para v5.2.
+
+Si Ramsés confirma, pasan a ruling cerrado formal. Si disiente en alguno, se reabre como duda comunidad.
+
+---
+
+### M15. Cross-reference erróneo "Ver 6.3 Tipos de daño" en p07/b11
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo → **ya es errata** (incluida en E23 del consolidado)
+
+**Anchor:** p07/b11 — la cross-reference lleva a §Protección, no a §Tipos de Daño.
+
+**Ruling tentativo:** Errata editorial pura. La numeración canon (TOC p03) establece §6.4 = Tipos de Daño. Incluir en el batch E23 (renumeraciones parciales v5.0→v5.1). Sin impacto mecánico.
+
+**Acción v5.2:** Parche editorial en lote. No requiere ruling separado — absorbido por E23.
+
+---
+
+### M16. "Activas Rápidas" vs "Activa-Rápida" — inconsistencia de guión
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+
+**Anchors:** p16/b11 (sin guión) vs. p16/b06b, p27/b15, p27/b16, glosario p39 (con guión).
+
+**Evidencia:** El glosario §9 usa consistentemente **"Activa-Rápida"** (con guión). El glosario es autoridad terminológica.
+
+**Ruling tentativo:** La forma canónica es **Activa-Rápida** con guión. Las instancias sin guión son erratas tipográficas (quedan agregadas al catálogo E24). La mecánica es idéntica independientemente del fraseo impreso.
+
+**Acción v5.2:** Unificar ortografía en todas las ocurrencias (patch en bloque).
+
+---
+
+### M17. "Los Ixim siempre tendrán Pasivas" vs. Pasiva-Rápida impresa en el pool
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+
+**Anchor:** p10/b05 — *"Los Ixim siempre tendrán Pasivas y los Rot siempre tendrán Activas."*
+
+**Cartas implicadas:** Copal Blanco (FYTE-008), Planta Carnívora (RAMI-008S, RAMI-023) — 3 Ixim con **Pasiva-Rápida** en el pool actual.
+
+**Evidencia:** El glosario §9 (p39/b09) define **Pasiva-Rápida** como *variante* de Pasiva (resuelve tan pronto se declara). Por jerarquía de tipos (subtipo incluido en el supertipo), una Pasiva-Rápida **es** una Pasiva.
+
+**Ruling tentativo:** La regla "Ixim siempre tendrán Pasivas" incluye implícitamente a **Pasiva-Rápida**. Las 3 cartas son legalmente válidas dentro de la regla de tipo.
+
+**Acción v5.2:** Agregar nota aclaratoria en p10/b05: *"Los Ixim siempre tendrán Pasivas (incluyendo Pasiva-Rápida)."*
+
+---
+
+### M18. "Descanso: 0" en callout de Espectro vs. herencia al poseer
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+
+**Anchors:** p14/b10 (callout "Descanso: 0") vs. p14/b16 bullet 4 (regla: Espectro usa stats de la carta poseída).
+
+**Problema:** El callout anótomico muestra **Descanso: 0** como valor fijo, pero la regla ordena herencia al poseer.
+
+**Evidencia:** D21 (Ramsés) estableció que el Espectro poseído **NO hereda** stats del Adendei poseído (ver D22 refinada). El Espectro usa su propio Descanso impreso. El callout *"Descanso: 0"* describe entonces el valor base del propio Espectro como carta (no cero por estar sin poseer).
+
+**Ruling tentativo:** Corrección a la lectura del consolidado: el callout **es correcto**. "Descanso: 0" es el valor base impreso del Espectro como carta — no es que cambie al poseer. D22 resolvió que NO hay herencia de stats. El callout documenta su propio descanso, que para el Espectro canónico del ejemplo es 0.
+
+**Acción v5.2:** No es inconsistencia real una vez D21+D22 son autoridad. Opcional agregar nota pedagógica: *"El Espectro conserva su propio Descanso impreso (‘Descanso: 0’ en este ejemplo) al poseer; no hereda el del Adendei poseído (ver D22)."*
+
+---
+
+### M19. Ixim y descansos al usar Activa — ausencia de regla simétrica a Rot
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+
+**Anchor:** p18/b09 — regla excepcional: los Rot NO generan descansos al usar su Activa.
+
+**Problema:** No existe regla simétrica para los Ixim. ¿Las Activas de Ixim generan descanso a la carta equipada?
+
+**Evidencia:**
+- p18/b09 es una **excepción explicita** para Rot. Las excepciones no se extienden por analogía sin autorización textual.
+- p16/b08 dice que la Activa de un Equipo (Ixim/Rot) *"se considera como 1 sola Activa"* con la del Adendei equipado.
+- Regla general de Activas: toda Activa declarada genera descanso automático al final del turno (p29/b06 contrastivo).
+
+**Ruling tentativo:** Las Activas de Ixim **sí generan descanso** para el Adendei equipado (regla general). El Ixim no está en la lista de excepciones de p18/b09, por lo tanto aplica la regla base.
+
+**Implicación táctica:** Si la carta equipada ya estaba en descanso máximo (2), no puede declarar su Activa combinada con el Ixim ese turno.
+
+**Acción v5.2:** Agregar nota explícita en §3.6 Ixim o en p18/b09: *"Los Rot son la única excepción a la regla de generar descanso por Activa; los Ixim siguen la regla general."*
+
+---
+
+### M20. Reemplazo fallido — "2 veces" vs "tercer reemplazo": conteo aparentemente contradictorio
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+
+**Anchor:** p20/b06 — *"puede repetirse un máximo de 2 veces"* y *"Si después del tercer reemplazo..."*
+
+**Problema aparente:** ¿son 2 intentos o 3?
+
+**Evidencia (lectura semántica):** El proceso ORIGINAL cuenta como el primer intento. "Puede repetirse un máximo de 2 veces" = 2 repeticiones adicionales. "Tercer reemplazo" confirma exactamente esta lectura (el 3° intento = 3º reemplazo).
+
+**Ruling tentativo:** Son **3 intentos totales**:
+1. Intento original (1° reemplazo).
+2. Repetición tras fallo (2° reemplazo).
+3. Última repetición tras segundo fallo (3° reemplazo).
+4. Si falla el 3° → pierde la partida.
+
+No hay contradicción real; la ambigüedad es puramente de lectura.
+
+**Acción v5.2:** Reescribir p20/b06 para eliminar confusión: *"El proceso puede repetirse hasta 2 veces adicionales (máximo 3 intentos totales de reemplazo). Si todos fallan, el jugador pierde el juego."*
+
+---
+
+### M21. Glosario "Pasiva" — "no se actualizan descansos" aparenta ser absoluto
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+
+**Anchor:** p39/b08 — entrada del glosario para "Pasiva".
+
+**Problema:** Algunas Pasivas tienen costos de descanso explícitos; la afirmación del glosario suena categórica.
+
+**Evidencia:**
+- p29/b06 (§6.7.2) aclara: las Pasivas **no generan descansos automáticos** al final del turno (a diferencia de Activas).
+- D17 (meta-regla): los costos explícitos de una carta supercede la regla general.
+- Un costo explícito "recibe N descansos" es parte del **pago** de la Pasiva, no un descanso automático por uso.
+
+**Ruling tentativo:** No hay contradicción real. La afirmación del glosario es correcta en su alcance (descansos automáticos). Los costos de descanso impresos son pagos declarados, no automáticos.
+
+**Acción v5.2:** Reformular la entrada del glosario: *"Pasiva: ...no se actualizan descansos **automáticamente** al usarlas (a menos que el costo impreso de la Pasiva lo especifique)."*
+
+---
+
+### M22. Glosario "Pasiva-Rápida" — disparadores difieren del cuerpo del rulebook
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+
+**Anchors:** p39/b09 (glosario) vs. p29/b09 (cuerpo §6.7.2).
+
+**Problema:** El glosario omite: (a) la cláusula *"una vez por turno en Fase Previa si no se especifica momento"*, (b) dice *"otras Pasivas"* donde el cuerpo dice *"declaración de otras Pasivas"*.
+
+**Evidencia:** El cuerpo del rulebook es la autoridad normativa; el glosario es un resumen. La frase *"declaración de"* es mecánicamente relevante: la Pasiva-Rápida responde en la **ventana de declaración**, antes de la resolución.
+
+**Ruling tentativo:** El texto autoritativo es p29/b09. La entrada de glosario se expande en v5.2 para incluir:
+1. Que responde a la *declaración* de Pasivas (no a su resolución).
+2. La cláusula de uso único en Fase Previa cuando no hay momento especificado.
+
+**Acción v5.2:** Reemplazar entrada del glosario con texto completo del cuerpo.
+
+---
+
+### M23. Zona "mano" — estado no declarado en §4
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+
+**Anchor:** p24/b03 — *"Solo se considera que una carta está en mano cuando se toma del Mazo, por reemplazo o por efecto de alguna carta."*
+
+**Problema:** "Mano" no aparece en la lista de zonas de §4 pero se usa como estado.
+
+**Evidencia:** p24/b03 aparece en §6.5 (Cambios entre Zonas), contexto de describir **estados transitorios**. El rulebook distingue zonas permanentes (§4: ZP, Extinción, Mazo, Equipo, Bio, + Fuera de Juego por D5) de estados momentaneos.
+
+**Ruling tentativo:** "En mano" es un **estado transitorio**, no una zona. Existe únicamente durante la ventana de selección en el proceso de reemplazo (p20/b02-b03), entre tomar del Mazo y colocar en campo/devolver al Mazo. Fuera de ese proceso, no hay cartas "en mano".
+
+**Implicaciones:**
+- HandTraps (ver M4 previo) se disparan durante este estado transitorio, resolviendo *antes* de que la carta salga del mismo.
+- No hay zona "mano" con capacidad permanente ni ciclo de turno asociado.
+
+**Acción v5.2:** Agregar al glosario §9:
+> **Mano:** Estado transitorio de una carta al ser tomada del Mazo durante el proceso de Reemplazo, antes de colocarla en el campo o devolverla al Mazo. No es una zona permanente.
+
+---
+
+_M15–M23 documentados como tentativos 2026-04-19 07:35 UTC. Esperan confirmación final de Ramsés para promoción a ✅ RESUELTO._
