@@ -939,7 +939,9 @@ El rulebook usa "cambiar", "intercambiar", "cambiar de lugar" de forma intercamb
 ## E8. Subtipos compuestos son multisubtipo (Macit, Therz)
 
 **Fecha:** 2026-04-19
-**Status:** ✅ RESUELTO
+**Status:** ✅ RESUELTO (comunidad — Hule + lectura rulebook)
+
+**Patch aplicado:** cards.json commit `e1cd4fc` en codice-kodem — 4 cartas migradas a `subtypes: [primary, secondary]` conservando `subtype` primario para retro-compatibilidad. Todas las demás cartas recibieron `subtypes: [subtype]` para consistencia de esquema.
 
 **Ruling:** "Guardián Catrín" y "Titán Catrín" son **dos subtipos simultáneos**, no un subtipo compuesto nuevo.
 
