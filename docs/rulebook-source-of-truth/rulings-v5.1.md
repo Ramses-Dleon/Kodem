@@ -618,6 +618,11 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
   - Inspeccionable por ambos jugadores siempre: **Sí**
   - Efecto latente "(aún si esta carta ya no está en el campo)" no se puede negar retroactivamente: **No**
   - Formalizar en glosario v5.2 como zona oficial.
+- **M2** ✅ Intercambiar = Cambiar. Ruling Ramsés 2026-04-19:
+  - Sinónimos mecánicos, misma definición (§6.5 del rulebook).
+  - Efectos anti-cambio aplican a ambos términos.
+  - 🚩 Bug doc: glosario "Cambiar" apunta a §6.4 cuando debería ser §6.5 — corregir en v5.2.
+  - Sugerencia editorial: unificar en `Cambiar` para diseños futuros.
 
 **Dudas de proceso pendientes:**
 - **P2** ¿Generar doc separado "Inconsistencias v5.1 + Changelog v5.2"?

@@ -132,7 +132,7 @@ Su efecto Pasiva dice:
 
 ---
 
-## M2. "Intercambiar" como acción
+## M2. "Intercambiar" como acción ✅ RESUELTA
 
 **Cartas que usan la mecánica:**
 - **FYTE-022R** / **FYTE-074** — Ariam, Resurrección
@@ -143,6 +143,21 @@ Su efecto Pasiva dice:
 1. ¿"Intercambiar" es equivalente a "Cambiar" (documentada en glosario) o una acción distinta?
 2. Cuando se intercambia una carta de Extinción por una de ZP, ¿qué pasa con la vida? ¿La carta entrante recibe 6 pts nuevos, o conserva la vida de la saliente?
 3. ¿El intercambio puede ser negado con efectos anti-cambio?
+
+### 🟢 Ruling oficial (Ramsés D'León, 2026-04-19)
+
+> **"Intercambiar" es lo mismo que "Cambiar".** Efecto formalizado en **§6.5** del rulebook.
+
+**Implicaciones:**
+- Ambos términos son sinónimos mecánicos — no hay distinción funcional.
+- Aplica la misma definición del glosario para Cambiar: *"Efecto de movimiento entre espacios o campos."*
+- Efectos anti-cambio aplican también a "intercambiar".
+- Reglas de vida/estadísticas en el movimiento siguen §6.5 del rulebook.
+
+**🚩 Bug de documentación detectado (pendiente v5.2):**
+La referencia cruzada en el glosario de **Cambiar** apunta a **§6.4**, pero la definición real está en **§6.5**. Corregir el puntero en próxima iteración del rulebook.
+
+**Sugerencia de consistencia editorial:** usar un solo término (`Cambiar`) en todas las cartas futuras para evitar que "Intercambiar" se perciba como mecánica distinta. Las 4 cartas existentes (FYTE-022R, FYTE-074, FYTE-075, FYTE-071) pueden mantener la redacción actual, pero nuevos diseños unificar a `Cambiar`.
 
 ---
 
