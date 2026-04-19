@@ -1422,3 +1422,24 @@ FAQ-05 oficial lo confirmó para el caso de dos Activas-Rápidas: la segunda esp
 **Sugerencia v5.2:** p29/b04 ya es clara. Únicamente formalizar en glosario:
 > **Activa-Rápida:** Efecto Activo con los mismos costos y consecuencias de descanso que una Activa regular, pero utilizable en cualquier momento del turno rival como respuesta. Se resuelve inmediatamente al declararla. Ante declaraciones simultáneas, el jugador en turno tiene prioridad.
 
+
+---
+
+### D45. §6.8 Regla 14 "8 turnos de bloqueo" — 8 TOTALES — CERRADA
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad — Hule vía Supabase)
+
+**Pregunta original:** El rulebook p31/b11 dice *"Si ningún jugador puede hacer daño ni usar efectos para salir en más de 8 turnos..."* — no especifica si son 8 por jugador, 8 rondas o 8 totales.
+
+**Ruling (Hule, 2026-04-19 08:05 UTC):** **8 turnos TOTALES** (= 4 por jugador, alternados).
+
+**Implicación:**
+- Condición de cierre por empate técnico se activa más rápido que las otras interpretaciones.
+- En una partida bloqueada sin daño mutuo, al turno 9 (contando alternaciones) se declara empate/final según el resto de la regla.
+- Pauta rápida para jugadores de mesa: "si pasaron 4 turnos tuyos y 4 míos sin que nadie dañe ni salga del bloqueo, aplica §6.8 #14".
+
+**Sugerencia v5.2:** reescribir p31/b11 eliminando la ambigüedad:
+> "Si ningún jugador puede hacer daño ni usar efectos para salir durante **8 turnos consecutivos totales (4 por jugador, alternados)**..."
+
+**Registro Supabase:** tabla `kodem_duda_respuestas`, respuesta id `73cdccc5-3bd3-4f41-80a5-6a0d300e0201`, opción `ocho_totales`, respondent `Hule`.
+

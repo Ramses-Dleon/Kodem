@@ -5,7 +5,7 @@
 
 ---
 
-## 12 Dudas abiertas (portal en vivo)
+## 11 Dudas abiertas (portal en vivo)
 
 ### 🔴 Reglas con ambigüedad jugable (8)
 
@@ -25,14 +25,13 @@
 
 | ID | Título | Contexto |
 |----|--------|----------|
-| **D45** | 8 turnos bloqueo Viaje — interacción con efectos de tiempo | Sin ruling previo. |
 | **D46** | Rava Extendido — definición y límites | Sin ruling previo. |
 | **M3** | "Durante el resto del juego" (Mixtla) | Cartas con costo permanente, abierta (5 opciones multiselect). |
 | **M5** | Privacidad del Mazo rival (familia Zotz) | M2.5 resolvió mazo propio (abierto al dueño). Mazo rival sigue abierto. |
 
 ---
 
-## 8 Dudas cerradas hoy (08:00 UTC)
+## 9 Dudas cerradas hoy (08:00 UTC)
 
 | ID | Cerrada por | Razón |
 |----|-------------|-------|
@@ -44,6 +43,7 @@
 | D39 | §D16+§D20 | Ruk copia = snapshot único (principio meta) |
 | D44 | §M4+§D17 | HandTraps negables salvo declaración explícita |
 | D41 | p29/b04 | Ventana abierta en turno rival + resolución inmediata |
+| D45 | Ruling Hule (Supabase) | 8 turnos totales = 4 por jugador alternados |
 
 ---
 
