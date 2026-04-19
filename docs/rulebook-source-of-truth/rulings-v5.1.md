@@ -1037,16 +1037,17 @@ Cualquier fraseo que "considera X como rápida" otorga ambas propiedades.
 ## E7. "Titan" (sin tilde) — errata ortográfica en KPRC-072
 
 **Fecha:** 2026-04-19
-**Status:** ✅ RESUELTO (errata confirmada)
+**Status:** ✅ RESUELTO (errata confirmada por visión)
 
 **Ruling:** Es una **errata de datos** en cards.json. El rulebook usa consistentemente **"Titán"** con tilde (p07/b04 lista canónica, p05/b12 "Carta Titán Kósmica", p11/b19 "Adendei-Pírico Titán", y 127+ cartas).
 
-KPRC-072 (Zinawe, Vacío Etéreo) con `subtype: "Titan"` sin tilde es la única excepción — debe normalizarse a "Titán".
+KPRC-072 (Zinawe, Vacío Etéreo) tenía `subtype: "Titan"` sin tilde — **confirmado errata** por screenshot de la carta física enviada por Ramses (2026-04-19): la carta impresa dice claramente "Adendei Titán / Demótica" con tilde.
 
-**Acción:** PATCH en cards.json:
-```json
-{ "folio": "KPRC-072", "subtype": "Titán" }
-```
+**Ruling inicial de comunidad** (Hule) fue "mantener variante" basado en memoria general de normalización sin acentos, pero los datos concretos mostraban 127 con tilde vs 1 sin. Tras revisión visual, Ramses confirmó la errata y autorizó el patch.
+
+**Patch aplicado:** cards.json commit `c82f... (pending hash)` en codice-kodem. KPRC-072 ahora `subtype: "Titán"`, `subtypes: ["Titán"]`. Estado final: **130/130 Titanes uniformes con tilde, cero outliers.**
+
+**Lección meta:** La meta-regla "cards.json sin acentos por normalización del engine" aplica a Kodem/images/cards.json, NO a codice-kodem/cards.json (que es fuente maestra editorial y sí conserva acentos).
 
 ---
 
