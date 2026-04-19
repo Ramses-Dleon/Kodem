@@ -1051,4 +1051,48 @@ KPRC-072 (Zinawe, Vacío Etéreo) tenía `subtype: "Titan"` sin tilde — **conf
 
 ---
 
-_Plan actualizado: 2026-04-19 06:55 UTC — 10 rulings cerrados esta sesión con base en lectura directa del rulebook: D27, D28, M2.3, M2.4, M2.6, M12, M13, M14, E7, E8._
+## D29. "Neutral" como effect_text
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO
+
+**Ruling:** `effect: "Neutral"` es **equivalente a "Ninguna (solo lore)"** — marca de carta sin efecto ni costo. Es un residuo de mi propio preprocesamiento de datos (cuando normalicé cartas sin efecto), **no** un término del rulebook.
+
+**Respuesta Hule:** *"Seguro es derivado del procesamiento que has hecho antes para clarificar cartas. Pero es básicamente una carta sin efecto o costo."*
+
+**Cartas afectadas (7):** KPRC-049, TCEO-002K, TCEO-033, TCEO-034, TCOO-002T, TCOO-034K, TCEO-028K (todas son cartas de evento/flash tipo "vs" sin efecto jugable).
+
+**Acción pendiente:** normalizar `effect: "Neutral"` → `effect: ""` (vacío) o `effect: "Ninguna (solo lore)"` para unificar con el resto de cartas lore-only en `codice-kodem/cards.json`.
+
+**Sugerencia v5.2:** N/A (no es regla del rulebook, es saneamiento de datos).
+
+---
+
+## D32. Protector Nahual, Máscara — copia de Activa del Protector rival
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO
+
+**Contexto:** Nahual, Máscara (FYTE-012S / FYTE-083):
+- `effect_text`: "Usa 1 de los siguientes efectos: (a) Usa la misma Activa y costo que el Protector rival. (b) Cura 1 pto. a 3 cartas en tu campo."
+- `cost_text`: "Si esta carta usa la misma Activa que el Protector rival, daña 1 pto. a 3 cartas en tu campo."
+
+**Ruling (lectura correcta según Hule):** Son **2 ramas mutuamente excluyentes**, y la rama (a) tiene **doble costo apilado**:
+
+- **Rama (a) — Activa del rival:** Nahual ejecuta la Activa textual del Protector rival. Paga el **costo del rival** (literal, incluyendo cualquier requerimiento como "envía 1 Adendei Catrín aliado"), **más** el `cost_text` propio de Nahual: daña 1 pto. a 3 cartas en tu campo (auto-daño obligatorio).
+- **Rama (b) — Cura propia:** Nahual cura 1 pto. a 3 cartas en tu campo. Sin costo adicional (el `cost_text` NO aplica aquí porque la condición es "si usa la misma Activa que el Protector rival").
+
+**Implicancias:**
+- Rama (a) es de alto costo (costo rival + auto-daño). Es una "carta camaleón" con peaje.
+- Rama (b) es la opción "segura" pero débil (cura 3 cartas × 1 pt).
+- Si el rival NO tiene Protector, rama (a) es nula — Nahual queda forzado a rama (b).
+- Si el rival tiene Protector sin Activa (algunos Protectores sólo tienen Pasivas), rama (a) también es nula.
+- El copy-depth es **textual completo**: si la Activa del rival requiere un Adendei Catrín aliado, Nahual debe tenerlo (o no puede pagar el costo).
+
+**Ninguna opción del portal era exacta.** Las 3 opciones originales asumían solo la rama (a) de Activa rival sin considerar el `cost_text` condicional. La opción más cercana es **(2) Copia texto + costo literal**, pero se complementa con el auto-daño apilado.
+
+**Sugerencia v5.2:** en el glosario, agregar entrada sobre "costos condicionales de carta" para distinguir de `cost_text` siempre-aplicable.
+
+---
+
+_Plan actualizado: 2026-04-19 07:12 UTC — 12 rulings cerrados esta sesión: D27, D28, D29, D32, M2.3, M2.4, M2.6, M12, M13, M14, E7, E8._
