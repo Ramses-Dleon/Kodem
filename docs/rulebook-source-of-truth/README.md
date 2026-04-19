@@ -1,6 +1,15 @@
 # Rulebook Kódem TCG v5.1 — Source-of-Truth
 
 > **Estado:** CANONICAL · Pipeline de 5 capas completado · 2026-04-18
+> **Última actualización con ajustes modificados y FH:** 2026-04-19
+
+> ⚠️ **Importante para agentes / sesiones futuras:** La próxima vez que se retome el trabajo del engine Kódem, **leer primero**:
+> 1. Este `master-rulebook-v5.1.md` (ya con ajustes modificados y FH aplicados).
+> 2. [`rulings-v5.1.md`](./rulings-v5.1.md) (fuente de verdad para dudas resueltas de la comunidad).
+> 3. [`rulings-v5.1-addendum-faq-oficial.md`](./rulings-v5.1-addendum-faq-oficial.md) (FAQ oficial complementaria).
+> 4. [`dudas-pendientes-comunidad.md`](./dudas-pendientes-comunidad.md) (tracker de dudas abiertas).
+>
+> ¡No partir de versiones previas! El engine en `codice-kodem` se está alineando a ESTA versión. Ver `codice-kodem/docs/sessions/SESSION-2026-04-19-RESUME.md` para el estado del plan de fixes al engine.
 
 Este directorio contiene la extracción completa y verificada del libro de reglas oficial de Kódem TCG v5.1 en formato estructurado, listo para usar como fuente de verdad en agentes LLM, herramientas de glosario, búsqueda semántica, o auditoría de gameplay.
 
