@@ -841,4 +841,211 @@ También existe la variante activa:
 > "Los 3 espacios de Zona Principal (izq/centro/der) se corresponden en espejo con los del rival. 'Frente a' designa esa correspondencia geométrica fija."
 
 ---
-_Plan actualizado: 2026-04-19 06:42 UTC — rulings M2.5, M6, M11 cerrados._
+
+## D27. Condiciones de victoria alternativas en texto de carta (Draxes)
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO (con base en lectura del rulebook)
+
+**Ruling:** La única Condición de Victoria formal (p15/b12) dice explícitamente:
+> "Si logras enviar **10** cartas del rival a su Zona de Extinción **o cumplir condiciones de victoria que se indiquen el texto de las cartas: ¡GANARÁS EL JUEGO!**"
+
+Draxes, Último Aliento (TCEO-009/TCOO-009) usa exactamente la frase canónica "¡GANAS EL JUEGO!" en su Pasiva. Por lo tanto:
+- Es una **condición alternativa pura** habilitada por el rulebook.
+- **Bypasea** el requisito de 10 cartas en Extinción: Draxes gana aunque el rival tenga 0 cartas en Extinción al momento de dispararse la Pasiva.
+- **NO bypasea** efectos de negación: la Pasiva de Draxes puede ser negada como cualquier otra Pasiva (§8.3 y glosario p39/b06 "Negar un efecto: un efecto declarado no podrá resolver mientras se encuentre negado"). Si el rival protege al Protector o niega la Pasiva, no se dispara la victoria.
+- Requiere que la Pasiva **cumpla su condición y resuelva**: Draxes debe dañar Y enviar a Extinción al Protector rival en la misma ventana.
+
+**Implicancias:**
+- Otras cartas con "¡GANAS EL JUEGO!" (si aparecen en sets futuros) siguen la misma lógica.
+- Efectos tipo "Esta Pasiva no puede ser negada" (ej. Makua, Venganza Abisal) harían la victoria **efectivamente imparable**. Draxes NO tiene esa cláusula, por lo que SI es negable.
+- Protecciones del Protector rival (Protector suplente, cura de emergencia, negación) son línea de defensa válida.
+
+**Sugerencia para v5.2:** agregar entrada en glosario:
+> **¡GANAS EL JUEGO!** (también "¡GANARÁS EL JUEGO!"): Frase canónica que habilita una condición alternativa de victoria escrita en texto de carta. Sujeta a negación estándar salvo cláusula explícita de inmunidad.
+
+---
+
+## D28. "Cambiar de lugar" vs "Cambiar" vs "Intercambiar" (§6.5)
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO
+
+**Ruling:** Los tres fraseos son **sinónimos mecánicos** y todos caen bajo §6.5 Cambios entre Zonas.
+
+**Evidencia directa:**
+- p23/b17 introduce la sección: "cartas que permiten **cambiar** su lugar en el campo".
+- p23/b18 regula: "Si una o más cartas son **intercambiadas** en la Zona Principal, las cartas cambiadas conservarán las mismas estadísticas y condiciones…"
+- p23/b22-b27 muestra a **Kuyovi, Salto Eléctrico** (LGRO-077) como la carta de **ejemplo canónica** impresa en §6.5, cuyo texto dice literalmente: "Activa: **Cambia de lugar** esta carta con cualquier carta en tu Zona Principal."
+
+El rulebook usa "cambiar", "intercambiar", "cambiar de lugar" de forma intercambiable en la misma sección — son el mismo verbo mecánico.
+
+**Implicancias:**
+- Zaykan, Fractura (aliado↔aliado), Kuyovi Salto Eléctrico (self↔aliado) y Hali Ave de Trueno (aliado↔rival) son todas §6.5.
+- Todas preservan estadísticas, vida, equipos y marcas (p23/b18 "condiciones" incluye marcas).
+- Todas disparan efectos anti-cambio (ej. Planta Carnívora).
+- Todas aplican las 4 sub-reglas de §6.5 (preservación de stats, cancelación si imposibilita, control de PV en campo rival, compatibilidad de equipos).
+
+**Resuelve automáticamente:**
+- **M2.3** (anti-cambio aplica a intercambio): Sí, porque intercambio = cambio = §6.5.
+- **M2.6** (marcas al cambiar): Se preservan junto con vida y equipos (p23/b18 "condiciones").
+
+**Sugerencia para v5.2:** agregar nota explicativa en §6.5:
+> "Los verbos 'cambiar', 'intercambiar' y 'cambiar de lugar' son equivalentes mecánicos y están regulados por esta sección."
+
+---
+
+## M2.3. Anti-cambio aplica a intercambio (Planta Carnívora)
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO (por D28)
+
+**Ruling:** Sí. "Intercambiar" = "cambiar" = "cambiar de lugar" (todos §6.5). La restricción de Planta Carnívora ("no puede equiparse a Adendei cambiados de lugar por efectos de cartas aliadas") aplica cuando el Adendei llegó a ZP por cualquier operación de §6.5, incluyendo intercambios como Ariam Resurrección.
+
+---
+
+## M2.6. Marcas al intercambiar (Envenenada/Quemada/Abismada)
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO (por D28 + p23/b18)
+
+**Ruling:** Las marcas **se preservan** en el intercambio. p23/b18 dice: "las cartas cambiadas conservarán las mismas estadísticas y **condiciones** que tenían originalmente antes del cambio (incluyendo equipos y vida)." "Condiciones" abarca marcas (Envenenada, Quemada, Abismada).
+
+**Implicancias:**
+- En Mizthe/Ariam/Hali la carta que entra hereda las marcas de la saliente (junto con equipos y vida).
+- Therz (máx 6 PV) es la excepción explícita para vida, no para marcas.
+
+**Sugerencia v5.2:** reemplazar "condiciones" por "condiciones (marcas, estados, vida actual)" para eliminar ambigüedad.
+
+---
+
+## M2.4. "Zona Principal original" (Ariam Resurrección)
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO (parcial) — significado del término
+
+**Ruling:** "Zona Principal original" = **la ZP del jugador dueño de la carta** (el lado propio del tablero), en oposición a "ZP rival" donde una carta puede terminar tras un intercambio aliado↔rival.
+
+**Evidencia:**
+- p14/b (Espectros): "un Adendei aliado en Zona Principal original" (tu lado).
+- p24/b (Revelado): "Una carta revelada que cambia entre Zona Principal original y Zona Principal rival no se considera que esté siendo revelada nuevamente." Aquí "original" = tu ZP; "rival" = la ZP del otro jugador.
+
+**Para Ariam, Resurrección** (FYTE-022R/074): "1 Adendei, Rava o Espectro aliado en su Zona Principal original" = cualquiera de los 3 espacios de TU ZP (no espacio exacto ni lado del rival).
+
+**Queda abierto:** el sub-caso de "¿qué espacio ocupa la carta que entra del intercambio?" no lo resuelve el rulebook explícitamente. Por simetría con §6.5 y práctica común: **ocupa el espacio que liberó la carta saliente** (swap posicional).
+
+---
+
+## E8. Subtipos compuestos son multisubtipo (Macit, Therz)
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO
+
+**Ruling:** "Guardián Catrín" y "Titán Catrín" son **dos subtipos simultáneos**, no un subtipo compuesto nuevo.
+
+**Evidencia:**
+- p07/b04 (línea 910): lista canónica de subtipos incluye "Titán, Abisal, Equino, Lupino, Infectado, Guardián, Kósmico, Catrin" como categorías **separadas** en la misma lista.
+- p11/b19: ejemplo impreso "1 Adendei-Pírico **Titán** aliado" muestra que subtipos pueden concatenarse con energía.
+- Macit, Resguardo Divino (FYTE-008R/026) = Adendei Guardián Catrín: cumple efectos que filtran por Guardián Y por Catrín.
+- Therz, de Vuelta a la Tumba (FYTE-020R/072) = Adendei Titán Catrín: cumple efectos que filtran por Titán Y por Catrín.
+
+**Implicancias:**
+- Efectos que busquen "Adendei Titán" alcanzan a Therz (FYTE-072).
+- Efectos que busquen "Adendei Catrín" también alcanzan a Therz.
+- **Acción recomendada:** migrar `subtype: "Titán Catrín"` a `subtypes: ["Titán", "Catrín"]` en cards.json (opcional, pero evita falsos negativos en queries).
+
+**Sugerencia v5.2:** formalizar en glosario:
+> **Subtipos múltiples:** Una carta puede tener más de un subtipo. Efectos que filtran por subtipo X aplican a cualquier carta que incluya X en sus subtipos.
+
+---
+
+## M12. "Efecto rápido" vs "Activa Rápida" — promoción de velocidad
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO (parcial)
+
+**Ruling:** Son **sinónimos funcionales**. El rulebook define:
+- **Activa-Rápida** (p29/b04): "Las Activas-Rápidas funcionan igual que las Activas, pero también se pueden usar durante el turno del rival (como respuesta) y se resuelven tan pronto son declaradas."
+- **Pasiva-Rápida** (p29/b09): "Se usan durante cualquier turno, únicamente en respuesta… Se resuelven tan pronto son declaradas."
+
+Las dos propiedades canónicas de "rápida" son:
+1. Se puede usar en turno rival.
+2. Resuelve tan pronto se declara (sin esperar subfase).
+
+Cualquier fraseo que "considera X como rápida" otorga ambas propiedades.
+
+**Implicancias:**
+- Ryptor, Jugada Veloz: efecto del Adendei objetivo gana ambas propiedades ese turno.
+- Yakerr, Vínculo Odémico: idem, incluso si el efecto original era Pasiva.
+- Una Pasiva promovida a "Activa Rápida" **sí puede usarse en turno rival** y resuelve inmediato.
+- Una Pasiva promovida **NO** genera descansos automáticamente (p29/b06: "a diferencia de las Activas, una carta no descansará al final del turno por declarar una Pasiva"). La promoción es de **velocidad**, no de categoría mecánica completa.
+
+**Queda abierto:** si una Pasiva-Rápida se promueve a "Activa-Rápida", ¿gana el derecho de generar descansos? Analíticamente no (solo cambia velocidad), pero pendiente confirmación explícita.
+
+---
+
+## M13. "Fase de Batalla" como ventana temporal
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO
+
+**Ruling:** La **Fase de Batalla** está formalmente definida (p16/b07) y comprende **3 subfases**:
+1. Declaración (elegir atacantes, activas, objetivos)
+2. Pago de costos
+3. Respuesta Rival / Resolución
+
+**Glósario implícito de "durante la Fase de Batalla":**
+- Inicia con la Subfase de Declaración.
+- Termina al cerrar la Subfase de Resolución del último ataque del turno.
+- **NO incluye** Fase Previa (inmediatamente anterior) ni Fase Post (inmediatamente posterior).
+- Efectos "al inicio del turno" / "al final del turno" NO caen dentro de Fase de Batalla.
+
+**Implicancias:**
+- Escudos I.C.A.R.O.: desvía efectos que impacten a la carta equipada desde Declaración hasta Resolución del último ataque.
+- Balim, Anochecer: el rival no puede activar equipos en esa misma ventana.
+- Activa-Rápida en turno rival sólo se puede activar **si la condición se cumple dentro de Fase de Batalla** (o fuera de ella, según el texto).
+
+**Sugerencia v5.2:** agregar entrada en glosario:
+> **Fase de Batalla:** Tercera fase del turno. Comprende Declaración, Pago de costos y Respuesta Rival/Resolución (Ver §5). Efectos que hacen referencia a "durante la Fase de Batalla" tienen validez desde la primera declaración de ataque hasta la última resolución del turno.
+
+---
+
+## M14. "Original" / "estadísticas originales" — snapshot base
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO
+
+**Ruling:** "Original" en Virste, Cordyceps y cartas similares refiere al **valor impreso en la carta** (base, sin modificadores de efecto).
+
+**Evidencia:**
+- p22/b01 (§6.2 Cambios de Estadísticas) usa "original" con mismo sentido: valor impreso.
+- p31/b03 (regla 6): "Si una carta es ocultada por efecto, vuelve a sus estadísticas **base**" — "base" y "original" se usan como sinónimos en este contexto.
+- Virste, Reseteo revierte todo modificador (escalar/descender/cura/daño acumulado) a impreso.
+
+**Caso especial — Tokens:** Los Tokens no tienen valor "impreso" (son creados en mesa). Su "original" = valor al momento de su creación, que a menudo hereda de la carta que lo generó.
+
+**Caso especial — "Zona Principal original"** (M2.4): aquí "original" tiene **otro sentido** (lado del dueño), NO se confunde con este ruling.
+
+**Sugerencia v5.2:** distinguir en glosario:
+> **Estadística original / base:** Valor impreso en la carta antes de cualquier modificación de efectos.
+> **Zona Principal original:** ZP del jugador dueño de la carta (distinta de "ZP rival"). No relacionado con "estadísticas originales".
+
+---
+
+## E7. "Titan" (sin tilde) — errata ortográfica en KPRC-072
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO (errata confirmada)
+
+**Ruling:** Es una **errata de datos** en cards.json. El rulebook usa consistentemente **"Titán"** con tilde (p07/b04 lista canónica, p05/b12 "Carta Titán Kósmica", p11/b19 "Adendei-Pírico Titán", y 127+ cartas).
+
+KPRC-072 (Zinawe, Vacío Etéreo) con `subtype: "Titan"` sin tilde es la única excepción — debe normalizarse a "Titán".
+
+**Acción:** PATCH en cards.json:
+```json
+{ "folio": "KPRC-072", "subtype": "Titán" }
+```
+
+---
+
+_Plan actualizado: 2026-04-19 06:55 UTC — 10 rulings cerrados esta sesión con base en lectura directa del rulebook: D27, D28, M2.3, M2.4, M2.6, M12, M13, M14, E7, E8._
