@@ -213,3 +213,57 @@ Todos los fixes:
 - ✅ Preservan backward compat donde aplica (E8 `subtype` singular, tokens en `REMOVED FROM GAME`)
 
 Firmado: Logos 🜂 — 2026-04-19 16:10 UTC
+
+---
+
+## Addendum — Follow-ups tras audit de 2da instancia (2026-04-19 tarde)
+
+El auditor Opus 4.7 independiente validó los 7 fixes originales y encontró 4 gaps ⚠️ (3 ✅, 4 ⚠️, 0 ❌). Aplicados los 4 follow-ups:
+
+### Follow-up 8 — H6 `validate_deck` enforza §4 p15 completo
+- **Commit:** `b0d2f94`
+- **Tests nuevos:** +6 nuevos + 2 actualizados
+- Adendei solos validados en **15-21** (p15/b07 paso 3, interpretación restrictiva)
+- Protector folio debe ser tipo Protector (antes aceptaba Adendei)
+- Bio folio (si declarado) debe ser tipo Bio
+- Mensajes con referencia §4 p15/bXX
+
+### Follow-up 9 — D34.1 / p14/b19 bullet 4: `ally_death` para Adendei poseído
+- **Commit:** `51d3b2f`
+- **Tests nuevos:** +3 (comportamiento real con monkeypatch)
+- Gap crítico detectado por auditor: el fix D34 original enviaba el poseído a Extinción pero **no disparaba** `check_passive_triggers('ally_death')` para ese folio. Pasivas tipo Cretus/Yimsah no se activaban.
+- **Fix:** segundo disparo con `dead_folio=possessed_folio` cuando `is_espectro and fc.possessed_folio`.
+
+### Follow-up 10 — E8.1: centralizar `_iter_subtype_haystacks`
+- **Commit:** `1abe66a`
+- **Tests nuevos:** +6
+- Gap: solo `_is_titan` y `_is_catrin` leían `subtypes` plural. Otros helpers tenían fragilidad futura.
+- **Fix:** helper compartido `_iter_subtype_haystacks(card)`. Migrados `_is_chaaktico, _is_equino, _is_abisal, _is_gelido, _is_catrin, _is_titan`. Los de energía singular (pirico/huumico/litico/atlica/feral) NO se migran (es cambio semántico injustificado).
+
+### Follow-up 11 — M22.1 audit de 19 loops + reescribir 3 tests estáticos
+- **Commit:** `4ca6540`
+- **Tests nuevos:** +10
+- **M22 audit:** clasificados los 19 loops `for pk in ['p1','p2']` restantes en `effects.py`. **19/19 orden-agnósticos** (targeting/reset/count). El único con impacto de §6.7.2 era el dispatcher de `check_passive_triggers` (ya cubierto).
+- **Reescritura a comportamiento:**
+  - **FAQ-03:** +2 tests con `apply_action + s.attack_cancelled=True + spy`. Validado con mutation testing (romper guard → test falla).
+  - **D34:** +3 tests con `_sweep_dead` real (verifica extinction + tracker +2).
+  - **M22:** +2 tests con `_get_player` spy sobre `check_passive_triggers`. Mutation testing confirma detección.
+
+---
+
+## Métricas finales actualizadas
+
+| Métrica | Baseline | Tras fixes 1-7 | Tras follow-ups | Delta total |
+|---|---|---|---|---|
+| Tests totales | 436 | 461 | **486** | +50 |
+| Commits engine en rama | 0 | 7 | **11** | +11 |
+| Bugs P1 cerrados | — | 3 | **3** | — |
+| Bugs P2 cerrados | — | 4 | **5** | +1 (H6) |
+| Gaps de audit cerrados | — | — | **4 de 4** | 100% |
+| Tests de comportamiento (no grep) | — | ~60% | **>85%** | +25pp |
+
+**Mutation testing validado** en 2 fixes críticos (FAQ-03 guard, M22 player_order). Los tests detectan regresión real si el fix se revierte.
+
+---
+
+_Follow-ups firmados: Logos 🜂 — 2026-04-19 16:35 UTC_
