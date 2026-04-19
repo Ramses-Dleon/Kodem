@@ -1,20 +1,22 @@
 # Kódem TCG — Libro de Reglas Oficial v5.1
 
 **PDF SHA256:** `05672af59629e1e8c7ead6d9487aba107506d239c4863eec49fc28ab45479b03`  
-**Generado:** 2026-04-18T22:50:34+00:00  
+**Generado:** 2026-04-19T00:36:52+00:00  
 **Total páginas:** 40  
 **Total bloques de texto:** 562  
 **Total figuras:** 207  
 **Confianza media LLM:** 0.9008  
 **Confianza media (pass 2):** 0.89  
 **Páginas re-extraídas (pass=2):** 9 → p07, p11, p16, p21, p22, p23, p24, p26, p27  
-**Spot-check pass 3 (Ramsés):** 8 páginas → p04, p05, p06, p14, p19, p32, p36, p40  
-**Post-validación pendiente:** p19 🔴  
+**Spot-check pass 3 (Ramsés):** 7 páginas → p04, p05, p06, p14, p32, p36, p40  
+**Pass 5 FINAL-ULTRA (imágenes segmentadas):** 1 página(s) → p19 ✅  
+**Total correcciones aplicadas a p19:** 9 (3 en pass 4 + 6 en pass 5)  
+**Post-validación pendiente:** ninguna (p19 consolidada en pass 5 FINAL-ULTRA) ✅  
 **Revisión humana pendiente:** ninguna (p16 revalidada vía re-extracción).
 
 ## Metodología
 
-Pipeline de 4 capas: (1) Extracción LLM (opus-4-7) página por página sobre imágenes PNG — produce text_blocks y figures con anchors estables pNN/bXX y pNN/fig-NN. (2) OCR (tesseract español) como verificación paralela del texto plano. (3) Arbitraje LLM compara ambas extracciones y emite verdict ∈ {both_agree, llm_preferred, ocr_preferred, needs_human} + lista de typos verbatim. Para verdicts ocr_preferred en páginas densas y needs_human, la extracción LLM se re-ejecutó (pass=2) con foco en texto. (4) Spot-check pass 3 humano (Ramsés) sobre páginas seleccionadas — aporta notas verbatim y nodos canónicos; una página queda marcada POST_VALIDATION_PENDING (p19, diagrama de turno) para extracción conjunta final. Consolidación usa LLM como fuente canónica (descripciones de figuras más ricas) preservando typos verbatim detectados por árbitro y humano.
+Pipeline de 4 capas + post-validación iterativa: (1) Extracción LLM (opus-4-7) página por página sobre imágenes PNG — produce text_blocks y figures con anchors estables pNN/bXX y pNN/fig-NN. (2) OCR (tesseract español) como verificación paralela del texto plano. (3) Arbitraje LLM compara ambas extracciones y emite verdict ∈ {both_agree, llm_preferred, ocr_preferred, needs_human} + lista de typos verbatim. Para verdicts ocr_preferred en páginas densas y needs_human, la extracción LLM se re-ejecutó (pass=2) con foco en texto. (4) Spot-check pass 3 humano (Ramsés) sobre 8 páginas seleccionadas — aporta notas verbatim y nodos canónicos. (4.b) Post-validación conjunta pass 4 sobre p19 (diagrama de turno): 3 jueces Opus 4.7 + spot-check humano de 5 preguntas con crops del PDF → estructura canónica con 51 nodos y 57 edges. (4.c) Pass 5 FINAL-ULTRA sobre p19: Ramsés envió 6 imágenes segmentadas (una por fase) que permitieron 6 correcciones adicionales: Veneno = rosa (no amarillo), múltiples shapes a óvalo, typo 'Exinción' preservado verbatim, Revelar = amarillo óvalo, INICIO DEL TURNO RIVAL agregado como nodo gris rectángulo, nuevo nodo 'Sólo 1 costo pagado' descubierto en Pasar Turno → estructura canónica final con 52 nodos y 58 edges (confidence_final 0.98). Consolidación usa LLM como fuente canónica (descripciones de figuras más ricas) preservando typos verbatim detectados por árbitro y humano.
 
 ### Distribución de verdicts
 
@@ -31,6 +33,7 @@ Pipeline de 4 capas: (1) Extracción LLM (opus-4-7) página por página sobre im
 - ⚠️ Página marcada `needs_human` por el árbitro
 - 🧪 Spot-check humano completado (pass 3)
 - 🔴 Post-validación conjunta pendiente (Ramsés + Logos)
+- ✅ Post-validación conjunta completada (pass 4 o pass 5 FINAL-ULTRA)
 
 ## Tabla de Contenidos
 
@@ -52,7 +55,7 @@ Pipeline de 4 capas: (1) Extracción LLM (opus-4-7) página por página sobre im
 - [Página 16 — 5. Fases del Turno](#pagina-16) ✓ ⚠️
 - [Página 17 — (sin título)](#pagina-17)
 - [Página 18 — 5.1 DESCANSOS](#pagina-18)
-- [Página 19 — 5.2 Diagrama Estructura de turno](#pagina-19) 🔴
+- [Página 19 — 5.2 Diagrama Estructura de turno](#pagina-19) ✅
 - [Página 20 — 5.3 Reemplazo de cartas](#pagina-20)
 - [Página 21 — 6.1 Marcas](#pagina-21) ✓
 - [Página 22 — 6.2 CAMBIOS DE ESTADÍSTICAS](#pagina-22) ✓
@@ -314,7 +317,7 @@ Esta es la página 3 del rulebook Kódem TCG v5.1. Contiene exclusivamente la co
 
 # Página 04 — 1. ¿Qué es Kódem TCG?
 
-> ✓ **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
+> 🧪 **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
 
 **Notas de spot-check (humanas):**
 
@@ -429,7 +432,7 @@ Página 4 del rulebook Kódem TCG v5.1. Contiene la sección introductoria §1 (
 
 # Página 05 — 2. Partes de la carta
 
-> ✓ **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
+> 🧪 **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
 
 **Verdict:** `ocr_preferred` · **Recomendación:** `spot_check_human` · **Confianza:** 0.88 · **Acuerdo LLM↔OCR:** 0.85
 
@@ -616,7 +619,7 @@ Página 5 del rulebook: introducción a la anatomía de las cartas (sección 2 P
 
 # Página 06 — 2.2 Estadísticas de la carta
 
-> ✓ **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
+> 🧪 **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
 
 **Notas de spot-check (humanas):**
 
@@ -2628,7 +2631,7 @@ Full page describes §3.6 Token: what Tokens represent, their default statline (
 
 # Página 14 — 3.7 Espectros
 
-> ✓ **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
+> 🧪 **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
 
 **Notas de spot-check (humanas):**
 
@@ -3799,12 +3802,16 @@ La página introduce formalmente la sección 5.1 DESCANSOS con su explicación c
 
 # Página 19 — 5.2 Diagrama Estructura de turno
 
-> 🔴 **POST-VALIDACIÓN PENDIENTE** — Esta página requiere extracción conjunta humano+LLM al final del proceso.
+> ✅ **Pass 5: imágenes segmentadas validadas por Ramsés** — CANONICAL_FINAL. Extracción FINAL-ULTRA consolidada humano + LLM + 3 jueces + 6 imágenes segmentadas (una por fase). `confidence_final = 0.98`.
 
 **Notas de spot-check (humanas):**
 
-- ⚠️ POST-VALIDACIÓN CONJUNTA PENDIENTE — Ramsés y Logos deben extraer juntos el flowchart al final del proceso.
-- Nodos canónicos confirmados por Ramsés: Inicio del Turno, Fase Previa, Fase de Batalla, Fase Post, Fase de Equipo, Fin de Turno, Inicio del Turno Rival, (lateral) Pasar Turno.
+- ✅ POST-VALIDACIÓN CONJUNTA COMPLETADA (Ramsés + Logos + 3 jueces Opus 4.7)
+- Diagrama extraído con 51 nodos y 57 conexiones
+- Referencia canónica: p19-extraction-v3-final.json
+- Leyenda de colores extraída verbatim del PDF
+- Confianza final: 0.98
+- Pass 5 (2026-04-19): Ramsés envió 6 imágenes segmentadas por fase. Correcciones: Veneno ROSA no amarillo, shapes corregidos (óvalos), typo 'Exinción' preservado.
 
 **Nodos canónicos confirmados:**
 
@@ -3819,7 +3826,7 @@ La página introduce formalmente la sección 5.1 DESCANSOS con su explicación c
 | 7 | Inicio del Turno Rival |
 | 8 | Pasar Turno (lateral) |
 
-**Verdict:** `llm_preferred` · **Recomendación:** `spot_check_human` · **Confianza:** 0.88 · **Acuerdo LLM↔OCR:** 0.7
+**Verdict:** `llm_preferred` · **Recomendación:** `spot_check_human` · **Confianza:** 0.88 · **Confianza final (pass 5):** 0.98 · **Acuerdo LLM↔OCR:** 0.7
 
 **Sección(es):** §5.2
 
@@ -3948,6 +3955,248 @@ En el lateral derecho aparecen conectores verticales con texto adicional que ref
 - `Fin de turno`
 
 **Relación con el texto:** Complementa fig-02 describiendo el camino alternativo cuando un jugador opta por pasar el turno sin ejecutar la estructura completa. Se relaciona con el concepto 'Pasar Turno' mencionado en otras secciones del rulebook.
+
+## Diagrama Estructura de Turno (CANONICAL_FINAL)
+
+> ✅ **Pass 5: imágenes segmentadas validadas por Ramsés** — Estructura canónica FINAL-ULTRA. **52 nodos · 58 edges · 6 fases.** Referencia: [`p19-extraction-v3-final.json`](./p19-extraction-v3-final.json). Validada por 3 jueces Opus 4.7 + spot-check humano (Ramsés) + 6 imágenes segmentadas (una por fase). `confidence_final = 0.98`.
+
+> 🎯 **Corrección crítica pass 5:** **Veneno = ROSA (acción), no amarillo** — confirmado por imagen segmentada de Fin de Turno. Esta corrección invalida la categorización previa como 'efectos del rival' y reubica Veneno como acción del jugador en turno.
+
+> 📌 **Nota cabecera del diagrama (verbatim del PDF):** Las Pasivas que cumplan su condición, podrán declararse en todas las Fases a excepción de la Fase de Batalla.
+
+### Leyenda de colores (verbatim PDF)
+
+_Códigos por colores extraídos verbatim del PDF (imagen enviada por Ramsés)_
+
+| Color | Categoría |
+|---|---|
+| `cian` | Declaración |
+| `rosa` | Acción |
+| `rojo` | Resolución |
+| `negro` | Fin de efecto |
+| `amarillo` | Efectos del rival |
+| `verde` | Efectos que pueden usar jugador en turno y rival |
+
+### Flujo principal
+
+_Flujo principal secuencial por fases del turno de un jugador_
+
+**Inicio del Turno** → **Fase Previa** → **Fase de Batalla** → **Fase Post** → **Fase de Equipo** → **Fin de Turno** → **Inicio del Turno Rival**
+
+### Patrón repetido
+
+_Patrón repetido en casi todas las fases_
+
+**Secuencia:** Declaración (cian) → Costo (rosa) → Pasivas Rápidas (verde) → Pasivas resolución (rojo) → Reemplazo (rosa)
+
+### Resumen por fase
+
+| Fase | Nodos | Edges |
+|---|---:|---:|
+| Fase Previa | 8 | 12 |
+| Fase de Batalla | 10 | 11 |
+| Fase Post | 6 | 7 |
+| Fase de Equipo | 6 | 7 |
+| Fin de Turno | 13 | 12 |
+| Pasar Turno (flujo horizontal alternativo) | 9 | 9 |
+| **TOTAL** | **52** | **58** |
+
+### Fases — nodos y conexiones
+
+#### Fase Previa
+
+**Nodos:**
+
+| # | Nodo | Color | Categoría | Forma / Nota |
+|---|---|---|---|---|
+| 1 | Revelar Cartas | `cian` | declaracion |  |
+| 2 | Pasivas Opcionales | `cian` | declaracion | primera instancia — junto a Revelar Cartas |
+| 3 | Pasivas | `verde` | accion-mutua | primera instancia |
+| 4 | Costo | `rosa` | accion |  |
+| 5 | Pasivas Rápidas | `verde` | accion-mutua |  |
+| 6 | Pasivas | `rojo` | resolucion |  |
+| 7 | Pasivas Opcionales | `rojo` | resolucion |  |
+| 8 | Reemplazo | `rosa` | accion | forma: óvalo |
+
+**Conexiones (edges):**
+
+- Inicio del Turno → Revelar Cartas
+- Revelar Cartas → Pasivas (verde, arriba)
+- Revelar Cartas → Pasivas Opcionales (cian, abajo)
+- Pasivas (verde) → Costo
+- Pasivas Opcionales (cian) → Costo
+- Costo → Pasivas Rápidas
+- Pasivas Rápidas → Pasivas (rojo)
+- Pasivas Rápidas → Pasivas Opcionales (rojo)
+- Pasivas (rojo) → Reemplazo
+- Pasivas Opcionales (rojo) → Reemplazo
+- (Reemplazo sale al siguiente nodo del turno)
+- Reemplazo ↔ bucle retorno hacia Pasivas Rápidas
+
+_Nota Ramsés (pass 5):_ Imagen final enviada por Ramsés confirma que NO hay cajas laterales. La confusión de Judge-B era el flujo horizontal de Pasar Turno corriendo paralelo.
+
+#### Fase de Batalla
+
+**Nodos:**
+
+| # | Nodo | Color | Categoría | Forma / Nota |
+|---|---|---|---|---|
+| 1 | Daño | `cian` | declaracion |  |
+| 2 | Activas | `cian` | declaracion |  |
+| 3 | Activas Rápidas | `cian` | declaracion |  |
+| 4 | Vínculo Odémico | `cian` | declaracion |  |
+| 5 | Costo y/o Quemadura | `rosa` | accion | forma: óvalo |
+| 6 | Revelar | `amarillo` | rival | forma: óvalo; amarillo óvalo según imagen segmentada |
+| 7 | Activa Rápida Rival | `amarillo` | rival |  |
+| 8 | Reemplazo | `rosa` | accion | forma: óvalo |
+| 9 | Daño | `rojo` | resolucion |  |
+| 10 | Activa | `rojo` | resolucion |  |
+
+**Conexiones (edges):**
+
+- Daño (cian) → Costo y/o Quemadura
+- Activas → Costo y/o Quemadura
+- Activas Rápidas → Costo y/o Quemadura
+- Vínculo Odémico → Costo y/o Quemadura
+- Costo y/o Quemadura → Revelar (BIFURCACIÓN)
+- Costo y/o Quemadura → Reemplazo (BIFURCACIÓN)
+- Costo y/o Quemadura → Activa Rápida Rival (BIFURCACIÓN)
+- Revelar → flujo resolución
+- Activa Rápida Rival → flujo resolución
+- Daño (rojo) → Activa (rojo)
+- (Fase de Batalla) → Fase Post
+
+_Nota:_ P4 corrección (Ramsés): Costo y/o Quemadura BIFURCA simultáneamente a 3 nodos: Revelar, Reemplazo, Activa Rápida Rival.
+
+#### Fase Post
+
+> 🔤 **Typo verbatim preservado:** el PDF escribe **«Exinción»** (sin la _c_) en el nodo «Cartas con 0 ptos. de vida van a Exinción». Se preserva tal cual aparece en el fuente.
+
+**Nodos:**
+
+| # | Nodo | Color | Categoría | Forma / Nota |
+|---|---|---|---|---|
+| 1 | Cartas con 0 ptos. de vida van a Exinción | `verde` | accion-mutua | ⚠️ VERBATIM: PDF dice "Exinción" (sin c) — typo preservado |
+| 2 | Pasivas | `verde` | accion-mutua |  |
+| 3 | Costo | `rosa` | accion | forma: óvalo |
+| 4 | Pasivas Rápidas | `verde` | accion-mutua |  |
+| 5 | Pasivas | `rojo` | resolucion |  |
+| 6 | Reemplazo | `rosa` | accion | forma: óvalo |
+
+**Conexiones (edges):**
+
+- Cartas 0 ptos → Pasivas (verde)
+- Pasivas (verde) → Costo
+- Costo → Pasivas Rápidas
+- Pasivas Rápidas → Pasivas (rojo)
+- Pasivas (rojo) → Reemplazo
+- Reemplazo → bucle retorno
+- (Fase Post) → Fase de Equipo
+
+_Nota:_ P2 clarificación: NO tiene caja lateral. Judge-C se equivocó confundiendo los colores del patrón interno con una caja lateral.
+
+#### Fase de Equipo
+
+**Nodos:**
+
+| # | Nodo | Color | Categoría | Forma / Nota |
+|---|---|---|---|---|
+| 1 | Equipa | `cian` | declaracion |  |
+| 2 | Pasivas | `verde` | accion-mutua |  |
+| 3 | Costo | `rosa` | accion | forma: óvalo |
+| 4 | Pasivas Rápidas | `verde` | accion-mutua |  |
+| 5 | Pasivas | `rojo` | resolucion |  |
+| 6 | Reemplazo | `rosa` | accion | forma: óvalo |
+
+**Conexiones (edges):**
+
+- Equipa → Costo
+- Pasivas (verde) → Costo
+- Costo → Pasivas Rápidas
+- Pasivas Rápidas → Pasivas (rojo)
+- Pasivas (rojo) → Reemplazo
+- Reemplazo → bucle retorno
+- (Fase de Equipo) → Fin de Turno
+
+#### Fin de Turno
+
+**Nodos:**
+
+| # | Nodo | Color | Categoría | Forma / Nota |
+|---|---|---|---|---|
+| 1 | Costo de Fin de Turno | `rosa` | accion | forma: óvalo |
+| 2 | Activas de Fin de Turno | `rojo` | resolucion |  |
+| 3 | Pasivas de Fin de Turno | `rojo` | resolucion |  |
+| 4 | Fin de Activas de Fin de Turno | `negro` | fin-efecto |  |
+| 5 | Fin de Pasivas de Fin de Turno | `negro` | fin-efecto |  |
+| 6 | Veneno | `rosa` | accion | forma: óvalo; ✅ Imagen segmentada confirma ROSA (acción), no amarillo (rival) |
+| 7 | Pasivas | `verde` | accion-mutua |  |
+| 8 | Costo | `rosa` | accion | forma: óvalo |
+| 9 | Pasivas Rápidas | `verde` | accion-mutua |  |
+| 10 | Pasivas | `rojo` | resolucion |  |
+| 11 | Reemplazo | `rosa` | accion | forma: óvalo |
+| 12 | Descansos | `rosa` | accion | forma: óvalo |
+| 13 | INICIO DEL TURNO RIVAL | `gris` | transicion | forma: rectángulo; Nodo de transición final que cede control al rival |
+
+**Conexiones (edges):**
+
+- Costo Fin de Turno → Activas Fin de Turno
+- Activas Fin de Turno → Pasivas Fin de Turno
+- Pasivas Fin de Turno → Fin de Activas
+- Fin de Activas → Fin de Pasivas
+- Fin de Pasivas → Veneno
+- Veneno → Pasivas (verde)
+- Pasivas (verde) → Costo
+- Costo → Pasivas Rápidas
+- Pasivas Rápidas → Pasivas (rojo)
+- Pasivas (rojo) → Reemplazo
+- Reemplazo → bucle retorno
+- Descansos → Inicio del Turno Rival
+
+#### Pasar Turno (flujo horizontal alternativo)
+
+> 🔀 **Nota estructural:** P5 clarificación: este flujo NO es una caja lateral de Fase Previa; es un FLUJO HORIZONTAL INDEPENDIENTE que corre en paralelo al turno normal, activándose desde Fase Previa y terminando en Fin de Turno. Su función: permitir al jugador 'pasar turno' activando solo efectos con condición/costo de pasar turno.
+>  
+> **Posición:** paralelo al turno principal, no lateral
+
+**Nodos:**
+
+| # | Nodo | Color | Categoría | Forma / Nota |
+|---|---|---|---|---|
+| 1 | PASAR TURNO | `rosa` | entrada | forma: óvalo; Nodo de entrada al flujo |
+| 2 | Revelar cartas: únicamente cartas con costo y/o Pasivas que indiquen pasar turno. | `cian` | declaracion |  |
+| 3 | Sólo 1 costo que requiera pasar turno se considera PAGADO | `rosa` | accion | forma: óvalo; NODO NUEVO descubierto en P5 — faltaba en v1/v2 |
+| 4 | Pasivas que requieren pasar turno | `cian` | declaracion |  |
+| 5 | Costo | `rosa` | accion |  |
+| 6 | Pasivas Rápidas | `amarillo` | rival |  |
+| 7 | Pasivas | `rojo` | resolucion |  |
+| 8 | Reemplazo | `rosa` | accion |  |
+| 9 | Fin de Turno | `rosa` | accion | forma: óvalo; Conecta al flujo principal Fin de Turno |
+
+**Conexiones (edges):**
+
+- PASAR TURNO → Revelar cartas (pasar turno)
+- Revelar cartas (pasar turno) → Sólo 1 costo pagado (rosa)
+- Sólo 1 costo pagado → Pasivas que requieren pasar turno
+- Pasivas que requieren pasar turno → Costo
+- Costo → Pasivas Rápidas (amarillo)
+- Pasivas Rápidas (amarillo) → Pasivas (rojo)
+- Pasivas (rojo) → Reemplazo
+- Reemplazo → Fin de Turno (rosa)
+- Pasivas que requieren pasar turno → Fin de Turno (directo)
+
+### Nota sobre Pasar Turno (flujo paralelo)
+
+> 🔀 **Pasar Turno** NO es una caja lateral de Fase Previa: es un **flujo horizontal independiente** que corre en paralelo al turno principal. Se activa desde Fase Previa y termina en Fin de Turno. Permite al jugador pasar turno activando solo efectos con condición/costo de pasar turno. Incluye un nodo descubierto en el spot-check humano P5: _«Sólo 1 costo que requiera pasar turno se considera PAGADO»_ (óvalo rosa).
+
+### Observaciones estructurales
+
+- El patrón [Declaración → Costo → Pasivas Rápidas → Resolución → Reemplazo] se repite en casi todas las fases principales
+- El rival interactúa principalmente mediante color amarillo (Revelar, Activa Rápida Rival, Veneno, Pasivas Rápidas en Pasar Turno)
+- 'Reemplazo' es ROSA (Acción) en todas las fases, no verde (corrección clave del pass 3)
+- Fase de Batalla es la más compleja: 'Costo y/o Quemadura' bifurca a 3 nodos simultáneos
+- 'Descansos' es el último nodo antes del cambio de turno
+- Pasar Turno es un flujo horizontal completo paralelo al turno principal, con nodos propios y entrada/salida específica
 
 ## Notas de página
 
@@ -6781,7 +7030,7 @@ Página densa en reglas numeradas (4.1-4.4, luego 5-17) que extiende las 'Genera
 
 # Página 32 — (sin título)
 
-> ✓ **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
+> 🧪 **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
 
 **Notas de spot-check (humanas):**
 
@@ -7532,7 +7781,7 @@ Página de transición: cierra la sección 7 (Mazo por Mecánica, con ejemplo de
 
 # Página 36 — (sin título)
 
-> ✓ **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
+> 🧪 **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
 
 **Notas de spot-check (humanas):**
 
@@ -8325,7 +8574,7 @@ Página completa de glosario M-U. Preservar typos: 'mlas Pasivas-Rápidas', 'mue
 
 # Página 40 — 9. GLOSARIO (cierre) + Contacto + Créditos
 
-> ✓ **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
+> 🧪 **Spot-check Ramsés (pass 3)** — Revisada y anotada por humano.
 
 **Notas de spot-check (humanas):**
 

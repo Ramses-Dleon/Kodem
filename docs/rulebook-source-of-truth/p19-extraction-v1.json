@@ -1,0 +1,209 @@
+{
+  "page": 19,
+  "title": "5.2 Diagrama Estructura de turno",
+  "extraction_date": "2026-04-18T23:08:00Z",
+  "extractor": "opus-4-7 vision (pass 3 - post_validation)",
+  "pending_validation": "3 sub-agentes + Ramsés",
+
+  "legend": {
+    "colors": {
+      "azul": "Declaración",
+      "rosa/magenta": "Acción",
+      "rojo": "Resolución",
+      "negro": "Fin de efecto",
+      "amarillo": "Efectos del rival",
+      "verde": "Efectos que pueden usar jugador en turno y rival"
+    }
+  },
+
+  "main_flow": {
+    "description": "Flujo principal secuencial de izquierda a derecha por fases",
+    "sequence": [
+      "Inicio del Turno",
+      "Fase Previa",
+      "Fase de Batalla",
+      "Fase Post",
+      "Fase de Equipo",
+      "Fin de Turno",
+      "Inicio del Turno Rival"
+    ]
+  },
+
+  "phases": {
+    "fase_previa": {
+      "name": "Fase Previa",
+      "nodes": [
+        {"label": "Revelar Cartas", "color": "azul", "category": "declaracion"},
+        {"label": "Pasivas", "color": "verde", "category": "accion-mutua"},
+        {"label": "Pasivas Opcionales", "color": "verde", "category": "accion-mutua"},
+        {"label": "Costo", "color": "rosa", "category": "accion"},
+        {"label": "Pasivas Rápidas", "color": "verde", "category": "accion-mutua"},
+        {"label": "Pasivas", "color": "rojo", "category": "resolucion"},
+        {"label": "Pasivas Opcionales", "color": "rojo", "category": "resolucion"},
+        {"label": "Reemplazo", "color": "verde", "category": "accion-mutua"}
+      ],
+      "edges": [
+        "Revelar Cartas → Pasivas",
+        "Revelar Cartas → Pasivas Opcionales",
+        "Pasivas → Costo",
+        "Pasivas Opcionales → Costo",
+        "Costo → Pasivas Rápidas",
+        "Pasivas Rápidas → Pasivas (rojo)",
+        "Pasivas (rojo) → Pasivas Opcionales (rojo)",
+        "Pasivas (rojo) → Reemplazo",
+        "Pasivas Opcionales (rojo) → Reemplazo",
+        "Reemplazo ↔ (bucle a Pasivas Rápidas)",
+        "(Fase Previa) → Fase de Batalla"
+      ],
+      "lateral": {
+        "label": "Otro Turno (óvalo lateral rosado)",
+        "note": "Revelar cartas con Costo y/o Pasivas que requieran turno"
+      }
+    },
+
+    "fase_de_batalla": {
+      "name": "Fase de Batalla",
+      "nodes": [
+        {"label": "Daño", "color": "azul", "category": "declaracion"},
+        {"label": "Activas", "color": "azul", "category": "declaracion"},
+        {"label": "Activas Rápidas", "color": "azul", "category": "declaracion"},
+        {"label": "Vínculo Odémico", "color": "azul", "category": "declaracion"},
+        {"label": "Costo y/o Quemadura", "color": "rosa", "category": "accion"},
+        {"label": "Revelar", "color": "amarillo", "category": "rival"},
+        {"label": "Activa Rápida Rival", "color": "amarillo", "category": "rival"},
+        {"label": "Reemplazo", "color": "verde", "category": "accion-mutua"},
+        {"label": "Daño", "color": "rojo", "category": "resolucion"},
+        {"label": "Activa", "color": "rojo", "category": "resolucion"}
+      ],
+      "edges": [
+        "Daño (azul) → Costo y/o Quemadura",
+        "Activas → Costo y/o Quemadura",
+        "Activas Rápidas → Costo y/o Quemadura",
+        "Vínculo Odémico → Costo y/o Quemadura",
+        "Costo y/o Quemadura → Revelar",
+        "Revelar → Activa Rápida Rival",
+        "Activa Rápida Rival → Reemplazo",
+        "Costo y/o Quemadura → Daño (rojo)",
+        "Daño (rojo) → Activa (rojo)",
+        "Reemplazo ↔ (bucle interno)",
+        "(Fase de Batalla) → Fase Post"
+      ],
+      "lateral": {
+        "label": "óvalo lateral rosado",
+        "note": "Solo el costo que considera turno al pasado"
+      }
+    },
+
+    "fase_post": {
+      "name": "Fase Post",
+      "nodes": [
+        {"label": "Cartas con 0 ptos. de vida van a Extinción", "color": "verde", "category": "accion-mutua"},
+        {"label": "Pasivas", "color": "verde", "category": "accion-mutua"},
+        {"label": "Costo", "color": "rosa", "category": "accion"},
+        {"label": "Pasivas Rápidas", "color": "verde", "category": "accion-mutua"},
+        {"label": "Pasivas", "color": "rojo", "category": "resolucion"},
+        {"label": "Reemplazo", "color": "verde", "category": "accion-mutua"}
+      ],
+      "edges": [
+        "Cartas 0 ptos → flujo principal",
+        "Pasivas → Costo",
+        "Costo → Pasivas Rápidas",
+        "Pasivas Rápidas → Pasivas (rojo)",
+        "Pasivas (rojo) → Reemplazo",
+        "Reemplazo → bucle retorno",
+        "(Fase Post) → Fase de Equipo"
+      ],
+      "lateral": {
+        "label": "caja azul lateral",
+        "note": "Pasivas que requieren otro turno"
+      }
+    },
+
+    "fase_de_equipo": {
+      "name": "Fase de Equipo",
+      "nodes": [
+        {"label": "Equipa", "color": "azul", "category": "declaracion"},
+        {"label": "Pasivas", "color": "verde", "category": "accion-mutua"},
+        {"label": "Costo", "color": "rosa", "category": "accion"},
+        {"label": "Pasivas Rápidas", "color": "verde", "category": "accion-mutua"},
+        {"label": "Pasivas", "color": "rojo", "category": "resolucion"},
+        {"label": "Reemplazo", "color": "verde", "category": "accion-mutua"}
+      ],
+      "edges": [
+        "Equipa → Costo",
+        "Pasivas → Costo",
+        "Costo → Pasivas Rápidas",
+        "Pasivas Rápidas → Pasivas (rojo)",
+        "Pasivas (rojo) → Reemplazo",
+        "Reemplazo → bucle retorno",
+        "(Fase de Equipo) → Fin de Turno"
+      ]
+    },
+
+    "fin_de_turno": {
+      "name": "Fin de Turno",
+      "nodes": [
+        {"label": "Costo de Fin de Turno", "color": "rosa", "category": "accion"},
+        {"label": "Activas de Fin de Turno", "color": "rojo", "category": "resolucion"},
+        {"label": "Pasivas de Fin de Turno", "color": "rojo", "category": "resolucion"},
+        {"label": "Fin de Activas de Fin de Turno", "color": "negro", "category": "fin-efecto"},
+        {"label": "Fin de Pasivas de Fin de Turno", "color": "negro", "category": "fin-efecto"},
+        {"label": "Veneno", "color": "amarillo", "category": "rival"},
+        {"label": "Pasivas", "color": "verde", "category": "accion-mutua"},
+        {"label": "Costo", "color": "rosa", "category": "accion"},
+        {"label": "Pasivas Rápidas", "color": "verde", "category": "accion-mutua"},
+        {"label": "Pasivas", "color": "rojo", "category": "resolucion"},
+        {"label": "Reemplazo", "color": "verde", "category": "accion-mutua"},
+        {"label": "Descansos", "color": "rosa", "category": "accion"}
+      ],
+      "edges": [
+        "Costo Fin de Turno → Activas Fin de Turno",
+        "Activas Fin de Turno → Pasivas Fin de Turno",
+        "Pasivas Fin de Turno → Fin de Activas Fin de Turno",
+        "Fin de Activas → Fin de Pasivas",
+        "Fin de Pasivas → Veneno",
+        "Veneno → Pasivas",
+        "Pasivas → Costo",
+        "Costo → Pasivas Rápidas",
+        "Pasivas Rápidas → Pasivas (rojo)",
+        "Pasivas (rojo) → Reemplazo",
+        "Reemplazo → bucle retorno",
+        "Descansos → Inicio del Turno Rival"
+      ]
+    },
+
+    "pasar_turno": {
+      "name": "Pasar Turno (flujo alternativo lateral)",
+      "position": "lateral derecho",
+      "description": "Flujo alternativo cuando el jugador decide 'Pasar Turno' en la Fase Previa",
+      "nodes": [
+        {"label": "Revelar Cartas (únicamente cartas con costo y/o pasivas que indiquen pasar turno)", "color": "azul"},
+        {"label": "Pasivas que requieran pasar turno", "color": "verde"},
+        {"label": "Fin de Turno", "color": "negro", "shape": "óvalo"},
+        {"label": "Costo", "color": "rosa"},
+        {"label": "Pasivas Rápidas", "color": "amarillo"},
+        {"label": "Pasivas", "color": "rojo"},
+        {"label": "Reemplazo", "color": "verde"}
+      ],
+      "edges": [
+        "Revelar Cartas → Pasivas que requieran pasar turno",
+        "Pasivas que requieran pasar turno → Fin de Turno",
+        "Pasivas que requieran pasar turno → Costo",
+        "Costo → Pasivas Rápidas",
+        "Pasivas Rápidas → Pasivas (rojo)",
+        "Pasivas (rojo) → Reemplazo",
+        "Reemplazo → bucle retorno a Pasivas Rápidas"
+      ]
+    }
+  },
+
+  "structural_observations": [
+    "Patrón repetido en todas las fases: [Declaración] → [Costo] → [Pasivas Rápidas] → [Resolución] → [Reemplazo]",
+    "Rival interactúa principalmente con color amarillo (Revelar, Activa Rápida Rival, Veneno)",
+    "Fin de Turno es la fase más densa con 12 nodos (activas/pasivas específicas de fin de turno, veneno, descansos)",
+    "Descansos es el último nodo antes de ceder control al rival",
+    "Pasar Turno es un flujo alternativo completo que bypasea fases pero mantiene pasivas/costos compatibles"
+  ],
+
+  "summary_flow": "Inicio del Turno → Fase Previa → Fase de Batalla → Fase Post → Fase de Equipo → Fin de Turno → Inicio del Turno Rival. En Fase Previa existe opción lateral de Pasar Turno que salta directamente a Fin de Turno. En cada fase se repite el ciclo: Declaración (azul) → Costo (rosa) → Pasivas Rápidas (verde) → Resolución (rojo) → Reemplazo (verde)."
+}

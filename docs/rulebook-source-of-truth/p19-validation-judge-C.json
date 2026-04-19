@@ -1,0 +1,112 @@
+{
+  "validator_id": "judge-C",
+  "validation_date": "2026-04-18T23:15:00Z",
+  "source_image": "/home/coder/.openclaw/workspace/_tmp/p19/p19-1400.jpg",
+  "source_extraction": "p19-extraction-v1.json",
+  "verdict": "approve_with_corrections",
+  "confidence": 0.78,
+
+  "summary": "La extracción v1 captura correctamente la estructura principal del diagrama (6 fases + Pasar Turno, patrón declaración→costo→rápidas→resolución→reemplazo, leyenda, ausencia de nodo 'Combate'/'Ataque'). Sin embargo tiene inexactitudes en: (1) descripción incompleta de los TRES/CUATRO elementos laterales rosas verticales del lado derecho, (2) color erróneo del nodo 'Fin de Turno' en el flujo Pasar Turno inferior, (3) posible error en color de 'Pasivas Rápidas' del flujo Pasar Turno (v1 dice amarillo, debería ser verde por paridad con resto de fases), (4) falta del nodo entrada 'Pasar Turno' (óvalo rosa pequeño) que conecta Fase Previa con el flujo lateral.",
+
+  "missing_nodes": [
+    {
+      "phase": "fase_previa",
+      "node": "Pasar Turno (óvalo rosa de entrada)",
+      "detail": "Existe un óvalo rosa pequeño etiquetado 'PASAR TURNO' a la derecha de Fase Previa que actúa como punto de decisión/salida hacia el flujo lateral Pasar Turno. v1 solo describe UN 'óvalo lateral rosado' con nota, pero no lo explicita como nodo navegable."
+    },
+    {
+      "phase": "laterales_derecho",
+      "node": "Múltiples cápsulas verticales rosa",
+      "detail": "El lado derecho contiene ~3 cápsulas rosas verticales alargadas con texto rotado 90°, cada una alineada con una fase distinta (Previa, Batalla, Post). v1 solo menciona una con descripción '(óvalo lateral rosado)' en Fase Previa y otra en Fase de Batalla. La tercera (nivel Fase Post, 'Pasivas que requieran otro turno') está descrita como 'caja azul lateral' en v1 pero visualmente es rosa."
+    }
+  ],
+
+  "extra_nodes_in_v1": [],
+
+  "incorrect_colors": [
+    {
+      "phase": "pasar_turno",
+      "node": "Fin de Turno",
+      "v1_color": "negro",
+      "correct_color": "rosa (Acción)",
+      "evidence": "Los óvalos de 'Fin de Turno' en el flujo Pasar Turno aparecen como óvalos rosas redondeados, coincidiendo con el color de 'Acción' de la leyenda. El negro está reservado para 'Fin de efecto' (solo nodos 'Fin de Activas/Pasivas de Fin de Turno' en la fase Fin de Turno principal)."
+    },
+    {
+      "phase": "pasar_turno",
+      "node": "Pasivas Rápidas",
+      "v1_color": "amarillo",
+      "correct_color": "verde (Efectos que pueden usar jugador en turno y rival)",
+      "evidence": "Por paridad con el patrón de todas las demás fases donde 'Pasivas Rápidas' es SIEMPRE verde. v1 asignó amarillo en este subflujo, inconsistente con el resto. Requiere re-verificación visual cercana (la vision tool reportó ambiguamente amarillo en un pass y verde implícito en otro). Posible confusión visual entre amarillo y verde lima en resolución reducida."
+    },
+    {
+      "phase": "fase_post",
+      "node": "lateral 'caja azul lateral'",
+      "v1_color": "azul",
+      "correct_color": "rosa (cápsula vertical)",
+      "evidence": "La cápsula lateral a nivel Fase Post es rosa/magenta vertical con texto rotado, no azul. v1 la describe incorrectamente como 'caja azul lateral'."
+    }
+  ],
+
+  "incorrect_edges": [
+    {
+      "phase": "fase_de_batalla",
+      "edge_v1": "Costo y/o Quemadura → Revelar → Activa Rápida Rival → Reemplazo",
+      "issue": "v1 no explicita que 'Revelar' y 'Activa Rápida Rival' (amarillos = rival) forman un SUB-CICLO de respuesta del rival antes del Reemplazo. El flujo real involucra bucles entre estos nodos amarillos y el flujo principal, no una secuencia lineal.",
+      "severity": "media"
+    },
+    {
+      "phase": "fase_previa",
+      "edge_v1": "Reemplazo ↔ (bucle a Pasivas Rápidas)",
+      "issue": "El bucle de retorno del Reemplazo va a 'Costo' (no a Pasivas Rápidas), formando el ciclo Costo → Rápidas → Resolución → Reemplazo → Costo. v1 lo indica como bucle a Pasivas Rápidas cuál es imprecisión menor.",
+      "severity": "baja"
+    }
+  ],
+
+  "suggested_additions": [
+    {
+      "field": "lateral_elements",
+      "content": "Agregar sección explícita 'lateral_pasar_turno_pills' con los 3-4 elementos rosas verticales del lado derecho, cada uno con: (a) nivel/fase alineada, (b) texto literal rotado, (c) tipo (entrada/salida/nota informativa)."
+    },
+    {
+      "field": "flow_alternatives",
+      "content": "Documentar que el óvalo pequeño 'PASAR TURNO' a la derecha de Fase Previa es el NODO DE ENTRADA al flujo alternativo Pasar Turno (sección inferior de la página), no solo una nota visual."
+    },
+    {
+      "field": "nota_fase_batalla",
+      "content": "Añadir la nota del encabezado: 'Las Pasivas que cumplan su condición podrán declararse en todas las Fases a excepción de la Fase de Batalla.' Esta regla es crítica y no debería perderse."
+    }
+  ],
+
+  "critical_issues": [
+    {
+      "issue": "Color 'Fin de Turno' en subflujo Pasar Turno: v1=negro, real=rosa",
+      "impact": "medio",
+      "reason": "Color incorrecto cambia la categoría semántica (Fin de efecto → Acción). Distorsiona la interpretación del flujo."
+    },
+    {
+      "issue": "Cápsula lateral Fase Post descrita como 'azul' cuando es rosa",
+      "impact": "medio",
+      "reason": "Error de color en extracción; el lector podría asumir categoría distinta."
+    },
+    {
+      "issue": "Nota de encabezado 'Pasivas no se declaran en Fase de Batalla' ausente del JSON",
+      "impact": "alto",
+      "reason": "Es una regla de gameplay crítica visible en la parte superior de la página, mencionada en OCR pero no presente en structured extraction."
+    }
+  ],
+
+  "confirmed_correct": [
+    "Secuencia principal de 6 fases",
+    "Ausencia de nodo 'Combate' o 'Ataque' en Fase de Batalla (confirmado visualmente)",
+    "'Pasivas Opcionales' existe SOLO en Fase Previa, no en Post ni Equipo (confirmado)",
+    "'Revelar Cartas' es el texto literal en Fase Previa (confirmado)",
+    "'Descansos' es un nodo propio color rosa ubicado después del ciclo Pasivas→Reemplazo en Fin de Turno, justo antes de 'Inicio del Turno Rival' (confirmado)",
+    "Leyenda de 6 colores con sus etiquetas exactas (confirmado)",
+    "El flujo Pasar Turno es una sección INDEPENDIENTE en la parte inferior de la página con su propia secuencia de 7 nodos",
+    "Estructura cíclica Costo→Pasivas Rápidas→Pasivas(rojo)→Reemplazo→bucle en todas las fases",
+    "Fase Post contiene 'Cartas con 0 ptos. de vida van a Extinción' como nodo inicial especial",
+    "Fin de Turno es la fase más densa con ~12 nodos incluyendo nodos específicos 'Costo/Activas/Pasivas/Fin-de-Activas/Fin-de-Pasivas de Fin de Turno'"
+  ],
+
+  "notes": "v1 es aproximadamente 78% preciso. Los errores son principalmente de COLOR (categorización) y de DESCRIPCIÓN DE ELEMENTOS LATERALES (las cápsulas rosas verticales del lado derecho están mal caracterizadas en varios casos). La estructura macro del flujo y los nodos principales están bien capturados. Recomiendo pase de corrección enfocado en: (1) re-verificar colores de nodos en flujo Pasar Turno, (2) documentar cada cápsula lateral rosa con texto literal, (3) añadir la nota de encabezado sobre pasivas en Fase de Batalla. No es necesario rechazar la extracción, solo corregir puntualmente. IMPORTANTE: Algunos datos del análisis visual fueron inconsistentes entre pasadas (ej. color de EQUIPA en primer pass=verde, segundo pass=cian). En esas ambigüedades me decanto por la segunda pasada más focalizada. Si Ramsés o pases posteriores detectan que EQUIPA es realmente verde (no cian), considerar reclasificar. v1 lo tiene como azul/Declaración que coincide con mi segunda lectura."
+}

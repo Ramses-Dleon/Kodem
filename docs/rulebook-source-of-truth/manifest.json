@@ -1,6 +1,6 @@
 {
   "rulebook_version": "5.1",
-  "generated_at": "2026-04-18T22:50:34+00:00",
+  "generated_at": "2026-04-19T00:36:52+00:00",
   "pdf_sha256": "05672af59629e1e8c7ead6d9487aba107506d239c4863eec49fc28ab45479b03",
   "stats": {
     "total_pages": 40,
@@ -10,8 +10,13 @@
     "avg_confidence": 0.9008,
     "avg_confidence_pass2": 0.89,
     "total_typos_preserved": 75,
-    "spot_check_pass3_count": 8,
-    "post_validation_pending_count": 1,
+    "spot_check_pass3_count": 7,
+    "spot_check_pass4_count": 0,
+    "spot_check_pass5_count": 1,
+    "total_corrections_p19": 9,
+    "p19_diagram_nodes": 52,
+    "p19_diagram_edges": 58,
+    "post_validation_pending_count": 0,
     "human_review_count": 0,
     "verdicts": {
       "both_agree": 14,
@@ -23,21 +28,19 @@
   "files": [
     {
       "path": "master-rulebook-v5.1.md",
-      "size_bytes": 493827,
-      "sha256": "ff288055054db651dca9fce7eb28e59d36411dbf47e03c836eb96c7e82dee018",
+      "size_bytes": 505259,
+      "sha256": "e6f28a3a643c707d13e1e457803dceb67e54408d08b5aa8593e691e420f40f1f",
       "format": "markdown",
-      "description": "Documento legible humano con TOC, bloques, figuras, spot-check pass 3 y apéndices."
+      "description": "Documento legible humano con TOC, bloques, figuras, spot-check pass 3/4/5 (p19 CANONICAL_FINAL FINAL-ULTRA con 52 nodos/58 edges) y apéndices."
     },
     {
       "path": "master-rulebook-v5.1.json",
-      "size_bytes": 649123,
-      "sha256": "d5c6079f831742693a4ed10d3531f9b1a0878a49aa3403ef4dd8f9f8746e31be",
+      "size_bytes": 666467,
+      "sha256": "824a8ec342189c37fec33c2ed0e611a779c5802ecf8fa8ed19258cd843c40f07",
       "format": "json",
-      "description": "JSON estructurado con páginas, anchors_index, typos, human_review_pending y post_validation_pending."
+      "description": "JSON estructurado con páginas, anchors_index, typos, diagram_structure canónica pass 5 (p19: 52 nodos/58 edges), corrections_log (9 correcciones totales en p19), human_review_pending y post_validation_pending."
     }
   ],
   "human_review_pending": [],
-  "post_validation_pending": [
-    19
-  ]
+  "post_validation_pending": []
 }

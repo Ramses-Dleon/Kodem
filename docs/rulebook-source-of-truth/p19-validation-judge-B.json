@@ -1,0 +1,166 @@
+{
+  "validator_id": "judge-B",
+  "validation_date": "2026-04-18T23:15:00Z",
+  "model_used": "image tool default (claude-sonnet-4-6-alex fallback) — azure/claude-opus-4-7-alex aborted 2x",
+  "verdict": "approve_with_corrections",
+  "confidence": 0.72,
+
+  "missing_nodes": [
+    {
+      "location": "top of diagram (above Fase Previa)",
+      "node": "Nota general en texto plano",
+      "text_exact": "Las Pasivas que cumplan su condición, podrán declararse en todas las Fases a excepción de la Fase de Batalla.",
+      "severity": "medium",
+      "reason": "v1 no registra esta nota crítica que modifica la interpretación del diagrama completo. Afecta reglas de cuándo se pueden declarar pasivas."
+    },
+    {
+      "location": "Fase Previa — caja lateral derecha (columna rosa vertical)",
+      "node": "Segunda caja lateral rosa",
+      "text_exact_probable": "Solo costo que requiere turno considerar pasado / Solo el costo considerará turno al pagado (rotado vertical, difícil de leer exactamente)",
+      "severity": "medium",
+      "reason": "v1 solo menciona una caja lateral ('Otro Turno') en Fase Previa, pero el diagrama muestra DOS cajas rosa verticales rotadas en la columna derecha (una arriba de Fase Batalla, otra entre Fase Batalla y Fase Post). v1 las confunde o omite una."
+    }
+  ],
+
+  "extra_nodes_in_v1": [],
+
+  "incorrect_colors": [
+    {
+      "phase": "Fase de Batalla",
+      "node_label_v1": "Revelar",
+      "color_in_v1": "amarillo",
+      "color_observed_judge": "rosa",
+      "severity": "high",
+      "confidence": 0.6,
+      "note": "judge-B describe 'Revelar' en Fase de Batalla como rosa; v1 lo marca amarillo (efectos del rival). Es plausible que v1 sea correcto si se interpreta 'Revelar' como acción del rival dentro del combate, pero la observación visual del validador lo ve rosa (Acción). REQUIERE verificación humana con zoom."
+    },
+    {
+      "phase": "Fin de Turno",
+      "node_label_v1": "Activas de Fin de Turno",
+      "color_in_v1": "rojo",
+      "color_observed_judge": "rosa",
+      "severity": "medium",
+      "confidence": 0.55,
+      "note": "v1 clasifica como 'resolucion' (rojo). judge-B lo vio rosa. Semánticamente 'Activas de Fin de Turno' podría ser rojo (resolución) si son cartas que se resuelven al final. Discrepancia ambigua."
+    },
+    {
+      "phase": "Fin de Turno",
+      "node_label_v1": "Pasivas de Fin de Turno",
+      "color_in_v1": "rojo",
+      "color_observed_judge": "verde",
+      "severity": "medium",
+      "confidence": 0.5,
+      "note": "v1 marca rojo (resolución), judge-B lo vio verde (mutuas jugador+rival). Coherencia con el patrón sugiere que 'Pasivas de Fin de Turno' podría ser rojo si es resolución, o verde si cualquiera puede declararlas. Ambigüedad no resuelta."
+    },
+    {
+      "phase": "Fin de Turno",
+      "node_label_v1": "Veneno",
+      "color_in_v1": "amarillo",
+      "color_observed_judge": "rosa",
+      "severity": "medium",
+      "confidence": 0.55,
+      "note": "v1 correctamente asigna 'Veneno' como amarillo (efecto del rival aplicándose al jugador en turno). judge-B lo reportó rosa probablemente por tinta similar. v1 es probablemente correcto."
+    },
+    {
+      "phase": "Múltiples fases (Fase Previa, Post, Equipo, Fin de Turno)",
+      "node_label_v1": "Reemplazo",
+      "color_in_v1": "verde",
+      "color_observed_judge": "rosa",
+      "severity": "medium",
+      "confidence": 0.5,
+      "note": "Discrepancia sistemática entre v1 (todos los Reemplazo marcados verde = mutuos) y observación visual (rosa = acción). Es un punto que necesita verificación manual del humano sobre el PNG de alta resolución. Semánticamente verde tiene sentido (el Reemplazo puede ser usado por ambos jugadores), pero visualmente la tinta puede aparecer más rosa/magenta."
+    }
+  ],
+
+  "incorrect_edges": [
+    {
+      "phase": "Fase de Batalla",
+      "edge_in_v1": "Costo y/o Quemadura → Revelar → Activa Rápida Rival → Reemplazo",
+      "issue": "v1 describe la secuencia como lineal. Observación sugiere que 'Costo y/o Quemadura' puede tener múltiples ramas simultáneas (Revelar + Activa Rápida Rival + Daño rojo). Edges faltantes probables:  'Costo y/o Quemadura → Activa Rápida Rival' directo, y bucle entre Revelar y Activa Rápida Rival.",
+      "severity": "low",
+      "confidence": 0.4,
+      "note": "Observación tentativa. El grafo de Batalla es el más complejo y v1 puede estar simplificando demasiado."
+    },
+    {
+      "phase": "Pasar Turno",
+      "edge_in_v1": "Pasivas que requieran pasar turno → Fin de Turno; Pasivas que requieran pasar turno → Costo",
+      "issue": "v1 marca dos destinos desde 'Pasivas que requieran pasar turno'. Verificar si existe una flecha directa desde 'Revelar Cartas' hasta 'Fin de Turno' que bypasea todo el ciclo, o si siempre pasa por Costo→Pasivas Rápidas primero.",
+      "severity": "low",
+      "confidence": 0.4,
+      "note": "El flujo de Pasar Turno tiene un óvalo 'Fin de turno' al final (negro) que representa el escape al fin de turno del jugador. v1 lo captura pero no es claro si existen shortcuts adicionales."
+    }
+  ],
+
+  "suggested_additions": [
+    {
+      "field": "legend.extra",
+      "value": "Agregar nota: 'Líneas discontinuas representan flujo alternativo/retorno; líneas sólidas representan flujo principal'. El diagrama original usa distinción sólida/discontinua que v1 no captura."
+    },
+    {
+      "field": "edge_styles",
+      "value": "v1 no distingue entre flechas sólidas y discontinuas. En el diagrama hay ambos tipos con semántica distinta (flujo principal vs bucles/retornos). Agregar campo 'style' a cada edge."
+    },
+    {
+      "field": "note_top",
+      "value": "Agregar la nota superior: 'Las Pasivas que cumplan su condición, podrán declararse en todas las Fases a excepción de la Fase de Batalla.'"
+    },
+    {
+      "field": "lateral_boxes",
+      "value": "Documentar explícitamente las 2-3 cajas rosa verticales rotadas de la columna derecha con transcripción exacta del texto (difícil por rotación). Textos probables: (1) 'Revelar cartas con costo y/o Pasivas que indiquen turno'; (2) 'Solo costo que requiere turno considerar pagado'; (3) 'Pasivas que requieren turno' (al lado de Fase Post)."
+    },
+    {
+      "field": "color_pink_in_pasar_turno",
+      "value": "Verificar si 'Pasivas Rápidas' en Pasar Turno es realmente amarillo (como v1 dice) o verde. Judge-B confirmó amarillo pero es atípico del patrón."
+    }
+  ],
+
+  "phase_by_phase_notes": {
+    "fase_previa": {
+      "status": "OK con observaciones menores",
+      "confidence": 0.75,
+      "issues": ["Verificar color de Reemplazo (verde vs rosa)", "Documentar ambas cajas laterales rosa"]
+    },
+    "fase_de_batalla": {
+      "status": "OK con dudas sobre color de Revelar",
+      "confidence": 0.65,
+      "issues": ["Revelar: amarillo (v1) vs rosa (judge-B)", "Posibles edges simultáneos desde Costo y/o Quemadura"]
+    },
+    "fase_post": {
+      "status": "OK",
+      "confidence": 0.8,
+      "issues": ["Color Reemplazo sistemático"]
+    },
+    "fase_de_equipo": {
+      "status": "OK",
+      "confidence": 0.85,
+      "issues": ["Color Reemplazo sistemático"]
+    },
+    "fin_de_turno": {
+      "status": "Revisión requerida",
+      "confidence": 0.6,
+      "issues": [
+        "Colores ambiguos en Activas/Pasivas de Fin de Turno (rojo vs rosa vs verde)",
+        "Veneno probablemente amarillo (v1 correcto)",
+        "Descansos: v1 correcto como rosa"
+      ]
+    },
+    "pasar_turno": {
+      "status": "OK con observaciones",
+      "confidence": 0.75,
+      "issues": ["Verificar si 'Fin de turno' final es óvalo rosa o negro", "Validar flujo completo"]
+    }
+  },
+
+  "overall_structural_assessment": {
+    "main_flow_sequence": "CORRECTO — Inicio → Previa → Batalla → Post → Equipo → Fin de Turno → Inicio Rival",
+    "phase_patterns": "CORRECTO — el patrón 'Declaración → Costo → Pasivas Rápidas → Resolución → Reemplazo' se repite en todas las fases y v1 lo captura bien",
+    "legend": "CORRECTO — 6 colores con semánticas correctas",
+    "node_count_approximation": {
+      "v1_total_nodes": "~55 nodos",
+      "observed_approximate": "~55-58 nodos (diferencia por cajas laterales)",
+      "match": "~95%"
+    }
+  },
+
+  "notes": "Validación con 72% de confianza. El diagrama es altamente complejo (55+ nodos, múltiples colores, flechas sólidas/discontinuas, cajas laterales rotadas). v1 captura bien la estructura macro (secuencia de fases, patrón repetido, flujo Pasar Turno), pero tiene DISCREPANCIAS SISTEMÁTICAS en colores (principalmente Reemplazo) que pueden ser (a) errores de interpretación del color por rendering/tinta similar rosa-magenta-rojo en el PDF, o (b) errores en v1. Recomendación: validación humana con zoom sobre p19-full.png (7.7MB) para resolver ambigüedades de color. La sección 'Fin de Turno' es la que más variación tiene y requiere mayor escrutinio. La nota superior del diagrama ('Las Pasivas... excepción de la Fase de Batalla') NO está en v1 y es importante. VERDICT: approve_with_corrections — estructura correcta, detalles de color y cajas laterales requieren refinamiento. Tool `image` con opus-4-7 abortó 2 veces, se usó modelo fallback."
+}

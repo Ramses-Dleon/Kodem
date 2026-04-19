@@ -1,0 +1,201 @@
+{
+  "validator_id": "judge-A",
+  "validator_model": "claude-opus-4-7 (direct image-in-message analysis; image tool was unavailable - aborted 3 retries across opus-4-7 and sonnet-4-6)",
+  "validation_date": "2026-04-18T23:12:00Z",
+  "verdict": "approve_with_corrections",
+  "confidence": 0.78,
+
+  "methodology_note": "El tool `image` falló 3 veces (Request was aborted). Esta validación se hizo contra la imagen inyectada directamente en el mensaje del usuario, observable en la ventana de contexto. No es una segunda pasada independiente de modelo, pero sí una re-inspección visual detallada con criterio de LM-as-judge sobre la misma imagen que procesó el extractor v1.",
+
+  "verified_ok": [
+    "Leyenda de colores: 6 entradas correctamente mapeadas (azul=Declaración, rosa=Acción, rojo=Resolución, negro=Fin de efecto, amarillo=Efectos del rival, verde=Efectos que pueden usar jugador en turno y rival).",
+    "Secuencia macro de fases: Inicio del Turno → Fase Previa → Fase de Batalla → Fase Post → Fase de Equipo → Fin de Turno → Inicio del Turno Rival. Correcta.",
+    "Fase de Batalla: los 4 nodos de declaración (Daño, Activas, Activas Rápidas, Vínculo Odémico) están bien identificados con color azul.",
+    "Fase de Batalla: pareja rival amarilla (Revelar, Activa Rápida Rival) correctamente marcada.",
+    "Fase de Batalla: resolución roja (Daño, Activa) correctamente identificada.",
+    "Fase de Equipo: 6 nodos correctamente enumerados (Equipa, Pasivas, Costo, Pasivas Rápidas, Pasivas rojo, Reemplazo).",
+    "Fin de Turno: 12 nodos completos identificados, incluyendo Descansos como último paso antes del turno rival.",
+    "Fin de Turno: correctamente identifica Veneno como amarillo (efecto rival) y los dos nodos negros 'Fin de Activas/Pasivas de Fin de Turno' como fin-de-efecto.",
+    "Pasar Turno: bloque inferior identificado como flujo alternativo completo.",
+    "Óvalos laterales rosas en columna derecha: reconocidos (aunque con textos aproximados)."
+  ],
+
+  "missing_nodes": [],
+
+  "extra_nodes_in_v1": [],
+
+  "incorrect_colors": [
+    {
+      "phase": "fase_previa",
+      "node": "Pasivas (segunda instancia, arriba-derecha antes de Reemplazo)",
+      "v1_color": "rojo",
+      "observed_color": "rojo",
+      "status": "OK — v1 correcta",
+      "note": "Confirmado como resolución roja."
+    },
+    {
+      "phase": "fase_previa",
+      "node": "Pasivas Opcionales (segunda instancia, rama de resolución)",
+      "v1_color": "rojo",
+      "observed_color": "rojo",
+      "status": "OK"
+    },
+    {
+      "phase": "fase_previa",
+      "node": "Reemplazo",
+      "v1_color": "verde",
+      "observed_color": "rojo",
+      "status": "INCORRECTO en v1",
+      "correction": "El nodo 'Reemplazo' en Fase Previa aparece con relleno rojo (resolución), no verde. Este mismo patrón se repite en Fase de Batalla, Fase Post, Fase de Equipo, Fin de Turno y Pasar Turno."
+    },
+    {
+      "phase": "fase_de_batalla",
+      "node": "Reemplazo",
+      "v1_color": "verde",
+      "observed_color": "rojo",
+      "status": "INCORRECTO en v1"
+    },
+    {
+      "phase": "fase_post",
+      "node": "Reemplazo",
+      "v1_color": "verde",
+      "observed_color": "rojo",
+      "status": "INCORRECTO en v1"
+    },
+    {
+      "phase": "fase_post",
+      "node": "Pasivas (primera instancia, lado izquierdo junto a 'Cartas con 0 ptos')",
+      "v1_color": "verde",
+      "observed_color": "azul/celeste (Declaración)",
+      "status": "POSIBLEMENTE INCORRECTO — verificar",
+      "note": "El caja 'Pasivas' al inicio de Fase Post se ve celeste (declaración), no verde. v1 la marca como 'accion-mutua' verde."
+    },
+    {
+      "phase": "fase_post",
+      "node": "Pasivas Rápidas",
+      "v1_color": "verde",
+      "observed_color": "amarillo",
+      "status": "POSIBLEMENTE INCORRECTO — verificar",
+      "note": "En Fase Post el relleno de 'Pasivas Rápidas' se ve amarillo (rival) en la imagen, no verde. Revisar contra original de alta resolución."
+    },
+    {
+      "phase": "fase_de_equipo",
+      "node": "Pasivas (primera instancia)",
+      "v1_color": "verde",
+      "observed_color": "azul/celeste",
+      "status": "POSIBLEMENTE INCORRECTO — verificar"
+    },
+    {
+      "phase": "fase_de_equipo",
+      "node": "Pasivas Rápidas",
+      "v1_color": "verde",
+      "observed_color": "amarillo",
+      "status": "POSIBLEMENTE INCORRECTO — verificar"
+    },
+    {
+      "phase": "fase_de_equipo",
+      "node": "Reemplazo",
+      "v1_color": "verde",
+      "observed_color": "rojo",
+      "status": "INCORRECTO en v1"
+    },
+    {
+      "phase": "fin_de_turno",
+      "node": "Pasivas Rápidas (bloque inferior de la fase)",
+      "v1_color": "verde",
+      "observed_color": "verde",
+      "status": "OK (este sí se ve claramente verde)"
+    },
+    {
+      "phase": "fin_de_turno",
+      "node": "Reemplazo",
+      "v1_color": "verde",
+      "observed_color": "rojo",
+      "status": "INCORRECTO en v1"
+    },
+    {
+      "phase": "pasar_turno",
+      "node": "Pasivas que requieran pasar turno",
+      "v1_color": "verde",
+      "observed_color": "azul/celeste (Declaración)",
+      "status": "INCORRECTO en v1",
+      "note": "Se ve como caja celeste de declaración, no verde."
+    },
+    {
+      "phase": "pasar_turno",
+      "node": "Fin de Turno (óvalo destino)",
+      "v1_color": "negro",
+      "observed_color": "rosa (magenta)",
+      "status": "INCORRECTO en v1",
+      "note": "El óvalo 'Fin de Turno' en el bloque inferior Pasar Turno es rosa (igual estilo que 'Inicio del Turno'), no negro."
+    },
+    {
+      "phase": "pasar_turno",
+      "node": "Pasivas Rápidas",
+      "v1_color": "amarillo",
+      "observed_color": "amarillo",
+      "status": "OK — v1 correcta (contrasta con el resto del rulebook donde es verde)"
+    },
+    {
+      "phase": "pasar_turno",
+      "node": "Reemplazo",
+      "v1_color": "verde",
+      "observed_color": "rojo",
+      "status": "INCORRECTO en v1"
+    }
+  ],
+
+  "incorrect_edges": [
+    {
+      "issue": "La categorización 'accion-mutua' (verde) de los nodos Reemplazo probablemente proviene de asumir que 'Reemplazo' conecta a flujo mutuo. Pero visualmente es rojo (resolución). Revisar semántica de reglas.",
+      "phase": "varias",
+      "severity": "media"
+    },
+    {
+      "issue": "Fase Previa — v1 dice 'Pasivas Rápidas → Pasivas (rojo)' pero visualmente parece haber una rama adicional desde Costo que salta directamente a las Pasivas rojas sin pasar por Pasivas Rápidas, o al menos hay una flecha punteada lateral.",
+      "phase": "fase_previa",
+      "severity": "baja",
+      "note": "Requiere segundo ojo para confirmar."
+    },
+    {
+      "issue": "Fase de Batalla — No se documenta si 'Costo y/o Quemadura' conecta directo a Reemplazo o si debe pasar por 'Daño (rojo) → Activa (rojo) → Reemplazo'. v1 dice 'Activa Rápida Rival → Reemplazo' y 'Costo y/o Quemadura → Daño (rojo) → Activa (rojo)' como rutas paralelas. Visualmente hay flechas cruzadas difíciles de desambiguar.",
+      "phase": "fase_de_batalla",
+      "severity": "media"
+    },
+    {
+      "issue": "Fin de Turno — la cadena 'Activas → Pasivas → Fin de Activas → Fin de Pasivas → Veneno → Pasivas (verde) → Costo...' es larga y lineal en v1; revisar si Veneno alimenta a Pasivas o si es un nodo terminal con su propia resolución.",
+      "phase": "fin_de_turno",
+      "severity": "baja"
+    },
+    {
+      "issue": "Pasar Turno — bucle 'Reemplazo → Pasivas Rápidas' documentado en v1; visualmente el bucle existe pero la dirección (¿Reemplazo o Pasivas rojas?) merece confirmación.",
+      "phase": "pasar_turno",
+      "severity": "baja"
+    }
+  ],
+
+  "suggested_additions": [
+    {
+      "type": "lateral_element",
+      "description": "Los 3 óvalos rosados laterales en la columna derecha tienen texto específico que v1 captura como 'note' aproximada. Sugerir transcripción literal exacta en pass 4: (1) junto a Inicio del Turno: 'Revelar cartas únicamente cartas con costo y/o pasivas que indiquen pasar turno'; (2) entre Fase Previa y Fase de Batalla: 'Solo el costo que [texto] el turno pasado'; (3) entre Fase Post y Fase Equipo: 'Pasivas que requieren pasar turno'."
+    },
+    {
+      "type": "nota_superior",
+      "description": "Incluir en el JSON la nota que aparece bajo el título: 'Las Pasivas que cumplan su condición, podrán declararse en todas las Fases a excepción de la Fase de Batalla.' — es regla semántica crítica que no está en extraction-v1."
+    },
+    {
+      "type": "watermark",
+      "description": "Hay un watermark 'AMKA' (o similar) dentro de Fase de Batalla. Irrelevante para el grafo, pero vale la pena notarlo para no confundir con nodo."
+    },
+    {
+      "type": "nodo_extra_posible",
+      "description": "En Fase Previa v1 enumera 'Pasivas' (azul) y 'Pasivas Opcionales' (azul) en la rama izquierda. Confirmar si hay una caja adicional 'Pasivas' (azul) separada de 'Pasivas Opcionales'. En la imagen se ven 3 cajas en esa columna: 'Pasivas' arriba, luego 'Pasivas Opcionales' abajo-izquierda, pero parece haber una tercera conectada. Revisar."
+    },
+    {
+      "type": "edge_labels",
+      "description": "Las flechas del diagrama no tienen etiquetas textuales visibles, pero los colores de línea (punteado magenta, sólido verde, sólido negro) codifican información. Sugerir documentar estilo de línea por edge en pass 4."
+    }
+  ],
+
+  "notes": "RESUMEN DEL VEREDICTO: La estructura topológica general (fases, secuencia macro, nodos principales, leyenda) está correctamente capturada por extraction-v1. El patrón principal de errores es la CLASIFICACIÓN DE COLOR DEL NODO 'Reemplazo' en múltiples fases — v1 lo marca consistentemente como verde (efecto mutuo) pero visualmente aparece rojo (resolución). Segundo patrón: algunos nodos 'Pasivas' y 'Pasivas Rápidas' en Fase Post, Fase Equipo, y Pasar Turno tienen colores ambiguos o incorrectos que merecen verificación con imagen original de mayor resolución. Tercera observación: el óvalo 'Fin de Turno' en bloque Pasar Turno es rosa, no negro. CONFIANZA 0.78 — limitada por: (a) no haber podido correr el tool `image` como segunda opinión independiente (3 fallas), (b) resolución de la imagen inyectada, (c) colores cian/verde pueden confundirse a baja resolución. RECOMENDACIÓN: Aprobar con correcciones de color listadas y validar con segundo y tercer juez antes de finalizar."
+}

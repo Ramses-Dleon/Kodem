@@ -1,0 +1,541 @@
+{
+  "page": 19,
+  "title": "5.2 Diagrama Estructura de turno",
+  "version": "v3-final",
+  "extraction_date": "2026-04-19T00:33:18.323029",
+  "methodology": {
+    "pipeline": "4-layer + human-validation",
+    "layers": [
+      "Pass 1: Opus 4.7 vision (initial extraction)",
+      "Pass 2: 3 sub-agent judges (Opus 4.7, LM-as-judge)",
+      "Pass 3: Ramsés human spot-check (5 questions with PDF zoom crops)",
+      "Pass 4: Consolidation to v3 canonical"
+    ],
+    "validators": {
+      "judges_run": 3,
+      "avg_judge_confidence": 0.76,
+      "convergent_verdict": "approve_with_corrections",
+      "human_validator": "Ramsés",
+      "human_questions_answered": 5
+    }
+  },
+  "confidence": 0.98,
+  "status": "CANONICAL_FINAL",
+  "legend": {
+    "note": "Códigos por colores extraídos verbatim del PDF (imagen enviada por Ramsés)",
+    "colors": [
+      {
+        "swatch": "cian",
+        "label": "Declaración"
+      },
+      {
+        "swatch": "rosa",
+        "label": "Acción"
+      },
+      {
+        "swatch": "rojo",
+        "label": "Resolución"
+      },
+      {
+        "swatch": "negro",
+        "label": "Fin de efecto"
+      },
+      {
+        "swatch": "amarillo",
+        "label": "Efectos del rival"
+      },
+      {
+        "swatch": "verde",
+        "label": "Efectos que pueden usar jugador en turno y rival"
+      }
+    ]
+  },
+  "header_note": "Las Pasivas que cumplan su condición, podrán declararse en todas las Fases a excepción de la Fase de Batalla.",
+  "main_flow": {
+    "description": "Flujo principal secuencial por fases del turno de un jugador",
+    "sequence": [
+      "Inicio del Turno",
+      "Fase Previa",
+      "Fase de Batalla",
+      "Fase Post",
+      "Fase de Equipo",
+      "Fin de Turno",
+      "Inicio del Turno Rival"
+    ]
+  },
+  "pattern": {
+    "description": "Patrón repetido en casi todas las fases",
+    "sequence": "Declaración (cian) → Costo (rosa) → Pasivas Rápidas (verde) → Pasivas resolución (rojo) → Reemplazo (rosa)"
+  },
+  "phases": {
+    "fase_previa": {
+      "name": "Fase Previa",
+      "nodes": [
+        {
+          "label": "Revelar Cartas",
+          "color": "cian",
+          "category": "declaracion"
+        },
+        {
+          "label": "Pasivas Opcionales",
+          "color": "cian",
+          "category": "declaracion",
+          "note": "primera instancia — junto a Revelar Cartas"
+        },
+        {
+          "label": "Pasivas",
+          "color": "verde",
+          "category": "accion-mutua",
+          "note": "primera instancia"
+        },
+        {
+          "label": "Costo",
+          "color": "rosa",
+          "category": "accion"
+        },
+        {
+          "label": "Pasivas Rápidas",
+          "color": "verde",
+          "category": "accion-mutua"
+        },
+        {
+          "label": "Pasivas",
+          "color": "rojo",
+          "category": "resolucion"
+        },
+        {
+          "label": "Pasivas Opcionales",
+          "color": "rojo",
+          "category": "resolucion"
+        },
+        {
+          "label": "Reemplazo",
+          "color": "rosa",
+          "shape": "óvalo",
+          "category": "accion"
+        }
+      ],
+      "edges": [
+        "Inicio del Turno → Revelar Cartas",
+        "Revelar Cartas → Pasivas (verde, arriba)",
+        "Revelar Cartas → Pasivas Opcionales (cian, abajo)",
+        "Pasivas (verde) → Costo",
+        "Pasivas Opcionales (cian) → Costo",
+        "Costo → Pasivas Rápidas",
+        "Pasivas Rápidas → Pasivas (rojo)",
+        "Pasivas Rápidas → Pasivas Opcionales (rojo)",
+        "Pasivas (rojo) → Reemplazo",
+        "Pasivas Opcionales (rojo) → Reemplazo",
+        "(Reemplazo sale al siguiente nodo del turno)",
+        "Reemplazo ↔ bucle retorno hacia Pasivas Rápidas"
+      ],
+      "laterals": [],
+      "note_ramses_p5": "Imagen final enviada por Ramsés confirma que NO hay cajas laterales. La confusión de Judge-B era el flujo horizontal de Pasar Turno corriendo paralelo."
+    },
+    "fase_de_batalla": {
+      "name": "Fase de Batalla",
+      "nodes": [
+        {
+          "label": "Daño",
+          "color": "cian",
+          "category": "declaracion"
+        },
+        {
+          "label": "Activas",
+          "color": "cian",
+          "category": "declaracion"
+        },
+        {
+          "label": "Activas Rápidas",
+          "color": "cian",
+          "category": "declaracion"
+        },
+        {
+          "label": "Vínculo Odémico",
+          "color": "cian",
+          "category": "declaracion"
+        },
+        {
+          "label": "Costo y/o Quemadura",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo"
+        },
+        {
+          "label": "Revelar",
+          "color": "amarillo",
+          "category": "rival",
+          "shape": "óvalo",
+          "note": "amarillo óvalo según imagen segmentada"
+        },
+        {
+          "label": "Activa Rápida Rival",
+          "color": "amarillo",
+          "category": "rival"
+        },
+        {
+          "label": "Reemplazo",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo"
+        },
+        {
+          "label": "Daño",
+          "color": "rojo",
+          "category": "resolucion"
+        },
+        {
+          "label": "Activa",
+          "color": "rojo",
+          "category": "resolucion"
+        }
+      ],
+      "edges": [
+        "Daño (cian) → Costo y/o Quemadura",
+        "Activas → Costo y/o Quemadura",
+        "Activas Rápidas → Costo y/o Quemadura",
+        "Vínculo Odémico → Costo y/o Quemadura",
+        "Costo y/o Quemadura → Revelar (BIFURCACIÓN)",
+        "Costo y/o Quemadura → Reemplazo (BIFURCACIÓN)",
+        "Costo y/o Quemadura → Activa Rápida Rival (BIFURCACIÓN)",
+        "Revelar → flujo resolución",
+        "Activa Rápida Rival → flujo resolución",
+        "Daño (rojo) → Activa (rojo)",
+        "(Fase de Batalla) → Fase Post"
+      ],
+      "note": "P4 corrección (Ramsés): Costo y/o Quemadura BIFURCA simultáneamente a 3 nodos: Revelar, Reemplazo, Activa Rápida Rival."
+    },
+    "fase_post": {
+      "name": "Fase Post",
+      "nodes": [
+        {
+          "label": "Cartas con 0 ptos. de vida van a Exinción",
+          "color": "verde",
+          "category": "accion-mutua",
+          "typo_note": "VERBATIM: PDF dice \"Exinción\" (sin c) — typo preservado"
+        },
+        {
+          "label": "Pasivas",
+          "color": "verde",
+          "category": "accion-mutua"
+        },
+        {
+          "label": "Costo",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo"
+        },
+        {
+          "label": "Pasivas Rápidas",
+          "color": "verde",
+          "category": "accion-mutua"
+        },
+        {
+          "label": "Pasivas",
+          "color": "rojo",
+          "category": "resolucion"
+        },
+        {
+          "label": "Reemplazo",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo"
+        }
+      ],
+      "edges": [
+        "Cartas 0 ptos → Pasivas (verde)",
+        "Pasivas (verde) → Costo",
+        "Costo → Pasivas Rápidas",
+        "Pasivas Rápidas → Pasivas (rojo)",
+        "Pasivas (rojo) → Reemplazo",
+        "Reemplazo → bucle retorno",
+        "(Fase Post) → Fase de Equipo"
+      ],
+      "laterals": [],
+      "note": "P2 clarificación: NO tiene caja lateral. Judge-C se equivocó confundiendo los colores del patrón interno con una caja lateral."
+    },
+    "fase_de_equipo": {
+      "name": "Fase de Equipo",
+      "nodes": [
+        {
+          "label": "Equipa",
+          "color": "cian",
+          "category": "declaracion"
+        },
+        {
+          "label": "Pasivas",
+          "color": "verde",
+          "category": "accion-mutua"
+        },
+        {
+          "label": "Costo",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo"
+        },
+        {
+          "label": "Pasivas Rápidas",
+          "color": "verde",
+          "category": "accion-mutua"
+        },
+        {
+          "label": "Pasivas",
+          "color": "rojo",
+          "category": "resolucion"
+        },
+        {
+          "label": "Reemplazo",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo"
+        }
+      ],
+      "edges": [
+        "Equipa → Costo",
+        "Pasivas (verde) → Costo",
+        "Costo → Pasivas Rápidas",
+        "Pasivas Rápidas → Pasivas (rojo)",
+        "Pasivas (rojo) → Reemplazo",
+        "Reemplazo → bucle retorno",
+        "(Fase de Equipo) → Fin de Turno"
+      ]
+    },
+    "fin_de_turno": {
+      "name": "Fin de Turno",
+      "nodes": [
+        {
+          "label": "Costo de Fin de Turno",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo"
+        },
+        {
+          "label": "Activas de Fin de Turno",
+          "color": "rojo",
+          "category": "resolucion"
+        },
+        {
+          "label": "Pasivas de Fin de Turno",
+          "color": "rojo",
+          "category": "resolucion"
+        },
+        {
+          "label": "Fin de Activas de Fin de Turno",
+          "color": "negro",
+          "category": "fin-efecto"
+        },
+        {
+          "label": "Fin de Pasivas de Fin de Turno",
+          "color": "negro",
+          "category": "fin-efecto"
+        },
+        {
+          "label": "Veneno",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo",
+          "correction_note": "Imagen segmentada confirma ROSA (acción), no amarillo (rival)"
+        },
+        {
+          "label": "Pasivas",
+          "color": "verde",
+          "category": "accion-mutua"
+        },
+        {
+          "label": "Costo",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo"
+        },
+        {
+          "label": "Pasivas Rápidas",
+          "color": "verde",
+          "category": "accion-mutua"
+        },
+        {
+          "label": "Pasivas",
+          "color": "rojo",
+          "category": "resolucion"
+        },
+        {
+          "label": "Reemplazo",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo"
+        },
+        {
+          "label": "Descansos",
+          "color": "rosa",
+          "category": "accion",
+          "shape": "óvalo"
+        },
+        {
+          "label": "INICIO DEL TURNO RIVAL",
+          "color": "gris",
+          "shape": "rectángulo",
+          "category": "transicion",
+          "note": "Nodo de transición final que cede control al rival"
+        }
+      ],
+      "edges": [
+        "Costo Fin de Turno → Activas Fin de Turno",
+        "Activas Fin de Turno → Pasivas Fin de Turno",
+        "Pasivas Fin de Turno → Fin de Activas",
+        "Fin de Activas → Fin de Pasivas",
+        "Fin de Pasivas → Veneno",
+        "Veneno → Pasivas (verde)",
+        "Pasivas (verde) → Costo",
+        "Costo → Pasivas Rápidas",
+        "Pasivas Rápidas → Pasivas (rojo)",
+        "Pasivas (rojo) → Reemplazo",
+        "Reemplazo → bucle retorno",
+        "Descansos → Inicio del Turno Rival"
+      ]
+    },
+    "pasar_turno": {
+      "name": "Pasar Turno (flujo horizontal alternativo)",
+      "note_structural": "P5 clarificación: este flujo NO es una caja lateral de Fase Previa; es un FLUJO HORIZONTAL INDEPENDIENTE que corre en paralelo al turno normal, activándose desde Fase Previa y terminando en Fin de Turno. Su función: permitir al jugador 'pasar turno' activando solo efectos con condición/costo de pasar turno.",
+      "position": "paralelo al turno principal, no lateral",
+      "nodes": [
+        {
+          "label": "PASAR TURNO",
+          "color": "rosa",
+          "shape": "óvalo",
+          "category": "entrada",
+          "note": "Nodo de entrada al flujo"
+        },
+        {
+          "label": "Revelar cartas: únicamente cartas con costo y/o Pasivas que indiquen pasar turno.",
+          "color": "cian",
+          "category": "declaracion"
+        },
+        {
+          "label": "Sólo 1 costo que requiera pasar turno se considera PAGADO",
+          "color": "rosa",
+          "shape": "óvalo",
+          "category": "accion",
+          "note": "NODO NUEVO descubierto en P5 — faltaba en v1/v2"
+        },
+        {
+          "label": "Pasivas que requieren pasar turno",
+          "color": "cian",
+          "category": "declaracion"
+        },
+        {
+          "label": "Costo",
+          "color": "rosa",
+          "category": "accion"
+        },
+        {
+          "label": "Pasivas Rápidas",
+          "color": "amarillo",
+          "category": "rival"
+        },
+        {
+          "label": "Pasivas",
+          "color": "rojo",
+          "category": "resolucion"
+        },
+        {
+          "label": "Reemplazo",
+          "color": "rosa",
+          "category": "accion"
+        },
+        {
+          "label": "Fin de Turno",
+          "color": "rosa",
+          "shape": "óvalo",
+          "category": "accion",
+          "note": "Conecta al flujo principal Fin de Turno"
+        }
+      ],
+      "edges": [
+        "PASAR TURNO → Revelar cartas (pasar turno)",
+        "Revelar cartas (pasar turno) → Sólo 1 costo pagado (rosa)",
+        "Sólo 1 costo pagado → Pasivas que requieren pasar turno",
+        "Pasivas que requieren pasar turno → Costo",
+        "Costo → Pasivas Rápidas (amarillo)",
+        "Pasivas Rápidas (amarillo) → Pasivas (rojo)",
+        "Pasivas (rojo) → Reemplazo",
+        "Reemplazo → Fin de Turno (rosa)",
+        "Pasivas que requieren pasar turno → Fin de Turno (directo)"
+      ]
+    }
+  },
+  "structural_observations": [
+    "El patrón [Declaración → Costo → Pasivas Rápidas → Resolución → Reemplazo] se repite en casi todas las fases principales",
+    "El rival interactúa principalmente mediante color amarillo (Revelar, Activa Rápida Rival, Veneno, Pasivas Rápidas en Pasar Turno)",
+    "'Reemplazo' es ROSA (Acción) en todas las fases, no verde (corrección clave del pass 3)",
+    "Fase de Batalla es la más compleja: 'Costo y/o Quemadura' bifurca a 3 nodos simultáneos",
+    "'Descansos' es el último nodo antes del cambio de turno",
+    "Pasar Turno es un flujo horizontal completo paralelo al turno principal, con nodos propios y entrada/salida específica"
+  ],
+  "spot_check_log": {
+    "questions_answered": [
+      {
+        "id": "P1",
+        "question": "Color de Reemplazo",
+        "answer": "rosa (acción)",
+        "confirmed_by": "Ramsés (imagen)"
+      },
+      {
+        "id": "P2",
+        "question": "Caja lateral Fase Post",
+        "answer": "NO tiene caja lateral (Judge-C se equivocó)",
+        "confirmed_by": "Ramsés (imagen)"
+      },
+      {
+        "id": "P3",
+        "question": "Pasivas Rápidas en Pasar Turno",
+        "answer": "amarillo (efectos del rival)",
+        "confirmed_by": "Ramsés (imagen)"
+      },
+      {
+        "id": "P4",
+        "question": "Costo y/o Quemadura salida",
+        "answer": "BIFURCA a 3: Revelar, Reemplazo, Activa Rápida Rival",
+        "confirmed_by": "Ramsés"
+      },
+      {
+        "id": "P5",
+        "question": "Cajas laterales Fase Previa",
+        "answer": "NO hay cajas laterales; lo que parecía era el flujo horizontal de Pasar Turno",
+        "confirmed_by": "Ramsés (imagen)"
+      }
+    ]
+  },
+  "corrections_log": [
+    {
+      "date": "2026-04-19T00:29:29.843988",
+      "fix": "Pasivas Opcionales (primera instancia) corregido de 'verde' a 'cian' — según imagen Fase Previa enviada por Ramsés",
+      "source": "Ramsés P5 clarification + Fase Previa image"
+    },
+    {
+      "date": "2026-04-19T00:33:18.323029",
+      "source": "Ramsés — 6 imágenes segmentadas por fase",
+      "corrections": [
+        "Fase Batalla: Revelar = amarillo ÓVALO",
+        "Fase Post: 'Exinción' typo verbatim (sin c)",
+        "Fin Turno: Veneno = ROSA (acción), no amarillo (corrección crítica)",
+        "Múltiples shapes corregidos a 'óvalo' en Costo, Reemplazo, Descansos, Veneno, Costo Fin Turno",
+        "INICIO DEL TURNO RIVAL agregado como nodo gris rectángulo"
+      ]
+    },
+    {
+      "date": "2026-04-19T00:36:41.855077",
+      "fix": "Agregada sección structural_semantics con clarificación de Ramsés sobre la naturaleza del flowchart",
+      "source": "Ramsés — explicación estructural con leyenda canónica"
+    }
+  ],
+  "structural_semantics": {
+    "note": "Clarificación semántica por Ramsés (2026-04-18)",
+    "principle": "Las secciones del diagrama NO son fases del turno aisladas; son diagramas de flujo donde UNA fase puede contener múltiples etapas/pasos del mismo tipo (color) en paralelo.",
+    "implications": [
+      "En Fase Previa hay varias \"Declaraciones\" (cian) simultáneas: Revelar Cartas + Pasivas Opcionales",
+      "En Fase de Batalla hay varias \"Declaraciones\" simultáneas: Daño, Activas, Activas Rápidas, Vínculo Odémico",
+      "El color indica la NATURALEZA del paso (declaración, acción, resolución, etc.), no su posición secuencial única",
+      "Un paso puede bifurcar a múltiples pasos del mismo color (ej. Pasivas Rápidas → Pasivas rojo + Pasivas Opcionales rojo)",
+      "El flujo es un grafo dirigido, no una lista lineal"
+    ]
+  }
+}
