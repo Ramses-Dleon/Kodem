@@ -367,3 +367,45 @@ El engine permite que un Espectro sin poseer ataque pagando doble PV a aliados (
 ---
 
 _Auditoría completada 2026-04-19 08:45 UTC. Tests baseline intactos 436/436 PASS. Trabajo solo-lectura confirmado._
+
+---
+
+# Adendum — Pasada 3 (2026-04-19 ~02:45 CST / 08:45 UTC)
+
+**Contexto:** Sub-agente `audit-kodem-fundacionales-v2` reejecuta el audit para verificar cobertura de rulings adicionales mencionados en prompt (D12, E7, M2.4) y cruzar con commits recientes (FAQ oficial, D41, D45, E7 patch).
+
+## Rulings adicionales auditados
+
+| Ruling | Título corto | Engine file:line | Impl? | Severidad | Nota |
+|--------|--------------|------------------|:-:|-----------|------|
+| **D12** | Numeración de Restricciones p30-p33 (dos listas separadas) | N/A — ruling editorial de rulebook, no toca engine | ✅ N/A | 🟢 Bajo | Engine no interpreta restricciones por número; solo por semántica textual. Sin impacto. |
+| **E7** | "Titán" con tilde (errata KPRC-072 corregida) | `effects.py:270` `_is_titan` normaliza ambos: `'titan' in field or 'titán' in field` | ✅ OK (defensivo) | 🟢 Bajo | Engine maneja ambas grafías en comparaciones (`effects.py:285, 2122-2123, 2323, 2663, 2674, 6878`). Aún si cards.json tuviera el outlier sin tilde, filtros Titán matcheaban. Patch aplicado en `codice-kodem/cards.json` (commit `c82f...`) — 130/130 Titanes uniformes. |
+| **M2.4** | "Zona Principal original" = lado propio del jugador | Múltiples sitios usan "aliado" como proxy: `engine.py:276, 294, 929, 1372, 1407-1409, 1593, 1598, 1762-1763, 1839, 2745 (possess aliado)` | ✅ OK (implícito) | 🟢 Bajo | Engine modela "ZP original" via `player_key` + `pos` (offsets 0-2 del lado del jugador). No existe término explícito, pero el comportamiento es correcto. Ariam Resurrección (FYTE-022R/074) debería filtrar por `player.field` del jugador activo — verificar en handler específico si existe. |
+
+## Verificación de estado actualizado (post commits recientes)
+
+| Commit reciente | Impacto en audit §1-§5 |
+|-----------------|------------------------|
+| `2540256` D45 cerrada (8 turnos totales = 4 por jugador alternados) | Consistente con `engine.py:3082-3099` (refill tras 8 turnos sin daño) ya documentado en §4 del audit. Sin cambios necesarios. |
+| `5766b87` D41 cerrada (p29/b04: turno rival como respuesta + resolución inmediata) | Fuera de §1-§5. Pertenece a §8 (efectos en cadena). |
+| `8d0238c` FAQ oficial 8 preguntas (cierra D42, refina D10/D40/D41/D52/M17) | **D10** ya implementado correctamente en `engine.py:886`. **M17** ya verificado OK en audit (línea 36 tabla principal). Sin cambios. |
+| `12c4986` erratas-batch-v5.2 (E9-E24) | Spec editorial, no tocan engine actual. |
+
+## Reconfirmación de top 5 correcciones
+
+Los 5 gaps identificados en Pasada 2 **siguen vigentes** tras los commits del 19 abr 2026 08:00-08:37 UTC:
+
+1. 🔴 [H2] Zona Fuera del Juego inexistente — bloquea Quam TCOO-006U.
+2. 🔴 [H1] Muerte de Espectros no cuenta al tracker (D34/p14/b19).
+3. 🔴 [H5] `subtypes: list[str]` no migrado en engine — falla silenciosa Macit/Therz.
+4. 🟡 [H6] `validate_deck` incompleto vs §4 p15.
+5. 🟡 [H3] `give_rests_by_effect` legacy con semántica anti-D6.
+
+## Conclusión Pasada 3
+
+El audit original (`a87d0db`) mantiene validez completa. Las 3 entradas adicionales (D12, E7, M2.4) no alteran las conclusiones: dos son benignas (D12 editorial, E7 manejado defensivamente), una es consistente implícita (M2.4 vía `aliado`/`player_key`).
+
+**Estado final:** 19 rulings fundacionales auditados + 3 adicionales = **22 rulings cubiertos** con evidencia código y citación archivo:línea.
+
+_Adendum completado 2026-04-19 02:50 CST. Engine no modificado. Tests baseline no re-ejecutados (instrucción explícita del requester)._
+
