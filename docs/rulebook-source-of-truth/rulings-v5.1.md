@@ -1443,3 +1443,99 @@ FAQ-05 oficial lo confirmó para el caso de dos Activas-Rápidas: la segunda esp
 
 **Registro Supabase:** tabla `kodem_duda_respuestas`, respuesta id `73cdccc5-3bd3-4f41-80a5-6a0d300e0201`, opción `ocho_totales`, respondent `Hule`.
 
+
+
+---
+
+### D25. Hori, Huella de Magma — Costo de Extinción: errata, aplica a TODAS las variantes — CERRADA
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad — Hule vía Supabase)
+
+**Pregunta original:** SRMR-006 (Super Rara) tiene Costo de Extinción *"Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Pírico en campo"*. Las otras 3 variantes (EXPO-0006, IDRMP-001, KPRC-022) no lo tienen documentado en `cards.json`. ¿Es errata o diseño deliberado por rareza?
+
+**Ruling (Hule, 2026-04-19 06:13 UTC, opción `errata`):**
+> *"En realidad solo no se mapeo el costo del ocr o llm-vision, buen catch."*
+
+**Implicación:**
+- El costo de Extinción es una propiedad de la carta "Hori, Huella de Magma", no de la rareza.
+- Aplica a **las 4 variantes**: EXPO-0006, IDRMP-001, KPRC-022, SRMR-006.
+- `cards.json` se actualizó copiando el `cost_text` de SRMR-006 a las otras 3 (2026-04-19 17:30 UTC).
+- Mismo patrón sospechado en Nozi y Zaren SR — pendiente validación similar en siguiente iteración.
+
+**Registro Supabase:** respuesta id `(Hule D25)`, opción `errata`, 2026-04-19 06:13 UTC.
+
+
+---
+
+### D29. Carta lore puro (sin efecto ni costo) — CERRADA
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad — Hule vía Supabase)
+
+**Pregunta original:** Existen cartas en `cards.json` sin `effect_text` ni `cost_text`. ¿Edge case válido del diseño o gap de extracción?
+
+**Ruling (Hule, 2026-04-19 07:03 UTC, opción `lore`):**
+> *"Seguro es derivado del procesamiento que has hecho antes para clarificar cartas. Pero es básicamente una carta sin efecto o costo."*
+
+**Implicación:**
+- Cartas lore puro son válidas por diseño (edge case legítimo).
+- El engine no necesita inventar efectos para estos folios — se resuelven como Adendei/Espectros/etc. con solo stats de combate (vida, daño, descansos).
+- No son gaps de OCR; son carta intencionalmente vacías de texto de reglas.
+
+
+---
+
+### M6. "Descansos indicados" en Xakros, Peste — VALOR BASE IMPRESO — CERRADA
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad — Hule vía Supabase)
+
+**Pregunta original:** *"Todos los Adendei en el campo reciben descansos iguales a los indicados en su respectiva carta"* (Xakros, Peste — IDRMP-022, RAMI-007, RMR-017). ¿"Indicados" = valor base impreso en carta o descansos actuales acumulados?
+
+**Ruling (Hule, 2026-04-19 06:35 UTC, opción `base`):** **Valor base impreso** (estadística original de la carta).
+
+**Implicación:**
+- Cuando se resuelva el efecto de Xakros Peste, el engine debe leer `fc.base_rests` (valor impreso), NO `fc.rests` (valor dinámico en juego).
+- Esto previene combos abusivos con efectos que reducen/incrementan descansos temporalmente.
+- **Implementación:** cuando se añada handler para Xakros Peste en `effects.py`, referenciar `base_rests` del `Card` (vía `get_card(fc.folio).rests`), no del `FieldCard`.
+
+**Registro Supabase:** respuesta id `(Hule M6)`, opción `base`, 2026-04-19 06:35 UTC.
+
+
+---
+
+### M11. Orden de resolución de efectos simultáneos en ZP — IZQUIERDA → CENTRO → DERECHA — CERRADA
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad — Hule vía Supabase)
+
+**Pregunta original:** Cuando múltiples cartas en ZP tienen efectos disparados simultáneamente por el mismo trigger, ¿en qué orden se resuelven?
+
+**Ruling (Hule, 2026-04-19 06:38 UTC, opción `izq_centro_der`):** **Izquierda (pos 1) → Centro (pos 2) → Derecha (pos 3)**.
+
+**Implicación:**
+- `FieldCard.pos ∈ {1, 2, 3}` donde 1=izquierda, 2=centro, 3=derecha (convención ya establecida en `_make_field_card` del engine).
+- El dispatcher `check_passive_triggers` itera `player.field` en orden natural (list iteration), que por construcción respeta 1→2→3. **M11 ✅ satisfecho por construcción.**
+- Test de regresión defensivo: `tests/regression/test_m11_field_order_izq_centro_der.py` valida que no se introduzcan `sort/reverse` sobre `player.field` en el dispatcher.
+- Combinado con M22/p29/b06: primero jugador en turno resuelve izq→centro→der, luego oponente izq→centro→der.
+
+**Registro Supabase:** respuesta id `(Hule M11)`, opción `izq_centro_der`, 2026-04-19 06:38 UTC.
+
+
+---
+
+### E7. Grafía `Átlico` en cards.json — convivencia por normalización — CLARIFICACIÓN
+
+**Fecha:** 2026-04-19 | **Status:** 🟢 CLARIFICADA (complementa D26, no la contradice)
+
+**Pregunta original:** ¿Variantes con `Átlíco` (doble tilde) vs `Átlico` (una tilde) en `cards.json` son errata?
+
+**Ruling (Hule, 2026-04-19 06:44 UTC, opción `convivencia`):**
+> *"En cards.json maneja a todas sin acento según yo. Es un error de tu lectura de la carta, si revisas con visión SI tiene tilde."*
+
+**Relación con D26 (ruling Ramsés, grafía oficial `Átlico`):**
+- **No hay divergencia real.** Son dos niveles distintos:
+  - **D26 (Ramsés):** grafía canónica oficial del rulebook impreso y en cartas físicas = `Átlico` (una tilde).
+  - **E7 (Hule):** en `cards.json`, los textos están normalizados sin acentos (`Atlico`) por requerimiento del engine. La inconsistencia percibida entre variantes viene de lectura mixta con/sin acentos; el archivo técnico usa la forma sin tilde uniformemente.
+- **Fuente de verdad ortográfica:** rulebook v5.1 (con acentos correctos).
+- **Fuente de verdad técnica:** `cards.json` (sin acentos por normalización).
+- **Pendiente v5.2:** documentar formalmente las 8 Energías en glosario con grafía canónica + nota sobre normalización en `cards.json`.
+
+
