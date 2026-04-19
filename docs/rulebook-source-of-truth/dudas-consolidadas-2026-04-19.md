@@ -722,6 +722,40 @@ Lista de IDs originales fusionados o descartados, con razón y nuevo ID resultan
 | D49 | v3-P2-M18 + v3-P3-D36 | Pasivas en Fase de Batalla (contradicción p19/p17) + Cartas tomadas Fase Post |
 | D50 | v2-M15 + v3-P2-M19 | Token-Feral/Lítico + Rava condiciones Fase Previa |
 | D51 | v3-P3-D37 | Formato Multijugador — cartas con "jugador(es)" |
+| D52 | ad-hoc 2026-04-19 07:25 (Ramsés screenshot) | Zaykan, Citadel — "todos los Adendei-Átlico en el campo" ¿incluye aliados y a sí misma? |
+
+---
+
+## D52. Zaykan, Citadel — "todos los Adendei-Átlico en el campo"
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Abierta | **Origen:** Ramsés envió screenshot de la carta física TCOO-036 (2026-04-19 07:25 UTC) como caso concreto que el consolidado no cubría.
+
+**Carta:** Zaykan, Citadel (TCOO-036 / TCEO-036 / ISPMR-010 / PRKD-2022-02) — Adendei-Átlica, 1/0.
+
+**Texto:** *"Activa: Si esta carta ataca, daña 1 pto. adicional a todos los Adendei-Átlico en el campo."*
+
+**Problema:** El efecto no especifica "aliados", "rivales", ni "excepto esta carta". Lectura literal incluiría:
+1. Adendei-Átlicos rivales (objetivo esperado del daño adicional)
+2. Adendei-Átlicos aliados en ZP propia (friendly fire)
+3. La propia Zaykan, Citadel (auto-daño al ser Átlica)
+
+**Comparación con el pool — convenciones canon observadas:**
+- FYTE-008U/077 "Ariam Resurgimiento": *"todos los Adendei 'Ariam' **aliados**"* — usa *aliados* explícito para restringir a campo propio.
+- FYTE-025 "Ketzz, Frias Escamas": *"tus Adendei-Gélido **aliados**"* — idem.
+- KPRC-018 "Zaykan, Cambio de Energía": *"todos los Adendei **rivales** serán considerados..."* — restringe a rivales.
+- **Zaykan Citadel**: NINGUNA marca → ¿omision intencional o errata?
+
+**Cartas implicadas:** 4 reimpresiones del mismo efecto (TCOO-036, TCEO-036, ISPMR-010, PRKD-2022-02).
+
+**Opciones de ruling:**
+1. **Literal:** Afecta a TODOS los Adendei-Átlicos del campo, incluyendo aliados y a sí misma — auto-daño obligatorio de 1 pto a sí misma + 1 pto a cada Átlico aliado + 1 pto a cada Átlico rival. Carta de alto costo de juego.
+2. **Restrictivo a rivales (convención silente):** Por lógica de diseño "Citadel" como Adendei ofensivo, "en el campo" se interpreta como "en el campo rival". La Zaykan no se daña a sí misma ni a aliados. Errata de redacción en texto impreso (falta "rivales").
+3. **Excluye la propia carta:** Afecta a todos los Átlicos del campo aliados + rivales, pero por regla implícita no se daña a sí misma. Equivalente al patrón de Hypex Rey (*"que no sea 'Hypex, Rey'"*) pero no escrito.
+4. **Modificador de "atacar":** "Si esta carta ataca" dispara el efecto sobre el objetivo del ataque y sus Adendei-Átlicos adyacentes o en misma zona; no es un pulso global sino un AoE centrado en el ataque.
+
+**Impacto:** Si es lectura 1 (literal), la carta es potencialmente injugable en mazos mono-Átlico. Si es lectura 2 o 3, es una carta poderosa anti-arquetipo.
+
+**Sugerencia v5.2:** Especificar "aliados", "rivales" o "excepto esta carta" en todos los efectos de área para eliminar ambigüedad sistémica. Este ruling puede establecer precedente para otras cartas con fraseo similar.
 
 ---
 
