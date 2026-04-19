@@ -1390,3 +1390,35 @@ Las siguientes dudas siguen abiertas pero fueron refinadas con evidencia encontr
 **Cartas con errata actualizada en cards.json:** 5 (Bomba de Clorofila, Nirge, Ulmor, Kumba, Uragg).
 **FAQ oficial integrado:** 7 respuestas (03-07 refinaron dudas del portal, 01-02 agregaron reglas generales).
 
+
+---
+
+### D41. Activas-Rápidas — ventana de uso en turno rival — CERRADA
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (por p29/b04 del master rulebook)
+
+**Pregunta original:** ¿Cuándo exactamente puede declararse una Activa-Rápida en turno rival? (¿ventana abierta, sólo Fase de Batalla, o análoga a Pasivas-Rápidas?)
+
+**Evidencia directa:** p29/b04 (§6.7.1 Activas):
+> *"Las **Activas-Rápidas** funcionan igual que las Activas, pero **también** se pueden usar durante el turno del rival (como respuesta) y **se resuelven tan pronto son declaradas**."*
+
+(Negritas originales del rulebook en: Activas-Rápidas, también, se resuelven tan pronto son declaradas.)
+
+**Ruling:**
+- La ventana es **abierta durante TODO el turno rival**, siempre que exista una acción-respuesta disponible ("como respuesta" implica que reactúa a algo del turno rival).
+- La resolución es **inmediata** al declararla. No espera ventana de respuesta del rival.
+- Es funcionalmente equivalente a una Activa regular + extensión al turno rival.
+
+**Orden de múltiples Activas-Rápidas simultáneas:** aplica por extensión la regla de p29/b06 para Pasivas (ver entrada M22):
+> *"el jugador en turno tiene prioridad para la declaración y resolución de una Pasiva y posteriormente se intercalarán las declaraciones y resoluciones de una Pasiva por jugador."*
+
+FAQ-05 oficial lo confirmó para el caso de dos Activas-Rápidas: la segunda espera a que resuelva la primera (no hay "cadena" tipo MTG).
+
+**Implicaciones:**
+- No hay fase restringida. Un jugador puede declarar Activa-Rápida en cualquier subfase del turno rival.
+- La declaración misma ya ejecuta el efecto (no hay ventana de intervención intermedia para el oponente).
+- Entre dos Activas-Rápidas disparadas simultáneamente, el jugador en turno (el rival de quien la usa como respuesta) tiene prioridad.
+
+**Sugerencia v5.2:** p29/b04 ya es clara. Únicamente formalizar en glosario:
+> **Activa-Rápida:** Efecto Activo con los mismos costos y consecuencias de descanso que una Activa regular, pero utilizable en cualquier momento del turno rival como respuesta. Se resuelve inmediatamente al declararla. Ante declaraciones simultáneas, el jugador en turno tiene prioridad.
+

@@ -5,9 +5,9 @@
 
 ---
 
-## 13 Dudas abiertas (portal en vivo)
+## 12 Dudas abiertas (portal en vivo)
 
-### 🔴 Reglas con ambigüedad jugable (9)
+### 🔴 Reglas con ambigüedad jugable (8)
 
 | ID | Título | Contexto nuevo aportado hoy |
 |----|--------|------------------------------|
@@ -17,7 +17,7 @@
 | **D36** | Múltiples Espectros en posesión simultánea | D21 clarificó atomicidad. Duda residual: pool compartido de Extinción. |
 | **D37** | Tlahuelpuchi bloqueando posesión | D21 implica bloqueo total por atomicidad. Duda residual: si cartas ya en Extinción son poseibles sin sacrificio. |
 | **D40** | Tzun Heraldo: ataque múltiple — descansos y ventanas | Sin ruling previo. FAQ-03 refinó que cada ataque es condición independiente. |
-| **D41** | Activas-Rápidas: ventana de uso y prioridad | FAQ-05 dijo resuelven inmediato. Duda residual: ventana de legalidad. |
+(D41 CERRADA 08:02 UTC por p29/b04 - ver rulings-v5.1.md)
 | **D43** | Pasivas Opcionales vs Generales — criterio visual | Sin ruling previo. Criterio "sin negrita" vs explícito. |
 | **D52** | Zaykan + Citadel: interacción con Ciudad | Pendiente ruling de diseño. |
 
@@ -32,7 +32,7 @@
 
 ---
 
-## 6 Dudas cerradas hoy (08:00 UTC)
+## 8 Dudas cerradas hoy (08:00 UTC)
 
 | ID | Cerrada por | Razón |
 |----|-------------|-------|
@@ -43,6 +43,7 @@
 | D38 | Ruling Ramsés (Supabase) | Límite 2 descansos aplica a Espectros igual que Adendei |
 | D39 | §D16+§D20 | Ruk copia = snapshot único (principio meta) |
 | D44 | §M4+§D17 | HandTraps negables salvo declaración explícita |
+| D41 | p29/b04 | Ventana abierta en turno rival + resolución inmediata |
 
 ---
 
