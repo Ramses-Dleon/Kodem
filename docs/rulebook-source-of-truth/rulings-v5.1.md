@@ -739,4 +739,52 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 **Estado emocional/técnico:** sesión larga y fructífera. 23/26 dudas resueltas (D1-D24 menos D21, D22, D25, D26). 3 sub-agentes completaron sin timeouts. Ramses satisfecho con el flujo de preguntas + documentación paralela. No hay blockers.
 
 ---
-_Plan actualizado: 2026-04-19 03:25 UTC — cierre de sesión nocturna._
+
+## M4. "Efectos de cartas tomadas" — HandTraps
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO
+**Fuente:** Ramsés D'León, Telegram grupo Logos: Kodem (msg 23462, 06:25 UTC).
+
+**Ruling (verbatim):** *"Se le conocen como HandTraps. El efecto de KPRC-017 y KPRC-037 son ejemplo."*
+
+### Definición formal
+
+**HandTrap** = carta con un efecto disparable **al momento en que es tomada del Mazo** (al ser robada), antes de añadirse a la mano del jugador.
+
+El patrón textual camónico es:
+> *"Pasiva: Si esta carta es tomada del Mazo, puedes [revelarla/mostrarla] y [efecto]."*
+
+También existe la variante activa:
+> *"Pasiva: Si tomas esta carta de tu Mazo, puedes revelarla y [efecto]."* (Kap, Lluvia de Ranas)
+
+### Implicancias
+
+- El efecto HandTrap **se dispara durante el reemplazo de cartas** (p20/b08 "efectos válidos al ser tomadas, una vez por cada reemplazo"). Esto alinea el término comunidad con la regla formal del rulebook.
+- HandTrap = familia de efectos "al ser tomada". No hay mecánica adicional; es nombre de patrón, no nueva regla.
+- Cartas que se protegen de HandTraps (ej. Nirge Los Ocultos FAFT-001 / KPRC-030) impiden el disparo de estos efectos.
+
+### Cartas identificadas (12 nombres únicos, 21 variantes)
+
+| Carta | Folios (variantes) | Efecto HandTrap |
+|---|---|---|
+| Ariam, Escudo de Cempasúchil | FYTE-004U, FYTE-030 | Protege 1 carta en campo hasta el fin del siguiente turno |
+| Kap, Lluvia de Ranas | KPRC-017 | Cura 3 pts a tu Protector |
+| Kaykac, Sorpresa Pírica | TCOO-007S, TCOO-039 (+ [ENGLISH] TCEO-007S, TCEO-039) | Quema 1 carta rival |
+| Kuron, Exhalación | TCOO-009S, TCOO-054 (+ [ENGLISH] TCEO-009S, TCEO-054) | Da 1 descanso hasta a 2 Adendei rivales |
+| Nepthis, Rey Coral | KPRC-037 | Cura 2 pts a 1 carta y 1 pt a un Adendei |
+| Rhymir, Pararrayos | TCOO-004U, TCOO-051 (+ [ENGLISH] TCEO-004U, TCEO-051) | Actualiza 1 descanso de hasta 2 cartas aliadas |
+| Yailok, Contacto Paralizante | TCOO-016R, TCOO-050 (+ [ENGLISH] TCEO-016R, TCEO-050) | Niega el efecto de 1 carta en el campo hasta Fin del Turno |
+| Zinawe, Vacío Etéreo | KPRC-072 | Envía 1 Adendei aliado al fondo del Mazo y se coloca en su lugar |
+
+### Preguntas derivadas (abiertas)
+
+- ¿Un HandTrap puede ser negado por efectos en campo en el momento de dispararse? (relacionado con D31)
+- Si el rival está reemplazando cartas y toma 3 a la vez (regla estándar), ¿cuántos HandTraps puede activar? Regla rulebook p20/b08: *"una vez por cada reemplazo"* → si son HandTraps distintos, uno por carta tomada.
+- Cartas que se protegen (Nirge, Los Ocultos) — ¿bloquea TODOS los HandTraps o solo los del rival?
+
+**Sugerencia para v5.2:** añadir al glosario §9:
+> **HandTrap:** Carta cuyo efecto Pasivo se dispara al ser tomada del Mazo. Se revela/muestra al momento del reemplazo (§ReemplazoDeCartas) y resuelve antes de continuar con el turno. Ver p20/b08 para la regla general de "efectos válidos al ser tomadas".
+
+---
+_Plan actualizado: 2026-04-19 06:25 UTC — ruling M4 HandTraps agregado._

@@ -176,15 +176,21 @@ Texto:
 
 ---
 
-## M4. "Efectos de cartas tomadas"
+## M4. "Efectos de cartas tomadas" — ✅ RESUELTO 2026-04-19
 
-**Cartas que se protegen explícitamente contra esta categoría:**
+**Ruling:** "Efectos de cartas tomadas" = **HandTraps** (término comunidad). Son cartas con efecto Pasivo que se dispara al ser tomadas del Mazo durante el reemplazo de cartas, antes de añadirse a la mano.
+
+**Ejemplos canonicos (Ramsés):** KPRC-017 (Kap, Lluvia de Ranas) y KPRC-037 (Nepthis, Rey Coral).
+
+**Población total:** 12 cartas únicas, 21 variantes. Ver `rulings-v5.1.md` §M4 para tabla completa.
+
+**Patrón textual:**
+- *"Pasiva: Si esta carta es tomada del Mazo, puedes [revelarla/mostrarla] y [efecto]."*
+- Variante: *"Si tomas esta carta de tu Mazo, puedes revelarla y [efecto]."* (Kap)
+
+**Cartas que se protegen contra HandTraps:**
 - **FAFT-001** / **KPRC-030** — Nirge, Los Ocultos
 - **FYTE-005S** (Zaykan, Lagarto Fantasma)
-- **FYTE-010** (sin nombre exacto verificado; probable del set FYTE)
-
-**Duda:**
-El rulebook no define qué es un "efecto de carta tomada". ¿Qué hace que un efecto pertenezca a esa categoría?
 
 ---
 
