@@ -1273,3 +1273,120 @@ No hay contradicción real; la ambigüedad es puramente de lectura.
 ---
 
 _M15–M23 documentados como tentativos 2026-04-19 07:35 UTC. Esperan confirmación final de Ramsés para promoción a ✅ RESUELTO._
+
+---
+
+## SESIÓN 08:00 UTC — Rulings derivados de FAQ oficial + cross-check portal
+
+Después de integrar el FAQ oficial (7 respuestas) al addendum, Ramsés pidió releer rulings-v5.1.md y validar si dudas abiertas en el portal comunidad ya estaban resueltas. Se identificaron **6 cierres por rulings pre-existentes** + **1 cierre nuevo por Ramsés** + **4 refinamientos**.
+
+---
+
+### D33. Espectro atacar sin carta poseída — usa regla del rulebook directa
+
+**Fecha:** 2026-04-19 | **Status:** 🟡 Parcial (evidencia encontrada)
+
+**Cartas:** Todas las Espectro FYTE (28 cartas)
+
+**Evidencia directa:** p14/b16 bullet 6:
+> *"Si una carta Espectro no tiene poseída a una carta para causar daño, deberá pagar el doble de puntos de vida a las cartas aliadas en su Zona Principal original por cada punto de daño que intente infligir."*
+
+**Lo que está claro:** SÍ puede atacar sin carta poseída. El costo es pagar doble vida aliada por cada punto de daño.
+
+**Lo que queda abierto (portal D33):** ¿Ese ataque dispara triggers "si esta carta ataca"? FAQ-03 dijo que un ataque NEGADO no dispara triggers (no sucedió). Por simetría, un ataque que SÍ ocurre (aunque sea pagando vida aliada) debería disparar triggers. Pero no hay texto explícito.
+
+**Resuelve:** que el Espectro puede atacar sin poseer (opción 2 del portal original era correcta).
+**Queda abierto:** disparo de triggers en ese modo especial.
+
+---
+
+### D34. Espectros en conteo de victoria — CERRADA
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (deriva de D21 + D22)
+
+**Pregunta original:** Al morir un Espectro, ¿cuenta como 1 o 2 cartas enviadas a Extinción (Espectro + Adendei poseído)?
+
+**Ruling:** D21 estableció que Espectro + Adendei poseído se envían AMBOS a Extinción cuando el Espectro muere. Ambas cartas son "cartas enviadas a Extinción" a efectos del conteo hacia la victoria (10 cartas = victoria, p15/b12).
+
+**Implicación:** matar un Espectro en posesión vale 2 cartas para el tracker de victoria.
+
+---
+
+### D35. Efecto propio del Espectro + efecto de la poseída — CERRADA
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (por p14/b16 bullet 4)
+
+**Evidencia directa:** p14/b16 bullet 4:
+> *"El Espectro deberá usar su propio Efecto, así como el Efecto, Daño, Descanso, Costo y Energía de la carta Poseída como si fueran suyos. Sin embargo, no se considera que el efecto esté siendo copiado."*
+
+**Ruling:** El Espectro aplica SU propio efecto Y TAMBIÉN el efecto de la poseída. Son aditivos, no excluyentes. Por eso el Espectro puede tener una Pasiva propia (ej. Ariam Axoloespectro) Y además disparar la de la Rava poseída.
+
+**Implicación para D39 (Ruk):** confirma que Ruk tiene Pasiva propia ("copia la Pasiva y costo de 1 Rava") Y además hereda la Pasiva de la Rava poseída. Son 2 Pasivas activas en el Espectro.
+
+---
+
+### D38. Límite de descansos aplica a Espectros — CERRADA por Ramsés
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling Ramsés en Supabase)
+
+**Pregunta:** ¿El límite general de 2 descansos máximos se aplica a Espectros (que a veces tienen stats altas de descanso impresas)?
+
+**Ruling Ramsés:** El límite aplica **igual a Espectros que a Adendei**. No hay excepción por tipo de carta.
+
+**Implicación:** cartas como Kumba (LGRO-033, que es Adendei con efectos basados en descansos) o cualquier Espectro con stat alta de descansos quedan sujetos al techo de 2.
+
+---
+
+### D39. Ruk Espectro Draconiano — snapshot único aplica — CERRADA
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (deriva de D16 + D20)
+
+**Pregunta original:** ¿Cómo funciona la doble Pasiva de Ruk (hereda de poseída + copia su propia Pasiva)?
+
+**Ruling aplicable:**
+1. D20 explícitamente menciona: *"la mecánica de copia de Ruk sigue D16 (snapshot único)"*.
+2. D16 estableció: toda copia de Pasiva/stats es **snapshot único** al momento de invocación; no hereda cambios posteriores.
+3. D35 confirma: el Espectro usa efecto propio + efecto de la poseída (aditivo).
+
+**Implicación resuelta:**
+- Ruk posee 1 Rava de Extinción → hereda SU Pasiva (por regla Espectro).
+- La Pasiva propia de Ruk ("copia Pasiva y costo de 1 Rava") → apunta a una Rava en Extinción (puede ser otra distinta a la poseída; snapshot único al momento de copiar).
+- Si la Pasiva copiada es idéntica a la heredada (misma Rava), ambas fuentes apuntan al mismo efecto pero son instancias separadas que se apilan según reglas generales de apilación de efectos.
+
+**Queda abierta duda de producto:** si 2 inmunidades apiladas cubren 2 ataques o 1 (regla general de apilación, no específica a Ruk).
+
+---
+
+### D44. HandTraps — tensión entre D17 y negación — CERRADA
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (deriva de M4 + D17)
+
+**Pregunta:** ¿Cómo conviven HandTraps con efectos "no pueden ser negados"?
+
+**Ruling:**
+- M4 estableció formalmente HandTraps como patrón de p20/b08 (efectos "al ser tomada").
+- D17 estableció principio meta: *"el efecto de una carta supercede reglas generales cuando lo declara explícitamente"* (p20/b10).
+- Por tanto: una HandTrap puede ser negada por efectos generales de negación (Nirge Los Ocultos, Yailok Contacto Paralizante, etc.) EXCEPTO si la carta declara explícitamente "esta Pasiva no puede ser negada" (ej. Makua Venganza Abisal — no es HandTrap pero sigue la lógica).
+
+**Implicación:** no hay tensión sistémica. Cada HandTrap se evalúa caso por caso según su texto específico.
+
+---
+
+### Refinamientos aplicados al portal comunidad
+
+Las siguientes dudas siguen abiertas pero fueron refinadas con evidencia encontrada al releer rulings existentes:
+
+- **D30** (Virste Reseteo): M14 ya confirmó "original" = valor impreso base. Primera opción cerrada. Duda residual: si "estadísticas" incluye marcas, energía/subtipo, efectos copiados.
+- **D36** (múltiples Espectros posesión simultánea): D21 clarificó que la posesión es atómica. Duda residual: si el pool de Extinción se comparte entre Espectros del mismo tipo.
+- **D37** (Tlahuelpuchi bloqueando posesión): D21 implica que como la posesión es atómica (sacrificio + vivificación = 1 acción), bloquear el sacrificio bloquea toda la acción. Queda abierta la alternativa de que cartas ya en Extinción puedan poseerse sin pagar sacrificio.
+
+---
+
+### Métricas sesión 2026-04-19
+
+**Dudas totales tracked en sesión:** 52 dudas iniciales (auditoría + consolidación).
+**Resueltas:** D1-D14, D16-D24, D27-D29, D32, D34, D35, D38, D39, D44, M2.3-M2.6, M3 parcial, M4, M6, M11, M12, M13, M14, E7, E8, M15-M23 (tentativos) = **40+ rulings**.
+**Abiertas (portal comunidad):** 13 — D30, D31, D33, D36, D37, D40, D41, D43, D45, D46, D52, M3, M5.
+**Cartas con errata actualizada en cards.json:** 5 (Bomba de Clorofila, Nirge, Ulmor, Kumba, Uragg).
+**FAQ oficial integrado:** 7 respuestas (03-07 refinaron dudas del portal, 01-02 agregaron reglas generales).
+
