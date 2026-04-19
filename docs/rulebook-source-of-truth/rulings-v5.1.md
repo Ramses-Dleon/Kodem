@@ -787,4 +787,58 @@ También existe la variante activa:
 > **HandTrap:** Carta cuyo efecto Pasivo se dispara al ser tomada del Mazo. Se revela/muestra al momento del reemplazo (§ReemplazoDeCartas) y resuelve antes de continuar con el turno. Ver p20/b08 para la regla general de "efectos válidos al ser tomadas".
 
 ---
-_Plan actualizado: 2026-04-19 06:25 UTC — ruling M4 HandTraps agregado._
+
+## M2.5. Intercambio Mazo↔Extinción (Mizthe, FYTE-075)
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO
+
+**Ruling:** En Kódem **el jugador ordena su propio mazo como le convenga** y puede **consultarlo libremente en cualquier momento**. Por tanto, para Mizthe (y cualquier otra carta que "busque" algo en el propio mazo), **el jugador mira TODO su mazo y elige**.
+
+**Implicancias:**
+- El mazo propio no es zona oculta-aleatoria al estilo MTG/YGO; es una pila **abierta para el dueño** y ordenada a voluntad.
+- El mazo rival sí es privado: un efecto que busque/manipule el mazo del rival sí requiere reglas de revelación/aleatoriedad explícitas.
+- No se "baraja" después de buscar en el propio mazo (porque nunca estuvo barajado).
+- "Fuera del Juego", "Extinción" y "Mazo propio" son las tres zonas donde el jugador tiene vista completa de su propio material.
+
+**Sugerencia para v5.2:** agregar línea en §4 (Preparación del Ecosistema) o glosario:
+> "El Mazo Principal propio puede consultarse y reordenarse libremente por su dueño en cualquier momento. No se baraja entre turnos. El mazo del rival es zona privada."
+
+---
+
+## M6. "Descansos indicados" (Xakros, Peste — IDRMP-022, RAMI-007, RMR-017)
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO (respuesta comunidad — Hule)
+
+**Ruling:** "Descansos indicados" = la **estadística BASE impresa en la carta**, no los descansos actuales acumulados.
+
+**Implicancias:**
+- Xakros aplica daño/descansos sobre el valor "rests" original del texto de carta.
+- No acumula con descansos ya gastados/recuperados durante el juego.
+- Clarifica léxico: "indicados" = impresos, no "actuales".
+
+**Sugerencia para v5.2:** distinguir en glosario:
+> **Descansos indicados:** valor base impreso en la carta.
+> **Descansos actuales:** estado de descansos de una carta específica en el campo en un momento dado.
+
+---
+
+## M11. "Frente a" como adyacencia posicional
+
+**Fecha:** 2026-04-19
+**Status:** ✅ RESUELTO (respuesta comunidad — Hule)
+
+**Ruling:** Los 3 espacios de Zona Principal son fijos **(izquierdo / centro / derecho)** y "frente a" es un **espejo directo**: el espacio izquierdo de un jugador mira al espacio derecho del rival y viceversa (o espejo por convención canonicalizada; la opción seleccionada fue "izq_centro_der").
+
+**Implicancias:**
+- Carta en ZP-izq de jugador A está "frente a" carta en ZP-der de jugador B (espejo frontal).
+- Si la ZP espejada del rival está vacía: la carta no tiene objetivo "frente a" — efectos que requieran "frente a" fallan o no aplican.
+- El Protector sigue reglas específicas del Protector (no necesariamente bloquea "frente a" salvo que el texto de carta lo indique).
+- Aplica a: Satélite V.E.L.O., Hog Terremoto, Kuyovi Salto Eléctrico, Tekei Destierro, Ib-Nirge, Hali, y cualquier efecto que use "frente a".
+
+**Sugerencia para v5.2:** formalizar en §4 o §6:
+> "Los 3 espacios de Zona Principal (izq/centro/der) se corresponden en espejo con los del rival. 'Frente a' designa esa correspondencia geométrica fija."
+
+---
+_Plan actualizado: 2026-04-19 06:42 UTC — rulings M2.5, M6, M11 cerrados._
