@@ -22,7 +22,7 @@ ramses-dleon.github.io/Kodem/
 │   ├── pipeline-schema.json . Schema de pipelines
 │   └── tag-system-v2-design.md
 ├── sinergias.html ........... Explorador de sinergias
-├── cards.json ............... 893 cartas (sync desde Codice)
+├── cards.json ............... 1,074 cartas (sync desde Codice)
 ├── set-aliases.json ......... Mapeo de folios a sets
 ├── app.js ................... App JS (versión pública, sin auth/sync/tags/precios)
 ├── style.css ................ Estilos
@@ -48,7 +48,7 @@ https://ramses-dleon.github.io/Kodem/images/{folio}.webp
 
 | Archivo | Cartas | Sync |
 |---------|--------|------|
-| `cards.json` | 893 | ← Codice |
+| `cards.json` | 1,074 | ← Codice |
 | `set-aliases.json` | 13 sets | ← Codice |
 | `images/` | 956 imágenes | ← kodem-app |
 
@@ -58,7 +58,7 @@ https://ramses-dleon.github.io/Kodem/images/{folio}.webp
 |---------|-------------|--------------|
 | Auth | Ninguna | Google OAuth + Supabase |
 | Backend | Ninguno | Supabase (12 tablas) |
-| Cartas | 893 (sync) | 893 (fuente) |
+| Cartas | 1,074 (sync) | 1,074 (fuente) |
 | app.js | 156KB (100 funciones) | 336KB (196 funciones) |
 | Cloud sync | No | Sí (Pull/Push) |
 | Tags/Clasificación | No | Sí (6 capas) |

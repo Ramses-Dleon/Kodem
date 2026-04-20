@@ -187,7 +187,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "Triunfar con el cuerpo es una gran hazaña, pero triunfar con la mente es el arte de un verdadero maestro.",
-    "species": "Qianzhousaurus sinensis"
+    "species": "Qianzhousaurus sinensis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "CAMP-0008UV",
@@ -206,7 +209,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "La estrategia perfecta depende de no una carta ganadora sino de un Protector perseverante y hábil ¡Felicidades!",
-    "species": "Mitsukurina Owstoni"
+    "species": "Mitsukurina Owstoni",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "CAMP-0009UV",
@@ -225,7 +231,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "Esta carta debe ser enviada a Extincion para usar su Activa.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "CAMP-0010UV",
@@ -263,7 +272,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "El esfuerzo vale la pena cuando llegas a la cima",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "CAMP-0012UV",
@@ -282,7 +294,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "Esta carta es un mero símbolo de tu adaptación y estrategia, pero tu sabiduría te hace campeón.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "CAMP-0013UV",
@@ -301,7 +316,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "Solo puedes usar este efecto una vez por turno.",
     "lore_text": "Con valentía, este Protector conquistó el torneo y la gloria.",
-    "species": "Stegosaurus ungulatus"
+    "species": "Stegosaurus ungulatus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "CAMP-0014UV",
@@ -320,7 +338,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "Has logrado llegar a tu meta: ¡Bien hecho, Protector!",
-    "species": "Dasypus novemcinctus"
+    "species": "Dasypus novemcinctus",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "CAMP-0015UV",
@@ -377,7 +398,10 @@
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "CAMP-0018UV",
@@ -510,7 +534,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "La Activa de esta carta no puede ser copiada.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "CAMP-0025",
@@ -586,7 +613,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Ambystoma mexicanum"
+    "species": "Ambystoma mexicanum",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "CMFT-002",
@@ -605,7 +635,10 @@
     "rarity": "Comun",
     "cost_text": "Envia esta carta a Extincion para usar su Activa. Este efecto no puede ser copiado. Solo puedes usar este efecto una vez por juego.",
     "lore_text": "",
-    "species": "Xoloitzcuintle"
+    "species": "Xoloitzcuintle",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "CMFT-003",
@@ -662,7 +695,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Archaeopteryx"
+    "species": "Archaeopteryx",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "CUSTOM-002",
@@ -681,7 +717,10 @@
     "subtype": "Feral",
     "cost_text": "",
     "lore_text": "Temen lo que no comprenden y desprecian lo que temen, pero no, no los odio...",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Feral"
+    ]
   },
   {
     "folio": "CUSTOM-005",
@@ -700,7 +739,10 @@
     "subtype": "Feral",
     "cost_text": "",
     "lore_text": "Un fulgor rojizo desde la negra oscuridad te envuelve, las plumas comienzan a llegar: Ahora eres presa de las pesadillas de Ninuh.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Feral"
+    ]
   },
   {
     "folio": "CUSTOM-005-SR",
@@ -835,7 +877,10 @@
     "rarity": "Comun",
     "cost_text": "Sólo puedes usar la Pasiva de esta carta una vez por turno.",
     "lore_text": "",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "DOOC-001S",
@@ -934,7 +979,10 @@
     "rarity": "Super Rara",
     "cost_text": "Solo puedes usar este efecto una vez por juego.",
     "lore_text": "",
-    "species": "Therizinosaurus cheloniformis"
+    "species": "Therizinosaurus cheloniformis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "DOOC-004",
@@ -955,7 +1003,10 @@
     "rarity": "Comun",
     "cost_text": "Sólo puedes usar este efecto una vez por turno.",
     "lore_text": "",
-    "species": "Centrophryne spinulosa"
+    "species": "Centrophryne spinulosa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "DOOC-004S",
@@ -974,7 +1025,10 @@
     "rarity": "Super Rara",
     "cost_text": "No podrás usar la Pasiva de tu Bio mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": "Stomias boa boa"
+    "species": "Stomias boa boa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "DOOC-005",
@@ -1233,7 +1287,10 @@
     "rarity": "Comun",
     "cost_text": "Solo puedes usar este efecto una vez por juego.",
     "lore_text": "",
-    "species": "Therizinosaurus cheloniformis"
+    "species": "Therizinosaurus cheloniformis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "DOOC-012",
@@ -1271,7 +1328,10 @@
     "rarity": "Comun",
     "cost_text": "Sólo puedes usar este efecto una vez mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": "Mitsukrina owstoni"
+    "species": "Mitsukrina owstoni",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "DOOC-014",
@@ -1290,7 +1350,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Una vez despierto a la superficie, Shugg ansió destruir aquella luz que lo asediaba con su ardor.",
-    "species": "Stomias boa boa"
+    "species": "Stomias boa boa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "DOOC-015",
@@ -1309,7 +1372,10 @@
     "rarity": "Comun",
     "cost_text": "No podrás usar la Pasiva de tu Bio mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": "Stomias boa boa"
+    "species": "Stomias boa boa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "DOOC-016",
@@ -1404,7 +1470,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Lo que el Ermitaño había despertado ahora caminaba por su cuenta, con sólo una sensación que los dirigía: Hambre.",
-    "species": "Mitsukrina owstoni"
+    "species": "Mitsukrina owstoni",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "DOOC-021",
@@ -1423,7 +1492,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Stomias boa boa"
+    "species": "Stomias boa boa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "DOOC-022",
@@ -1442,7 +1514,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Stomias boa boa"
+    "species": "Stomias boa boa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "DOOC-023",
@@ -1537,7 +1612,10 @@
     "subtype": "Guardián",
     "cost_text": "",
     "lore_text": "",
-    "species": "Xoloitzcuintle"
+    "species": "Xoloitzcuintle",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "EXPN-001",
@@ -1594,7 +1672,10 @@
     "subtype": "Abisal",
     "cost_text": "",
     "lore_text": "Un viejo enemigo, subyugado al dominio de la ciencia y la magia.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "EXPO-0001",
@@ -1613,7 +1694,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "EXPO-0002",
@@ -1632,7 +1716,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "EXPO-0003",
@@ -1701,12 +1788,12 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Pasiva",
-    "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Piricco mientras esta carta este en campo. Si un Adendei Pirico aliado ataco, cura 1 punto a un Adendei Pirico Aliado",
+    "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Pirico mientras esta carta este en campo. Si un Adendei Pirico aliado ataco, cura 1 punto a un Adendei Pirico Aliado",
     "image": "images/EXPO-0006.webp",
     "artist": "edgaritual_re",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "",
+    "cost_text": "Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Pírico en campo.",
     "lore_text": "",
     "species": ""
   },
@@ -1784,7 +1871,10 @@
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "FAFT-003",
@@ -1958,7 +2048,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "Primero un liberador, después un líder.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-002",
@@ -1979,7 +2072,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Así que así se siente ser parte de una manada.",
-    "species": "Canis lupus baileyi"
+    "species": "Canis lupus baileyi",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-002K",
@@ -1998,7 +2094,10 @@
     "rarity": "Kosmica/Titanica",
     "cost_text": "",
     "lore_text": "Antiguo murmuro de fuego, eterno acompañante de las selvas profundas. ¿Alguna vez prestaste atención a su voz en el silencio?",
-    "species": "Leptophis mexicanus"
+    "species": "Leptophis mexicanus",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-002R",
@@ -2088,7 +2187,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 2 o más Adendei \"Ariam\" en tu Extinción.",
+    "effect_text": "",
     "image": "images/FYTE-003K.webp",
     "artist": "Mike.rev_art",
     "rarity_variants": [],
@@ -2096,7 +2195,8 @@
     "max_hp": 8,
     "cost_text": "",
     "lore_text": "Con las puertas morféicas abiertas, las criaturas más cercanas a esta Esfera comenzaron a manifestar su doble espectral.",
-    "species": "Ambystoma mexicanum"
+    "species": "Ambystoma mexicanum",
+    "requirement_text": "2 o más Adendei \"Ariam\" en tu Extinción."
   },
   {
     "folio": "FYTE-003R",
@@ -2119,7 +2219,7 @@
   },
   {
     "folio": "FYTE-003S",
-    "name": "Anton, Escuadro Catrin",
+    "name": "Anton, Escuadron Catrin",
     "set": "FYTE",
     "type": "Protector",
     "subtype": "",
@@ -2298,7 +2398,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 3 o mas adendei 'Zaykan' en tu extincion.",
+    "effect_text": "",
     "image": "images/FYTE-005U.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
@@ -2306,7 +2406,8 @@
     "max_hp": 8,
     "cost_text": "",
     "lore_text": "",
-    "species": "Celosia argentea var. cristata"
+    "species": "Celosia argentea var. cristata",
+    "requirement_text": "3 o mas adendei 'Zaykan' en tu extincion."
   },
   {
     "folio": "FYTE-006",
@@ -2382,7 +2483,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "Esta carta no puede ser curada ni protegida.",
     "lore_text": "",
-    "species": "Barro Negro"
+    "species": "Barro Negro",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-007",
@@ -2439,7 +2543,10 @@
     "rarity": "Super Rara",
     "cost_text": "Si no puedes reemplazar con 1 Adendei compatible, envía el equipo y 1 Adendei de los tomados a Extinción.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-007U",
@@ -2458,7 +2565,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "Debes tener 3 Adendei-Equino en Extinción para usar esta Activa. Esta carta no puede ser curada o protegida. Este efecto no puede ser copiado.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-008",
@@ -2484,7 +2594,7 @@
     "name": "Macit, Resguardo Divino",
     "set": "FYTE",
     "type": "Adendei",
-    "subtype": "Guardián Catrín",
+    "subtype": "Guardián",
     "energy": "Huumica",
     "damage": 2,
     "rests": 1,
@@ -2496,7 +2606,11 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Purificadores naturales al servicio de un corazón noble.",
-    "species": "Copal Blanco"
+    "species": "Copal Blanco",
+    "subtypes": [
+      "Guardián",
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-008S",
@@ -2515,7 +2629,10 @@
     "rarity": "Super Rara",
     "cost_text": "Esta carta solo puede atacar si tus Adendei aliados estan en descanso y son Adendei Catrin o Adendei-Gelido",
     "lore_text": "Purificadores naturales al servicio de un corazón noble.",
-    "species": "Copal Blanco"
+    "species": "Copal Blanco",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-008U",
@@ -2534,7 +2651,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "Solo puedes usar este efecto una vez por juego. Esta Pasiva no puede ser negada.",
     "lore_text": "Purificadores naturales al servicio de un corazón noble.",
-    "species": "Copal Blanco"
+    "species": "Copal Blanco",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-009",
@@ -2572,7 +2692,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Al fallecer, sus pétalos nos indican el camino de regreso a casa.",
-    "species": "Tagetes erecta"
+    "species": "Tagetes erecta",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-009S",
@@ -2705,7 +2828,10 @@
     "rarity": "Super Rara",
     "cost_text": "Esta Activa no puede ser copiada.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-012",
@@ -2793,7 +2919,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 1 o mas Adendei 'Aki' en tu Extincion.",
+    "effect_text": "",
     "image": "images/FYTE-013R.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
@@ -2801,7 +2927,8 @@
     "max_hp": 8,
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "requirement_text": "1 o mas Adendei 'Aki' en tu Extincion."
   },
   {
     "folio": "FYTE-013S",
@@ -2820,7 +2947,10 @@
     "rarity": "Super Rara",
     "cost_text": "Los Adendei Catrín aliados solo podrán usar su Activa y/o la de su Rot equipado una vez por turno. El segundo ataque no detona ninguna Pasiva aliada.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-014",
@@ -2851,7 +2981,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 3 o mas Adendei 'Yakerr' en tu Extincion,",
+    "effect_text": "",
     "image": "images/FYTE-014R.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
@@ -2859,7 +2989,8 @@
     "max_hp": 9,
     "cost_text": "",
     "lore_text": "Aerodinámica, mágica y letal, ¿qué más puede pedir un Guerrero Yokoa?",
-    "species": ""
+    "species": "",
+    "requirement_text": "3 o mas Adendei 'Yakerr' en tu Extincion,"
   },
   {
     "folio": "FYTE-014S",
@@ -2909,7 +3040,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 2 o mas Adendei 'Nanuk' en tu Extincion.",
+    "effect_text": "",
     "image": "images/FYTE-015R.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
@@ -2917,7 +3048,8 @@
     "max_hp": 9,
     "cost_text": "",
     "lore_text": "Cada línea emula a las grecas de los Adendei; símbolos de unidad para los Yokoa.",
-    "species": "Cinabrio"
+    "species": "Cinabrio",
+    "requirement_text": "2 o mas Adendei 'Nanuk' en tu Extincion."
   },
   {
     "folio": "FYTE-015S",
@@ -2973,9 +3105,12 @@
     "artist": "Mastodonte Megalodonte",
     "rarity_variants": [],
     "rarity": "Rara",
-    "cost_text": "Los Adendei Catrín aliados se dañan 2 ptos. al atacar o usar Activa si se usa esta esta Pasiva. Esta Pasiva no puede ser negada.",
+    "cost_text": "Los Adendei Catrín aliados se dañan 2 ptos. al atacar o usar Activa si se usa esta Pasiva. Esta Pasiva no puede ser negada.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-016S",
@@ -3032,7 +3167,10 @@
     "rarity": "Rara",
     "cost_text": "Debes tener 2 Adendei Equino en tu campo y 1 Adendei-Equino en Extinción para usar su Pasiva.",
     "lore_text": "Ensamblada, tallada y empoderada elementalmente por su portador: La primer arma mítica creada por los Yokoa.",
-    "species": "Barro Negro"
+    "species": "Barro Negro",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-018",
@@ -3070,7 +3208,10 @@
     "rarity": "Rara",
     "cost_text": "Debes de tener 2 Adendei Equino en tu campo o Extinción para usar esta Pasiva.\n\nLa sed se sangre y la sed de conquista; el agua de estos Equinos.",
     "lore_text": "",
-    "species": "Chrysanthemum"
+    "species": "Chrysanthemum",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-019",
@@ -3108,7 +3249,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Con símbolos de antiguos guerreros, los Yokoa se armaron por primera vez.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-020",
@@ -3134,7 +3278,7 @@
     "name": "Therz, de Vuelta a la Tumba",
     "set": "FYTE",
     "type": "Adendei",
-    "subtype": "Titán Catrín",
+    "subtype": "Titán",
     "energy": "Demotica",
     "damage": 2,
     "rests": 0,
@@ -3146,7 +3290,11 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "",
-    "species": "Erysimum linifolium"
+    "species": "Erysimum linifolium",
+    "subtypes": [
+      "Titán",
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-021",
@@ -3280,7 +3428,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Antiguo murmuro de fuego, eterno acompañante de las selvas profundas. ¿Alguna vez prestaste atención a su voz en el silencio?",
-    "species": "Leptophis mexicanus"
+    "species": "Leptophis mexicanus",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-024R",
@@ -3299,7 +3450,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Antiguo murmuro de fuego, eterno acompañante de las selvas profundas. ¿Alguna vez prestaste atención a su voz en el silencio?",
-    "species": "Leptophis mexicanus"
+    "species": "Leptophis mexicanus",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-025",
@@ -3325,7 +3479,7 @@
     "name": "Macit, Resguardo Divino",
     "set": "FYTE",
     "type": "Adendei",
-    "subtype": "Guardián Catrín",
+    "subtype": "Guardián",
     "energy": "Huumica",
     "damage": 2,
     "rests": 1,
@@ -3337,7 +3491,11 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Odocoileus virginianus"
+    "species": "Odocoileus virginianus",
+    "subtypes": [
+      "Guardián",
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-027",
@@ -3356,7 +3514,10 @@
     "rarity": "Comun",
     "cost_text": "Esta carta no puede ser equipada, protegida o curada.",
     "lore_text": "Guardián de la vida, partero divino; con la vida en sus astas y el amor en sus patas.",
-    "species": "Odocoileus virginianus"
+    "species": "Odocoileus virginianus",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "FYTE-028",
@@ -3375,7 +3536,10 @@
     "rarity": "Comun",
     "cost_text": "Esta carta no puede ser curada ni protegida.",
     "lore_text": "Ariam otorgó a los Adendei el poder curativo que su gran ataque requería.",
-    "species": "Ambystoma mexicanum"
+    "species": "Ambystoma mexicanum",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-029",
@@ -3432,7 +3596,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Remolinos de frío viento fueron convocados por la voluntad de Enis para proteger lugares ancestrales en los Geodomos.",
-    "species": "Strix occidentalis lucida"
+    "species": "Strix occidentalis lucida",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-032",
@@ -3470,7 +3637,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Luego del despertar de Enis, una nueva misión: reparar el tiempo.",
-    "species": "Strix occidentalis lucida"
+    "species": "Strix occidentalis lucida",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-034",
@@ -3622,7 +3792,10 @@
     "rarity": "Comun",
     "cost_text": "Si no puedes reemplazar con 1 Adendei compatible, envía el equipo y 1 Adendei de los tomados a Extinción.",
     "lore_text": "",
-    "species": "Canis lupus nubilus"
+    "species": "Canis lupus nubilus",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-042",
@@ -3641,7 +3814,10 @@
     "rarity": "Comun",
     "cost_text": "Esta carta solo puede atacar si tus Adendei aliados estan en descanso y son Adendei Catrin o Adendei-Gelido",
     "lore_text": "El Monarca Mudo dejaba su trono únicamente para castigar a quienes lo desafiaran.",
-    "species": "Ursus maritimus"
+    "species": "Ursus maritimus",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-043",
@@ -3660,7 +3836,10 @@
     "rarity": "Comun",
     "cost_text": "Los Adendei Catrín aliados solo podrán usar su Activa y/o la de su Rot equipado una vez por turno. El segundo ataque no detona ninguna Pasiva aliada.",
     "lore_text": "",
-    "species": "Bassariscus sumichrasti"
+    "species": "Bassariscus sumichrasti",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-044",
@@ -3679,7 +3858,10 @@
     "rarity": "Comun",
     "cost_text": "Quema 1 carta aliada para quemar 1 carta rival por esta Pasiva.",
     "lore_text": "",
-    "species": "Didelphis virginiana"
+    "species": "Didelphis virginiana",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-045",
@@ -3710,7 +3892,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 2 o más Adendei \"Ariam\" en tu Extinción.",
+    "effect_text": "",
     "image": "images/FYTE-046.webp",
     "artist": "Mike.rev_art",
     "rarity_variants": [],
@@ -3718,7 +3900,8 @@
     "max_hp": 8,
     "cost_text": "",
     "lore_text": "Con las puertas morféicas abiertas, las criaturas más cercanas a esta Esfera comenzaron a manifestar su doble espectral.",
-    "species": "Ambystoma mexicanum"
+    "species": "Ambystoma mexicanum",
+    "requirement_text": "2 o más Adendei \"Ariam\" en tu Extinción."
   },
   {
     "folio": "FYTE-047",
@@ -3730,7 +3913,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 1 o mas Adendei 'Aki' en tu Extincion.",
+    "effect_text": "",
     "image": "images/FYTE-047.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
@@ -3738,7 +3921,8 @@
     "max_hp": 8,
     "cost_text": "",
     "lore_text": "No te dejes llevar por la curiosidad al ver pequeños saltos de niebla verde...",
-    "species": "Romerolagus diazi"
+    "species": "Romerolagus diazi",
+    "requirement_text": "1 o mas Adendei 'Aki' en tu Extincion."
   },
   {
     "folio": "FYTE-048",
@@ -3770,7 +3954,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 3 o mas Adendei 'Yakerr' en tu Extincion,",
+    "effect_text": "",
     "image": "images/FYTE-049.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
@@ -3778,7 +3962,8 @@
     "max_hp": 9,
     "cost_text": "",
     "lore_text": "En los ecos de la luna llena del invierno, el espectro aúlla su nombre e invoca su sombra en este plano.",
-    "species": "Canis lupus baileyi"
+    "species": "Canis lupus baileyi",
+    "requirement_text": "3 o mas Adendei 'Yakerr' en tu Extincion,"
   },
   {
     "folio": "FYTE-050",
@@ -3790,7 +3975,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 3 o mas adendei 'Zaykan' en tu extincion.",
+    "effect_text": "",
     "image": "images/FYTE-050.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
@@ -3798,7 +3983,8 @@
     "max_hp": 8,
     "cost_text": "",
     "lore_text": "¿Forma espectral? Nada más que otro poder que utilizar a su favor.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "requirement_text": "3 o mas adendei 'Zaykan' en tu extincion."
   },
   {
     "folio": "FYTE-051",
@@ -3810,7 +3996,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 2 o mas Adendei 'Xilan' en tu Extincion.",
+    "effect_text": "",
     "image": "images/FYTE-051.webp",
     "artist": "Kundu del Castillo",
     "rarity_variants": [],
@@ -3818,7 +4004,8 @@
     "max_hp": 9,
     "cost_text": "",
     "lore_text": "Cuando el alma absorbe la energía del cuerpo físico, puede abandonarlo para morar fuera.",
-    "species": "Dasypus novemcinctus"
+    "species": "Dasypus novemcinctus",
+    "requirement_text": "2 o mas Adendei 'Xilan' en tu Extincion."
   },
   {
     "folio": "FYTE-052",
@@ -3830,7 +4017,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 2 o mas Adendei 'Nanuk' en tu Extincion.",
+    "effect_text": "",
     "image": "images/FYTE-052.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
@@ -3838,7 +4025,8 @@
     "max_hp": 9,
     "cost_text": "",
     "lore_text": "",
-    "species": "Ursus maritimus"
+    "species": "Ursus maritimus",
+    "requirement_text": "2 o mas Adendei 'Nanuk' en tu Extincion."
   },
   {
     "folio": "FYTE-053",
@@ -3913,9 +4101,12 @@
     "artist": "Mastodonte Megalodonte",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "Los Adendei Catrín aliados se dañan 2 ptos. al atacar o usar Activa si se usa esta esta Pasiva. Esta Pasiva no puede ser negada.",
+    "cost_text": "Los Adendei Catrín aliados se dañan 2 ptos. al atacar o usar Activa si se usa esta Pasiva. Esta Pasiva no puede ser negada.",
     "lore_text": "",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-057",
@@ -3934,7 +4125,10 @@
     "rarity": "Comun",
     "cost_text": "Mientras haya una Pasiva negada por esta carta, no puedes volver a usar su Activa.",
     "lore_text": "Y con el fin de la Guerra Roja comenzó la captura de los Equinos por parte del Ermitaño.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-058",
@@ -3953,7 +4147,10 @@
     "rarity": "Comun",
     "cost_text": "Debes tener 2 Adendei Equino en tu campo y 1 Adendei-Equino en Extinción para usar su Pasiva.",
     "lore_text": "Un escalofrío recorre tu cuerpo con la idea. Tal vez no hoy...",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-059",
@@ -3972,7 +4169,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Sientes la ira correr por tus venas como tambores de guerra haciendo temblar el suelo... Zagal está cerca.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-060",
@@ -3991,7 +4191,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Cuando el polvo se asienta y el último hombre cae, solo la Crin de los Mil Cráneos permanece.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-061",
@@ -4010,7 +4213,10 @@
     "rarity": "Comun",
     "cost_text": "Debes tener 2 Adendei \"Xakros\" o \"Yimsah\" en tu campo para usar su Activa.",
     "lore_text": "",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-062",
@@ -4029,7 +4235,10 @@
     "rarity": "Comun",
     "cost_text": "Debes tener 2 Adendei \"Xakros\" o \"Zagal\" en tu campo para usar su Activa.",
     "lore_text": "",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-063",
@@ -4048,7 +4257,10 @@
     "rarity": "Comun",
     "cost_text": "Debes de tener 2 Adendei Equino en tu campo o Extinción para usar esta Pasiva.\n\nLa sed se sangre y la sed de conquista; el agua de estos Equinos.",
     "lore_text": "La sed de sangre y la sed de conquista; el agua de estos Equinos.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-064",
@@ -4086,7 +4298,10 @@
     "rarity": "Comun",
     "cost_text": "Esta Activa no puede ser copiada.",
     "lore_text": "Creado por el Ermitaño combinando antigua magia morféica y nueva tecnología, Evadett sería la luz que acabaría con la oscuridad de los Equinos.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-066",
@@ -4105,7 +4320,10 @@
     "rarity": "Comun",
     "cost_text": "Esta carta no puede ser curada ni protegida.",
     "lore_text": "¿Es Evadett una nueva luz? ¿O una densa sombra más?",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-067",
@@ -4124,7 +4342,10 @@
     "rarity": "Comun",
     "cost_text": "Debes tener 3 Adendei-Equino en Extinción para usar esta Activa. Esta carta no puede ser curada o protegida. Este efecto no puede ser copiado.",
     "lore_text": "Y con la llegada de Evadett, Zaykan comenzó la captura.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "FYTE-068",
@@ -4163,7 +4384,10 @@
     "rarity": "Comun",
     "cost_text": "Solo puedes usar esta Pasiva una vez por juego. El Adendei seleccionado no se considera protegido.",
     "lore_text": "",
-    "species": "Xoloitzcuintle"
+    "species": "Xoloitzcuintle",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-070",
@@ -4182,7 +4406,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Desde el reino de las sombras eternas, el verde fuego de Mizthe ilumina a las almas errantes para regresar a su hogar.",
-    "species": "Xoloitzcuintle"
+    "species": "Xoloitzcuintle",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-071",
@@ -4208,7 +4435,7 @@
     "name": "Therz, de Vuelta a la Tumba",
     "set": "FYTE",
     "type": "Adendei",
-    "subtype": "Titán Catrín",
+    "subtype": "Titán",
     "energy": "Demotica",
     "damage": 2,
     "rests": 0,
@@ -4220,7 +4447,11 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "¿Qué pasa cuando la muerte desea caminar nuevamente bajo el sol del Mesozoico? ¡Therz!",
-    "species": "Therizinosaurus cheloniformis"
+    "species": "Therizinosaurus cheloniformis",
+    "subtypes": [
+      "Titán",
+      "Catrín"
+    ]
   },
   {
     "folio": "FYTE-073",
@@ -4278,7 +4509,10 @@
     "rarity": "Comun",
     "cost_text": "Si intercambiaste por un Espectro en tu campo, la carta llegará con 6 ptos. de vida.",
     "lore_text": "Guía de las almas de los Jardineros, conocedor del trayecto místico.",
-    "species": "Xoloitzcuintle"
+    "species": "Xoloitzcuintle",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "FYTE-076",
@@ -4316,7 +4550,10 @@
     "rarity": "Comun",
     "cost_text": "Solo puedes usar este efecto una vez por juego. Esta Pasiva no puede ser negada.",
     "lore_text": "",
-    "species": "Ambystoma mexicanum"
+    "species": "Ambystoma mexicanum",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-078",
@@ -4335,7 +4572,10 @@
     "rarity": "Comun",
     "cost_text": "No podrás usar Activas-Rápidas en tu turno durante el resto del juego.",
     "lore_text": "",
-    "species": "Bassariscus sumichrasti"
+    "species": "Bassariscus sumichrasti",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-079",
@@ -4354,7 +4594,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Carne difunta antaño se alzará nuevamente.",
-    "species": "Therizinosaurus cheloniformis"
+    "species": "Therizinosaurus cheloniformis",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-080",
@@ -4373,7 +4616,10 @@
     "rarity": "Comun",
     "cost_text": "Solo puedes usar este efecto una vez por juego.",
     "lore_text": "Misiones, guías, roles y guerras: todo habrá de borrarse.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-081",
@@ -4392,7 +4638,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "La muerte romperá los candados de cada secreto ocultado en vida.",
-    "species": "Strix occidentalis lucida"
+    "species": "Strix occidentalis lucida",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-082",
@@ -4411,7 +4660,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Nadie escapará de la vida corrupta.",
-    "species": "Didelphis virginiana"
+    "species": "Didelphis virginiana",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "FYTE-083",
@@ -4633,7 +4885,7 @@
     "damage": 0,
     "rests": 3,
     "effect_type": "Activa",
-    "effect_text": "Activa: Si no hay un Adendei aliado ccon 6 puntos de vida, cura a 6 puntos todos tus Adendei aliados.",
+    "effect_text": "Activa: Si no hay un Adendei aliado con 6 puntos de vida, cura a 6 puntos todos tus Adendei aliados.",
     "image": "images/IDRMA-007.webp",
     "artist": "cripticus",
     "rarity_variants": [],
@@ -4735,7 +4987,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Basta con el solo toque de una espora para dejar a tu mente fuera y al Ixim dentro.",
-    "species": "Ophiocordyceps unilateralis"
+    "species": "Ophiocordyceps unilateralis",
+    "subtypes": [
+      "Infectado"
+    ]
   },
   {
     "folio": "IDRMA-013",
@@ -4811,7 +5066,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "No sigas la luz, o ella te seguirá a ti...",
-    "species": "Centrophryne spinulosa"
+    "species": "Centrophryne spinulosa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "IDRMA-017",
@@ -4925,7 +5183,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Puñales, dagas, veneno y traición; un digno desayuno para este hambriento ser.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "IDRMA-023",
@@ -5077,7 +5338,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Su mirada se clava en los ojos ansiosos que buscan sin saber, y les lleva a errar en su camino.",
-    "species": "Aquila chrysaetos"
+    "species": "Aquila chrysaetos",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "IDRMG-008",
@@ -5191,7 +5455,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "A partir de su áureo trote, la vida se siembra y un nuevo Adendei florece.",
-    "species": "Odocoileus virginianus"
+    "species": "Odocoileus virginianus",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "IDRMG-014",
@@ -5210,7 +5477,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "... su silueta augura la sequía del río; un Adendei está próximo a morir...",
-    "species": "Xoloitzcuintle"
+    "species": "Xoloitzcuintle",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "IDRMG-015",
@@ -5248,7 +5518,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "El poder había sido moldeado por Nánuk tanto tiempo, que ahora era solo suyo.",
-    "species": "Ursus maritimus"
+    "species": "Ursus maritimus",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "IDRMG-017",
@@ -5267,7 +5540,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Sus pies: montañas, sus pasos: terremotos. Abran paso a un Adendei Kósmico.",
-    "species": "Smilidon fatalis"
+    "species": "Smilidon fatalis",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "IDRMG-018",
@@ -5286,7 +5562,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Su final fue anunciado; Borás tenía una última tarea pendiente.",
-    "species": "Smildon fatalis"
+    "species": "Smildon fatalis",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "IDRMG-019",
@@ -5362,7 +5641,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Cabalga el salvaje viento que arrastra la violencia y el terror...",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "IDRMG-023",
@@ -5393,12 +5675,12 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Pasiva",
-    "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Piricco mientras esta carta este en campo. Si un Adendei Pirico aliado ataco, cura 1 punto a un Adendei Pirico Aliado",
+    "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Pirico mientras esta carta este en campo. Si un Adendei Pirico aliado ataco, cura 1 punto a un Adendei Pirico Aliado",
     "image": "images/IDRMP-001.webp",
     "artist": "edgaritual_re",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "",
+    "cost_text": "Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Pírico en campo.",
     "lore_text": "",
     "species": ""
   },
@@ -5419,7 +5701,10 @@
     "rarity": "Comun",
     "cost_text": "Antes de atacar, daña 1 punto a los Adendei aliados.",
     "lore_text": "",
-    "species": "Ambystoma mexicanum"
+    "species": "Ambystoma mexicanum",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "IDRMP-003",
@@ -5457,7 +5742,10 @@
     "rarity": "Comun",
     "cost_text": "Despues de atacar, esta carta desciende 1 punto y es dañada 1 punto.",
     "lore_text": "Fauces y un infinito vacío esperan a aquel que coloque un solo pie en los dominios del Árbol...",
-    "species": "Bothriechis rowleyi"
+    "species": "Bothriechis rowleyi",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "IDRMP-005",
@@ -5590,7 +5878,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Feroces comensales de las energías psíquicas más densas de la humanidad.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "IDRMP-012",
@@ -5685,7 +5976,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Con la llegada de los azules océanos, la roja edad de Ilith llegó a su fin...",
-    "species": "Pharomachrus mocinno"
+    "species": "Pharomachrus mocinno",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "IDRMP-017",
@@ -5761,7 +6055,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "¿Conoces lo que te aguarda en el abismo?",
-    "species": "Architeuthis dux"
+    "species": "Architeuthis dux",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "IDRMP-021",
@@ -5780,7 +6077,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "El velo se levantó para los Abisales y sus cadenas se rompieron.",
-    "species": "Stomias boa boa"
+    "species": "Stomias boa boa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "IDRMP-022",
@@ -5799,7 +6099,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Toda voz se debilita con su lento trote...",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "IDRMP-023",
@@ -5905,7 +6208,7 @@
     "damage": 2,
     "rests": 0,
     "effect_type": "Pasiva",
-    "effect_text": "Activa: Cyra gasta 6 puntos a un Adendei aliado.",
+    "effect_text": "Activa: Cura 6 puntos a un Adendei aliado.",
     "image": "images/INMX-001.webp",
     "artist": "Necro Balam",
     "rarity": "Comun",
@@ -5970,7 +6273,10 @@
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "ISPMR-002",
@@ -6027,7 +6333,10 @@
     "rarity": "Full Art",
     "cost_text": "Despues de atacar, esta carta desciende 1 punto y es dañada 1 punto.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "ISPMR-005",
@@ -6046,7 +6355,10 @@
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "ISPMR-006",
@@ -6103,7 +6415,10 @@
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "ISPMR-009",
@@ -6255,7 +6570,10 @@
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "ISPMR-017",
@@ -6293,7 +6611,10 @@
     "image": "images/ISPMR-018.webp",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "ISPMR-019",
@@ -6322,14 +6643,14 @@
     "damage": 6,
     "rests": 1,
     "effect_type": "Costo",
-    "effect_text": "Debes pasar 1 turno antes de atacar con esta carta.",
+    "effect_text": "",
     "artist": "cripticus",
     "set": "KPRC",
     "subtype": "",
     "rarity": "Comun",
     "rarity_variants": [],
     "image": "images/ISPMR-020.webp",
-    "cost_text": "Debe pasar 1 turno antes de atacar con esta carta.",
+    "cost_text": "Debes pasar 1 turno antes de atacar con esta carta.",
     "lore_text": "",
     "species": ""
   },
@@ -6350,7 +6671,10 @@
     "subtype": "Kósmico",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "KEXC-001",
@@ -6361,7 +6685,7 @@
     "damage": 0,
     "rests": 3,
     "effect_type": "Activa",
-    "effect_text": "Activa: Si no hay un Adendei aliado ccon 6 puntos de vida, cura a 6 puntos todos tus Adendei aliados.",
+    "effect_text": "Activa: Si no hay un Adendei aliado con 6 puntos de vida, cura a 6 puntos todos tus Adendei aliados.",
     "image": "images/KEXC-001.webp",
     "artist": "cripticus",
     "rarity": "Comun",
@@ -6598,7 +6922,10 @@
     "max_hp": 1,
     "cost_text": "",
     "lore_text": "Custodio supremo del Océano Tetis.",
-    "species": "Amargasaurus"
+    "species": "Amargasaurus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-013",
@@ -6636,7 +6963,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Constructor del camino que trae de vuelta las almas de los Titanes caídos hacia su lugar de origen: El Árbol de la Savia Sagrada.",
-    "species": "Therizinosaurus cheloniformis"
+    "species": "Therizinosaurus cheloniformis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-015",
@@ -6655,7 +6985,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Portero de los Titanes, cada semilla de vida se deposita en su dorso para gestarse cuando el tiempo es propicio.",
-    "species": "Stegosaurus ungulatus"
+    "species": "Stegosaurus ungulatus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-016",
@@ -6743,7 +7076,7 @@
     "damage": 0,
     "rests": 3,
     "effect_type": "Ninguno",
-    "effect_text": "TBA",
+    "effect_text": "",
     "image": "images/KPRC-020.webp",
     "artist": "Mike.rev_art",
     "rarity_variants": [],
@@ -6781,12 +7114,12 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Pasiva",
-    "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Piricco mientras esta carta este en campo. Si un Adendei Pirico aliado ataco, cura 1 punto a un Adendei Pirico Aliado",
+    "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Pirico mientras esta carta este en campo. Si un Adendei Pirico aliado ataco, cura 1 punto a un Adendei Pirico Aliado",
     "image": "images/KPRC-022.webp",
     "artist": "Mike.rev_art",
     "rarity_variants": [],
     "rarity": "Full Art",
-    "cost_text": "",
+    "cost_text": "Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Pírico en campo.",
     "lore_text": "",
     "species": ""
   },
@@ -6960,7 +7293,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Otodus megalodon"
+    "species": "Otodus megalodon",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-032",
@@ -6998,7 +7334,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Las aguas no son un obstáculo, sino un aliado de cacería.",
-    "species": "Spinosaurus aegyptiacus"
+    "species": "Spinosaurus aegyptiacus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-034",
@@ -7017,7 +7356,10 @@
     "rarity": "Comun",
     "cost_text": "Tu Protector no actualiza descanso en el turno que se usa esta Pasiva. Sólo puedes usar este efecto una vez mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": "Archaeopteryx"
+    "species": "Archaeopteryx",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-035",
@@ -7036,7 +7378,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Dos grandes colosos del carbonífero enfrentados cara a cara.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-036",
@@ -7055,7 +7400,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-037",
@@ -7207,7 +7555,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "No sigas la luz, o ella te seguirá a ti...",
-    "species": "Centrophryne spinulosa"
+    "species": "Centrophryne spinulosa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "KPRC-045",
@@ -7226,7 +7577,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "El velo se levantó para los Abisales y sus cadenas se rompieron.",
-    "species": "Stomias boa boa"
+    "species": "Stomias boa boa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "KPRC-047",
@@ -7245,7 +7599,10 @@
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-048",
@@ -7266,7 +7623,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Thank you for making this expansion a reality, Protector!",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-048S",
@@ -7285,7 +7645,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "Thank you for making this expansion a reality, Protector!",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-049",
@@ -7297,14 +7660,17 @@
     "damage": 3,
     "rests": 2,
     "effect_type": "Pasiva",
-    "effect_text": "Neutral",
+    "effect_text": "Ninguna (solo lore)",
     "image": "images/KPRC-049.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-050",
@@ -7323,7 +7689,10 @@
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-051",
@@ -7380,7 +7749,10 @@
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "KPRC-054",
@@ -7416,9 +7788,12 @@
     "artist": "Kundu del Castillo",
     "rarity_variants": [],
     "rarity": "Full Art",
-    "cost_text": "Esta carta no puede escalar, ser curada ni protegida.",
+    "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-056",
@@ -7456,7 +7831,10 @@
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "KPRC-058",
@@ -7532,7 +7910,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "KPRC-062",
@@ -7620,14 +8001,15 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 2 o más Adendei \"Ariam\" en tu Extinción.",
+    "effect_text": "",
     "image": "images/KPRC-065.webp",
     "artist": "Cabritosentado",
     "rarity_variants": [],
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "requirement_text": "2 o más Adendei \"Ariam\" en tu Extinción."
   },
   {
     "folio": "KPRC-066",
@@ -7658,14 +8040,15 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Ninguno",
-    "effect_text": "Requisito: 2 o más Adendei \"Ariam\" en tu Extinción.",
+    "effect_text": "",
     "image": "images/KPRC-067.webp",
     "artist": "Cabritosentado",
     "rarity_variants": [],
     "rarity": "Full Art",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "requirement_text": "2 o más Adendei \"Ariam\" en tu Extinción."
   },
   {
     "folio": "KPRC-071",
@@ -7691,7 +8074,7 @@
     "name": "Zinawe, Vacío Etéreo",
     "set": "KPRC",
     "type": "Adendei",
-    "subtype": "Titan",
+    "subtype": "Titán",
     "energy": "Demotica",
     "damage": 2,
     "rests": 0,
@@ -7703,7 +8086,10 @@
     "rarity": "Secreta",
     "cost_text": "",
     "lore_text": "",
-    "species": "Quetzalcoatlus"
+    "species": "Quetzalcoatlus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "KPRC-073",
@@ -7741,7 +8127,10 @@
     "rarity": "Secreta",
     "cost_text": "No podrás usar Activas-Rápidas en tu turno durante el resto del juego.",
     "lore_text": "",
-    "species": "Bassariscus sumichrasti"
+    "species": "Bassariscus sumichrasti",
+    "subtypes": [
+      "Resurrecto"
+    ]
   },
   {
     "folio": "KPRC-091",
@@ -7855,7 +8244,10 @@
     "rarity": "Comun",
     "cost_text": "Solo puedes equipar esta carta a 1 Protector, Token o Espectro.",
     "lore_text": "",
-    "species": "Mucuna pruriens"
+    "species": "Mucuna pruriens",
+    "subtypes": [
+      "Equipo-Ixim"
+    ]
   },
   {
     "folio": "KPRC-105",
@@ -7893,7 +8285,10 @@
     "rarity": "Comun",
     "cost_text": "Antes de utilizar su Activa, esta carta debe ser enviada a Extinción.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Equipo-Rot"
+    ]
   },
   {
     "folio": "KPRC-107",
@@ -7931,7 +8326,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Sus raíces, al inframundo, y su copa, al cosmos...",
-    "species": "Ceiba pentandra"
+    "species": "Ceiba pentandra",
+    "subtypes": [
+      "Equipo-Ixim"
+    ]
   },
   {
     "folio": "KPRC-109",
@@ -7950,7 +8348,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Cuida tus pasos, la naturaleza a veces es aprehensiva.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Equipo-Ixim"
+    ]
   },
   {
     "folio": "KPRC-110",
@@ -8094,7 +8495,7 @@
     "damage": 2,
     "rests": 1,
     "effect_type": "Activa",
-    "effect_text": "Activa: Cyra gasta 6 puntos a un Adendei aliado.",
+    "effect_text": "Activa: Cura 6 puntos a un Adendei aliado.",
     "image": "images/KSPC-001.webp",
     "artist": "Alan Mac y Patty Etc",
     "rarity": "Comun",
@@ -8202,7 +8603,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "El portal se cerró tras de sí, el ojo abierto y su verdad para traer luz a la oscuridad.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "LGRO-002",
@@ -8245,7 +8649,10 @@
     "rarity": "Kosmica/Titanica",
     "cost_text": "",
     "lore_text": "Tener poder y no ejercerlo es igual a no tenerlo.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "LGRO-002R",
@@ -8503,7 +8910,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Entre helados vientos y áspera arena, Yakerr encontró más que un amigo.",
-    "species": "Canis latrans"
+    "species": "Canis latrans",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "LGRO-005U",
@@ -8623,7 +9033,10 @@
     "rarity": "Rara",
     "cost_text": "Si esta carta es enviada a Extinción, los Adendei aliados reciben 1 descanso. Solo puedes usar su Pasiva una vez por juego.",
     "lore_text": "Desde hace milenios, la Siku Kos dota de poder al Consejo para guiar su Bio con sabiduría.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "LGRO-007U",
@@ -8902,7 +9315,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Establecer un vínculo con toda la raza humana: Tarea imposible y objetivo principal del Ermitaño.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "LGRO-014",
@@ -9535,7 +9951,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Entre estallidos y polvo, Nánuk realiza una fiera entrada.",
-    "species": "Ursus maritimus"
+    "species": "Ursus maritimus",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "LGRO-044",
@@ -9630,7 +10049,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Viejas cadenas se rompieron.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "LGRO-049",
@@ -9649,7 +10071,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Un viejo enemigo, subyugado al dominio de la ciencia y la magia.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "LGRO-050",
@@ -9668,7 +10093,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "La base de los Adendei fue destruida como si de estrujar un papel se tratara.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "LGRO-051",
@@ -9725,7 +10153,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Madre colosal en tu magno lago y tu áurea brisa, que tu vida fluya a través de mí.",
-    "species": "Dasypus novemcinctus"
+    "species": "Dasypus novemcinctus",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "LGRO-054",
@@ -9744,7 +10175,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Tener poder y no ejercerlo es igual a no tenerlo.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "LGRO-055",
@@ -9782,7 +10216,10 @@
     "rarity": "Comun",
     "cost_text": "Si esta carta es enviada a Extinción, los Adendei aliados reciben 1 descanso. Solo puedes usar su Pasiva una vez por juego.",
     "lore_text": "",
-    "species": "Strix occidentalis lucida"
+    "species": "Strix occidentalis lucida",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "LGRO-057",
@@ -9839,7 +10276,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Cada Sabio Adendei sacrificó sus energías para resguardo de la vida.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "LGRO-060",
@@ -9877,7 +10317,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Percibimos la ira como algo ardiente, pero cuando Nánuk usurpó y esculpió su trono, el Bio entero descubrió su gelidez.",
-    "species": "Ursus maritimus"
+    "species": "Ursus maritimus",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "LGRO-062",
@@ -9946,12 +10389,12 @@
     "damage": 6,
     "rests": 1,
     "effect_type": "Costo",
-    "effect_text": "Debes pasar 1 turno antes de atacar con esta carta.",
+    "effect_text": "",
     "image": "images/LGRO-065.webp",
     "artist": "cripticus",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "Debe pasar 1 turno antes de atacar con esta carta.",
+    "cost_text": "Debes pasar 1 turno antes de atacar con esta carta.",
     "lore_text": "Después de tanto, Yakerr había encontrado su hogar.",
     "species": "Canis lupus baileyi"
   },
@@ -10048,7 +10491,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Con la llegada de los azules océanos, la roja edad de Ilith llegó a su fin...",
-    "species": "Pharomachrus mocinno"
+    "species": "Pharomachrus mocinno",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "LGRO-071",
@@ -10143,7 +10589,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Anunciado su paso por el gélido viento de hielo cortante.",
-    "species": "Smildon fatalis"
+    "species": "Smildon fatalis",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "LGRO-076",
@@ -10162,7 +10611,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Y en la tierra se hizo el ardiente fuego que la purificó para que todo naciese.",
-    "species": "Pharomachrus mocinno"
+    "species": "Pharomachrus mocinno",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "LGRO-077",
@@ -10614,7 +11066,10 @@
     "subtype": "Abisal",
     "cost_text": "",
     "lore_text": "Do not follow the light, or it will follow you back...",
-    "species": "Centrophryne spinulosa"
+    "species": "Centrophryne spinulosa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "MegaXP-01",
@@ -10880,7 +11335,10 @@
     "subtype": "Abisal",
     "cost_text": "",
     "lore_text": "¿Conoces lo que te aguarda en el abismo?",
-    "species": "Architeuthis dux"
+    "species": "Architeuthis dux",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "PATREON-001",
@@ -10899,7 +11357,10 @@
     "subtype": "Abisal",
     "cost_text": "No podrás usar la Pasiva de tu Bio mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "PATREON-002",
@@ -10918,7 +11379,10 @@
     "subtype": "Guardián",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "PKMR-001",
@@ -10937,7 +11401,10 @@
     "subtype": "Equino",
     "cost_text": "",
     "lore_text": "Ferocious devourers of humanity's darkest psychic energies.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "PKMR-002",
@@ -10994,7 +11461,10 @@
     "subtype": "Guardián",
     "cost_text": "Despues de atacar, esta carta desciende 1 punto y es dañada 1 punto.",
     "lore_text": "Jaws and an infinite void await whoever sets foot in the Tree domains...",
-    "species": "Bothriechis rowleyi"
+    "species": "Bothriechis rowleyi",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "PKMR-005",
@@ -11070,7 +11540,10 @@
     "subtype": "Guardián",
     "cost_text": "",
     "lore_text": "... its silhouette predicts the drought of the river; an Adendei is about to die...",
-    "species": "Xoloitzcuintle"
+    "species": "Xoloitzcuintle",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "PKMR-009",
@@ -11241,7 +11714,10 @@
     "subtype": "Kósmico",
     "cost_text": "",
     "lore_text": "His feet; mountains, his steps; earthquakes. Make way for a Kosmic Adendei.",
-    "species": "Smilodon fatalis"
+    "species": "Smilodon fatalis",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "PRT-2022-06",
@@ -11317,7 +11793,10 @@
     "subtype": "Kósmico",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "RAMI-001",
@@ -11338,7 +11817,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Sus pies: montañas, sus pasos: terremotos. Abran paso a un Adendei Kósmico.",
-    "species": "Smilodon fatalis"
+    "species": "Smilodon fatalis",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "RAMI-001S",
@@ -11378,7 +11860,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Su final fue anunciado; Bóras tenía una última tarea pendiente.",
-    "species": "Smilodon fatalis"
+    "species": "Smilodon fatalis",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "RAMI-002S",
@@ -11437,7 +11922,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
-    "species": "Centruroides limpidus"
+    "species": "Centruroides limpidus",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "RAMI-004",
@@ -11458,7 +11946,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Feroces comensales de las energías psíquicas más densas de la humanidad.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "RAMI-004S",
@@ -11498,7 +11989,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Cabalga el salvaje viento que arrastra la violencia y el terror...",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "RAMI-005S",
@@ -11538,7 +12032,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Puñales, dagas, veneno y traición; un digno desayuno para este hambriento ser.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "RAMI-006S",
@@ -11578,7 +12075,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Toda voz se debilita con su lento trote...",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "RAMI-007S",
@@ -11618,7 +12118,10 @@
     "rarity": "Comun",
     "cost_text": "Despues de atacar, esta carta desciende 1 punto y es dañada 1 punto.",
     "lore_text": "Fauces y un infinito vacío esperan a aquel que coloque un solo pie en los dominios del Árbol.",
-    "species": "Bothriechis rowleyi"
+    "species": "Bothriechis rowleyi",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "RAMI-008S",
@@ -11658,7 +12161,10 @@
     "rarity": "Comun",
     "cost_text": "Antes de atacar, daña 1 punto a los Adendei aliados.",
     "lore_text": "",
-    "species": "Ambystoma mexicanum"
+    "species": "Ambystoma mexicanum",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "RAMI-009S",
@@ -11717,7 +12223,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "Silencioso amante de los secretos de la existencia.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "RAMI-011",
@@ -11812,7 +12321,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Los cielos de Askame y Xelbalán permanecen en calma, pues su guardián jamás descansa.",
-    "species": "Aquila chrysaetos"
+    "species": "Aquila chrysaetos",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "RAMI-016",
@@ -12040,7 +12552,10 @@
     "rarity": "Rara",
     "cost_text": "Esta carta debe ser enviada a Extincion para usar su Activa.",
     "lore_text": "Desde los confines de Xelbalán, sus dobles fallecidos eran convocados a caminar una vez más...",
-    "species": "Therizinosaurus cheloniformis"
+    "species": "Therizinosaurus cheloniformis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "RMFT-002",
@@ -12109,14 +12624,17 @@
     "damage": 4,
     "rests": 1,
     "effect_type": "Costo",
-    "effect_text": "Después de atacar, esta carta desciende 1 pto. y es dañada 1 pto.",
+    "effect_text": "",
     "image": "images/RMR-002.webp",
     "artist": "Necro Balam",
     "rarity_variants": "",
     "rarity": "Rara",
     "cost_text": "Después de atacar, esta carta desciende 1 pto. y es dañada 1 pto.",
     "lore_text": "Fauces y un infinito vacío esperan a aquel que coloque un solo pie en los dominios del Árbol...",
-    "species": "Bothriechi rowleyi"
+    "species": "Bothriechi rowleyi",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "RMR-003",
@@ -12154,7 +12672,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Basta con el solo toque de una espora para dejar a tu mente fuera y al Ixim dentro.",
-    "species": "Ophiocordyceps unilateralis"
+    "species": "Ophiocordyceps unilateralis",
+    "subtypes": [
+      "Infectado"
+    ]
   },
   {
     "folio": "RMR-005",
@@ -12166,14 +12687,17 @@
     "damage": 4,
     "rests": 2,
     "effect_type": "Costo",
-    "effect_text": "Antes de atacar, daña 1 pto. a los Adendei aliados.",
+    "effect_text": "",
     "image": "images/RMR-005.webp",
     "artist": "cripticus y DesireOB",
     "rarity_variants": "",
     "rarity": "Rara",
     "cost_text": "Antes de atacar, daña 1 pto. a los Adendei aliados.",
     "lore_text": "",
-    "species": "Ambystoma mexicanum"
+    "species": "Ambystoma mexicanum",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "RMR-006",
@@ -12230,7 +12754,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "...su silueta augura la sequía del río; un Adendei está próximo a morir...",
-    "species": "Xoloitzcuintle"
+    "species": "Xoloitzcuintle",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "RMR-009",
@@ -12268,7 +12795,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "El velo se levantó para los Abisales y sus cadenas se rompieron.",
-    "species": "Stomias boa boa"
+    "species": "Stomias boa boa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "RMR-011",
@@ -12280,7 +12810,7 @@
     "damage": 0,
     "rests": 0,
     "effect_type": "Activa",
-    "effect_text": "El Adendei vinculado no recibe descanso al vincularse, y podrá dañar 6 ptos. a un Adendei rival en tu siguiente turno.",
+    "effect_text": "Activa: El Adendei vinculado no recibe descanso al vincularse, y podrá atacar con 6 puntos a un Adendei rival en tu siguiente turno.",
     "image": "images/RMR-011.webp",
     "artist": "cripticus",
     "rarity_variants": "",
@@ -12363,7 +12893,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Puñales, dagas, veneno y traición; un digno desayuno para este hambriento ser.",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "RMR-016",
@@ -12382,7 +12915,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Cabalga el salvaje viento que arrastra la violencia y el terror...",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "RMR-017",
@@ -12401,7 +12937,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Toda voz se debilita con su lento trote...",
-    "species": "Equus caballus"
+    "species": "Equus caballus",
+    "subtypes": [
+      "Equino"
+    ]
   },
   {
     "folio": "RMR-018",
@@ -12477,7 +13016,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "El poder había sido moldeado por Nánuk tanto tiempo, que ahora era solo suyo.",
-    "species": "Ursus maritimus"
+    "species": "Ursus maritimus",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "SRMR-002",
@@ -12489,14 +13031,17 @@
     "damage": 4,
     "rests": 2,
     "effect_type": "Costo",
-    "effect_text": "Antes de atacar, daña 1 pto. a los Adendei aliados.",
+    "effect_text": "",
     "image": "images/SRMR-002.webp",
     "artist": "cripticus y DesireOB",
     "rarity_variants": "",
     "rarity": "Super Rara",
     "cost_text": "Antes de atacar, daña 1 pto. a los Adendei aliados.",
     "lore_text": "",
-    "species": "Ambystoma mexicanum"
+    "species": "Ambystoma mexicanum",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "SRMR-003",
@@ -12534,7 +13079,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "Sus pies: montañas, sus pasos: terremotos. Abran paso a un Adendei Kósmico.",
-    "species": "Smilidon fatalis"
+    "species": "Smilidon fatalis",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "SRMR-005",
@@ -12667,7 +13215,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Custodio supremo del Océano Tetis.",
-    "species": "Amargasaurus"
+    "species": "Amargasaurus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-002",
@@ -12686,7 +13237,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Tal vez no tenga un premio al más bello, pero seguro tendría uno al más feroz.",
-    "species": "Pegomastax africana"
+    "species": "Pegomastax africana",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-003",
@@ -12705,7 +13259,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Adaptarse es sinónimo de sobrevivir.",
-    "species": "Pentaceratops"
+    "species": "Pentaceratops",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-004",
@@ -12724,7 +13281,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Un solo golpe de su cola en la tierra y las cosas comenzarán a derrumbarse alrededor.",
-    "species": "Ankylosaurus magniventris"
+    "species": "Ankylosaurus magniventris",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-005",
@@ -12743,7 +13303,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Partero de los Titanes, cada semilla de vida se deposita en su dorso para gestarse cuando el tiempo es propicio.",
-    "species": "Stegosaurus ungulatus"
+    "species": "Stegosaurus ungulatus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-006",
@@ -12762,7 +13325,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "A pesar de que el poder del frío aún no reinara con fuerza, Turix comenzaba a forjar su paso.",
-    "species": "Meganeura"
+    "species": "Meganeura",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-007",
@@ -12781,7 +13347,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Un millar de patas amenazantes aceleran el andar de su silueta.",
-    "species": "Arthropleura"
+    "species": "Arthropleura",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-008",
@@ -12800,7 +13369,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Mitsukurina owstoni"
+    "species": "Mitsukurina owstoni",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-009UV",
@@ -12933,7 +13505,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Pegomastax africana"
+    "species": "Pegomastax africana",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-016",
@@ -12952,7 +13527,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Una tremenda estampida condensada en un solo ser.",
-    "species": "Pentaceratops"
+    "species": "Pentaceratops",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-017",
@@ -12971,7 +13549,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Utahraptor"
+    "species": "Utahraptor",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-018",
@@ -12990,7 +13571,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Tyrannosaurus rex"
+    "species": "Tyrannosaurus rex",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-019",
@@ -13009,7 +13593,10 @@
     "rarity": "Comun",
     "cost_text": "La Activa de esta carta no puede ser copiada.",
     "lore_text": "",
-    "species": "Spinosaurus aegyptiacus"
+    "species": "Spinosaurus aegyptiacus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-020",
@@ -13028,7 +13615,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Sus veloces pasos lo llevaron cara a cara con un sombrío sitio...",
-    "species": "Utahraptor"
+    "species": "Utahraptor",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-021",
@@ -13066,7 +13656,10 @@
     "image": "images/TCDE-022.webp",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-023",
@@ -13085,7 +13678,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Así como había presenciado sus albores, Hypex también sabía que algún día habría de ver el final de esta era.",
-    "species": "Tyrannosaurus rex"
+    "species": "Tyrannosaurus rex",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-024",
@@ -13104,7 +13700,10 @@
     "rarity": "Comun",
     "cost_text": "Esta carta no puede atacar al protector rival.",
     "lore_text": "",
-    "species": "Utahraptor"
+    "species": "Utahraptor",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-025UV",
@@ -13123,7 +13722,10 @@
     "image": "images/TCDE-025UV.webp",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCDE-026",
@@ -13163,7 +13765,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "A nadie le viene mal refrescarse un poco en una jungla a 40°C.",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-001K",
@@ -13182,7 +13787,10 @@
     "rarity": "Kosmica/Titanica",
     "cost_text": "No puedes atacar, vincular ni usar otros efectos en el turno que usas esta Pasiva. Este efecto sólo se puede usar una vez por juego.",
     "lore_text": "",
-    "species": "Quetzalcoatlus"
+    "species": "Quetzalcoatlus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-001R",
@@ -13201,7 +13809,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "A nadie le viene mal refrescarse un poco en una jungla a 40°C.",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-001S",
@@ -13220,7 +13831,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "A nadie le viene mal refrescarse un poco en una jungla a 40°C.",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-001U",
@@ -13237,9 +13851,12 @@
     "artist": "Kundu del Castillo",
     "rarity_variants": [],
     "rarity": "Ultra Rara",
-    "cost_text": "Esta carta no puede escalar, ser curada ni protegida.",
+    "cost_text": "",
     "lore_text": "A nadie le viene mal refrescarse un poco en una jungla a 40°C.",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-002",
@@ -13258,9 +13875,12 @@
       "K"
     ],
     "rarity": "Comun",
-    "cost_text": "Esta carta no puede escalar, ser curada ni protegida.",
+    "cost_text": "",
     "lore_text": "La roca, el fuego, el frío y el agua se postran ante su corona y el caos; se rinde ante su orden.",
-    "species": "Tyrannosaurus rex"
+    "species": "Tyrannosaurus rex",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-002K",
@@ -13272,14 +13892,17 @@
     "damage": 3,
     "rests": 2,
     "effect_type": "Pasiva",
-    "effect_text": "Neutral",
+    "effect_text": "Ninguna (solo lore)",
     "image": "images/TCOO-002K.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
     "rarity": "Kosmica/Titanica",
     "cost_text": "",
     "lore_text": "Ardiente furia contra la sinfonía del orden. Ninguna era escapa al desacuerdo.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-002R",
@@ -13298,7 +13921,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "La roca, el fuego, el frío y el agua se postran ante su corona y el caos; se rinde ante su orden.",
-    "species": "Tyrannosaurus rex"
+    "species": "Tyrannosaurus rex",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-002S",
@@ -13317,7 +13943,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "La roca, el fuego, el frío y el agua se postran ante su corona y el caos; se rinde ante su orden.",
-    "species": "Tyrannosaurus rex"
+    "species": "Tyrannosaurus rex",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-002U",
@@ -13357,7 +13986,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "No es un dragón, es más bien un carnotaurus con alas de pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-003K",
@@ -13414,7 +14046,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "No es un dragón, es más bien un carnotaurus con alas de pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-003U",
@@ -13431,7 +14066,7 @@
     "artist": "Necro Balam",
     "rarity_variants": [],
     "rarity": "Ultra Rara",
-    "cost_text": "Esta carta siempre estara abismada.",
+    "cost_text": "",
     "lore_text": "No es un dragón, es más bien un carnotaurus con alas de pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...",
     "species": "Carnotaurus sastrei"
   },
@@ -13452,7 +14087,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Creador de cavernas y escultor antiguo de la roca.",
-    "species": "Qianzhousaurus sinensis"
+    "species": "Qianzhousaurus sinensis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-004R",
@@ -13490,7 +14128,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "Creador de cavernas y escultor antiguo de la roca.",
-    "species": "Qianzhousaurus sinensis"
+    "species": "Qianzhousaurus sinensis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-004U",
@@ -13528,7 +14169,10 @@
     "rarity": "Comun",
     "cost_text": "No puedes atacar, vincular ni usar otros efectos en el turno que usas esta Pasiva. Este efecto sólo se puede usar una vez por juego.",
     "lore_text": "",
-    "species": "Quetzalcoatlus"
+    "species": "Quetzalcoatlus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-005R",
@@ -13585,7 +14229,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "Si esta carta usó su Activa, recibe 2 descansos en Fin de Turno.",
     "lore_text": "",
-    "species": "Quetzalcoatlus"
+    "species": "Quetzalcoatlus",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-006",
@@ -13604,7 +14251,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Al pasar, su imagen es visible sólo como un eco.",
-    "species": "Utahraptor"
+    "species": "Utahraptor",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-006R",
@@ -13642,7 +14292,10 @@
     "rarity": "Super Rara",
     "cost_text": "Solo puedes usar este efecto una vez por turno.",
     "lore_text": "Al pasar, su imagen es visible sólo como un eco.",
-    "species": "Utahraptor"
+    "species": "Utahraptor",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-006U",
@@ -13699,7 +14352,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "A través de sus ojos, los Nírge podían experimentar la vida desde la perspectiva de cualquier organismo del planeta.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-007S",
@@ -13756,7 +14412,10 @@
     "rarity": "Rara",
     "cost_text": "Debes tener 2 Rot en Extinción para usar su Activa.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-008S",
@@ -13794,7 +14453,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "El Otro descubrió que más allá de su Hifa, hallaría un vínculo con otro curioso ser.",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-009R",
@@ -13813,7 +14475,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "El Otro descubrió que más allá de su Hifa, hallaría un vínculo con otro curioso ser.",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-009S",
@@ -13832,7 +14497,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "El Otro descubrió que más allá de su Hifa, hallaría un vínculo con otro curioso ser.",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCEO-010",
@@ -13870,7 +14538,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "El dominio del vínculo llevó años, pero valió toda la pena...",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-010S",
@@ -13927,7 +14598,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "En estas tierras florece la vida eterna; el corazón del mundo.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-011S",
@@ -13984,7 +14658,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Espacio en conjunción a todas las Esferas, de su copa la vida surge y en sus raíces se asienta para retornar.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-012S",
@@ -14003,7 +14680,10 @@
     "rarity": "Super Rara",
     "cost_text": "Envía esta carta a Extinción para usar su Pasiva.",
     "lore_text": "Espacio en conjunción a todas las Esferas, de su copa la vida surge y en sus raíces se asienta para retornar.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-013",
@@ -14041,7 +14721,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Al reverso de las tierras de Askame, las raíces y su podredumbre.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-013S",
@@ -14098,7 +14781,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "",
-    "species": "Archaeamphora longicervia"
+    "species": "Archaeamphora longicervia",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-014S",
@@ -14231,7 +14917,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "Con la ayuda de un Ixim, Rasvel prolongó su vida aún mucho más de lo que un Adendei habría vivido jamás.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-017",
@@ -14269,7 +14958,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCEO-018",
@@ -14364,7 +15056,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Hipnóticas plumas que manipulan a quienes miran.",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-020R",
@@ -14402,7 +15097,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Vigilante de las selvas, Protector de los lagos.",
-    "species": "Qianzhousaurus sinensis"
+    "species": "Qianzhousaurus sinensis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-021R",
@@ -14440,7 +15138,10 @@
     "rarity": "Comun",
     "cost_text": "Debes tener 2 Rot en Extinción para usar su Activa.",
     "lore_text": "Rey del mundo subterráneo, guardián del cristal y la roca.",
-    "species": "Ankylosaurus magniventris"
+    "species": "Ankylosaurus magniventris",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-022R",
@@ -14459,7 +15160,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Rey del mundo subterráneo, guardián del cristal y la roca.",
-    "species": "Ankylosaurus magniventris"
+    "species": "Ankylosaurus magniventris",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-023",
@@ -14478,7 +15182,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Therizinosaurus cheloniformis"
+    "species": "Therizinosaurus cheloniformis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-023R",
@@ -14497,7 +15204,10 @@
     "rarity": "Rara",
     "cost_text": "Costo: Solo puedes usar esta pasiva una vez mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": "Therizinosaurus cheloniformis"
+    "species": "Therizinosaurus cheloniformis",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-024",
@@ -14516,7 +15226,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Arthropleura"
+    "species": "Arthropleura",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-024R",
@@ -14535,7 +15248,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "",
-    "species": "Arthropleura"
+    "species": "Arthropleura",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-025",
@@ -14554,7 +15270,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-026",
@@ -14573,7 +15292,10 @@
     "rarity": "Comun",
     "cost_text": "Debes tener 2 Ixim en Extinción para usar esta Pasiva. Sólo puedes usar este efecto una vez mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": "Pentaceratops"
+    "species": "Pentaceratops",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-027",
@@ -14592,7 +15314,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Grecas de poder alternantes, imbuidas del elemento que tocase.",
-    "species": "Spinosaurus aegyptiacus"
+    "species": "Spinosaurus aegyptiacus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-028",
@@ -14611,7 +15336,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Xoloitzcuintle"
+    "species": "Xoloitzcuintle",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "TCEO-029",
@@ -14630,7 +15358,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Archaeopteryx"
+    "species": "Archaeopteryx",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-030",
@@ -14649,7 +15380,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Una vez que El Otro logró dominar aquel primer vínculo, un mundo entero se reveló a sus ojos...",
-    "species": "Archaeopteryx"
+    "species": "Archaeopteryx",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-031",
@@ -14668,7 +15402,10 @@
     "rarity": "Comun",
     "cost_text": "Solo puedes usar este efecto una vez por turno.",
     "lore_text": "",
-    "species": "Stegosaurus ungulatus"
+    "species": "Stegosaurus ungulatus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-032",
@@ -14687,7 +15424,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Acechante en el mar, ninguna sombra escapa a su luz.",
-    "species": "Amargasaurus"
+    "species": "Amargasaurus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-033",
@@ -14699,14 +15439,17 @@
     "damage": 3,
     "rests": 2,
     "effect_type": "Pasiva",
-    "effect_text": "Neutral",
+    "effect_text": "Ninguna (solo lore)",
     "image": "images/TCOO-033.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Ardiente furia contra la sinfonía del orden. Ninguna era escapa al desacuerdo.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-034",
@@ -14718,14 +15461,17 @@
     "damage": 2,
     "rests": 1,
     "effect_type": "Pasiva",
-    "effect_text": "Neutral",
+    "effect_text": "Ninguna (solo lore)",
     "image": "images/TCOO-034.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Después de sus largos años de vida, Rasvel batallaba por encajar en esta nueva era.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-035",
@@ -14744,7 +15490,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Spinosaurus aegyptiacus"
+    "species": "Spinosaurus aegyptiacus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-036",
@@ -14801,7 +15550,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "A través de su cuerpo, depura el mar.",
-    "species": "Metriorhynchus"
+    "species": "Metriorhynchus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCEO-039",
@@ -14837,7 +15589,7 @@
     "artist": "Necro Balam",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "Esta carta siempre estara abismada.",
+    "cost_text": "",
     "lore_text": "Aquel día, Nephtis no sólo perdió una batalla al enfrentarse al temible Yogg, sino también su propio sentido de la vista...",
     "species": "Hippocampus hippocampus"
   },
@@ -14856,7 +15608,7 @@
     "artist": "edgaritual_re",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "Esta carta solo puede atacar si los Adendei aliados son Adendei Abisales o Adendei-Atlicos.",
+    "cost_text": "",
     "lore_text": "Las sombras acuáticas se disuelven cuando su fuego resplandece.",
     "species": "Phocoena sinus"
   },
@@ -14953,7 +15705,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Piel escamada aparentemente interminable, con la dureza de un diamante.",
-    "species": "Stomias boa boa"
+    "species": "Stomias boa boa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-047",
@@ -14972,7 +15727,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Kiwa hirsuta"
+    "species": "Kiwa hirsuta",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-048",
@@ -14991,7 +15749,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "En movimientos insoportablemente lentos, la siniestra figura de Uragg busca su siguiente presa.",
-    "species": "Architeuthis dux"
+    "species": "Architeuthis dux",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-049",
@@ -15067,7 +15828,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "En las corrientes del misterio, una llama acuática se alza y con su fuego; el mundo se templa.",
-    "species": "Physeter macrocephalus"
+    "species": "Physeter macrocephalus",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCEO-053",
@@ -15086,7 +15850,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Physeter macrocephalus"
+    "species": "Physeter macrocephalus",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCEO-054",
@@ -15105,7 +15872,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Su aliento; una fábrica de icebergs.",
-    "species": "Mesonychoteuthis hamiltoni"
+    "species": "Mesonychoteuthis hamiltoni",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCEO-055",
@@ -15124,7 +15894,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "El frío reina en los extremos del mundo; y él reina al frío.",
-    "species": "Mesonychoteuthis hamiltoni"
+    "species": "Mesonychoteuthis hamiltoni",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCEO-056",
@@ -15409,7 +16182,10 @@
     "rarity": "Comun",
     "cost_text": "Si esta carta usó su Activa, recibe 2 descansos en Fin de Turno.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-071",
@@ -15428,7 +16204,10 @@
     "rarity": "Comun",
     "cost_text": "Envía esta carta a Extinción para usar su Pasiva.",
     "lore_text": "En las profundidades del abismo descansa la sombra del océano.",
-    "species": "Neolithodes bronwynae"
+    "species": "Neolithodes bronwynae",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-072",
@@ -15447,7 +16226,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "En medio del abismo marino una luminosa estrella púrpura de dócil movimiento se acerca... No hay tiempo para huir.",
-    "species": "Mitsukurina owstoni"
+    "species": "Mitsukurina owstoni",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-073",
@@ -15466,7 +16248,10 @@
     "rarity": "Comun",
     "cost_text": "Costo: Solo puedes usar esta pasiva una vez mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": "Architeuthis dux"
+    "species": "Architeuthis dux",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-074",
@@ -15485,7 +16270,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "En sus escamas percibió la extraña sensación del aire tocándolo por primera vez... y el hambre despertó en Yogg.",
-    "species": "Centrophryne spinulosa"
+    "species": "Centrophryne spinulosa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCEO-075",
@@ -15675,7 +16463,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Retratada en antiguos muros hace siglos derrumbados; estaba la oculta historia de esta tierra.",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-001",
@@ -15696,7 +16487,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "A nadie le viene mal refrescarse un poco en una jungla a 40°C.",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-001R",
@@ -15715,7 +16509,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "A nadie le viene mal refrescarse un poco en una jungla a 40°C.",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-001S",
@@ -15734,7 +16531,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "A nadie le viene mal refrescarse un poco en una jungla a 40°C.",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-001T",
@@ -15753,7 +16553,10 @@
     "rarity": "Kosmica/Titanica",
     "cost_text": "No puedes atacar, vincular ni usar otros efectos en el turno que usas esta Pasiva. Este efecto sólo se puede usar una vez por juego.",
     "lore_text": "",
-    "species": "Quetzalcoatlus"
+    "species": "Quetzalcoatlus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-001U",
@@ -15770,9 +16573,12 @@
     "artist": "Kundu del Castillo",
     "rarity_variants": [],
     "rarity": "Ultra Rara",
-    "cost_text": "Esta carta no puede escalar, ser curada ni protegida.",
+    "cost_text": "",
     "lore_text": "A nadie le viene mal refrescarse un poco en una jungla a 40°C.",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-002",
@@ -15791,9 +16597,12 @@
       "K"
     ],
     "rarity": "Comun",
-    "cost_text": "Esta carta no puede escalar, ser curada ni protegida.",
+    "cost_text": "",
     "lore_text": "La roca, el fuego, el frío y el agua se postran ante su corona y el caos; se rinde ante su orden.",
-    "species": "Tyrannosaurus rex"
+    "species": "Tyrannosaurus rex",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-002R",
@@ -15812,7 +16621,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "La roca, el fuego, el frío y el agua se postran ante su corona y el caos; se rinde ante su orden.",
-    "species": "Tyrannosaurus rex"
+    "species": "Tyrannosaurus rex",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-002S",
@@ -15831,7 +16643,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "La roca, el fuego, el frío y el agua se postran ante su corona y el caos; se rinde ante su orden.",
-    "species": "Tyrannosaurus rex"
+    "species": "Tyrannosaurus rex",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-002T",
@@ -15843,14 +16658,17 @@
     "damage": 3,
     "rests": 2,
     "effect_type": "Pasiva",
-    "effect_text": "Neutral",
+    "effect_text": "Ninguna (solo lore)",
     "image": "images/TCOO-002T.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
     "rarity": "Kosmica/Titanica",
     "cost_text": "",
     "lore_text": "Ardiente furia contra la sinfonía del orden. Ninguna era escapa al desacuerdo.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-002U",
@@ -15890,7 +16708,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "No es un dragón, es más bien un carnotaurus con alas de pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-003R",
@@ -15928,7 +16749,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "No es un dragón, es más bien un carnotaurus con alas de pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-003T",
@@ -15964,7 +16788,7 @@
     "artist": "Necro Balam",
     "rarity_variants": [],
     "rarity": "Ultra Rara",
-    "cost_text": "Esta carta siempre estara abismada.",
+    "cost_text": "",
     "lore_text": "No es un dragón, es más bien un carnotaurus con alas de pterodáctilo que escupe fuego... Bueno, sí es algo así como un dragón...",
     "species": "Carnotaurus sastrei"
   },
@@ -15985,7 +16809,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Creador de cavernas y escultor antiguo de la roca.",
-    "species": "Qianzhousaurus sinensis"
+    "species": "Qianzhousaurus sinensis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-004R",
@@ -16023,7 +16850,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "Creador de cavernas y escultor antiguo de la roca.",
-    "species": "Qianzhousaurus sinensis"
+    "species": "Qianzhousaurus sinensis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-004U",
@@ -16061,7 +16891,10 @@
     "rarity": "Comun",
     "cost_text": "No puedes atacar, vincular ni usar otros efectos en el turno que usas esta Pasiva. Este efecto sólo se puede usar una vez por juego.",
     "lore_text": "",
-    "species": "Quetzalcoatlus"
+    "species": "Quetzalcoatlus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-005R",
@@ -16118,7 +16951,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "Si esta carta usó su Activa, recibe 2 descansos en Fin de Turno.",
     "lore_text": "",
-    "species": "Quetzalcoatlus"
+    "species": "Quetzalcoatlus",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-006",
@@ -16137,7 +16973,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Al pasar, su imagen es visible sólo como un eco.",
-    "species": "Utahraptor"
+    "species": "Utahraptor",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-006R",
@@ -16175,7 +17014,10 @@
     "rarity": "Super Rara",
     "cost_text": "Solo puedes usar este efecto una vez por turno.",
     "lore_text": "Al pasar, su imagen es visible sólo como un eco.",
-    "species": "Utahraptor"
+    "species": "Utahraptor",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-006U",
@@ -16232,11 +17074,14 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "A través de sus ojos, los Nírge podían experimentar la vida desde la perspectiva de cualquier organismo del planeta.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-007S",
-    "name": "Kaykac, Sorpresa Pirica",
+    "name": "Kaykac, Explosion Marina",
     "set": "TCOO",
     "type": "Adendei",
     "subtype": "",
@@ -16289,7 +17134,10 @@
     "rarity": "Rara",
     "cost_text": "Debes tener 2 Rot en Extinción para usar su Activa.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-008S",
@@ -16327,7 +17175,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "El Otro descubrió que más allá de su Hifa, hallaría un vínculo con otro curioso ser.",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-009R",
@@ -16346,7 +17197,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "El Otro descubrió que más allá de su Hifa, hallaría un vínculo con otro curioso ser.",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-009S",
@@ -16365,7 +17219,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "El Otro descubrió que más allá de su Hifa, hallaría un vínculo con otro curioso ser.",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCOO-010",
@@ -16403,7 +17260,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "El dominio del vínculo llevó años, pero valió toda la pena...",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-010S",
@@ -16460,7 +17320,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "En estas tierras florece la vida eterna; el corazón del mundo.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-011S",
@@ -16517,7 +17380,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Espacio en conjunción a todas las Esferas, de su copa la vida surge y en sus raíces se asienta para retornar.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-012S",
@@ -16536,7 +17402,10 @@
     "rarity": "Super Rara",
     "cost_text": "Envía esta carta a Extinción para usar su Pasiva.",
     "lore_text": "Espacio en conjunción a todas las Esferas, de su copa la vida surge y en sus raíces se asienta para retornar.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-013",
@@ -16574,7 +17443,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Al reverso de las tierras de Askame, las raíces y su podredumbre.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-013S",
@@ -16631,7 +17503,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "",
-    "species": "Archaeamphora longicervia"
+    "species": "Archaeamphora longicervia",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-014S",
@@ -16764,7 +17639,10 @@
     "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "Con la ayuda de un Ixim, Rasvel prolongó su vida aún mucho más de lo que un Adendei habría vivido jamás.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-017",
@@ -16802,7 +17680,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCOO-018",
@@ -16897,7 +17778,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Hipnóticas plumas que manipulan a quienes miran.",
-    "species": "Sinosauropteryx prima"
+    "species": "Sinosauropteryx prima",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-020R",
@@ -16935,7 +17819,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Vigilante de las selvas, Protector de los lagos.",
-    "species": "Qianzhousaurus sinensis"
+    "species": "Qianzhousaurus sinensis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-021R",
@@ -16973,7 +17860,10 @@
     "rarity": "Comun",
     "cost_text": "Debes tener 2 Rot en Extinción para usar su Activa.",
     "lore_text": "Rey del mundo subterráneo, guardián del cristal y la roca.",
-    "species": "Ankylosaurus magniventris"
+    "species": "Ankylosaurus magniventris",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-022R",
@@ -16992,7 +17882,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Rey del mundo subterráneo, guardián del cristal y la roca.",
-    "species": "Ankylosaurus magniventris"
+    "species": "Ankylosaurus magniventris",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-023",
@@ -17011,7 +17904,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Therizinosaurus cheloniformis"
+    "species": "Therizinosaurus cheloniformis",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-023R",
@@ -17030,7 +17926,10 @@
     "rarity": "Rara",
     "cost_text": "Costo: Solo puedes usar esta pasiva una vez mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": "Therizinosaurus cheloniformis"
+    "species": "Therizinosaurus cheloniformis",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-024",
@@ -17049,7 +17948,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Arthropleura"
+    "species": "Arthropleura",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-024R",
@@ -17068,7 +17970,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "",
-    "species": "Arthropleura"
+    "species": "Arthropleura",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-025",
@@ -17087,7 +17992,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-026",
@@ -17106,7 +18014,10 @@
     "rarity": "Comun",
     "cost_text": "Debes tener 2 Ixim en Extinción para usar esta Pasiva. Sólo puedes usar este efecto una vez mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": "Pentaceratops"
+    "species": "Pentaceratops",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-027",
@@ -17125,7 +18036,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Grecas de poder alternantes, imbuidas del elemento que tocase.",
-    "species": "Spinosaurus aegyptiacus"
+    "species": "Spinosaurus aegyptiacus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-028",
@@ -17144,7 +18058,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Xoloitzcuintle"
+    "species": "Xoloitzcuintle",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "TCOO-029",
@@ -17163,7 +18080,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Archaeopteryx"
+    "species": "Archaeopteryx",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-030",
@@ -17182,7 +18102,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Una vez que El Otro logró dominar aquel primer vínculo, un mundo entero se reveló a sus ojos...",
-    "species": "Archaeopteryx"
+    "species": "Archaeopteryx",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-031",
@@ -17201,7 +18124,10 @@
     "rarity": "Comun",
     "cost_text": "Solo puedes usar este efecto una vez por turno.",
     "lore_text": "",
-    "species": "Stegosaurus ungulatus"
+    "species": "Stegosaurus ungulatus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-032",
@@ -17220,7 +18146,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Acechante en el mar, ninguna sombra escapa a su luz.",
-    "species": "Amargasaurus"
+    "species": "Amargasaurus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-033",
@@ -17232,14 +18161,17 @@
     "damage": 3,
     "rests": 2,
     "effect_type": "Pasiva",
-    "effect_text": "Neutral",
+    "effect_text": "Ninguna (solo lore)",
     "image": "images/TCOO-033.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Ardiente furia contra la sinfonía del orden. Ninguna era escapa al desacuerdo.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-034",
@@ -17251,14 +18183,17 @@
     "damage": 2,
     "rests": 1,
     "effect_type": "Pasiva",
-    "effect_text": "Neutral",
+    "effect_text": "Ninguna (solo lore)",
     "image": "images/TCOO-034.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Después de sus largos años de vida, Rasvel batallaba por encajar en esta nueva era.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-035",
@@ -17277,7 +18212,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Spinosaurus aegyptiacus"
+    "species": "Spinosaurus aegyptiacus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-036",
@@ -17334,7 +18272,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "A través de su cuerpo, depura el mar.",
-    "species": "Metriorhynchus"
+    "species": "Metriorhynchus",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TCOO-039",
@@ -17370,7 +18311,7 @@
     "artist": "Necro Balam",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "Esta carta siempre estara abismada.",
+    "cost_text": "",
     "lore_text": "Aquel día, Nephtis no sólo perdió una batalla al enfrentarse al temible Yogg, sino también su propio sentido de la vista...",
     "species": "Hippocampus hippocampus"
   },
@@ -17389,7 +18330,7 @@
     "artist": "edgaritual_re",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "Esta carta solo puede atacar si los Adendei aliados son Adendei Abisales o Adendei-Atlicos.",
+    "cost_text": "",
     "lore_text": "Las sombras acuáticas se disuelven cuando su fuego resplandece.",
     "species": "Phocoena sinus"
   },
@@ -17486,7 +18427,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Piel escamada aparentemente interminable, con la dureza de un diamante.",
-    "species": "Stomias boa boa"
+    "species": "Stomias boa boa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-047",
@@ -17505,7 +18449,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Kiwa hirsuta"
+    "species": "Kiwa hirsuta",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-048",
@@ -17524,7 +18471,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "En movimientos insoportablemente lentos, la siniestra figura de Uragg busca su siguiente presa.",
-    "species": "Architeuthis dux"
+    "species": "Architeuthis dux",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-049",
@@ -17600,7 +18550,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "En las corrientes del misterio, una llama acuática se alza y con su fuego; el mundo se templa.",
-    "species": "Physeter macrocephalus"
+    "species": "Physeter macrocephalus",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCOO-053",
@@ -17619,7 +18572,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
-    "species": "Physeter macrocephalus"
+    "species": "Physeter macrocephalus",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCOO-054",
@@ -17638,7 +18594,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Su aliento; una fábrica de icebergs.",
-    "species": "Mesonychoteuthis hamiltoni"
+    "species": "Mesonychoteuthis hamiltoni",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCOO-055",
@@ -17657,7 +18616,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "El frío reina en los extremos del mundo; y él reina al frío.",
-    "species": "Mesonychoteuthis hamiltoni"
+    "species": "Mesonychoteuthis hamiltoni",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TCOO-056",
@@ -17942,7 +18904,10 @@
     "rarity": "Comun",
     "cost_text": "Si esta carta usó su Activa, recibe 2 descansos en Fin de Turno.",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-071",
@@ -17961,7 +18926,10 @@
     "rarity": "Comun",
     "cost_text": "Envía esta carta a Extinción para usar su Pasiva.",
     "lore_text": "En las profundidades del abismo descansa la sombra del océano.",
-    "species": "Neolithodes bronwynae"
+    "species": "Neolithodes bronwynae",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-072",
@@ -17980,7 +18948,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "En medio del abismo marino una luminosa estrella púrpura de dócil movimiento se acerca... No hay tiempo para huir.",
-    "species": "Mitsukurina owstoni"
+    "species": "Mitsukurina owstoni",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-073",
@@ -17999,7 +18970,10 @@
     "rarity": "Comun",
     "cost_text": "Costo: Solo puedes usar esta pasiva una vez mientras esta carta esté en el campo.",
     "lore_text": "",
-    "species": "Architeuthis dux"
+    "species": "Architeuthis dux",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-074",
@@ -18018,7 +18992,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "En sus escamas percibió la extraña sensación del aire tocándolo por primera vez... y el hambre despertó en Yogg.",
-    "species": "Centrophryne spinulosa"
+    "species": "Centrophryne spinulosa",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TCOO-075",
@@ -18208,7 +19185,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Retratada en antiguos muros hace siglos derrumbados; estaba la oculta historia de esta tierra.",
-    "species": "Carnotaurus sastrei"
+    "species": "Carnotaurus sastrei",
+    "subtypes": [
+      "Titán"
+    ]
   },
   {
     "folio": "TDMR-KDM",
@@ -18227,7 +19207,10 @@
     "subtype": "Catrín",
     "cost_text": "Antes de atacar, daña 1 punto a los Adendei aliados.",
     "lore_text": "",
-    "species": "Ambystoma mexicanum"
+    "species": "Ambystoma mexicanum",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "TKD-2022-001",
@@ -18479,7 +19462,10 @@
     "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "El portal se cerró tras de sí, el ojo abierto y su verdad para traer luz a la oscuridad.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TRWA-002",
@@ -18522,7 +19508,10 @@
     "rarity": "Kosmica/Titanica",
     "cost_text": "",
     "lore_text": "Tener poder y no ejercerlo es igual a no tenerlo.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "TRWA-002R",
@@ -18780,7 +19769,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Entre helados vientos y áspera arena, Yakerr encontró más que un amigo.",
-    "species": "Canis latrans"
+    "species": "Canis latrans",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TRWA-005U",
@@ -18900,7 +19892,10 @@
     "rarity": "Rara",
     "cost_text": "Si esta carta es enviada a Extinción, los Adendei aliados reciben 1 descanso. Solo puedes usar su Pasiva una vez por juego.",
     "lore_text": "Desde hace milenios, la Siku Kos dota de poder al Consejo para guiar su Bio con sabiduría.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "TRWA-007U",
@@ -19179,7 +20174,10 @@
     "rarity": "Rara",
     "cost_text": "",
     "lore_text": "Establecer un vínculo con toda la raza humana: Tarea imposible y objetivo principal del Ermitaño.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TRWA-014",
@@ -19812,7 +20810,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Entre estallidos y polvo, Nánuk realiza una fiera entrada.",
-    "species": "Ursus maritimus"
+    "species": "Ursus maritimus",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "TRWA-044",
@@ -19907,7 +20908,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Viejas cadenas se rompieron.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TRWA-049",
@@ -19926,7 +20930,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Un viejo enemigo, subyugado al dominio de la ciencia y la magia.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TRWA-050",
@@ -19945,7 +20952,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "La base de los Adendei fue destruida como si de estrujar un papel se tratara.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Abisal"
+    ]
   },
   {
     "folio": "TRWA-051",
@@ -20002,7 +21012,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Madre colosal en tu magno lago y tu áurea brisa, que tu vida fluya a través de mí.",
-    "species": "Dasypus novemcinctus"
+    "species": "Dasypus novemcinctus",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "TRWA-054",
@@ -20021,7 +21034,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Tener poder y no ejercerlo es igual a no tenerlo.",
-    "species": "Cyclura lewisi"
+    "species": "Cyclura lewisi",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "TRWA-055",
@@ -20059,7 +21075,10 @@
     "rarity": "Comun",
     "cost_text": "Si esta carta es enviada a Extinción, los Adendei aliados reciben 1 descanso. Solo puedes usar su Pasiva una vez por juego.",
     "lore_text": "",
-    "species": "Strix occidentalis lucida"
+    "species": "Strix occidentalis lucida",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "TRWA-057",
@@ -20116,7 +21135,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Cada Sabio Adendei sacrificó sus energías para resguardo de la vida.",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Catrín"
+    ]
   },
   {
     "folio": "TRWA-060",
@@ -20154,7 +21176,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Percibimos la ira como algo ardiente, pero cuando Nánuk usurpó y esculpió su trono, el Bio entero descubrió su gelidez.",
-    "species": "Ursus maritimus"
+    "species": "Ursus maritimus",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TRWA-062",
@@ -20223,12 +21248,12 @@
     "damage": 6,
     "rests": 1,
     "effect_type": "Costo",
-    "effect_text": "Debes pasar 1 turno antes de atacar con esta carta.",
+    "effect_text": "",
     "image": "images/LGRO-065.webp",
     "artist": "cripticus",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "Debe pasar 1 turno antes de atacar con esta carta.",
+    "cost_text": "Debes pasar 1 turno antes de atacar con esta carta.",
     "lore_text": "Después de tanto, Yakerr había encontrado su hogar.",
     "species": "Canis lupus baileyi"
   },
@@ -20325,7 +21350,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Con la llegada de los azules océanos, la roja edad de Ilith llegó a su fin...",
-    "species": "Pharomachrus mocinno"
+    "species": "Pharomachrus mocinno",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TRWA-071",
@@ -20420,7 +21448,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Anunciado su paso por el gélido viento de hielo cortante.",
-    "species": "Smildon fatalis"
+    "species": "Smildon fatalis",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TRWA-076",
@@ -20439,7 +21470,10 @@
     "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Y en la tierra se hizo el ardiente fuego que la purificó para que todo naciese.",
-    "species": "Pharomachrus mocinno"
+    "species": "Pharomachrus mocinno",
+    "subtypes": [
+      "Kósmico"
+    ]
   },
   {
     "folio": "TRWA-077",
@@ -20515,7 +21549,10 @@
     "subtype": "Guardián",
     "cost_text": "",
     "lore_text": "",
-    "species": ""
+    "species": "",
+    "subtypes": [
+      "Guardián"
+    ]
   },
   {
     "folio": "XPIX-001",
@@ -20573,5 +21610,24 @@
     "cost_text": "",
     "lore_text": "",
     "species": "Adelphobates galactonotus"
+  },
+  {
+    "folio": "GG-001",
+    "name": "Karus, Pinchazo Doble [ENGLISH]",
+    "set": "KPRC",
+    "type": "Adendei",
+    "subtype": "",
+    "energy": "Chaaktica",
+    "damage": 2,
+    "rests": 1,
+    "effect_type": "Pasiva",
+    "effect_text": "Pasiva: Esta carta puede atacar a 2 Adendei rivales, añadiendo 1 descanso a esta carta en el Fin de Turno.",
+    "image": "images/TCOO-037.webp",
+    "artist": "Nether_art31",
+    "rarity_variants": [],
+    "rarity": "Comun",
+    "cost_text": "",
+    "lore_text": "",
+    "species": "Centruroides limpidus"
   }
 ]

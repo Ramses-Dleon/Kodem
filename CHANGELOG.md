@@ -2,6 +2,29 @@
 
 Todos los cambios notables del Kódem TCG Companion.
 
+## [1.1.0] — 2026-04-20 — Sync 1,074 cartas + P1 audit fixes
+
+### Added
+- **+72 cartas nuevas desde v1.0.0** — catálogo ahora en **1,074 cartas** (13 sets)
+- Carta nueva `GG-001 Karus, Pinchazo Doble` (promo-tienda)
+- 26 imágenes sincronizadas codice-kodem ← CDN (CAMP-UV 0007–0026, TCDE-UV, TCOO-T series)
+
+### Changed
+- `cards.json` sincronizado desde SoT (codice-kodem) — cierra drift de 56 campos
+- Service Worker cache bump: `kodem-v913` → `kodem-v914`
+- READMEs actualizados: 893 → 1,074 cartas
+
+### Fixed
+- Typo `Piriccos` → `Piricos` (EXPO-0006 y otros efectos)
+- Nombre `Anton, Escuadro Catrin` → `Anton, Escuadron Catrin` (FYTE-003S)
+- 5 efectos con formato antiguo de requisito migrado a campo `requirement_text`
+
+### Audit
+- Ver `codice-kodem/audits/` para reportes completos: `cards-audit`, `ecosystem-audit`, `ecosystem-deep-audit`, `ecosystem-ultra-audit`
+- Reporte visual ejecutivo: https://kodem-audit-deploy.vercel.app
+
+---
+
 ## [1.0.0] — 2026-04-02 — Snapshot Final (GitHub Pages)
 
 > Última versión estática en GitHub Pages. La app migra a Vercel con backend (auth, marketplace de precios).
