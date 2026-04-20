@@ -1539,3 +1539,91 @@ FAQ-05 oficial lo confirmó para el caso de dos Activas-Rápidas: la segunda esp
 - **Pendiente v5.2:** documentar formalmente las 8 Energías en glosario con grafía canónica + nota sobre normalización en `cards.json`.
 
 
+
+
+---
+
+## D30. Definición de "estadísticas" de un Adendei
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad vía Supabase)
+
+**Pregunta original:** ¿Qué se considera "estadísticas" de una carta Adendei para efectos de copia, modificación o referencia?
+
+**Ruling (u_62a2ebfd, 2026-04-19 20:04 UTC):**
+> "Las estadísticas de una carta Adendei están especificadas en el apartado 2.2 en la página 6 del rulebook. Como viene especificado por indicadores de las diferentes partes de la carta que corresponden a una estadística, estas serían: Vida máxima, Tipo, Subtipo, Energía, Ataque, Descanso."
+
+**Ruling complementario (u_8afe616b, 2026-04-19 16:37 UTC):**
+> "Daño/descansos/energía" — coincide en el núcleo funcional.
+
+**Implicaciones:**
+- **Estadísticas canónicas (6):** Vida máxima, Tipo, Subtipo, Energía, Ataque, Descanso.
+- **NO son estadísticas:** efectos copiados (resultado de un efecto, no propiedad de la carta).
+- **NO son estadísticas:** los efectos propios de la carta (también se consideran aparte).
+
+**Impacto mecánico:**
+- Efectos como "copia las estadísticas" o "comparte estadísticas con X" aplican a las 6 propiedades listadas.
+- Efectos copiados (p.ej. por Gloku/D16) NO se propagan recursivamente si el objetivo a su vez copia estadísticas.
+
+**Pendiente v5.2:** consolidar la lista de 6 estadísticas en glosario §9 con referencia a §2.2.
+
+---
+
+## D31. Innegabilidad de ataques y efectos — interpretación y alcance
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad vía Supabase)
+
+**Pregunta original:** ¿Cómo interpretar las variaciones de formulación de "innegabilidad" en el rulebook (entre expansiones y productos) y qué alcance tiene?
+
+**Ruling (u_62a2ebfd, 2026-04-19 20:36 UTC):**
+
+**1. Origen de la variación de formulación:**
+> "La diferencia de formulación ha sido por error en maquetación de redacción o una evolución de la misma a lo largo de las expansiones y productos."
+
+**2. Alcance de la innegabilidad:**
+> "La innegabilidad aplica a la variable especificada en esa parte de la frase/efecto, por lo que también se vuelve innegable esa 'declaración'."
+
+**3. Ataques nunca son negables:**
+> "Los ataques no pueden ser negados de ninguna manera."
+>
+> Ejemplos canónicos: **Pruebas de campo**, **Protección Selectiva** — estas cartas NO afectan ataques.
+
+**4. Efectos son protegidos de negación externa:**
+> "Los efectos por su parte no son afectados por ningún efecto externo que pueda negar."
+>
+> Ejemplos canónicos: **Recipiente de vida**, **Zaykan, Anulación** — estas cartas NO niegan efectos de otras cartas.
+
+**Implicancias mecánicas:**
+- **Ataques:** siempre se resuelven, no existen mecanismos válidos de negación.
+- **Efectos:** inmunes a cartas con cláusulas genéricas de "niega".
+- **Declaraciones parciales:** cuando una carta dice "innegable", la innegabilidad se hereda a la parte específica de la frase/efecto referenciada.
+
+**Pendiente v5.2:**
+- Unificar la redacción de innegabilidad en todas las cartas que la mencionan.
+- Agregar glosario "Innegable" con definición y lista de cartas canónicas que NO aplican (Pruebas de campo, Protección Selectiva, Recipiente de vida, Zaykan Anulación).
+
+---
+
+## D52. Zona y tipo por omisión en efectos/ataques/condiciones
+
+**Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad vía Supabase)
+
+**Pregunta original:** Cuando un efecto, ataque o condición no especifica explícitamente tipo de carta ni zona (aliada/rival), ¿a qué aplica?
+
+**Ruling (u_62a2ebfd, 2026-04-19 20:38 UTC):**
+> "Cuando un efecto/ataque o en determinados casos condición no indica expresamente algún tipo de carta o zona (ya sea rival o aliada), esa declaración aplica a cualquiera de todas ellas.
+>
+> En el caso de esta carta, al no indicar si son aliados o la zona principal afectada, se considera tanto a ambas Zonas Principales, como a aliados y rivales que cumplan la condición de ser átlicos."
+
+**Implicancias mecánicas:**
+- **Omisión explícita = alcance universal.** Si la carta no nombra aliado/rival/zona, abarca TODO el tablero.
+- **Se mantienen las restricciones implícitas por contexto.** Un efecto que lógicamente solo puede aplicarse a cartas en zona X (por verbo o efecto) sigue restringido por esa lógica.
+- **Condiciones de tipo/energía se respetan.** "Todos los Adendei-Átlicos" aplica a todos los de esa energía en ambos lados, pero no incluye Adendei de otras energías.
+
+**Patrón de diseño textual:**
+- **Explícito narrow:** "Un Adendei-Átlico **aliado**" → solo tu campo.
+- **Explícito wide:** "Todos los Adendei-Átlicos en ambos campos" → ambos lados.
+- **Omisión = wide implícito:** "Todos los Adendei-Átlicos" → ambos lados (por default según D52).
+
+**Pendiente v5.2:**
+- Auditar cartas con patrón de omisión para detectar las que DEBERÍAN ser narrow (aliado/rival específico) y marcarlas como erratas de redacción.
+- Agregar nota de interpretación en glosario sobre "alcance por defecto = universal".
