@@ -1664,3 +1664,118 @@ Tras re-leer rulings-v5.1.md + reglas.md completos, 9 dudas abiertas en el porta
 4. Dudas sin ruling derivable → quedan abiertas con pregunta clara para diseño.
 
 _Registrado: 2026-04-20 19:45 CDMX. Portal: kodem-dudas-comunidad.vercel.app. Suite engine: 573 PASS._
+
+---
+
+## M8 — "Consejo" en Morx, Descarga Átlica — ¿término mecánico o carta específica?
+
+**Status:** ✅ RESUELTA 2026-04-20 por Ramsés (autor)
+**Cartas relevantes:** TCOO-001, TCOO-001R, TCEO-001, TCEO-001R (Morx) + LGRO-007, LGRO-010R, TRWA-007, TRWA-010R (Consejo de Hielo)
+
+### Pregunta original
+Las 4 variantes de Morx, Descarga Átlica mencionan "Consejo" en su texto sin definición en rulebook ni glosario. ¿Es término mecánico nuevo, subtipo, zona, o lore?
+
+### Ruling
+**Es la carta Bio "Consejo de Hielo" (LGRO-007 / LGRO-010R / TRWA-007 / TRWA-010R) mencionada por nombre corto.**
+
+Texto Morx: *"Si 'Consejo de Hielo' está en el campo, esta carta puede atacar a todos los Adendei rivales."*
+
+Texto Consejo de Hielo: *"Pasiva: Los Adendei aliados son considerados Adendei-Átlico."*
+
+No es término mecánico, ni subtipo, ni zona. Es una **referencia directa a una carta Bio específica por nombre** (legal según meta-regla del rulebook: las cartas pueden referenciarse por nombre).
+
+### Implicancias
+- Morx solo activa su ataque múltiple cuando "Consejo de Hielo" (cualquier variante) está en campo aliado/rival y activa.
+- Interacción dependiente de synergy: Consejo de Hielo convierte Adendei aliados a Átlico, creando condición favorable para Morx Átlico.
+- No hay necesidad de definir "Consejo" en glosario — es nombre propio de carta.
+
+### Acción
+- Eliminar M8 del portal dudas (no era duda real).
+- Registrar en rulings como referencia futura para evitar duplicación del análisis.
+
+---
+
+## M7 — Tokens con stats copiadas/variables — ¿qué define las stats?
+
+**Status:** ✅ RESUELTA 2026-04-20 por Ramsés (autor)
+**Cartas relevantes:** TCDE-015 Gloku, TCDE-008 Dagg, KPRC-019 Zaren, y cualquier invocadora de Token.
+
+### Ruling
+**"Cada carta invocadora declara las stats del Token; no hay regla general más allá del vida-max = 6."**
+
+### Implicancias
+- **Vida máxima = 6 pts** siempre (regla general fija, ya establecida en D9).
+- **Resto de stats** (daño, descansos, energía, Activa, costo, subtipo): las que declare el texto de la invocadora.
+- **Tokens con stats copiadas** (Gloku, Zaren): el texto de la invocadora define qué se copia y cómo.
+- **No existe "estadísticas originales del Token"** como concepto genérico — solo existe lo que dice la invocadora.
+- Si la invocadora calla sobre una stat → default implícito (0 daño, 0 descansos, etc.).
+
+### Fundamento
+Meta-regla rulebook p20/b10: *"Se aplicarán en todo momento los lineamientos de este documento a menos que el texto de una carta indique explícitamente lo contrario."*
+
+El texto de la carta invocadora es la autoridad sobre las stats del Token que invoca. Rulings previos D9 (vida-max) y D16 (snapshot Gloku) quedan consistentes con esta regla general.
+
+### Acción
+- Marcar M7 como resuelta en portal dudas.
+
+---
+
+## M10 — Gestos sociales como requisito de efecto (Ariam Navideño, Día del Amor)
+
+**Status:** ✅ RESUELTA 2026-04-20 por Ambir (Juez Kodem)
+**Cartas relevantes:** NAVD-001 Ariam, Regalo Navideño / SNVL-001 Ariam, Día del Amor y la Amistad.
+
+### Ruling
+**"La interacción social es obligatoria. No hay forma de evitarla."**
+
+### Por carta
+
+**SNVL-001 — Ariam, Día del Amor y la Amistad**
+- *"Se pierde el efecto si no chocan los puños."*
+- Si el rival rechaza chocar puños → el efecto simplemente no se resuelve.
+- Sin daño colateral, solo falla la activación.
+
+**NAVD-001 — Ariam, Regalo Navideño**
+- *"Te dañas 3 si no dices 'Feliz Navidad'."*
+- El gesto verbal es costo/condición obligatoria del jugador activo.
+- Omitir la frase → auto-daño de 3 pts al jugador activo.
+
+### Implicancias
+- Los gestos son **requisito mecánico real**, no decoración temática.
+- Diferencia clave:
+  - **NAVD** depende solo del jugador activo (auto-sanción).
+  - **SNVL** requiere participación del rival (rival puede bloquear gratis rechazando el gesto).
+- El rival **no puede "rechazar" tácticamente** para bloquear NAVD — la frase es responsabilidad del activo.
+- El rival **sí puede bloquear SNVL** simplemente no chocando puños (ningún mecanismo lo obliga).
+
+### Fundamento
+Rulebook p20/b10: *"Se aplicarán en todo momento los lineamientos de este documento a menos que el texto de una carta indique explícitamente lo contrario."* El texto de estas cartas es explícito y vinculante.
+
+### Autoridad del ruling
+**Ambir** — Juez Kodem (autoridad oficial de arbitraje comunitario), 2026-04-20 21:49-21:50 CDMX.
+
+---
+
+## D36 — Múltiples Espectros compitiendo por posesión de Ariam en Extinción
+
+**Status:** ✅ RESUELTA 2026-04-20 por Aldo (Juez Kodem)
+**Cartas relevantes:** FYTE-003K Espectro (Ariam) y cualquier variante con Requisito de poseer 2+ Adendei "Ariam" en Extinción.
+
+### Ruling
+**Caso 1 (único Ariam disponible, 2 Espectros): NO — solo un Espectro puede poseerlo.**
+Si el Espectro A ya poseyó el único Ariam disponible, esa carta queda debajo de A y ya no está en Extinción. El Espectro B no tiene objetivo válido y no puede poseer nada.
+
+**Caso 2 (2 Ariam en Extinción, 2 Espectros): SÍ — ambos pueden poseer en la misma Fase Previa.**
+Cada Espectro toma un Ariam distinto; no hay conflicto porque hay objetivos suficientes.
+
+### Implicancias
+- La posesión consume la carta objetivo: una vez debajo del Espectro poseedor, deja de estar "disponible en Extinción".
+- El Requisito del Espectro se evalúa al momento de resolver su efecto; si no hay Ariam disponible en ese instante, el Requisito falla.
+- No hay "compartir" posesión entre Espectros — cada carta poseída pertenece a un solo Espectro.
+- Regla general: **1 objetivo de posesión por Espectro, consumido al resolver**.
+
+### Fundamento
+Consistente con §Posesión / Espectros del rulebook v5.1 — la carta poseída se desplaza físicamente debajo del Espectro, saliendo de Extinción.
+
+### Autoridad del ruling
+**Aldo** — Juez Kodem (autoridad oficial de arbitraje comunitario), 2026-04-20 23:01 CDMX. Reportado en grupo Kódem TCG Community por Ramsés D'León.
