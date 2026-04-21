@@ -73,3 +73,13 @@ Cada carta necesita un handler específico:
 1. ✅ 3 CUSTOM normalizadas a `effect_type='Sin efecto'` (commit `fix/p4-empty-effect-text-schema`)
 2. ✅ Test de regresión agregado que valida invariantes del schema
 3. 📌 Backlog: handlers del engine para las 6 cartas solo-costo
+
+---
+
+## Addendum 2026-04-20 19:00 CDMX — Aclaraciones de Ramsés
+
+### Cyra vs Cura (INMX-001, KSPC-001)
+**Ramsés confirmó:** era error de OCR. El texto correcto es "Cura 6 puntos a un Adendei aliado". Verificación en `cards.json`: 0 ocurrencias de `\bCyra\b` en effect_text/cost_text. Ya está normalizado (probablemente durante P4 normalization del mismo día). **No action required.**
+
+### Jane Dalgood (KPRC-020)
+**Ramsés confirmó:** es una **Protectora** cuyo texto/efecto sale en la próxima expansión. El placeholder "TBA" en cost_text es intencional hasta el lanzamiento oficial. **Status:** bloqueado por diseño, no por datos. No requiere handler hasta que Camilo/Tochcalli liberen la expansión.
