@@ -1777,6 +1777,11 @@ Cada Espectro toma un Ariam distinto; no hay conflicto porque hay objetivos sufi
 ### Fundamento
 Consistente con §Posesión / Espectros del rulebook v5.1 — la carta poseída se desplaza físicamente debajo del Espectro, saliendo de Extinción.
 
+### Rulings relacionados
+- **D20** (Espectros — vida máxima, posesión y requisitos) — marco general de posesión.
+- **D21** (Posesión de Espectros = Vivificación atómica) — naturaleza de la posesión.
+- **D22** (Herencia de stats del Adendei poseído) — consecuencia de la posesión.
+
 ### Autoridad del ruling
 **Aldo** — Juez Kodem (autoridad oficial de arbitraje comunitario), 2026-04-20 23:01 CDMX. Reportado en grupo Kódem TCG Community por Ramsés D'León.
 
