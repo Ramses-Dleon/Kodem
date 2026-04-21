@@ -121,7 +121,7 @@
 
 ## R
 
-- **Rava** *(Carta)* — Manifestación de las 7 energías en forma de dragón colosal. 6 PV, 0-2 descansos. 0-2 por Mazo General.
+- **Rava** *(Carta)* — Manifestación de las 7 energías en forma de dragón colosal. 6 PV, 0-2 descansos. 0-2 por Mazo General. *(Ver lore narrativo para los 7 Ravas individuales — Hogg, Nozi, Hori, Nok, Ruk, Muz, Quam — y sus correspondencias cosmológicas.)*
 - **Reemplazar** — Tomar 3 cartas del tope del Mazo Principal y elegir 1 para colocar en Zona Principal (6 PV); las otras 2 van al fondo del Mazo.
 - **Restricción** — Indicación que una carta **no puede** realizar ciertas acciones (atacar, declarar efectos, ocultar, equipar, etc.).
 - **Revelar** — Colocar una carta boca arriba en el campo.
@@ -145,7 +145,7 @@
 
 ## V
 
-- **Vincular** — Uso del efecto del Protector a través de un Adendei disponible (también llamado *Vínculo Odémico*).
+- **Vincular** — Uso del efecto del Protector a través de un Adendei disponible (también llamado *Vínculo Odémico*). *(Ver lore narrativo para el concepto cosmológico completo.)*
 - **Vivificar** — Efecto que hace que una carta deje la Zona de Extinción. **Cualquier** carta que deje Extinción se considera vivificada, no solo las de subtipo Resurrecto.
 
 ---
