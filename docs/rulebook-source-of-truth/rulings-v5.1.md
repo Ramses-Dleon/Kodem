@@ -1627,3 +1627,40 @@ FAQ-05 oficial lo confirmó para el caso de dos Activas-Rápidas: la segunda esp
 **Pendiente v5.2:**
 - Auditar cartas con patrón de omisión para detectar las que DEBERÍAN ser narrow (aliado/rival específico) y marcarlas como erratas de redacción.
 - Agregar nota de interpretación en glosario sobre "alcance por defecto = universal".
+
+---
+
+## SESIÓN 2026-04-20 19:45 CDMX — Rulings derivados para portal dudas
+
+Tras re-leer rulings-v5.1.md + reglas.md completos, 9 dudas abiertas en el portal se resolvieron por derivación directa del rulebook o ya tenían respuesta en Supabase.
+
+**Dudas marcadas como `resolved: true` en portal (deploy v2026-04-20):**
+
+| ID | Título | Fuente del ruling |
+|---|---|---|
+| D30 | Virste Reseteo: alcance de "estadísticas" | 2 respuestas Supabase + M14 |
+| D31 | "No puede ser negada" — alcance | Respuesta Supabase u_62a2ebfd |
+| D52 | Zaykan Citadel: omisión = wide implícito | Respuesta Supabase u_62a2ebfd |
+| D33 | Espectro sin poseída: sí puede atacar | p14/b16 bullet 6 + FAQ-03 |
+| D37 | Tlahuelpuchi bloqueo total | D21 (atomicidad) + §10.8 |
+| D40 | Ataque múltiple: 1 ataque = 1 descanso | p24/b07 + p25/b01 + FAQ-03 |
+| D43 | Pasivas Opcionales vs Generales | §10.3 criterio negrita |
+| M3 | Mixtla: no persiste post-campo | D17 + p25/b06 |
+| M5 | Mazo rival visibilidad durante efecto | M2.5 + §4 |
+
+**Quedan abiertas (genuinamente requieren diseño):**
+- **D36** Pool compartido entre Espectros simultáneos (sin ruling rulebook claro)
+- **D46** Formato Extendido — ¿3 copias del mismo Rava?
+- **L5** Naywa Quemadura Catrín — triple mecánica entrelazada
+
+### Metodología aplicada
+
+1. Relectura completa de `rulings-v5.1.md` (1629 líneas) + `reglas.md` (591 líneas).
+2. Cross-check de cada duda abierta con:
+   - Rulings previamente resueltos (D1-D52).
+   - Respuestas de comunidad en Supabase.
+   - Texto literal del rulebook v5.1.
+3. Derivación de ruling solo cuando había evidencia textual directa o regla meta aplicable (D17).
+4. Dudas sin ruling derivable → quedan abiertas con pregunta clara para diseño.
+
+_Registrado: 2026-04-20 19:45 CDMX. Portal: kodem-dudas-comunidad.vercel.app. Suite engine: 573 PASS._
