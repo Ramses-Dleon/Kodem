@@ -1779,3 +1779,40 @@ Consistente con §Posesión / Espectros del rulebook v5.1 — la carta poseída 
 
 ### Autoridad del ruling
 **Aldo** — Juez Kodem (autoridad oficial de arbitraje comunitario), 2026-04-20 23:01 CDMX. Reportado en grupo Kódem TCG Community por Ramsés D'León.
+
+---
+
+## L-5 — Naywa, Quemadura Catrín (FYTE-044) — tres mecánicas entrelazadas
+
+**Status:** ✅ RESUELTA 2026-04-21 por Ramsés (autor/diseño)
+**Carta:** FYTE-044 Naywa, Quemadura Catrín — Adendei Catrín / Pírica.
+
+**Texto de la carta:**
+- *Pasiva:* «Los Adendei Catrín aliados con 1 pto. de daño pueden quemar 1 carta rival al atacar. Si 1 Adendei Catrín o Pírico es enviado a Extinción, daña 1 pto. a todas las cartas quemadas.»
+- *Costo:* «Quema 1 carta aliada para quemar 1 carta rival por esta Pasiva.»
+
+### Ruling
+
+**① «Adendei Catrín aliados con 1 pto. de daño»**
+Significa: **exactamente 1 de daño (stat) Y subtipo Catrín**. Los dos requisitos son conjuntivos. Un Catrín con 0 o 2+ de daño no califica; un no-Catrín con 1 de daño tampoco.
+
+**② Costo obligatorio — sin aliadas quemables, no hay Pasiva**
+Para quemar 1 carta rival vía esta Pasiva, **debes primero quemar 1 carta aliada** como costo. Si no tienes cartas aliadas que puedas quemar, **no puedes cumplir el costo y la Pasiva no se activa**. El costo es prerrequisito, no opcional.
+
+**③ Disparo por cada envío a Extinción**
+El efecto *"daña 1 pto. a todas las cartas quemadas"* se dispara **cada vez que un Adendei Catrín o Pírico es enviado a Extinción**, no una sola vez. Si en un mismo evento se envían 2 Catrines/Píricos → 2 disparos independientes de 1 pto. cada uno.
+
+**④ Alcance del daño: todas las cartas quemadas en Zona Principal, aliadas y rivales**
+«Todas las cartas quemadas» = sin distinción de bando. Incluye cartas quemadas aliadas y rivales que estén en Zona Principal al momento del disparo. Fratricidio confirmado.
+
+### Implicancias estratégicas
+- El costo es una válvula de auto-desgaste: quemar aliadas propias acumula objetivos para el efecto de Extinción (③+④).
+- Combo clave: quemar Catrines/Píricos aliados como costo → al extinguirse, disparan daño a todas las quemadas (incluso aliadas), cascada de daño.
+- Si todas tus aliadas están ya quemadas, la Pasiva se vuelve inaccesible (no puedes pagar costo).
+- El efecto de Extinción (③) es independiente de la Pasiva de ataque — se dispara aunque nunca hayas usado la Pasiva.
+
+### Fundamento
+Meta-regla rulebook p20/b10: *"Se aplicarán en todo momento los lineamientos de este documento a menos que el texto de una carta indique explícitamente lo contrario."* El texto de Naywa es vinculante en sus 4 puntos resueltos arriba.
+
+### Autoridad del ruling
+**Ramsés D'León** — autor/diseño de Kódem TCG, 2026-04-21 00:38-00:43 CDMX. Reportado y resuelto en grupo Kódem TCG Community.
