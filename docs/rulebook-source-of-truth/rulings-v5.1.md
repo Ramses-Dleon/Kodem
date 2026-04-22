@@ -638,6 +638,139 @@ Con D22c, la triada de herencia de Espectros queda sellada:
 
 ---
 
+## M3 residual — Resurrectos: acumulación depende de la redacción — CERRADA
+
+**Fecha:** 2026-04-22 16:56 UTC
+**Status:** ✅ RESUELTA por Ramsés (autor/diseño)
+
+**Ruling verbatim:**
+> *"Si los resurrectos sí pueden acumular sus efectos pero depende de la redacción de cada efecto. Un ejemplo: Marok de Flores y Tumbas puede acumular su efecto si lo vivificas varias veces."*
+
+**Ruling:**
+- Cuando un Adendei con efecto tipo "durante el resto del juego" o "mientras esté en el campo" es **vivificado múltiples veces** (sale + regresa), la acumulación de efectos **depende enteramente del texto de la carta**. No hay regla general de "siempre se acumula" o "nunca se acumula".
+- El criterio es la **redacción literal**: si el texto permite interpretación acumulativa (modificadores stat-like, buffs persistentes) → acumula. Si el texto es de efecto singular activado una vez → no acumula.
+
+**Ejemplo canónico provisto por Ramsés:**
+- **Marok de Flores y Tumbas** → sí acumula si lo vivificas varias veces.
+- Su redacción tipo-stat (modificador persistente) permite que cada vivificación genere una instancia independiente del buff.
+
+**Aplicación a Mixtla (M3 original):**
+- Mixtla: *"durante el resto del juego, tu rival tendrá 2 Activas-Rápidas adicionales y tú 2 menos."*
+- Si Mixtla es vivificada 2 veces → **sí se acumulan los efectos** (+2 +2 = +4 rival, −2 −2 = −4 propias).
+- Consistente con el criterio: el texto otorga un modificador numérico que no especifica "máximo una vez".
+
+**Relación con D17:**
+- D17 (el texto de la carta supersede reglas generales) es el fundamento meta-regla: cada carta define su propia lógica de acumulación vía redacción.
+- Reglas de no-persistencia post-campo (M3 base, `p25/b06`) aplican a efectos **terminados** — mientras esté en campo en la re-vivificación, el efecto está "vivo" y se suma al remanente textual, si la redacción lo permite.
+
+**Implicancia de diseño:**
+- Redactores deben ser explícitos: *"sólo una vez por partida"* o *"no acumulable"* si se busca evitar stacking.
+- Sin cláusula restrictiva → stacking natural permitido.
+
+---
+
+## M5 — Visibilidad del Mazo rival: depende del formato/contexto — CERRADA
+
+**Fecha:** 2026-04-22 16:56 UTC
+**Status:** ✅ RESUELTA por Ramsés (autor/diseño)
+
+**Ruling verbatim:**
+> *"En realidad no hay una regla para eso pero más que nada depende de dónde se juega, nivel de seriedad y cosas así."*
+
+**Tabla por contexto:**
+
+| Contexto | Ambos ven | Orden preservado | Rival reorganiza después |
+|----------|:---------:|:---------------:|:-----------------------:|
+| **CdC (Campeonato de Campeones)** | ✅ sí | ✅ sí | ❌ no |
+| **Bio Combate / Tezcatlipoca** | ✅ sí (default CdC) | ✅ sí (default CdC) | ❌ no (default; organizador puede flexibilizar) |
+| **Torneos de tienda / chill** | ✅ sí | ✅ sí | depende de rival/organizador |
+
+**Regla operativa:**
+- **Competitivo (CdC/Bio/Tez):** transparencia total cuando un Zotz "ve" el Mazo rival — ambos jugadores observan, el orden original del Mazo se conserva, no se permite reorganización.
+- **Casual/tienda:** la transparencia y el orden se mantienen por default, pero el organizador/rival puede permitir reorganización si lo pactan previamente.
+
+**Fundamento:**
+- No hay regla de rulebook formal; la norma competitiva se deriva del estándar CdC.
+- Formatos casuales heredan el default competitivo pero admiten flexibilidad.
+
+**Aplicación a familia Zotz (13 cartas):**
+- Cualquier efecto Zotz que revele/vea el Mazo rival (ej. KPRC Zotz variants, efectos tipo *"mira las primeras N cartas"*) → ambos jugadores observan, orden intacto, no reorganizable en CdC.
+- Efectos que **manipulan** el Mazo (reordenan, roban, entierran) sí modifican orden por su propio texto — este ruling sólo cubre la visibilidad pasiva.
+
+**Pendiente v5.2:**
+- Agregar sección breve §"Manejo del Mazo rival" en reglas de formato competitivo (CdC) con las 3 reglas (ambos ven, orden preserva, no reorganiza).
+
+---
+
+## M9 — Multijugador: formato oficial escalable — CERRADA
+
+**Fecha:** 2026-04-22 16:56 UTC
+**Status:** ✅ RESUELTA por Ramsés (autor/diseño)
+
+**Ruling verbatim:**
+> *"Multijugador sí es un formato oficial, básicamente es un formato 1v1 pero la diferencia es que va aumentando para ser de 4 o hasta 20 de ahí en más es todo lo mismo que el 1v1."*
+
+**Ruling:**
+- **Multijugador ES formato oficial Kodem.** Soporta **4 hasta 20 jugadores** simultáneos en la misma partida.
+- **Todas las reglas del 1v1 aplican idénticamente en multijugador.** No hay cambios en fases, descansos, Extinción, condiciones de victoria individuales, ni en la mecánica de ataques/pasivas.
+- La única diferencia es el **número de oponentes simultáneos**.
+
+**Aplicación a cartas "hasta N jugadores" (Maiz, Vesta Ignia, Enjambre Pírico, Ulmor, etc.):**
+- En **1v1**: el efecto se aplica al único rival sin penalización; N en ese contexto = 1 (o el máximo aplicable a un solo jugador).
+- En **multijugador 4+**: el jugador activo elige hasta N rivales como objetivo según texto de la carta.
+- El diseño "hasta N" está pensado explícitamente para escalar entre 1v1 y multijugador sin re-impresión.
+
+**Implicancias:**
+- Victoria: cada jugador tiene condición independiente (vida Rava/Protector); último jugador con recursos gana, pero puede haber eliminaciones secuenciales.
+- Descansos/Extinciones: iguales al 1v1.
+- Cartas Limitadas (lista p36-p37): aplica a multijugador (ya resuelto en D7).
+- Orden de turno: seguir regla de formato (no especificada; asumida rotación estándar horaria).
+
+**Relación con D7:**
+- D7 ya estableció que la lista de Limitadas aplica a Multijugador y Extendido, no a Estándar. Confirma que Multijugador es formato reconocido y regulado.
+
+**Pendiente v5.2:**
+- Formalizar sección §Formato Multijugador con rango (4-20), hereda reglas 1v1 salvo Limitadas, orden de turno.
+
+---
+
+## D43 — Pasivas Opcionales vs Generales — CERRADA
+
+**Fecha:** 2026-04-22 16:56 UTC
+**Status:** ✅ RESUELTA por Ramsés (autor/diseño)
+
+**Ruling verbatim:**
+> *"Las pasivas opcionales no son obligaciones a diferencia de las pasivas no opcionales, la única diferencia es que al ser pasivas se te puede olvidar declararla y por lo tanto no la usas."*
+
+**Ruling:**
+
+| Tipo de Pasiva | Obligación | Consecuencia si se olvida |
+|----------------|:----------:|---------------------------|
+| **Pasiva NO opcional** (sin texto de eleccion) | Sí obligatoria | Se aplica automáticamente; el sistema/rival puede recordarla |
+| **Pasiva opcional** (con *"puedes"*, *"si quieres"*, etc.) | No obligatoria | Si el jugador olvida declararla, **no se usa** (se pierde el efecto para ese disparo) |
+
+**Dos diferencias críticas:**
+1. **Obligatoriedad:** las opcionales requieren **declaración activa**; las no-opcionales se aplican automáticamente.
+2. **Penalización por olvido:** las opcionales simplemente **no surten efecto** si no se declaran en ventana; las no-opcionales no tienen este problema porque se aplican automáticas.
+
+**Criterio de distinción en la carta:**
+- Texto con *"puedes"*, *"si lo deseas"*, *"opcionalmente"* o fraseo condicional electivo → **opcional**.
+- Texto con fraseo directo (*"los Adendei aliados tienen"*, *"cada vez que X, haz Y"*) sin opción → **no opcional**.
+- No hay regla de formato tipográfico (ej. "negrita = obligatoria") — el criterio es **semántico del texto**. (Descarta la tentativa previa de "criterio negrita".)
+
+**Implicancia operativa:**
+- Jugador que usa Pasiva opcional debe **declararla en la ventana correcta** (al momento del disparo). Si pasa la ventana sin declarar → efecto perdido para ese disparo; puede re-intentar en disparos futuros si la condición se repite.
+- Jugador con Pasiva no opcional no necesita declarar; el efecto corre.
+
+**Relación con D17:**
+- Consistente: el texto de la carta define el comportamiento. Meta-regla `p20/b10` aplica.
+
+**Pendiente v5.2:**
+- Agregar sección breve §Glosario clarificando "Pasivas opcionales" como sub-tipo con estas dos reglas: no-obligatoria + pierde efecto si se olvida en ventana.
+- **Descarta** el criterio tentativo previo *"negrita = obligatoria"* — el criterio real es semántico.
+
+---
+
 ## D23. Ariam, Dualidad (BETA-001) — pieza histórica
 
 **Fecha:** 2026-04-19
@@ -897,7 +1030,9 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 
 **Update 2026-04-22:** D21, D22 (v3 con herencia dinámica), D25, D26 todas cerradas. 26/26 de las dudas rulebook originales resueltas.
 
-**Update 2026-04-22 16:53 UTC — cierre triada 🔴:** D22c (absorción total al Espectro), D37 residual (Tlahuelpuchi = sin-sacrificio, no bloqueo), D46 (copias libres de Rava en Extendido) — las 3 críticas cerradas por Ramsés. Queda trabajo residual sólo en tentativos M15-M23 y rulings derivados menores (D33 residual, D36 ya cerrado 2026-04-20, L5 ya cerrada 2026-04-21, M3 residual, M5, M9, D43, M12 residual, D16 residual).
+**Update 2026-04-22 16:53 UTC — cierre triada 🔴:** D22c (absorción total al Espectro), D37 residual (Tlahuelpuchi = sin-sacrificio, no bloqueo), D46 (copias libres de Rava en Extendido) — las 3 críticas cerradas por Ramsés.
+
+**Update 2026-04-22 16:56 UTC — cierre 4 🟡 medias:** M3 residual (resurrectos acumulan según redacción; Marok ejemplo), M5 (visibilidad Mazo rival depende del formato/contexto; CdC = ambos ven + orden preservado + no reorganiza), M9 (Multijugador es formato oficial 4-20 jugadores con reglas de 1v1), D43 (pasivas opcionales vs no-opcionales = semántica del texto, no tipográfico; opcional pierde efecto si se olvida). Queda residual: D33 res (ataque Espectro sin poseído dispara triggers), D16 res (apilación inmunidades Ruk), M12 res (Pasiva-Rápida→Activa-Rápida descansos) + tentativos M15-M23.
 
 ---
 
