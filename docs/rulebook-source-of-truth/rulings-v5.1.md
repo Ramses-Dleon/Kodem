@@ -1107,7 +1107,9 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 
 **Update 2026-04-22 16:57 UTC — cierre 2 🟡 residuales:** M12 residual (Pasiva-Rápida sólo da velocidad; mantiene la regla de no-descanso por Pasiva), D33 residual (ataque Espectro sin poseído sí puede disparar triggers; "algunos triggers" según redacción).
 
-**Update 2026-04-22 17:15 UTC — BATCH M15–M23 APROBADO por Ramsés (8 rulings 🟢 a ✅):** M15 (errata E23), M16 (errata tipográfica "Activa-Rápida" con guión), M17 (Pasiva-Rápida ⊂ Pasiva, Ixim válidos), M19 (Ixim SÍ descansan por Activa), M20 (3 intentos totales), M21 (aclarar "automáticamente"), M22 (texto canon de p29/b09), M23 ("mano" = estado transitorio). M18 queda como ✅ desde antes (reconciliado con D22 v3). **Todos escalan a v5.2.** Queda residual: sólo D16 (apilación inmunidades Ruk) + emergentes D47-D50.
+**Update 2026-04-22 17:15 UTC — BATCH M15–M23 APROBADO por Ramsés (8 rulings 🟢 a ✅):** M15 (errata E23), M16 (errata tipográfica "Activa-Rápida" con guión), M17 (Pasiva-Rápida ⊂ Pasiva, Ixim válidos), M19 (Ixim SÍ descansan por Activa), M20 (3 intentos totales), M21 (aclarar "automáticamente"), M22 (texto canon de p29/b09), M23 ("mano" = estado transitorio). M18 queda como ✅ desde antes (reconciliado con D22 v3). **Todos escalan a v5.2.**
+
+**Update 2026-04-22 17:18 UTC — cierre 4 emergentes por derivación (Logos):** D47 (Tlahuelpuchi + múltiples Espectros: sí, hasta agotar objetivos; compone D36+D37+p14/b16 b3), D48 (M3 residual acumulación: B pausa-reanudación con acumulación por redacción; compone p25/b06+D17+M3res), D49 (Espectro sin poseído sin aliados: A, ataque ni se declara; aplica principio general costo impagable+p20/b10), D50 (semántica "rival" en multi: híbrido narrow/wide según verbo electivo; compone D52+M9). **Única duda abierta:** D16 residual (apilación inmunidades Ruk) — requiere decisión de diseño, no derivable.
 
 ---
 
@@ -1998,6 +2000,179 @@ FAQ-05 oficial lo confirmó para el caso de dos Activas-Rápidas: la segunda esp
 **Pendiente v5.2:**
 - Auditar cartas con patrón de omisión para detectar las que DEBERÍAN ser narrow (aliado/rival específico) y marcarlas como erratas de redacción.
 - Agregar nota de interpretación en glosario sobre "alcance por defecto = universal".
+
+---
+
+## D47. Tlahuelpuchi + múltiples Espectros en misma Fase Previa — CERRADA POR DERIVACIÓN
+
+**Fecha:** 2026-04-22 17:18 UTC
+**Status:** ✅ RESUELTA por derivación (Logos, con base en rulings de autoridad existentes)
+
+**Pregunta:** Con Tlahuelpuchi eliminando el sacrificio y varios Espectros aliados, ¿cada uno puede poseer un Adendei de Extinción "gratis" en la misma Fase Previa (mientras haya objetivos)? ¿O hay límite adicional tipo "1 posesión por turno"?
+
+**Ruling:** Sí, cada Espectro puede poseer en la misma Fase Previa sin límite adicional, hasta agotar objetivos disponibles en Extinción. No existe cláusula de "1 posesión por turno" a nivel global.
+
+**Fundamento textual (`p14/b16 b3`):**
+> *"En tu Fase Previa, un Espectro puede poseer una (solo una) de las cartas mencionadas en su Requisito, enviando a un Adendei aliado en Zona Principal original a Extinción sin que esto se considere un costo."*
+
+El *"(solo una)"* aplica **por Espectro**, no por turno global. La unicidad está enlazada gramaticalmente al sujeto *"un Espectro"*, no al turno.
+
+**Composición de rulings:**
+- *D36* (Aldo, 2026-04-20): *"1 objetivo de posesión por Espectro, consumido al resolver"*. Múltiples Espectros pueden poseer en misma Fase Previa si hay objetivos suficientes.
+- *D37* (Ramsés, 2026-04-22): *"No bloquea, hace que no se requiera un sacrificio para poseer"*. Tlahuelpuchi sólo altera el costo, no la mecánica de unicidad.
+- *D21* (vivificación atómica): posesión = acto único por Espectro.
+
+Los tres rulings son consistentes: ninguno introduce un límite global de posesiones por turno. La conclusión se sigue por composición directa.
+
+**Derivación lógica:**
+- Espectro A posee Adendei X (`p14/b16 b3`): OK.
+- Tlahuelpuchi exime el sacrificio (*D37*).
+- Espectro B posee Adendei Y distinto (D36): OK, objetivo separado.
+- Ningún ruling restringe este encadenamiento dentro de una misma Fase Previa.
+
+**Caso límite:** Si Espectro A y B requieren al mismo Adendei Z (único objetivo de su tipo), se aplica *D36 caso 1*: sólo A puede poseerlo; B queda sin objetivo.
+
+**Implicancia estratégica:**
+- Tlahuelpuchi + 2-4 Espectros aliados = combo poderoso: hasta 4 posesiones gratuitas por turno si hay objetivos diversos en Extinción.
+- Contra-estrategia rival: quemar/remover el pool de Extinción (cartas como KPRC-Fytl tipo *"vacía Extinción"*) para cortar la línea.
+
+**Pendiente v5.2:** ninguna edición al rulebook necesaria; la regla existente es suficiente. Registrar en glosario como ejemplo de composición de rulings.
+
+---
+
+## D48. M3 residual: acumulación de efectos al re-vivificar — CERRADA POR DERIVACIÓN
+
+**Fecha:** 2026-04-22 17:18 UTC
+**Status:** ✅ RESUELTA por derivación (Logos, con base en rulings de autoridad existentes)
+
+**Pregunta:** Si Marok se vivifica 3 veces en una partida, ¿sus modificadores stat-like son:
+- **A)** permanentes (se quedan aunque Marok salga del campo),
+- **B)** pausados al salir y reanudados al volver (sumando nueva instancia al re-entrar),
+- **C)** reseteados cada vez que Marok va a Extinción?
+
+**Ruling: B — pausa-y-reanudación con acumulación al re-entrar.**
+
+En cada salida del campo, el efecto persistente se **apaga** (no sigue aplicando mientras la carta esté en Extinción). Al re-vivificar, se **genera una nueva instancia** del efecto que se suma a las instancias activas previas (si las hay).
+
+**Fundamento textual (*`p25/b06`*):**
+> *"Si una carta deja el campo y su efecto está condicionado a 'estar disponible', el efecto no continuará en uso."*
+
+Esto descarta la interpretación A (permanentes). Los efectos persistentes se apagan al salir.
+
+**Composición con *M3 residual* (Ramsés, 2026-04-22):**
+> *"Los resurrectos sí pueden acumular sus efectos pero depende de la redacción de cada efecto. Un ejemplo: Marok de Flores y Tumbas puede acumular su efecto si lo vivificas varias veces."*
+
+Esto descarta la interpretación C (reseteo completo cada vez). El ruling confirma que la acumulación **sí existe** cuando la redacción lo permite.
+
+**Por eliminación queda B:**
+- El efecto se apaga fuera de campo (`p25/b06`).
+- Al re-entrar en campo, se reactiva como **nueva instancia** (no recupera la anterior ya apagada).
+- Si el efecto es modificador acumulativo por redacción (Marok), las instancias activas se suman.
+- Si hay efectos de instancias previas que quedaron "congelados" — por ejemplo, buffs que ya se aplicaron y no son condicionales a *"estar disponible"* — esos sí persisten. Pero cualquier efecto con cláusula *"mientras"* se apaga al salir.
+
+**Regla general derivada:**
+- Efectos con fraseo *"mientras esté en campo"* / *"durante el resto del juego"* + dependencia de *"estar disponible"* → se apagan al salir, se reactivan al entrar, acumulables si la redacción no restringe.
+- Efectos tipo **modificador numérico persistente** sin cláusula restrictiva → acumulables por vivificación.
+- Efectos con cláusula *"sólo una vez por partida"* → no acumulables aunque la carta se re-vivifique (redacción restrictiva explicita).
+
+**Ejemplo Marok vivificado 3 veces:**
+1. Vivificación 1: efecto activo. Al salir a Extinción, apagado.
+2. Vivificación 2: nueva instancia. Si la redacción es acumulable (Marok), el stat-buff del 1 que persistió (por ejemplo, daño ya infligido) se suma al nuevo. Pero el buff *"mientras esté en campo"* del 1 ya murió.
+3. Vivificación 3: otra instancia, mismo razonamiento.
+
+Neto: **en campo simultáneamente sólo hay una instancia activa** (Marok es una sola carta); las "vidas" previas aportaron lo que ya aportaron antes de apagarse.
+
+**Matiz crítico:** la acumulación de *M3 residual* aplica cuando los **efectos de instancias separadas generan estados acumulables** (por ejemplo, Mixtla *"tu rival tiene 2 Activas-Rápidas adicionales durante el resto del juego"* ; si Mixtla se vivifica 2 veces consecutivas sin quedarse en Extinción *siempre*, las dos instancias del efecto pueden coexistir en el estado del juego). Pero si la redacción se ata a *"mientras esté disponible"*, *`p25/b06`* apaga cada instancia al salir.
+
+**Conclusión operativa:**
+- La acumulación práctica depende de si los efectos generan estado global (Mixtla: sí acumula +2/-2 por vivificación porque modifica estado persistente del rival) o estado local condicionado (Marok-mientras-disponible: no acumula tras salir, pero cada re-entrada vale por sí sola).
+- **Criterio simple:** si el efecto dice *"mientras"* → no persiste fuera de campo. Si dice *"durante el resto del juego"* (como Mixtla) → persiste como estado global y acumula.
+
+**Pendiente v5.2:** formalizar en §6.7 sección de Efectos persistentes la distinción entre *"mientras"* (condicional a estar en campo) vs *"durante el resto del juego"* (estado global, no condicional).
+
+---
+
+## D49. Espectro sin poseído sin aliados para pagar el ataque — CERRADA POR DERIVACIÓN
+
+**Fecha:** 2026-04-22 17:18 UTC
+**Status:** ✅ RESUELTA por derivación (Logos, con base en reglas existentes)
+
+**Pregunta:** Si un Espectro sin poseído intenta atacar pero no tiene aliados suficientes en Zona Principal para pagar doble vida, ¿el ataque se declara, se cancela, o el jugador pierde?
+
+**Ruling: A — el ataque ni se declara.** Sin recursos para pagar el costo, la acción no puede iniciarse.
+
+**Fundamento textual (`p14/b16 b6`):**
+> *"Si una carta Espectro no tiene poseída a una carta para causar daño, deberá pagar el doble de puntos de vida a las cartas aliadas en su Zona Principal original por cada punto de daño que intente infligir."*
+
+La cláusula *"deberá pagar"* es prerrequisito absoluto. Si el pago no es posible (no hay aliados o aliados suficientes), el verbo *"intente infligir"* no puede completarse — la declaración del ataque no puede instanciarse.
+
+**Principio general (meta-regla `p20/b10`):**
+> *"Importante: Se aplicarán en todo momento los lineamientos de este documento a menos que el texto de una carta indique explícitamente lo contrario."*
+
+Aplicando el principio general TCG de costos impagables: si el costo no puede pagarse, la acción no se declara. No hay carta ni ruling que abra excepción aquí.
+
+**Composición con *D33 residual* (2026-04-22):**
+- *D33 residual* confirma: *"el ataque sí puede llegar a disparar algunos triggers"* cuando el pago Sí sucede.
+- *FAQ-03*: un ataque **negado** no dispara triggers porque *"no sucedió"*.
+- D49 cubre un caso anterior: el ataque **ni siquiera llega al punto de ser declarado**. Sin declaración, no hay evento "ataque" para ser disparado ni negado.
+
+**Consecuencia:**
+- No se dispara ningún trigger tipo *"cuando declara ataque"*, *"cuando ataca"*, ni *"cuando es negado"*.
+- No se paga vida aliada (no se inició el pago).
+- El Espectro queda inerte hasta que recupere un poseído válido o haya aliados suficientes para el pago.
+
+**Caso límite: aliados insuficientes para el daño completo.**
+Si el Espectro quiere infligir 3 de daño (requiere 6 de vida aliada) pero sólo hay 4 de vida aliada disponible:
+- **Opción a:** ataque reducido a 2 de daño (pagando 4 de vida). Texto no lo dice explícitamente.
+- **Opción b:** ataque no se declara porque el daño completo no puede pagarse.
+
+La redacción de `p14/b16 b6` dice *"por cada punto de daño que intente infligir"*, lo que sugiere modularidad punto-por-punto. Conservando coherencia con atomicidad (*D21* + *FAQ-03*), **recomiendo opción b: declaración entera o nada** (atomicidad del ataque como evento unitario).
+
+**Pendiente v5.2:** si Ramsés prefiere modularidad punto-por-punto, debe aclararse en rulebook. Por ahora, interpretación conservadora → ataque íntegro o no se declara.
+
+---
+
+## D50. Semántica de "rival" en Multijugador — CERRADA POR DERIVACIÓN
+
+**Fecha:** 2026-04-22 17:18 UTC
+**Status:** ✅ RESUELTA por derivación (Logos, con base en *D52* + *M9*)
+
+**Pregunta:** En Multijugador (formato oficial 4-20 jugadores, *M9*), cuando una carta dice *"Elige un rival"* o *"tu rival"*:
+- **A)** *"rival"* singular = 1 elegido específicamente por el activo.
+- **B)** *"rival"* = cualquier rival a efectos de condiciones/disparos (wide implícito).
+
+**Ruling: HÍBRIDO dependiente del verbo de la cláusula.**
+
+| Fraseo | Semántica | Justificación |
+|--------|-----------|---------------|
+| *"Elige un rival y..."* (verbo electivo) | **A** — narrow 1-target, el activo elige | Verbo *"elegir"* fuerza selección única |
+| *"Daña a tu rival por X"* (posesivo singular en 1v1) | **A** — en 1v1 aplica al único; en multi el activo elige 1 | Posesivo implica 1 interlocutor, extendible a 1-elegido en multi |
+| *"Si un rival tiene X..."* (condicional pasivo) | **B** — cualquier rival dispara | Sin verbo electivo, se aplica *D52* (omisión wide implícita) |
+| *"Todos los rivales"* (explícito wide) | Todos los oponentes | Lectura literal |
+| *"Cada rival recibe..."* (distributivo) | Cada oponente individualmente | Distributivo explícito |
+
+**Fundamento textual (*D52*, u_62a2ebfd 2026-04-19):**
+> *"Omisión explícita = alcance universal."* *"Explícito narrow: 'Un Adendei-Átlico aliado' → solo tu campo. Explícito wide: 'Todos los Adendei-Átlicos en ambos campos' → ambos lados. Omisión = wide implícito."*
+
+**Fundamento textual (*M9*, Ramsés 2026-04-22):**
+> *"Multijugador sí es un formato oficial, básicamente es un formato 1v1 pero la diferencia es que va aumentando para ser de 4 o hasta 20 de ahí en más es todo lo mismo que el 1v1."*
+
+Es decir: reglas idénticas. El término *"rival"* en cartas de 1v1 debe preservar su semántica original cuando se juega en multi. En 1v1 *"tu rival"* es tautológicamente el único oponente; en multi se vuelve ambiguo sin regla de selección.
+
+**Derivación:**
+- Verbos electivos (*"elige"*, *"selecciona"*, *"apunta a"*) fuerzan narrow-1: el activo decide cuál. Consistente con principio TCG general de selección activa.
+- Fraseos condicionales pasivos (*"si un rival tiene..."*, *"cuando un rival haga..."*) aplican *D52*: wide implícito, cualquier rival cumple la condición.
+- Posesivos *"tu rival"* en contexto electivo se comportan como narrow (el activo elige 1); en contexto de condición pasiva se comportan como wide (cualquier oponente).
+
+**Criterio práctico:** *¿el verbo obliga a elegir?*
+- Sí → narrow-1 (el activo elige).
+- No → aplicar *D52* (wide implícito por default).
+
+**Cartas "hasta N jugadores"** (Maiz, Vesta Ignia, Enjambre Pírico, Ulmor):
+- Escalan naturalmente en multijugador. El activo elige hasta N rivales según texto.
+- En 1v1, N se satura a 1 o al límite aplicable.
+
+**Pendiente v5.2:** agregar sección §Glosario "Rival en Multijugador" con la tabla de semánticas arriba.
 
 ---
 
