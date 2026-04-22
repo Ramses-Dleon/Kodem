@@ -429,7 +429,7 @@ O agregar al glosario:
 
 **Dudas derivadas:**
 - **D21:** Al poseer, el Adendei de Extinción ¿se consume? → **✅ RESUELTA (ver D21 abajo)**
-- **D22:** ¿El Espectro hereda alguna stat del Adendei poseído? → **✅ REFINADA (ver D22 abajo)**
+- **D22:** ¿El Espectro hereda alguna stat del Adendei poseído? → **✅ RESUELTA — herencia dinámica de 5 atributos, ver D22 v3 + D22b distinción con copia**
 
 **Sugerencia v5.2:** agregar sección formal §3.7 Espectros con:
 - Declaración de que vida se lee de cada carta
@@ -475,37 +475,114 @@ O agregar al glosario:
 
 ---
 
-## D22. Herencia de stats del Adendei poseído — ✅ HERENCIA PARCIAL (REVISADA 2026-04-22)
+## D22. Herencia de stats del Adendei poseído — ✅ HERENCIA DINÁMICA DE 5 ATRIBUTOS (RESUELTA 2026-04-22)
 
-**Fecha:** 2026-04-19 (revisada 2026-04-22 por Ramsés)
-**Status:** ✅ RESUELTA — herencia parcial
+**Fecha:** 2026-04-19 (revisión 1: 2026-04-22 AM; revisión 2 final: 2026-04-22 14:15 UTC)
+**Status:** ✅ RESUELTA — herencia dinámica de 5 atributos
 
-> ⚠️ **Revisión importante:** el ruling original (2026-04-19) decía "NO hay herencia". Ramsés clarificó el 2026-04-22 que sí existe herencia, pero **parcial**. Esta versión reemplaza la anterior.
+> ⚠️ **Historial de revisiones:**
+> - v1 (2026-04-19): "NO hay herencia" — incorrecto.
+> - v2 (2026-04-22 AM): herencia parcial de 3 atributos (Efecto/Daño/Descanso), snapshot — parcialmente incorrecto.
+> - **v3 (2026-04-22 PM, esta versión):** herencia dinámica de 5 atributos. El master rulebook `p14/b16 b4` es canon; las dos fuentes se reconcilian con respuestas de Ramsés a P1–P3.
 
-**Ruling:**
+**Ruling canonical:**
 
-Al momento de la **posesión**, el Espectro **hereda del Adendei poseído** los siguientes atributos:
+Al poseer un Adendei, el Espectro **hereda dinámicamente** del poseído los siguientes atributos:
 
 | Atributo | ¿Hereda? | Fuente |
-|----------|---------|--------|
-| **Efecto** (Pasiva / Activa) | ✅ Sí | Adendei poseído |
-| **Daño** | ✅ Sí | Adendei poseído |
+|----------|:---:|--------|
+| **Efecto** (Pasiva / Activa) | ✅ Sí | Adendei poseído (+ el Espectro suma el suyo propio si lo tiene) |
+| **Daño** | ✅ Sí | Adendei poseído (dinámico: escalas/descensos lo modifican en tiempo real) |
 | **Descansos** | ✅ Sí | Adendei poseído |
-| **Vida** | ❌ No | Espectro conserva la suya |
-| **Subtipo** | ❌ No | Espectro conserva el suyo |
-| **Energía** | ❌ No | Espectro conserva la suya |
+| **Costo** | ✅ Sí | Adendei poseído |
+| **Energía** | ✅ Sí | Adendei poseído |
+| **Vida** | ❌ No | Espectro conserva la propia (marcada en su texto, per p14/b21) |
+| **Subtipo** | ❌ No | Espectro conserva el propio (típicamente "Sin subtipo" per callout p14/b13) |
 
-**Implicancias prácticas:**
+### Reconciliación con el master rulebook
 
-- El Espectro lucha como si fuera el Adendei en términos ofensivos (daño + descansos) y funcionales (efecto activo/pasivo), pero con su **propia barra de vida** y su **propio subtipo/energía** (lo que afecta interacciones con cartas que referencian subtipo o energía — esas apuntan al Espectro, no al Adendei poseído).
-- Esto reconcilia el callout `p14/b10` "Descanso: 0" con la regla `p14/b16` del master: el Descanso del Espectro en combate viene del Adendei poseído (herencia), mientras que el valor impreso del Espectro aplica solo cuando no esté poseyendo (caso ambiguo / ver D26 si aplica).
-- Las cartas que copian "efecto" del poseído (T1 Ruk y análogos) siguen la lógica de snapshot único al momento de posesión (ver D17).
+El texto `p14/b16 bullet 4` dice: *"El Espectro deberá usar su propio Efecto, así como el Efecto, Daño, Descanso, Costo y Energía de la carta Poseída como si fueran suyos. Sin embargo, no se considera que el efecto esté siendo copiado."*
 
-**Snapshot vs dinámica:** Coherente con D17, la herencia ocurre como **snapshot al momento de posesión**. Si el Adendei poseído recibe un efecto posterior que modificaría su daño/descansos/efecto, esos cambios **no se propagan** al Espectro salvo que la fuente del cambio declare explicitamente "se actualiza mientras esté poseído" o similar.
+La frase *"no se considera que el efecto esté siendo copiado"* es la **clave conceptual**: la herencia **NO es copia**. Es por eso que D17 (meta-regla de copia = snapshot) **no aplica** a la posesión de Espectros. Ver distinción en D22b abajo.
 
-**Al morir el Espectro:** ambas cartas (Espectro + Adendei poseído) se envían a Extinción (ver D21). El Adendei regresa a Extinción con el estado que tenía antes de ser poseído; los cambios de daño/descansos que el Espectro sufrió durante la posesión afectaron al Espectro, no al Adendei físico bajo él.
+Los callouts de anatomía `p14/b10 (Descanso: 0)`, `p14/b12 (Energía: Sin energía)` y `p14/b13 (Subtipo: Sin subtipo)` describen el **estado base del Espectro sin poseer**. Al poseer, los 3 primeros (Descanso + Energía) son reemplazados por los del poseído; Subtipo se conserva como propio del Espectro.
 
-**Implicación v5.2:** documentar en §3.7 Espectros una tabla de herencia explícita (la anterior "no hay herencia" era errónea). El callout `p14/b10 (Descanso: 0)` del master rulebook es coherente con esta lectura si se interpreta como "el Espectro hereda el Descanso del poseído, por eso el callout muestra 0 cuando el poseído tiene 0".
+### P1 — Energía sí se hereda
+
+Ramsés (2026-04-22 14:15 UTC): *"P1 me auto corrijo si hereda la energia, más bien es que actual mente no hay ningún impacto en si es de x energía o no pues no hay efectos que potencien espectros de x energía. La respuesta es SI."*
+
+**Implicación:** el Espectro adopta la energía del poseído. Por ahora no hay cartas que filtren por energía en Espectros, pero la regla queda establecida para diseño futuro.
+
+### P2 — Costo sí se hereda (con co-envío a Extinción)
+
+Ramsés (2026-04-22 14:15 UTC): *"si, el adendei poseído tiene costo siempre se paga el costo del adendei poseído si el costo para usar su activa o pasiva es mandarse a extinción se paga y se va a extinción el espectro y el adendei poseído"*
+
+**Implicación crítica:** si el Costo del poseído es "enviar esta carta a Extinción" (o similar self-sacrifice), al pagarlo **se van AMBAS cartas a Extinción** (Espectro + poseído). Esto se alinea con D21 (al morir el Espectro, co-envío a Extinción del stack completo): el costo de auto-destrucción rompe la unión de posesión y arrastra a ambos.
+
+### P3 — Herencia **dinámica**, no snapshot
+
+Ramsés (2026-04-22 14:15 UTC): *"si te refieres a las escalas o descensos? La respuesta es B) dinámica pues el espectro ya tiene un daño fijo a la hora de poseer daño que puede ser afectado por escalas y/o decensos. Osea por ejemplo tengo ariam,axolospectro si poseyo a ariam modo catrin un 4-2 y luego por efecto de otra carta lo modifican ya sea escala o decensos si se puede cambiar como 3-2 o 5-2"*
+
+**Ejemplo canónico:**
+
+1. `Ariam, Axoloespectro` (FYTE-003K) posee a `Ariam, Modo Catrín` (4/2).
+2. El Espectro opera con stats 4/2 heredados.
+3. Llega un efecto que aplica +1 daño (escala) al Adendei poseído. → El Espectro pasa a **5/2 en tiempo real**.
+4. Llega un descenso de -1 daño. → El Espectro pasa a **3/2**.
+5. Estos cambios son **persistentes mientras el Espectro posea a ese Adendei**.
+
+**Implicación:** los efectos que modifiquen el Adendei poseído (escalas/descensos/alteraciones de daño o descansos) **sí afectan al Espectro en tiempo real**. El Espectro es una ventana funcional sobre el poseído, no una copia estática.
+
+---
+
+## D22b. Herencia (posesión) ≠ Copia (mecánica general) — Distinción formal
+
+**Fecha:** 2026-04-22
+**Status:** ✅ RESUELTA (derivada de D22 v3)
+
+**Ruling:** Existen dos mecánicas conceptualmente distintas en Kodem que comparten superficialmente la idea de "tomar stats de otra carta", pero operan con reglas opuestas:
+
+| Mecánica | Fuente | Temporalidad | Regla | Ejemplos |
+|----------|--------|-------------|-------|----------|
+| **Copia** | D17, D16 (meta-regla) | Snapshot único | Los cambios posteriores NO se propagan | Gloku (TCDE-015), Dagg (TCDE-008) |
+| **Herencia (posesión)** | D22 | Dinámica en tiempo real | Los cambios al poseído Sí se propagan al Espectro | Todos los Espectros poseyendo |
+
+**Por qué son distintas:**
+
+El master `p14/b16 b4` dice literalmente *"no se considera que el efecto esté siendo copiado"*. Esta frase **excluye explícitamente** a la posesión del dominio de la mecánica de copia. Por tanto:
+
+- **Ruk, Espectro Draconiano** (FYTE-048) es un caso híbrido documentado en D39: su Pasiva propia **sí copia** (snapshot único vs una Rava) Y además **hereda** (dinámica) de la Rava poseída. Dos mecánicas conviviendo en la misma carta.
+- **Gloku** (token con stats copiadas) queda congelado aunque el Adendei fuente cambie después.
+- **Ariam Axoloespectro** poseyendo a Ariam Catrín → cambia en tiempo real con cada escala/descenso aplicada al Catrín.
+
+**Implicación v5.2:**
+
+Agregar al glosario §9:
+
+> **Copia:** Snapshot único al momento de activación. Cambios posteriores en la fuente NO se propagan. Ejemplo: Gloku crea un Token con stats copiadas.
+>
+> **Herencia (posesión):** Unión dinámica entre Espectro y Adendei poseído. El Espectro usa en tiempo real el Efecto, Daño, Descanso, Costo y Energía del poseído (ver D22). Los cambios al poseído se propagan al Espectro mientras dure la posesión. No es copia.
+
+---
+
+## D22c. Estado del Espectro mientras el poseído recibe daño / modificaciones
+
+**Fecha:** 2026-04-22
+**Status:** 🟡 Tentativo — pendiente de confirmación de Ramsés
+
+**Pregunta abierta derivada de D22 v3:** Dado que la herencia es dinámica, si un efecto hace daño *a la carta poseída específicamente* (no al Espectro), ¿qué sucede?
+
+**Interpretaciones posibles:**
+
+1. **Transparencia total:** el daño al poseído se traduce a daño al Espectro (porque el Espectro "usa" su vida como la vida del stack). Pero esto contradice que "Vida NO se hereda".
+2. **Absorción por el Espectro:** cualquier daño dirigido al stack va a la vida del Espectro; el poseído no recibe daño mientras esté bajo el Espectro (está "inerte" bajo la posesión).
+3. **Efectos sobre el poseído operan solo si referencian explícitamente "carta poseída":** un efecto genérico apunta al Espectro; uno que diga "daña a la carta poseída bajo un Espectro" sí toca al poseído.
+
+El master dice `p14/b19 bullet 1`: *"Las cartas que hayan sido poseídas se consideran de este tipo (poseídas) perdiendo su tipo y subtipo original mientras se encuentren sobre un Espectro"*. Esto sugiere la interpretación 2 (el poseído está en un estado distinto, los efectos normales apuntan al Espectro).
+
+**Recomendación tentativa:** **interpretación 2** (absorción por el Espectro). La vida del poseído es irrelevante mientras esté bajo el Espectro; solo el Espectro acumula daño. Los efectos que "modifican" al poseído (escalas/descensos) afectan sus **stats visibles** (daño/descansos) y por tanto se propagan al Espectro vía D22, pero el **daño directo** va al Espectro.
+
+**Pendiente:** pregunta puntual para Ramsés en próxima sesión.
 
 ---
 
@@ -628,7 +705,9 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 | D19 | Pasar turno forzado (emergente + parálisis con escape vía Bio/pasivas/Activas Equipos) | ✅ |
 | D20 | Espectros vida + posesión (por carta + consumo Extinción) | ✅ |
 | D21 | Posesión = Vivificación atómica (stack físico, co-envío a Extinción) | ✅ |
-| D22 | Herencia parcial al poseer (efecto/daño/descansos sí; vida/subtipo/energía no) | ✅ |
+| D22 | Herencia dinámica 5 attrs (efecto/daño/descanso/costo/energía sí; vida/subtipo no) | ✅ |
+| D22b | Herencia (posesión dinámica) ≠ Copia (snapshot) — mecánicas distintas | ✅ |
+| D22c | Daño al stack poseído (tentativa: absorción por Espectro) | 🟡 |
 | D23 | BETA-001 pieza histórica | ✅ |
 | D24 | Cap de vida máxima por tipo (regla meta dispersa) | ✅ |
 
@@ -1189,11 +1268,11 @@ Si Ramsés confirma, pasan a ruling cerrado formal. Si disiente en alguno, se re
 
 **Problema:** El callout anótomico muestra **Descanso: 0** como valor fijo, pero la regla ordena herencia al poseer.
 
-**Evidencia:** D22 (revisada 2026-04-22 por Ramsés) estableció **herencia parcial**: el Espectro hereda **efecto, daño y descansos** del Adendei poseído, pero conserva su **propia vida, subtipo y energía**. El callout `Descanso: 0` es coherente con esta lectura si el Adendei poseído en el ejemplo tiene 0 descansos al momento de posesión (snapshot heredado).
+**Evidencia:** D22 v3 (2026-04-22 14:15 UTC) estableció **herencia dinámica de 5 atributos** (Efecto, Daño, Descanso, Costo, Energía). El callout `Descanso: 0` describe el **estado base del Espectro sin poseer**. Al poseer, el Descanso es reemplazado por el del poseído (herencia dinámica, no snapshot).
 
-**Ruling:** El callout **es correcto** bajo D22 revisado. Si `Descanso: 0` aparece en el ejemplo anatómico de Espectro con posesión activa, refleja el valor heredado del Adendei poseído (snapshot al momento de posesión, ver D17). No es inconsistencia con la regla `p14/b16` del master — ambas convergen bajo herencia parcial.
+**Ruling:** El callout **es correcto** como descripción anatómica del Espectro **sin posesión activa**. La anatomía del Espectro puro es: Descanso 0, Energía sin energía, Subtipo sin subtipo. Al poseer, Descanso + Energía se reemplazan por los del poseído; Subtipo se conserva como propio del Espectro. No hay inconsistencia con `p14/b16`.
 
-**Acción v5.2:** Agregar nota pedagógica en §3.7: *"El Descanso del Espectro en combate viene del Adendei poseído (herencia por posesión, ver D22). El valor impreso del Espectro aplica cuando no esté poseyendo (si el sistema lo permite)."*
+**Acción v5.2:** Agregar nota pedagógica en §3.7: *"El callout `Descanso: 0` (y `Energía: Sin energía`, `Subtipo: Sin subtipo`) describe al Espectro sin poseer. Al poseer, Descanso + Energía se reemplazan por los del Adendei poseído en tiempo real (ver D22). Subtipo se conserva como propio del Espectro."*
 
 ---
 
