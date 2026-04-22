@@ -61,7 +61,7 @@ canonical_id: D3
 version: 1
 parent: null
 
-type: duda
+type: aclaracion
 status: resuelto
 status_method: autor
 
@@ -2435,15 +2435,26 @@ authority:
   name: Ramsés
   validated_by: []
 
-tags: [efectos, meta-regla]
+tags: [ataques, efectos, meta-regla]
+
+cards_explicit:
+  - folio: TCEO-009
+    name: "Draxes, Último Aliento"
+    role: carta-central
+  - folio: TCOO-009
+    name: "Draxes, Último Aliento (TCOO)"
+    role: ejemplo
+  - folio: KPRC-Makua
+    name: "Makua, Venganza Abisal"
+    role: contraejemplo
 
 rulebook_refs:
   - p15/b12
   - p39/b06
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D17, D31]
 ---
 ## D27. Condiciones de victoria alternativas en texto de carta (Draxes)
 
@@ -3521,7 +3532,7 @@ canonical_id: D30
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
 status_method: comunidad
 
@@ -3530,18 +3541,25 @@ date_revised: null
 
 authority:
   role: comunidad
-  name: TODO_consultar_id
+  name: u_62a2ebfd
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [glosario, adendei, copia, meta-regla]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: TCOO-Virste
+    name: "Virste (Reseteo)"
+    role: ejemplo
+  - folio: TCDE-015
+    name: "Gloku"
+    role: ejemplo
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs:
+  - p06
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D16, M14, D22]
 ---
 ## D30. Definición de "estadísticas" de un Adendei
 
@@ -3574,7 +3592,7 @@ canonical_id: D31
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
 status_method: comunidad
 
@@ -3583,18 +3601,30 @@ date_revised: null
 
 authority:
   role: comunidad
-  name: TODO_consultar_id
+  name: u_62a2ebfd
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [innegable, ataques, efectos, glosario, meta-regla]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: KPRC-PC
+    name: "Pruebas de Campo"
+    role: contraejemplo
+  - folio: KPRC-PS
+    name: "Protección Selectiva"
+    role: contraejemplo
+  - folio: KPRC-RV
+    name: "Recipiente de Vida"
+    role: contraejemplo
+  - folio: KPRC-ZA
+    name: "Zaykan, Anulación"
+    role: contraejemplo
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs: []
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D17, D27, M4]
 ---
 ## D31. Innegabilidad de ataques y efectos — interpretación y alcance
 
@@ -3637,7 +3667,7 @@ canonical_id: D52
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
 status_method: comunidad
 
@@ -3646,18 +3676,21 @@ date_revised: null
 
 authority:
   role: comunidad
-  name: TODO_consultar_id
+  name: u_62a2ebfd
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [targeting, glosario, meta-regla, prerrequisito]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: KPRC-ZC
+    name: "Zaykan, Citadel (átlicos)"
+    role: ejemplo
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs: []
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D50, D17]
 ---
 ## D52. Zona y tipo por omisión en efectos/ataques/condiciones
 
@@ -3692,7 +3725,7 @@ canonical_id: D47
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: ruling-carta
 status: resuelto
 status_method: derivacion
 
@@ -3702,21 +3735,21 @@ date_revised: null
 authority:
   role: logos-derivado
   name: Logos
-  validated_by: []
+  validated_by: [Ambir]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [espectros, extincion, posesion, fase-previa, unicidad-campo]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: FYTE-Tlahuelpuchi
+    name: "Tlahuelpuchi"
+    role: carta-central
 
 rulebook_refs:
   - p14/b16
 
-derived_from:
-  - D21
-  - D36
-  - D37
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+derived_from: [D21, D36, D37]
+supersedes: []
+related: [D20, D48, D49]
 ---
 ## D47. Tlahuelpuchi + múltiples Espectros en misma Fase Previa — CERRADA POR DERIVACIÓN
 
@@ -3761,7 +3794,7 @@ canonical_id: D48
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
 status_method: derivacion
 
@@ -3771,18 +3804,24 @@ date_revised: null
 authority:
   role: logos-derivado
   name: Logos
-  validated_by: []
+  validated_by: [Ambir]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [vivificacion, efectos, stacking, meta-regla]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: FYTE-Marok
+    name: "Marok de Flores y Tumbas"
+    role: carta-central
+  - folio: FYTE-Mixtla
+    name: "Mixtla"
+    role: ejemplo
 
 rulebook_refs:
   - p25/b06
 
-derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+derived_from: [D17]
+supersedes: []
+related: [D16, D22b, D47]
 ---
 ## D48. M3 residual: acumulación de efectos al re-vivificar — CERRADA POR DERIVACIÓN
 
@@ -3842,7 +3881,7 @@ canonical_id: D49
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: ruling-carta
 status: resuelto
 status_method: derivacion
 
@@ -3852,19 +3891,19 @@ date_revised: null
 authority:
   role: logos-derivado
   name: Logos
-  validated_by: []
+  validated_by: [Ambir]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [espectros, ataques, costos, prerrequisito]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit: []
 
 rulebook_refs:
   - p14/b16
   - p20/b10
 
-derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+derived_from: [D21, D33]
+supersedes: []
+related: [D20, D47]
 ---
 ## D49. Espectro sin poseído sin aliados para pagar el ataque — CERRADA POR DERIVACIÓN
 
@@ -3912,7 +3951,7 @@ canonical_id: D50
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
 status_method: derivacion
 
@@ -3922,26 +3961,29 @@ date_revised: null
 authority:
   role: logos-derivado
   name: Logos
-  validated_by: []
+  validated_by: [Ambir]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [targeting, formato-extendido, glosario, meta-regla]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: KPRC-Maiz
+    name: "Maiz"
+    role: ejemplo
+  - folio: KPRC-VestaIgnia
+    name: "Vesta Ignia"
+    role: ejemplo
+  - folio: KPRC-EnjambrePirico
+    name: "Enjambre Pírico"
+    role: ejemplo
+  - folio: KPRC-Ulmor
+    name: "Ulmor"
+    role: ejemplo
 
-rulebook_refs:
-  - p14/b16
-  - p20/b10
-  - p24/b07
-  - p25/b01
-  - p25/b06
+rulebook_refs: []
 
-derived_from:
-  - D36
-  - D37
-  - D52
-  - M9
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+derived_from: [D52, M9]
+supersedes: []
+related: [M11, D7]
 ---
 ## D50. Semántica de "rival" en Multijugador — CERRADA POR DERIVACIÓN
 
@@ -4045,11 +4087,11 @@ canonical_id: M8
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: aclaracion
 status: resuelto
 status_method: autor
 
-date_created: TODO
+date_created: 2026-04-20
 date_revised: null
 
 authority:
@@ -4057,15 +4099,39 @@ authority:
   name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [glosario, bio, aclaracion]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: TCOO-001
+    name: "Morx, Descarga Átlica"
+    role: carta-central
+  - folio: TCOO-001R
+    name: "Morx, Descarga Átlica (R)"
+    role: ejemplo
+  - folio: TCEO-001
+    name: "Morx, Descarga Átlica (TCEO)"
+    role: ejemplo
+  - folio: TCEO-001R
+    name: "Morx, Descarga Átlica (TCEO-R)"
+    role: ejemplo
+  - folio: LGRO-007
+    name: "Consejo de Hielo"
+    role: carta-central
+  - folio: LGRO-010R
+    name: "Consejo de Hielo (LGRO-R)"
+    role: ejemplo
+  - folio: TRWA-007
+    name: "Consejo de Hielo (TRWA)"
+    role: ejemplo
+  - folio: TRWA-010R
+    name: "Consejo de Hielo (TRWA-R)"
+    role: ejemplo
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs: []
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: []
 ---
 ## M8 — "Consejo" en Morx, Descarga Átlica — ¿término mecánico o carta específica?
 
@@ -4101,11 +4167,11 @@ canonical_id: M7
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
 status_method: autor
 
-date_created: TODO
+date_created: 2026-04-20
 date_revised: null
 
 authority:
@@ -4113,16 +4179,25 @@ authority:
   name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [tokens, copia, glosario, meta-regla, vida]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: TCDE-015
+    name: "Gloku"
+    role: ejemplo
+  - folio: TCDE-008
+    name: "Dagg"
+    role: ejemplo
+  - folio: KPRC-019
+    name: "Zaren"
+    role: ejemplo
 
 rulebook_refs:
   - p20/b10
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D9, D16, D30, M14]
 ---
 ## M7 — Tokens con stats copiadas/variables — ¿qué define las stats?
 
@@ -4155,11 +4230,11 @@ canonical_id: M10
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: ruling-carta
 status: resuelto
 status_method: juez
 
-date_created: TODO
+date_created: 2026-04-20
 date_revised: null
 
 authority:
@@ -4167,16 +4242,22 @@ authority:
   name: Ambir
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [efectos, costos, prerrequisito]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: NAVD-001
+    name: "Ariam, Regalo Navideño"
+    role: carta-central
+  - folio: SNVL-001
+    name: "Ariam, Día del Amor y la Amistad"
+    role: carta-central
 
 rulebook_refs:
   - p20/b10
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D17]
 ---
 ## M10 — Gestos sociales como requisito de efecto (Ariam Navideño, Día del Amor)
 
@@ -4220,11 +4301,11 @@ canonical_id: D36
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: ruling-carta
 status: resuelto
 status_method: juez
 
-date_created: TODO
+date_created: 2026-04-20
 date_revised: null
 
 authority:
@@ -4232,15 +4313,22 @@ authority:
   name: Aldo
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [espectros, extincion, posesion, unicidad-campo]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: FYTE-003K
+    name: "Espectro (Ariam)"
+    role: carta-central
+  - folio: FYTE-022R
+    name: "Ariam, Resurrección"
+    role: ejemplo
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs:
+  - p14/b16
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D20, D21, D22, D22b, D22c, D47]
 ---
 ## D36 — Múltiples Espectros compitiendo por posesión de Ariam en Extinción
 
@@ -4281,11 +4369,11 @@ canonical_id: L-5
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: ruling-carta
 status: resuelto
 status_method: autor
 
-date_created: TODO
+date_created: 2026-04-21
 date_revised: null
 
 authority:
@@ -4293,16 +4381,19 @@ authority:
   name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [pasivas, costos, extincion, stacking, prerrequisito, subtipos]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: FYTE-044
+    name: "Naywa, Quemadura Catrín"
+    role: carta-central
 
 rulebook_refs:
   - p20/b10
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D17, D43, M3]
 ---
 ## L-5 — Naywa, Quemadura Catrín (FYTE-044) — tres mecánicas entrelazadas
 
