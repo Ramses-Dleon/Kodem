@@ -2005,22 +2005,28 @@ Tras re-leer rulings-v5.1.md + reglas.md completos, 9 dudas abiertas en el porta
 
 **Dudas marcadas como `resolved: true` en portal (deploy v2026-04-20):**
 
-| ID | Título | Fuente del ruling |
-|---|---|---|
-| D30 | Virste Reseteo: alcance de "estadísticas" | 2 respuestas Supabase + M14 |
-| D31 | "No puede ser negada" — alcance | Respuesta Supabase u_62a2ebfd |
-| D52 | Zaykan Citadel: omisión = wide implícito | Respuesta Supabase u_62a2ebfd |
-| D33 | Espectro sin poseída: sí puede atacar | p14/b16 bullet 6 + FAQ-03 |
-| D37 | Tlahuelpuchi bloqueo total | D21 (atomicidad) + §10.8 |
-| D40 | Ataque múltiple: 1 ataque = 1 descanso | p24/b07 + p25/b01 + FAQ-03 |
-| D43 | Pasivas Opcionales vs Generales | §10.3 criterio negrita |
-| M3 | Mixtla: no persiste post-campo | D17 + p25/b06 |
-| M5 | Mazo rival visibilidad durante efecto | M2.5 + §4 |
+| ID | Título | Fuente del ruling | Status actual |
+|---|---|---|:--:|
+| D30 | Virste Reseteo: alcance de "estadísticas" | 2 respuestas Supabase + M14 | ✅ |
+| D31 | "No puede ser negada" — alcance | Respuesta Supabase u_62a2ebfd | ✅ |
+| D52 | Zaykan Citadel: omisión = wide implícito | Respuesta Supabase u_62a2ebfd | ✅ |
+| D33 | Espectro sin poseída: sí puede atacar | p14/b16 bullet 6 + FAQ-03 + Ramsés (residual 2026-04-22) | ✅ |
+| D37 | Tlahuelpuchi: sin-sacrificio (NO bloquea posesión) | **Revisado 2026-04-22 por Ramsés** — supersede interpretación 2026-04-20 | ✅ |
+| D40 | Ataque múltiple: 1 ataque = 1 descanso | p24/b07 + p25/b01 + FAQ-03 | ✅ |
+| D43 | Pasivas Opcionales vs No-Opcionales (semántico, no tipográfico) | **Revisado 2026-04-22 por Ramsés** — supersede criterio "negrita" 2026-04-20 | ✅ |
+| M3 | Mixtla post-campo + resurrectos acumulan según redacción (Marok) | D17 + p25/b06 + **Ramsés residual 2026-04-22** | ✅ |
+| M5 | Mazo rival visibilidad depende formato (CdC default) | M2.5 + §4 + **Ramsés 2026-04-22** | ✅ |
 
-**Quedan abiertas (genuinamente requieren diseño):**
-- **D36** Pool compartido entre Espectros simultáneos (sin ruling rulebook claro)
-- **D46** Formato Extendido — ¿3 copias del mismo Rava?
-- **L5** Naywa Quemadura Catrín — triple mecánica entrelazada
+**Dudas abiertas al 2026-04-22 cierre PM (aclaración de estado):**
+- **D16 residual:** apilación de inmunidades en Ruk (2 Pasivas idénticas de inmunidad = ¿2 ataques o 1?). Pendiente.
+- **M15-M23:** 8 tentativos derivados con evidencia textual directa, esperan aprobación en lote.
+
+**Dudas resueltas 2026-04-20/21/22 (antes abiertas):**
+- **D36** Pool compartido entre Espectros: ✅ RESUELTA 2026-04-20 por Aldo (Juez Kodem).
+- **D46** Rava en Extendido: ✅ RESUELTA 2026-04-22 por Ramsés (copias libres).
+- **L5** Naywa Quemadura Catrín: ✅ RESUELTA 2026-04-21 por Ramsés (4 puntos aclarados).
+- **M9** Multijugador: ✅ RESUELTA 2026-04-22 por Ramsés (formato oficial 4-20 jugadores).
+- **D22c + D37 residual + M12 residual + D33 residual:** ✅ RESUELTOS 2026-04-22 por Ramsés.
 
 ### Metodología aplicada
 

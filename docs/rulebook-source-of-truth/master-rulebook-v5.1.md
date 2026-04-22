@@ -3037,8 +3037,11 @@ Page presents §3.7 Espectros in two layers: (1) a full card-anatomy infographic
 - **D22 v3** (2026-04-22) — **Herencia dinámica de 5 atributos:** el Espectro hereda del poseído `Efecto + Daño + Descanso + Costo + Energía` en tiempo real (escalas/descensos al poseído modifican al Espectro mientras dure la posesión). El Espectro conserva su propia `Vida` y `Subtipo`. La herencia NO es copia — ver D22b.
 - **D22b** — Distinción formal: **Herencia (posesión) ≠ Copia (mecánica general, D17)**. Copia = snapshot único (Gloku/Dagg). Herencia = dinámica en tiempo real (Espectros). Ruk es caso híbrido.
 - **D22c** (2026-04-22) — **Absorción total:** TODO daño al stack (sea dirigido al Espectro o al poseído genéricamente) entra a la vida del Espectro. La carta poseída está inerte bajo el stack; no acumula daño propio. Las escalas/descensos de stat al poseído sí se propagan al Espectro (vía D22 v3); el daño directo siempre al Espectro (D22c). Fundamento: `p14/b19 b1` (el poseído pierde tipo/subtipo propios).
+- **D33** (2026-04-22) — Un Espectro sin poseído puede atacar pagando doble vida aliada (`p14/b16 b6`). Ese ataque **sí dispara triggers** tipo *"si esta carta ataca"* (por simetría con FAQ-03: el ataque sí sucede). Matiz "algunos triggers" según redacción: genéricos sí, los que exigen "con poseída" no.
 - **D34** — Al morir el Espectro, las 2 cartas cuentan para el tracker de victoria (10 cartas a Extinción).
 - **D35** — El efecto del Espectro y el efecto del poseído son **aditivos** (no excluyentes).
+- **D36** (2026-04-20 Aldo juez) — Posesión consume el objetivo en Extinción. Varios Espectros pueden poseer en la misma Fase Previa sólo si hay objetivos suficientes (1 por Espectro).
+- **D37** (2026-04-22) — **Tlahuelpuchi NO bloquea posesión; elimina el requisito de sacrificar aliado.** Los Espectros aliados pueden poseer Adendei en Extinción sin enviar aliado propio al Extinción. Habilita strategies Tlahuelpuchi + Espectros.
 - **M18** — Los callouts anatómicos `Descanso: 0`, `Energía: Sin energía`, `Subtipo: Sin subtipo` describen el estado base del Espectro **sin poseer**. Al poseer, Descanso+Energía se reemplazan por los del poseído.
 
 **Página 14 es donde v5.2 debe agregar una tabla consolidada de herencia** (ver D22 v3) y la distinción herencia/copia formalizada en glosario.
@@ -5751,6 +5754,11 @@ _bbox (%): x=92, y=95, w=6, h=4_
 
 Página del rulebook Kódem TCG v5.1 que cierra el tema de Ataque Múltiple y Gatillo de Efectos, e inicia la sección §6.7 EFECTOS con la introducción al sistema Activa/Pasiva y la subsección GENERALIDADES sobre cómo declarar y resolver efectos. Incluye dos cartas de ejemplo (Ulmor y Ungan) y dos recuadros de ejemplo de texto de efecto.
 
+### ⚡ Rulings aplicables a esta página (ver `rulings-v5.1.md`)
+
+- **D17** (meta-regla) — `p25/b06`: *"Si una carta deja el campo y su efecto está condicionado a 'estar disponible', el efecto no continuará en uso."* Fundamento de M3 y de varios rulings subsiguientes.
+- **M3 base** (2026-04-20) — Mixtla *"durante el resto del juego"* **no persiste post-campo** (D17 + `p25/b06`).
+- **M3 residual** (2026-04-22) — **Resurrectos SÍ acumulan según redacción.** Si un Adendei con efecto persistente se vivifica múltiples veces, sus instancias se suman siempre que el texto lo permita (Marok de Flores y Tumbas = ejemplo canónico). Mixtla vivificada 2× → acumula +2/-2 cada vez. Sin cláusula restrictiva tipo *"sólo una vez por partida"*, stacking natural permitido.
 
 ---
 
@@ -6701,6 +6709,12 @@ La habilidad de la carta es una Pasiva-Rápida que niega la Pasiva de otra carta
 
 Página dedicada a las reglas de ACTIVAS (§6.7.1) y PASIVAS (§6.7.2). Contiene 5 elementos visuales: una carta principal Yogg vs Rhymir arriba-derecha, un recuadro textual con ejemplo de Activa-Rápida, y tres cartas más distribuidas (Kaykas, Curación Vegetal, Chapalob) como ejemplos visuales de las reglas expuestas. El diseño alterna columnas de texto con cartas ilustrativas. Los encabezados de sección (6.7.1 y 6.7.2) usan un color distintivo (azul/destacado).
 
+### ⚡ Rulings aplicables a esta página (ver `rulings-v5.1.md`)
+
+- **D43** (2026-04-22) — **Pasivas opcionales vs no-opcionales** se distinguen **semánticamente** (texto con *"puedes"*/*"si quieres"* = opcional). Opcional: si se olvida declarar en ventana, se pierde el efecto para ese disparo. No hay criterio tipográfico. Aplica a `p29/b08`.
+- **M12 residual** (2026-04-22) — **Pasiva-Rápida sólo da velocidad.** No altera la regla de no-descanso de `p29/b06`: *"una carta no descansará al final del turno por declarar una Pasiva."* La promoción a "rápida" cambia la ventana de uso, no la economía de descansos. Diferencia vs Activa-Rápida: el tipo base determina descanso (Activa descansa, Pasiva no).
+- **M21** (tentativo 2026-04-19) — El glosario "Pasiva no actualizan descansos" aplica a descansos automáticos; los costos de descanso impresos son pagos declarados (D17 supersede).
+- **M22** (tentativo 2026-04-19) — Glosario v5.2 debe usar el texto completo de `p29/b09` para Pasivas-Rápidas (incluye *"declaración de"* + cláusula de uso único por turno).
 
 ---
 
@@ -7935,6 +7949,11 @@ En la parte inferior de la carta se ven los iconos de estadísticas y texto de h
 
 Página con tres secciones: cierre de variantes del Formato Multijugador con la variante 'Manada' (inicio de p36), subsección 8.2 Formato Extendido completa (composición del mazo, suplentes, condición de victoria) y el inicio de una tabla de CARTAS LIMITADAS que muestra 2 entradas (Zotz: 0 copias, Tekei: 1 copia) con ilustraciones de referencia de ambas cartas. El texto original tenía palabras partidas por guiones de fin de línea ('Protec-tor', 'pri-meras') que fueron reconstruidas conservando el contenido. La clasificación 'Adendei / Háumsca' aparece dos veces pero probablemente debería ser 'Adende' (posible variante ortográfica del manual o error de transcripción OCR).
 
+### ⚡ Rulings aplicables a esta página (ver `rulings-v5.1.md`)
+
+- **D7** — "1 copia por nombre" aplica sólo a Formato Estándar. En Multijugador y Extendido aplica la lista de Cartas Limitadas de esta página.
+- **D46** (2026-04-22) — **Copias libres de Rava en Formato Extendido.** Los Ravas NO están en la lista de Limitadas → se permiten múltiples copias del mismo Rava. Único límite aplicable: 2 Ravas por mazo (límite de tipo `p14/b11`).
+- **M9** (2026-04-22) — **Multijugador es formato oficial.** Rango 4-20 jugadores. Todas las reglas del 1v1 aplican idénticamente. Las cartas *"hasta N jugadores"* (Maiz, Vesta Ignia, Enjambre Pírico, Ulmor) están diseñadas para escalar sin re-impresión.
 
 ---
 
