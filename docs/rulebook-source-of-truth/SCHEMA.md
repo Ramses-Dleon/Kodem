@@ -1,6 +1,6 @@
 # Schema de Frontmatter — Kódem TCG v5.1 Rulings & Rulebook
 
-**Versión:** 1.0
+**Versión:** 1.1
 **Fecha:** 2026-04-22
 **Propósito:** Estandarizar metadata YAML al inicio de cada ruling y cada página del rulebook para que el sitio web y cualquier parser consuman datos estructurados en lugar de adivinar por regex/emoji.
 
@@ -66,7 +66,7 @@ related: [D46, D51]
 | Campo | Tipo | Notas |
 |:---|:---|:---|
 | `id` | string | ID técnico único. Append-only. Ej: `D47`, `M12`, `L-5`, `E8` |
-| `display_id` | string | Cómo se muestra al humano. Puede ser igual a `id` o variantes históricas (`D22 v3`, `D22b`) |
+| `display_id` | string (opcional) | **Sólo presente cuando difiere de `id`.** Para variantes históricas (`D22 v3`, `D22b`). Si es igual a `id`, se omite |
 | `canonical_id` | string | ID colapsado para agrupación. `D22 v3` → `canonical_id: D22`. Permite al sitio agrupar variantes sin romper links históricos |
 | `version` | int | Número de versión. Empieza en `1`. Revisión mayor → incrementa |
 | `type` | enum | `duda` \| `meta-regla` \| `aclaracion` \| `ruling-carta` \| `errata` \| `faq` |
@@ -85,6 +85,7 @@ related: [D46, D51]
 
 | Campo | Tipo | Notas |
 |:---|:---|:---|
+| `display_id` | string | Sólo si difiere de `id` (ej. `D22 v3`, `D22b`) |
 | `parent` | string \| null | Para variantes (`D22b` tiene `parent: D22`). Null si es raíz |
 | `date_revised` | date \| null | Última revisión sustantiva |
 
@@ -103,10 +104,37 @@ authority:
 - `autor` — Ramsés D'León (diseño/autor del juego)
 - `juez` — Jueces oficiales (Ambir, Aldo)
 - `comunidad` — Ruling por ID de comunidad verificado (ej. `u_62a2ebfd`)
-- `logos-derivado` — Ruling cerrado por Logos componiendo reglas/rulings previos, sin decisión nueva. Requiere `validated_by: []` hasta que un juez/autor lo valide
+- `logos-derivado` — Ruling cerrado por Logos componiendo reglas/rulings previos, sin decisión nueva. Requiere `validated_by: []` hasta que un juez/autor lo valide. Si un juez lo avala retroactivamente, el `role` SE MANTIENE (refleja la autoría del razonamiento) y se agrega a `validated_by`. Ver §1.4.1
 - `evidencia-textual` — Cerrado por cita directa del rulebook, sin intervención humana
 
 **`validated_by`:** personas/entidades que han avalado el ruling posteriormente. Ej: un ruling derivado por Logos, avalado después por Ambir: `validated_by: [Ambir]`.
+
+### 1.4.1 Aval retroactivo
+
+Cuando un juez/autor avala un ruling que antes estaba sólo derivado por Logos o cerrado por comunidad:
+
+- **NO cambia `authority.role`** — preserva quién hizo el razonamiento original.
+- **SÍ se agrega a `validated_by`** con el nombre del validador.
+- **`date_revised` se actualiza** a la fecha del aval.
+
+Ejemplo antes del aval de Ambir:
+```yaml
+authority:
+  role: logos-derivado
+  name: Logos
+  validated_by: []
+```
+
+Ejemplo después del aval:
+```yaml
+authority:
+  role: logos-derivado
+  name: Logos
+  validated_by: [Ambir]
+date_revised: 2026-04-23
+```
+
+Esto permite al sitio mostrar tanto la autoría técnica (*"cerrado por composición de Logos"*) como el sello oficial (*"validado por Ambir, Juez Kódem"*).
 
 ### 1.5 `cards_explicit`
 
@@ -270,6 +298,14 @@ Tags permitidos para `tags:` en rulings. Lista controlada — agregar requiere e
 - `multijugador`
 - `formato-estandar`
 
+### 3.3.1 Por interacción/patrón
+
+- `stacking`
+- `unicidad-campo`
+- `acumulacion`
+- `prerrequisito`
+- `sinergia`
+
 ### 3.4 Por meta
 
 - `meta-regla`
@@ -369,14 +405,18 @@ El frontmatter YAML es **invisible** en render de markdown estándar (GitHub, ed
 
 ---
 
-## 9. Preguntas abiertas para Ramsés
+## 9. Decisiones de Ramsés (2026-04-22)
 
-1. **`id` vs `display_id`:** ¿Ok con mantener ambos siempre, o sólo `id` cuando son iguales?
-2. **Multi-version (`D22 v3`):** ¿Mantener como `display_id: D22 v3`, o refactorizar a `D22-v3`?
-3. **Vocabulario de tags:** la lista §3 es borrador — ¿agregar/quitar algo?
-4. **Archivo por ruling:** ¿Prefieres seguir con un solo `rulings-v5.1.md` gigante, o dividir `rulings/D47-tlahuelpuchi.md`, etc.? (Mi recomendación: mantener archivo único — YAML al inicio de cada bloque es suficiente.)
-5. **`L-5`:** ¿Mantener numeración negativa o refactorizar a `L5`?
+Ramsés delegó las 5 decisiones a criterio de Logos. Las decisiones tomadas:
+
+1. **`display_id` sólo si difiere de `id`.** Reduce ruido; campo opcional.
+2. **`D22 v3` literal, sin guión.** Respeta escritura histórica en commits y chats.
+3. **Vocabulario de tags:** lista §3 + se agregan `stacking`, `unicidad-campo`, `acumulacion`, `prerrequisito`, `sinergia` (§3.3.1).
+4. **Archivo único `rulings-v5.1.md`.** Preserva lectura narrativa y bitácora de sesión.
+5. **`L-5` literal.** El guión es parte del ID histórico.
+
+**Bonus:** §1.4.1 agregado para clarificar el flujo de aval retroactivo (no cambiar `role`, agregar a `validated_by`).
 
 ---
 
-_Last updated: 2026-04-22 — v1.0 inicial_
+_Last updated: 2026-04-22 — v1.1 con decisiones aplicadas_
