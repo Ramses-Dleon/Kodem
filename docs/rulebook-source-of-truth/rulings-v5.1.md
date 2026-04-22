@@ -475,22 +475,37 @@ O agregar al glosario:
 
 ---
 
-## D22. Herencia de stats del Adendei poseído — ✅ REFINADA por D21
+## D22. Herencia de stats del Adendei poseído — ✅ HERENCIA PARCIAL (REVISADA 2026-04-22)
 
-**Fecha:** 2026-04-19
-**Status:** ✅ CLARIFICADA (no hay herencia)
+**Fecha:** 2026-04-19 (revisada 2026-04-22 por Ramsés)
+**Status:** ✅ RESUELTA — herencia parcial
 
-**Ruling derivado de D21:**
+> ⚠️ **Revisión importante:** el ruling original (2026-04-19) decía "NO hay herencia". Ramsés clarificó el 2026-04-22 que sí existe herencia, pero **parcial**. Esta versión reemplaza la anterior.
 
-Dado que el Adendei poseído se coloca **BAJO** el Espectro (stack físico), **NO hay herencia de stats**. Las dos cartas coexisten en el mismo slot de Zona Principal pero mantienen sus propias estadísticas:
+**Ruling:**
 
-- **El Espectro usa su propia vida** (declarada en la carta Espectro) — no la del Adendei.
-- **El Espectro usa su propio Daño/Descansos** — no los del Adendei.
-- **El Adendei sirve como "ancla" física** para: (1) cumplir el requisito de posesión, (2) ser co-enviado a Extinción cuando el Espectro muere.
+Al momento de la **posesión**, el Espectro **hereda del Adendei poseído** los siguientes atributos:
 
-**Pregunta abierta menor:** cuando el Espectro muere, ¿el Adendei poseído llega a Extinción con vida plena (6 pts) o mantiene el estado que tenía antes de ser poseído? Asumiendo coherencia con "el intercambio de posesión es atómico", el Adendei se mueve al campo al ser poseído y luego a Extinción al morir el Espectro, así que **no interactúa con daño mientras está poseído** — queda inerte bajo el Espectro.
+| Atributo | ¿Hereda? | Fuente |
+|----------|---------|--------|
+| **Efecto** (Pasiva / Activa) | ✅ Sí | Adendei poseído |
+| **Daño** | ✅ Sí | Adendei poseído |
+| **Descansos** | ✅ Sí | Adendei poseído |
+| **Vida** | ❌ No | Espectro conserva la suya |
+| **Subtipo** | ❌ No | Espectro conserva el suyo |
+| **Energía** | ❌ No | Espectro conserva la suya |
 
-**Implicación v5.2:** clarificar en §3.7 que las cartas bajo un Espectro están en estado INACTIVO (no reciben daño, no atacan, no contribuyen efectos) hasta que el Espectro es eliminado.
+**Implicancias prácticas:**
+
+- El Espectro lucha como si fuera el Adendei en términos ofensivos (daño + descansos) y funcionales (efecto activo/pasivo), pero con su **propia barra de vida** y su **propio subtipo/energía** (lo que afecta interacciones con cartas que referencian subtipo o energía — esas apuntan al Espectro, no al Adendei poseído).
+- Esto reconcilia el callout `p14/b10` "Descanso: 0" con la regla `p14/b16` del master: el Descanso del Espectro en combate viene del Adendei poseído (herencia), mientras que el valor impreso del Espectro aplica solo cuando no esté poseyendo (caso ambiguo / ver D26 si aplica).
+- Las cartas que copian "efecto" del poseído (T1 Ruk y análogos) siguen la lógica de snapshot único al momento de posesión (ver D17).
+
+**Snapshot vs dinámica:** Coherente con D17, la herencia ocurre como **snapshot al momento de posesión**. Si el Adendei poseído recibe un efecto posterior que modificaría su daño/descansos/efecto, esos cambios **no se propagan** al Espectro salvo que la fuente del cambio declare explicitamente "se actualiza mientras esté poseído" o similar.
+
+**Al morir el Espectro:** ambas cartas (Espectro + Adendei poseído) se envían a Extinción (ver D21). El Adendei regresa a Extinción con el estado que tenía antes de ser poseído; los cambios de daño/descansos que el Espectro sufrió durante la posesión afectaron al Espectro, no al Adendei físico bajo él.
+
+**Implicación v5.2:** documentar en §3.7 Espectros una tabla de herencia explícita (la anterior "no hay herencia" era errónea). El callout `p14/b10 (Descanso: 0)` del master rulebook es coherente con esta lectura si se interpreta como "el Espectro hereda el Descanso del poseído, por eso el callout muestra 0 cuando el poseído tiene 0".
 
 ---
 
@@ -589,7 +604,7 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 - 5 cartas ejemplo documentadas (Quam, Yakerr, Gloku, Dagg)
 
 ### 🔄 Fase 3 — Resolución rulings con Ramses (EN CURSO)
-**Rulings resueltos (18/23):**
+**Rulings resueltos (20/23):**
 
 | ID | Título | Status |
 |---|---|---|
@@ -610,14 +625,14 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 | D16 | Gloku copia = snapshot único | ✅ |
 | D17 | Efectos carta supercede reglas (p20/b10 meta) | ✅ |
 | D18 | Fuera del Juego inspeccionable | ✅ |
-| D19 | Pasar turno forzado (emergente, futuro por carta) | ✅ |
+| D19 | Pasar turno forzado (emergente + parálisis con escape vía Bio/pasivas/Activas Equipos) | ✅ |
 | D20 | Espectros vida + posesión (por carta + consumo Extinción) | ✅ |
+| D21 | Posesión = Vivificación atómica (stack físico, co-envío a Extinción) | ✅ |
+| D22 | Herencia parcial al poseer (efecto/daño/descansos sí; vida/subtipo/energía no) | ✅ |
 | D23 | BETA-001 pieza histórica | ✅ |
 | D24 | Cap de vida máxima por tipo (regla meta dispersa) | ✅ |
 
-**Dudas derivadas pendientes (3):**
-- **D21** Consumo de Adendei al poseer (¿se envía a Fuera del Juego / Extinción?)
-- **D22** Herencia de stats al poseer (¿Espectro hereda vida del Adendei poseído?)
+**Dudas derivadas pendientes (1):**
 - **D25** Hori (¿Costo de Extinción aplica a toda la carta o solo SRMR?) 🚩
 
 **Dudas derivadas resueltas (+2):**
@@ -1174,11 +1189,11 @@ Si Ramsés confirma, pasan a ruling cerrado formal. Si disiente en alguno, se re
 
 **Problema:** El callout anótomico muestra **Descanso: 0** como valor fijo, pero la regla ordena herencia al poseer.
 
-**Evidencia:** D21 (Ramsés) estableció que el Espectro poseído **NO hereda** stats del Adendei poseído (ver D22 refinada). El Espectro usa su propio Descanso impreso. El callout *"Descanso: 0"* describe entonces el valor base del propio Espectro como carta (no cero por estar sin poseer).
+**Evidencia:** D22 (revisada 2026-04-22 por Ramsés) estableció **herencia parcial**: el Espectro hereda **efecto, daño y descansos** del Adendei poseído, pero conserva su **propia vida, subtipo y energía**. El callout `Descanso: 0` es coherente con esta lectura si el Adendei poseído en el ejemplo tiene 0 descansos al momento de posesión (snapshot heredado).
 
-**Ruling tentativo:** Corrección a la lectura del consolidado: el callout **es correcto**. "Descanso: 0" es el valor base impreso del Espectro como carta — no es que cambie al poseer. D22 resolvió que NO hay herencia de stats. El callout documenta su propio descanso, que para el Espectro canónico del ejemplo es 0.
+**Ruling:** El callout **es correcto** bajo D22 revisado. Si `Descanso: 0` aparece en el ejemplo anatómico de Espectro con posesión activa, refleja el valor heredado del Adendei poseído (snapshot al momento de posesión, ver D17). No es inconsistencia con la regla `p14/b16` del master — ambas convergen bajo herencia parcial.
 
-**Acción v5.2:** No es inconsistencia real una vez D21+D22 son autoridad. Opcional agregar nota pedagógica: *"El Espectro conserva su propio Descanso impreso (‘Descanso: 0’ en este ejemplo) al poseer; no hereda el del Adendei poseído (ver D22)."*
+**Acción v5.2:** Agregar nota pedagógica en §3.7: *"El Descanso del Espectro en combate viene del Adendei poseído (herencia por posesión, ver D22). El valor impreso del Espectro aplica cuando no esté poseyendo (si el sistema lo permite)."*
 
 ---
 
