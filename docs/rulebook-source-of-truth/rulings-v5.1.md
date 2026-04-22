@@ -362,13 +362,24 @@ Ramsés solicitó renderizar la reconstrucción del diagrama p19 (`p19-extractio
 
 **Ruling:** Actualmente **no existe una carta que fuerce explícitamente al rival a "pasar turno"** como efecto declarado. Sin embargo:
 
-- En la **práctica** sí ocurre de facto: si todos los Adendei y el Protector del jugador activo están en descanso al inicio del turno, ese jugador no puede declarar ataque ni Activa de una carta disponible; de facto sólo actualiza descansos.
+- En la **práctica** sí puede ocurrir un estado de **parálisis de facto**: si todos los Adendei y el Protector del jugador activo están en descanso al inicio del turno, ese jugador tiene opciones muy limitadas para declarar ataque o Activa de Adendei/Protector.
 - El **rival puede inducir este estado** con efectos que dan descansos masivos (ejemplo: Xakros, Peste — "Todos los Adendei en el campo reciben descansos iguales a los indicados en su respectiva carta").
 - Es un **caso emergente del sistema**, no una mecánica declarada explícitamente.
 - **Diseño futuro:** cartas en próximas expansiones que digan "el rival debe pasar turno" serían válidas bajo el principio meta establecido en D17 (efecto de carta supercede reglas generales).
 
+**⚠️ Aclaración crítica — el jugador paralizado NO está sin opciones (aclarado por Ramsés 2026-04-22):**
+
+Aunque todas sus cartas estén en descanso, el jugador activo conserva varias vías de interacción y de escape:
+
+1. **Escape vía Bioma (Bio) → Extinción:** puede mandar su Bioma a extinción para **actualizar 1 descanso a TODAS sus cartas**. Esto lo saca del estado de parálisis y le devuelve capacidad de acción en el mismo turno.
+2. **Pasivas de Adendei:** las habilidades pasivas siguen operando aunque el Adendei esté en descanso (salvo que el texto de la pasiva diga lo contrario).
+3. **Pasivas de Equipos:** las pasivas de Equipos también siguen activas sin importar el estado de descanso del Adendei portador.
+4. **Activas de Equipos:** las Activas de Equipos **sí se pueden utilizar** aunque el Adendei portador esté en descanso (el estado de descanso afecta a la carta Adendei/Protector, no al Equipo como fuente de Activa).
+
+Por eso "pasar turno de facto" es impreciso: en Kodem el jugador paralizado sigue teniendo agencia a través del Bioma, pasivas y Activas de Equipos. Solo queda verdaderamente bloqueado si además ya gastó/perdió su Bioma y no tiene Equipos con Activas disponibles.
+
 **Sugerencia v5.2:** enriquecer la definición de "Pasar Turno" en el glosario:
-> "**Pasar Turno:** acción voluntaria del jugador activo al inicio de su turno para saltar directamente a Fin de Turno. También puede ocurrir *de facto* cuando el jugador no tiene cartas disponibles para declarar ataque o Activa. Efectos futuros podrían hacerlo obligatorio por texto de carta."
+> "**Pasar Turno:** acción voluntaria del jugador activo al inicio de su turno para saltar directamente a Fin de Turno. Un jugador con todas sus cartas en descanso **no está obligado a pasar turno**: puede aún mandar su Bioma a extinción (actualiza 1 descanso a todas sus cartas), activar pasivas de Adendei/Equipos y usar Activas de Equipos. Efectos futuros podrían hacer "pasar turno" obligatorio por texto de carta."
 
 ---
 ## D16. Gloku (TCDE-015) — copia de stats: snapshot o dinámica
