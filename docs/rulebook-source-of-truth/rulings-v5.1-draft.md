@@ -1761,7 +1761,7 @@ canonical_id: D43
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
 status_method: autor
 
@@ -1773,16 +1773,16 @@ authority:
   name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [pasivas, glosario, meta-regla, prerrequisito]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit: []
 
 rulebook_refs:
   - p20/b10
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D17, M12]
 ---
 ## D43 — Pasivas Opcionales vs Generales — CERRADA
 
@@ -1827,27 +1827,39 @@ canonical_id: D23
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: errata
 status: resuelto
-status_method: TODO
+status_method: autor
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
+  role: autor
+  name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [errata, limitadas, protector]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: BETA-001
+    name: "Ariam, Dualidad (BETA)"
+    role: carta-central
+  - folio: FAFT-005
+    name: "Ariam, Dualidad (FAFT)"
+    role: ejemplo
+  - folio: IDRMA-020
+    name: "Ariam, Dualidad (IDRMA)"
+    role: ejemplo
+  - folio: RMR-012
+    name: "Ariam, Dualidad (RMR)"
+    role: ejemplo
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs: []
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: []
 ---
 ## D23. Ariam, Dualidad (BETA-001) — pieza histórica
 
@@ -1872,7 +1884,7 @@ canonical_id: D24
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
 status_method: autor
 
@@ -1884,27 +1896,29 @@ authority:
   name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [vida, adendei, rava, tokens, protector, espectros, glosario, meta-regla]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: IDRMA-007
+    name: "Zaren, El Inicio del Viaje (IDRMA)"
+    role: ejemplo
+  - folio: KEXC-001
+    name: "Zaren, El Inicio del Viaje (KEXC)"
+    role: ejemplo
+  - folio: KPRC-103
+    name: "Zaren, El Inicio del Viaje (KPRC)"
+    role: ejemplo
 
 rulebook_refs:
   - p06/b02
   - p07/b03
   - p08/b03
   - p09/b03
-  - p14/b16
-  - p20/b10
-  - p25/b06
-  - p29/b09
+  - p37
 
-derived_from:
-  - D36
-  - D37
-  - D52
-  - M9
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+derived_from: []
+supersedes: []
+related: [D3, D9, D20]
 ---
 ## D24. Cap de vida máxima por tipo de carta
 
@@ -2166,28 +2180,43 @@ canonical_id: M4
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
-status_method: TODO
+status_method: autor
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
+  role: autor
+  name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [pasivas, triggers, glosario, meta-regla]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: KPRC-017
+    name: "Kap, Lluvia de Ranas"
+    role: ejemplo
+  - folio: KPRC-037
+    name: "Nepthis, Rey Coral"
+    role: ejemplo
+  - folio: FYTE-004U
+    name: "Ariam, Escudo de Cempasúchil"
+    role: ejemplo
+  - folio: TCOO-007S
+    name: "Kaykac, Sorpresa Pírica"
+    role: ejemplo
+  - folio: FAFT-001
+    name: "Nirge, Los Ocultos"
+    role: contraejemplo
 
 rulebook_refs:
   - p20/b08
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D31]
 ---
 ## M4. "Efectos de cartas tomadas" — HandTraps
 
@@ -2244,27 +2273,30 @@ canonical_id: M2
 version: 1
 parent: M2
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
-status_method: TODO
+status_method: autor
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
+  role: autor
+  name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [visibilidad, extincion, fuera-de-juego, glosario]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: FYTE-075
+    name: "Mizthe, Arconte"
+    role: carta-central
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs: []
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [M2, M5, D5, D18]
 ---
 ## M2.5. Intercambio Mazo↔Extinción (Mizthe, FYTE-075)
 
@@ -2290,27 +2322,36 @@ canonical_id: M6
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: aclaracion
 status: resuelto
-status_method: TODO
+status_method: comunidad
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
+  role: comunidad
+  name: Hule
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [descansos, glosario]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: IDRMP-022
+    name: "Xakros, Peste (IDRMP)"
+    role: carta-central
+  - folio: RAMI-007
+    name: "Xakros, Peste (RAMI)"
+    role: ejemplo
+  - folio: RMR-017
+    name: "Xakros, Peste (RMR)"
+    role: ejemplo
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs: []
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D6, D19]
 ---
 ## M6. "Descansos indicados" (Xakros, Peste — IDRMP-022, RAMI-007, RMR-017)
 
@@ -2336,27 +2377,27 @@ canonical_id: M11
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: aclaracion
 status: resuelto
-status_method: TODO
+status_method: comunidad
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
+  role: comunidad
+  name: Hule
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [zona-principal, targeting, glosario]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit: []
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs: []
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D50]
 ---
 ## M11. "Frente a" como adyacencia posicional
 
@@ -2382,21 +2423,19 @@ canonical_id: D27
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: ruling-carta
 status: resuelto
-status_method: TODO
+status_method: autor
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
+  role: autor
+  name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
-
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+tags: [efectos, meta-regla]
 
 rulebook_refs:
   - p15/b12
@@ -2436,7 +2475,7 @@ canonical_id: D28
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
 status_method: evidencia-textual
 
@@ -2446,11 +2485,17 @@ date_revised: null
 authority:
   role: evidencia-textual
   name: rulebook
-  validated_by: []
+  validated_by: [Ramsés]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [zona-principal, glosario, meta-regla, vivificacion]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: LGRO-077
+    name: "Kuyovi, Salto Eléctrico"
+    role: ejemplo
+  - folio: FYTE-022R
+    name: "Ariam, Resurrección"
+    role: ejemplo
 
 rulebook_refs:
   - p23/b17
@@ -2458,8 +2503,8 @@ rulebook_refs:
   - p23/b22
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [M2, M2.3, M2.4, M2.5, M2.6]
 ---
 ## D28. "Cambiar de lugar" vs "Cambiar" vs "Intercambiar" (§6.5)
 
@@ -2497,27 +2542,30 @@ canonical_id: M2
 version: 1
 parent: M2
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: aclaracion
 status: resuelto
-status_method: TODO
+status_method: derivacion
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
-  validated_by: []
+  role: logos-derivado
+  name: Logos
+  validated_by: [Ramsés]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [zona-principal, efectos, prerrequisito]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: FYTE-022R
+    name: "Ariam, Resurrección"
+    role: ejemplo
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs: []
 
-derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+derived_from: [D28]
+supersedes: []
+related: [M2, D28]
 ---
 ## M2.3. Anti-cambio aplica a intercambio (Planta Carnívora)
 
@@ -2535,28 +2583,28 @@ canonical_id: M2
 version: 1
 parent: M2
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: aclaracion
 status: resuelto
-status_method: TODO
+status_method: derivacion
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
-  validated_by: []
+  role: logos-derivado
+  name: Logos
+  validated_by: [Ramsés]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [zona-principal, efectos, vida]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit: []
 
 rulebook_refs:
   - p23/b18
 
-derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+derived_from: [D28]
+supersedes: []
+related: [D28, M2]
 ---
 ## M2.6. Marcas al intercambiar (Envenenada/Quemada/Abismada)
 
@@ -2580,27 +2628,32 @@ canonical_id: M2
 version: 1
 parent: M2
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: aclaracion
 status: resuelto
-status_method: TODO
+status_method: evidencia-textual
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
-  validated_by: []
+  role: evidencia-textual
+  name: rulebook
+  validated_by: [Ramsés]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [zona-principal, glosario]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: FYTE-022R
+    name: "Ariam, Resurrección"
+    role: carta-central
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs:
+  - p14
+  - p24
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D28, M2, D20, D21]
 ---
 ## M2.4. "Zona Principal original" (Ariam Resurrección)
 
@@ -2625,29 +2678,35 @@ canonical_id: E8
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: errata
 status: resuelto
-status_method: TODO
+status_method: comunidad
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
-  validated_by: []
+  role: comunidad
+  name: Hule
+  validated_by: [Ramsés]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [subtipos, errata, adendei]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: FYTE-008R
+    name: "Macit, Resguardo Divino"
+    role: ejemplo
+  - folio: FYTE-020R
+    name: "Therz, de Vuelta a la Tumba"
+    role: ejemplo
 
 rulebook_refs:
   - p07/b04
   - p11/b19
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: []
 ---
 ## E8. Subtipos compuestos son multisubtipo (Macit, Therz)
 
@@ -2680,21 +2739,27 @@ canonical_id: M12
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
-status_method: TODO
+status_method: autor
 
 date_created: 2026-04-19
-date_revised: null
+date_revised: 2026-04-22
 
 authority:
-  role: TODO
-  name: TODO
+  role: autor
+  name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [activas, pasivas, descansos, glosario, meta-regla]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: LGRO-xxx
+    name: "Ryptor (Jugada Veloz)"
+    role: ejemplo
+  - folio: LGRO-065
+    name: "Yakerr (Vínculo Odémico)"
+    role: ejemplo
 
 rulebook_refs:
   - p29/b04
@@ -2702,8 +2767,8 @@ rulebook_refs:
   - p29/b09
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [M12 residual, M17]
 ---
 ## M12. "Efecto rápido" vs "Activa Rápida" — promoción de velocidad
 
@@ -2736,28 +2801,28 @@ canonical_id: M13
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: aclaracion
 status: resuelto
-status_method: TODO
+status_method: evidencia-textual
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
-  validated_by: []
+  role: evidencia-textual
+  name: rulebook
+  validated_by: [Ramsés]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [turno, fase-batalla, glosario]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit: []
 
 rulebook_refs:
   - p16/b07
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D2]
 ---
 ## M13. "Fase de Batalla" como ventana temporal
 
@@ -2791,29 +2856,32 @@ canonical_id: M14
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: meta-regla
 status: resuelto
-status_method: TODO
+status_method: evidencia-textual
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
-  validated_by: []
+  role: evidencia-textual
+  name: rulebook
+  validated_by: [Ramsés]
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [glosario, tokens, copia, meta-regla]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: TCOO-Virste
+    name: "Virste (Reseteo/Cordyceps)"
+    role: carta-central
 
 rulebook_refs:
   - p22/b01
   - p31/b03
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [D16, M2.4, M7]
 ---
 ## M14. "Original" / "estadísticas originales" — snapshot base
 
@@ -2843,21 +2911,24 @@ canonical_id: E7
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: errata
 status: resuelto
-status_method: TODO
+status_method: autor
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
+  role: autor
+  name: Ramsés
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [errata, subtipos]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: KPRC-072
+    name: "Zinawe, Vacío Etéreo"
+    role: carta-central
 
 rulebook_refs:
   - p05/b12
@@ -2865,8 +2936,8 @@ rulebook_refs:
   - p11/b19
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: [E8]
 ---
 ## E7. "Titan" (sin tilde) — errata ortográfica en KPRC-072
 
@@ -2891,27 +2962,30 @@ canonical_id: D29
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: errata
 status: resuelto
-status_method: TODO
+status_method: comunidad
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: TODO
-  name: TODO
+  role: comunidad
+  name: Hule
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [errata, glosario]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: KPRC-049
+    name: "(carta lore-only ejemplo)"
+    role: ejemplo
 
-rulebook_refs: []  # TODO: buscar refs pXX/bYY
+rulebook_refs: []
 
 derived_from: []
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+supersedes: []
+related: []
 ---
 ## D29. "Neutral" como effect_text
 
@@ -2936,55 +3010,35 @@ canonical_id: D32
 version: 1
 parent: null
 
-type: duda  # TODO revisar: duda | meta-regla | aclaracion | ruling-carta | errata | faq
+type: ruling-carta
 status: resuelto
-status_method: autor
+status_method: comunidad
 
 date_created: 2026-04-19
 date_revised: null
 
 authority:
-  role: autor
-  name: Ramsés
+  role: comunidad
+  name: Hule
   validated_by: []
 
-tags: []  # TODO manual: usar vocabulario cerrado §3 del SCHEMA
+tags: [protector, activas, costos, copia, targeting]
 
-cards_explicit: []  # TODO manual: declarar cartas con folio + role
+cards_explicit:
+  - folio: FYTE-012S
+    name: "Nahual, Máscara"
+    role: carta-central
+  - folio: FYTE-083
+    name: "Nahual, Máscara (v2)"
+    role: carta-central
 
 rulebook_refs:
-  - p07/b11
-  - p10/b05
-  - p14/b10
-  - p14/b16
-  - p15/b12
-  - p16/b06
   - p16/b08
-  - p16/b11
-  - p18/b09
-  - p20/b02
-  - p20/b06
-  - p20/b08
   - p20/b10
-  - p24/b03
-  - p27/b15
-  - p27/b16
-  - p29/b04
-  - p29/b06
-  - p29/b09
-  - p31/b11
-  - p39/b08
-  - p39/b09
 
-derived_from:
-  - D16
-  - D17
-  - D20
-  - D21
-  - D22
-  - M4
-supersedes: []  # TODO: si reemplaza versiones anteriores
-related: []  # TODO manual: IDs conectados temáticamente
+derived_from: []
+supersedes: []
+related: [D16, D17, D22b]
 ---
 ## D32. Protector Nahual, Máscara — copia de Activa del Protector rival
 
