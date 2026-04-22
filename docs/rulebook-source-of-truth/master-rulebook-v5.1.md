@@ -3042,6 +3042,8 @@ Page presents §3.7 Espectros in two layers: (1) a full card-anatomy infographic
 - **D35** — El efecto del Espectro y el efecto del poseído son **aditivos** (no excluyentes).
 - **D36** (2026-04-20 Aldo juez) — Posesión consume el objetivo en Extinción. Varios Espectros pueden poseer en la misma Fase Previa sólo si hay objetivos suficientes (1 por Espectro).
 - **D37** (2026-04-22) — **Tlahuelpuchi NO bloquea posesión; elimina el requisito de sacrificar aliado.** Los Espectros aliados pueden poseer Adendei en Extinción sin enviar aliado propio al Extinción. Habilita strategies Tlahuelpuchi + Espectros.
+- **D47** (2026-04-22, Logos por derivación) — **Tlahuelpuchi + múltiples Espectros en misma Fase Previa:** cada Espectro puede poseer sin límite adicional, hasta agotar objetivos disponibles. El *"(solo una)"* de `p14/b16 b3` aplica **por Espectro**, no por turno global. Composición directa D36 + D37 + `p14/b16 b3`.
+- **D49** (2026-04-22, Logos por derivación) — **Espectro sin poseído sin aliados para pagar el ataque:** el ataque **ni se declara**. La cláusula *"deberá pagar"* de `p14/b16 b6` es prerrequisito absoluto; sin recursos, la acción no se instancia. No dispara triggers tipo *"cuando declara ataque"*. Aplica meta-regla `p20/b10` + principio general TCG de costo impagable. Recomendación atómica: ataque íntegro o nada.
 - **M18** — Los callouts anatómicos `Descanso: 0`, `Energía: Sin energía`, `Subtipo: Sin subtipo` describen el estado base del Espectro **sin poseer**. Al poseer, Descanso+Energía se reemplazan por los del poseído.
 
 **Página 14 es donde v5.2 debe agregar una tabla consolidada de herencia** (ver D22 v3) y la distinción herencia/copia formalizada en glosario.
@@ -5759,6 +5761,7 @@ Página del rulebook Kódem TCG v5.1 que cierra el tema de Ataque Múltiple y Ga
 - **D17** (meta-regla) — `p25/b06`: *"Si una carta deja el campo y su efecto está condicionado a 'estar disponible', el efecto no continuará en uso."* Fundamento de M3 y de varios rulings subsiguientes.
 - **M3 base** (2026-04-20) — Mixtla *"durante el resto del juego"* **no persiste post-campo** (D17 + `p25/b06`).
 - **M3 residual** (2026-04-22) — **Resurrectos SÍ acumulan según redacción.** Si un Adendei con efecto persistente se vivifica múltiples veces, sus instancias se suman siempre que el texto lo permita (Marok de Flores y Tumbas = ejemplo canónico). Mixtla vivificada 2× → acumula +2/-2 cada vez. Sin cláusula restrictiva tipo *"sólo una vez por partida"*, stacking natural permitido.
+- **D48** (2026-04-22, Logos por derivación) — **Re-vivificación múltiple: pausa-reanudación con acumulación.** Al salir del campo, el efecto se apaga (`p25/b06`). Al re-entrar, se genera nueva instancia que se suma a las activas. Criterio de redacción: *"mientras"* = condicional no-persiste; *"durante el resto del juego"* = estado global persiste y acumula. Compone `p25/b06` + D17 + M3 residual.
 
 ---
 
@@ -7954,6 +7957,7 @@ Página con tres secciones: cierre de variantes del Formato Multijugador con la 
 - **D7** — "1 copia por nombre" aplica sólo a Formato Estándar. En Multijugador y Extendido aplica la lista de Cartas Limitadas de esta página.
 - **D46** (2026-04-22) — **Copias libres de Rava en Formato Extendido.** Los Ravas NO están en la lista de Limitadas → se permiten múltiples copias del mismo Rava. Único límite aplicable: 2 Ravas por mazo (límite de tipo `p14/b11`).
 - **M9** (2026-04-22) — **Multijugador es formato oficial.** Rango 4-20 jugadores. Todas las reglas del 1v1 aplican idénticamente. Las cartas *"hasta N jugadores"* (Maiz, Vesta Ignia, Enjambre Pírico, Ulmor) están diseñadas para escalar sin re-impresión.
+- **D50** (2026-04-22, Logos por derivación) — **Semántica de "rival" en Multijugador:** híbrido narrow/wide según verbo electivo. Verbo electivo (*"elige un rival"*) → narrow 1-target, el activo elige. Condicional pasivo (*"si un rival tiene X"*) → wide implícito por D52 (cualquier rival dispara). *"Todos los rivales"* explícito → todos. *"Hasta N jugadores"* → activo elige hasta N. Compone D52 + M9. Criterio simple: *¿el verbo obliga a elegir?* → sí→narrow; no→wide por default.
 
 ---
 

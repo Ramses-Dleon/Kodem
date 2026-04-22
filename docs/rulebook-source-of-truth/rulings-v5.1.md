@@ -2194,9 +2194,18 @@ Tras re-leer rulings-v5.1.md + reglas.md completos, 9 dudas abiertas en el porta
 | M3 | Mixtla post-campo + resurrectos acumulan según redacción (Marok) | D17 + p25/b06 + **Ramsés residual 2026-04-22** | ✅ |
 | M5 | Mazo rival visibilidad depende formato (CdC default) | M2.5 + §4 + **Ramsés 2026-04-22** | ✅ |
 
-**Dudas abiertas al 2026-04-22 cierre PM (aclaración de estado):**
-- **D16 residual:** apilación de inmunidades en Ruk (2 Pasivas idénticas de inmunidad = ¿2 ataques o 1?). Pendiente.
-- **M15-M23:** 8 tentativos derivados con evidencia textual directa, esperan aprobación en lote.
+**Dudas abiertas al 2026-04-22 cierre vespertino (aclaración de estado):**
+- **D16 residual:** apilación de efectos idénticos (generalizado más allá de Ruk). **2026-04-22 18:05 UTC:** propuesta de Logos enviada a juez externo para aval. Principio propuesto: stacking por naturaleza del efecto (4 tipos: booleano/contador/evento-disparo/modificador), coherente con *M3 residual* (Ramés 2026-04-22) y meta-regla `p20/b10`. Esperando feedback.
+- **M15-M23:** 8 tentativos derivados con evidencia textual directa, esperan aprobación en lote. — **APROBADOS 2026-04-22 17:15 UTC.**
+
+**Batch cerrados 2026-04-22 cierre vespertino (por derivación de Logos):**
+- **D47** Tlahuelpuchi + múltiples Espectros: sí, hasta agotar objetivos. Compone D36+D37+`p14/b16 b3`.
+- **D48** M3 residual acumulación: pausa-reanudación con acumulación por redacción. Compone `p25/b06`+D17+M3 residual.
+- **D49** Espectro sin poseído sin aliados: ataque no se declara. Compone `p14/b16 b6`+`p20/b10`.
+- **D50** Semántica "rival" en multi: híbrido narrow/wide por verbo electivo. Compone D52+M9.
+
+**Descartadas como pseudo-problemas:**
+- **D51 tentativa:** Ruk poseyendo Rava = violación límite 2 Ravas por mazo. **DESCARTADA 2026-04-22** por Ramés: el límite 0-2 Ravas es regla de composición de Mazo General, no restricción en tiempo real. Poseer un Rava no incrementa el conteo en el mazo.
 
 **Dudas resueltas 2026-04-20/21/22 (antes abiertas):**
 - **D36** Pool compartido entre Espectros: ✅ RESUELTA 2026-04-20 por Aldo (Juez Kodem).
