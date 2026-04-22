@@ -1,11 +1,49 @@
-# Rulings oficiales — Master Rulebook v5.1
+# Rulings oficiales — Master Rulebook v5.1 (v2, con frontmatter)
 
 Resoluciones de dudas sobre ambigüedades e inconsistencias detectadas durante la revisión completa del master-rulebook v5.1.
 
-Fuente: Ramsés D'León (autor/mantenedor), Telegram "Logos: Kodem" (chat `-1003700827993`).
+**Versión del documento:** v2 (2026-04-22) — 60 rulings con frontmatter estructurado según `SCHEMA.md` v1.1.
+Versión anterior (sin frontmatter): `rulings-v5.1-v1-backup-2026-04-22.md`.
+
+**Fuentes de autoridad:** Ramsés D'León (autor/mantenedor, canon), Telegram "Logos: Kodem" (chat `-1003700827993`), jueces oficiales (Ambir, Aldo), comunidad Supabase (Hule, u_62a2ebfd), derivaciones Logos validadas, evidencia textual del rulebook.
+
+**Distribución de rulings:**
+- types: 30 meta-regla · 16 aclaracion · 9 ruling-carta · 5 errata
+- authority: 39 autor · 8 comunidad · 7 logos-derivado · 4 evidencia-textual · 2 juez
 
 ---
 
+---
+id: D1
+canonical_id: D1
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [energias, glosario, numeracion]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p06
+  - p07/b08
+  - p09/b01
+
+derived_from: []
+supersedes: []
+related: []
+---
 ## D1. Energías: ¿7 u 8?
 
 **Fecha:** 2026-04-19
@@ -24,6 +62,34 @@ Fuente: Ramsés D'León (autor/mantenedor), Telegram "Logos: Kodem" (chat `-1003
 
 ---
 
+---
+id: D3
+canonical_id: D3
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [rava, zona-principal, ataques, targeting, vida]
+
+cards_explicit: []
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: []
+---
 ## D3. ¿Rava puede ser atacado?
 
 **Fecha:** 2026-04-19
@@ -39,6 +105,39 @@ Fuente: Ramsés D'León (autor/mantenedor), Telegram "Logos: Kodem" (chat `-1003
 **Sugerencia para v5.2:** agregar línea explícita en §3.2 Rava:
 > "Los Ravas ocupan un espacio en Zona Principal y pueden ser objetivo de ataques y efectos como cualquier carta de esa zona."
 
+---
+---
+id: D5
+canonical_id: D5
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [fuera-de-juego, zona-principal, extincion, glosario, visibilidad]
+
+cards_explicit:
+  - folio: TCOO-006U
+    name: "Quam, Detrás de la Materia"
+    role: carta-central
+
+rulebook_refs:
+  - p20/b07
+  - p25/b06
+
+derived_from: []
+supersedes: []
+related: [D18]
 ---
 ## D5. "Cartas fuera del juego" (p20/b07)
 
@@ -76,6 +175,35 @@ Definición sugerida:
 - **Implicancia estratégica:** Quam es actualmente única en el pool oficial por su relación con esta zona.
 
 ---
+---
+id: D6
+canonical_id: D6
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [descansos, adendei, rava, tokens, protector, zona-principal, prerrequisito]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p27/b09
+
+derived_from: []
+supersedes: []
+related: [D4]
+---
 ## D6. Descansos máximos por estadística
 
 **Fecha:** 2026-04-19
@@ -97,6 +225,44 @@ Definición sugerida:
 **Lectura de p27/b09 clarificada:** "mientras estén en 1 descanso máximo" significa **"puede recibir descansos por efecto mientras su descanso actual sea ≤1, llegando como máximo a 2"**. No hay overflow ni bonus.
 
 ---
+---
+id: D7
+canonical_id: D7
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [limitadas, formato-estandar, extendido, multijugador, numeracion]
+
+cards_explicit:
+  - folio: FYTE-Zotz
+    name: "Zotz (Limitada 0)"
+    role: ejemplo
+  - folio: FYTE-Tekei
+    name: "Tekei (Limitada 1)"
+    role: ejemplo
+
+rulebook_refs:
+  - p14/b11
+  - p36
+  - p37
+  - p40
+
+derived_from: []
+supersedes: []
+related: [D51]
+---
 ## D7. Cartas Limitadas: ámbito de aplicación
 
 **Fecha:** 2026-04-19
@@ -114,6 +280,37 @@ Definición sugerida:
 **Sugerencia para v5.2:** encabezado explícito en la tabla de Cartas Limitadas:
 > "**CARTAS LIMITADAS** — aplica únicamente a Formato Multijugador y Formato Extendido. En Formato Estándar aplica la regla universal de 1 copia por carta."
 
+---
+---
+id: D10
+canonical_id: D10
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [turno, fase-previa, costos, prerrequisito]
+
+cards_explicit:
+  - folio: LGRO-065
+    name: "Yakerr, Hogar"
+    role: carta-central
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: []
 ---
 ## D10. Pasar Turno: quién y cuándo
 
@@ -137,6 +334,35 @@ Definición sugerida:
 **Observación de diseño:** "pasar turno" es una resource-mechanic distintiva — el costo es **tempo** (unidad de turno), no cartas/vida/descansos. Mecánica potencialmente única en el pool actual de Kodem.
 
 ---
+---
+id: D8
+canonical_id: D8
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [ataques, targeting, visibilidad, zona-principal]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p31/b06
+
+derived_from: []
+supersedes: []
+related: []
+---
 ## D8. Targeting de cartas ocultas en ataque
 
 **Fecha:** 2026-04-19
@@ -155,6 +381,35 @@ Definición sugerida:
   2. Proteger efectos/pasivas hasta revelación.
   3. Evitar restricciones de tipo específico (ej. "Solo puede atacar Adendei-Feral"), dado que las cartas ocultas no se consideran un tipo específico (p31/b06).
 
+---
+---
+id: D2
+canonical_id: D2
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [turno, fase-batalla, activas, numeracion, cross-ref]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p17/b01
+
+derived_from: []
+supersedes: []
+related: []
 ---
 ## D2. Subfase "Resolución" en Fase de Batalla
 
@@ -190,6 +445,40 @@ Definición sugerida:
 Esto también debe reflejarse en el Diagrama de Estructura de Turno (§5.2) para que no muestre "Resolución" como nodo independiente.
 
 ---
+---
+id: D9
+canonical_id: D9
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [tokens, vida, copia]
+
+cards_explicit:
+  - folio: TCDE-015
+    name: "Gloku, Trituración"
+    role: ejemplo
+  - folio: TCDE-008
+    name: "Dagg, Abismo Feral"
+    role: ejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [D16, M7]
+---
 ## D9. Vida máxima de Tokens
 
 **Fecha:** 2026-04-19
@@ -222,6 +511,36 @@ Esto también debe reflejarse en el Diagrama de Estructura de Turno (§5.2) para
 **Duda derivada pendiente (no v5.1 directo):** Gloku copia stats de un Adendei rival "en el campo". Si ese Adendei luego cambia stats (escalar/descender/feralizar) o deja el campo, ¿el Token se actualiza dinámicamente o queda congelado en el momento de invocación? Ruling de carta pendiente.
 
 ---
+---
+id: D4
+canonical_id: D4
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [protector, descansos, extincion, vida]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p08/b08
+  - p20/b05
+
+derived_from: []
+supersedes: []
+related: [D6]
+---
 ## D4. Protector suplente: herencia de descansos
 
 **Fecha:** 2026-04-19
@@ -240,6 +559,35 @@ Esto también debe reflejarse en el Diagrama de Estructura de Turno (§5.2) para
 > "Cuando el Protector es reemplazado por su suplente (sea por Extinción o por cambio), el suplente siempre entra con los mismos descansos que tenía el anterior. La vida del suplente es 12 pts si el anterior fue a Extinción, o conserva la vida del anterior si fue cambiado sin Extinción."
 
 ---
+---
+id: D11
+canonical_id: D11
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [espectros, adendei, numeracion]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p14/b21
+
+derived_from: []
+supersedes: []
+related: [D20]
+---
 ## D11. Espectros: límite recomendado
 
 **Fecha:** 2026-04-19
@@ -252,6 +600,38 @@ Esto también debe reflejarse en el Diagrama de Estructura de Turno (§5.2) para
 
 ---
 
+---
+id: D12
+canonical_id: D12
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [numeracion, glosario]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p30
+  - p31
+  - p32
+  - p33
+
+derived_from: []
+supersedes: []
+related: []
+---
 ## D12. Numeración de Restricciones (p30-p33)
 
 **Fecha:** 2026-04-19
@@ -264,6 +644,38 @@ Esto también debe reflejarse en el Diagrama de Estructura de Turno (§5.2) para
 
 **Sugerencia v5.2:** agregar separación visual más clara (encabezado H2 con más aire, regla horizontal, cambio tipográfico) entre ambas secciones para evitar que el lector las perciba como continuas.
 
+---
+---
+id: D13
+canonical_id: D13
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [glosario, cross-ref, numeracion]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p19
+  - p24
+  - p25
+  - p39
+
+derived_from: []
+supersedes: []
+related: [D14]
 ---
 ## D13. Glosario: "Ver Sección 5.2" es intencional
 
@@ -297,6 +709,39 @@ Ramsés solicitó renderizar la reconstrucción del diagrama p19 (`p19-extractio
 - **C:** Documento visual-html completo con diagrama + leyenda + 6 secciones por fase + tabla de correcciones + deploy Vercel.
 
 ---
+---
+id: D14
+canonical_id: D14
+version: 1
+parent: null
+
+type: errata
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [numeracion, cross-ref, errata]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p03
+  - p16/b06
+  - p16/b09
+  - p16/b10
+  - p16/b11
+
+derived_from: []
+supersedes: []
+related: [D13]
+---
 ## D14. Numeración de subsecciones §6.X
 
 **Fecha:** 2026-04-19
@@ -329,6 +774,39 @@ Ramsés solicitó renderizar la reconstrucción del diagrama p19 (`p19-extractio
 **Patrón detectado:** en la numeración antigua, §6.5 era Ataque y §6.6 era Efectos. En v5.1 se renumeró a §6.6 Ataque y §6.7 Efectos, pero las 4 referencias cruzadas de p16 quedaron sin actualizar.
 
 ---
+---
+id: D17
+canonical_id: D17
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [meta-regla, efectos, extincion, costos]
+
+cards_explicit:
+  - folio: TCOO-006U
+    name: "Quam, Detrás de la Materia"
+    role: ejemplo
+
+rulebook_refs:
+  - p20/b10
+  - p25/b06
+
+derived_from: []
+supersedes: []
+related: [D5, D48]
+---
 ## D17. Efectos que persisten post-Extinción
 
 **Fecha:** 2026-04-19
@@ -344,6 +822,34 @@ Ramsés solicitó renderizar la reconstrucción del diagrama p19 (`p19-extractio
 
 ---
 
+---
+id: D18
+canonical_id: D18
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [fuera-de-juego, visibilidad, extincion]
+
+cards_explicit: []
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [D5]
+---
 ## D18. Inspección de la Zona Fuera del Juego
 
 **Fecha:** 2026-04-19
@@ -355,6 +861,37 @@ Ramsés solicitó renderizar la reconstrucción del diagrama p19 (`p19-extractio
 
 ---
 
+---
+id: D19
+canonical_id: D19
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: 2026-04-22
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [turno, descansos, pasivas, activas, bio, sinergia]
+
+cards_explicit:
+  - folio: IDRMP-022
+    name: "Xakros, Peste"
+    role: ejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [D10, D17, M6]
+---
 ## D19. ¿Existen cartas que fuerzan "pasar turno"?
 
 **Fecha:** 2026-04-19
@@ -382,6 +919,40 @@ Por eso "pasar turno de facto" es impreciso: en Kodem el jugador paralizado sigu
 > "**Pasar Turno:** acción voluntaria del jugador activo al inicio de su turno para saltar directamente a Fin de Turno. Un jugador con todas sus cartas en descanso **no está obligado a pasar turno**: puede aún mandar su Bioma a extinción (actualiza 1 descanso a todas sus cartas), activar pasivas de Adendei/Equipos y usar Activas de Equipos. Efectos futuros podrían hacer "pasar turno" obligatorio por texto de carta."
 
 ---
+---
+id: D16
+canonical_id: D16
+version: 1
+parent: null
+
+type: ruling-carta
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: 2026-04-22
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: [Ambir]
+
+tags: [copia, tokens, extincion, stacking, espectros, pasivas]
+
+cards_explicit:
+  - folio: TCDE-015
+    name: "Gloku, Trituración"
+    role: carta-central
+  - folio: FYTE-048
+    name: "Ruk, Espectro Draconiano"
+    role: ejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [D9, D22, M7, D51]
+---
 ## D16. Gloku (TCDE-015) — copia de stats: snapshot o dinámica
 
 **Fecha:** 2026-04-19
@@ -405,6 +976,58 @@ O agregar al glosario:
 
 ---
 
+---
+id: D20
+canonical_id: D20
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: 2026-04-22
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [espectros, posesion, vida, extincion, adendei, vivificacion]
+
+cards_explicit:
+  - folio: FYTE-003K
+    name: "Ariam, Axoloespectro"
+    role: ejemplo
+  - folio: FYTE-005U
+    name: "Zaykan, Lagarto Fantasma"
+    role: ejemplo
+  - folio: FYTE-013R
+    name: "Aki, Brinco Espectral"
+    role: ejemplo
+  - folio: FYTE-014R
+    name: "Yakerr, Aullido Espectral"
+    role: ejemplo
+  - folio: FYTE-015R
+    name: "Nanuk, Garras Heladas"
+    role: ejemplo
+  - folio: FYTE-048
+    name: "Ruk, Espectro Draconiano"
+    role: ejemplo
+  - folio: FYTE-007R
+    name: "Tlahuelpuchi, Invocación Espectral"
+    role: referencia
+  - folio: FYTE-021R
+    name: "Espectrosaurios"
+    role: contraejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [D11, D21, D22, D36, D37, D47]
+---
 ## D20. Espectros — vida máxima, posesión y requisitos
 
 **Fecha:** 2026-04-19
@@ -441,6 +1064,40 @@ O agregar al glosario:
 
 ---
 
+---
+id: D21
+canonical_id: D21
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [espectros, posesion, vivificacion, extincion, zona-principal, adendei, glosario]
+
+cards_explicit:
+  - folio: FYTE-007R
+    name: "Tlahuelpuchi, Invocación Espectral"
+    role: referencia
+  - folio: TCOO-006U
+    name: "Quam, Detrás de la Materia"
+    role: contraejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [D5, D20, D22, D36, D47, M2]
+---
 ## D21. Posesión de Espectros = Vivificación atómica
 
 **Fecha:** 2026-04-19
@@ -475,6 +1132,46 @@ O agregar al glosario:
 
 ---
 
+---
+id: D22
+display_id: "D22 v3"
+canonical_id: D22
+version: 3
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: 2026-04-22
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [espectros, posesion, copia, sinergia, efectos, descansos, energias, costos]
+
+cards_explicit:
+  - folio: FYTE-003K
+    name: "Ariam, Axoloespectro"
+    role: ejemplo
+  - folio: FYTE-048
+    name: "Ruk, Espectro Draconiano"
+    role: ejemplo
+
+rulebook_refs:
+  - p14/b10
+  - p14/b12
+  - p14/b13
+  - p14/b16
+  - p14/b21
+
+derived_from: []
+supersedes: []
+related: [D16, D17, D20, D21, D22b, D22c]
+---
 ## D22. Herencia de stats del Adendei poseído — ✅ HERENCIA DINÁMICA DE 5 ATRIBUTOS (RESUELTA 2026-04-22)
 
 **Fecha:** 2026-04-19 (revisión 1: 2026-04-22 AM; revisión 2 final: 2026-04-22 14:15 UTC)
@@ -535,6 +1232,48 @@ Ramsés (2026-04-22 14:15 UTC): *"si te refieres a las escalas o descensos? La r
 
 ---
 
+---
+id: D22b
+display_id: "D22b"
+canonical_id: D22
+version: 1
+parent: D22
+
+type: meta-regla
+status: resuelto
+status_method: derivacion
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: logos-derivado
+  name: Logos
+  validated_by: [Ramsés]
+
+tags: [copia, posesion, espectros, glosario, meta-regla]
+
+cards_explicit:
+  - folio: TCDE-015
+    name: "Gloku, Trituración"
+    role: contraejemplo
+  - folio: TCDE-008
+    name: "Dagg, Abismo Feral"
+    role: contraejemplo
+  - folio: FYTE-048
+    name: "Ruk, Espectro Draconiano"
+    role: ejemplo
+  - folio: FYTE-003K
+    name: "Ariam, Axoloespectro"
+    role: ejemplo
+
+rulebook_refs:
+  - p14/b16
+
+derived_from: [D22, D16, D17]
+supersedes: []
+related: [D9, M7]
+---
 ## D22b. Herencia (posesión) ≠ Copia (mecánica general) — Distinción formal
 
 **Fecha:** 2026-04-22
@@ -565,6 +1304,36 @@ Agregar al glosario §9:
 
 ---
 
+---
+id: D22c
+display_id: "D22c"
+canonical_id: D22
+version: 1
+parent: D22
+
+type: ruling-carta
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [espectros, posesion, ataques, efectos, vida, stacking]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p14/b19
+
+derived_from: []
+supersedes: []
+related: [D21, D22, D22b, D49]
+---
 ## D22c. Absorción total — TODO daño al stack entra al Espectro — CERRADA
 
 **Fecha:** 2026-04-22 16:53 UTC
@@ -612,6 +1381,38 @@ Con D22c, la triada de herencia de Espectros queda sellada:
 
 ---
 
+---
+id: D46
+canonical_id: D46
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [rava, extendido, limitadas, unicidad-campo]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p14/b11
+  - p36
+  - p37
+  - p40
+
+derived_from: [D7]
+supersedes: []
+related: [D7, D51]
+---
 ## D46. Formato Extendido — Rava admite copias libres — CERRADA
 
 **Fecha:** 2026-04-22 16:53 UTC
@@ -638,6 +1439,41 @@ Con D22c, la triada de herencia de Espectros queda sellada:
 
 ---
 
+---
+id: M12 residual
+display_id: "M12 residual"
+canonical_id: M12
+version: 1
+parent: M12
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [pasivas, activas, descansos, meta-regla]
+
+cards_explicit:
+  - folio: LGRO-065
+    name: "Yakerr (Vínculo Odémico)"
+    role: ejemplo
+
+rulebook_refs:
+  - p20/b10
+  - p29/b06
+  - p29/b09
+
+derived_from: []
+supersedes: []
+related: [M12]
+---
 ## M12 residual — Pasiva-Rápida promovida a Activa-Rápida: sólo velocidad — CERRADA
 
 **Fecha:** 2026-04-22 16:57 UTC
@@ -672,6 +1508,36 @@ Con D22c, la triada de herencia de Espectros queda sellada:
 
 ---
 
+---
+id: D33 residual
+display_id: "D33 residual"
+canonical_id: D33
+version: 1
+parent: D33
+
+type: aclaracion
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [espectros, ataques, triggers, posesion, costos]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p14/b16
+
+derived_from: [D33]
+supersedes: []
+related: [D33, D49, FAQ-03]
+---
 ## D33 residual — Ataque sin poseído SÍ puede disparar triggers — CERRADA
 
 **Fecha:** 2026-04-22 16:57 UTC
@@ -709,6 +1575,39 @@ Ramsés añade *"algunos triggers"* (no todos), lo que sugiere que el disparo de
 
 ---
 
+---
+id: M3 residual
+display_id: "M3 residual"
+canonical_id: M3
+version: 1
+parent: M3
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [vivificacion, acumulacion, efectos, stacking, meta-regla]
+
+cards_explicit:
+  - folio: FYTE-Marok
+    name: "Marok (Flores y Tumbas)"
+    role: ejemplo
+
+rulebook_refs:
+  - p25/b06
+
+derived_from: [D17, M3]
+supersedes: []
+related: [D48, M3]
+---
 ## M3 residual — Resurrectos: acumulación depende de la redacción — CERRADA
 
 **Fecha:** 2026-04-22 16:56 UTC
@@ -740,6 +1639,34 @@ Ramsés añade *"algunos triggers"* (no todos), lo que sugiere que el disparo de
 
 ---
 
+---
+id: M5
+canonical_id: M5
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [visibilidad, formato-estandar, extendido, multijugador, meta-regla]
+
+cards_explicit: []
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: []
+---
 ## M5 — Visibilidad del Mazo rival: depende del formato/contexto — CERRADA
 
 **Fecha:** 2026-04-22 16:56 UTC
@@ -773,6 +1700,36 @@ Ramsés añade *"algunos triggers"* (no todos), lo que sugiere que el disparo de
 
 ---
 
+---
+id: M9
+canonical_id: M9
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [multijugador, formato-estandar, extendido, limitadas, turno]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p36
+  - p37
+
+derived_from: []
+supersedes: []
+related: [D7, D50, D51]
+---
 ## M9 — Multijugador: formato oficial escalable — CERRADA
 
 **Fecha:** 2026-04-22 16:56 UTC
@@ -805,6 +1762,35 @@ Ramsés añade *"algunos triggers"* (no todos), lo que sugiere que el disparo de
 
 ---
 
+---
+id: D43
+canonical_id: D43
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [pasivas, glosario, meta-regla, prerrequisito]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p20/b10
+
+derived_from: []
+supersedes: []
+related: [D17, M12]
+---
 ## D43 — Pasivas Opcionales vs Generales — CERRADA
 
 **Fecha:** 2026-04-22 16:56 UTC
@@ -842,6 +1828,46 @@ Ramsés añade *"algunos triggers"* (no todos), lo que sugiere que el disparo de
 
 ---
 
+---
+id: D23
+canonical_id: D23
+version: 1
+parent: null
+
+type: errata
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [errata, limitadas, protector]
+
+cards_explicit:
+  - folio: BETA-001
+    name: "Ariam, Dualidad (BETA)"
+    role: carta-central
+  - folio: FAFT-005
+    name: "Ariam, Dualidad (FAFT)"
+    role: ejemplo
+  - folio: IDRMA-020
+    name: "Ariam, Dualidad (IDRMA)"
+    role: ejemplo
+  - folio: RMR-012
+    name: "Ariam, Dualidad (RMR)"
+    role: ejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: []
+---
 ## D23. Ariam, Dualidad (BETA-001) — pieza histórica
 
 **Fecha:** 2026-04-19
@@ -859,6 +1885,48 @@ Ramsés añade *"algunos triggers"* (no todos), lo que sugiere que el disparo de
 
 ---
 
+---
+id: D24
+canonical_id: D24
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [vida, adendei, rava, tokens, protector, espectros, glosario, meta-regla]
+
+cards_explicit:
+  - folio: IDRMA-007
+    name: "Zaren, El Inicio del Viaje (IDRMA)"
+    role: ejemplo
+  - folio: KEXC-001
+    name: "Zaren, El Inicio del Viaje (KEXC)"
+    role: ejemplo
+  - folio: KPRC-103
+    name: "Zaren, El Inicio del Viaje (KPRC)"
+    role: ejemplo
+
+rulebook_refs:
+  - p06/b02
+  - p07/b03
+  - p08/b03
+  - p09/b03
+  - p37
+
+derived_from: []
+supersedes: []
+related: [D3, D9, D20]
+---
 ## D24. Cap de vida máxima por tipo de carta
 
 **Fecha:** 2026-04-19
@@ -1113,6 +2181,50 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 
 ---
 
+---
+id: M4
+canonical_id: M4
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [pasivas, triggers, glosario, meta-regla]
+
+cards_explicit:
+  - folio: KPRC-017
+    name: "Kap, Lluvia de Ranas"
+    role: ejemplo
+  - folio: KPRC-037
+    name: "Nepthis, Rey Coral"
+    role: ejemplo
+  - folio: FYTE-004U
+    name: "Ariam, Escudo de Cempasúchil"
+    role: ejemplo
+  - folio: TCOO-007S
+    name: "Kaykac, Sorpresa Pírica"
+    role: ejemplo
+  - folio: FAFT-001
+    name: "Nirge, Los Ocultos"
+    role: contraejemplo
+
+rulebook_refs:
+  - p20/b08
+
+derived_from: []
+supersedes: []
+related: [D31]
+---
 ## M4. "Efectos de cartas tomadas" — HandTraps
 
 **Fecha:** 2026-04-19
@@ -1161,6 +2273,38 @@ También existe la variante activa:
 
 ---
 
+---
+id: M2.5
+display_id: "M2.5"
+canonical_id: M2
+version: 1
+parent: M2
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [visibilidad, extincion, fuera-de-juego, glosario]
+
+cards_explicit:
+  - folio: FYTE-075
+    name: "Mizthe, Arconte"
+    role: carta-central
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [M2, M5, D5, D18]
+---
 ## M2.5. Intercambio Mazo↔Extinción (Mizthe, FYTE-075)
 
 **Fecha:** 2026-04-19
@@ -1179,6 +2323,43 @@ También existe la variante activa:
 
 ---
 
+---
+id: M6
+canonical_id: M6
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: comunidad
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: comunidad
+  name: Hule
+  validated_by: []
+
+tags: [descansos, glosario]
+
+cards_explicit:
+  - folio: IDRMP-022
+    name: "Xakros, Peste (IDRMP)"
+    role: carta-central
+  - folio: RAMI-007
+    name: "Xakros, Peste (RAMI)"
+    role: ejemplo
+  - folio: RMR-017
+    name: "Xakros, Peste (RMR)"
+    role: ejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [D6, D19]
+---
 ## M6. "Descansos indicados" (Xakros, Peste — IDRMP-022, RAMI-007, RMR-017)
 
 **Fecha:** 2026-04-19
@@ -1197,6 +2378,34 @@ También existe la variante activa:
 
 ---
 
+---
+id: M11
+canonical_id: M11
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: comunidad
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: comunidad
+  name: Hule
+  validated_by: []
+
+tags: [zona-principal, targeting, glosario]
+
+cards_explicit: []
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [D50]
+---
 ## M11. "Frente a" como adyacencia posicional
 
 **Fecha:** 2026-04-19
@@ -1215,6 +2424,45 @@ También existe la variante activa:
 
 ---
 
+---
+id: D27
+canonical_id: D27
+version: 1
+parent: null
+
+type: ruling-carta
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [ataques, efectos, meta-regla]
+
+cards_explicit:
+  - folio: TCEO-009
+    name: "Draxes, Último Aliento"
+    role: carta-central
+  - folio: TCOO-009
+    name: "Draxes, Último Aliento (TCOO)"
+    role: ejemplo
+  - folio: KPRC-Makua
+    name: "Makua, Venganza Abisal"
+    role: contraejemplo
+
+rulebook_refs:
+  - p15/b12
+  - p39/b06
+
+derived_from: []
+supersedes: []
+related: [D17, D31]
+---
 ## D27. Condiciones de victoria alternativas en texto de carta (Draxes)
 
 **Fecha:** 2026-04-19
@@ -1239,6 +2487,43 @@ Draxes, Último Aliento (TCEO-009/TCOO-009) usa exactamente la frase canónica "
 
 ---
 
+---
+id: D28
+canonical_id: D28
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: evidencia-textual
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: evidencia-textual
+  name: rulebook
+  validated_by: [Ramsés]
+
+tags: [zona-principal, glosario, meta-regla, vivificacion]
+
+cards_explicit:
+  - folio: LGRO-077
+    name: "Kuyovi, Salto Eléctrico"
+    role: ejemplo
+  - folio: FYTE-022R
+    name: "Ariam, Resurrección"
+    role: ejemplo
+
+rulebook_refs:
+  - p23/b17
+  - p23/b18
+  - p23/b22
+
+derived_from: []
+supersedes: []
+related: [M2, M2.3, M2.4, M2.5, M2.6]
+---
 ## D28. "Cambiar de lugar" vs "Cambiar" vs "Intercambiar" (§6.5)
 
 **Fecha:** 2026-04-19
@@ -1268,6 +2553,38 @@ El rulebook usa "cambiar", "intercambiar", "cambiar de lugar" de forma intercamb
 
 ---
 
+---
+id: M2.3
+display_id: "M2.3"
+canonical_id: M2
+version: 1
+parent: M2
+
+type: aclaracion
+status: resuelto
+status_method: derivacion
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: logos-derivado
+  name: Logos
+  validated_by: [Ramsés]
+
+tags: [zona-principal, efectos, prerrequisito]
+
+cards_explicit:
+  - folio: FYTE-022R
+    name: "Ariam, Resurrección"
+    role: ejemplo
+
+rulebook_refs: []
+
+derived_from: [D28]
+supersedes: []
+related: [M2, D28]
+---
 ## M2.3. Anti-cambio aplica a intercambio (Planta Carnívora)
 
 **Fecha:** 2026-04-19
@@ -1277,6 +2594,36 @@ El rulebook usa "cambiar", "intercambiar", "cambiar de lugar" de forma intercamb
 
 ---
 
+---
+id: M2.6
+display_id: "M2.6"
+canonical_id: M2
+version: 1
+parent: M2
+
+type: aclaracion
+status: resuelto
+status_method: derivacion
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: logos-derivado
+  name: Logos
+  validated_by: [Ramsés]
+
+tags: [zona-principal, efectos, vida]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p23/b18
+
+derived_from: [D28]
+supersedes: []
+related: [D28, M2]
+---
 ## M2.6. Marcas al intercambiar (Envenenada/Quemada/Abismada)
 
 **Fecha:** 2026-04-19
@@ -1292,6 +2639,40 @@ El rulebook usa "cambiar", "intercambiar", "cambiar de lugar" de forma intercamb
 
 ---
 
+---
+id: M2.4
+display_id: "M2.4"
+canonical_id: M2
+version: 1
+parent: M2
+
+type: aclaracion
+status: resuelto
+status_method: evidencia-textual
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: evidencia-textual
+  name: rulebook
+  validated_by: [Ramsés]
+
+tags: [zona-principal, glosario]
+
+cards_explicit:
+  - folio: FYTE-022R
+    name: "Ariam, Resurrección"
+    role: carta-central
+
+rulebook_refs:
+  - p14
+  - p24
+
+derived_from: []
+supersedes: []
+related: [D28, M2, D20, D21]
+---
 ## M2.4. "Zona Principal original" (Ariam Resurrección)
 
 **Fecha:** 2026-04-19
@@ -1309,6 +2690,42 @@ El rulebook usa "cambiar", "intercambiar", "cambiar de lugar" de forma intercamb
 
 ---
 
+---
+id: E8
+canonical_id: E8
+version: 1
+parent: null
+
+type: errata
+status: resuelto
+status_method: comunidad
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: comunidad
+  name: Hule
+  validated_by: [Ramsés]
+
+tags: [subtipos, errata, adendei]
+
+cards_explicit:
+  - folio: FYTE-008R
+    name: "Macit, Resguardo Divino"
+    role: ejemplo
+  - folio: FYTE-020R
+    name: "Therz, de Vuelta a la Tumba"
+    role: ejemplo
+
+rulebook_refs:
+  - p07/b04
+  - p11/b19
+
+derived_from: []
+supersedes: []
+related: []
+---
 ## E8. Subtipos compuestos son multisubtipo (Macit, Therz)
 
 **Fecha:** 2026-04-19
@@ -1334,6 +2751,43 @@ El rulebook usa "cambiar", "intercambiar", "cambiar de lugar" de forma intercamb
 
 ---
 
+---
+id: M12
+canonical_id: M12
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: 2026-04-22
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [activas, pasivas, descansos, glosario, meta-regla]
+
+cards_explicit:
+  - folio: LGRO-xxx
+    name: "Ryptor (Jugada Veloz)"
+    role: ejemplo
+  - folio: LGRO-065
+    name: "Yakerr (Vínculo Odémico)"
+    role: ejemplo
+
+rulebook_refs:
+  - p29/b04
+  - p29/b06
+  - p29/b09
+
+derived_from: []
+supersedes: []
+related: [M12 residual, M17]
+---
 ## M12. "Efecto rápido" vs "Activa Rápida" — promoción de velocidad
 
 **Fecha:** 2026-04-19
@@ -1359,6 +2813,35 @@ Cualquier fraseo que "considera X como rápida" otorga ambas propiedades.
 
 ---
 
+---
+id: M13
+canonical_id: M13
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: evidencia-textual
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: evidencia-textual
+  name: rulebook
+  validated_by: [Ramsés]
+
+tags: [turno, fase-batalla, glosario]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p16/b07
+
+derived_from: []
+supersedes: []
+related: [D2]
+---
 ## M13. "Fase de Batalla" como ventana temporal
 
 **Fecha:** 2026-04-19
@@ -1385,6 +2868,39 @@ Cualquier fraseo que "considera X como rápida" otorga ambas propiedades.
 
 ---
 
+---
+id: M14
+canonical_id: M14
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: evidencia-textual
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: evidencia-textual
+  name: rulebook
+  validated_by: [Ramsés]
+
+tags: [glosario, tokens, copia, meta-regla]
+
+cards_explicit:
+  - folio: TCOO-Virste
+    name: "Virste (Reseteo/Cordyceps)"
+    role: carta-central
+
+rulebook_refs:
+  - p22/b01
+  - p31/b03
+
+derived_from: []
+supersedes: []
+related: [D16, M2.4, M7]
+---
 ## M14. "Original" / "estadísticas originales" — snapshot base
 
 **Fecha:** 2026-04-19
@@ -1407,6 +2923,40 @@ Cualquier fraseo que "considera X como rápida" otorga ambas propiedades.
 
 ---
 
+---
+id: E7
+canonical_id: E7
+version: 1
+parent: null
+
+type: errata
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [errata, subtipos]
+
+cards_explicit:
+  - folio: KPRC-072
+    name: "Zinawe, Vacío Etéreo"
+    role: carta-central
+
+rulebook_refs:
+  - p05/b12
+  - p07/b04
+  - p11/b19
+
+derived_from: []
+supersedes: []
+related: [E8]
+---
 ## E7. "Titan" (sin tilde) — errata ortográfica en KPRC-072
 
 **Fecha:** 2026-04-19
@@ -1424,6 +2974,37 @@ KPRC-072 (Zinawe, Vacío Etéreo) tenía `subtype: "Titan"` sin tilde — **conf
 
 ---
 
+---
+id: D29
+canonical_id: D29
+version: 1
+parent: null
+
+type: errata
+status: resuelto
+status_method: comunidad
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: comunidad
+  name: Hule
+  validated_by: []
+
+tags: [errata, glosario]
+
+cards_explicit:
+  - folio: KPRC-049
+    name: "(carta lore-only ejemplo)"
+    role: ejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: []
+---
 ## D29. "Neutral" como effect_text
 
 **Fecha:** 2026-04-19
@@ -1441,6 +3022,42 @@ KPRC-072 (Zinawe, Vacío Etéreo) tenía `subtype: "Titan"` sin tilde — **conf
 
 ---
 
+---
+id: D32
+canonical_id: D32
+version: 1
+parent: null
+
+type: ruling-carta
+status: resuelto
+status_method: comunidad
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: comunidad
+  name: Hule
+  validated_by: []
+
+tags: [protector, activas, costos, copia, targeting]
+
+cards_explicit:
+  - folio: FYTE-012S
+    name: "Nahual, Máscara"
+    role: carta-central
+  - folio: FYTE-083
+    name: "Nahual, Máscara (v2)"
+    role: carta-central
+
+rulebook_refs:
+  - p16/b08
+  - p20/b10
+
+derived_from: []
+supersedes: []
+related: [D16, D17, D22b]
+---
 ## D32. Protector Nahual, Máscara — copia de Activa del Protector rival
 
 **Fecha:** 2026-04-19
@@ -1916,6 +3533,41 @@ FAQ-05 oficial lo confirmó para el caso de dos Activas-Rápidas: la segunda esp
 
 ---
 
+---
+id: D30
+canonical_id: D30
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: comunidad
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: comunidad
+  name: u_62a2ebfd
+  validated_by: []
+
+tags: [glosario, adendei, copia, meta-regla]
+
+cards_explicit:
+  - folio: TCOO-Virste
+    name: "Virste (Reseteo)"
+    role: ejemplo
+  - folio: TCDE-015
+    name: "Gloku"
+    role: ejemplo
+
+rulebook_refs:
+  - p06
+
+derived_from: []
+supersedes: []
+related: [D16, M14, D22]
+---
 ## D30. Definición de "estadísticas" de un Adendei
 
 **Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad vía Supabase)
@@ -1941,6 +3593,46 @@ FAQ-05 oficial lo confirmó para el caso de dos Activas-Rápidas: la segunda esp
 
 ---
 
+---
+id: D31
+canonical_id: D31
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: comunidad
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: comunidad
+  name: u_62a2ebfd
+  validated_by: []
+
+tags: [innegable, ataques, efectos, glosario, meta-regla]
+
+cards_explicit:
+  - folio: KPRC-PC
+    name: "Pruebas de Campo"
+    role: contraejemplo
+  - folio: KPRC-PS
+    name: "Protección Selectiva"
+    role: contraejemplo
+  - folio: KPRC-RV
+    name: "Recipiente de Vida"
+    role: contraejemplo
+  - folio: KPRC-ZA
+    name: "Zaykan, Anulación"
+    role: contraejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [D17, D27, M4]
+---
 ## D31. Innegabilidad de ataques y efectos — interpretación y alcance
 
 **Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad vía Supabase)
@@ -1976,6 +3668,37 @@ FAQ-05 oficial lo confirmó para el caso de dos Activas-Rápidas: la segunda esp
 
 ---
 
+---
+id: D52
+canonical_id: D52
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: comunidad
+
+date_created: 2026-04-19
+date_revised: null
+
+authority:
+  role: comunidad
+  name: u_62a2ebfd
+  validated_by: []
+
+tags: [targeting, glosario, meta-regla, prerrequisito]
+
+cards_explicit:
+  - folio: KPRC-ZC
+    name: "Zaykan, Citadel (átlicos)"
+    role: ejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: [D50, D17]
+---
 ## D52. Zona y tipo por omisión en efectos/ataques/condiciones
 
 **Fecha:** 2026-04-19 | **Status:** ✅ RESUELTO (ruling comunidad vía Supabase)
@@ -2003,6 +3726,38 @@ FAQ-05 oficial lo confirmó para el caso de dos Activas-Rápidas: la segunda esp
 
 ---
 
+---
+id: D47
+canonical_id: D47
+version: 1
+parent: null
+
+type: ruling-carta
+status: resuelto
+status_method: derivacion
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: logos-derivado
+  name: Logos
+  validated_by: [Ambir]
+
+tags: [espectros, extincion, posesion, fase-previa, unicidad-campo]
+
+cards_explicit:
+  - folio: FYTE-Tlahuelpuchi
+    name: "Tlahuelpuchi"
+    role: carta-central
+
+rulebook_refs:
+  - p14/b16
+
+derived_from: [D21, D36, D37]
+supersedes: []
+related: [D20, D48, D49]
+---
 ## D47. Tlahuelpuchi + múltiples Espectros en misma Fase Previa — CERRADA POR DERIVACIÓN
 
 **Fecha:** 2026-04-22 17:18 UTC
@@ -2040,6 +3795,41 @@ Los tres rulings son consistentes: ninguno introduce un límite global de posesi
 
 ---
 
+---
+id: D48
+canonical_id: D48
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: derivacion
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: logos-derivado
+  name: Logos
+  validated_by: [Ambir]
+
+tags: [vivificacion, efectos, stacking, meta-regla]
+
+cards_explicit:
+  - folio: FYTE-Marok
+    name: "Marok de Flores y Tumbas"
+    role: carta-central
+  - folio: FYTE-Mixtla
+    name: "Mixtla"
+    role: ejemplo
+
+rulebook_refs:
+  - p25/b06
+
+derived_from: [D17]
+supersedes: []
+related: [D16, D22b, D47]
+---
 ## D48. M3 residual: acumulación de efectos al re-vivificar — CERRADA POR DERIVACIÓN
 
 **Fecha:** 2026-04-22 17:18 UTC
@@ -2092,6 +3882,36 @@ Neto: **en campo simultáneamente sólo hay una instancia activa** (Marok es una
 
 ---
 
+---
+id: D49
+canonical_id: D49
+version: 1
+parent: null
+
+type: ruling-carta
+status: resuelto
+status_method: derivacion
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: logos-derivado
+  name: Logos
+  validated_by: [Ambir]
+
+tags: [espectros, ataques, costos, prerrequisito]
+
+cards_explicit: []
+
+rulebook_refs:
+  - p14/b16
+  - p20/b10
+
+derived_from: [D21, D33]
+supersedes: []
+related: [D20, D47]
+---
 ## D49. Espectro sin poseído sin aliados para pagar el ataque — CERRADA POR DERIVACIÓN
 
 **Fecha:** 2026-04-22 17:18 UTC
@@ -2132,6 +3952,46 @@ La redacción de `p14/b16 b6` dice *"por cada punto de daño que intente infligi
 
 ---
 
+---
+id: D50
+canonical_id: D50
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: derivacion
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: logos-derivado
+  name: Logos
+  validated_by: [Ambir]
+
+tags: [targeting, formato-extendido, glosario, meta-regla]
+
+cards_explicit:
+  - folio: KPRC-Maiz
+    name: "Maiz"
+    role: ejemplo
+  - folio: KPRC-VestaIgnia
+    name: "Vesta Ignia"
+    role: ejemplo
+  - folio: KPRC-EnjambrePirico
+    name: "Enjambre Pírico"
+    role: ejemplo
+  - folio: KPRC-Ulmor
+    name: "Ulmor"
+    role: ejemplo
+
+rulebook_refs: []
+
+derived_from: [D52, M9]
+supersedes: []
+related: [M11, D7]
+---
 ## D50. Semántica de "rival" en Multijugador — CERRADA POR DERIVACIÓN
 
 **Fecha:** 2026-04-22 17:18 UTC
@@ -2228,6 +4088,58 @@ _Registrado: 2026-04-20 19:45 CDMX. Portal: kodem-dudas-comunidad.vercel.app. Su
 
 ---
 
+---
+id: M8
+canonical_id: M8
+version: 1
+parent: null
+
+type: aclaracion
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-20
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [glosario, bio, aclaracion]
+
+cards_explicit:
+  - folio: TCOO-001
+    name: "Morx, Descarga Átlica"
+    role: carta-central
+  - folio: TCOO-001R
+    name: "Morx, Descarga Átlica (R)"
+    role: ejemplo
+  - folio: TCEO-001
+    name: "Morx, Descarga Átlica (TCEO)"
+    role: ejemplo
+  - folio: TCEO-001R
+    name: "Morx, Descarga Átlica (TCEO-R)"
+    role: ejemplo
+  - folio: LGRO-007
+    name: "Consejo de Hielo"
+    role: carta-central
+  - folio: LGRO-010R
+    name: "Consejo de Hielo (LGRO-R)"
+    role: ejemplo
+  - folio: TRWA-007
+    name: "Consejo de Hielo (TRWA)"
+    role: ejemplo
+  - folio: TRWA-010R
+    name: "Consejo de Hielo (TRWA-R)"
+    role: ejemplo
+
+rulebook_refs: []
+
+derived_from: []
+supersedes: []
+related: []
+---
 ## M8 — "Consejo" en Morx, Descarga Átlica — ¿término mecánico o carta específica?
 
 **Status:** ✅ RESUELTA 2026-04-20 por Ramsés (autor)
@@ -2256,6 +4168,44 @@ No es término mecánico, ni subtipo, ni zona. Es una **referencia directa a una
 
 ---
 
+---
+id: M7
+canonical_id: M7
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-20
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [tokens, copia, glosario, meta-regla, vida]
+
+cards_explicit:
+  - folio: TCDE-015
+    name: "Gloku"
+    role: ejemplo
+  - folio: TCDE-008
+    name: "Dagg"
+    role: ejemplo
+  - folio: KPRC-019
+    name: "Zaren"
+    role: ejemplo
+
+rulebook_refs:
+  - p20/b10
+
+derived_from: []
+supersedes: []
+related: [D9, D16, D30, M14]
+---
 ## M7 — Tokens con stats copiadas/variables — ¿qué define las stats?
 
 **Status:** ✅ RESUELTA 2026-04-20 por Ramsés (autor)
@@ -2281,6 +4231,41 @@ El texto de la carta invocadora es la autoridad sobre las stats del Token que in
 
 ---
 
+---
+id: M10
+canonical_id: M10
+version: 1
+parent: null
+
+type: ruling-carta
+status: resuelto
+status_method: juez
+
+date_created: 2026-04-20
+date_revised: null
+
+authority:
+  role: juez
+  name: Ambir
+  validated_by: []
+
+tags: [efectos, costos, prerrequisito]
+
+cards_explicit:
+  - folio: NAVD-001
+    name: "Ariam, Regalo Navideño"
+    role: carta-central
+  - folio: SNVL-001
+    name: "Ariam, Día del Amor y la Amistad"
+    role: carta-central
+
+rulebook_refs:
+  - p20/b10
+
+derived_from: []
+supersedes: []
+related: [D17]
+---
 ## M10 — Gestos sociales como requisito de efecto (Ariam Navideño, Día del Amor)
 
 **Status:** ✅ RESUELTA 2026-04-20 por Ambir (Juez Kodem)
@@ -2317,6 +4302,41 @@ Rulebook p20/b10: *"Se aplicarán en todo momento los lineamientos de este docum
 
 ---
 
+---
+id: D36
+canonical_id: D36
+version: 1
+parent: null
+
+type: ruling-carta
+status: resuelto
+status_method: juez
+
+date_created: 2026-04-20
+date_revised: null
+
+authority:
+  role: juez
+  name: Aldo
+  validated_by: []
+
+tags: [espectros, extincion, posesion, unicidad-campo]
+
+cards_explicit:
+  - folio: FYTE-003K
+    name: "Espectro (Ariam)"
+    role: carta-central
+  - folio: FYTE-022R
+    name: "Ariam, Resurrección"
+    role: ejemplo
+
+rulebook_refs:
+  - p14/b16
+
+derived_from: []
+supersedes: []
+related: [D20, D21, D22, D22b, D22c, D47]
+---
 ## D36 — Múltiples Espectros compitiendo por posesión de Ariam en Extinción
 
 **Status:** ✅ RESUELTA 2026-04-20 por Aldo (Juez Kodem)
@@ -2350,6 +4370,38 @@ Consistente con §Posesión / Espectros del rulebook v5.1 — la carta poseída 
 
 ---
 
+---
+id: L-5
+canonical_id: L-5
+version: 1
+parent: null
+
+type: ruling-carta
+status: resuelto
+status_method: autor
+
+date_created: 2026-04-21
+date_revised: null
+
+authority:
+  role: autor
+  name: Ramsés
+  validated_by: []
+
+tags: [pasivas, costos, extincion, stacking, prerrequisito, subtipos]
+
+cards_explicit:
+  - folio: FYTE-044
+    name: "Naywa, Quemadura Catrín"
+    role: carta-central
+
+rulebook_refs:
+  - p20/b10
+
+derived_from: []
+supersedes: []
+related: [D17, D43, M3]
+---
 ## L-5 — Naywa, Quemadura Catrín (FYTE-044) — tres mecánicas entrelazadas
 
 **Status:** ✅ RESUELTA 2026-04-21 por Ramsés (autor/diseño)
