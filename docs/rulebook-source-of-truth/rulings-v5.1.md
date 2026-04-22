@@ -565,24 +565,76 @@ Agregar al glosario §9:
 
 ---
 
-## D22c. Estado del Espectro mientras el poseído recibe daño / modificaciones
+## D22c. Absorción total — TODO daño al stack entra al Espectro — CERRADA
 
-**Fecha:** 2026-04-22
-**Status:** 🟡 Tentativo — pendiente de confirmación de Ramsés
+**Fecha:** 2026-04-22 16:53 UTC
+**Status:** ✅ RESUELTA por Ramsés (autor/diseño)
 
-**Pregunta abierta derivada de D22 v3:** Dado que la herencia es dinámica, si un efecto hace daño *a la carta poseída específicamente* (no al Espectro), ¿qué sucede?
+**Ruling de Ramsés (verbatim):**
+> *"En cualquier caso ese daño siempre entra al espectro."*
 
-**Interpretaciones posibles:**
+**Cubre ambos escenarios:**
+1. **Ataque dirigido al Espectro** (target-Espectro).
+2. **Daño genérico "sobre la carta poseída"** (o cualquier fraseo que no distinga bando del stack).
 
-1. **Transparencia total:** el daño al poseído se traduce a daño al Espectro (porque el Espectro "usa" su vida como la vida del stack). Pero esto contradice que "Vida NO se hereda".
-2. **Absorción por el Espectro:** cualquier daño dirigido al stack va a la vida del Espectro; el poseído no recibe daño mientras esté bajo el Espectro (está "inerte" bajo la posesión).
-3. **Efectos sobre el poseído operan solo si referencian explícitamente "carta poseída":** un efecto genérico apunta al Espectro; uno que diga "daña a la carta poseída bajo un Espectro" sí toca al poseído.
+En los dos casos **el daño entra a la vida del Espectro**. La carta poseída no acumula daño propio mientras esté bajo el Espectro; está inerte como pila física debajo del stack.
 
-El master dice `p14/b19 bullet 1`: *"Las cartas que hayan sido poseídas se consideran de este tipo (poseídas) perdiendo su tipo y subtipo original mientras se encuentren sobre un Espectro"*. Esto sugiere la interpretación 2 (el poseído está en un estado distinto, los efectos normales apuntan al Espectro).
+**Fundamento textual (`p14/b19 b1`):**
+> *"Las cartas que hayan sido poseídas se consideran de este tipo (poseídas) perdiendo su tipo y subtipo original mientras se encuentren sobre un Espectro."*
 
-**Recomendación tentativa:** **interpretación 2** (absorción por el Espectro). La vida del poseído es irrelevante mientras esté bajo el Espectro; solo el Espectro acumula daño. Los efectos que "modifican" al poseído (escalas/descensos) afectan sus **stats visibles** (daño/descansos) y por tanto se propagan al Espectro vía D22, pero el **daño directo** va al Espectro.
+El poseído pierde su identidad propia como objetivo independiente, por tanto los efectos de daño no lo reconocen como carta separada con vida propia. El Espectro es la **superficie funcional única** del stack para recibir daño.
 
-**Pendiente:** pregunta puntual para Ramsés en próxima sesión.
+**Relación con D22 v3 (herencia dinámica):**
+- Las **escalas/descensos** sobre el poseído (modificadores de stats) sí afectan al Espectro vía herencia (ejemplo Axoloespectro + Catrín 4-2 → 3-2 / 5-2 en tiempo real).
+- El **daño directo** va siempre al Espectro (este ruling, D22c).
+- No hay contradicción: modificadores de stat ≠ daño. Son dos mecánicas distintas sobre la misma unión.
+
+**Consecuencias operativas:**
+- Un efecto "daña 3 a la carta poseída por el Espectro" = daña 3 al Espectro.
+- Un ataque dirigido al Espectro = daño normal al Espectro.
+- Cuando el Espectro llega a 0 de vida → Espectro + poseído a Extinción juntos (D21).
+
+**Implicaciones para el engine:**
+- Cualquier handler de daño que apunte a un `FieldCard` tipo-poseída debe redirigir al `FieldCard` del Espectro que lo contiene.
+- No se mantiene "vida del poseído" como estado rastreable mientras esté bajo el Espectro.
+
+---
+
+### Triada Espectros — CERRADA COMPLETA
+
+Con D22c, la triada de herencia de Espectros queda sellada:
+
+| Ruling | Qué resuelve | Status |
+|--------|--------------|:-----:|
+| **D22 v3** | Qué hereda (5 atributos dinámicos) | ✅ |
+| **D22b** | Herencia ≠ Copia (mecánicas distintas) | ✅ |
+| **D22c** | Todo daño entra al Espectro | ✅ |
+
+---
+
+## D46. Formato Extendido — Rava admite copias libres — CERRADA
+
+**Fecha:** 2026-04-22 16:53 UTC
+**Status:** ✅ RESUELTA por Ramsés (autor/diseño)
+
+**Ruling verbatim:** *"Copias libres de Rava."*
+
+**Implicación:**
+- En Formato Extendido, un mazo puede incluir **múltiples copias del mismo Rava** (3 copias del mismo folio con mismo nombre completo).
+- Los Ravas no están en la lista de Cartas Limitadas (`p36-p37/p40`), por tanto no aplica restricción ahí; y la regla universal de "1 copia por nombre completo" (D7) sólo aplica al Formato Estándar, no al Extendido.
+- El único límite que aplica a Ravas en Extendido es el **límite de tipo** ya establecido en `p14/b11`: máximo **2 Ravas** por mazo. 2 copias del mismo Rava satura ese límite.
+
+**Relación con D7:**
+- D7 estableció: "1 copia por carta" en Estándar, pero en Extendido aplica sólo la lista de Limitadas.
+- D46 confirma la lectura permisiva: lo que no está prohibido en la lista de Limitadas está permitido en Extendido.
+
+**Diseño de decks Extendido:**
+- Viable incluir 2 Ravas idénticos (ej. 2× Ariam Protector, o 2× un Rava temático del arquetipo).
+- Crea sinergias de redundancia: si se extingue 1 Rava, el duplicado sigue disponible en mazo.
+- Stack de 2 Ravas idénticos en Extinción no es posible mientras sólo haya 2 en el mazo total — cuando ambos salen al campo, cambian roles de protección/mazo.
+
+**Pendiente v5.2:**
+- Formalizar en sección §Formato Extendido: *"En Formato Extendido se permiten múltiples copias de la misma carta salvo que aparezca en la lista de Cartas Limitadas. Aplican los límites de tipo del Mazo Principal (24 Adendei+Espectros, 2 Ravas, 1 Protector, 5 Ixim, 5 Rot, 1 Bio)."*
 
 ---
 
@@ -707,7 +759,7 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 | D21 | Posesión = Vivificación atómica (stack físico, co-envío a Extinción) | ✅ |
 | D22 | Herencia dinámica 5 attrs (efecto/daño/descanso/costo/energía sí; vida/subtipo no) | ✅ |
 | D22b | Herencia (posesión dinámica) ≠ Copia (snapshot) — mecánicas distintas | ✅ |
-| D22c | Daño al stack poseído (tentativa: absorción por Espectro) | 🟡 |
+| D22c | Daño al stack poseído: TODO entra al Espectro (absorción total) | ✅ |
 | D23 | BETA-001 pieza histórica | ✅ |
 | D24 | Cap de vida máxima por tipo (regla meta dispersa) | ✅ |
 
@@ -843,7 +895,9 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 
 **Estado emocional/técnico:** sesión larga y fructífera. 23/26 dudas resueltas al cierre 2026-04-19 (D1-D24 menos D21, D22, D25, D26). 3 sub-agentes completaron sin timeouts. Ramses satisfecho con el flujo de preguntas + documentación paralela. No hay blockers.
 
-**Update 2026-04-22:** D21, D22 (v3 con herencia dinámica), D25, D26 todas cerradas. 26/26 de las dudas rulebook originales resueltas. Queda trabajo residual en tentativos M15-M23 y rulings derivados nuevos (D22c, D33 residual, D36, D37, D46, L5, M3, M5, M9, D43).
+**Update 2026-04-22:** D21, D22 (v3 con herencia dinámica), D25, D26 todas cerradas. 26/26 de las dudas rulebook originales resueltas.
+
+**Update 2026-04-22 16:53 UTC — cierre triada 🔴:** D22c (absorción total al Espectro), D37 residual (Tlahuelpuchi = sin-sacrificio, no bloqueo), D46 (copias libres de Rava en Extendido) — las 3 críticas cerradas por Ramsés. Queda trabajo residual sólo en tentativos M15-M23 y rulings derivados menores (D33 residual, D36 ya cerrado 2026-04-20, L5 ya cerrada 2026-04-21, M3 residual, M5, M9, D43, M12 residual, D16 residual).
 
 ---
 
@@ -1485,7 +1539,7 @@ Las siguientes dudas siguen abiertas pero fueron refinadas con evidencia encontr
 
 - **D30** (Virste Reseteo): M14 ya confirmó "original" = valor impreso base. Primera opción cerrada. Duda residual: si "estadísticas" incluye marcas, energía/subtipo, efectos copiados.
 - **D36** (múltiples Espectros posesión simultánea): D21 clarificó que la posesión es atómica. Duda residual: si el pool de Extinción se comparte entre Espectros del mismo tipo.
-- **D37** (Tlahuelpuchi bloqueando posesión): D21 implica que como la posesión es atómica (sacrificio + vivificación = 1 acción), bloquear el sacrificio bloquea toda la acción. Queda abierta la alternativa de que cartas ya en Extinción puedan poseerse sin pagar sacrificio.
+- **D37** (Tlahuelpuchi bloqueando posesión): ✅ **CERRADA 2026-04-22 por Ramsés.** Ruling verbatim: *"No bloquea, hace que no se requiera un sacrificio para poseer."* Es decir: Tlahuelpuchi **no impide la posesión** — elimina el requisito de sacrificar un Adendei aliado. Los Espectros aliados pueden poseer Adendei disponibles en Extinción sin enviar aliado al Extinción como parte del acto. Permite strategies Tlahuelpuchi + Espectros sin pérdida de recursos propios.
 
 ---
 
