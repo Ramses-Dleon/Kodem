@@ -8,15 +8,32 @@ para revisión manual.
 
 Schema: docs/rulebook-source-of-truth/SCHEMA.md v1.1
 
+Estado actual (2026-04-22): rulings-v5.1.md ya tiene frontmatter completo en
+los 60 rulings existentes. Este script se conserva como herramienta para:
+  1. Procesar rulings nuevos agregados sin frontmatter (merge partial).
+  2. Regenerar desde cero si el schema cambia en el futuro.
+  3. Auditar campos autoinferibles en otros docs similares.
+
 Uso:
-    python3 scripts/generate-frontmatter-draft.py --input rulings-v5.1.md --output rulings-v5.1-draft.md
-    python3 scripts/generate-frontmatter-draft.py --dry-run  # imprime primer ruling como ejemplo
+    # Caso "rulings nuevos sin frontmatter" (archivo de trabajo aparte):
+    python3 scripts/generate-frontmatter-draft.py --input nuevo-batch.md --output nuevo-batch-draft.md
+
+    # Dry-run para ver el primer ruling como ejemplo:
+    python3 scripts/generate-frontmatter-draft.py --dry-run
+
+    # IMPORTANTE: NO correr sobre rulings-v5.1.md (ya tiene frontmatter). El script
+    # detectaría los headers ## Dnn y añadiría frontmatter duplicado.
 
 Invariantes:
     - No toca texto narrativo.
     - NO autogenera cards_explicit (TODO manual).
     - NO autogenera tags (TODO manual).
     - Sólo extrae: id, status, date_created, authority (parcial), rulebook_refs (parcial).
+
+Bugs conocidos (arreglados en batch anterior):
+    - Composición de rulings detectada sólo con "Composición de" (no "Composición:").
+    - Author heurístico tenía falso positivo para "Aldo" cuando la prosa citaba a Aldo en derivados.
+    - Regex de header ajustado para aceptar M2.3, M2.4, etc. (decimales) y "M8 —" (guion em).
 """
 import argparse
 import re
