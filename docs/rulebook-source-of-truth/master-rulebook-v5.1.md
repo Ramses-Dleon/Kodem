@@ -2379,6 +2379,9 @@ _bbox (%): x=95, y=97, w=4, h=3_
 
 Página de transición: cierra §3.4 Equipos (con un contraste visual EXTINCIÓN ✗ vs EQUIPO ✓ sobre el mismo escenario de Draxes + Cascada de Lava + Escamas de Lava) y abre §3.5 BIO con dos cartas anatómicas (Askame Reino de Vida con nombre propio, Laberinto de Arrecife sin nombre propio) y bloque de USO DEL BIO con 4 bullets + nota sobre bios boca abajo. Nota: el último bullet usa un punto '.' en lugar de '•' en el original transcrito.
 
+### ⚡ Rulings aplicables a esta página (ver `rulings-v5.1.md`)
+
+- **D19** (revisada 2026-04-22) — La mecánica *"Si tu Bio es enviado a Extinción, puedes actualizar 1 descanso de todas tus cartas"* (bullet en p12) es una vía de escape crítica cuando un jugador está en **parálisis de facto** (todas sus cartas en descanso). Ver D19 en rulings: un jugador paralizado NO está obligado a pasar turno — puede mandar su Bio a Extinción + usar pasivas + usar Activas de Equipos.
 
 ---
 
@@ -3026,6 +3029,18 @@ _bbox (%): x=91, y=95, w=6, h=4_
 
 Page presents §3.7 Espectros in two layers: (1) a full card-anatomy infographic using 'Nánuk, Garras Heladas' as the example, annotated by ~10 color-coded callouts explaining card fields (Vida Máxima, Nombre de la Carta, Requisito, Efecto y Costo, Folio, Créditos, Daño, Descanso, Energía, Subtipo, Nombre científico); and (2) a trio of bulleted rules blocks for 'Uso de los Espectros', 'Cartas Poseídas' and 'Generalidades'. Source has minor typos preserved verbatim: 'expasión' (fig-06), 'Kodem' without accent (fig-13), 'Las carta poseída' (b18), 'pueden disparan' (b19).
 
+### ⚡ Rulings aplicables a esta página (ver `rulings-v5.1.md`)
+
+- **D11** — Máximo 4 Espectros dentro del total de 24 Adendei+Espectros en Mazo Principal.
+- **D20** — Vida máxima y requisitos: cada Espectro declara su vida en su carta; posee Adendei en Extinción que cumplan su Requisito.
+- **D21** — Posesión = Vivificación atómica. El Adendei poseído se coloca **bajo** el Espectro (stack físico). Al morir el Espectro, **ambas cartas** (Espectro + poseído) van a Extinción.
+- **D22 v3** (2026-04-22) — **Herencia dinámica de 5 atributos:** el Espectro hereda del poseído `Efecto + Daño + Descanso + Costo + Energía` en tiempo real (escalas/descensos al poseído modifican al Espectro mientras dure la posesión). El Espectro conserva su propia `Vida` y `Subtipo`. La herencia NO es copia — ver D22b.
+- **D22b** — Distinción formal: **Herencia (posesión) ≠ Copia (mecánica general, D17)**. Copia = snapshot único (Gloku/Dagg). Herencia = dinámica en tiempo real (Espectros). Ruk es caso híbrido.
+- **D34** — Al morir el Espectro, las 2 cartas cuentan para el tracker de victoria (10 cartas a Extinción).
+- **D35** — El efecto del Espectro y el efecto del poseído son **aditivos** (no excluyentes).
+- **M18** — Los callouts anatómicos `Descanso: 0`, `Energía: Sin energía`, `Subtipo: Sin subtipo` describen el estado base del Espectro **sin poseer**. Al poseer, Descanso+Energía se reemplazan por los del poseído.
+
+**Página 14 es donde v5.2 debe agregar una tabla consolidada de herencia** (ver D22 v3) y la distinción herencia/copia formalizada en glosario.
 
 ---
 

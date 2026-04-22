@@ -408,7 +408,7 @@ O agregar al glosario:
 ## D20. Espectros — vida máxima, posesión y requisitos
 
 **Fecha:** 2026-04-19
-**Status:** ✅ RESUELTO (+ D21 cerrada, D22 refinada)
+**Status:** ✅ RESUELTO (+ D21 cerrada, D22 v3 resuelta con herencia dinámica 2026-04-22)
 
 **Ruling:**
 1. **Vida máxima:** cada carta Espectro declara su vida en la propia carta (no hay regla general, es caso por caso).
@@ -429,7 +429,7 @@ O agregar al glosario:
 
 **Dudas derivadas:**
 - **D21:** Al poseer, el Adendei de Extinción ¿se consume? → **✅ RESUELTA (ver D21 abajo)**
-- **D22:** ¿El Espectro hereda alguna stat del Adendei poseído? → **✅ RESUELTA — herencia dinámica de 5 atributos, ver D22 v3 + D22b distinción con copia**
+- **D22:** ¿El Espectro hereda alguna stat del Adendei poseído? → **✅ RESUELTA 2026-04-22 — herencia dinámica de 5 atributos (Efecto/Daño/Descanso/Costo/Energía). Vida y Subtipo conservados por el Espectro. Ver D22 v3 + D22b (distinción con copia).**
 
 **Sugerencia v5.2:** agregar sección formal §3.7 Espectros con:
 - Declaración de que vida se lee de cada carta
@@ -762,13 +762,13 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 - **"Cyra → Cura"**: errata histórica confirmada independientemente por T2 y T3 → requiere corrección en 2 folios + FAQ
 - **Energías sin definición formal**: T2 lo detecta estructuralmente; T1 reporta variantes ortográficas (Pirico/Pírico/Piricco, Átlico/Átlíco) que son síntoma del mismo problema
 - **"Fuera del Juego" + "Intercambiar"**: las 2 zonas/acciones más huérfanas del sistema actual
-- **Espectros**: convergencia de D20, D21, D22, T1 (Ruk copia), T3 (Tokens paramétricos) → requieren sección §3.7 completa
+- **Espectros**: convergencia de D20, D21, D22 v3, D22b, T1 (Ruk copia), T3 (Tokens paramétricos) → sección §3.7 propuesta para v5.2 con tabla de herencia dinámica + distinción herencia vs copia
 
 ### ✅ Fase 5 — Entregables para comunidad (COMPLETADA)
 - ✅ **PDF dudas pendientes para comunidad** generado: `dudas-pendientes-comunidad.pdf` (22 KB, 7+ páginas)
-  - 4 reglas ambiguas D21, D22, D25, D26
-  - 10 mecánicas sin definición M1-M10
-  - 6 erratas masivas E1-E6
+  - 4 reglas ambiguas D21, D22, D25, D26 → **las 4 cerradas al 2026-04-22**
+  - 10 mecánicas sin definición M1-M10 → M1, M2, M4, M6, M7, M8, M10 cerradas; M3, M5, M9 abiertas
+  - 6 erratas masivas E1-E6 → catalogadas en erratas-batch-v5.2.md
   - 4 preguntas de proceso P1-P4
   - Folios específicos documentados por cada duda
   - Nota sobre normalización sin acentos en cards.json (contexto engine)
@@ -782,11 +782,11 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
   - Output esperado: `erratas-consolidadas-v5.1.md`
 - [ ] **Validación render p19** (enviado msg 23299, esperando OK)
 - [ ] **Rulings comunitarios** cuando Ramses comparta dudas a la comunidad
-  - D21 (Espectro-consumo)
-  - D22 (Espectro-herencia stats)
-  - D25 (Hori costo aplicable a toda)
-  - D26 (Atlico grafia oficial)
-  - M1-M10 (mecánicas no documentadas)
+  - D21 (Espectro-consumo) → ✅ cerrada 2026-04-19
+  - D22 (Espectro-herencia stats) → ✅ cerrada 2026-04-22 (v3 herencia dinámica 5 atributos)
+  - D25 (Hori costo aplicable a toda) → ✅ cerrada 2026-04-19 por Hule (errata)
+  - D26 (Atlico grafia oficial) → ✅ cerrada 2026-04-19 por Ramsés
+  - M1-M10 → parcialmente cerradas (ver ruling-índice)
 - [ ] **Decisión P2**: ¿extraer `changelog-v5.2.md` separado o mantener todo en rulings-v5.1.md?
 - [ ] **Decisión P3**: Ramses confirmó que preguntará a comunidad si hay FAQ oficial previo
 
@@ -841,7 +841,9 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 **Prioridad 2:** rulings de comunidad cuando los tengamos
 **Prioridad 3:** changelog v5.2 consolidado
 
-**Estado emocional/técnico:** sesión larga y fructífera. 23/26 dudas resueltas (D1-D24 menos D21, D22, D25, D26). 3 sub-agentes completaron sin timeouts. Ramses satisfecho con el flujo de preguntas + documentación paralela. No hay blockers.
+**Estado emocional/técnico:** sesión larga y fructífera. 23/26 dudas resueltas al cierre 2026-04-19 (D1-D24 menos D21, D22, D25, D26). 3 sub-agentes completaron sin timeouts. Ramses satisfecho con el flujo de preguntas + documentación paralela. No hay blockers.
+
+**Update 2026-04-22:** D21, D22 (v3 con herencia dinámica), D25, D26 todas cerradas. 26/26 de las dudas rulebook originales resueltas. Queda trabajo residual en tentativos M15-M23 y rulings derivados nuevos (D22c, D33 residual, D36, D37, D46, L5, M3, M5, M9, D43).
 
 ---
 
@@ -1885,7 +1887,9 @@ Consistente con §Posesión / Espectros del rulebook v5.1 — la carta poseída 
 ### Rulings relacionados
 - **D20** (Espectros — vida máxima, posesión y requisitos) — marco general de posesión.
 - **D21** (Posesión de Espectros = Vivificación atómica) — naturaleza de la posesión.
-- **D22** (Herencia de stats del Adendei poseído) — consecuencia de la posesión.
+- **D22 v3** (Herencia dinámica de 5 atributos del Adendei poseído) — consecuencia de la posesión.
+- **D22b** (Herencia ≠ Copia) — distinción formal de mecánicas.
+- **D22c** (Daño al stack poseído) — 🟡 tentativo, pendiente.
 
 ### Autoridad del ruling
 **Aldo** — Juez Kodem (autoridad oficial de arbitraje comunitario), 2026-04-20 23:01 CDMX. Reportado en grupo Kódem TCG Community por Ramsés D'León.
