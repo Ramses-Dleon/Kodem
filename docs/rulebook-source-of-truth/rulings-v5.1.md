@@ -1,15 +1,17 @@
-# Rulings oficiales — Master Rulebook v5.1 (v2, con frontmatter)
+# Rulings oficiales — Master Rulebook v5.1 (v2.1, con frontmatter + avales Ambir)
 
 Resoluciones de dudas sobre ambigüedades e inconsistencias detectadas durante la revisión completa del master-rulebook v5.1.
 
-**Versión del documento:** v2 (2026-04-22) — 60 rulings con frontmatter estructurado según `SCHEMA.md` v1.1.
-Versión anterior (sin frontmatter): `rulings-v5.1-v1-backup-2026-04-22.md`.
+**Versión del documento:**
+- v2 (2026-04-22 tarde): 60 rulings migrados a frontmatter según `SCHEMA.md` v1.1.
+- v2.1 (2026-04-22 20:44 UTC): +2 rulings nuevos (D51, D37 v2) + 5 promociones a autoridad Ambir (D46, D47, D48, D49, D50).
+- Versión pre-frontmatter: `rulings-v5.1-v1-backup-2026-04-22.md`.
 
 **Fuentes de autoridad:** Ramsés D'León (autor/mantenedor, canon), Telegram "Logos: Kodem" (chat `-1003700827993`), jueces oficiales (Ambir, Aldo), comunidad Supabase (Hule, u_62a2ebfd), derivaciones Logos validadas, evidencia textual del rulebook.
 
-**Distribución de rulings:**
-- types: 30 meta-regla · 16 aclaracion · 9 ruling-carta · 5 errata
-- authority: 39 autor · 8 comunidad · 7 logos-derivado · 4 evidencia-textual · 2 juez
+**Distribución de rulings (v2.1, total 62):**
+- types: 30 meta-regla · 16 aclaracion · 11 ruling-carta · 5 errata
+- authority: 38 autor · 8 comunidad · 3 logos-derivado · 4 evidencia-textual · 9 juez (Ambir +7, Aldo +1, Ramsés-revisión +1)
 
 ---
 
@@ -1384,20 +1386,20 @@ Con D22c, la triada de herencia de Espectros queda sellada:
 ---
 id: D46
 canonical_id: D46
-version: 1
+version: 2
 parent: null
 
 type: aclaracion
 status: resuelto
-status_method: autor
+status_method: juez
 
 date_created: 2026-04-22
-date_revised: null
+date_revised: 2026-04-22
 
 authority:
-  role: autor
-  name: Ramsés
-  validated_by: []
+  role: juez
+  name: Ambir
+  validated_by: [Ramsés, Logos]
 
 tags: [rava, extendido, limitadas, unicidad-campo]
 
@@ -1429,9 +1431,12 @@ related: [D7, D51]
 - D7 estableció: "1 copia por carta" en Estándar, pero en Extendido aplica sólo la lista de Limitadas.
 - D46 confirma la lectura permisiva: lo que no está prohibido en la lista de Limitadas está permitido en Extendido.
 
+**Matiz con D51 (Ambir, 2026-04-22 20:44 UTC):** copias libres en **mazo** limitado a 3, pero en **campo sólo 1**. Es decir: un jugador puede incluir 2–3 Ravas idénticos en su mazo principal, pero sólo puede tener una activa en Zona Principal a la vez; la segunda permanece en mazo/extinción hasta que la primera salga del campo.
+
 **Diseño de decks Extendido:**
 - Viable incluir 2 Ravas idénticos (ej. 2× Ariam Protector, o 2× un Rava temático del arquetipo).
 - Crea sinergias de redundancia: si se extingue 1 Rava, el duplicado sigue disponible en mazo.
+- Pero en campo, sólo puede haber una activa (D51).
 - Stack de 2 Ravas idénticos en Extinción no es posible mientras sólo haya 2 en el mazo total — cuando ambos salen al campo, cambian roles de protección/mazo.
 
 **Pendiente v5.2:**
@@ -3729,20 +3734,20 @@ related: [D50, D17]
 ---
 id: D47
 canonical_id: D47
-version: 1
+version: 2
 parent: null
 
 type: ruling-carta
 status: resuelto
-status_method: derivacion
+status_method: juez
 
 date_created: 2026-04-22
-date_revised: null
+date_revised: 2026-04-22
 
 authority:
-  role: logos-derivado
-  name: Logos
-  validated_by: [Ambir]
+  role: juez
+  name: Ambir
+  validated_by: [Logos, Ramsés]
 
 tags: [espectros, extincion, posesion, fase-previa, unicidad-campo]
 
@@ -3798,20 +3803,20 @@ Los tres rulings son consistentes: ninguno introduce un límite global de posesi
 ---
 id: D48
 canonical_id: D48
-version: 1
+version: 2
 parent: null
 
 type: meta-regla
 status: resuelto
-status_method: derivacion
+status_method: juez
 
 date_created: 2026-04-22
-date_revised: null
+date_revised: 2026-04-22
 
 authority:
-  role: logos-derivado
-  name: Logos
-  validated_by: [Ambir]
+  role: juez
+  name: Ambir
+  validated_by: [Logos, Ramsés]
 
 tags: [vivificacion, efectos, stacking, meta-regla]
 
@@ -3885,20 +3890,20 @@ Neto: **en campo simultáneamente sólo hay una instancia activa** (Marok es una
 ---
 id: D49
 canonical_id: D49
-version: 1
+version: 2
 parent: null
 
 type: ruling-carta
 status: resuelto
-status_method: derivacion
+status_method: juez
 
 date_created: 2026-04-22
-date_revised: null
+date_revised: 2026-04-22
 
 authority:
-  role: logos-derivado
-  name: Logos
-  validated_by: [Ambir]
+  role: juez
+  name: Ambir
+  validated_by: [Logos, Ramsés]
 
 tags: [espectros, ataques, costos, prerrequisito]
 
@@ -3955,22 +3960,22 @@ La redacción de `p14/b16 b6` dice *"por cada punto de daño que intente infligi
 ---
 id: D50
 canonical_id: D50
-version: 1
+version: 2
 parent: null
 
 type: meta-regla
 status: resuelto
-status_method: derivacion
+status_method: juez
 
 date_created: 2026-04-22
-date_revised: null
+date_revised: 2026-04-22
 
 authority:
-  role: logos-derivado
-  name: Logos
-  validated_by: [Ambir]
+  role: juez
+  name: Ambir
+  validated_by: [Logos, Ramsés]
 
-tags: [targeting, formato-extendido, glosario, meta-regla]
+tags: [targeting, formato-extendido, multijugador, glosario, meta-regla]
 
 cards_explicit:
   - folio: KPRC-Maiz
@@ -4436,3 +4441,168 @@ Meta-regla rulebook p20/b10: *"Se aplicarán en todo momento los lineamientos de
 
 ### Autoridad del ruling
 **Ramsés D'León** — autor/diseño de Kódem TCG, 2026-04-21 00:38-00:43 CDMX. Reportado y resuelto en grupo Kódem TCG Community.
+
+---
+
+# Bloque 2026-04-22 tarde — Rulings nuevos avalados por Ambir
+
+**Contexto:** Tras la aclaración de Ambir al D16 residual (stacking de efectos) y la sesión de certificación de 6 rulings vía PDF `certificacion-ambir-v2.pdf`, emergen 2 rulings completamente nuevos: D51 (unicidad en campo) y D37-extensión (multi-Espectros a misma carta). Ambos firmados por Ambir como autoridad oficial.
+
+---
+
+---
+id: D51
+canonical_id: D51
+version: 1
+parent: null
+
+type: meta-regla
+status: resuelto
+status_method: juez
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: juez
+  name: Ambir
+  validated_by: [Ramsés, Logos]
+
+tags: [unicidad-campo, zona-principal, extendido, stacking, copia, meta-regla]
+
+cards_explicit:
+  - folio: TCDE-015
+    name: "Gloku"
+    role: ejemplo
+  - folio: TCDE-008
+    name: "Dagg"
+    role: ejemplo
+  - folio: FYTE-Ruk
+    name: "Ruk (Espectro copia + posee)"
+    role: ejemplo
+
+rulebook_refs:
+  - p14/b11
+
+derived_from: [D7, D16, D46]
+supersedes: []
+related: [D7, D16, D46, D50]
+---
+## D51 — Unicidad en campo: no pueden coexistir 2 cartas con mismo nombre — CERRADA
+
+**Fecha:** 2026-04-22 20:44 UTC
+**Status:** ✅ RESUELTA por Ambir (juez Kódem)
+
+**Ruling verbatim de Ambir:** *"Solo a un mismo jugador 👍"* (respondiendo a la pregunta abierta del PDF v2).
+
+### Ruling formal
+
+En **Zona Principal de un mismo jugador** no pueden coexistir simultáneamente 2 cartas con el mismo nombre, incluso en Formato Extendido. La duplicación en Extendido se refiere a la composición del **mazo**, no a la presencia simultánea en **campo**.
+
+**Alcance:**
+- **Aplica:** a cartas del mismo jugador. Un jugador NO puede tener 2 Ariam, 2 Ruk, 2 Tlahuelpuchi activos en su propia Zona Principal simultáneamente.
+- **No aplica:** entre distintos jugadores en Multijugador. Dos jugadores distintos SÍ pueden tener cartas con el mismo nombre en sus respectivas Zonas Principales simultáneamente.
+
+### Implicancias mecánicas
+
+- **Copia/posesión:** los efectos duplicados sólo son alcanzables por mecánicas de copia (Ruk copiando + poseyendo, Gloku, Dagg) o stacking (D16 residual). La carta física copia NO instancia un segundo folio en campo; es la misma carta original con efecto apilado.
+- **Vivificación de Extinción:** si el jugador intenta vivificar una carta cuyo nombre ya está activo en su Zona Principal, la acción se bloquea (no puede instanciarse la segunda copia).
+- **Mazo vs campo:** Formato Extendido permite hasta 3 copias de una carta en mazo (D46); el límite de campo es independiente y más estricto (1).
+
+### Relación con rulings previos
+
+- **D7** (Cartas Limitadas): en Estándar aplica "1 copia por carta en mazo". En Extendido aplica la lista de Limitadas + esta nueva D51 en campo.
+- **D16 residual** (stacking, Ambir 2026-04-22 mañana): confirmó que los efectos duplicados SÍ se apilan en Hog Terremoto cuando vienen de mecánicas de copia, NO de instanciar 2 veces la carta. D51 formaliza la contraparte estructural: en campo sigue habiendo 1 carta, su efecto puede apilarse.
+- **D46** (Rava en Extendido): matiz aplicado — copias libres en mazo, 1 en campo.
+
+### Pendiente v5.2
+- Formalizar §Formato Extendido con la regla de unicidad en campo por jugador.
+- Agregar entrada en glosario: *"Unicidad en campo: en Zona Principal de un mismo jugador no pueden coexistir 2 cartas con el mismo nombre completo simultáneamente. Excepción: efectos de copia/posesión que apilan efectos sobre una carta ya existente."*
+
+---
+
+---
+id: D37-ext
+display_id: "D37 v2"
+canonical_id: D37
+version: 2
+parent: D37
+
+type: ruling-carta
+status: resuelto
+status_method: juez
+
+date_created: 2026-04-22
+date_revised: null
+
+authority:
+  role: juez
+  name: Ambir
+  validated_by: [Ramsés, Logos]
+
+tags: [espectros, posesion, fase-previa, unicidad-campo, multijugador]
+
+cards_explicit:
+  - folio: FYTE-Tlahuelpuchi
+    name: "Tlahuelpuchi"
+    role: referencia
+  - folio: FYTE-Ariam-Espectro
+    name: "Ariam (Espectro)"
+    role: carta-central
+
+rulebook_refs:
+  - p14/b16
+
+derived_from: [D37, D47]
+supersedes: []
+related: [D36, D47, D51]
+---
+## D37 v2 — Ariam-Espectro: múltiples instancias pueden poseer en misma Fase Previa sin compartir objetivo — CERRADA
+
+**Fecha:** 2026-04-22 20:44 UTC
+**Status:** ✅ RESUELTA por Ambir (juez Kódem)
+
+**Ruling verbatim de Ambir:** *"Actualmente no hay más ariam espectro pero en caso de que en algún futuro saliera otro con el mismo requisito de ariam, igual los 2 pueden poseer en la misma fase previa pero no a la misma carta."*
+
+### Ruling formal
+
+Cuando existan múltiples variantes de un mismo Espectro compartiendo requisito (ej. hipotéticos 2 Ariam-Espectros con misma condición de posesión), ambos pueden poseer en la misma Fase Previa **pero no a la misma carta objetivo**. Un Adendei en Extinción sólo puede ser poseído por un Espectro a la vez; si 2 Espectros compiten por el mismo objetivo, sólo uno lo consigue.
+
+### Aplicabilidad actual
+
+- **2026-04-22:** NO hay actualmente 2 variantes de Ariam-Espectro publicadas. La regla es pre-emptive para diseño futuro.
+- **D51 aplica antes:** en el mismo jugador no puede haber 2 Espectros idénticos en Zona Principal (sólo 1 Ariam-Espectro por jugador). El escenario "2 Espectros idénticos compitiendo" sólo aplica entre jugadores en Multijugador, o con variantes distintas del mismo requisito.
+
+### Composición con rulings previos
+
+- **D36** (Aldo, 2026-04-20): "1 objetivo por Espectro, consumido al resolver. 2 Ariam distintos + 2 Espectros distintos → ambos pueden poseer si hay objetivos diversos."
+- **D37 v1** (Ramsés, 2026-04-22): Tlahuelpuchi elimina el sacrificio, no bloquea posesión.
+- **D47** (Ambir v2): cada Espectro puede poseer sin límite de turno global.
+- **D37 v2 (este ruling):** extiende D36 al caso específico de Espectros con **mismo nombre pero instancias distintas** (futuro o Multi): pueden coexistir operativamente, pero no pueden compartir objetivo.
+
+### Caso límite resuelto
+
+**Escenario:** Multijugador, Jugador A y Jugador B ambos tienen Ariam-Espectro en juego. En Extinción hay 1 solo Adendei que ambos podrían poseer.
+- Sólo uno consigue la posesión (el primero en declarar, o resolución por prioridad de turno activo).
+- El otro queda sin objetivo y no puede poseer esa Fase Previa.
+- Consistente con D36 Caso 1.
+
+### Pendiente v5.2
+
+- Agregar en §Espectros nota: *"Múltiples Espectros con mismo requisito pueden poseer en la misma Fase Previa, pero no a la misma carta objetivo. Si compiten por el mismo objetivo único, sólo uno lo consigue."*
+
+---
+
+## Índice del bloque 2026-04-22 tarde (avales de Ambir)
+
+| ID | Tipo | Autoridad final | Versión |
+|---|---|---|---|
+| D46 | aclaracion | juez/Ambir | v2 (matiz unicidad campo) |
+| D47 | ruling-carta | juez/Ambir | v2 (antes logos-derivado) |
+| D48 | meta-regla | juez/Ambir | v2 (antes logos-derivado) |
+| D49 | ruling-carta | juez/Ambir | v2 (antes logos-derivado) |
+| D50 | meta-regla | juez/Ambir | v2 (antes logos-derivado) |
+| D51 | meta-regla | juez/Ambir | v1 (nuevo) |
+| D37 v2 | ruling-carta | juez/Ambir | v2 (extensión nueva) |
+
+**7 rulings consolidados en esta sesión. Ambir como autoridad oficial en todos.**

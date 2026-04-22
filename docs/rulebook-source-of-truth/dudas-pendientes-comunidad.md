@@ -1,40 +1,36 @@
 # Kódem TCG v5.1 — Tracker de Dudas
 
-**Última actualización:** 2026-04-22
-**Documento canónico de estado:** `rulings-v5.1.md` (este archivo sólo es espejo para la comunidad con estado resumido).
+**Última actualización:** 2026-04-22 20:44 UTC
+**Documento canónico de estado:** `rulings-v5.1.md` v2.1 (este archivo sólo es espejo para la comunidad con estado resumido).
 
 ---
 
-## Estado general al 2026-04-22 20:10 UTC
+## Estado general al 2026-04-22 20:44 UTC
 
-- **Rulings cerrados:** ~60 (D1–D52 con variantes, M1–M23, E1–E8, L-5, FAQ-01..07)
-- **Pendientes de aval de juez (enviados a Ambir 2026-04-22 20:05):** D47, D48, D49, D50 (aval retroactivo) + D51 (nuevo) + matiz D46
+- **Rulings cerrados totales:** 62 (D1–D52 con variantes incluido D51 y D37 v2, M1–M23, E1–E8, L-5, FAQ-01..07)
+- **Pendientes de aval de juez:** ninguno al momento
 - **Residuales abiertos:** ninguno al momento
-- **Última certificación aprobada:** D16 residual — stacking por naturaleza del efecto (Ambir, 2026-04-22 AM)
+- **Últimas certificaciones aprobadas (2026-04-22 tarde):** D51, D37 v2, D46 v2, D47 v2, D48 v2, D49 v2, D50 v2 — todas por Ambir.
 
 ---
 
-## 🟡 Enviadas a Ambir 2026-04-22 20:05 (esperando respuesta)
+## ✅ Sesión 2026-04-22 20:44 UTC — Ambir avala PDF v2 completo
 
-Segunda consulta de la jornada tras el aval de D16. Contenido del PDF `certificacion-ambir-v2.pdf`:
+Tras la certificación `certificacion-ambir-v2.pdf`, Ambir avala los 6 rulings consultados + habilita 1 extensión:
 
-### D51 (nueva) — Unicidad en campo del mismo nombre
-Derivada de la aclaración de Ambir sobre Extendido. En Zona Principal de un mismo jugador no pueden coexistir simultáneamente 2 cartas con el mismo nombre, incluso en Formato Extendido. Pregunta abierta: ¿aplica también entre jugadores distintos en Multijugador?
+### Rulings promovidos de `logos-derivado` → `juez/Ambir`
+- **D47 v2** — Tlahuelpuchi + múltiples Espectros: sí pueden poseer en misma Fase Previa si cumplen requisitos.
+- **D48 v2** — Re-vivificación acumula efectos según redacción. De acuerdo.
+- **D49 v2** — Sin pago de costo → no puedes atacar. Confirmado.
+- **D50 v2** — "Rival" por default = uno sólo, a menos que la carta indique X jugadores o todos.
 
-### D46 — Matiz Rava en Extendido
-Copias libres **en mazo** pero unicidad en campo (D51). Pregunta: ¿confirma o hay excepción?
+### Rulings nuevos certificados
+- **D51** — Unicidad en campo: NO 2 cartas con mismo nombre en Zona Principal del mismo jugador. Aplica sólo al mismo jugador; entre jugadores distintos en Multijugador sí pueden coexistir.
+- **D46 v2** — Matiz confirmado: copias libres en mazo (límite 3 en Extendido), pero unicidad en campo (1) según D51.
+- **D37 v2** — Extensión: si en el futuro hay 2 Ariam-Espectros con mismo requisito, ambos pueden poseer en misma Fase Previa **pero no a la misma carta**.
 
-### D47 — Tlahuelpuchi + múltiples Espectros en misma Fase Previa
-Actualmente cerrada por derivación de Logos. Espera aval retroactivo para pasar a autoridad oficial Ambir.
-
-### D48 — Re-vivificación múltiple acumula efectos
-Actualmente cerrada por derivación de Logos. Espera aval retroactivo.
-
-### D49 — Espectro sin poseído sin aliados para pagar: ataque ni se declara
-Actualmente cerrada por derivación de Logos. Espera aval retroactivo.
-
-### D50 — Semántica "rival" en Multijugador (híbrido narrow/wide)
-Actualmente cerrada por derivación de Logos. Espera aval retroactivo.
+**Cita verbatim de Ambir (2026-04-22 20:44 UTC):**
+> "De los que no comenté es por qué no es necesario opinar, ya son correctos."
 
 ---
 
