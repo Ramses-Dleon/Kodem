@@ -1105,7 +1105,9 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 
 **Update 2026-04-22 16:56 UTC — cierre 4 🟡 medias:** M3 residual (resurrectos acumulan según redacción; Marok ejemplo), M5 (visibilidad Mazo rival depende del formato/contexto; CdC = ambos ven + orden preservado + no reorganiza), M9 (Multijugador es formato oficial 4-20 jugadores con reglas de 1v1), D43 (pasivas opcionales vs no-opcionales = semántica del texto, no tipográfico; opcional pierde efecto si se olvida).
 
-**Update 2026-04-22 16:57 UTC — cierre 2 🟡 residuales:** M12 residual (Pasiva-Rápida sólo da velocidad; mantiene la regla de no-descanso por Pasiva), D33 residual (ataque Espectro sin poseído sí puede disparar triggers; "algunos triggers" según redacción). Queda residual: D16 res (apilación inmunidades Ruk) + tentativos M15-M23.
+**Update 2026-04-22 16:57 UTC — cierre 2 🟡 residuales:** M12 residual (Pasiva-Rápida sólo da velocidad; mantiene la regla de no-descanso por Pasiva), D33 residual (ataque Espectro sin poseído sí puede disparar triggers; "algunos triggers" según redacción).
+
+**Update 2026-04-22 17:15 UTC — BATCH M15–M23 APROBADO por Ramsés (8 rulings 🟢 a ✅):** M15 (errata E23), M16 (errata tipográfica "Activa-Rápida" con guión), M17 (Pasiva-Rápida ⊂ Pasiva, Ixim válidos), M19 (Ixim SÍ descansan por Activa), M20 (3 intentos totales), M21 (aclarar "automáticamente"), M22 (texto canon de p29/b09), M23 ("mano" = estado transitorio). M18 queda como ✅ desde antes (reconciliado con D22 v3). **Todos escalan a v5.2.** Queda residual: sólo D16 (apilación inmunidades Ruk) + emergentes D47-D50.
 
 ---
 
@@ -1484,7 +1486,7 @@ Si Ramsés confirma, pasan a ruling cerrado formal. Si disiente en alguno, se re
 
 ### M15. Cross-reference erróneo "Ver 6.3 Tipos de daño" en p07/b11
 
-**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo → **ya es errata** (incluida en E23 del consolidado)
+**Fecha:** 2026-04-19 | **Status:** ✅ APROBADA (Ramsés, 2026-04-22 17:15 UTC) — errata confirmada (E23 consolidado)
 
 **Anchor:** p07/b11 — la cross-reference lleva a §Protección, no a §Tipos de Daño.
 
@@ -1496,7 +1498,7 @@ Si Ramsés confirma, pasan a ruling cerrado formal. Si disiente en alguno, se re
 
 ### M16. "Activas Rápidas" vs "Activa-Rápida" — inconsistencia de guión
 
-**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+**Fecha:** 2026-04-19 | **Status:** ✅ APROBADA (Ramsés, 2026-04-22 17:15 UTC) — errata tipográfica; canon = con guión (glosario = autoridad terminológica)
 
 **Anchors:** p16/b11 (sin guión) vs. p16/b06b, p27/b15, p27/b16, glosario p39 (con guión).
 
@@ -1510,7 +1512,7 @@ Si Ramsés confirma, pasan a ruling cerrado formal. Si disiente en alguno, se re
 
 ### M17. "Los Ixim siempre tendrán Pasivas" vs. Pasiva-Rápida impresa en el pool
 
-**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+**Fecha:** 2026-04-19 | **Status:** ✅ APROBADA (Ramsés, 2026-04-22 17:15 UTC) — Pasiva-Rápida es sub-tipo de Pasiva; las 3 cartas Ixim con Pasiva-Rápida son legalmente válidas
 
 **Anchor:** p10/b05 — *"Los Ixim siempre tendrán Pasivas y los Rot siempre tendrán Activas."*
 
@@ -1542,7 +1544,7 @@ Si Ramsés confirma, pasan a ruling cerrado formal. Si disiente en alguno, se re
 
 ### M19. Ixim y descansos al usar Activa — ausencia de regla simétrica a Rot
 
-**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+**Fecha:** 2026-04-19 | **Status:** ✅ APROBADA (Ramsés, 2026-04-22 17:15 UTC) — Ixim SÍ generan descanso al usar Activa; no son excepción (solo Rot lo es, p18/b09)
 
 **Anchor:** p18/b09 — regla excepcional: los Rot NO generan descansos al usar su Activa.
 
@@ -1563,7 +1565,7 @@ Si Ramsés confirma, pasan a ruling cerrado formal. Si disiente en alguno, se re
 
 ### M20. Reemplazo fallido — "2 veces" vs "tercer reemplazo": conteo aparentemente contradictorio
 
-**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+**Fecha:** 2026-04-19 | **Status:** ✅ APROBADA (Ramsés, 2026-04-22 17:15 UTC) — 3 intentos totales (1 original + 2 repeticiones); redacción v5.2 debe eliminar ambigüedad
 
 **Anchor:** p20/b06 — *"puede repetirse un máximo de 2 veces"* y *"Si después del tercer reemplazo..."*
 
@@ -1585,7 +1587,7 @@ No hay contradicción real; la ambigüedad es puramente de lectura.
 
 ### M21. Glosario "Pasiva" — "no se actualizan descansos" aparenta ser absoluto
 
-**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+**Fecha:** 2026-04-19 | **Status:** ✅ APROBADA (Ramsés, 2026-04-22 17:15 UTC) — aclarar "automáticamente" en glosario v5.2; costos impresos de descanso son pagos declarados (D17 supersede)
 
 **Anchor:** p39/b08 — entrada del glosario para "Pasiva".
 
@@ -1604,7 +1606,7 @@ No hay contradicción real; la ambigüedad es puramente de lectura.
 
 ### M22. Glosario "Pasiva-Rápida" — disparadores difieren del cuerpo del rulebook
 
-**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+**Fecha:** 2026-04-19 | **Status:** ✅ APROBADA (Ramsés, 2026-04-22 17:15 UTC) — glosario v5.2 debe usar texto canon de p29/b09 (incluye "declaración de" + cláusula de uso único por turno)
 
 **Anchors:** p39/b09 (glosario) vs. p29/b09 (cuerpo §6.7.2).
 
@@ -1622,7 +1624,7 @@ No hay contradicción real; la ambigüedad es puramente de lectura.
 
 ### M23. Zona "mano" — estado no declarado en §4
 
-**Fecha:** 2026-04-19 | **Status:** 🟡 Tentativo
+**Fecha:** 2026-04-19 | **Status:** ✅ APROBADA (Ramsés, 2026-04-22 17:15 UTC) — "mano" es estado transitorio (no zona permanente); HandTraps operan en esta ventana transitoria (M4)
 
 **Anchor:** p24/b03 — *"Solo se considera que una carta está en mano cuando se toma del Mazo, por reemplazo o por efecto de alguna carta."*
 
