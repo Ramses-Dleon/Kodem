@@ -638,6 +638,77 @@ Con D22c, la triada de herencia de Espectros queda sellada:
 
 ---
 
+## M12 residual — Pasiva-Rápida promovida a Activa-Rápida: sólo velocidad — CERRADA
+
+**Fecha:** 2026-04-22 16:57 UTC
+**Status:** ✅ RESUELTA por Ramsés (autor/diseño)
+
+**Ruling verbatim:**
+> *"Una pasiva rápida sólo da velocidad, correcto."*
+
+**Ruling:**
+- Cuando un efecto promueve una Pasiva a Pasiva-Rápida, o cuando una carta tiene Pasiva-Rápida impresa (Ryptor Jugada Veloz, Yakerr Vínculo Odémico, etc.), la promoción **sólo altera la ventana de uso** (permite respuesta en turno rival + resolución inmediata según `p29/b09`).
+- **No altera la mecánica de descansos.** La carta sigue siendo Pasiva en su naturaleza y por tanto sigue aplicando `p29/b06`: *"una carta no descansará al final del turno por declarar una Pasiva."*
+
+**Consecuencia operativa:**
+- Declarar una Pasiva-Rápida (o una Pasiva promovida a rápida) **no genera descanso automático** para la carta que la declara.
+- Si la carta tiene costos de descanso **impresos** en el texto de la Pasiva, esos sí se pagan (son costos declarados, no automáticos).
+
+**Diferencia con Activa-Rápida:**
+- Activa-Rápida sí descansa al Fin de Turno (es Activa en su naturaleza, sólo tiene ventana de uso ampliada).
+- Pasiva-Rápida no descansa al Fin de Turno (es Pasiva en su naturaleza).
+- La **velocidad** es la única propiedad que comparten; el comportamiento de descanso se determina por el **tipo base** (Activa vs Pasiva).
+
+**Aplicación a Ryptor y Yakerr:**
+- Ryptor Jugada Veloz (LGRO-xxx) y Yakerr Vínculo Odémico (LGRO-065) conservan economía de descansos ligera al usar sus Pasivas-Rápidas.
+- No hay double-cost (descanso automático + costo impreso). Sólo el costo impreso se paga.
+
+**Fundamento textual:**
+- `p29/b06`: *"A diferencia de las Activas, una carta no descansará al final del turno por declarar una Pasiva."*
+- `p29/b09`: *"Pasivas-Rápidas: Se usan durante cualquier turno, únicamente en respuesta a revelación, eliminación de cartas o declaración de otras Pasivas. Se resuelven tan pronto son declaradas."*
+- La regla de no-descanso aplica a Pasivas en general; `p29/b09` define la ventana de rápida pero no crea excepción a la regla de descanso.
+
+**Meta-regla `p20/b10`** aplica: lo general (no descanso por Pasiva) prevalece salvo texto de carta que lo contradíga explícitamente.
+
+---
+
+## D33 residual — Ataque sin poseído SÍ puede disparar triggers — CERRADA
+
+**Fecha:** 2026-04-22 16:57 UTC
+**Status:** ✅ RESUELTA por Ramsés (autor/diseño)
+
+**Ruling verbatim:**
+> *"Correcto, también sí puede llegar a disparar algunos triggers."*
+
+**Ruling:**
+- Cuando un Espectro sin carta poseída ataca pagando doble vida aliada (per `p14/b16 b6`), el ataque **sí sucede** y por tanto **puede disparar triggers** tipo *"si esta carta ataca"*.
+- El modo-pobre de ataque es un **pago alternativo del costo de daño**, no un ataque degénero distinto. El evento "ataque" se instancia normalmente.
+
+**Confirmación por simetría con FAQ-03:**
+- FAQ-03 establece que un ataque **negado** no dispara triggers porque *"el ataque no sucedió"*.
+- Por simetría: un ataque que **sí sucedió** (aunque sea pagando vida aliada) cumple el evento-disparador.
+- El pago alternativo no cambia la naturaleza del evento, sólo el costo.
+
+**Matiz "algunos triggers":**
+Ramsés añade *"algunos triggers"* (no todos), lo que sugiere que el disparo depende de la redacción específica del trigger:
+- **Triggers genéricos "si ataca"** → disparan normalmente (el ataque sucedió).
+- **Triggers condicionados al daño infligido** → dependen de si el ataque logró daño (puede no hacerlo si el Espectro es bloqueado/negado en la fase de resolución posterior).
+- **Triggers que exigen "con una carta poseída"** → no disparan si el texto lo condiciona explícitamente a la posesión.
+
+**Fundamento textual:**
+- `p14/b16 b6`: *"Si una carta Espectro no tiene poseída a una carta para causar daño, deberá pagar el doble de puntos de vida a las cartas aliadas en su Zona Principal original por cada punto de daño que intente infligir."* (Confirma que el ataque es posible, sólo el costo cambia.)
+- FAQ-03: marco de triggers de ataque (negación invalida evento, suceso confirma evento).
+
+**Implicancias estratégicas:**
+- Un Espectro sin poseído puede ser víctima sacrificial útil: pagar vida aliada para disparar una Pasiva aliada condicionada a *"cuando un aliado ataque"* (si existe).
+- Para evitar disparos hostiles (triggers rivales que se beneficien de "si un Espectro rival ataca"), hay que evaluar antes de atacar sin poseído.
+
+**Cierra D33 completo:**
+- D33 base: resuelto 2026-04-20 (*p14/b16 b6* confirma que sí puede atacar).
+- D33 residual (triggers): resuelto 2026-04-22 (sí puede disparar triggers, depende de redacción).
+
+---
+
 ## M3 residual — Resurrectos: acumulación depende de la redacción — CERRADA
 
 **Fecha:** 2026-04-22 16:56 UTC
@@ -1032,7 +1103,9 @@ Todas las referencias a "curar X puntos", "cura a X", "curar al máximo" se inte
 
 **Update 2026-04-22 16:53 UTC — cierre triada 🔴:** D22c (absorción total al Espectro), D37 residual (Tlahuelpuchi = sin-sacrificio, no bloqueo), D46 (copias libres de Rava en Extendido) — las 3 críticas cerradas por Ramsés.
 
-**Update 2026-04-22 16:56 UTC — cierre 4 🟡 medias:** M3 residual (resurrectos acumulan según redacción; Marok ejemplo), M5 (visibilidad Mazo rival depende del formato/contexto; CdC = ambos ven + orden preservado + no reorganiza), M9 (Multijugador es formato oficial 4-20 jugadores con reglas de 1v1), D43 (pasivas opcionales vs no-opcionales = semántica del texto, no tipográfico; opcional pierde efecto si se olvida). Queda residual: D33 res (ataque Espectro sin poseído dispara triggers), D16 res (apilación inmunidades Ruk), M12 res (Pasiva-Rápida→Activa-Rápida descansos) + tentativos M15-M23.
+**Update 2026-04-22 16:56 UTC — cierre 4 🟡 medias:** M3 residual (resurrectos acumulan según redacción; Marok ejemplo), M5 (visibilidad Mazo rival depende del formato/contexto; CdC = ambos ven + orden preservado + no reorganiza), M9 (Multijugador es formato oficial 4-20 jugadores con reglas de 1v1), D43 (pasivas opcionales vs no-opcionales = semántica del texto, no tipográfico; opcional pierde efecto si se olvida).
+
+**Update 2026-04-22 16:57 UTC — cierre 2 🟡 residuales:** M12 residual (Pasiva-Rápida sólo da velocidad; mantiene la regla de no-descanso por Pasiva), D33 residual (ataque Espectro sin poseído sí puede disparar triggers; "algunos triggers" según redacción). Queda residual: D16 res (apilación inmunidades Ruk) + tentativos M15-M23.
 
 ---
 
