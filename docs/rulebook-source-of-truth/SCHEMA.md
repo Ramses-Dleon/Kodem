@@ -275,6 +275,7 @@ Tags permitidos para `tags:` en rulings. Lista controlada — agregar requiere e
 - `visibilidad`
 - `targeting`
 - `innegabilidad`
+- `innegable` (sinónimo corto de innegabilidad, usable como tag)
 
 ### 3.2 Por tipo de carta
 
@@ -295,8 +296,10 @@ Tags permitidos para `tags:` en rulings. Lista controlada — agregar requiere e
 - `fase-batalla`
 - `zona-principal`
 - `extendido`
+- `formato-extendido` (sinónimo para claridad en contexto "formatos")
 - `multijugador`
 - `formato-estandar`
+- `fuera-de-juego` (zona específica, distinta de extinción)
 
 ### 3.3.1 Por interacción/patrón
 
@@ -313,6 +316,7 @@ Tags permitidos para `tags:` en rulings. Lista controlada — agregar requiere e
 - `errata`
 - `numeracion`
 - `cross-ref`
+- `aclaracion` (tag auxiliar para rulings de clarificación sobre otros)
 
 ---
 

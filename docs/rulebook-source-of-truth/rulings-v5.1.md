@@ -9,9 +9,9 @@ Resoluciones de dudas sobre ambigüedades e inconsistencias detectadas durante l
 
 **Fuentes de autoridad:** Ramsés D'León (autor/mantenedor, canon), Telegram "Logos: Kodem" (chat `-1003700827993`), jueces oficiales (Ambir, Aldo), comunidad Supabase (Hule, u_62a2ebfd), derivaciones Logos validadas, evidencia textual del rulebook.
 
-**Distribución de rulings (v2.1, total 62):**
-- types: 30 meta-regla · 16 aclaracion · 11 ruling-carta · 5 errata
-- authority: 38 autor · 8 comunidad · 3 logos-derivado · 4 evidencia-textual · 9 juez (Ambir +7, Aldo +1, Ramsés-revisión +1)
+**Distribución de rulings (v2.1, total 62) — validada con `scripts/validate-frontmatter.py`:**
+- types: 31 meta-regla · 16 aclaracion · 10 ruling-carta · 5 errata
+- authority: 38 autor · 9 juez (Ambir 7, Aldo 1, consenso 1) · 8 comunidad · 4 evidencia-textual · 3 logos-derivado
 
 ---
 
@@ -1541,7 +1541,7 @@ rulebook_refs:
 
 derived_from: [D33]
 supersedes: []
-related: [D33, D49, FAQ-03]
+related: [D33, D49]
 ---
 ## D33 residual — Ataque sin poseído SÍ puede disparar triggers — CERRADA
 
@@ -2791,7 +2791,7 @@ rulebook_refs:
 
 derived_from: []
 supersedes: []
-related: [M12 residual, M17]
+related: [M12 residual]
 ---
 ## M12. "Efecto rápido" vs "Activa Rápida" — promoción de velocidad
 
