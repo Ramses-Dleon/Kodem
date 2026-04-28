@@ -1337,7 +1337,7 @@
   },
   {
     "folio": "FYTE-012",
-    "name": "Anton, Escuadro Catrin",
+    "name": "Anton, Escuadron Catrin",
     "set": "FYTE",
     "type": "Protector",
     "subtype": "",
@@ -1350,7 +1350,8 @@
     "artist": "varchi_design",
     "rarity_variants": [],
     "rarity": "Comun",
-    "cost_text": "Solo se puede vincular a Adendei Catrín en su Zona Principal original. Daña 2, 3 o 4 ptos. al Adendei vinculado si tiene 4, 5, 6 o más ptos. de daño, respectivamente."
+    "cost_text": "Solo se puede vincular a Adendei Catrin en su Zona Principal original. Daña 2, 3 o 4 ptos. al Adendei vinculado si tiene 4, 5, 6 o más ptos. de daño, respectivamente.",
+    "lore_text": ""
   },
   {
     "folio": "FYTE-013",
