@@ -5,9 +5,15 @@
 
 ---
 
-## ⚠️ Duda abierta — pendiente ruling de Ramses (2026-05-02)
+## ✅ Duda cerrada — Ramses ruling (2026-05-02 23:35 UTC)
 
 ### B-03 — Bio→Extinción: ¿reduce 1 descanso al Protector?
+
+**RULING:** SÍ. "TODAS sus cartas" en D19 incluye al Protector. Fix aplicado en `_handle_bio_extinction` (engine.py) commit `5dad06e`. 3 tests confirmatorios en `tests/unit/test_bio.py`.
+
+---
+
+### Bloque histórico (consulta original)
 
 **Origen:** Audit B (Sesión 19, 2026-05-02). Investigación de descansos en motor.
 
