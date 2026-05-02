@@ -5,6 +5,35 @@
 
 ---
 
+## ⚠️ Duda abierta — pendiente ruling de Ramses (2026-05-02)
+
+### B-03 — Bio→Extinción: ¿reduce 1 descanso al Protector?
+
+**Origen:** Audit B (Sesión 19, 2026-05-02). Investigación de descansos en motor.
+
+**Texto de regla relevante (D19 / `p20`):**
+> "Mandar el Bioma a Extinción actualiza 1 descanso a TODAS sus cartas."
+
+**Pregunta concreta:** ¿El efecto incluye al Protector, o solo a las cartas en Zona Principal (Adendei, Rava, Tokens)?
+
+**Implicación motor:**
+- Si SI: el handler `_handle_bio_extinction` debe iterar también `player.protector` (actualmente solo itera `player.field`). Bug fix simple.
+- Si NO: documentar como ruling formal y agregar test que confirme que el Protector NO recibe el reset.
+
+**Argumentos a favor de SI (incluye Protector):**
+- "TODAS sus cartas" lectura literal incluye Protector.
+- D4 (herencia descansos del suplente) trata al Protector con la misma semántica de descansos que el resto.
+- D14 confirma pasivas/activas operan en Protectores en descanso — el Protector tiene tracking de descansos idéntico.
+
+**Argumentos a favor de NO (excluye Protector):**
+- El Bioma está tácticamente vinculado a Zona Principal (Adendei activos).
+- Permitir que reduzca descanso del Protector sería muy poderoso (3 descansos máx → "escape gratis").
+- D19 menciona "escape vía Bioma" como mecanismo para des-paralizar la ZP, no necesariamente el Protector.
+
+**Tracker:** KOD-040 en `proyectos/kodem/BACKLOG.md`.
+
+---
+
 ## Estado general al 2026-04-22 20:44 UTC
 
 - **Rulings cerrados totales:** 62 (D1–D52 con variantes incluido D51 y D37 v2, M1–M23, E1–E8, L-5, FAQ-01..07)
