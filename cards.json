@@ -49,7 +49,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Conmemorativa"
+    ]
   },
   {
     "folio": "BETA-001",
@@ -6259,8 +6261,10 @@
       "Mike.rev_art"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "Comic"
+    ]
   },
   {
     "folio": "IDRMA-001",
@@ -7991,7 +7995,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "IKMR-001SR",
@@ -8016,7 +8022,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "IKRW-001",
@@ -8041,7 +8049,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "IKRW-001SR",
@@ -8144,8 +8154,10 @@
       "Edgardo Bautista"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "Comic"
+    ]
   },
   {
     "folio": "ISPMR-001",
@@ -8811,8 +8823,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-003",
@@ -8837,7 +8850,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-004",
@@ -8853,7 +8868,7 @@
     "image": "images/KPRC-004.webp",
     "artist": "Mike.rev_art",
     "rarity_variants": [],
-    "rarity": "Ultra Rara",
+    "rarity": "Comun",
     "cost_text": "Esta carta solo puede ser equipada a un Adendei \"Ariam\".",
     "lore_text": "Revestidos con los Ixim, los Adendei contraatacaron.",
     "species": "",
@@ -8862,8 +8877,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-005",
@@ -8888,8 +8904,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-006",
@@ -8913,8 +8930,10 @@
       "adrianrodto"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-007",
@@ -8939,8 +8958,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-008",
@@ -8990,8 +9010,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-010",
@@ -9041,7 +9062,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-012",
@@ -9097,8 +9120,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-014",
@@ -9183,8 +9207,7 @@
     "is_alternative": false,
     "categories": [
       "KPRC"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "KPRC-017",
@@ -9234,7 +9257,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-019",
@@ -9250,7 +9275,7 @@
     "image": "images/KPRC-019.webp",
     "artist": "Mike.rev_art",
     "rarity_variants": [],
-    "rarity": "Kosmica/Titanica",
+    "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -9259,8 +9284,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-020",
@@ -9285,8 +9311,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-021",
@@ -9364,9 +9391,10 @@
       "Mike.rev_art"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "is_alternative": true,
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-024",
@@ -9391,8 +9419,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-025",
@@ -9467,7 +9496,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-028",
@@ -9600,8 +9631,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-033",
@@ -9767,7 +9799,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-039",
@@ -9792,7 +9826,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-040",
@@ -9817,8 +9853,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-041",
@@ -9843,8 +9880,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-042",
@@ -9869,8 +9907,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-043",
@@ -9895,8 +9934,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-044",
@@ -9924,8 +9964,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-045",
@@ -9953,8 +9994,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-047",
@@ -10056,7 +10098,7 @@
     "image": "images/KPRC-049.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
-    "rarity": "Kosmica/Titanica",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -10068,7 +10110,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "KPRC-050",
@@ -10122,8 +10166,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-052",
@@ -10176,8 +10221,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-054",
@@ -10285,8 +10331,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-058",
@@ -10336,8 +10383,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-060",
@@ -10435,7 +10483,7 @@
     "image": "images/KPRC-063.webp",
     "artist": "Kundu del Castillo",
     "rarity_variants": [],
-    "rarity": "Super Rara",
+    "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -10444,8 +10492,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-064A",
@@ -10484,7 +10533,7 @@
     "effect_text": "Pasiva: Si esta carta fue atacada, daña 1 punto a una carta rival.",
     "image": "images/KPRC-064B.webp",
     "artist": "vvizzor.artist",
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "rarity_variants": [],
     "subtype": "",
     "cost_text": "",
@@ -10494,9 +10543,10 @@
       "vvizzor.artist"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "is_alternative": true,
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-065",
@@ -10512,7 +10562,7 @@
     "image": "images/KPRC-065.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
-    "rarity": "Kosmica/Titanica",
+    "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -10522,8 +10572,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "KPRC-066",
@@ -10564,7 +10615,7 @@
     "image": "images/KPRC-067.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
-    "rarity": "Kosmica/Titanica",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -10573,9 +10624,10 @@
       "cabritosentado"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "is_alternative": true,
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "KPRC-071",
@@ -10646,7 +10698,7 @@
     "image": "images/KPRC-073.webp",
     "artist": "Fersko0n",
     "rarity_variants": [],
-    "rarity": "Secreta",
+    "rarity": "Comun",
     "cost_text": "Solo puedes usar este efecto una vez por juego.",
     "lore_text": "",
     "species": "",
@@ -10655,7 +10707,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-086",
@@ -10728,7 +10782,7 @@
     "image": "images/KPRC-092.webp",
     "artist": "Mastodonte Megalodonte",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -10737,8 +10791,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "KPRC-095",
@@ -10779,7 +10834,7 @@
     "image": "images/KPRC-096.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
-    "rarity": "Ultra Rara",
+    "rarity": "Super Rara",
     "cost_text": "Daña 1 punto a todas las cartas en tu Zona Principal. Esta carta no puede atacar con daño aumentado ni escalar.",
     "lore_text": "",
     "species": "",
@@ -10788,8 +10843,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-103",
@@ -10867,8 +10923,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-106",
@@ -11120,7 +11177,7 @@
     "effect_text": "Pasiva: Los Adendei aliados equipados no pueden ser dañados por efectos.",
     "image": "images/KPRF-0003.webp",
     "artist": "edgaritual_re",
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "rarity_variants": [],
     "cost_text": "",
     "lore_text": "",
@@ -11130,7 +11187,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "KPRF-0004",
@@ -14556,11 +14615,10 @@
       "DesireOB"
     ],
     "is_full_art": false,
-    "is_alternative": false,
+    "is_alternative": true,
     "categories": [
       "Evento-Otros"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "NAVD-001",
@@ -14689,7 +14747,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PASE-002",
@@ -14714,8 +14774,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PASE-003",
@@ -14740,8 +14801,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PASE-004",
@@ -14765,8 +14827,10 @@
       "edgaritual_re"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PASE-005",
@@ -14816,8 +14880,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PASE-007",
@@ -14842,7 +14907,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PASE-008",
@@ -14866,9 +14933,10 @@
       "Fersko0n"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PASE-009",
@@ -14896,8 +14964,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PATREON-001",
@@ -15239,7 +15308,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PRKD-2022-03",
@@ -15264,7 +15335,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PRKD-2022-04",
@@ -15289,7 +15362,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PRKD-2022-05",
@@ -15314,7 +15389,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PRKD-2022-06",
@@ -15339,7 +15416,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PRKD-2022-07",
@@ -15364,7 +15443,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PRKD-2022-08",
@@ -15392,8 +15473,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PRT-2022-06",
@@ -15499,12 +15581,11 @@
     "artists": [
       "Fersko0n"
     ],
-    "is_full_art": false,
+    "is_full_art": true,
     "is_alternative": false,
     "categories": [
       "Evento-Otros"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "RAMI-001",
@@ -25308,9 +25389,11 @@
     "artists": [
       "Alan Mac"
     ],
-    "is_full_art": false,
+    "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "TRWA-001",
@@ -28130,7 +28213,7 @@
     "effect_text": "Activa: Si esta carta ataca, la carta atacada no puede ser curada hasta el final de tu siguiente turno.",
     "image": "images/TalentLand-001.webp",
     "artist": "Alan Mac & DesireOB",
-    "rarity": "Rara",
+    "rarity": "Comun",
     "rarity_variants": [],
     "subtype": "",
     "cost_text": "",
@@ -28141,11 +28224,10 @@
       "DesireOB"
     ],
     "is_full_art": false,
-    "is_alternative": false,
+    "is_alternative": true,
     "categories": [
       "Evento-Otros"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "TheGathering-Mizthe",
@@ -28175,8 +28257,7 @@
     "is_alternative": false,
     "categories": [
       "Evento-Otros"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "XPIX-001",
@@ -28200,8 +28281,10 @@
       "Oskar Alvarado"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "XPIX-002",
@@ -28225,8 +28308,10 @@
       "Oskar Alvarado"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "XPIX-003",
@@ -28250,8 +28335,10 @@
       "Oskar Alvarado"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "GG-001",
