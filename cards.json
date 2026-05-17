@@ -11,7 +11,7 @@
     "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Gélido mientras esta carta esté en campo. Si un Adendei-Gélido aliado atacó, cura 1 punto a un Adendei-Gélido aliado.",
     "image": "images/KPRC-009-066.webp",
     "artist": "edgaritual_re",
-    "rarity": "Super Rara",
+    "rarity": "Comun",
     "rarity_variants": [],
     "subtype": "",
     "cost_text": "Si esta carta es enviada a Extinción, daña 1 punto a todos los Adendei-Gélido en campo.",
@@ -20,9 +20,11 @@
     "artists": [
       "edgaritual_re"
     ],
-    "is_full_art": false,
+    "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Beta"
+    ]
   },
   {
     "folio": "ANIV-001",
@@ -70,8 +72,8 @@
     "artists": [
       "cripticus"
     ],
-    "is_full_art": false,
-    "is_alternative": false,
+    "is_full_art": true,
+    "is_alternative": true,
     "categories": [
       "Beta"
     ]
@@ -153,7 +155,7 @@
       "DesireOB"
     ],
     "is_full_art": false,
-    "is_alternative": false,
+    "is_alternative": true,
     "categories": [
       "Ganador"
     ]
@@ -267,7 +269,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0008UV",
@@ -297,7 +300,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0009UV",
@@ -327,7 +331,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0010UV",
@@ -354,7 +359,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0011UV",
@@ -384,7 +390,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0012UV",
@@ -414,7 +421,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0013UV",
@@ -444,7 +452,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0014UV",
@@ -474,7 +483,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0015UV",
@@ -501,7 +511,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0016UV",
@@ -528,7 +539,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0017UV",
@@ -558,7 +570,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0018UV",
@@ -585,7 +598,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0019",
@@ -612,7 +626,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0020",
@@ -639,7 +654,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0021",
@@ -666,7 +682,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0022",
@@ -693,7 +710,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0023",
@@ -720,7 +738,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0024",
@@ -750,7 +769,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0025",
@@ -777,7 +797,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CAMP-0026",
@@ -804,7 +825,8 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "CDC-001",
@@ -992,7 +1014,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Custom"
+    ]
   },
   {
     "folio": "CUSTOM-005",
@@ -1020,7 +1044,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Custom"
+    ]
   },
   {
     "folio": "CUSTOM-005-SR",
@@ -1045,7 +1071,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Custom"
+    ]
   },
   {
     "folio": "CUSTOM-006",
@@ -1070,7 +1098,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Custom"
+    ]
   },
   {
     "folio": "CUSTOM-008",
@@ -1095,7 +1125,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Custom"
+    ]
   },
   {
     "folio": "CUSTOM-008-SR",
@@ -1118,9 +1150,11 @@
     "artists": [
       "Mariana Najera"
     ],
-    "is_full_art": false,
+    "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Custom"
+    ]
   },
   {
     "folio": "DMRTS-2022-01",
@@ -1161,7 +1195,7 @@
     "image": "images/DMUE-001.webp",
     "artist": "edgaritual_re",
     "rarity_variants": [],
-    "rarity": "Rara",
+    "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
     "species": "Xoloitzcuintle",
@@ -2203,7 +2237,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "EXPN-003",
@@ -2288,7 +2323,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "EXPO-0003",
@@ -2313,7 +2349,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "EXPO-0004",
@@ -2338,7 +2375,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "EXPO-0005",
@@ -2363,7 +2401,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "EXPO-0006",
@@ -2388,7 +2427,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "EXPO-0008",
@@ -8145,7 +8185,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-002",
@@ -8170,7 +8211,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-003",
@@ -8223,7 +8265,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-005",
@@ -8251,7 +8294,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-006",
@@ -8301,7 +8345,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-008",
@@ -8329,7 +8374,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-009",
@@ -8354,7 +8400,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-010",
@@ -8379,7 +8426,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-011",
@@ -8404,7 +8452,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-012",
@@ -8429,7 +8478,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-013",
@@ -8454,7 +8504,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-014",
@@ -8479,7 +8530,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-015",
@@ -8504,7 +8556,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-016",
@@ -8532,7 +8585,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-017",
@@ -8557,7 +8611,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-018",
@@ -8585,7 +8640,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "ISPMR-019",
@@ -8689,7 +8745,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Beta"
+    ]
   },
   {
     "folio": "KPRC-001",
@@ -8714,7 +8772,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-002",
@@ -8739,7 +8799,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-003",
@@ -8789,7 +8850,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-005",
@@ -8814,7 +8876,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-006",
@@ -8864,7 +8927,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-008",
@@ -8914,7 +8978,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-010",
@@ -8993,7 +9058,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-013",
@@ -9018,7 +9085,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-014",
@@ -9073,8 +9141,10 @@
       "Chosen_Juan"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-016",
@@ -9177,7 +9247,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-020",
@@ -9227,8 +9298,10 @@
       "Mike.rev_art"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-022",
@@ -9252,8 +9325,10 @@
       "Mike.rev_art"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-023",
@@ -9278,7 +9353,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-024",
@@ -9303,7 +9379,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-025",
@@ -9454,7 +9531,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-031",
@@ -9482,7 +9561,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-032",
@@ -9507,7 +9588,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-033",
@@ -9535,7 +9617,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-034",
@@ -9644,7 +9728,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-038",
@@ -9719,7 +9805,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-041",
@@ -9744,7 +9831,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-042",
@@ -9769,7 +9857,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-043",
@@ -9794,7 +9883,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-044",
@@ -9822,7 +9912,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-045",
@@ -9850,7 +9941,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-047",
@@ -9992,7 +10084,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-051",
@@ -10071,7 +10164,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-054",
@@ -10112,7 +10206,7 @@
     "image": "images/KPRC-055.webp",
     "artist": "Kundu del Castillo",
     "rarity_variants": [],
-    "rarity": "Ultra Rara",
+    "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -10124,7 +10218,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-056",
@@ -10177,7 +10273,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-058",
@@ -10227,7 +10324,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-060",
@@ -10252,7 +10350,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-061",
@@ -10296,7 +10396,7 @@
     "image": "images/KPRC-062.webp",
     "artist": "Mike.rev_art",
     "rarity_variants": [],
-    "rarity": "Secreta",
+    "rarity": "Comun",
     "cost_text": "Recibe 1 descanso adicional si usas esta Activa.",
     "lore_text": "",
     "species": "Canis lupus",
@@ -10305,7 +10405,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-063",
@@ -10330,7 +10432,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-064A",
@@ -10380,7 +10483,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-065",
@@ -10406,7 +10510,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-066",
@@ -10457,7 +10562,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-071",
@@ -10498,7 +10604,7 @@
     "image": "images/KPRC-072.webp",
     "artist": "AlanArart",
     "rarity_variants": [],
-    "rarity": "Secreta",
+    "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
     "species": "Quetzalcoatlus",
@@ -10510,7 +10616,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-073",
@@ -10551,7 +10659,7 @@
     "image": "images/KPRC-086.webp",
     "artist": "cabritosentado",
     "rarity_variants": [],
-    "rarity": "Secreta",
+    "rarity": "Comun",
     "cost_text": "No podrás usar Activas-Rápidas en tu turno durante el resto del juego.",
     "lore_text": "",
     "species": "Bassariscus sumichrasti",
@@ -10562,8 +10670,10 @@
       "cabritosentado"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-091",
@@ -10588,7 +10698,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "KPRC-092",
@@ -10664,7 +10776,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-103",
@@ -10742,7 +10855,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-106",
@@ -10770,7 +10884,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "KPRC-107",
@@ -10811,7 +10926,7 @@
     "image": "images/KPRC-108.webp",
     "artist": "nether_art31",
     "rarity_variants": [],
-    "rarity": "Rara",
+    "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Sus raíces, al inframundo, y su copa, al cosmos...",
     "species": "Ceiba pentandra",
@@ -10821,9 +10936,11 @@
     "artists": [
       "nether_art31"
     ],
-    "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_full_art": true,
+    "is_alternative": true,
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-109",
@@ -14401,7 +14518,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "MegaXP-01",
@@ -14429,7 +14547,8 @@
     "is_alternative": false,
     "categories": [
       "Evento-Otros"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "NAVD-001",
@@ -14583,7 +14702,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "PASE-003",
@@ -14608,7 +14728,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "PASE-004",
@@ -14683,7 +14804,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "PASE-007",
@@ -14733,7 +14855,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "PASE-009",
@@ -14761,7 +14884,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "PATREON-001",
@@ -14817,7 +14941,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "PKMR-001",
@@ -15255,7 +15380,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "PRT-2022-06",
@@ -15281,7 +15407,8 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "PRT-2022-07",
@@ -15321,7 +15448,7 @@
     "effect_text": "Pasiva: Aumenta 1 punto de ataque a los Adendei-Gélido mientras esta carta esté en campo. Si un Adendei-Gélido aliado atacó, cura 1 punto a un Adendei-Gélido aliado.",
     "image": "images/PromoSigned-001.webp",
     "artist": "edgaritual_re",
-    "rarity": "Super Rara",
+    "rarity": "Comun",
     "rarity_variants": [],
     "subtype": "",
     "cost_text": "Si esta carta es enviada a Extinción, daña 1 punto a todos los Adendei-Gélido en campo.",
@@ -15331,8 +15458,10 @@
       "edgaritual_re"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "Beta"
+    ]
   },
   {
     "folio": "RAGEK-01",
@@ -15362,7 +15491,8 @@
     "is_alternative": false,
     "categories": [
       "Evento-Otros"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "RAMI-001",
@@ -24987,7 +25117,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "TKD-2022-002",
@@ -25012,7 +25143,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "TKD-2022-003",
@@ -25063,7 +25195,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "TKD-2022-008",
@@ -25113,7 +25246,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "TKD-2022-2ND",
@@ -25138,7 +25272,8 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "TOKEN-KS",
@@ -27997,7 +28132,8 @@
     "is_alternative": false,
     "categories": [
       "Evento-Otros"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "TheGathering-Mizthe",
@@ -28027,7 +28163,8 @@
     "is_alternative": false,
     "categories": [
       "Evento-Otros"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "XPIX-001",
@@ -28129,7 +28266,8 @@
     "is_alternative": false,
     "categories": [
       "Evento-Otros"
-    ]
+    ],
+    "pending_base_rarity_validation": true
   },
   {
     "folio": "FTEN-001",
