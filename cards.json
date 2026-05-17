@@ -8076,7 +8076,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "INMX-001",
@@ -10024,7 +10026,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "KPRC-048",
@@ -10054,7 +10058,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "KPRC-048S",
@@ -10082,7 +10088,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "KPRC-049",
@@ -10128,7 +10136,7 @@
     "image": "images/KPRC-050.webp",
     "artist": "Kundu del Castillo",
     "rarity_variants": [],
-    "rarity": "Rara",
+    "rarity": "Comun",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -10140,8 +10148,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-051",
@@ -10519,7 +10528,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "KPRC-064B",
@@ -10599,7 +10610,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "KPRC-067",
@@ -10870,7 +10883,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-104",
@@ -10898,7 +10913,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-105",
@@ -10953,8 +10970,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-107",
@@ -10970,7 +10988,7 @@
     "image": "images/KPRC-107.webp",
     "artist": "offWorldAngel",
     "rarity_variants": [],
-    "rarity": "Super Rara",
+    "rarity": "Comun",
     "cost_text": "Solo puedes usar estos efectos una vez por juego. Estos efectos no pueden ser negados.",
     "lore_text": "",
     "species": "Cyclura lewisi",
@@ -10979,7 +10997,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-108",
@@ -11036,8 +11056,10 @@
       "nether_art31"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-110",
@@ -11053,7 +11075,7 @@
     "image": "images/KPRC-110.webp",
     "artist": "Saki Toons",
     "rarity_variants": [],
-    "rarity": "Super Rara",
+    "rarity": "Comun",
     "cost_text": "Solo puedes usar esta Activa una vez por juego. La Pasiva solo afecta equipos que sean compatibles con cualquier Adendei.",
     "lore_text": "",
     "species": "Cyclura lewisi",
@@ -11062,7 +11084,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-111",
@@ -11078,7 +11102,7 @@
     "image": "images/KPRC-111.webp",
     "artist": "vvizzor.artist",
     "rarity_variants": [],
-    "rarity": "Rara",
+    "rarity": "Comun",
     "cost_text": "",
     "lore_text": "Vigilante desde la Cúspide, nadie escapa de los ojos del lagarto.",
     "species": "",
@@ -11086,8 +11110,10 @@
       "vvizzor.artist"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "KPRC"
+    ]
   },
   {
     "folio": "KPRC-115",
@@ -11112,7 +11138,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "KPRF-0001",
@@ -14980,7 +15008,7 @@
     "effect_text": "Si 1 Adendei Abisal aliado es revelado, revela (coloca boca arriba) 1 carta rival y niega la Pasiva de 1 carta rival hasta el fin del turno.",
     "image": "images/PATREON-001.webp",
     "artist": "adriatic.art_",
-    "rarity": "Super Rara",
+    "rarity": "Comun",
     "rarity_variants": [],
     "subtype": "Abisal",
     "cost_text": "No podrás usar la Pasiva de tu Bio mientras esta carta esté en el campo.",
@@ -14994,7 +15022,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "PATREON-002",
@@ -15008,7 +15038,7 @@
     "effect_text": "Activa: Desciende (Disminuye su ataque permanentemente) 1 punto a 1 carta rival.",
     "image": "images/PATREON-002.webp",
     "artist": "Kundu del Castillo",
-    "rarity": "Super Rara",
+    "rarity": "Comun",
     "rarity_variants": [],
     "subtype": "Guardián",
     "cost_text": "",
@@ -15022,8 +15052,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Kickstarter/Patreon"
+    ]
   },
   {
     "folio": "PKMR-001",
@@ -15051,7 +15082,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PKMR-002",
@@ -15077,7 +15110,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PKMR-003",
@@ -15102,7 +15137,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PKMR-004",
@@ -15130,7 +15167,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PKMR-005",
@@ -15155,7 +15194,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PKMR-006",
@@ -15180,7 +15221,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PKMR-007",
@@ -15205,7 +15248,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PKMR-008",
@@ -15233,7 +15278,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PKMR-009",
@@ -15258,7 +15305,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PRKD-2022-01",
@@ -15283,7 +15332,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PRKD-2022-02",
@@ -15501,8 +15552,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PRT-2022-07",
@@ -15527,8 +15579,10 @@
       "DesireOB"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "PromoSigned-001",
@@ -25184,8 +25238,10 @@
       "DesireOB"
     ],
     "is_full_art": false,
-    "is_alternative": false,
-    "categories": []
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "TKD-2022-001",
