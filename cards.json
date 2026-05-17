@@ -255,7 +255,7 @@
     "image": "images/CAMP-0007UV.webp",
     "artist": "colmillo_azul_studio",
     "rarity_variants": [],
-    "rarity": "Super Rara",
+    "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "Triunfar con el cuerpo es una gran hazaña, pero triunfar con la mente es el arte de un verdadero maestro.",
     "species": "Qianzhousaurus sinensis",
@@ -269,8 +269,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0008UV",
@@ -286,7 +285,7 @@
     "image": "images/CAMP-0008UV.webp",
     "artist": "AbuShield",
     "rarity_variants": [],
-    "rarity": "Rara",
+    "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "La estrategia perfecta depende de no una carta ganadora sino de un Protector perseverante y hábil ¡Felicidades!",
     "species": "Mitsukurina Owstoni",
@@ -300,8 +299,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0009UV",
@@ -317,7 +315,7 @@
     "image": "images/CAMP-0009UV.webp",
     "artist": "Mike Tn",
     "rarity_variants": [],
-    "rarity": "Rara",
+    "rarity": "Ultra Rara",
     "cost_text": "Esta carta debe ser enviada a Extincion para usar su Activa.",
     "lore_text": "",
     "species": "",
@@ -327,12 +325,11 @@
     "artists": [
       "Mike Tn"
     ],
-    "is_full_art": false,
+    "is_full_art": true,
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0010UV",
@@ -348,7 +345,7 @@
     "image": "images/CAMP-0010UV.webp",
     "artist": "offWorldAngel",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -359,8 +356,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0011UV",
@@ -376,7 +372,7 @@
     "image": "images/CAMP-0011UV.webp",
     "artist": "adriatic.art_",
     "rarity_variants": [],
-    "rarity": "Rara",
+    "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "El esfuerzo vale la pena cuando llegas a la cima",
     "species": "Carnotaurus sastrei",
@@ -390,8 +386,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0012UV",
@@ -407,7 +402,7 @@
     "image": "images/CAMP-0012UV.webp",
     "artist": "varchi_design",
     "rarity_variants": [],
-    "rarity": "Rara",
+    "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "En estas tierras florece la vida eterna; el corazón del mundo.",
     "species": "",
@@ -421,8 +416,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0013UV",
@@ -438,7 +432,7 @@
     "image": "images/CAMP-0013UV.webp",
     "artist": "edgaritual_re",
     "rarity_variants": [],
-    "rarity": "Super Rara",
+    "rarity": "Ultra Rara",
     "cost_text": "Solo puedes usar este efecto una vez por turno.",
     "lore_text": "Con valentía, este Protector conquistó el torneo y la gloria.",
     "species": "Stegosaurus ungulatus",
@@ -452,8 +446,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0014UV",
@@ -483,8 +476,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0015UV",
@@ -500,7 +492,7 @@
     "image": "images/CAMP-0015UV.webp",
     "artist": "Attoz",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "El camino de la victoria se traza por medio de la perseverancia: ¡FELICIDADES!",
     "species": "Cyclura lewisi",
@@ -511,8 +503,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0016UV",
@@ -528,19 +519,18 @@
     "image": "images/CAMP-0016UV.webp",
     "artist": "edgaritual_re",
     "rarity_variants": [],
-    "rarity": "Rara",
+    "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
     "artists": [
       "edgaritual_re"
     ],
-    "is_full_art": false,
+    "is_full_art": true,
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0017UV",
@@ -556,7 +546,7 @@
     "image": "images/CAMP-0017UV.webp",
     "artist": "Necro Balam",
     "rarity_variants": [],
-    "rarity": "Super Rara",
+    "rarity": "Ultra Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -566,12 +556,11 @@
     "artists": [
       "Necro Balam"
     ],
-    "is_full_art": false,
+    "is_full_art": true,
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0018UV",
@@ -587,19 +576,18 @@
     "image": "images/CAMP-0018UV.webp",
     "artist": "Fersko0n",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Ultra Rara",
     "cost_text": "Daña 1 pto. a otra carta aliada.",
     "lore_text": "",
     "species": "",
     "artists": [
       "Fersko0n"
     ],
-    "is_full_art": false,
+    "is_full_art": true,
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0019",
@@ -615,7 +603,7 @@
     "image": "images/CAMP-0019.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -626,8 +614,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0020",
@@ -643,7 +630,7 @@
     "image": "images/CAMP-0020.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -654,8 +641,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0021",
@@ -671,7 +657,7 @@
     "image": "images/CAMP-0021.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -682,8 +668,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0022",
@@ -699,7 +684,7 @@
     "image": "images/CAMP-0022.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Lítico en el campo.",
     "lore_text": "",
     "species": "",
@@ -710,8 +695,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0023",
@@ -727,7 +711,7 @@
     "image": "images/CAMP-0023.webp",
     "artist": "Rulo Valdes",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Húumico en el campo.",
     "lore_text": "",
     "species": "",
@@ -738,8 +722,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0024",
@@ -755,7 +738,7 @@
     "image": "images/CAMP-0024.webp",
     "artist": "edgaritual_re",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "La Activa de esta carta no puede ser copiada.",
     "lore_text": "",
     "species": "",
@@ -765,12 +748,11 @@
     "artists": [
       "edgaritual_re"
     ],
-    "is_full_art": false,
+    "is_full_art": true,
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0025",
@@ -786,7 +768,7 @@
     "image": "images/CAMP-0025.webp",
     "artist": "vvizzor.artist",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "Envía esta carta y una carta aliada a Extinción para usar su Pasiva. Solo puedes utilizar este efecto una vez por juego.",
     "lore_text": "Una terrible celebración del miedo instauró como perdedores a ambos bandos.",
     "species": "",
@@ -797,8 +779,7 @@
     "is_alternative": false,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CAMP-0026",
@@ -814,7 +795,7 @@
     "image": "images/CAMP-0026.webp",
     "artist": "edgaritual_re",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "Nadie peleó con tanta fiereza como lo hizo Makua durante las Guerras Abisales.",
     "species": "Isurus oxyrinchus",
@@ -822,11 +803,10 @@
       "edgaritual_re"
     ],
     "is_full_art": false,
-    "is_alternative": false,
+    "is_alternative": true,
     "categories": [
       "Ganador"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "CDC-001",
@@ -2237,8 +2217,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "EXPN-003",
@@ -2340,7 +2321,7 @@
     "image": "images/EXPO-0003.webp",
     "artist": "rayofsand",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -2349,8 +2330,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "EXPO-0004",
@@ -2366,7 +2348,7 @@
     "image": "images/EXPO-0004.webp",
     "artist": "Oskar Alvarado",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Átlíco en campo.",
     "lore_text": "",
     "species": "",
@@ -2375,8 +2357,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "EXPO-0005",
@@ -2392,7 +2375,7 @@
     "image": "images/EXPO-0005.webp",
     "artist": "edgaritual_re",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "Si esta carta es enviada a Extinción, daña 1 punto a todos los Adendei-Gélido en campo.",
     "lore_text": "",
     "species": "",
@@ -2401,8 +2384,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "EXPO-0006",
@@ -2418,7 +2402,7 @@
     "image": "images/EXPO-0006.webp",
     "artist": "edgaritual_re",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "Si esta carta es enviada a Extinción, daña 1 pto. a todos los Adendei-Pírico en campo.",
     "lore_text": "",
     "species": "",
@@ -2427,8 +2411,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "EXPO-0008",
@@ -2453,7 +2438,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "EXPO-0009",
@@ -2478,8 +2465,9 @@
     ],
     "is_full_art": false,
     "is_alternative": true,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "FAFT-001",
@@ -8173,7 +8161,7 @@
     "image": "images/ISPMR-001.webp",
     "artist": "namh",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8185,8 +8173,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-002",
@@ -8202,7 +8191,7 @@
     "image": "images/ISPMR-002.webp",
     "artist": "Aureo Oliva",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "Esta carta podra atacar solo a Adendei-Feral",
     "lore_text": "",
     "species": "",
@@ -8211,8 +8200,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-003",
@@ -8228,7 +8218,7 @@
     "image": "images/ISPMR-003.webp",
     "artist": "capuccino.arts",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8237,7 +8227,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-004",
@@ -8253,7 +8245,7 @@
     "image": "images/ISPMR-004.webp",
     "artist": "Necro Balam",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "Despues de atacar, esta carta desciende 1 punto y es dañada 1 punto.",
     "lore_text": "",
     "species": "",
@@ -8265,8 +8257,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-005",
@@ -8282,7 +8275,7 @@
     "image": "images/ISPMR-005.webp",
     "artist": "Necro Balam",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8294,8 +8287,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-006",
@@ -8311,7 +8305,7 @@
     "image": "images/ISPMR-006.webp",
     "artist": "capuccino.arts",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8320,7 +8314,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-007",
@@ -8334,7 +8330,7 @@
     "artist": "Edgardo Bautista",
     "set": "KPRC",
     "subtype": "",
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "rarity_variants": [],
     "image": "images/ISPMR-007.webp",
     "cost_text": "",
@@ -8344,9 +8340,10 @@
       "Edgardo Bautista"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-008",
@@ -8362,7 +8359,7 @@
     "image": "images/ISPMR-008.webp",
     "artist": "varchi_design",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8374,8 +8371,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-009",
@@ -8389,7 +8387,7 @@
     "artist": "cripticus",
     "set": "KPRC",
     "subtype": "",
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "rarity_variants": [],
     "image": "images/ISPMR-009.webp",
     "cost_text": "",
@@ -8399,9 +8397,10 @@
       "cripticus"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-010",
@@ -8417,7 +8416,7 @@
     "image": "images/ISPMR-010.webp",
     "artist": "Oskar Alvarado",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8426,8 +8425,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-011",
@@ -8443,7 +8443,7 @@
     "image": "images/ISPMR-011.webp",
     "artist": "varchi_design",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8452,8 +8452,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-012",
@@ -8469,7 +8470,7 @@
     "image": "images/ISPMR-012.webp",
     "artist": "nether_art31",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8478,8 +8479,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-013",
@@ -8495,7 +8497,7 @@
     "image": "images/ISPMR-013.webp",
     "artist": "vvizzor.artist",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8504,8 +8506,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-014",
@@ -8521,7 +8524,7 @@
     "image": "images/ISPMR-014.webp",
     "artist": "Fersko0n",
     "rarity_variants": [],
-    "rarity": "Rara",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8530,8 +8533,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-015",
@@ -8545,7 +8549,7 @@
     "artist": "Edgardo Bautista",
     "set": "KPRC",
     "subtype": "",
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "rarity_variants": [],
     "image": "images/ISPMR-015.webp",
     "cost_text": "",
@@ -8556,8 +8560,9 @@
     ],
     "is_full_art": true,
     "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-016",
@@ -8573,7 +8578,7 @@
     "image": "images/ISPMR-016.webp",
     "artist": "Mike.rev_art",
     "rarity_variants": [],
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "cost_text": "",
     "lore_text": "",
     "species": "",
@@ -8584,9 +8589,10 @@
       "Mike.rev_art"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-017",
@@ -8600,7 +8606,7 @@
     "artist": "cripticus",
     "set": "KPRC",
     "subtype": "",
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "rarity_variants": [],
     "image": "images/ISPMR-017.webp",
     "cost_text": "",
@@ -8610,9 +8616,10 @@
       "cripticus"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-018",
@@ -8626,7 +8633,7 @@
     "artist": "AbuShield",
     "set": "KPRC",
     "subtype": "Abisal",
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "rarity_variants": [],
     "image": "images/ISPMR-018.webp",
     "cost_text": "",
@@ -8639,9 +8646,10 @@
       "AbuShield"
     ],
     "is_full_art": true,
-    "is_alternative": false,
-    "categories": [],
-    "pending_base_rarity_validation": true
+    "is_alternative": true,
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-019",
@@ -8655,7 +8663,7 @@
     "artist": "Chosen_Juan",
     "set": "KPRC",
     "subtype": "",
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "rarity_variants": [],
     "image": "images/ISPMR-019.webp",
     "cost_text": "",
@@ -8666,7 +8674,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "ISPMR-020",
@@ -8680,7 +8690,7 @@
     "artist": "cripticus",
     "set": "KPRC",
     "subtype": "",
-    "rarity": "Comun",
+    "rarity": "Super Rara",
     "rarity_variants": [],
     "image": "images/ISPMR-020.webp",
     "cost_text": "Debes pasar 1 turno antes de atacar con esta carta.",
@@ -8691,7 +8701,9 @@
     ],
     "is_full_art": false,
     "is_alternative": false,
-    "categories": []
+    "categories": [
+      "Evento-Otros"
+    ]
   },
   {
     "folio": "KDMOLE-01-2022",
@@ -28266,8 +28278,7 @@
     "is_alternative": false,
     "categories": [
       "Evento-Otros"
-    ],
-    "pending_base_rarity_validation": true
+    ]
   },
   {
     "folio": "FTEN-001",
